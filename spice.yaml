@@ -1,0 +1,23 @@
+project:
+  name: IÜC BİDB SPICE 2026 Level 3
+  code: IUC-SPICE-2026
+
+organization:
+  name: İstanbul Üniversitesi-Cerrahpaşa
+  unit: Bilgi İşlem Daire Başkanlığı
+
+confluence:
+  url: https://confluence.iuc.edu.tr
+  space: SSSS
+  root_page: "İÜC BİDB SPICE 2026 Level 3"
+  root_page_id: "137265781"
+
+repository:
+  docs: docs
+  scripts: scripts
+
+language:
+  default: tr-TR
+
+publish:
+  mode: update

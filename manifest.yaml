@@ -1,0 +1,62 @@
+confluence:
+  space: SSSS
+  root:
+    title: "İÜC BİDB SPICE 2026 Level 3"
+    page_id: "137265781"
+
+nodes:
+
+  - code: ROOT-00
+    title: "00 - Genel Bilgiler"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-01
+    title: "01 - Süreç Dokümanları"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-02
+    title: "02 - Şablonlar"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-03
+    title: "03 - Kayıtlar ve Listeler"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-04
+    title: "04 - Formlar"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-05
+    title: "05 - Kılavuzlar"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-06
+    title: "06 - Politikalar"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-07
+    title: "07 - Prosedürler"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-08
+    title: "08 - Planlar"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-90
+    title: "90 - Denetim Hazırlık"
+    parent: ROOT
+    type: folder
+
+  - code: ROOT-91
+    title: "91 - İç Denetimler"
+    parent: ROOT
+    type: folder
