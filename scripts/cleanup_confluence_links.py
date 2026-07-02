@@ -27,6 +27,10 @@ HREF_PATTERN = re.compile(
     flags=re.I | re.S,
 )
 TABLE_ROW_PATTERN = re.compile(r"<tr\b.*?</tr>", flags=re.I | re.S)
+TABLE_CELL_PATTERN = re.compile(
+    r"<(?P<tag>td|th)\b[^>]*>(?P<body>.*?)</(?P=tag)>",
+    flags=re.I | re.S,
+)
 MARKDOWN_FILENAME_PATTERN = re.compile(
     r"(?P<filename>[^<>\"']+?\.(?:markdown|md))(?=\b|$)",
     flags=re.I | re.S,
@@ -169,7 +173,7 @@ def cleanup_unprotected_segment_links(page, segment, pages_by_title, report):
             segment[position:match.start()],
             pages_by_title,
             report,
-            "",
+            empty_row_context(),
         )
         cleaned_parts.append(cleaned_segment)
         replacements.extend(segment_replacements)
@@ -180,7 +184,7 @@ def cleanup_unprotected_segment_links(page, segment, pages_by_title, report):
             row_html,
             pages_by_title,
             report,
-            clean_storage_text(row_html),
+            build_row_context(row_html),
         )
         cleaned_parts.append(cleaned_row)
         replacements.extend(row_replacements)
@@ -191,7 +195,7 @@ def cleanup_unprotected_segment_links(page, segment, pages_by_title, report):
         segment[position:],
         pages_by_title,
         report,
-        "",
+        empty_row_context(),
     )
     cleaned_parts.append(cleaned_segment)
     replacements.extend(segment_replacements)
@@ -199,7 +203,7 @@ def cleanup_unprotected_segment_links(page, segment, pages_by_title, report):
     return "".join(cleaned_parts), replacements
 
 
-def replace_anchors_in_segment(page, segment, pages_by_title, report, row_text):
+def replace_anchors_in_segment(page, segment, pages_by_title, report, row_context):
     replacements = []
 
     def replace_anchor(match):
@@ -214,7 +218,7 @@ def replace_anchors_in_segment(page, segment, pages_by_title, report, row_text):
             link_text,
             pages_by_title,
             report,
-            row_text,
+            row_context,
         )
 
         if decision["action"] != "replace":
@@ -222,6 +226,10 @@ def replace_anchors_in_segment(page, segment, pages_by_title, report, row_text):
 
         replacements.append(decision)
         report["replaced"].append(decision)
+
+        if decision.get("resolved_by") == "code_name":
+            report["resolved_by_code_name"].append(decision)
+
         return build_confluence_page_link(
             decision["target_title"],
             decision["visible_text"],
@@ -240,7 +248,27 @@ def extract_href(attrs):
     return decode_link_value(match.group("href"))
 
 
-def resolve_link(page, href, link_text, pages_by_title, report, row_text=""):
+def empty_row_context():
+    return {
+        "text": "",
+        "cells": [],
+    }
+
+
+def build_row_context(row_html):
+    return {
+        "text": clean_storage_text(row_html),
+        "cells": [
+            clean_storage_text(match.group("body"))
+            for match in TABLE_CELL_PATTERN.finditer(row_html)
+        ],
+    }
+
+
+def resolve_link(page, href, link_text, pages_by_title, report, row_context=None):
+    if row_context is None:
+        row_context = empty_row_context()
+
     report["links_scanned"] += 1
     reference = href or link_text
 
@@ -275,6 +303,19 @@ def resolve_link(page, href, link_text, pages_by_title, report, row_text=""):
         return {
             "action": "skip",
         }
+
+    code_name_decision = resolve_link_by_code_and_name(
+        page,
+        href,
+        link_text,
+        row_context,
+        pages_by_title,
+        report,
+        reference,
+    )
+
+    if code_name_decision is not None:
+        return code_name_decision
 
     candidate_titles = extract_candidate_titles(
         href,
@@ -312,7 +353,7 @@ def resolve_link(page, href, link_text, pages_by_title, report, row_text=""):
             page,
             href,
             link_text,
-            row_text,
+            row_context,
             pages_by_title,
             report,
             reference,
@@ -343,14 +384,14 @@ def resolve_link(page, href, link_text, pages_by_title, report, row_text=""):
     }
 
 
-def resolve_link_from_row_context(page, href, link_text, row_text, pages_by_title, report, reference):
-    if not row_text:
+def resolve_link_from_row_context(page, href, link_text, row_context, pages_by_title, report, reference):
+    if not row_context["text"]:
         return None
 
     if not is_drive_document_link(href, link_text):
         return None
 
-    document_code = extract_document_code(row_text)
+    document_code = extract_document_code(row_context["text"])
 
     if not document_code:
         return None
@@ -385,6 +426,103 @@ def resolve_link_from_row_context(page, href, link_text, row_text, pages_by_titl
         }
 
     return None
+
+
+def resolve_link_by_code_and_name(page, href, link_text, row_context, pages_by_title, report, reference):
+    if not row_context["text"]:
+        return None
+
+    if not is_drive_document_link(href, link_text):
+        return None
+
+    target_title = extract_document_title_from_row(row_context)
+
+    if not target_title:
+        return None
+
+    matched_pages = pages_by_title.get(target_title, [])
+
+    if len(matched_pages) > 1:
+        entry = {
+            "source_page": page["title"],
+            "reference": reference,
+            "candidate_title": target_title,
+            "matches": [matched_page["title"] for matched_page in matched_pages],
+        }
+        report["ambiguous"].append(entry)
+        print(f'[AMBIGUOUS] {page["title"]} -> {target_title}')
+        return {
+            "action": "skip",
+        }
+
+    if len(matched_pages) == 1:
+        target_page = matched_pages[0]
+        return {
+            "action": "replace",
+            "source_page": page["title"],
+            "old_href": href,
+            "old_text": link_text,
+            "target_title": target_page["title"],
+            "visible_text": "İncele",
+            "resolved_by": "code_name",
+            "code_name_title": target_title,
+        }
+
+    return None
+
+
+def extract_document_title_from_row(row_context):
+    cells = [
+        normalize_text(cell)
+        for cell in row_context["cells"]
+        if normalize_text(cell)
+    ]
+
+    for index, cell in enumerate(cells[:-1]):
+        document_code = extract_document_code(cell)
+
+        if not document_code:
+            continue
+
+        document_name = cells[index + 1]
+
+        if not is_document_name_candidate(document_name):
+            continue
+
+        return f"{document_code} - {document_name}"
+
+    return ""
+
+
+def is_document_name_candidate(value):
+    value = normalize_text(value)
+
+    if not value:
+        return False
+
+    lower_value = normalize_lower(value)
+
+    if lower_value in (
+        "aktif",
+        "pasif",
+        "planlandı",
+        "markdown",
+        "docx",
+        "pdf",
+        "liste",
+        "şablon",
+        "kılavuz",
+        "prosedür",
+    ):
+        return False
+
+    if lower_value.endswith((".md", ".markdown")):
+        return False
+
+    if lower_value.startswith(("http://", "https://", "file://")):
+        return False
+
+    return True
 
 
 def is_drive_folder_link(href):
@@ -640,6 +778,7 @@ def write_report(report):
         f"- Links scanned: {report['links_scanned']}",
         f"- Pages changed: {len(report['changed_pages'])}",
         f"- Replaced links: {len(report['replaced'])}",
+        f"- Resolved by code + name: {len(report['resolved_by_code_name'])}",
         f"- Unresolved links: {len(report['unresolved'])}",
         f"- Ambiguous links: {len(report['ambiguous'])}",
         f"- Skipped links: {len(report['skipped'])}",
@@ -649,6 +788,8 @@ def write_report(report):
     ]
 
     add_replaced_links(lines, report["replaced"])
+    lines.extend(["", "## Resolved by Code + Name", ""])
+    add_resolved_by_code_name_links(lines, report["resolved_by_code_name"])
     lines.extend(["", "## Unresolved Links", ""])
     add_unresolved_links(lines, report["unresolved"])
     lines.extend(["", "## Ambiguous Links", ""])
@@ -675,6 +816,22 @@ def add_replaced_links(lines, entries):
                 f"  Old text: {markdown_text(entry['old_text'])}",
                 f"  Target page: {markdown_text(entry['target_title'])}",
                 f"  Visible text: {markdown_text(entry['visible_text'])}",
+            ]
+        )
+
+
+def add_resolved_by_code_name_links(lines, entries):
+    if not entries:
+        lines.append("No links resolved by code + name.")
+        return
+
+    for entry in entries:
+        lines.extend(
+            [
+                f"- Source page: {markdown_text(entry['source_page'])}",
+                f"  Old href: {markdown_text(entry['old_href'])}",
+                f"  Exact title: {markdown_text(entry['code_name_title'])}",
+                f"  Target page: {markdown_text(entry['target_title'])}",
             ]
         )
 
@@ -757,6 +914,7 @@ def main():
         "links_scanned": 0,
         "changed_pages": [],
         "replaced": [],
+        "resolved_by_code_name": [],
         "unresolved": [],
         "ambiguous": [],
         "skipped": [],

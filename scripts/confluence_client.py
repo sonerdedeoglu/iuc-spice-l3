@@ -1,4 +1,5 @@
 import warnings
+import time
 
 warnings.filterwarnings(
     "ignore",
@@ -29,19 +30,48 @@ except AttributeError:
     pass
 
 
+RETRY_ATTEMPTS = 3
+RETRY_DELAYS = [2, 5]
+
+
 class ConfluenceClient:
 
     def __init__(self):
         self.base_url = CONFLUENCE_URL
         self.auth = HTTPBasicAuth(USERNAME, PASSWORD)
 
+    def request(self, method, path, **kwargs):
+        url = f"{self.base_url}{path}"
+
+        for attempt in range(1, RETRY_ATTEMPTS + 1):
+            try:
+                return requests.request(
+                    method,
+                    url,
+                    auth=self.auth,
+                    verify=False,
+                    timeout=30,
+                    **kwargs,
+                )
+            except (
+                requests.exceptions.ConnectionError,
+                requests.exceptions.Timeout,
+            ):
+                if attempt == RETRY_ATTEMPTS:
+                    raise
+
+                next_attempt = attempt + 1
+                print(
+                    f"[RETRY] {method} {url} attempt {next_attempt}/{RETRY_ATTEMPTS} "
+                    "after connection error"
+                )
+                time.sleep(RETRY_DELAYS[attempt - 1])
+
     def get(self, path, params=None):
-        response = requests.get(
-            f"{self.base_url}{path}",
+        response = self.request(
+            "GET",
+            path,
             params=params,
-            auth=self.auth,
-            verify=False,
-            timeout=30,
         )
 
         response.raise_for_status()
@@ -49,12 +79,10 @@ class ConfluenceClient:
         return response.json()
 
     def post(self, path, payload):
-        response = requests.post(
-            f"{self.base_url}{path}",
+        response = self.request(
+            "POST",
+            path,
             json=payload,
-            auth=self.auth,
-            verify=False,
-            timeout=30,
             headers={
                 "Content-Type": "application/json",
             },
@@ -72,12 +100,10 @@ class ConfluenceClient:
         return response.json()
 
     def put(self, path, payload):
-        response = requests.put(
-            f"{self.base_url}{path}",
+        response = self.request(
+            "PUT",
+            path,
             json=payload,
-            auth=self.auth,
-            verify=False,
-            timeout=30,
             headers={
                 "Content-Type": "application/json",
             },
