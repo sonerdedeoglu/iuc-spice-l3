@@ -10,6 +10,7 @@ preserved so Confluence publishing updates the same page instead of creating a d
 from __future__ import annotations
 
 import html
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -18,6 +19,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_PAGE = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
+SRC001_BODY = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/body.storage.xhtml"
 PAGE_DIR = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-001"
 STANDARD_PATH = ROOT / "resources/standards/spice_practices.yaml"
 
@@ -40,6 +42,11 @@ th{background:#f6f8fa;font-weight:600;text-align:left}
 
 def e(value: object) -> str:
     return html.escape(str(value), quote=False)
+
+
+def text_from_html(value: str) -> str:
+    value = re.sub(r"<[^>]+>", "", value, flags=re.S)
+    return re.sub(r"\s+", " ", html.unescape(value)).strip()
 
 
 def table(headers: list[str], rows: list[list[str]]) -> str:
@@ -76,11 +83,72 @@ def load_sup7_bps() -> list[dict[str, str]]:
     return result
 
 
-def bp_title(code: str) -> str:
-    for bp in load_sup7_bps():
-        if bp["code"] == code:
-            return bp["title"] or code
-    return code
+def extract_src001_activity_rows() -> list[dict[str, str]]:
+    """Read activity rows from SRÇ.001 section 10 and return dictionaries by column name.
+
+    The LST.008 output matrix must use activity names that exist in the parent
+    process document's `10. Süreç Faaliyetleri` list. This parser intentionally
+    reads the generated/final SRÇ.001 body instead of using BP titles.
+    """
+    body = SRC001_BODY.read_text(encoding="utf-8")
+    match = re.search(
+        r"<h2[^>]*>\s*10\.\s*Süreç Faaliyetleri\s*</h2>(.*?)(?=<h2[^>]*>\s*11\.)",
+        body,
+        flags=re.I | re.S,
+    )
+    if not match:
+        raise RuntimeError("SRÇ.001 içinden '10. Süreç Faaliyetleri' bölümü okunamadı.")
+    section = match.group(1)
+    table_match = re.search(r"<table[^>]*>(.*?)</table>", section, flags=re.I | re.S)
+    if not table_match:
+        raise RuntimeError("SRÇ.001 10. Süreç Faaliyetleri bölümünde tablo bulunamadı.")
+    table_html = table_match.group(1)
+
+    header_match = re.search(r"<thead[^>]*>.*?<tr[^>]*>(.*?)</tr>.*?</thead>", table_html, flags=re.I | re.S)
+    if not header_match:
+        raise RuntimeError("SRÇ.001 10. Süreç Faaliyetleri tablosunun başlıkları okunamadı.")
+    headers = [text_from_html(h) for h in re.findall(r"<th[^>]*>(.*?)</th>", header_match.group(1), flags=re.I | re.S)]
+
+    rows: list[dict[str, str]] = []
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", table_html, flags=re.I | re.S):
+        if "<th" in tr.lower():
+            continue
+        cells = [text_from_html(td) for td in re.findall(r"<td[^>]*>(.*?)</td>", tr, flags=re.I | re.S)]
+        if not cells:
+            continue
+        row = {headers[i]: cells[i] for i in range(min(len(headers), len(cells)))}
+        rows.append(row)
+    if not rows:
+        raise RuntimeError("SRÇ.001 10. Süreç Faaliyetleri tablosundan satır okunamadı.")
+    return rows
+
+
+def activity_by_bp(bp_code: str, fallback: str) -> str:
+    rows = extract_src001_activity_rows()
+    for row in rows:
+        if any(bp_code in value for value in row.values()):
+            for key in ("Faaliyet", "Süreç Faaliyeti", "Aktivite"):
+                if key in row and row[key]:
+                    return row[key]
+            for key, value in row.items():
+                if "faaliyet" in key.lower() or "aktivite" in key.lower():
+                    return value
+    return fallback
+
+
+def activity_by_keyword(keyword: str, fallback: str) -> str:
+    keyword_lower = keyword.lower()
+    rows = extract_src001_activity_rows()
+    for row in rows:
+        joined = " ".join(row.values()).lower()
+        if keyword_lower in joined:
+            for key in ("Faaliyet", "Süreç Faaliyeti", "Aktivite"):
+                if key in row and row[key]:
+                    return row[key]
+            for key, value in row.items():
+                if "faaliyet" in key.lower() or "aktivite" in key.lower():
+                    return value
+    return fallback
 
 
 def build_storage() -> str:
@@ -120,16 +188,16 @@ def build_storage() -> str:
     ]))
     parts.append("<h2>4. Çıktı İş Ürünleri Matrisi</h2>")
     parts.append(table(["Çıktı İş Ürünü", "Üreten Faaliyet", "Kullanım Amacı", "Zorunluluk", "Saklama Yeri / Kayıt", "Durum / Not"], [
-        ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", bp_title("SUP.7.BP1"), "Dokümantasyon yönetim stratejisi ve yazılım projeleri için doküman yönetim kurallarını tanımlamak", "Zorunlu", "07 - Prosedürler", "Aktif ve onaylı prosedür olarak yönetilir."],
-        ["Doküman şablonları", bp_title("SUP.7.BP2"), "Doküman türlerine göre standart yapı ve kullanım kurallarını sağlamak", "Zorunlu", "02 - Şablonlar", "Aktif şablonlar kullanılmalı, kaldırılan şablonlar arşiv altında tutulmalıdır."],
-        ["İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)", bp_title("SUP.7.BP3"), "SRÇ.001 iş ürünlerini ve kalite kriterlerini tanımlamak", "Zorunlu", "SRÇ.001 alt sayfası", "Bu doküman SRÇ.001 iş ürünü kontrolünün ana kaydıdır."],
-        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", bp_title("SUP.7.BP4"), "Yaşam döngüsü aşamalarına göre üretilecek dokümanları belirlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Doküman ihtiyacının yaşam döngüsü izlenebilirliğini destekler."],
-        ["Hazırlanmış veya güncellenmiş doküman", bp_title("SUP.7.BP5"), "Süreç, proje veya destek faaliyeti kapsamında kullanılacak kontrollü dokümanı oluşturmak", "Zorunlu", "İlgili süreç/proje doküman alanı", "İlgili şablon ve yazım kurallarına uygun hazırlanmalıdır."],
-        ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", bp_title("SUP.7.BP6"), "Doküman gözden geçirme, uygunluk ve düzeltme kayıtlarını izlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Gözden geçirme sonucu, tarih ve sorumlu bilgisi içermelidir."],
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", bp_title("SUP.7.BP7"), "Onaylı ve aktif doküman envanterini yönetmek", "Zorunlu", "SRÇ.001 alt sayfası", "Aktif dokümanların kod, ad, sürüm, durum ve erişim bilgilerini içermelidir."],
-        ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", bp_title("SUP.7.BP8"), "Doküman değişikliklerini, bakım kayıtlarını ve pasife alma/arşivleme kararlarını izlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Değişiklik gerekçesi, tarih, sorumlu ve etkilenen doküman bilgisi içermelidir."],
-        ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", bp_title("SUP.7.BP7"), "Yayımlanan veya güncellenen dokümanlar hakkında ilgili tarafların bilgilendirildiğini izlemek", "Koşullu", "03 - Kayıtlar ve Listeler", "Yaygınlaştırma gereken dokümanlar için hedef kitle ve bilgilendirme tarihi izlenir."],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", "Süreç gözden geçirme", "SRÇ.001 BP/GP uygunluk durumunu ve tamamlayıcı aksiyonları izlemek", "Zorunlu", "SRÇ.001 alt sayfası", "BP/GP durumları ve aksiyon kayıtları güncel tutulmalıdır."],
+        ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", activity_by_bp("SUP.7.BP1", "Dokümantasyon stratejisini ve kapsamını uygula"), "Dokümantasyon yönetim stratejisi ve yazılım projeleri için doküman yönetim kurallarını tanımlamak", "Zorunlu", "07 - Prosedürler", "Aktif ve onaylı prosedür olarak yönetilir."],
+        ["Doküman şablonları", activity_by_bp("SUP.7.BP2", "Doküman standardı ve şablonu belirle"), "Doküman türlerine göre standart yapı ve kullanım kurallarını sağlamak", "Zorunlu", "02 - Şablonlar", "Aktif şablonlar kullanılmalı, kaldırılan şablonlar arşiv altında tutulmalıdır."],
+        ["İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)", activity_by_bp("SUP.7.BP3", "Doküman standardı ve şablonu belirle"), "SRÇ.001 iş ürünlerini ve kalite kriterlerini tanımlamak", "Zorunlu", "SRÇ.001 alt sayfası", "Bu doküman SRÇ.001 iş ürünü kontrolünün ana kaydıdır."],
+        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", activity_by_bp("SUP.7.BP4", "Üretilecek dokümanı tanımla"), "Yaşam döngüsü aşamalarına göre üretilecek dokümanları belirlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Doküman ihtiyacının yaşam döngüsü izlenebilirliğini destekler."],
+        ["Hazırlanmış veya güncellenmiş doküman", activity_by_bp("SUP.7.BP5", "Dokümanı hazırla veya güncelle"), "Süreç, proje veya destek faaliyeti kapsamında kullanılacak kontrollü dokümanı oluşturmak", "Zorunlu", "İlgili süreç/proje doküman alanı", "İlgili şablon ve yazım kurallarına uygun hazırlanmalıdır."],
+        ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", activity_by_bp("SUP.7.BP6", "Dokümanı gözden geçir ve onaylat"), "Doküman gözden geçirme, uygunluk ve düzeltme kayıtlarını izlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Gözden geçirme sonucu, tarih ve sorumlu bilgisi içermelidir."],
+        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", activity_by_bp("SUP.7.BP7", "Dokümanı yayımla ve erişime aç"), "Onaylı ve aktif doküman envanterini yönetmek", "Zorunlu", "SRÇ.001 alt sayfası", "Aktif dokümanların kod, ad, sürüm, durum ve erişim bilgilerini içermelidir."],
+        ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", activity_by_bp("SUP.7.BP8", "Dokümanı sürdür ve arşivle"), "Doküman değişikliklerini, bakım kayıtlarını ve pasife alma/arşivleme kararlarını izlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Değişiklik gerekçesi, tarih, sorumlu ve etkilenen doküman bilgisi içermelidir."],
+        ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", activity_by_keyword("yay", "Dokümanı yayımla ve erişime aç"), "Yayımlanan veya güncellenen dokümanlar hakkında ilgili tarafların bilgilendirildiğini izlemek", "Koşullu", "03 - Kayıtlar ve Listeler", "Yaygınlaştırma gereken dokümanlar için hedef kitle ve bilgilendirme tarihi izlenir."],
+        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", activity_by_keyword("gözden", "Dokümanı gözden geçir ve onaylat"), "SRÇ.001 BP/GP uygunluk durumunu ve tamamlayıcı aksiyonları izlemek", "Zorunlu", "SRÇ.001 alt sayfası", "BP/GP durumları ve aksiyon kayıtları güncel tutulmalıdır."],
     ]))
     parts.append("<h2>5. Kalite Kriterleri Kontrol Matrisi</h2>")
     parts.append(table(["İş Ürünü", "Kalite Kriteri", "Kontrol Sorusu", "Kontrol Yöntemi", "Kontrol Sorumlusu", "Kabul Ölçütü", "Uygunsuzluk / Tamamlayıcı Aksiyon"], [
