@@ -2,14 +2,14 @@
 
 ## Özet
 
-- Export edilen sayfa sayısı: 104
+- Export edilen sayfa sayısı: 105
 - Export klasörü: `confluence`
 - Index dosyası: `confluence/index.yaml`
 - Her sayfa için Storage XHTML ve render edilmiş HTML önizleme dosyası üretildi.
 
 ## Export Edilen Sayfa Sayısı
 
-- Toplam: 104
+- Toplam: 105
 
 ## Kök Sayfa
 
@@ -94,6 +94,7 @@
       - İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.026) (`137266169`, `pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-026-denetim-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-026`)
   - 02 - Şablonlar (`137265785`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar`)
     - Arşiv - Kaldırılan Şablonlar (`137266043`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar`)
+      - [KALDIRILDI] İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu (`137265831`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu`)
       - [KALDIRILDI] İÜC.BİDB.ŞBL.003 - Doküman Değişiklik Talebi Şablonu (`137265821`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-sbl-003-dokuman-degisiklik-talebi-sablonu`)
       - [KALDIRILDI] İÜC.BİDB.ŞBL.004 - Doküman Yayın Kaydı Şablonu (`137265822`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-sbl-004-dokuman-yayin-kaydi-sablonu`)
       - [KALDIRILDI] İÜC.BİDB.ŞBL.006 - Doküman Değişiklik Kaydı Şablonu (`137265824`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-sbl-006-dokuman-degisiklik-kaydi-sablonu`)
@@ -105,7 +106,7 @@
     - İÜC.BİDB.LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu (`137265827`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-005-s-yasam-dongusu-dokuman-uretim-matrisi-sablonu`)
     - İÜC.BİDB.LST.006.Ş - Standart Süreç Envanteri Şablonu (`137265829`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-006-s-standart-surec-envanteri-sablonu`)
     - İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu (`137265830`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu`)
-    - İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu (`137265831`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu`)
+    - İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu (`137266235`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu`)
     - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu (`137265832`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu`)
     - İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu (`137265833`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu`)
     - İÜC.BİDB.LST.012.Ş - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu (`137265835`, `pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu`)
