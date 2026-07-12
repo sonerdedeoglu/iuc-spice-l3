@@ -15,3 +15,8 @@ __pycache__/
 
 # Python cache
 .pytest_cache/
+# Generated Confluence reports
+reports/confluence_export_report.md
+reports/confluence_tree_publish_report.md
+reports/src001_rework_report.md
+reports/src001_rework_error.log
