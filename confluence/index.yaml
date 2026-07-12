@@ -1,7 +1,7 @@
 exported_at: '2026-07-12T16:14:38+00:00'
 root_page_id: '137265781'
 root_title: İÜC BİDB SPICE 2026 Level 3
-total_page_count: 104
+total_page_count: 105
 pages:
 - page_id: '137265781'
   title: İÜC BİDB SPICE 2026 Level 3
@@ -587,6 +587,14 @@ pages:
   slug: iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu/body.view.html
+- page_id: ''
+  title: TASLAK - İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu
+  slug: taslak-iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu/body.view.html
 - page_id: '137265832'
   title: İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu
   parent_id: '137265785'
