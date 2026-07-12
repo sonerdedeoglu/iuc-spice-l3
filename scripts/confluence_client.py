@@ -3,13 +3,12 @@ import time
 
 warnings.filterwarnings(
     "ignore",
-    message="urllib3 v2 only supports OpenSSL*",
+    message="urllib3 v2 only supports OpenSSL.*",
     category=Warning,
-    module="urllib3",
 )
 
-import requests
 import urllib3
+import requests
 from requests.auth import HTTPBasicAuth
 
 from config import (

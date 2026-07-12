@@ -1,0 +1,2326 @@
+source:
+  standard: ISO/IEC 15504-5:2006
+  title: 'Information technology — Process assessment — Part 5: An exemplar Process Assessment Model'
+  local_pdf: resources/standards/ISO-IEC-15504-5-2006.pdf
+  extraction_note: Extracted from the project-provided ISO/IEC 15504-5:2006 PDF. PA 3.1 and PA 3.2 generic practices added
+    in v2. Do not edit BP/GP text without re-checking the standard source.
+scope:
+  process_count: 26
+  capability_levels:
+  - PA 1.1
+  - PA 2.1
+  - PA 2.2
+  - PA 3.1
+  - PA 3.2
+processes:
+- corporate_code: İÜC.BİDB.SRÇ.001
+  corporate_name: Dokümantasyon Süreci
+  spice_code: SUP.7
+  spice_name: Documentation
+  purpose: The purpose of the Documentation process is to develop and maintain the recorded information produced by a process.
+  outcomes:
+  - id: 1
+    text: a strategy identifying the documentation to be produced during the life cycle of a product or service is developed;
+  - id: 2
+    text: the standards to be applied for the development of the documentation are identified;
+  - id: 3
+    text: documentation to be produced by the process or project is identified;
+  - id: 4
+    text: the content and purpose of all documentation is specified, reviewed and approved;
+  - id: 5
+    text: documentation is developed and made available in accordance with identified standards; and
+  - id: 6
+    text: documentation is maintained in accordance with defined criteria.
+  base_practices:
+  - id: SUP.7.BP1
+    number: 1
+    title: Develop documentation management strategy
+    text: 'Determine documentation management strategy which addresses what should be documented within which organizational
+      entity, at which stages in the lifecycle of the product / service. [Outcome: 1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE 1
+      text: Refer to ISO/IEC 9294 for guidelines for management of software documentation.
+  - id: SUP.7.BP2
+    number: 2
+    title: Establish standards for documents
+    text: 'Establish standards for developing, modifying and maintaining documents. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: SUP.7.BP3
+    number: 3
+    title: Specify document requirements
+    text: 'Specify requirements for documents such as format, title, date, identifier, version history, author[s], reviewer,
+      authorizer, outline of contents, purpose and distribution list. [Outcome: 2, 4]'
+    outcome_refs:
+    - 2
+    - 4
+  - id: SUP.7.BP4
+    number: 4
+    title: Identify the documents to be produced
+    text: 'For any given life cycle development, identify the documents to be produced. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: SUP.7.BP5
+    number: 5
+    title: Develop documents
+    text: 'Develop documents at required process points according to established standards and policy. [Outcome: 5]'
+    outcome_refs:
+    - 5
+  - id: SUP.7.BP6
+    number: 6
+    title: Check documents
+    text: 'Review documents before distribution, and authorize documents before distribution or release. [Outcome: 5]'
+    outcome_refs:
+    - 5
+    notes:
+    - id: NOTE 2
+      text: Documents should be checked through Verification process (SUP.2) and Validation process (SUP.3) with stakeholders.
+  - id: SUP.7.BP7
+    number: 7
+    title: Distribute documents
+    text: 'In order to make document available, distribute documents according to determined modes of distribution via appropriate
+      media to specified audiences, confirming delivery of documents, where necessary. [Outcome: 5]'
+    outcome_refs:
+    - 5
+  - id: SUP.7.BP8
+    number: 8
+    title: Maintain documents
+    text: 'Maintain documents in accordance with the determined documentation strategy. [Outcome: 6]'
+    outcome_refs:
+    - 6
+    notes:
+    - id: NOTE 3
+      text: 'If the document is part of a product baseline or if its control and stability are important, it should be modified
+        and distributed in accordance with Configuration management process (SUP.8). If the document is part of a product
+        baseline under maintenance, its maintenance is covered by Software and system maintenance process (ENG.12). Work Products
+        Inputs Outputs 08-26 Documentation plan [Outcome: 1, 2] 10-00 Process description [Outcome: 1, 2, 3] 10-01 Life cycle
+        model [Outcome: 1] 13-01 Acceptance record [Outcome: 4, 5] 13-16 Change request [Outcome: 6] 13-17 Customer request
+        [Outcome: 1, 2, 4] 13-19 Review record [Outcome: 4, 5] 14-01 Change history [Outcome: 5, 6] 14-10 Work product distribution
+        register [Outcome: 2, 4] 14-11 Work product list [Outcome: 3] 17-05 Documentation requirements [Outcome: 5, 6] 17-05
+        Documentation requirements [Outcome: 1, 2, 3] 18-00 Standard [Outcome: 2] 18-07 Quality criteria [Outcome: 4] 20-00
+        Template [Outcome: 2] 21-00 Work product [Outcome: 5, 6] 5.5.8 SUP.8 Configuration management'
+- corporate_code: İÜC.BİDB.SRÇ.002
+  corporate_name: Kalite Güvencesi Süreci
+  spice_code: SUP.1
+  spice_name: Quality assurance
+  purpose: The purpose of the Quality assurance process is to provide assurance that work products and processes comply with
+    predefined provisions and plans.
+  outcomes:
+  - id: 1
+    text: a strategy for conducting quality assurance is developed;
+  - id: 2
+    text: evidence of quality assurance is produced and maintained;
+  - id: 3
+    text: problems and/or non-conformance with agreed requirements are identified and recorded; and
+  - id: 4
+    text: adherence of products, processes and activities to the applicable standards, procedures and requirements are verified.
+  base_practices:
+  - id: SUP.1.BP1
+    number: 1
+    title: Develop a strategy for product and process quality assurance
+    text: 'A project level strategy for conducting quality assurance is developed. [Outcome: 1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE 1
+      text: Consideration should be given to development of a project level strategy consistent with the organizational quality
+        management strategy.
+    - id: NOTE 2
+      text: 'Quality assurance process determines the objectives for, and monitors the execution of the related processes:
+        Verification process (SUP.2), Validation process (SUP.3), Joint review process (SUP.4), and Audit process (SUP.5).'
+  - id: SUP.1.BP2
+    number: 2
+    title: Define quality records
+    text: 'Quality records are defined that demonstrate conformance of process and work products to their quality requirements.
+      [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: SUP.1.BP3
+    number: 3
+    title: Assure the quality of project process activities and project work products
+    text: 'Carry out a series of activities to provide assurance, with the required level of confidence, that the project
+      processes have followed specified standards and that the work products meet the quality requirements. [Outcome: 2,4]'
+    outcome_refs:
+    - 2
+    - 4
+  - id: SUP.1.BP4
+    number: 4
+    title: Identify and record problems and non-conformances
+    text: 'Problems and non- conformances are identified and recorded and then reported to appropriate stakeholders for information
+      and action. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: SUP.1.BP5
+    number: 5
+    title: Act on non-conformances
+    text: 'Deviations or non-conformance with agreed requirements or organizational quality goals are analyzed and resolved.
+      [Outcome: 4] Work Products Inputs Outputs 03-06 Process performance data [Outcome: 2, 4] 03-06 Process performance data
+      [Outcome: 2, 4] 05-06 Quality goals [Outcome: 2, 3, 4] 05-06 Quality goals [Outcome: 1] 07-04 Process measure [Outcome:
+      2, 3, 4] 07-06 Quality measure [Outcome: 2, 3, 4] 08-13 Quality plan [Outcome: 1] 08-13 Quality plan [Outcome: 1] 09-02
+      Quality policy [Outcome: 1] 10-00 Process description [Outcome: 4] 10-00 Process description [Outcome: 2] 13-07 Problem
+      record [Outcome: 3,4] 13-18 Quality record [Outcome: 2, 3, 4] 13-18 Quality Record [Outcome: 2, 3, 4] 13-19 Review Record
+      [Outcome: 2, 3, 4] 14-02 Corrective action register [Outcome: 3] 14-02 Corrective action register [Outcome: 3] Work
+      Products Inputs Outputs 14-08 Tracking system [Outcome: 3, 4] 18-00 Standard [Outcome: 4] 18-07 Quality criteria [Outcome:
+      4] 18-07 Quality criteria [Outcome: 4] 21-00 Work product [Outcome: 4] 5.5.2 SUP.2 Verification'
+    outcome_refs:
+    - 4
+- corporate_code: İÜC.BİDB.SRÇ.003
+  corporate_name: Doğrulama Süreci
+  spice_code: SUP.2
+  spice_name: Verification
+  purpose: The purpose of the Verification process is to confirm that each software work product and/or service of a process
+    or project properly reflects the specified requirements.
+  outcomes:
+  - id: 1
+    text: a verification strategy is developed and implemented;
+  - id: 2
+    text: criteria for verification of all required software work products is identified;
+  - id: 3
+    text: required verification activities are performed;
+  - id: 4
+    text: defects are identified and recorded; and
+  - id: 5
+    text: results of the verification activities are made available to the customer and other involved parties.
+  base_practices:
+  - id: SUP.2.BP1
+    number: 1
+    title: Develop verification strategy
+    text: 'Develop and implement a verification strategy, including verification activities with associated methods, techniques,
+      and tools; work product or processes under verification; degrees of independence for verification and schedule for performing
+      these activities. [Outcome: 1]] NOTE. Software verification provides objective evidence that the design outputs of a
+      particular phase of the software development life cycle meet all of the specified requirements for that phase.'
+    outcome_refs:
+    - 1
+  - id: SUP.2.BP2
+    number: 2
+    title: Develop criteria for verification
+    text: 'Develop the criteria for verification of all required work products. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: SUP.2.BP3
+    number: 3
+    title: Conduct verification
+    text: 'Verify identified work products according to specified strategy. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: SUP.2.BP4
+    number: 4
+    title: Determine actions for verification results
+    text: 'Defects detected by the verification should be identified, recorded and entered into the Problem resolution process
+      (SUP.9). [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: SUP.2.BP5
+    number: 5
+    title: Make verification results available to the stakeholders
+    text: 'The verification results should be made available to the stakeholders, including the customers and other involved
+      parties. [Outcome: 5] Work Products Inputs Outputs 07-06 Quality measure [Outcome: 2] 08-13 Quality plan [Outcome: 1]
+      08-30 Verification Plan [Outcome: 1] 09-02 Quality policy [Outcome: 1] 13-04 Communication record [Outcome: 5] 13-07
+      Problem record [Outcome: 3, 4, 5] 13-16 Change request [Outcome: 3, 4] Work Products Inputs Outputs 13-18 Quality record
+      [Outcome: 3, 4] 13-18 Quality record [Outcome: 4, 5] 13-22 Traceability record [Outcome: 3] 13-25 Verification results
+      [Outcome: 2, 3, 4, 5] 14-02 Corrective action register [Outcome: 4] 14-02 Corrective action register [Outcome: 4] 14-08
+      Tracking system [Outcome: 4] 15-10 Test incident report [Outcome: 2, 3] 18-07 Quality criteria [Outcome: 2] 18-07 Quality
+      criteria [Outcome: 2] 19-10 Verification strategy [Outcome: 1] 5.5.3 SUP.3 Validation'
+    outcome_refs:
+    - 5
+- corporate_code: İÜC.BİDB.SRÇ.004
+  corporate_name: Süreç Kurulumu Süreci
+  spice_code: PIM.1
+  spice_name: Process establishment
+  purpose: The purpose of the Process establishment process is to establish a suite of organizational processes for all life
+    cycle processes as they apply to its business activities.
+  outcomes:
+  - id: 1
+    text: a defined and maintained standard set of processes are established, along with an indication of each process's applicability;
+  - id: 2
+    text: the detailed tasks, activities and associated work products of the standard process are identified, together with
+      expected performance characteristics;
+  - id: 3
+    text: a strategy for tailoring the standard process for the product or service is developed in accordance with the needs
+      of the project; and
+  - id: 4
+    text: information and data related to the use of the standard process for specific projects exist and are maintained.
+  base_practices:
+  - id: PIM.1.BP1
+    number: 1
+    title: Define process architecture
+    text: 'Define a standard set of processes, purpose of each process and interactions between them. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: PIM.1.BP2
+    number: 2
+    title: Support deployment of processes
+    text: 'Support the organization-wide use of standard processes according to the purpose of each process. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: PIM.1.BP3
+    number: 3
+    title: Define standard processes
+    text: 'Define and maintain a description of each standard process according to the needs to establish processes in the
+      organization. [Outcome: 2]'
+    outcome_refs:
+    - 2
+    notes:
+    - id: NOTE
+      text: Effective, organization-wide establishment of standard processes may require that they are documented.
+  - id: PIM.1.BP4
+    number: 4
+    title: Identify performance expectations
+    text: 'Identify expectations for process performance when using the organization’s standard processes. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: PIM.1.BP5
+    number: 5
+    title: 'Establish process tailoring guidelines: Establish organizational guidelines for tailoring the organization''s
+      standard processes to meet the specific needs of projects'
+    text: '[Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: PIM.1.BP6
+    number: 6
+    title: Maintain process data
+    text: 'Capture and maintain information and data related to the use of standard processes. [Outcome: 4] Work Products
+      Inputs Outputs 03-03 Benchmarking data [Outcome: 2] 03-06 Process performance data [Outcome: 4] 07-04 Process measure
+      [Outcome: 4] 07-06 Quality measure [Outcome: 4] 09-00 Policy [Outcome: 1, 3] 09-02 Quality policy [Outcome: 1, 3] 10-00
+      Process description [Outcome: 3, 4] 10-00 Process description [Outcome: 1, 2] 13-18 Quality record [Outcome: 4] 13-19
+      Review record [Outcome: 4] 15-01 Analysis report [Outcome: 4] 16-06 Process repository [Outcome: 4] 16-06 Process repository
+      [Outcome: 4] 17-00 Requirement specification [Outcome: 2] 18-03 Coding standard [Outcome: 1] 19-07 Software development
+      methodology [Outcome: 2] 5.7.2 PIM.2 Process assessment'
+    outcome_refs:
+    - 4
+- corporate_code: İÜC.BİDB.SRÇ.005
+  corporate_name: Süreç Değerlendirme Süreci
+  spice_code: PIM.2
+  spice_name: Process assessment
+  purpose: The purpose of the Process assessment process is to determine the extent to which the organization's standard processes
+    contribute to the achievement of its business goals and to help the organization focus on the need for continuous process
+    improvement.
+  outcomes:
+  - id: 1
+    text: information and data related to the use of the standard process for specific projects will exist and be maintained;
+  - id: 2
+    text: the relative strengths and weaknesses of the organization's standard processes are understood; and
+  - id: 3
+    text: accurate and accessible assessment records are kept and maintained.
+  base_practices:
+  - id: PIM.2.BP1
+    number: 1
+    title: Define assessment goals
+    text: 'Define and validate the assessment goals based on the organization''s business goals. Identify the criteria to
+      verify the achievement of the goals. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: PIM.2.BP2
+    number: 2
+    title: Plan the assessment
+    text: 'Develop and document a plan for the assessment. [Outcome: 1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE
+      text: Part 3 of this International standard provides guidance about performing an assessment
+  - id: PIM.2.BP3
+    number: 3
+    title: Obtain commitment
+    text: 'Obtain the commitment of the sponsor and the organisational unit(s) to be assessed to the planned assessment(s),
+      including an agreed schedule and resources. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: PIM.2.BP4
+    number: 4
+    title: Perform the assessment to collect data
+    text: 'Perform the assessment to collect the data required for evaluating the processes within the scope of the assessment.
+      [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: PIM.2.BP5
+    number: 5
+    title: Validate the assessment data
+    text: 'Validate the assessment data collected as appropriate, ensuring that the data sufficiently covers the assessment
+      goal. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: PIM.2.BP6
+    number: 6
+    title: Analyze the assessment data
+    text: 'Analyze the validated assessment data to understand the relative strengths and weaknesses of the organization''s
+      processes. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: PIM.2.BP7
+    number: 7
+    title: Report the assessment results
+    text: 'Report the planned assessment outputs to the assessment sponsor. [Outcome: 1, 3] ['
+    outcome_refs:
+    - 1
+    - 3
+  - id: PIM.2.BP8
+    number: 8
+    title: Maintain assessment record
+    text: 'Maintain record of the assessment including accurate and current assessment results in an accessible location and
+      format. [Outcome: 1, 3] Work Products Inputs Outputs 03-01 Assessment data [Outcome: 1] 03-01 Assessment data [Outcome:
+      1] 05-01 Assessment goals [Outcome: 1] 05-01 Assessment goals [Outcome: 1] 08-03 Process assessment plan [Outcome: 1]
+      08-03 Process assessment plan [Outcome: 1] 13-00 Record [Outcome: 1, 3] 13-03 Back-up / recovery record [Outcome: 3]
+      13-04 Communication record [Outcome: 1, 2, 3] 13-19 Review record [Outcome: 3] 13-26 Assessment record [Outcome: 3]
+      15-13 Assessment report [Outcome: 1, 2, 3] 15-16 Improvement opportunity [Outcome: 2, 3] 16-01 Assessment results repository
+      [Outcome: 3] 16-06 Process repository [Outcome: 1] 18-02 Assessment method standard [Outcome: 2, 3] 21-00 Work product
+      [Outcome: 1, 2] 5.7.3 PIM.3 Process improvement'
+    outcome_refs:
+    - 1
+    - 3
+- corporate_code: İÜC.BİDB.SRÇ.006
+  corporate_name: Süreç İyileştirme Süreci
+  spice_code: PIM.3
+  spice_name: Process Improvement
+  purpose: The purpose of the Process improvement process is to continually improve the organization’s effectiveness and efficiency
+    through the processes used and maintained aligned with the business need.
+  outcomes:
+  - id: 1
+    text: Commitment is established to provide resources to sustain improvement actions;
+  - id: 2
+    text: issues arising from the organization's internal / external environment are identified as improvement opportunities
+      and justified as reasons for change;
+  - id: 3
+    text: analysis of the current status of the existing process is performed, focusing on those processes from which improvement
+      stimuli arise;
+  - id: 4
+    text: improvement goals are identified and prioritized, and consequent changes to the process are defined and implemented;
+  - id: 5
+    text: the effects of process implementation are monitored and confirmed against the defined improvement goals;
+  - id: 6
+    text: knowledge gained from the improvements is communicated within the organization; and
+  - id: 7
+    text: 'the improvements made are evaluated and consideration given for using the solution elsewhere within the organization.
+      NOTE 1: Information sources providing input for change may include: process assessment results, audits, customer''s
+      satisfaction reports, organizational effectiveness / efficiency, cost of quality and risk analysis. NOTE 2: The analysis
+      may include process assessment.'
+  base_practices:
+  - id: PIM.3.BP1
+    number: 1
+    title: Establish commitment
+    text: 'Commitment is established to provide resources to sustain improvement actions. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: PIM.3.BP2
+    number: 2
+    title: Identify issues
+    text: 'Issues arising from the organization''s internal / external environment are identified as improvement opportunities
+      and with justified reasons for change. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: PIM.3.BP3
+    number: 3
+    title: Establish process improvement objectives
+    text: 'Analysis of the current status of the existing processes is performed; focusing on those processes from which improvement
+      stimuli arise and/or process based risk is reduced, resulting in improvement objectives for the process being established.
+      [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: PIM.3.BP4
+    number: 4
+    title: Prioritize improvements
+    text: 'The improvement objectives are prioritized. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: PIM.3.BP5
+    number: 5
+    title: Plan process changes
+    text: 'Consequent changes to the process are defined and planned. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: PIM.3.BP6
+    number: 6
+    title: Implement process changes
+    text: 'The improvements to the process are implemented. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: PIM.3.BP7
+    number: 7
+    title: Confirm process improvement
+    text: 'The effects of process implementation are monitored, measured and confirmed against the defined improvement goals.
+      [Outcome: 5]'
+    outcome_refs:
+    - 5
+  - id: PIM.3.BP8
+    number: 8
+    title: Communicate results of improvement
+    text: 'Knowledge gained from the improvements is communicated outside of the improvement project across relevant parts
+      of the organization. [Outcome: 6]'
+    outcome_refs:
+    - 6
+  - id: PIM.3.BP9
+    number: 9
+    title: Evaluate the results of the improvement project
+    text: 'Evaluate the results of the improvement project to see if the solution can be used elsewhere in the organization.
+      [Outcome: 7] Work Products Inputs Outputs 02-01 Commitment / agreement [Outcome: 1] 03-03 Benchmarking data [Outcome:
+      2, 3, 4] 03-04 Customer satisfaction data [Outcome: 2, 3, 4] 03-06 Process performance data [Outcome: 2, 3, 4, 5, 7]
+      05-00 Goals [Outcome: 4, 5] 05-00 Goals [Outcome: 4] 07-04 Process measure [Outcome: 6] 08-00 Plan [Outcome: 2, 3, 4,
+      5] 08-00 Plan [Outcome: 2, 4, 7] 08-29 Improvement plan [Outcome: 4] 10-00 Process description [Outcome: 3, 5] 10-00
+      Process description [Outcome: 4] 13-04 Communication record [Outcome: 7] 13-04 Communication record [Outcome: 6] 15-05
+      Evaluation report [Outcome: 2, 3] 15-05 Evaluation report [Outcome: 2, 3, 4, 7] 15-13 Assessment report [Outcome: 2,
+      3, 4, 5, 7] 15-13 Assessment report [Outcome: 3] 15-16 Improvement opportunity [Outcome: 4, 6, 7] 15-16 Improvement
+      opportunity [Outcome: 2, 3, 4, 7] 16-06 Process repository [Outcome: 3] 16-06 Process repository [Outcome: 4] 5.8 Resource
+      and Infrastructure Process Group (RIN) 5.8.1 RIN.1 Human resource management'
+    outcome_refs:
+    - 7
+- corporate_code: İÜC.BİDB.SRÇ.007
+  corporate_name: Proje Yönetimi Süreci
+  spice_code: MAN.3
+  spice_name: Project management
+  purpose: The purpose of the Project management process is to identify, establish, co-ordinate, and monitor the activities,
+    tasks, and resources necessary for a project to produce a product and/or service, in the context of the project’s requirements
+    and constraints.
+  outcomes:
+  - id: 1
+    text: the scope of the work for the project is defined;
+  - id: 2
+    text: the feasibility of achieving the goals of the project with available resources and constraints are evaluated;
+  - id: 3
+    text: the tasks and resources necessary to complete the work are sized and estimated;
+  - id: 4
+    text: interfaces between elements in the project, and with other project and organizational units, are identified and
+      monitored;
+  - id: 5
+    text: plans for the execution of the project are developed and implemented;
+  - id: 6
+    text: progress of the project is monitored and reported; and
+  - id: 7
+    text: actions to correct deviations from the plan and to prevent recurrence of problems identified in the project are
+      taken when project targets are not achieved.
+  base_practices:
+  - id: MAN.3.BP1
+    number: 1
+    title: Define the scope of work
+    text: 'Identify the project''s objectives, motivation and boundaries and define the work to be undertaken by the project.
+      [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: MAN.3.BP2
+    number: 2
+    title: Define project life cycle
+    text: 'Define a life cycle and strategy for the project, appropriate to its scope, context, magnitude and complexity.
+      [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: MAN.3.BP3
+    number: 3
+    title: Evaluate feasibility of the project
+    text: 'Evaluate the feasibility of achieving the goals of the project with available resources and constraints. [Outcome:
+      2]'
+    outcome_refs:
+    - 2
+  - id: MAN.3.BP4
+    number: 4
+    title: Determine and maintain estimates for project attributes
+    text: 'Define and maintain baselines for project attributes. [Outcome: 2,3]'
+    outcome_refs:
+    - 2
+    - 3
+    notes:
+    - id: NOTE 1
+      text: Project attributes may include 1) business and quality goals for the project, 2) size and complexity of the project
+        and 3) project effort, schedule and budget.
+    - id: NOTE 2
+      text: Project quality goals and risks should be considered when estimating project attributes. See Quality management
+        process (MAN.4) and Risk management process (MAN.5) for details.
+  - id: MAN.3.BP5
+    number: 5
+    title: Define project activities and tasks
+    text: 'Identify project activities and tasks according to defined project lifecycle, and define dependencies between them.
+      [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: MAN.3.BP6
+    number: 6
+    title: Define needs for experience, knowledge and skills
+    text: 'Identify the experience, knowledge and skill requirements of the project and apply them to the selection of individuals
+      and teams. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: MAN.3.BP7
+    number: 7
+    title: Define project schedule
+    text: 'Allocate resources to activities and determine the sequence and schedule of performance of activities within the
+      project. [Outcome: 5]'
+    outcome_refs:
+    - 5
+  - id: MAN.3.BP8
+    number: 8
+    title: Identify and monitor project interfaces
+    text: 'Identify and agree interfaces of the project with other projects, organizational units and other affected parties
+      and monitor agreed commitments. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: MAN.3.BP9
+    number: 9
+    title: Allocate responsibilities
+    text: 'Identify the specific individuals and groups contributing to, and impacted by, the project, allocate them their
+      specific responsibilities, and ensure that the commitments are understood and accepted, funded and achievable. [Outcome:
+      5]'
+    outcome_refs:
+    - 5
+  - id: MAN.3.BP10
+    number: 10
+    title: Establish project plan
+    text: 'Define and maintain project master plan and other relevant plans to cover the project scope and goals, resources,
+      infrastructure, interfaces and communication mechanisms. [Outcome: 5]'
+    outcome_refs:
+    - 5
+  - id: MAN.3.BP11
+    number: 11
+    title: Implement the project plan
+    text: 'Implement planned activities of the project, record status of progress and report the current status to affected
+      parties. [Outcome: 5, 6]'
+    outcome_refs:
+    - 5
+    - 6
+  - id: MAN.3.BP12
+    number: 12
+    title: Monitor project attributes
+    text: 'Monitor project scope, budget, cost, resources and other necessary attributes and document significant deviations
+      of them against the project baseline. [Outcome: 6]'
+    outcome_refs:
+    - 6
+  - id: MAN.3.BP13
+    number: 13
+    title: Review progress of the project
+    text: 'Regularly report and review the status of the project performance against the project plan. [Outcome: 6]'
+    outcome_refs:
+    - 6
+  - id: MAN.3.BP14
+    number: 14
+    title: Act to correct deviations
+    text: 'Take action when project goals are not achieved, to correct deviations from the plan and to prevent recurrence
+      of problems identified in the project. Update project plans accordingly. [Outcome: 7] MAN.3. BP15: Perform project close-out
+      review. Perform a review of the performance of the project in order to provide an experience record for establishing
+      the feasibility of future projects and updating historical estimating data. [Outcome 2, 3] Work Products Inputs Outputs
+      02-00 Contract [Outcome: 1, 2] 03-06 Process performance data [Outcome: 3, 7] 07-05 Project measure [Outcome: 6] 08-06
+      Project activity network [Outcome: 5] 08-06 Project activity network [Outcome: 4] 08-08 Human resource management plan
+      [Outcome: 2] 08-12 Project plan [Outcome: 3, 6, 7] 08-12 Project plan [Outcome: 1, 2, 3, 4, 5] 08-19 Risk management
+      plan [Outcome: 6, 7] 08-19 Risk management plan [Outcome: 5] 10-01 Life cycle model [Outcome: 1, 3, 4, 5] 12-01 Request
+      for proposal [Outcome: 1] 13-04 Communication record [Outcome: 6] 13-07 Problem record [Outcome: 7] 13-14 Progress status
+      record [Outcome: 7] 13-14 Progress status record [Outcome: 6] 13-16 Change request [Outcome: 1] 13-16 Change request
+      [Outcome: 7] 13-17 Customer request [Outcome: 1] 13-19 Review record [Outcome: 7] 14-02 Corrective action register [Outcome:
+      7] 14-06 Schedule [Outcome: 1, 3] 14-06 Schedule [Outcome: 5] 14-08 Tracking system [Outcome: 4, 6] 14-09 Work breakdown
+      structure [Outcome: 5] 14-09 Work breakdown structure [Outcome: 4] 15-06 Project status report [Outcome: 4, 6] 17-03
+      Customer requirements [Outcome: 2] 19-07 Software development methodology [Outcome: 5] 5.6.4 MAN.4 Quality management'
+    outcome_refs:
+    - 7
+- corporate_code: İÜC.BİDB.SRÇ.008
+  corporate_name: Risk Yönetimi Süreci
+  spice_code: MAN.5
+  spice_name: Risk management
+  purpose: The purpose of the Risk management process is to identify, analyse, treat and monitor the risks continuously.
+  outcomes:
+  - id: 1
+    text: the scope of the risk management to be performed is determined;
+  - id: 2
+    text: appropriate risk management strategies are defined and implemented;
+  - id: 3
+    text: risks are identified as they develop during the conduct of the project;
+  - id: 4
+    text: the risks are analyzed and the priority in which to apply resources to treatment of these risks is determined;
+  - id: 5
+    text: risk measures are defined, applied, and assessed to determine changes in the status of risk and the progress of
+      the treatment activities; and
+  - id: 6
+    text: appropriate treatment is taken to correct or avoid the impact of risk based on its priority, probability, and consequence
+      or other defined risk threshold.
+  base_practices:
+  - id: MAN.5.BP1
+    number: 1
+    title: Establish risk management scope
+    text: 'Determine the scope of risk management to be performed. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: MAN.5.BP2
+    number: 2
+    title: Define risk management strategies
+    text: 'Define appropriate strategies and risk measures to identify, analyze, treat and monitor each risk or set of risks,
+      both at the project and organizational level. [Outcome: 2, 5]'
+    outcome_refs:
+    - 2
+    - 5
+  - id: MAN.5.BP3
+    number: 3
+    title: Identify risks
+    text: 'Identify risks to the project both initially within the project strategy and as they develop during the conduct
+      of the project. [Outcome: 3]'
+    outcome_refs:
+    - 3
+    notes:
+    - id: NOTE 1
+      text: Examples of risks include cost, schedule, effort, resource, and technical risks.
+  - id: MAN.5.BP4
+    number: 4
+    title: Analyze risks
+    text: 'Analyze risks and apply risk measures to determine priority in which to apply resources to monitor risks. [Outcome:
+      4, 5]'
+    outcome_refs:
+    - 4
+    - 5
+    notes:
+    - id: NOTE 2
+      text: Issues to be considered in risk analysis include the probability and the impact of occurrence of each identified
+        risk.
+  - id: MAN.5.BP5
+    number: 5
+    title: Define and perform risk treatment actions
+    text: 'For each risk (or set of risks) define and perform the appropriate actions to reduce the risks to an acceptable
+      level. [Outcome: 5, 6]'
+    outcome_refs:
+    - 5
+    - 6
+  - id: MAN.5.BP6
+    number: 6
+    title: Monitor risks
+    text: 'Monitor the current state of each risk, determine changes in the status of risk and assess the effectiveness of
+      risk treatment actions. [Outcome: 5,6]'
+    outcome_refs:
+    - 5
+    - 6
+  - id: MAN.5.BP7
+    number: 7
+    title: Take preventive or corrective action
+    text: 'When expected progress in risk mitigation is not achieved, take appropriate preventive action to further reduce
+      or avoid the impact of each risk. Where risk mitigation cannot reduce or avoid the risk, plan corrective action to resolve
+      the problem arising from the risk. [Outcome: 6]'
+    outcome_refs:
+    - 6
+    notes:
+    - id: NOTE 3
+      text: 'Preventive action may involve developing and implementing new treatment strategies or adjusting the existing
+        strategies. Work Products Inputs Outputs 07-07 Risk measure [Outcome: 5] 08-12 Project plan [Outcome: 1] 08-14 Recovery
+        plan [Outcome: 4, 6] 08-19 Risk management plan [Outcome: 4, 5] 08-19 Risk management plan [Outcome: All] 08-20 Risk
+        mitigation plan [Outcome: 6] 08-20 Risk mitigation plan [Outcome: 3, 4] 13-20 Risk action request [Outcome: 4] 13-20
+        Risk action request [Outcome: 2, 6] 14-02 Corrective action register [Outcome: 6] 14-08 Tracking system [Outcome:
+        3, 4, 5, 6] 14-08 Tracking system [Outcome: 2, 3, 4, 5, 6] 15-08 Risk analysis report [Outcome 4] 15-09 Risk status
+        report [Outcome 4, 5] 5.6.6 MAN.6 Measurement'
+- corporate_code: İÜC.BİDB.SRÇ.009
+  corporate_name: Gereksinimlerin Toplanması Süreci
+  spice_code: ENG.1
+  spice_name: Requirements elicitation
+  purpose: The purpose of the Requirements elicitation process is to gather, process, and track evolving customer needs and
+    requirements throughout the life of the product and/or service so as to establish a requirements baseline that serves
+    as the basis for defining the needed work products. Requirements elicitation may be performed by the acquirer or the developer
+    of the system.
+  outcomes:
+  - id: 1
+    text: continuing communication with the customer is established;
+  - id: 2
+    text: agreed customer requirements are defined and baselined;
+  - id: 3
+    text: a change mechanism is established to evaluate and incorporate changes to customer requirements into the baselined
+      requirements based on changing customer needs;
+  - id: 4
+    text: a mechanism is established for continuous monitoring of customer needs;
+  - id: 5
+    text: a mechanism is established for ensuring that customers can easily determine the status and disposition of their
+      requests; and
+  - id: 6
+    text: enhancements arising from changing technology and customer needs are identified and their impact is managed.
+  base_practices:
+  - id: ENG.1.BP1
+    number: 1
+    title: Obtain customer requirements and requests
+    text: 'Obtain and define customer requirements and requests through direct and continuous solicitation of customer and
+      user input. [Outcome: 1,4]'
+    outcome_refs:
+    - 1
+    - 4
+    notes:
+    - id: NOTE 1
+      text: Requirements may also be obtained through review of customer business proposals, target operating and hardware
+        environment, and other documents bearing on customer requirements.
+  - id: ENG.1.BP2
+    number: 2
+    title: Understand customer expectations
+    text: 'Ensure that both supplier and customer understand each requirement in the same way. Review with customers their
+      requirements and requests to better understand their needs and expectations and to check the feasibility and appropriateness
+      of their requirements. [Outcome: 6]'
+    outcome_refs:
+    - 6
+    notes:
+    - id: NOTE 2
+      text: Environmental, legal and other constraints that may be external to the customer need to be considered.
+    - id: NOTE 3
+      text: Examples of techniques to review with customers their requirements and requests include observation of existing
+        systems, prototypes, simulations, models, technology demonstrations, document excerpts, scenario descriptions and
+        dialogues.
+  - id: ENG.1.BP3
+    number: 3
+    title: Agree on requirements
+    text: 'Obtain agreement across teams on the customer requirements, obtaining the appropriate sign-offs by representatives
+      of all teams and other parties contractually bound to work to these requirements. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: ENG.1.BP4
+    number: 4
+    title: Establish customer requirements baseline
+    text: 'Formalize the customer requirements and establish as a baseline for project use and monitoring against customer
+      needs. [Outcome: 2,3]'
+    outcome_refs:
+    - 2
+    - 3
+  - id: ENG.1.BP5
+    number: 5
+    title: Manage customer requirements changes
+    text: 'Manage all changes made to the customer requirements against the customer requirements baseline to ensure enhancements
+      resulting from changing technology and customer needs are identified and that those who are affected by the changes
+      are able to assess the impact and risks and initiate appropriate change control and risk mitigation actions. [Outcome:
+      4, 5]'
+    outcome_refs:
+    - 4
+    - 5
+    notes:
+    - id: NOTE 4
+      text: The tracking of requirements is handled in Configuration management process (SUP.8).
+  - id: ENG.1.BP6
+    number: 6
+    title: Establish customer query mechanism
+    text: 'Provide a means by which the customer can be aware of the status and disposition of their requirements changes.
+      [ Outcome: 5]'
+    outcome_refs: []
+    notes:
+    - id: NOTE 5
+      text: 'This may include joint meetings with the customer or formal communication to review the status for their requirements
+        and requests. Refer to the Joint review process (SUP.4). Work Products Inputs Outputs 02-01 Commitment / agreement
+        [Outcome: 2] 13-00 Record [Outcome: 4, 5] 13-04 Communication record [Outcome: 1, 4] 13-16 Change request [Outcome:
+        3, 6] 13-17 Customer request [Outcome: 1, 3] 13-21 Change control record [Outcome: 3, 4] 15-01 Analysis report [Outcome:
+        2, 3, 6] 17-03 Customer requirements [Outcome: 3] 17-03 Customer requirements [Outcome: 2, 3] 5.4.2 ENG.2 System requirements
+        analysis'
+- corporate_code: İÜC.BİDB.SRÇ.010
+  corporate_name: Yazılım Gereksinim Analizi Süreci
+  spice_code: ENG.4
+  spice_name: Software requirements analysis
+  purpose: The purpose of the Software requirements analysis process is to establish the requirements of the software elements
+    of the system.
+  outcomes:
+  - id: 1
+    text: the requirements allocated to the software elements of the system and their interfaces are defined;
+  - id: 2
+    text: software requirements are analyzed for correctness and testability;
+  - id: 3
+    text: the impact of software requirements on the operating environment are understood;
+  - id: 4
+    text: consistency and traceability are established between the software requirements and system requirements;
+  - id: 5
+    text: prioritization for implementing the software requirements is defined;
+  - id: 6
+    text: the software requirements are approved and updated as needed;
+  - id: 7
+    text: changes to the software requirements are evaluated for cost, schedule and technical impact; and
+  - id: 8
+    text: the software requirements are baselined and communicated to all affected parties.
+  base_practices:
+  - id: ENG.4.BP1
+    number: 1
+    title: Specify software requirements
+    text: 'Define and prioritize functional and nonfunctional requirements of the software elements of the system and their
+      interfaces and document them in a software requirements specification. Analyze the software requirements for correctness,
+      completeness, consistency, feasibility and testability. Identify any derived requirements. [Outcome: 1, 2, 5]'
+    outcome_refs:
+    - 1
+    - 2
+    - 5
+    notes:
+    - id: NOTE 1
+      text: Software quality characteristics are described in ISO/IEC 9126-1.
+  - id: ENG.4.BP2
+    number: 2
+    title: Determine operating environment impact
+    text: 'Determine the interfaces between the software requirements and other elements of the operating environment, and
+      the impact that the requirements will have. [Outcome: 3]'
+    outcome_refs:
+    - 3
+    notes:
+    - id: NOTE 2
+      text: The operating environment includes tasks performed by, or other systems used by, the intended users of the software
+        product.
+  - id: ENG.4.BP3
+    number: 3
+    title: Develop criteria for software testing
+    text: 'Use the software requirements to define acceptance criteria for the software product tests. Software product tests
+      should demonstrate compliance with the software requirements. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: ENG.4.BP4
+    number: 4
+    title: Ensure consistency
+    text: 'Ensure consistency of system requirements analysis to software requirements analysis. Consistency is supported
+      by establishing and maintaining traceability between system requirements and the software requirements when needed.
+      [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: ENG.4.BP5
+    number: 5
+    title: Evaluate and update software requirements
+    text: 'Evaluate the requirements with the customer, evaluate the impact of proposed changes for cost, schedule and technical
+      impact, approve or reject changes, and update the software requirements specification. [Outcome: 6, 7]'
+    outcome_refs:
+    - 6
+    - 7
+  - id: ENG.4.BP6
+    number: 6
+    title: Communicate software requirements
+    text: 'Establish communication mechanisms for dissemination of software requirements, and updates to requirements to all
+      parties who will be using them. [Outcome: 8] Work Products Inputs Outputs 04-06 System architecture design [Outcome:
+      1] 13-04 Communication record [Outcome: 8] 13-16 Change request [Outcome: 6, 7] 13-17 Customer request [Outcome: 6,
+      7] 13-21 Change control record [Outcome: 7] 13-22 Traceability record [Outcome: 4] 15-01 Analysis report [Outcome: 2,
+      3, 7] 17-08 Interface requirements [Outcome: 1] 17-11 Software requirements [Outcome: 1, 2, 4, 5, 6] 17-12 System requirements
+      [Outcome: 1, 4] 5.4.5 ENG.5 Software design'
+    outcome_refs:
+    - 8
+- corporate_code: İÜC.BİDB.SRÇ.011
+  corporate_name: Yazılım Tasarımı Süreci
+  spice_code: ENG.5
+  spice_name: Software design
+  purpose: The purpose of the Software design process is to provide a design for the software that implement and can be verified
+    against the requirements.
+  outcomes:
+  - id: 1
+    text: a software architectural design is developed and baselined that describes the software elements that will implement
+      the software requirements;
+  - id: 2
+    text: internal and external interfaces of each software elements are defined;
+  - id: 3
+    text: a detailed design is developed that describes software units that can be built and tested; and
+  - id: 4
+    text: consistency and traceability are established between software requirements and software design.
+  base_practices:
+  - id: ENG.5.BP1
+    number: 1
+    title: Describe software architecture
+    text: 'Transform the software requirements into a software architecture design that describes the top-level structure
+      and identifies its major software elements. [Outcome: 1, 3]'
+    outcome_refs:
+    - 1
+    - 3
+    notes:
+    - id: NOTE 1
+      text: Examples of major software elements include data storage and access (e.g. Database), communication mechanism,
+        business logic and user interface.
+    - id: NOTE 2
+      text: In transforming software requirements into a software architecture design, alternative software architectures
+        should be evaluated according to defined criteria. The rationale for choosing the current software architecture should
+        be recorded. Evaluation criteria may include software quality characteristics (modularity, maintainability, expandability,
+        scalability, reliability, security and usability) and results of make-buy-reuse analysis.
+  - id: ENG.5.BP2
+    number: 2
+    title: Define interfaces
+    text: 'Specify and document the external and internal interfaces between the software elements. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: ENG.5.BP3
+    number: 3
+    title: Develop detailed design
+    text: 'Decompose the software architectural design into a detailed design for each software element describing all software
+      units to be produced and tested. Document software units and interfaces in a software design document. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: ENG.5.BP4
+    number: 4
+    title: Analyze the design for testability
+    text: 'Analyze the design for correctness and testability to ensure that the software units can be built and tested. [Outcome:
+      3]'
+    outcome_refs:
+    - 3
+  - id: ENG.5.BP5
+    number: 5
+    title: Ensure consistency
+    text: 'Ensure consistency of software requirements analysis to software design. Consistency is supported by establishing
+      and maintaining traceability between software requirements and the software design when needed. [Outcome: 4] Work Products
+      Inputs Outputs 04-01 Database design [Outcome: 3, 4] 04-04 High level software design [Outcome: 1, 2, 4] 04-05 Low level
+      software design [Outcome: 2, 3, 4] 11-02 Software element [Outcome: 1] 13-22 Traceability record [Outcome: 4] 17-08
+      Interface requirements [Outcome: 2] 17-11 Software requirements [Outcome: 1, 4] 17-13 Test design specification [Outcome:
+      3] 5.4.6 ENG.6 Software construction'
+    outcome_refs:
+    - 4
+- corporate_code: İÜC.BİDB.SRÇ.012
+  corporate_name: Yazılım Geliştirme Süreci
+  spice_code: ENG.6
+  spice_name: Software construction
+  purpose: The purpose of the Software construction process is to produce executable software units that properly reflect
+    the software design.
+  outcomes:
+  - id: 1
+    text: verification criteria are defined for all software units against their requirements;
+  - id: 2
+    text: software units defined by the design are produced;
+  - id: 3
+    text: consistency and traceability are established between software requirements and design and software units; and
+  - id: 4
+    text: verification of the software units against the requirements and the design is accomplished.
+  base_practices:
+  - id: ENG.6.BP1
+    number: 1
+    title: Develop unit verification procedures
+    text: 'Develop and document procedures and criteria for verifying that each software unit satisfies its design requirements.
+      The verification procedure includes unit test cases, unit test data and code review. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: ENG.6.BP2
+    number: 2
+    title: Develop software units
+    text: 'Develop and document the executable representations of each software unit. Update test requirements and user documentation.
+      [Outcome: 2]'
+    outcome_refs:
+    - 2
+    notes:
+    - id: NOTE 1
+      text: User documentation includes preliminary versions of installation, operation and maintenance documentation.
+  - id: ENG.6.BP3
+    number: 3
+    title: Ensure consistency
+    text: 'Ensure consistency of software design to software construction. Consistency is supported by establishing and maintaining
+      traceability between software requirements and design and the software units when needed. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: ENG.6.BP4
+    number: 4
+    title: Verify software units
+    text: 'Verify that each software unit satisfies its design requirements by executing the specified unit verification procedures
+      and document the results. [Outcome: 4]'
+    outcome_refs:
+    - 4
+    notes:
+    - id: NOTE 2
+      text: 'Code can be verified by various techniques such as static code analysis, code review, etc. Work Products Inputs
+        Outputs 03-07 Test data [Outcome: 4] 03-07 Test data [Outcome: 1] 04-04 High level software design [Outcome: 2, 3]
+        04-05 Low level software design [Outcome: 2, 3] 06-01 Customer manual [Outcome: 2] 08-25 Unit test plan [Outcome:
+        1] 10-02 Test procedure [Outcome: 1] 11-05 Software unit [Outcome: 3, 4] 11-05 Software unit [Outcome: 2] 13-19 Review
+        record [Outcome: 4] 13-22 Traceability record [Outcome: 3] 14-04 Test log [Outcome: 4] 15-10 Test incident report
+        [Outcome: 4] 17-08 Interface requirements [Outcome: 1, 3] 17-11 Software requirements [Outcome: 1, 3] 17-13 Test design
+        specification [Outcome: 1] 17-14 Test case specification [Outcome: 2] 17-14 Test case specification [Outcome: 2] 18-03
+        Coding standard [Outcome: 2, 3, 4] 5.4.7 ENG.7 Software integration'
+- corporate_code: İÜC.BİDB.SRÇ.013
+  corporate_name: Yazılım Entegrasyonu Süreci
+  spice_code: ENG.7
+  spice_name: Software integration
+  purpose: The purpose of the Software integration process is to combine the software units, producing integrated software
+    items, consistent with the software design, that demonstrate that the functional and non-functional software requirements
+    are satisfied on an equivalent or complete operational platform.
+  outcomes:
+  - id: 1
+    text: an integration strategy is developed for software units consistent with the software design and the prioritized
+      software requirements;
+  - id: 2
+    text: verification criteria for software items are developed that ensure compliance with the software requirements allocated
+      to the items;
+  - id: 3
+    text: software items are verified using the defined criteria;
+  - id: 4
+    text: software items defined by the integration strategy are produced;
+  - id: 5
+    text: results of integration testing are recorded;
+  - id: 6
+    text: consistency and traceability are established between software design and software items; and
+  - id: 7
+    text: a regression strategy is developed and applied for re-verifying software items when a change in software units (including
+      associated requirements, design and code) occur.
+  base_practices:
+  - id: ENG.7.BP1
+    number: 1
+    title: Develop software integration strategy
+    text: 'Develop the strategy for integrating software units considering the software requirements. Identify software items
+      based on the software architecture and define a sequence or order for integrating and testing them. [Outcome: 1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE
+      text: Examples for the order of software item integration include top-level items, bottom- level items, critical items,
+        functional items, complete skeleton first and items as-available.
+  - id: ENG.7.BP2
+    number: 2
+    title: Develop tests for integrated software items
+    text: 'Describe the tests to be run against each integrated software item, including the verification of the interfaces,
+      indicating software requirements being checked, input data and verification criteria. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: ENG.7.BP3
+    number: 3
+    title: Integrate software item
+    text: 'Integrate the software units according to the integration strategy to form a software item. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: ENG.7.BP4
+    number: 4
+    title: Test integrated software items
+    text: 'Test each integrated software item on an operational platform or suitable equivalent platform, against the verification
+      criteria, and record the results. Update user documentation as necessary. [Outcome: 3, 5]'
+    outcome_refs:
+    - 3
+    - 5
+  - id: ENG.7.BP5
+    number: 5
+    title: Ensure consistency
+    text: 'Ensure consistency of software design to software integration. Consistency is supported by establishing and maintaining
+      traceability between software design and the software items when needed. [Outcome: 6]'
+    outcome_refs:
+    - 6
+  - id: ENG.7.BP6
+    number: 6
+    title: Regression test integrated software items
+    text: 'Develop a software regression test strategy for re-testing the integrated software items. If changes are made to
+      software units, designs or requirements, carry out regression testing according to this strategy. [Outcome: 7] Work
+      Products Inputs Outputs 01-03 Software item [Outcome: 6] 01-03 Software item [Outcome: 4] 03-07 Test data [Outcome:
+      3] 03-07 Test data [Outcome: 2] 04-04 High level software design [Outcome: 1, 6, 7] 04-06 System architecture design
+      [Outcome: 1, 6, 7] 08-10 Software integration test plan [Outcome: 3, 4] 08-10 Software integration test plan [Outcome:
+      1, 2] Work Products Inputs Outputs 08-15 Regression test plan [Outcome: 2, 7] 08-15 Regression test plan [Outcome: 2,
+      7] 10-02 Test procedure [Outcome: 3, 7] 10-02 Test procedure [Outcome: 2] 11-01 Software product [Outcome: 4, 7] 11-05
+      Software unit [Outcome: 4, 7] 13-22 Traceability record [Outcome: 6] 14-04 Test log [Outcome: 3, 5, 7] 15-10 Test incident
+      report [Outcome: 3, 5, 7] 15-23 Test item transmittal report [Outcome: 3] 15-23 Test item transmittal report [Outcome:
+      2, 4] 17-02 Build list [Outcome: 4, 7] 17-02 Build list [Outcome: 1] 17-11 Software requirements [Outcome: 1, 2, 7]
+      17-13 Test design specification [Outcome: 2] 17-13 Test design specification [Outcome: 2] 17-14 Test case specification
+      [Outcome: 3, 7] 17-14 Test case specification [Outcome: 2] 5.4.8 ENG.8 Software testing'
+    outcome_refs:
+    - 7
+- corporate_code: İÜC.BİDB.SRÇ.014
+  corporate_name: Yazılım Test Süreci
+  spice_code: ENG.8
+  spice_name: Software testing
+  purpose: The purpose of the Software testing process is to confirm that the integrated software product meets its defined
+    requirements.
+  outcomes:
+  - id: 1
+    text: criteria for the integrated software is developed that demonstrates compliance with the software requirements;
+  - id: 2
+    text: integrated software is verified using the defined criteria;
+  - id: 3
+    text: test results are recorded; and
+  - id: 4
+    text: a regression strategy is developed and applied for re-testing the integrated software when a change in software
+      items is made.
+  base_practices:
+  - id: ENG.8.BP1
+    number: 1
+    title: Develop tests for integrated software product
+    text: 'Describe the tests to be run against the integrated software product, indicating software requirements being checked,
+      input data, and verification criteria. The set of tests should demonstrate compliance with the software requirements.
+      [Outcome: 1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE
+      text: Tests and test data can be developed during Software requirements analysis process (ENG.4), Software design process
+        (ENG.5) and Software construction process (ENG.6).
+  - id: ENG.8.BP2
+    number: 2
+    title: Test integrated software product
+    text: 'Test the integrated software product against the verification criteria, and record the results. Update user documentation
+      as necessary. [Outcome: 2, 3]'
+    outcome_refs:
+    - 2
+    - 3
+  - id: ENG.8.BP3
+    number: 3
+    title: Regression test integrated software
+    text: 'Develop a software regression test strategy for re-testing the integrated software product. If changes are made
+      to software items, carry out regression testing according to the strategy. [Outcome: 4] Work Products Inputs Outputs
+      03-07 Test data [Outcome: 2] 04-04 High level software design [Outcome: 1] 06-01 Customer manual [Outcome: 2] 06-01
+      Customer manual [Outcome: 3] 08-15 Regression test plan [Outcome: 4] 08-15 Regression test plan [Outcome: 4] 08-21 Software
+      test plan [Outcome: 2] 08-21 Software test plan [Outcome: 1] 10-02 Test procedure [Outcome: 2] 10-02 Test procedure
+      [Outcome: 1, 4] 11-01 Software product [Outcome: 2, 4] 14-04 Test log [Outcome: 3, 4] 15-10 Test incident report [Outcome:
+      3, 4] 15-11 Defect report [Outcome: 3, 4] 15-23 Test item transmittal report [Outcome: 2] 17-02 Build list [Outcome:
+      2, 4] 17-11 Software requirements [Outcome: 1, 4] 17-13 Test design specification [Outcome: 1] 17-14 Test case specification
+      [Outcome: 2] 17-14 Test case specification [Outcome: 2] 5.4.9 ENG.9 System integration'
+    outcome_refs:
+    - 4
+- corporate_code: İÜC.BİDB.SRÇ.015
+  corporate_name: Ürün Yayınlama / Sürüm Süreci
+  spice_code: SPL.2
+  spice_name: Product release
+  purpose: The purpose of Product release process is to control the availability of a product to the intended customer.
+  outcomes:
+  - id: 1
+    text: the contents of the product release are determined;
+  - id: 2
+    text: the release is assembled from configured items;
+  - id: 3
+    text: the release documentation is defined and produced;
+  - id: 4
+    text: the release delivery mechanism and media is determined;
+  - id: 5
+    text: release approval is effected against defined criteria;
+  - id: 6
+    text: release products are made available to the intended customer; and
+  - id: 7
+    text: confirmation of release is obtained.
+  base_practices:
+  - id: SPL.2.BP1
+    number: 1
+    title: Define release products
+    text: 'The products associated with the release are defined, on the basis of agreement or development strategy. [Outcome:
+      1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE 1
+      text: The software product release may include programming tools where these are stated.
+  - id: SPL.2.BP2
+    number: 2
+    title: Prepare product for delivery
+    text: 'Update and prepare the deliverable product. Establish baseline for the product including user documentation, designs
+      and the product itself. [Outcome: 2]'
+    outcome_refs:
+    - 2
+    notes:
+    - id: NOTE 2
+      text: Product release may consist of software and hardware products constituting a system, or just a software product.
+  - id: SPL.2.BP3
+    number: 3
+    title: Establish a product release classification and numbering scheme
+    text: 'A product release and classification is established based upon the intended purpose and expectations of the release.
+      [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: SPL.2.BP4
+    number: 4
+    title: Define the build activities and build environment
+    text: 'A consistent build process is established and maintained. [Outcome: 2]'
+    outcome_refs:
+    - 2
+    notes:
+    - id: NOTE 3
+      text: A consistent build environment should be used based on an environment specification that is communicated to all
+        relevant parties.
+  - id: SPL.2.BP5
+    number: 5
+    title: Build the release from configured items
+    text: 'The release is built from configured items to ensure integrity. [Outcome: 2]'
+    outcome_refs:
+    - 2
+    notes:
+    - id: NOTE 4
+      text: Where relevant the software product release should identify the target hardware revision before release.
+  - id: SPL.2.BP6
+    number: 6
+    title: The type, level and duration of support for a release are communicated
+    text: 'The type, level and duration of a release is identified and communicated. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: SPL.2.BP7
+    number: 7
+    title: Determine the delivery media type for the release
+    text: 'The media type for product delivery is determined in accordance with the needs of the end user. [Outcome: 4]'
+    outcome_refs:
+    - 4
+    notes:
+    - id: NOTE 5
+      text: The media type for delivery may be intermediate (placed on a media and delivered to customer), or direct (such
+        as delivered in firmware as part of the package) or a mix of both. The release may be delivered electronically by
+        placement on a server. The release may also need to be duplicated before delivery.
+  - id: SPL.2.BP8
+    number: 8
+    title: Identify the packaging for the release media
+    text: 'The packaging for different types of media is identified. [Outcome: 4]'
+    outcome_refs:
+    - 4
+    notes:
+    - id: NOTE 6
+      text: The packaging for certain types of media may need physical or electronic protection, for instance floppy disk
+        mailers or specific encryption techniques.
+  - id: SPL.2.BP9
+    number: 9
+    title: Define and produce the software product release documentation
+    text: 'Ensure that all documentation to support the release is produced, reviewed, approved and available. [Outcome: 3,
+      6]'
+    outcome_refs:
+    - 3
+    - 6
+  - id: SPL.2.BP10
+    number: 10
+    title: Ensure product release approval before delivery
+    text: 'Criteria for the product release are satisfied before release takes place. [Outcome: 5]'
+    outcome_refs:
+    - 5
+  - id: SPL.2.BP11
+    number: 11
+    title: Deliver the release to the intended customer
+    text: 'The product is delivered to the intended customer, with positive confirmation of receipt. [Outcome: 6, 7]'
+    outcome_refs:
+    - 6
+    - 7
+    notes:
+    - id: NOTE 7
+      text: Confirmation of receipt may be achieved by hand, electronically, by post, by telephone or through a distribution
+        service provider.
+    - id: NOTE 8
+      text: These practices are typically supported by the Configuration Management process (SUP.8).
+    - id: NOTE 9
+      text: 'Refer to ISO/IEC 9127 for guidance on packaging aspects of software product supply. Work Products Inputs Outputs
+        01-00 Configuration item [Outcome: 2] 08-11 Logistics maintenance plan [Outcome: 4] 08-16 Release plan [Outcome: 3]
+        08-16 Release plan [Outcome: 3] 11-00 Product [Outcome: 1] 11-03 Product release information [Outcome: 1] 11-04 Product
+        release package [Outcome: 2, 3] 13-06 Delivery record [Outcome: 6,7] 13-13 Product release approval record [Outcome:
+        5] 15-03 Configuration status report [Outcome: 2] 17-03 Customer requirements [Outcome: 1] 17-04 Delivery instructions
+        [Outcome: 3] 18-06 Product release criteria [Outcome: 1, 5] 18-06 Product release criteria [Outcome: 7] 19-04 Product
+        release strategy [Outcome: 4] 5.2.3 SPL.3 Product acceptance support'
+- corporate_code: İÜC.BİDB.SRÇ.016
+  corporate_name: Yapılandırma Yönetimi Süreci
+  spice_code: SUP.8
+  spice_name: Configuration management
+  purpose: The purpose of the Configuration management process is to establish and maintain the integrity of the work products/items
+    of a process or project and make them available to concerned parties.
+  outcomes:
+  - id: 1
+    text: a configuration management strategy is developed;
+  - id: 2
+    text: work products/items generated by the process or project are identified, defined and baselined;
+  - id: 3
+    text: modifications and releases of the work products/items are controlled;
+  - id: 4
+    text: modifications and releases are made available to affected parties;
+  - id: 5
+    text: the status of the work products/items and modifications are recorded and reported;
+  - id: 6
+    text: the completeness and consistency of the work products/items is ensured; and
+  - id: 7
+    text: storage, handling and delivery of the work products/items are controlled.
+  base_practices:
+  - id: SUP.8.BP1
+    number: 1
+    title: Develop configuration management strategy
+    text: 'Determine configuration management strategy, including configuration management activities and schedule for performing
+      these activities. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: SUP.8.BP2
+    number: 2
+    title: Identify configuration items
+    text: 'Identify configuration items that need to be independently identified, stored, tested, reviewed, used, changed,
+      delivered and/or maintained. [Outcome: 2]'
+    outcome_refs:
+    - 2
+    notes:
+    - id: NOTE 1
+      text: In order to provide an efficient means of accessing and storing the entities required, a file and directory structure
+        and hierarchies may be established.
+  - id: SUP.8.BP3
+    number: 3
+    title: Establish branch management strategy
+    text: 'Develop a branch management strategy for parallel development efforts that use the same source base. [Outcome:
+      1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE 2
+      text: A branch management strategy will include branch management, merging strategies, file versioning in a branching
+        system, branch parenting strategies and tagging strategies.
+    - id: NOTE 3
+      text: A branching strategy will define why and when branches will be created, what activities will occur in the branches,
+        and how the branches will complete and/or migrate into the main source base.
+  - id: SUP.8.BP4
+    number: 4
+    title: Establish baselines
+    text: 'Establish the internal and delivery baselines. High-level baselines are achieved by the accumulation of all the
+      requisite configured items at their respective low-level baseline formal issues. [Outcome: 3]'
+    outcome_refs:
+    - 3
+    notes:
+    - id: NOTE 4
+      text: Baselines cover all related work products, including requirements, design documentation, user documentation and
+        test specifications where appropriate. Examples of work products which should be baselined include requirements, designs,
+        plans, and products.
+  - id: SUP.8.BP5
+    number: 5
+    title: Maintain configuration item description
+    text: 'Maintain an up-to-date description of each configuration item. [Outcome: 2,3,4]'
+    outcome_refs:
+    - 2
+    - 3
+    - 4
+  - id: SUP.8.BP6
+    number: 6
+    title: Control modifications and releases
+    text: 'Establish a mechanism for logging the items, submitting and releasing them. [Outcome: 4]'
+    outcome_refs:
+    - 4
+    notes:
+    - id: NOTE 5
+      text: Controls for source code control may include check in / out, file access permissions, version identification and
+        incrementation, change commenting and files locking / commit.
+  - id: SUP.8.BP7
+    number: 7
+    title: Maintain configuration item history
+    text: 'Maintain a history of each configuration item in sufficient detail to recover a previously baselined version when
+      required. [Outcome: 3,4]'
+    outcome_refs:
+    - 3
+    - 4
+  - id: SUP.8.BP8
+    number: 8
+    title: Report configuration status
+    text: 'Report status of each configuration item and their relationship in the current system integration. [Outcome: 5]'
+    outcome_refs:
+    - 5
+  - id: SUP.8.BP9
+    number: 9
+    title: Verify the information about configured items
+    text: 'Verify that the information about configured items and their structures, supplied through status accounting reporting
+      is complete and ensure the consistency of the items. [Outcome: 6]'
+    outcome_refs:
+    - 6
+  - id: SUP.8.BP10
+    number: 10
+    title: Manage the backup, storage, archiving, handling and delivery of configured items
+    text: 'Ensure the integrity and consistency of configured items through appropriate scheduling and resourcing of backup,
+      storage and archiving. Control the handling and delivery of configured items. [Outcome: 4,6 and 7]'
+    outcome_refs:
+    - 4
+    - 6
+    - 7
+    notes:
+    - id: NOTE 6
+      text: 'Backups are maintained under the Infrastructure process (RIN.4). Work Products Inputs Outputs 01-00 Configuration
+        item [Outcome: 2] 01-00 Configuration item [Outcome: 2, 3] 01-01 Product configuration [Outcome: 1] 01-01 Product
+        configuration [Outcome: 2] 06-02 Handling and storage guide [Outcome: 7] 08-04 Configuration management plan [Outcome:
+        2, 3, 4, 5, 08-04 Configuration management plan [Outcome: 1, 2, 7] 6] 08-16 Release plan [Outcome: 1, 4] Work Products
+        Inputs Outputs 13-00 Record [Outcome: 5, 6] 13-06 Delivery record [Outcome: 7] 13-10 Configuration management record
+        [Outcome: 5] 13-13 Product release approval record [Outcome: 7] 14-01 Change history [Outcome: 3] 14-08 Tracking system
+        [Outcome: 5] 15-03 Configuration status report [Outcome: 5] 16-03 Configuration management library [Outcome: 7] 5.5.9
+        SUP.9 Problem resolution management'
+- corporate_code: İÜC.BİDB.SRÇ.017
+  corporate_name: Problem Çözüm Yönetimi Süreci
+  spice_code: SUP.9
+  spice_name: Problem resolution management
+  purpose: The purpose of the Problem resolution management process is to ensure that all discovered problems are identified,
+    analyzed, managed and controlled to resolution.
+  outcomes:
+  - id: 1
+    text: a problem management strategy is developed;
+  - id: 2
+    text: problems are recorded, identified and classified;
+  - id: 3
+    text: problems are analyzed and assessed to identify acceptable solution(s);
+  - id: 4
+    text: problem resolution is implemented;
+  - id: 5
+    text: problems are tracked to closure; and
+  - id: 6
+    text: 'the status of all problem reports is known NOTE: Problem resolution management may initiate a change request.'
+  base_practices:
+  - id: SUP.9.BP1
+    number: 1
+    title: Develop problem resolution strategy
+    text: 'Determine the problem resolution strategy for ensuring that problems are described, recorded, analyzed, and corrected.
+      [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: SUP.9.BP2
+    number: 2
+    title: Identify and record the problem
+    text: 'Each problem is uniquely identified, and recorded. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: SUP.9.BP3
+    number: 3
+    title: Provide initial support and classification
+    text: 'Provide initial support and feedback on reported problems and classify problems according to the severity. [Outcome:
+      2]'
+    outcome_refs:
+    - 2
+    notes:
+    - id: NOTE 1
+      text: Classification of problems may be in terms of criticality, urgency, relevance etc.
+  - id: SUP.9.BP4
+    number: 4
+    title: Investigate and diagnose the cause of the problem
+    text: 'Analyze problems in order to identify the cause of the problem. [Outcome: 3]'
+    outcome_refs:
+    - 3
+    notes:
+    - id: NOTE 2
+      text: A problem may be a known error or may impact application installed on multiple platforms.
+  - id: SUP.9.BP5
+    number: 5
+    title: Assess the impact of the problem to determine solution
+    text: 'Assess the impact of the problem to determine appropriate actions, and to determine and agree on a solution. [Outcome:
+      3]'
+    outcome_refs:
+    - 3
+  - id: SUP.9.BP6
+    number: 6
+    title: Execute urgent resolution action, where necessary
+    text: 'If the problem warrants immediate resolution pending an actual change, it obtains authorization for immediate fix.
+      [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: SUP.9.BP7
+    number: 7
+    title: Raise alert notifications, where necessary
+    text: 'If the problem is of high severity and impacts other systems or users, an alert notification may need to be raised,
+      pending a fix or change. [Outcome: 4, 6]'
+    outcome_refs:
+    - 4
+    - 6
+  - id: SUP.9.BP8
+    number: 8
+    title: Implement problem resolution
+    text: 'Implement problem resolution actions to resolve the problem and review the implementation. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: SUP.9.BP9
+    number: 9
+    title: Initiate change request
+    text: 'Initiate change request for diagnosed errors. [Outcome: 5]'
+    outcome_refs:
+    - 5
+  - id: SUP.9.BP10
+    number: 10
+    title: Track problem status
+    text: 'Track to closure the status of identified problems. [Outcome: 5, 6] Work Products Inputs Outputs 08-27 Problem
+      management plan [Outcome: 1] 13-07 Problem record [Outcome: 3] 13-07 Problem record [Outcome: 3, 5] 13-16 Change request
+      [Outcome: 2] 14-08 Tracking system [Outcome: 4, 5, 6] 15-01 Analysis report [Outcome: 3] 15-05 Evaluation report [Outcome:
+      3] 15-12 Problem status report [Outcome: 6] 5.5.10 SUP.10 Change request management'
+    outcome_refs:
+    - 5
+    - 6
+- corporate_code: İÜC.BİDB.SRÇ.018
+  corporate_name: Değişiklik Talebi Yönetimi Süreci
+  spice_code: SUP.10
+  spice_name: Change request management
+  purpose: The purpose of the Change request management process is to ensure that change requests are managed, tracked and
+    controlled.
+  outcomes:
+  - id: 1
+    text: a change management strategy is developed;
+  - id: 2
+    text: requests for changes are recorded and identified;
+  - id: 3
+    text: dependencies and relationships to other change requests are identified;
+  - id: 4
+    text: criteria for confirming implementation of change requests are defined;
+  - id: 5
+    text: requests for change are prioritized, and resource requirements estimated;
+  - id: 6
+    text: changes are approved on the basis of priority and availability of resources;
+  - id: 7
+    text: approved changes are implemented and tracked to closure; and
+  - id: 8
+    text: the status of all change requests is known.
+  base_practices:
+  - id: SUP.10.BP1
+    number: 1
+    title: Develop a change management strategy
+    text: 'A change management strategy is established and implemented to ensure changes can be described, recorded, analyzed,
+      and actioned. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: SUP.10.BP2
+    number: 2
+    title: Record the request for change
+    text: 'Each change request is uniquely identified, and recorded. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: SUP.10.BP3
+    number: 3
+    title: Record the status of change requests
+    text: 'Change requests and changes are allocated a status indication to facilitate tracking. [Outcome: 8]'
+    outcome_refs:
+    - 8
+    notes:
+    - id: NOTE 1
+      text: 'Provide traceability to the reason for the change. Change requests submitted as a resolution to a problem or
+        error report should retain a link to the originating problem or error report. [Outcome: 3]'
+  - id: SUP.10.BP4
+    number: 4
+    title: Establish the dependencies and relationships to other change requests
+    text: 'Identify the relationship of a change request to other change requests to establish dependencies (e.g. towards
+      another change to the same software element or for a set of changes related to a planned release). [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: SUP.10.BP5
+    number: 5
+    title: Assess the impact of the change
+    text: 'Assess the impact, resources, risks, and potential benefits of the change request and establish criteria for confirming
+      implementation. [Outcome: 4, 5]'
+    outcome_refs:
+    - 4
+    - 5
+    notes:
+    - id: NOTE 2
+      text: A Change Request Board (CRB) is a common mechanism used to assess change requests. When conducting impact and
+        resource assessment, the effect on the infrastructure and users must be considered together with the resources required
+        for implementing the change, including likely costs, the number and availability of people and the elapsed time to
+        implement.
+  - id: SUP.10.BP6
+    number: 6
+    title: Identify the verification and validation activities to be performed for implemented changes
+    text: 'Before implementing a change the scope of verification and validation activities to be undertaken are identified.
+      [Outcome: 7]'
+    outcome_refs:
+    - 7
+  - id: SUP.10.BP7
+    number: 7
+    title: Approve changes
+    text: 'All changes are approved before implementation. [Outcome: 6]'
+    outcome_refs:
+    - 6
+  - id: SUP.10.BP8
+    number: 8
+    title: Implement the change
+    text: 'Approved changes are implemented. [Outcome: 5, 7]'
+    outcome_refs:
+    - 5
+    - 7
+    notes:
+    - id: NOTE 3
+      text: Scheduled changes may be incorporated into target releases. A packaged release may incorporate corrective and
+        adaptive changes.
+  - id: SUP.10.BP9
+    number: 9
+    title: Review the implemented change
+    text: 'All changes are reviewed after implementation and before closure to ensure that they had the desired effect and
+      met their objectives. [Outcome: 7, 8] Work Products Inputs Outputs 01-00 Configuration item [Outcome: 2] 01-00 Configuration
+      item [Outcome: 2] 01-01 Product configuration [Outcome: 2] 08-28 Change management plan [Outcome: 1] 13-16 Change request
+      [Outcome: 3] 13-16 Change request [Outcome: 2, 3, 5, 6, 7] Work Products Inputs Outputs 13-21 Change control record
+      [Outcome: 8] 14-08 Tracking system [Outcome: 2, 7, 8] 15-01 Analysis report [Outcome: 3, 4] 16-03 Configuration management
+      library [Outcome: 2] 5.6 Management Process Group (MAN) 5.6.1 MAN.1 Organizational alignment'
+    outcome_refs:
+    - 7
+    - 8
+- corporate_code: İÜC.BİDB.SRÇ.019
+  corporate_name: İnsan Kaynakları Yönetimi Süreci
+  spice_code: RIN.1
+  spice_name: Human resource management
+  purpose: The purpose of the Human resource management process is to provide the organization and projects with individuals
+    who possess skills and knowledge to perform their roles effectively and to work together as a cohesive group.
+  outcomes:
+  - id: 1
+    text: individuals with the required skills and competencies are identified and recruited;
+  - id: 2
+    text: effective interaction between individuals and groups are supported;
+  - id: 3
+    text: the work force have the skills to share information and co-ordinate their activities efficiently; and
+  - id: 4
+    text: objective criteria are defined against which group and individual performance is monitored to provide performance
+      feedback and to enhance performance.
+  base_practices:
+  - id: RIN.1.BP1
+    number: 1
+    title: Identify needed skills and competencies
+    text: 'Identify and evaluate skills and competencies needed by the organization to achieve its goals. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: RIN.1.BP2
+    number: 2
+    title: Define evaluation criteria
+    text: 'Define objective criteria that can be used to evaluate candidates and assess staff performance. [Outcome: 1, 4]'
+    outcome_refs:
+    - 1
+    - 4
+  - id: RIN.1.BP3
+    number: 3
+    title: Recruit qualified staff
+    text: 'Establish a systematic program for recruitment of staff competent to meet the needs of the organization. [Outcome:
+      1]'
+    outcome_refs:
+    - 1
+  - id: RIN.1.BP4
+    number: 4
+    title: Develop staff skills and competencies
+    text: 'Define and provide opportunities for development of the skills and competencies of staff. [Outcome: 1, 3]'
+    outcome_refs:
+    - 1
+    - 3
+  - id: RIN.1.BP5
+    number: 5
+    title: Define team organization for projects and tasks
+    text: 'Define the structure and operating rules under which teams undertaking projects and/or tasks operate. [Outcome:
+      2]'
+    outcome_refs:
+    - 2
+  - id: RIN.1.BP6
+    number: 6
+    title: Empower project teams
+    text: 'Empower teams to perform their job, by ensuring that they have: - an understanding of their job; - a shared vision
+      or sense of common interest; - appropriate mechanisms or facilities for communication; and - support from management
+      for what they are trying to accomplish. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: RIN.1.BP7
+    number: 7
+    title: Maintain project team interactions
+    text: 'Obtain and maintain agreement on the management of interactions between teams. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: RIN.1.BP8
+    number: 8
+    title: Evaluate staff performance
+    text: 'Evaluate the performance of staff, in respect of their contributions to the goals of the organization as a whole.
+      Ensure that feedback is discussed with the staff. [Outcome: 1, 4]'
+    outcome_refs:
+    - 1
+    - 4
+  - id: RIN.1.BP9
+    number: 9
+    title: Provide feedback on performance
+    text: 'Ensure that feedback is provided to staff on the results of any performance evaluations performed. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: RIN.1.BP10
+    number: 10
+    title: Maintain staff records
+    text: 'Maintain adequate records of staff, including not only personnel details, but also information on skills, training
+      completed, and performance evaluations. [Outcome: 4] Work Products Inputs Outputs 02-01 Commitment / agreement [Outcome:
+      1] 08-08 Human resource management plan [Outcome: 2] 08-08 Human resource management plan [Outcome: 1] 08-24 Training
+      plan [Outcome: 3] 09-01 Personnel policy [Outcome: 1] 13-04 Communication record [Outcome: 2] 13-11 Personnel performance
+      review record [Outcome: 3, 4] 13-12 Personnel record [Outcome: 3] 13-12 Personnel record [Outcome: 1] 13-23 Training
+      record [Outcome: 3] 13-23 Training record [Outcome 3] 15-15 Human resource needs analysis [Outcome: 1] 15-15 Human resource
+      needs analysis [Outcome: 1] 15-17 Personnel performance evaluation [Outcome: 4] 15-22 Training evaluation report [Outcome:
+      3,4] 18-05 Personnel performance criteria [Outcome: 4] 5.8.2 RIN.2 Training'
+    outcome_refs:
+    - 4
+- corporate_code: İÜC.BİDB.SRÇ.020
+  corporate_name: Eğitim Süreci
+  spice_code: RIN.2
+  spice_name: Training
+  purpose: The purpose of the Training process is to provide the organization and project with individuals who possess the
+    needed skills and knowledge to perform their roles effectively.
+  outcomes:
+  - id: 1
+    text: training is developed or acquired to address the organization and project training needs; and
+  - id: 2
+    text: training is conducted to ensure that all individuals have the skills required to perform their assignments, using
+      mechanisms such as training strategies and materials.
+  base_practices:
+  - id: RIN.2.BP1
+    number: 1
+    title: Develop a strategy for training
+    text: 'Develop a strategy for training including how the training needs will be identified, how the needed training will
+      be developed or acquired, and how the training will be performed. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: RIN.2.BP2
+    number: 2
+    title: Identify needs for training
+    text: 'Identify and evaluate skills and competencies to be provided or improved through training. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: RIN.2.BP3
+    number: 3
+    title: Develop or acquire training
+    text: 'Develop or acquire training that addresses the common training needs. [Outcome: 1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE
+      text: training may include objectives, syllabus , material and other training resources.
+  - id: RIN.2.BP4
+    number: 4
+    title: Prepare for training execution
+    text: 'Identify and prepare the execution of training sessions, including the availability of the training materials and
+      the availability of personnel to be trained. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: RIN.2.BP5
+    number: 5
+    title: Train personnel
+    text: 'Train personnel to have the knowledge and skills needed to perform their roles. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: RIN.2.BP6
+    number: 6
+    title: Maintain staff training records
+    text: 'Maintain adequate records of the training completed by the staff. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: RIN.2.BP7
+    number: 7
+    title: Evaluate training effectiveness
+    text: 'Identify and evaluate added value provided by each training session, including the evaluation of training material.
+      [Outcome: 2] Work Products Inputs Outputs 06-04 Training material [Outcome: 2] 06-04 Training material [Outcome: 1]
+      08-02 Acquisition plan [Outcome 1] 08-08 Human resource management plan [Outcome: 1] 08-24 Training plan [Outcome: 2]
+      08-24 Training plan [Outcome: 1] 09-01 Personnel policy [Outcome: 1] 13-23 Training record [Outcome: 2] 15-15 Human
+      resource needs analysis [Outcome: 1] 15-22 Training evaluation report [Outcome: 2] 19-08 Training strategy [Outcome:
+      2] 19-08 Training strategy [Outcome: 1] 5.8.3 RIN.3 Knowledge management'
+    outcome_refs:
+    - 2
+- corporate_code: İÜC.BİDB.SRÇ.021
+  corporate_name: Bilgi Yönetimi Süreci
+  spice_code: RIN.3
+  spice_name: Knowledge management
+  purpose: The purpose of the Knowledge management process is to ensure that individual knowledge, information and skills
+    are collected, shared, reused and improved throughout the organization.
+  outcomes:
+  - id: 1
+    text: infrastructure is established and maintained for sharing common and domain information across the organization;
+  - id: 2
+    text: knowledge is readily available and shared throughout the organization; and
+  - id: 3
+    text: the organization will select an appropriate knowledge management strategy.
+  base_practices:
+  - id: RIN.3.BP1
+    number: 1
+    title: Establish a knowledge management system
+    text: 'Establish and maintain a knowledge management infrastructure and mechanism to support the activities to identify,
+      classify, exchange and use knowledge assets. [Outcome: 1, 2]'
+    outcome_refs:
+    - 1
+    - 2
+  - id: RIN.3.BP2
+    number: 2
+    title: Create the network of knowledge contributors
+    text: 'Establish the network of experts and their mutual interaction. [Outcome: 2, 3]'
+    outcome_refs:
+    - 2
+    - 3
+  - id: RIN.3.BP3
+    number: 3
+    title: Develop a knowledge management strategy
+    text: 'Define an appropriate knowledge management strategy based on organizational, individual, domain and project needs.
+      [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: RIN.3.BP4
+    number: 4
+    title: Capture knowledge
+    text: 'Identify and record each knowledge item according to the classification schema and asset criteria. [Outcome: 2,
+      3]'
+    outcome_refs:
+    - 2
+    - 3
+  - id: RIN.3.BP5
+    number: 5
+    title: Disseminate knowledge assets
+    text: 'Share knowledge assets with experts, users and projects. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: RIN.3.BP6
+    number: 6
+    title: Improve knowledge assets
+    text: 'Validate and enrich knowledge assets to ensure their appropriateness and value to the organization. [Outcome: 2,
+      3] Work Products Inputs Outputs 01-04 Knowledge item [Outcome: 2] 03-02 Asset use data [Outcome: 2] 05-02 Business goals
+      [Outcome: 3] 13-04 Communication record [Outcome: 2] 13-04 Communication record [Outcome: 2] 16-04 Knowledge repository
+      [Outcome: 1, 2] 16-04 Knowledge repository [Outcome: 1] 19-03 Knowledge management strategy [Outcome: 3] 5.8.4 RIN.4
+      Infrastructure'
+    outcome_refs:
+    - 2
+    - 3
+- corporate_code: İÜC.BİDB.SRÇ.022
+  corporate_name: Altyapı Süreci
+  spice_code: RIN.4
+  spice_name: Infrastructure
+  purpose: The purpose of the Infrastructure process is to maintain a stable and reliable infrastructure that is needed to
+    support the performance of any other process.
+  outcomes:
+  - id: 1
+    text: the requirements for infrastructure to support processes in the organizational unit are defined;
+  - id: 2
+    text: the infrastructure elements are identified and specified;
+  - id: 3
+    text: infrastructure elements are acquired;
+  - id: 4
+    text: the elements of the infrastructure are implemented; and
+  - id: 5
+    text: 'a stable and reliable infrastructure is maintained. NOTE: The infrastructure may include hardware, software, methods,
+      tools, techniques, standards, and facilities for development, operation, or maintenance.'
+  base_practices:
+  - id: RIN.4.BP1
+    number: 1
+    title: Identify infrastructure scope
+    text: 'Identify the procedures, standards, tools, and techniques that the infrastructure process should support. [Outcome:
+      1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE 1
+      text: The infrastructure may include hardware, software, methods, tools, techniques, standards, and facilities for development,
+        operation, or maintenance.
+  - id: RIN.4.BP2
+    number: 2
+    title: Define the infrastructure requirements
+    text: 'Define the infrastructure requirements to support the performance of appropriate processes. [Outcome: 1, 2]'
+    outcome_refs:
+    - 1
+    - 2
+    notes:
+    - id: NOTE 2
+      text: 'Infrastructure process requirements may include: – security; – throughput and data sharing requirements; – backup
+        and recovery; – remote access facility; – physical workspace and equipment; – user support requirements; and – maintenance
+        requirements.'
+  - id: RIN.4.BP3
+    number: 3
+    title: Acquire infrastructure
+    text: 'Acquire an infrastructure process, which satisfies the requirements. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: RIN.4.BP4
+    number: 4
+    title: Establish the infrastructure
+    text: 'Assemble and integrate the elements of the infrastructure process, providing an effective environment that supports
+      implementation of the organization’s processes. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: RIN.4.BP5
+    number: 5
+    title: Provide support for the infrastructure
+    text: 'Provide support for those who utilize the infrastructure process. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: RIN.4.BP6
+    number: 6
+    title: Maintain the infrastructure
+    text: 'Perform maintenance on the infrastructure process for the purposes of: – correcting defects; and – improving performance.
+      [Outcome: 5] Work Products Inputs Outputs 08-02 Acquisition plan [Outcome: 3] 08-05 Development environment plan [Outcome:
+      3] 08-05 Development environment plan [Outcome: 2] 08-11 Logistics maintenance plan [Outcome: 3] 08-11 Logistics maintenance
+      plan [Outcome: 2] 09-04 Supplier selection policy [Outcome: 3] 10-00 Process description [Outcome: 1, 5] 13-03 Back-up
+      / recovery record [Outcome: 5] 13-06 Delivery record [Outcome: 4, 5] 13-06 Delivery record [Outcome: 3, 4] 14-02 Corrective
+      action register [Outcome: 5] 14-03 Hardware assets register [Outcome: 4, 5] 14-03 Hardware assets register [Outcome:
+      3, 4, 5] 14-07 Software assets register [Outcome: 4, 5] 14-07 Software assets register [Outcome: 3, 4, 5] 14-08 Tracking
+      system [Outcome: 4, 5] 14-08 Tracking system [Outcome: 3, 4, 5] 17-07 Infrastructure requirements [Outcome: 2] 17-07
+      Infrastructure requirements [Outcome: 1] 5.9 Reuse Process Group (REU) 5.9.1 REU.1 Asset management'
+    outcome_refs:
+    - 5
+- corporate_code: İÜC.BİDB.SRÇ.023
+  corporate_name: Organizasyonel Yönetim Süreci
+  spice_code: MAN.2
+  spice_name: Organization management
+  purpose: 'The purpose of the Organization management process is to establish and perform software management practices,
+    during the performance of the processes, needed for providing software products and services that are consistent with
+    the business goals of the organization. NOTE: Although organizational operations in general have a much broader scope
+    than that of software process, software processes are implemented in a business context and to be effective, require an
+    appropriate organizational environment.'
+  outcomes:
+  - id: 1
+    text: the organization will invest in the appropriate management infrastructure;
+  - id: 2
+    text: the best practices are identified to support the implementation of effective organization and project management;
+      and
+  - id: 3
+    text: provide a basis for evaluating the achievement of organization business goals based on these management practices.
+  base_practices:
+  - id: MAN.2.BP1
+    number: 1
+    title: Identify management infrastructure
+    text: 'Identify management infrastructure appropriate to perform software management practices that are consistent with
+      the business goals of the organization. [Outcome: 1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE 1
+      text: Management infrastructure may include organizational roles and responsibilities, decision-making system, communication
+        mechanisms and planning / monitoring of business operations.
+  - id: MAN.2.BP2
+    number: 2
+    title: 'Provide management infrastructure: Provide the identified management infrastructure appropriate in organization''s
+      broader scope'
+    text: '[Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: MAN.2.BP3
+    number: 3
+    title: Identify and implement software management practices
+    text: 'Identify and implement effective software management practices to implement and improve competitive software processes
+      and to construct effective organizations and effective enterprise project management. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: MAN.2.BP4
+    number: 4
+    title: Perform identified management practices
+    text: 'Perform management practices using management infrastructure. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: MAN.2.BP5
+    number: 5
+    title: Evaluate effectiveness
+    text: 'Evaluate the effectiveness of implemented software management practices to achieve the related organization business
+      goals. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: MAN.2.BP6
+    number: 6
+    title: Provide support to adopt best practices
+    text: 'Use incentive approaches and software management infrastructure to support implementation of effective software
+      management practices. [Outcome: 2, purpose]'
+    outcome_refs:
+    - 2
+    notes:
+    - id: NOTE 2
+      text: 'Best practice may be related to the achieved or next capability level. See Knowledge management process (RIN.3)
+        to manage and disseminate best practices as part of organizational knowledge assets. Work Products Inputs Outputs
+        03-03 Benchmarking data [Outcome: 3] 03-06 Process performance data [Outcome:3] 04-07 Organizational structure [Outcome:
+        3] 04-07 Organizational structure [Outcome: 1] 05-02 Business goals [Outcome: 1, 2, 3] 07-04 Process measure [Outcome:
+        3] 10-00 Process description [Outcome: 2] 14-08 Tracking system [Outcome: 1] 15-05 Evaluation report [Outcome: 3]
+        07-04 Process measure [Outcome: 2] 15-13 Assessment report [Outcome: 3] 15-24 Audit report [Outcome: 3] 16-06 Process
+        repository [Outcome: 2] 19-00 Strategy [Outcome 1] 19-00 Strategy [Outcome: 1] 5.6.3 MAN.3 Project management'
+- corporate_code: İÜC.BİDB.SRÇ.024
+  corporate_name: Kalite Yönetimi Süreci
+  spice_code: MAN.4
+  spice_name: Quality management
+  purpose: The purpose of the Quality management process is to achieve customer satisfaction by monitoring the quality of
+    the products and services, at the organizational and project level, to ensure they meet customer requirements.
+  outcomes:
+  - id: 1
+    text: quality goals based on the customer's stated and implicit quality requirements are established;
+  - id: 2
+    text: an overall strategy is developed to achieve the defined goals;
+  - id: 3
+    text: a quality management system is established to implement the strategy;
+  - id: 4
+    text: identified quality control and assurance activities are performed and their performance confirmed;
+  - id: 5
+    text: actual performance against the quality goals is monitored; and
+  - id: 6
+    text: appropriate action is taken when quality goals are not achieved.
+  base_practices:
+  - id: MAN.4.BP1
+    number: 1
+    title: Establish quality goals
+    text: 'Based on the customer''s stated requirements for quality and implicit quality requirements relevant to the customer’s
+      environment, establish organisational quality goals and quality goals for the product and process that can be evaluated
+      throughout the project, preferably in a quantitative manner. [Outcome: 1]'
+    outcome_refs:
+    - 1
+    notes:
+    - id: NOTE 1
+      text: Customer environment may include all affected parties, society at large, relevant legislation and regulations.
+    - id: NOTE 2
+      text: Quality goals depend on the type of business.
+  - id: MAN.4.BP2
+    number: 2
+    title: Define overall strategy
+    text: 'Develop an overall strategy including necessary resources and responsibilities to achieve the defined goals. [Outcome:
+      2]'
+    outcome_refs:
+    - 2
+    notes:
+    - id: NOTE 3
+      text: Continuous improvement in quality is one means to achieve the defined goals.
+  - id: MAN.4.BP3
+    number: 3
+    title: Define quality criteria
+    text: 'Define standards, references and metrics that will measure and verify achievement of quality goals and acceptance
+      criteria that will help to assess whether the relevant quality goals have been achieved. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: MAN.4.BP4
+    number: 4
+    title: Establish a quality management system
+    text: 'Establish and maintain a quality management system to plan, implement, monitor and control necessary corrective
+      and preventive actions. [Outcome: 3]'
+    outcome_refs:
+    - 3
+    notes:
+    - id: NOTE 4
+      text: Refer to ISO 9001:2000 for requirements on quality management systems.
+  - id: MAN.4.BP5
+    number: 5
+    title: Assess achievement of quality goals
+    text: 'Review regularly the achievement of quality goals at higher management level using defined criteria and take appropriate
+      action. [Outcome: 4, 5]'
+    outcome_refs:
+    - 4
+    - 5
+  - id: MAN.4.BP6
+    number: 6
+    title: Take preventive or corrective action
+    text: 'When defined quality goals are not achieved, take corrective or preventive action both at the project and organizational
+      level. [Outcome: 4, 6]'
+    outcome_refs:
+    - 4
+    - 6
+    notes:
+    - id: NOTE 5
+      text: The corrective action can involve fixing the product generated by a particular project activity or changing the
+        planned set of activities in order to better achieve the quality goals or both. The preventive action can involve
+        modifying product specifications or process definitions, or both, to prevent recurrence of the non-achievement.
+  - id: MAN.4.BP7
+    number: 7
+    title: Collect feedback
+    text: 'Collect feedback from customer, project, process and personnel to verify continuous improvement of quality situation
+      at organizational and project level. [Outcome: 6]'
+    outcome_refs:
+    - 6
+  - id: MAN.4.BP8
+    number: 8
+    title: Monitor actual performance of quality
+    text: 'Measure and monitor actual performance of quality against the quality goals. [Outcome: 5] Work Products Inputs
+      Outputs 02-00 Contract [Outcome: 1, 5] 03-01 Assessment data [Outcome: 5] 03-03 Benchmarking data [Outcome: 5] 03-04
+      Customer satisfaction data [Outcome: 5] 03-06 Process performance data [Outcome: 5] 05-06 Quality goals [Outcome: 2]
+      07-06 Quality measure [Outcome: 5] 08-12 Project plan [Outcome: 1, 4, 5] 08-13 Quality plan [Outcome: 3, 4, 5] 08-13
+      Quality plan [Outcome: 1, 2] 08-18 Review plan [Outcome: 4] 08-18 Review plan [Outcome: 5] 08-29 Improvement plan [Outcome:
+      4] 09-02 Quality policy [Outcome: 3] Work Products Inputs Outputs 10-04 Quality Manual [Outcome: 3] 13-07 Problem record
+      [Outcome: 6] 13-14 Progress status record [Outcome: 5] 13-18 Quality record [Outcome: 5] 13-19 Review record [Outcome:
+      5] 13-19 Review record [Outcome: 4, 6] 14-02 Corrective action register [Outcome: 6] 15-01 Analysis report [Outcome:
+      4] 15-13 Assessment report [Outcome: 5] 15-24 Audit report [Outcome: 5] 16-06 Process repository [Outcome: 3] 16-06
+      Process repository [Outcome: 3] 17-03 Customer requirements [Outcome: 1] 18-01 Acceptance criteria [Outcome: 2] 18-01
+      Acceptance criteria [Outcome: 1] 18-07 Quality criteria [Outcome: 2] 18-07 Quality criteria [Outcome: 1] 5.6.5 MAN.5
+      Risk management'
+    outcome_refs:
+    - 5
+- corporate_code: İÜC.BİDB.SRÇ.025
+  corporate_name: Ölçüm Süreci
+  spice_code: MAN.6
+  spice_name: Measurement
+  purpose: The purpose of the Measurement process is to collect and analyze data relating to the products developed and processes
+    implemented within the organization and its projects, to support effective management of the processes and to objectively
+    demonstrate the quality of the products.
+  outcomes:
+  - id: 1
+    text: organizational commitment is established and sustained to implement the measurement process;
+  - id: 2
+    text: the measurement information needs of organizational and management processes are identified;
+  - id: 3
+    text: an appropriate set of measures, driven by the information needs are identified and/or developed;
+  - id: 4
+    text: measurement activities are identified and performed;
+  - id: 5
+    text: the required data is collected, stored, analyzed, and the results interpreted;
+  - id: 6
+    text: information products are used to support decisions and provide an objective basis for communication; and
+  - id: 7
+    text: the measurement process and measures are evaluated and communicated to the process owner.
+  base_practices:
+  - id: MAN.6.BP1
+    number: 1
+    title: Establish organizational commitment for measurement
+    text: 'A commitment of management and staff to measurement is established, sustained and communicated to the organizational
+      unit. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: MAN.6.BP2
+    number: 2
+    title: Develop a measurement strategy
+    text: 'Define an appropriate measurement strategy to identify, perform and evaluate measurement activities and results,
+      based on organizational and project needs. [Outcome: 1]'
+    outcome_refs:
+    - 1
+  - id: MAN.6.BP3
+    number: 3
+    title: Identify measurement information needs
+    text: 'Identify the measurement information needs of organizational and management processes. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: MAN.6.BP4
+    number: 4
+    title: Specify measures
+    text: 'Identify and develop an appropriate set of measures based on measurement information needs. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: MAN.6.BP5
+    number: 5
+    title: Collect and store measurement data
+    text: Identify, collect and store measurement data, including context information necessary to verify, understand, or
+      evaluate the data. [Outcomes 4, 5]
+    outcome_refs: []
+  - id: MAN.6.BP6
+    number: 6
+    title: Analyze measurement data
+    text: 'Analyze and interpret measurement data, and develop information products. [Outcome: 5]'
+    outcome_refs:
+    - 5
+  - id: MAN.6.BP7
+    number: 7
+    title: Use measurement information products for decision-making
+    text: 'Make accurate and current measurement information products accessible for any decision-making processes for which
+      it is relevant. [Outcome: 6]'
+    outcome_refs:
+    - 6
+  - id: MAN.6.BP8
+    number: 8
+    title: Communicate measurement results
+    text: 'Disseminate measurement information products to all parties who will be using them and collect feedback to evaluate
+      the appropriateness for intended use. [Outcome: 6, 7]'
+    outcome_refs:
+    - 6
+    - 7
+  - id: MAN.6.BP9
+    number: 9
+    title: Evaluate and communicate information products and measurement activities to process owners
+    text: 'Evaluate information products and measurement activities against the identified information needs and measurement
+      strategy, identify potential improvements in measurements, and communicate any identified potential improvement to the
+      process owners. [Outcome: 7] Work Products Inputs Outputs 03-01 Assessment data [Outcome: 6] 03-03 Benchmarking data
+      [Outcome: 5, 6] 03-03 Benchmarking data [Outcome: 5] 03-04 Customer satisfaction data [Outcome: 6] 03-04 Customer satisfaction
+      data [Outcome: 5] 03-06 Process performance data [Outcome: 6] 03-06 Process performance data [Outcome: 6] 07-01 Customer
+      satisfaction survey [Outcome: 3, 4, 5] 07-01 Customer satisfaction survey [Outcome: 3, 7] 07-02 Field measure [Outcome:
+      5] 07-02 Field measure [Outcome: 3, 7] 07-04 Process measure [Outcome: 5] 07-04 Process measure [Outcome: 3, 7] 07-05
+      Project measure [Outcome: 5] 07-05 Project measure [Outcome: 3, 7] Work Products Inputs Outputs 07-06 Quality measure
+      [Outcome: 5] 07-06 Quality measure [Outcome: 3, 7] 07-07 Risk measure [Outcome 5] 07-07 Risk measure [Outcome: 3, 7]
+      07-08 Service level measure [Outcome: 5] 07-08 Service level measure [Outcome: 3, 7] 09-02 Quality policy [Outcome:
+      1] 10-00 Process description [Outcome: 7] 10-00 Process description [Outcome: 7] 13-07 Problem record [Outcome 5] 13-17
+      Customer request [Outcome: 3] 14-10 Work product distribution register [Outcome: 7] 15-01 Analysis report [Outcome:
+      2, 5] 15-05 Evaluation report [Outcome: 5, 7] 15-18 Process performance report [Outcome: 5] 5.7 Process Improvement
+      Process Group (PIM) 5.7.1 PIM.1 Process establishment'
+    outcome_refs:
+    - 7
+- corporate_code: İÜC.BİDB.SRÇ.026
+  corporate_name: Denetim Süreci
+  spice_code: SUP.5
+  spice_name: Audit
+  purpose: The purpose of the Audit process is to independently determine compliance of selected products and processes with
+    the requirements, plans and agreement, as appropriate.
+  outcomes:
+  - id: 1
+    text: an audit strategy is developed and implemented;
+  - id: 2
+    text: compliance of selected software work products and/or services or processes with requirements, plans and agreement
+      is determined according to the audit strategy;
+  - id: 3
+    text: the conduct of audits by an appropriate independent party are performed; and
+  - id: 4
+    text: problems detected during an audit are identified and communicated to those responsible for corrective action, and
+      resolution.
+  base_practices:
+  - id: SUP.5.BP1
+    number: 1
+    title: Develop and implement an audit strategy
+    text: 'An audit strategy is implemented defining purpose, scope, milestones, audit criteria and audit team. [Outcome:
+      1]'
+    outcome_refs:
+    - 1
+  - id: SUP.5.BP2
+    number: 2
+    title: Select auditors
+    text: 'Independent, impartial and objective auditors are selected. [Outcome: 3]'
+    outcome_refs:
+    - 3
+  - id: SUP.5.BP3
+    number: 3
+    title: Audit for conformance against the requirements
+    text: 'Selected work products, services or processes are audited to determine their conformance with their requirements
+      and planned arrangements. Non-conformances are recorded. [Outcome: 2]'
+    outcome_refs:
+    - 2
+  - id: SUP.5.BP4
+    number: 4
+    title: Prepare and distribute an audit report
+    text: 'Auditor develops and distributes an audit report. [Outcome: 3, 4]'
+    outcome_refs:
+    - 3
+    - 4
+  - id: SUP.5.BP5
+    number: 5
+    title: Take corrective action
+    text: 'Corrective action is taken to address non- conformances by the assigned responsible person. The corrective action
+      may result in immediate action to resolve the non-conformity. It may also result in other corrective action after root
+      cause analysis has been undertaken. [Outcome: 4]'
+    outcome_refs:
+    - 4
+  - id: SUP.5.BP6
+    number: 6
+    title: Track resolution
+    text: 'Corrective actions are tracked to resolution. The auditor may review non-conformance resolutions and their results.
+      [Outcome: 4] Work Products Inputs Outputs 03-00 Data [Outcome: 1] 07-00 Measure [Outcome: 1] 08-13 Quality plan [Outcome:
+      1] 09-02 Quality Policy [Outcome: 1] 10-00 Process description [Outcome: 2] 13-00 Record [Outcome: 3, 4] 13-04 Communication
+      record [Outcome: 4] 13-07 Problem record [Outcome: 3, 4] 13-22 Traceability record [Outcome: 2] 14-02 Corrective action
+      register [Outcome: 4] 14-02 Corrective action register [Outcome: 4] 15-01 Analysis report [Outcome: 2, 4] 15-24 Audit
+      report [Outcome: 3, 4] 18-07 Quality criteria [Outcome: 2] 19-12 Audit strategy [Outcome: 1] 19-12 Audit strategy [Outcome:
+      1] 5.5.6 SUP.6 Product evaluation'
+    outcome_refs:
+    - 4
+generic_practices:
+  PA_2_1:
+    name: Performance management attribute
+    practices:
+    - id: GP.2.1.1
+      title: Identify the objectives for the performance of the process
+      text: 'NOTE: Performance objectives may include – (1) quality of the artefacts produced, (2) process cycle time or frequency,
+        (3) resource usage and (4) boundaries of the process. Performance objectives are identified based on process requirements.
+        The scope of the process performance is defined. Assumptions and constraints are considered when identifying the performance
+        objectives.'
+    - id: GP.2.1.2
+      title: Plan and monitor the performance of the process to fulfil the identified objectives
+      text: Plan(s) for the performance of the process are developed. The process performance cycle is defined. Key milestones
+        for the performance of the process are established. Estimates for process performance attributes are determined and
+        maintained. Process activities and tasks are defined. Schedule is defined and aligned with the approach to performing
+        the process. Process work product reviews are planned. The process is performed according to the plan(s). Process
+        performance is monitored to ensure planned results are achieved.
+    - id: GP.2.1.3
+      title: Adjust the performance of the process
+      text: Process performance issues are identified. Appropriate actions are taken when planned results and objectives are
+        not achieved. The plan(s) are adjusted, as necessary. Rescheduling is performed as necessary.
+    - id: GP.2.1.4
+      title: Define responsibilities and authorities for performing the process
+      text: Responsibilities, commitments and authorities to perform the process are defined, assigned and communicated.Responsibilities
+        and authorities to verify process work products are defined and assigned. The needs for process performance experience,
+        knowledge and skills are defined.
+    - id: GP.2.1.5
+      title: Identify and make available resources to perform the process according to plan
+      text: The human and infrastructure resources necessary for performing the process are identified, made available, allocated
+        and used. The information necessary to perform the process is identified and made available.
+    - id: GP.2.1.6
+      title: Manage the interfaces between involved parties
+      text: The individuals and groups involved in the process performance are determined. Responsibilities of the involved
+        parties are assigned. Interfaces between the involved parties are managed. Communication is assured between the involved
+        parties. Communication between the involved parties is effective.
+  PA_2_2:
+    name: Work product management attribute
+    practices:
+    - id: GP.2.2.1
+      title: Define the requirements for the work products
+      text: The requirements for the work products to be produced are defined. Requirements may include defining contents
+        and structure. Quality criteria of the work products are identified. Appropriate review and approval criteria for
+        the work products are defined.
+    - id: GP.2.2.2
+      title: Define the requirements for documentation and control of the work products
+      text: Requirements for the documentation and control of the work products are defined. Such requirements may include
+        requirements for (1) distribution, (2) identification of work products and their components (3) traceability Dependencies
+        between work products are identified and understood. Requirements for the approval of work products to be controlled
+        are defined.
+    - id: GP.2.2.3
+      title: Identify, document and control the work products
+      text: The work products to be controlled are identified. Change control is established for work products. The work products
+        are documented and controlled in accordance with requirements. Versions of work products are assigned to product configurations
+        as applicable. The work products are made available through appropriate access mechanisms. The revision status of
+        the work products may readily be ascertained.
+    - id: GP.2.2.4
+      title: Review and adjust work products to meet the defined requirements
+      text: Work products are reviewed against the defined requirements in accordance with planned arrangements. Issues arising
+        from work product reviews are resolved.
+  PA_3_1:
+    name: Process definition attribute
+    practices:
+    - id: GP.3.1.1
+      title: Define the standard process that will support the deployment of the defined process
+      text: A standard process is developed that includes the fundamental process elements. The standard process identifies
+        the deployment needs and deployment context. Guidance and/or procedures are provided to support implementation of
+        the process as needed. Appropriate tailoring guideline(s) are available as needed.
+    - id: GP.3.1.2
+      title: Determine the sequence and interaction between processes so that they work as an integrated system of processes
+      text: The standard process’s sequence and interaction with other processes are determined. Deployment of the standard
+        process as a defined process maintains integrity of processes.
+    - id: GP.3.1.3
+      title: Identify the roles and competencies for performing the standard process
+      text: Process performance roles are identified. Competencies for performing the process are identified.
+    - id: GP.3.1.4
+      title: Identify the required infrastructure and work environment for performing the standard process
+      text: Process infrastructure components are identified (facilities, tools, networks, methods, etc). Work environment
+        requirements are identified.
+    - id: GP.3.1.5
+      title: Determine suitable methods to monitor the effectiveness and suitability of the standard process
+      text: Methods for monitoring the effectiveness and suitability of the process are determined. Appropriate criteria and
+        data needed to monitor the effectiveness and suitability of the process are defined. The need to establish the characteristics
+        of the process is considered. The need to conduct internal audit and management review is established. Process changes
+        are implemented to maintain the standard process.
+  PA_3_2:
+    name: Process deployment attribute
+    practices:
+    - id: GP.3.2.1
+      title: Deploy a defined process that satisfies the context specific requirements of the use of the standard process
+      text: The defined process is appropriately selected and/or tailored from the standard process. Conformance of defined
+        process with standard process requirements is verified.
+    - id: GP.3.2.2
+      title: Assign and communicate roles, responsibilities and authorities for performing the defined process
+      text: The roles for performing the defined process are assigned and communicated. The responsibilities and authorities
+        for performing the defined process are assigned and communicated.
+    - id: GP.3.2.3
+      title: Ensure necessary competencies for performing the defined process
+      text: Appropriate competencies for assigned personnel are identified. Suitable training is available for those deploying
+        the defined process.
+    - id: GP.3.2.4
+      title: Provide resources and information to support the performance of the defined process
+      text: Required human resources are made available, allocated and used. Required information to perform the process is
+        made available, allocated and used.
+    - id: GP.3.2.5
+      title: Provide adequate process infrastructure to support the performance of the defined process
+      text: Required infrastructure and work environment is available. Organizational support to effectively manage and maintain
+        the infrastructure and work environment is available. Infrastructure and work environment is used and maintained.
+    - id: GP.3.2.6
+      title: Collect and analyse data about performance of the process to demonstrate its suitability and effectiveness
+      text: Data required to understand the behaviour, suitability and effectiveness of the defined process are identified.
+        Data are collected and analysed to understand the behaviour, suitability and effectiveness of the defined process.
+        Results of the analysis are used to identify where continual improvement of the standard and/or defined process can
+        be made.

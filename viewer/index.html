@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confluence Yerel Görüntüleyici</title>
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <h1>Confluence</h1>
+        <p>Yerel export görüntüleyici</p>
+      </header>
+
+      <label class="search-label" for="searchInput">Sayfa ara</label>
+      <input id="searchInput" class="search-input" type="search" placeholder="Başlık içinde ara">
+
+      <nav id="treeRoot" class="tree" aria-label="Sayfa ağacı"></nav>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <div>
+          <p class="eyebrow">Seçili sayfa</p>
+          <h2 id="pageTitle">Yükleniyor...</h2>
+        </div>
+        <div class="actions">
+          <a id="openPreview" class="button" href="#" target="_blank" rel="noopener">Önizlemeyi Aç</a>
+          <a id="openStorage" class="button" href="#" target="_blank" rel="noopener">Storage XHTML</a>
+        </div>
+      </header>
+
+      <section class="frame-wrap">
+        <iframe id="pageFrame" title="Confluence sayfa önizlemesi"></iframe>
+      </section>
+    </main>
+  </div>
+
+  <script src="viewer.js"></script>
+</body>
+</html>

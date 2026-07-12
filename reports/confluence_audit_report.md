@@ -139,7 +139,7 @@
 - İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu (`137265833`) - terms: .md, Markdown
 - İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.016 - Repository Yapısı Şablonu (`137265834`) - terms: .md, Markdown
 - İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu (`137265835`) - terms: .md, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi (`137265902`) - terms: .md, Dosya Adı, Dosya adı, Markdown
+- İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi (`137265902`) - terms: .md, Dosya Adı, Dosya adı
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.011 - Repository Yapısı (`137265911`) - terms: .md, Dosya Adı, Dosya adı
 - İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı (`137265913`) - terms: .md, Dosya Adı, Dosya adı, Markdown, dosya yolu
 - İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu (`137265915`) - terms: .md, Dosya Adı, Dosya adı
@@ -172,7 +172,7 @@
 - İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu (`137265833`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.016 - Repository Yapısı Şablonu (`137265834`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu (`137265835`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi (`137265902`) - font-size attributes, raw HTML fragments that may be broken
+- İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi (`137265902`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı (`137265903`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı (`137265904`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi (`137265905`) - raw HTML fragments that may be broken
@@ -304,7 +304,7 @@
 - İÜC.BİDB.ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu contains .md, Markdown
 - İÜC.BİDB.ŞBL.016 - Repository Yapısı Şablonu contains .md, Markdown
 - İÜC.BİDB.ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu contains .md, Markdown
-- İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi contains .md, Dosya Adı, Dosya adı, Markdown
+- İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi contains .md, Dosya Adı, Dosya adı
 - İÜC.BİDB.LST.011 - Repository Yapısı contains .md, Dosya Adı, Dosya adı
 - İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı contains .md, Dosya Adı, Dosya adı, Markdown, dosya yolu
 - İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu contains .md, Dosya Adı, Dosya adı
@@ -361,7 +361,7 @@
 - İÜC.BİDB.ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu has raw HTML fragments that may be broken
 - İÜC.BİDB.ŞBL.016 - Repository Yapısı Şablonu has raw HTML fragments that may be broken
 - İÜC.BİDB.ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu has raw HTML fragments that may be broken
-- İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi has font-size attributes, raw HTML fragments that may be broken
+- İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi has raw HTML fragments that may be broken
 - İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı has raw HTML fragments that may be broken
 - İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı has raw HTML fragments that may be broken
 - İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi has raw HTML fragments that may be broken
