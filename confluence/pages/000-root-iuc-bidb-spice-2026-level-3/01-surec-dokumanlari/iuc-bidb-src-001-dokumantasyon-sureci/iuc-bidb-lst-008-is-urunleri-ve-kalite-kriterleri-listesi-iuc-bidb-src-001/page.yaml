@@ -14,3 +14,8 @@ slug: iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-001
 has_view_html: true
 view_file: body.view.html
 storage_file: body.storage.xhtml
+updated_at: '2026-07-12T20:52:56.839861+00:00'
+template: İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu
+document_code: İÜC.BİDB.LST.008
+document_type: Liste
+related_process: İÜC.BİDB.SRÇ.001

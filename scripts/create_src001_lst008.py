@@ -87,39 +87,64 @@ def extract_src001_activity_rows() -> list[dict[str, str]]:
     """Read activity rows from SRÇ.001 section 10 and return dictionaries by column name.
 
     The LST.008 output matrix must use activity names that exist in the parent
-    process document's `10. Süreç Faaliyetleri` list. This parser intentionally
-    reads the generated/final SRÇ.001 body instead of using BP titles.
+    process document's `10. Süreç Faaliyetleri` list. This parser scans h2
+    headings by their rendered text, so Confluence span/style markup does not
+    break the lookup.
     """
     body = SRC001_BODY.read_text(encoding="utf-8")
-    match = re.search(
-        r"<h2[^>]*>\s*10\.\s*Süreç Faaliyetleri\s*</h2>(.*?)(?=<h2[^>]*>\s*11\.)",
-        body,
-        flags=re.I | re.S,
-    )
-    if not match:
-        raise RuntimeError("SRÇ.001 içinden '10. Süreç Faaliyetleri' bölümü okunamadı.")
-    section = match.group(1)
+
+    h2_matches = list(re.finditer(r"<h2[^>]*>(.*?)</h2>", body, flags=re.I | re.S))
+    section_start = None
+    section_end = None
+
+    for index, match in enumerate(h2_matches):
+        heading_text = text_from_html(match.group(1))
+        if heading_text.startswith("10.") and "Süreç Faaliyetleri" in heading_text:
+            section_start = match.end()
+            section_end = h2_matches[index + 1].start() if index + 1 < len(h2_matches) else len(body)
+            break
+
+    if section_start is None or section_end is None:
+        found = [text_from_html(m.group(1)) for m in h2_matches]
+        raise RuntimeError(
+            "SRÇ.001 içinden '10. Süreç Faaliyetleri' bölümü okunamadı. "
+            f"Bulunan h2 başlıkları: {found}"
+        )
+
+    section = body[section_start:section_end]
     table_match = re.search(r"<table[^>]*>(.*?)</table>", section, flags=re.I | re.S)
     if not table_match:
         raise RuntimeError("SRÇ.001 10. Süreç Faaliyetleri bölümünde tablo bulunamadı.")
-    table_html = table_match.group(1)
 
+    table_html = table_match.group(1)
     header_match = re.search(r"<thead[^>]*>.*?<tr[^>]*>(.*?)</tr>.*?</thead>", table_html, flags=re.I | re.S)
     if not header_match:
         raise RuntimeError("SRÇ.001 10. Süreç Faaliyetleri tablosunun başlıkları okunamadı.")
-    headers = [text_from_html(h) for h in re.findall(r"<th[^>]*>(.*?)</th>", header_match.group(1), flags=re.I | re.S)]
+
+    headers = [
+        text_from_html(h)
+        for h in re.findall(r"<th[^>]*>(.*?)</th>", header_match.group(1), flags=re.I | re.S)
+    ]
 
     rows: list[dict[str, str]] = []
     for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", table_html, flags=re.I | re.S):
         if "<th" in tr.lower():
             continue
-        cells = [text_from_html(td) for td in re.findall(r"<td[^>]*>(.*?)</td>", tr, flags=re.I | re.S)]
+
+        cells = [
+            text_from_html(td)
+            for td in re.findall(r"<td[^>]*>(.*?)</td>", tr, flags=re.I | re.S)
+        ]
+
         if not cells:
             continue
+
         row = {headers[i]: cells[i] for i in range(min(len(headers), len(cells)))}
         rows.append(row)
+
     if not rows:
         raise RuntimeError("SRÇ.001 10. Süreç Faaliyetleri tablosundan satır okunamadı.")
+
     return rows
 
 
