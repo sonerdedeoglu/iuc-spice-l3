@@ -3,21 +3,93 @@
 <head>
   <meta charset="utf-8">
   <title>İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu</title>
-  <style>body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
-.confluence-page{max-width:1100px;margin:0 auto;padding:32px 24px 56px}
-h1,h2,h3,h4,h5,h6{margin:1.4em 0 .55em;line-height:1.25;color:#0f172a}
-h1{margin-top:0;padding-bottom:12px;border-bottom:1px solid #d8dee4}
-p{margin:0 0 12px}
-table{width:100%;border-collapse:collapse;margin:16px 0;table-layout:auto}
-th,td{border:1px solid #c9d1d9;padding:8px 10px;vertical-align:top}
-th{background:#f6f8fa;font-weight:600;text-align:left}
-blockquote{margin:16px 0;padding:8px 16px;border-left:4px solid #c9d1d9;color:#57606a;background:#f6f8fa}</style>
+  <style>
+    body {
+      margin: 0;
+      background: #fff;
+      color: #172b4d;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    .confluence-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 56px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin: 1.4em 0 0.55em;
+      line-height: 1.25;
+      color: #0f172a;
+    }
+    h1 {
+      margin-top: 0;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #d8dee4;
+    }
+    p {
+      margin: 0 0 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      table-layout: auto;
+    }
+    th, td {
+      border: 1px solid #c9d1d9;
+      padding: 8px 10px;
+      vertical-align: top;
+    }
+    th {
+      background: #f6f8fa;
+      font-weight: 600;
+      text-align: left;
+    }
+    code {
+      background: #f6f8fa;
+      border: 1px solid #d8dee4;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+    pre {
+      background: #f6f8fa;
+      border: 1px solid #d8dee4;
+      border-radius: 6px;
+      padding: 12px;
+      overflow-x: auto;
+    }
+    pre code {
+      border: 0;
+      padding: 0;
+      background: transparent;
+    }
+    blockquote {
+      margin: 16px 0;
+      padding: 8px 16px;
+      border-left: 4px solid #c9d1d9;
+      color: #57606a;
+      background: #f6f8fa;
+    }
+    a {
+      color: #0969da;
+    }
+    .status, span.status-macro, span.aui-lozenge {
+      display: inline-block;
+      border-radius: 3px;
+      padding: 1px 6px;
+      background: #eaeef2;
+      color: #24292f;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
-<main class="confluence-page">
-<h1>İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu</h1>
-<h2>0. Liste Hakkında</h2><h3>0.1. Liste Üst Bilgisi</h3><table class="wrapped"><thead><tr><th>Alan</th><th>Değer</th></tr></thead><tbody><tr><td>Kurum</td><td>İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı</td></tr><tr><td>Doküman Kodu</td><td>İÜC.BİDB.LST.010.Ş</td></tr><tr><td>Doküman Türü</td><td>Liste Şablonu</td></tr><tr><td>Kullanım Alanı</td><td>Süreç Rol Yetki ve RACI Matrisi</td></tr><tr><td>Durum</td><td>Aktif</td></tr><tr><td>Sürüm</td><td>v1.0</td></tr><tr><td>Yürürlük Tarihi</td><td>02-01-2025</td></tr><tr><td>Son Gözden Geçirme Tarihi</td><td>01-02-2026</td></tr><tr><td>Güncelleme Sıklığı</td><td>Yılda bir kez, süreç değişikliği olduğunda veya rol/yetki/RACI ihtiyacı değiştiğinde</td></tr></tbody></table><h3>0.2. Listenin Kullanım Amacı</h3><p>Bu liste, bir sürecin yürütülmesinde rol alan tarafların sorumluluk, yetki, RACI ve yetkinlik bilgilerinin tekil ve izlenebilir biçimde yönetilmesi için kullanılır.</p><p>Liste, süreç tanımı dokümanındaki genel rol açıklamalarını tekrar etmez; sürece özel rol, yetki, RACI ve yetkinlik kayıtlarını tek yerde yönetir.</p><h3>0.3. Doküman Adlandırma Kuralı</h3><p>Bu şablon kullanılarak oluşturulan dosyalar aşağıdaki formatta adlandırılır:</p><blockquote>İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.XXX)</blockquote><p>Parantez içindeki kod, SPICE süreç kodu değil, kurum içinde kullanılan standart süreç kodudur.</p><h3>0.4. Sürüm Geçmişi</h3><table class="wrapped"><thead><tr><th>Sürüm</th><th>Tarih</th><th>Açıklama</th><th>Hazırlayan / Güncelleyen</th><th>Gözden Geçiren</th><th>Onay</th></tr></thead><tbody><tr><td>v0.1</td><td>27-11-2024</td><td>İlk taslak oluşturuldu.</td><td>Soner DEDEOĞLU - Kalite Danışmanı</td><td>-</td><td>-</td></tr><tr><td>v1.0</td><td>02-01-2025</td><td>Taslak onaylanıp yürürlüğe girdi</td><td>Soner DEDEOĞLU - Kalite Danışmanı</td><td>Levent BAYEZİT - Proje Yöneticisi</td><td>Mustafa Nusret SARISAKAL - BİD Başkanı</td></tr></tbody></table><h2>1. Liste Özeti</h2><table class="wrapped"><thead><tr><th>Alan</th><th>Değer</th></tr></thead><tbody><tr><td>İlgili Süreç</td><td><em>İÜC.BİDB.SRÇ.XXX - Süreç Adı</em></td></tr><tr><td>Liste Kapsamı</td><td><em>Rol, yetki, RACI, yetkinlik ve onay kapsamı</em></td></tr><tr><td>Liste Tarihi</td><td><em>GG-AA-YYYY</em></td></tr><tr><td>Listeyi Hazırlayan</td><td><em>Rol / kişi</em></td></tr><tr><td>Listeyi Gözden Geçiren</td><td><em>Rol / kişi</em></td></tr><tr><td>Listeyi Onaylayan</td><td><em>Rol / kişi</em></td></tr><tr><td>Genel Not</td><td><em>Liste kapsamına ilişkin kısa açıklama</em></td></tr></tbody></table><h2>2. Kullanım Değerleri</h2><table class="wrapped"><thead><tr><th>Değer</th><th>Anlamı</th></tr></thead><tbody><tr><td>R</td><td>Responsible / Sorumlu: Faaliyeti veya iş ürününü fiilen gerçekleştiren rol.</td></tr><tr><td>A</td><td>Accountable / Hesap Veren-Onaylayan: Sonuçtan nihai olarak sorumlu olan ve karar/onay veren rol.</td></tr><tr><td>C</td><td>Consulted / Danışılan: Faaliyet veya iş ürünü için görüşü alınan rol.</td></tr><tr><td>I</td><td>Informed / Bilgilendirilen: Faaliyet veya sonuç hakkında bilgilendirilen rol.</td></tr><tr><td>Yetkili</td><td>İlgili karar, onay, yayın, değişiklik veya erişim işlemini yapma yetkisi bulunan rol.</td></tr><tr><td>Destek</td><td>Faaliyetin yürütülmesine katkı sağlayan ancak ana sorumlu olmayan rol.</td></tr><tr><td>Kapsam Dışı</td><td>İlgili rolün süreç faaliyeti veya iş ürünü bağlamında görevi yoktur.</td></tr></tbody></table><h2>3. Rol ve Yetkinlik Matrisi</h2><table class="wrapped"><thead><tr><th>Rol</th><th>Rolün Süreçteki Amacı</th><th>Asgari Yetkinlik / Bilgi</th><th>Vekil / Alternatif Rol</th><th>Durum / Not</th></tr></thead><tbody><tr><td><em>Rol adı</em></td><td><em>Süreçteki amacı</em></td><td><em>Gerekli bilgi, deneyim veya yetkinlik</em></td><td><em>Vekil rol / kişi</em></td><td><em>Durum veya açıklama</em></td></tr><tr><td><em>Rol adı</em></td><td><em>Süreçteki amacı</em></td><td><em>Gerekli bilgi, deneyim veya yetkinlik</em></td><td><em>Vekil rol / kişi</em></td><td><em>Durum veya açıklama</em></td></tr></tbody></table><h2>4. Süreç Faaliyetleri RACI Matrisi</h2><table class="wrapped"><thead><tr><th>Faaliyet Kodu</th><th>Süreç Faaliyeti</th><th>Responsible</th><th>Accountable</th><th>Consulted</th><th>Informed</th><th>Açıklama / Not</th></tr></thead><tbody><tr><td><em>F1</em></td><td><em>Süreç faaliyet adı</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Not</em></td></tr><tr><td><em>F2</em></td><td><em>Süreç faaliyet adı</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Not</em></td></tr></tbody></table><h2>5. İş Ürünleri RACI Matrisi</h2><table class="wrapped"><thead><tr><th>İş Ürünü</th><th>İlgili Faaliyet</th><th>Responsible</th><th>Accountable</th><th>Consulted</th><th>Informed</th><th>Açıklama / Not</th></tr></thead><tbody><tr><td><em>İş ürünü adı</em></td><td><em>F1 / F2 / ...</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Not</em></td></tr><tr><td><em>İş ürünü adı</em></td><td><em>F1 / F2 / ...</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Rol</em></td><td><em>Not</em></td></tr></tbody></table><h2>6. Yetki ve Onay Matrisi</h2><table class="wrapped"><thead><tr><th>Yetki / Karar Alanı</th><th>Yetkili Rol</th><th>Onay Gerektirir mi?</th><th>Onaylayan Rol</th><th>Kayıt / Kanıt</th><th>Açıklama / Not</th></tr></thead><tbody><tr><td><em>Yetki veya karar alanı</em></td><td><em>Yetkili rol</em></td><td><em>Evet / Hayır / Koşullu</em></td><td><em>Onaylayan rol</em></td><td><em>Kayıt veya kanıt</em></td><td><em>Not</em></td></tr><tr><td><em>Yetki veya karar alanı</em></td><td><em>Yetkili rol</em></td><td><em>Evet / Hayır / Koşullu</em></td><td><em>Onaylayan rol</em></td><td><em>Kayıt veya kanıt</em></td><td><em>Not</em></td></tr></tbody></table><h2>7. Sürüm Geçmişi</h2><table class="wrapped"><thead><tr><th>Sürüm</th><th>Tarih</th><th>Açıklama</th><th>Hazırlayan/Güncelleyen</th><th>Gözden Geçiren</th><th>Onay</th></tr></thead><tbody><tr><td>v0.1</td><td><em>GG-AA-YYYY</em></td><td><em>İlk Taslak</em></td><td><em>Rol / birim</em></td><td><em>Rol / birim</em></td><td><em>Rol / birim</em></td></tr><tr><td>v1.0</td><td><em>GG-AA-YYYY</em></td><td><em>Onaylı sürüm</em></td><td><em>Rol / birim</em></td><td><em>Rol / birim</em></td><td><em>Rol / birim</em></td></tr></tbody></table>
-
-</main>
+  <main class="confluence-page">
+    <h1>İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu</h1>
+<h2 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-0.ListeHakkında">0. Liste Hakkında</h2><h3 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-0.1.ListeÜstBilgisi">0.1. Liste Üst Bilgisi</h3><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><thead><tr><th class="confluenceTh">Alan</th><th class="confluenceTh">Değer</th></tr></thead><tbody><tr><td class="confluenceTd">Kurum</td><td class="confluenceTd">İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı</td></tr><tr><td class="confluenceTd">Doküman Kodu</td><td class="confluenceTd">İÜC.BİDB.LST.010.Ş</td></tr><tr><td class="confluenceTd">Doküman Türü</td><td class="confluenceTd">Liste Şablonu</td></tr><tr><td class="confluenceTd">Kullanım Alanı</td><td class="confluenceTd">Süreç Rol Yetki ve RACI Matrisi</td></tr><tr><td class="confluenceTd">Durum</td><td class="confluenceTd">Aktif</td></tr><tr><td class="confluenceTd">Sürüm</td><td class="confluenceTd">v1.0</td></tr><tr><td class="confluenceTd">Yürürlük Tarihi</td><td class="confluenceTd">02-01-2025</td></tr><tr><td class="confluenceTd">Son Gözden Geçirme Tarihi</td><td class="confluenceTd">01-02-2026</td></tr><tr><td class="confluenceTd">Güncelleme Sıklığı</td><td class="confluenceTd">Yılda bir kez, süreç değişikliği olduğunda veya rol/yetki/RACI ihtiyacı değiştiğinde</td></tr></tbody></table></div><h3 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-0.2.ListeninKullanımAmacı">0.2. Listenin Kullanım Amacı</h3><p>Bu liste, bir sürecin yürütülmesinde rol alan tarafların sorumluluk, yetki, RACI ve yetkinlik bilgilerinin tekil ve izlenebilir biçimde yönetilmesi için kullanılır.</p><p>Liste, süreç tanımı dokümanındaki genel rol açıklamalarını tekrar etmez; sürece özel rol, yetki, RACI ve yetkinlik kayıtlarını tek yerde yönetir.</p><h3 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-0.3.DokümanAdlandırmaKuralı">0.3. Doküman Adlandırma Kuralı</h3><p>Bu şablon kullanılarak oluşturulan dosyalar aşağıdaki formatta adlandırılır:</p><div class="confluence-information-macro has-no-icon confluence-information-macro-information conf-macro output-block" data-hasbody="true" data-macro-name="info"><p class="title">Doküman Adlandırma Örneği</p><div class="confluence-information-macro-body"><p>İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi Şablonu (<span class="status-macro aui-lozenge aui-lozenge-current conf-macro output-inline" data-hasbody="false" data-macro-name="status">KURUMSAL SÜREÇ KODU</span>)</p></div></div><p><span>Parantez içindeki kod, SPICE süreç kodu değil, kurum içinde kullanılan standart süreç kodudur.</span></p><h3 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-0.4.SürümGeçmişi">0.4. Sürüm Geçmişi</h3><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/><col/><col/><col/></colgroup><thead><tr><th class="confluenceTh">Sürüm</th><th class="confluenceTh">Tarih</th><th class="confluenceTh">Açıklama</th><th class="confluenceTh">Hazırlayan / Güncelleyen</th><th class="confluenceTh">Gözden Geçiren</th><th class="confluenceTh">Onay</th></tr></thead><tbody><tr><td class="confluenceTd">v0.1</td><td class="confluenceTd">27-11-2024</td><td class="confluenceTd">İlk taslak oluşturuldu.</td><td class="confluenceTd">Soner DEDEOĞLU - Kalite Danışmanı</td><td class="confluenceTd">-</td><td class="confluenceTd">-</td></tr><tr><td class="confluenceTd">v1.0</td><td class="confluenceTd">02-01-2025</td><td class="confluenceTd">Taslak onaylanıp yürürlüğe girdi</td><td class="confluenceTd">Soner DEDEOĞLU - Kalite Danışmanı</td><td class="confluenceTd">Levent BAYEZİT - Proje Yöneticisi</td><td class="confluenceTd">Mustafa Nusret SARISAKAL - BİD Başkanı</td></tr></tbody></table></div><h2 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-1.ListeÖzeti">1. Liste Özeti</h2><div class="table-wrap"><table class="wrapped confluenceTable"><thead><tr><th class="confluenceTh">Alan</th><th class="confluenceTh">Değer</th></tr></thead><tbody><tr><td class="confluenceTd">İlgili Süreç</td><td class="confluenceTd"><em>İÜC.BİDB.SRÇ.XXX - Süreç Adı</em></td></tr><tr><td class="confluenceTd">Liste Kapsamı</td><td class="confluenceTd"><em>Rol, yetki, RACI, yetkinlik ve onay kapsamı</em></td></tr><tr><td class="confluenceTd">Liste Tarihi</td><td class="confluenceTd"><em>GG-AA-YYYY</em></td></tr><tr><td class="confluenceTd">Listeyi Hazırlayan</td><td class="confluenceTd"><em>Rol / kişi</em></td></tr><tr><td class="confluenceTd">Listeyi Gözden Geçiren</td><td class="confluenceTd"><em>Rol / kişi</em></td></tr><tr><td class="confluenceTd">Listeyi Onaylayan</td><td class="confluenceTd"><em>Rol / kişi</em></td></tr><tr><td class="confluenceTd">Genel Not</td><td class="confluenceTd"><em>Liste kapsamına ilişkin kısa açıklama</em></td></tr></tbody></table></div><h2 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-2.KullanımDeğerleri">2. Kullanım Değerleri</h2><div class="table-wrap"><table class="wrapped confluenceTable"><thead><tr><th class="confluenceTh">Değer</th><th class="confluenceTh">Anlamı</th></tr></thead><tbody><tr><td class="confluenceTd">R</td><td class="confluenceTd">Responsible / Sorumlu: Faaliyeti veya iş ürününü fiilen gerçekleştiren rol.</td></tr><tr><td class="confluenceTd">A</td><td class="confluenceTd">Accountable / Hesap Veren-Onaylayan: Sonuçtan nihai olarak sorumlu olan ve karar/onay veren rol.</td></tr><tr><td class="confluenceTd">C</td><td class="confluenceTd">Consulted / Danışılan: Faaliyet veya iş ürünü için görüşü alınan rol.</td></tr><tr><td class="confluenceTd">I</td><td class="confluenceTd">Informed / Bilgilendirilen: Faaliyet veya sonuç hakkında bilgilendirilen rol.</td></tr><tr><td class="confluenceTd">Yetkili</td><td class="confluenceTd">İlgili karar, onay, yayın, değişiklik veya erişim işlemini yapma yetkisi bulunan rol.</td></tr><tr><td class="confluenceTd">Destek</td><td class="confluenceTd">Faaliyetin yürütülmesine katkı sağlayan ancak ana sorumlu olmayan rol.</td></tr><tr><td class="confluenceTd">Kapsam Dışı</td><td class="confluenceTd">İlgili rolün süreç faaliyeti veya iş ürünü bağlamında görevi yoktur.</td></tr></tbody></table></div><h2 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-3.RolveYetkinlikMatrisi">3. Rol ve Yetkinlik Matrisi</h2><div class="table-wrap"><table class="wrapped confluenceTable"><thead><tr><th class="confluenceTh">Rol</th><th class="confluenceTh">Rolün Süreçteki Amacı</th><th class="confluenceTh">Asgari Yetkinlik / Bilgi</th><th class="confluenceTh">Vekil / Alternatif Rol</th><th class="confluenceTh">Durum / Not</th></tr></thead><tbody><tr><td class="confluenceTd"><em>Rol adı</em></td><td class="confluenceTd"><em>Süreçteki amacı</em></td><td class="confluenceTd"><em>Gerekli bilgi, deneyim veya yetkinlik</em></td><td class="confluenceTd"><em>Vekil rol / kişi</em></td><td class="confluenceTd"><em>Durum veya açıklama</em></td></tr><tr><td class="confluenceTd"><em>Rol adı</em></td><td class="confluenceTd"><em>Süreçteki amacı</em></td><td class="confluenceTd"><em>Gerekli bilgi, deneyim veya yetkinlik</em></td><td class="confluenceTd"><em>Vekil rol / kişi</em></td><td class="confluenceTd"><em>Durum veya açıklama</em></td></tr></tbody></table></div><h2 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-4.SüreçFaaliyetleriRACIMatrisi">4. Süreç Faaliyetleri RACI Matrisi</h2><div class="table-wrap"><table class="wrapped confluenceTable"><thead><tr><th class="confluenceTh">Faaliyet Kodu</th><th class="confluenceTh">Süreç Faaliyeti</th><th class="confluenceTh">Responsible</th><th class="confluenceTh">Accountable</th><th class="confluenceTh">Consulted</th><th class="confluenceTh">Informed</th><th class="confluenceTh">Açıklama / Not</th></tr></thead><tbody><tr><td class="confluenceTd"><em>F1</em></td><td class="confluenceTd"><em>Süreç faaliyet adı</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Not</em></td></tr><tr><td class="confluenceTd"><em>F2</em></td><td class="confluenceTd"><em>Süreç faaliyet adı</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Not</em></td></tr></tbody></table></div><h2 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-5.İşÜrünleriRACIMatrisi">5. İş Ürünleri RACI Matrisi</h2><div class="table-wrap"><table class="wrapped confluenceTable"><thead><tr><th class="confluenceTh">İş Ürünü</th><th class="confluenceTh">İlgili Faaliyet</th><th class="confluenceTh">Responsible</th><th class="confluenceTh">Accountable</th><th class="confluenceTh">Consulted</th><th class="confluenceTh">Informed</th><th class="confluenceTh">Açıklama / Not</th></tr></thead><tbody><tr><td class="confluenceTd"><em>İş ürünü adı</em></td><td class="confluenceTd"><em>F1 / F2 / ...</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Not</em></td></tr><tr><td class="confluenceTd"><em>İş ürünü adı</em></td><td class="confluenceTd"><em>F1 / F2 / ...</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Rol</em></td><td class="confluenceTd"><em>Not</em></td></tr></tbody></table></div><h2 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-6.YetkiveOnayMatrisi">6. Yetki ve Onay Matrisi</h2><div class="table-wrap"><table class="wrapped confluenceTable"><thead><tr><th class="confluenceTh">Yetki / Karar Alanı</th><th class="confluenceTh">Yetkili Rol</th><th class="confluenceTh">Onay Gerektirir mi?</th><th class="confluenceTh">Onaylayan Rol</th><th class="confluenceTh">Kayıt / Kanıt</th><th class="confluenceTh">Açıklama / Not</th></tr></thead><tbody><tr><td class="confluenceTd"><em>Yetki veya karar alanı</em></td><td class="confluenceTd"><em>Yetkili rol</em></td><td class="confluenceTd"><em>Evet / Hayır / Koşullu</em></td><td class="confluenceTd"><em>Onaylayan rol</em></td><td class="confluenceTd"><em>Kayıt veya kanıt</em></td><td class="confluenceTd"><em>Not</em></td></tr><tr><td class="confluenceTd"><em>Yetki veya karar alanı</em></td><td class="confluenceTd"><em>Yetkili rol</em></td><td class="confluenceTd"><em>Evet / Hayır / Koşullu</em></td><td class="confluenceTd"><em>Onaylayan rol</em></td><td class="confluenceTd"><em>Kayıt veya kanıt</em></td><td class="confluenceTd"><em>Not</em></td></tr></tbody></table></div><h2 id="id-İÜC.BİDB.LST.010.ŞSüreçRolYetkiveRACIMatrisiŞablonu-7.SürümGeçmişi">7. Sürüm Geçmişi</h2><div class="table-wrap"><table class="wrapped confluenceTable"><thead><tr><th class="confluenceTh">Sürüm</th><th class="confluenceTh">Tarih</th><th class="confluenceTh">Açıklama</th><th class="confluenceTh">Hazırlayan/Güncelleyen</th><th class="confluenceTh">Gözden Geçiren</th><th class="confluenceTh">Onay</th></tr></thead><tbody><tr><td class="confluenceTd">v0.1</td><td class="confluenceTd"><em>GG-AA-YYYY</em></td><td class="confluenceTd"><em>İlk Taslak</em></td><td class="confluenceTd"><em>Rol / birim</em></td><td class="confluenceTd"><em>Rol / birim</em></td><td class="confluenceTd"><em>Rol / birim</em></td></tr><tr><td class="confluenceTd">v1.0</td><td class="confluenceTd"><em>GG-AA-YYYY</em></td><td class="confluenceTd"><em>Onaylı sürüm</em></td><td class="confluenceTd"><em>Rol / birim</em></td><td class="confluenceTd"><em>Rol / birim</em></td><td class="confluenceTd"><em>Rol / birim</em></td></tr></tbody></table></div>
+  </main>
 </body>
 </html>
