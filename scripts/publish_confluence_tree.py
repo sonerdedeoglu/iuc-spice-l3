@@ -4,8 +4,9 @@
 This script is intentionally generic. It starts from the exported root tree under
 confluence/pages/ and publishes every page that has page.yaml + body.storage.xhtml.
 
-It creates missing pages, updates existing pages, and preserves the local tree's
-parent-child structure. It does not delete remote pages.
+It creates missing pages, updates existing pages, moves pages when the local parent
+changes, and preserves the local tree's parent-child structure. It does not delete
+remote pages.
 """
 from __future__ import annotations
 
@@ -52,11 +53,6 @@ def hash_body(value: str) -> str:
     return hashlib.sha256(normalize_body(value).encode("utf-8")).hexdigest()
 
 
-def find_page_folder_by_relative_path(relative_path: str) -> Path | None:
-    path = CONFLUENCE_DIR / relative_path
-    return path if path.exists() else None
-
-
 def discover_pages() -> list[dict[str, Any]]:
     if not PAGES_DIR.exists():
         raise FileNotFoundError(f"Confluence pages folder not found: {PAGES_DIR}")
@@ -92,22 +88,25 @@ def discover_pages() -> list[dict[str, Any]]:
     return records
 
 
-def load_index_pages() -> list[dict[str, Any]]:
-    if not INDEX_PATH.exists():
-        return []
-    return load_yaml(INDEX_PATH).get("pages", []) or []
-
-
-def update_index_page_id(relative_path: str, page_id: str) -> None:
+def update_index_page(record: dict[str, Any], page_id: str) -> None:
     if not INDEX_PATH.exists():
         return
     data = load_yaml(INDEX_PATH)
     changed = False
     for page in data.get("pages", []) or []:
-        if page.get("relative_path") == relative_path:
-            if str(page.get("page_id") or "") != str(page_id):
-                page["page_id"] = str(page_id)
-                changed = True
+        if page.get("relative_path") == record["relative_path"] or page.get("title") == record["title"]:
+            desired = {
+                "page_id": str(page_id),
+                "title": record["title"],
+                "parent_id": str(record["metadata"].get("parent_id") or record["parent_id"] or ""),
+                "depth": record["depth"],
+                "relative_path": record["relative_path"],
+                "slug": record["metadata"].get("slug") or record["folder"].name,
+                "storage_file": f"{record['relative_path']}/body.storage.xhtml",
+                "view_file": f"{record['relative_path']}/body.view.html",
+            }
+            page.update(desired)
+            changed = True
     if changed:
         data["exported_at"] = datetime.now(timezone.utc).isoformat()
         write_yaml(INDEX_PATH, data)
@@ -150,17 +149,29 @@ def resolve_parent_id(record: dict[str, Any], path_to_id: dict[str, str]) -> str
     )
 
 
-def update_page_metadata(record: dict[str, Any], page_id: str, version: Any | None = None) -> None:
+def existing_parent_id(existing: dict[str, Any] | None) -> str:
+    if not existing:
+        return ""
+    ancestors = existing.get("ancestors") or []
+    if not ancestors:
+        return ""
+    return str(ancestors[-1].get("id") or "")
+
+
+def update_page_metadata(record: dict[str, Any], page_id: str, parent_id: str, version: Any | None = None) -> None:
     metadata = record["metadata"]
     metadata["page_id"] = str(page_id)
+    metadata["parent_id"] = str(parent_id) if parent_id else metadata.get("parent_id", "")
     metadata["space"] = SPACE_KEY
     metadata["status"] = "active"
+    metadata["relative_path"] = record["relative_path"]
     metadata["storage_file"] = "body.storage.xhtml"
     metadata["view_file"] = "body.view.html"
     if version is not None:
         metadata["version"] = version
     write_yaml(record["page_yaml"], metadata)
-    update_index_page_id(record["relative_path"], str(page_id))
+    record["metadata"] = metadata
+    update_index_page(record, str(page_id))
 
 
 def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id: dict[str, str], dry_run: bool) -> dict[str, Any]:
@@ -178,13 +189,23 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
         action = "CREATE"
         page_id = ""
         version_number = None
-        changed = True
+        body_changed = True
+        parent_changed = False
     else:
         page_id = str(existing["id"])
         version_number = int(existing["version"]["number"])
         existing_body = existing.get("body", {}).get("storage", {}).get("value", "")
-        changed = hash_body(existing_body) != hash_body(body)
-        action = "UPDATE" if changed else "SKIP"
+        body_changed = hash_body(existing_body) != hash_body(body)
+        current_parent_id = existing_parent_id(existing)
+        parent_changed = bool(parent_id) and current_parent_id != str(parent_id)
+        if body_changed and parent_changed:
+            action = "UPDATE+MOVE"
+        elif body_changed:
+            action = "UPDATE"
+        elif parent_changed:
+            action = "MOVE"
+        else:
+            action = "SKIP"
 
     if dry_run:
         print(f"[DRY-RUN] {action} {title}")
@@ -192,28 +213,32 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
             "title": title,
             "action": action,
             "page_id": page_id,
-            "changed": changed,
+            "changed": body_changed or parent_changed,
+            "body_changed": body_changed,
+            "parent_changed": parent_changed,
             "relative_path": record["relative_path"],
         }
 
     if action == "CREATE":
         created = client.create_page(SPACE_KEY, parent_id, title, body)
         page_id = str(created["id"])
-        update_page_metadata(record, page_id, created.get("version", {}).get("number"))
+        update_page_metadata(record, page_id, parent_id, created.get("version", {}).get("number"))
         print(f"[CREATE] {title}")
-    elif action == "UPDATE":
-        updated = client.update_page(page_id, SPACE_KEY, title, body, version_number + 1)
-        update_page_metadata(record, page_id, updated.get("version", {}).get("number"))
-        print(f"[UPDATE] {title}")
+    elif action in {"UPDATE", "MOVE", "UPDATE+MOVE"}:
+        updated = client.update_page(page_id, SPACE_KEY, title, body, version_number + 1, parent_id=parent_id)
+        update_page_metadata(record, page_id, parent_id, updated.get("version", {}).get("number"))
+        print(f"[{action}] {title}")
     else:
-        update_page_metadata(record, page_id, version_number)
+        update_page_metadata(record, page_id, parent_id, version_number)
         print(f"[SKIP] {title}")
 
     return {
         "title": title,
         "action": action,
         "page_id": page_id,
-        "changed": changed,
+        "changed": body_changed or parent_changed,
+        "body_changed": body_changed,
+        "parent_changed": parent_changed,
         "relative_path": record["relative_path"],
     }
 
@@ -235,6 +260,8 @@ def write_report(results: list[dict[str, Any]], dry_run: bool) -> None:
         f"- Toplam sayfa: {len(results)}",
         f"- Oluşturulacak/Oluşturulan: {counts.get('CREATE', 0)}",
         f"- Güncellenecek/Güncellenen: {counts.get('UPDATE', 0)}",
+        f"- Taşınacak/Taşınan: {counts.get('MOVE', 0)}",
+        f"- Güncellenecek ve taşınacak: {counts.get('UPDATE+MOVE', 0)}",
         f"- Değişiklik olmayan: {counts.get('SKIP', 0)}",
         "",
         "## Sayfalar",
@@ -247,7 +274,7 @@ def write_report(results: list[dict[str, Any]], dry_run: bool) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Publish local Confluence export tree to Confluence")
-    parser.add_argument("--dry-run", action="store_true", help="Show planned create/update/skip actions without writing to Confluence")
+    parser.add_argument("--dry-run", action="store_true", help="Show planned create/update/move/skip actions without writing to Confluence")
     args = parser.parse_args()
 
     records = discover_pages()
