@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Rework only İÜC.BİDB.SRÇ.001 according to the current process definition template.
 
-Scope is deliberately limited:
+Strict scope:
 - Updates only İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci.
 - Does not move, rename or edit LST.007 or any other related document.
-- Reads the current İÜC.BİDB.SRÇ.XXX.Ş template and preserves its numbered section order.
-- Skips every template-only section whose heading starts with 0.
+- Reads the current İÜC.BİDB.SRÇ.XXX.Ş template and preserves its numbered h2 section order exactly.
+- Excludes every template-only section whose heading starts with 0.
+- Writes no unnumbered process metadata block before section 1; section 1 is the first body section.
 
-After running this script, use:
+After running this script:
   python scripts/build_local_viewer.py
 """
 from __future__ import annotations
@@ -16,7 +17,7 @@ import html
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import yaml
 
@@ -62,6 +63,14 @@ def strip_tags(value: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(value)).strip()
 
 
+def normalize_heading(value: str) -> str:
+    value = strip_tags(value).lower()
+    value = re.sub(r"^\s*\d+\s*[\.-]\s*", "", value)
+    value = value.replace("ı", "i").replace("ş", "s").replace("ç", "c")
+    value = value.replace("ö", "o").replace("ü", "u").replace("ğ", "g")
+    return re.sub(r"\s+", " ", value).strip()
+
+
 def extract_template_sections() -> list[str]:
     template_body = (TEMPLATE_DIR / "body.storage.xhtml").read_text(encoding="utf-8")
     headings = [strip_tags(match) for match in re.findall(r"<h2[^>]*>(.*?)</h2>", template_body, flags=re.I | re.S)]
@@ -78,12 +87,8 @@ def load_index_pages() -> dict[str, dict[str, str]]:
     pages: dict[str, dict[str, str]] = {}
     for page in data.get("pages", []) or []:
         title = str(page.get("title") or "")
-        if not title:
-            continue
-        pages[title] = {
-            "page_id": str(page.get("page_id") or ""),
-            "title": title,
-        }
+        if title:
+            pages[title] = {"page_id": str(page.get("page_id") or ""), "title": title}
     return pages
 
 
@@ -111,37 +116,32 @@ def p(text: str) -> str:
     return f"<p>{e(text)}</p>"
 
 
-def meta_table() -> str:
+def section_surec_bilgileri() -> str:
     return table(
         ["Alan", "Değer"],
         [
             ["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"],
-            ["Doküman Kodu", SRC001_CODE],
-            ["Doküman Türü", "Süreç"],
-            ["Kullanım Alanı", "Süreç Tanımı"],
-            ["Süreç ID", SRC001_CODE],
-            ["Süreç Adı", "Dokümantasyon Süreci"],
+            ["Süreç Kodu ve Adı", f"{SRC001_CODE} - Dokümantasyon Süreci"],
             ["Süreç Referansı", "ISO/IEC 15504-5 SUP.7 - Documentation"],
             ["Süreç Sahibi", "Levent BAYEZİT - Proje Yöneticisi"],
             ["Durum", "Aktif"],
             ["Sürüm", "v1.0"],
             ["Yürürlük Tarihi", "29-06-2026"],
             ["Son Gözden Geçirme Tarihi", "01-07-2026"],
-            ["Güncelleme Sıklığı", "Yılda bir veya ihtiyaç halinde"],
         ],
     )
 
 
-def content_amac() -> str:
+def section_amac() -> str:
     return "".join(
         [
             p("Bu sürecin amacı, İÜC BİDB bünyesinde yürütülen süreçler, yazılım projeleri ve destek faaliyetleri sırasında üretilen doküman ve kayıtların standart biçimde geliştirilmesini, yayımlanmasını, erişilebilir tutulmasını, güncel kalmasını ve yaşam döngüsü boyunca kontrollü şekilde sürdürülmesini sağlamaktır."),
-            p("Süreç; doküman stratejisinin belirlenmesi, doküman standartlarının uygulanması, üretilecek dokümanların tanımlanması, dokümanların gözden geçirilmesi, onaylanması, yayımlanması, dağıtılması ve bakımının yapılması için kurumsal kuralları tanımlar."),
+            p("Süreç; dokümantasyon stratejisinin belirlenmesi, doküman standartlarının uygulanması, üretilecek dokümanların tanımlanması, dokümanların gözden geçirilmesi, onaylanması, yayımlanması, dağıtılması ve bakımının yapılması için kurumsal kuralları tanımlar."),
         ]
     )
 
 
-def content_kapsam() -> str:
+def section_kapsam() -> str:
     return "".join(
         [
             p("Bu süreç, İÜC BİDB kurumsal süreç dokümantasyonu ve yazılım proje dokümantasyonu kapsamında kullanılan dokümanların oluşturulması, gözden geçirilmesi, onaylanması, yayımlanması, dağıtılması, güncellenmesi ve arşivlenmesi faaliyetlerini kapsar."),
@@ -157,31 +157,18 @@ def content_kapsam() -> str:
     )
 
 
-def content_referanslar() -> str:
+def section_referanslar() -> str:
     return table(
         ["Referans", "Açıklama"],
         [
             ["ISO/IEC 15504-5 SUP.7 - Documentation", "Dokümantasyon sürecinin SPICE süreç referansı"],
-            [link("İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"), "Yazılım projeleri için dokümantasyon stratejisi, doküman üretimi ve kontrol kuralları"],
-            [link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"), "Aktif doküman envanteri ve erişim kayıtları"],
-            [link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı"), "Doküman değişikliklerinin izlenmesi"],
-            [link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı"), "Doküman gözden geçirme kayıtlarının izlenmesi"],
-            [link("İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi"), "Yaşam döngüsü aşamalarına göre doküman ihtiyaçlarının belirlenmesi"],
-            [link("İÜC.BİDB.LST.007 - Süreç Mimari ve Etkileşim Matrisi"), "Süreçler arası etkileşimlerin yönetilmesi"],
-            [link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 iş ürünleri ve kalite kriterleri"],
-            [link("İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 performans ölçümleri"],
-            [link("İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 rol, sorumluluk, yetki, RACI ve yetkinlik kayıtları"],
-            [link("İÜC.BİDB.LST.011 - Repository Yapısı"), "Dokümantasyon repository yapısı"],
-            [link("İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"), "Süreç yaygınlaştırma ve bilgilendirme kayıtları"],
-            [link("İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı"), "Doküman yazım kuralları"],
-            [link("İÜC.BİDB.KLV.002 - Süreç Uyarlama Kılavuzu"), "Süreç uyarlama yaklaşımı"],
-            [link("İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu"), "Süreç tasarım kontrol yaklaşımı"],
-            [link("İÜC.BİDB.KLV.004 - Dokümantasyon Deposu Oluşturma Kılavuzu"), "Dokümantasyon deposu oluşturma yaklaşımı"],
+            ["ISO/IEC 15504-5 Process Assessment Model", "Süreç amaç, çıktı ve base practice beklentilerinin esas alındığı standart kaynak"],
+            ["İÜC BİDB SPICE 2026 Level 3 Dokümantasyon Yapısı", "Kurumsal süreç dokümantasyonu ve Confluence doküman ağacı"],
         ],
     )
 
 
-def content_terimler() -> str:
+def section_terimler() -> str:
     return table(
         ["Terim / Kısaltma", "Açıklama"],
         [
@@ -203,194 +190,181 @@ def content_terimler() -> str:
     )
 
 
-def content_ozet() -> str:
+def section_surec_ozeti() -> str:
     return table(
         ["Alan", "Açıklama"],
         [
-            ["Süreç Başlatıcısı", "Yeni doküman ihtiyacı, doküman değişiklik ihtiyacı, proje yaşam döngüsü aşaması, süreç kurulumu, denetim/gözden geçirme bulgusu veya periyodik bakım ihtiyacı"],
-            ["Süreç Başlangıcı", "Doküman ihtiyacının, doküman değişiklik ihtiyacının veya gözden geçirme ihtiyacının belirlenmesi"],
-            ["Süreç Bitişi", "Dokümanın onaylanması, yayımlanması, ilgili kayıtların güncellenmesi ve gerekli taraflara duyurulması"],
-            ["Ana Faaliyetler", "Dokümantasyon stratejisini belirleme, standartları uygulama, doküman gereksinimlerini belirleme, doküman üretme, gözden geçirme, onaylama, yayımlama, dağıtma ve bakım"],
-            ["İlgili Süreçler", f'{link("İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci")}, {link("İÜC.BİDB.SRÇ.003 - Doğrulama Süreci")}, {link("İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci")}, {link("İÜC.BİDB.SRÇ.016 - Yapılandırma Yönetimi Süreci")}, {link("İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci")}'],
+            ["Süreç Başlatıcısı", "Yeni doküman ihtiyacı, doküman değişiklik ihtiyacı, proje yaşam döngüsü aşaması, süreç gözden geçirme sonucu, denetim bulgusu veya iyileştirme ihtiyacı"],
+            ["Süreç Başlangıcı", "Doküman ihtiyacının, değişiklik ihtiyacının veya bakım/gözden geçirme ihtiyacının belirlenmesi"],
+            ["Süreç Bitişi", "Dokümanın onaylanması, yayımlanması, dağıtılması, güncellenmesi, pasife alınması veya arşivlenmesi"],
+            ["Ana Faaliyetler", "Dokümantasyon stratejisi ve standartlarının uygulanması; doküman gereksinimlerinin belirlenmesi; doküman üretimi; gözden geçirme; onay; yayın; dağıtım; bakım ve değişiklik yönetimi"],
+            ["İlgili Süreçler", ", ".join([
+                link("İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci"),
+                link("İÜC.BİDB.SRÇ.003 - Doğrulama Süreci"),
+                link("İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci"),
+                link("İÜC.BİDB.SRÇ.016 - Yapılandırma Yönetimi Süreci"),
+                link("İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"),
+            ])],
         ],
     )
 
 
-def content_roller() -> str:
-    return "".join(
-        [
-            p("Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik bilgileri süreç dokümanı içinde tekrar edilmez. Güncel kayıt ilgili süreç için oluşturulan LST.010 dokümanında yönetilir."),
-            table(
-                ["Referans Kayıt", "Kullanım"],
-                [
-                    [link("İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)"), "Süreç rollerinin, sorumluluklarının, yetkilerinin, RACI bilgilerinin ve yetkinlik gereksinimlerinin güncel kaydıdır."],
-                ],
-            ),
-        ]
-    )
-
-
-def content_girdiler() -> str:
-    return table(
-        ["Girdi", "Kaynak", "Kullanım Amacı"],
-        [
-            ["Yeni doküman ihtiyacı", "Süreç sahibi, proje ekibi, proje yaşam döngüsü aşaması, yönetim veya denetim çalışması", "Üretilecek dokümanın belirlenmesi"],
-            ["Doküman değişiklik ihtiyacı", "Kullanıcılar, süreç sahipleri, proje ekibi, kalite güvence veya gözden geçirme faaliyeti", "Mevcut dokümanın güncellenmesi"],
-            ["Yaşam döngüsü doküman ihtiyacı", link("İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi"), "Proje yaşam döngüsünde hangi aşamada hangi dokümanın üretileceğinin belirlenmesi"],
-            ["Şablonlar", "02 - Şablonlar", "Dokümanların standart biçimde hazırlanması"],
-            ["Doküman yazım ve repository kuralları", f'{link("İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı")}, {link("İÜC.BİDB.KLV.004 - Dokümantasyon Deposu Oluşturma Kılavuzu")}', "Dokümanın biçim, içerik, saklama ve yayın kurallarına uygun hazırlanması"],
-            ["Gözden geçirme görüşleri", "Gözden geçiren rol / kalite danışmanı", "Dokümanın uygunluğunun değerlendirilmesi"],
-            ["Onay kararı", "Yetkili onaylayan rol", "Dokümanın yürürlüğe alınması"],
-            ["Repository bilgisi", link("İÜC.BİDB.LST.011 - Repository Yapısı"), "Dokümanın yayımlanacağı ve erişilebilir tutulacağı alanın belirlenmesi"],
-        ],
-    )
-
-
-def content_ciktilar() -> str:
-    return table(
-        ["Çıktı / Kayıt / Doküman", "Açıklama", "Saklama Yeri"],
-        [
-            [link("İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"), "Yazılım projeleri için dokümantasyon stratejisini ve uygulama kurallarını tanımlar.", "07 - Prosedürler"],
-            [link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"), "Aktif doküman envanterini, durumunu ve erişim bilgisini gösterir.", "SRÇ.001 süreç klasörü"],
-            [link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı"), "Doküman değişikliklerini ve sürüm geçişlerini izler.", "03 - Kayıtlar ve Listeler"],
-            [link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı"), "Doküman gözden geçirme kayıtlarını izler.", "03 - Kayıtlar ve Listeler"],
-            [link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 iş ürünlerini ve kalite kriterlerini tanımlar.", "SRÇ.001 süreç klasörü"],
-            [link("İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 performans ölçümlerini ve izleme yaklaşımını tanımlar.", "SRÇ.001 süreç klasörü"],
-            [link("İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 rol, sorumluluk, yetki ve yetkinlik kayıtlarını yönetir.", "SRÇ.001 süreç klasörü"],
-            [link("İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 BP/GP karşılamalarının gözden geçirilmesi için kullanılır.", "SRÇ.001 süreç klasörü"],
-        ],
-    )
-
-
-def content_faaliyetler() -> str:
-    return table(
-        ["Adım", "Faaliyet", "Açıklama", "İlgili SUP.7 BP"],
-        [
-            ["1", "Dokümantasyon ihtiyacını ve stratejisini belirleme", "Ürün, hizmet, süreç veya proje yaşam döngüsünde hangi dokümantasyonun gerekli olduğu belirlenir.", "SUP.7.BP1"],
-            ["2", "Doküman standartlarını ve şablonları uygulama", "Kodlama, biçim, üst bilgi, sürüm, onay ve kayıt kuralları uygulanır.", "SUP.7.BP2"],
-            ["3", "Doküman gereksinimlerini belirleme", "Dokümanın amacı, kapsamı, içeriği, sahibi, gözden geçiren/onaylayan rolleri ve dağıtım ihtiyacı belirlenir.", "SUP.7.BP3"],
-            ["4", "Üretilecek dokümanları belirleme", "Yaşam döngüsü ve süreç ihtiyacına göre üretilecek dokümanlar LST.001/LST.005 üzerinden izlenir.", "SUP.7.BP4"],
-            ["5", "Dokümanı hazırlama", "Doküman ilgili şablon, yazım kuralları ve süreç gereksinimlerine uygun olarak hazırlanır.", "SUP.7.BP5"],
-            ["6", "Dokümanı gözden geçirme ve onaylama", "Doküman yayımlanmadan önce gözden geçirilir, gerekli düzeltmeler yapılır ve yetkili rol tarafından onaylanır.", "SUP.7.BP6"],
-            ["7", "Dokümanı yayımlama ve dağıtma", "Onaylı doküman repository üzerinde erişilebilir hale getirilir ve ilgili taraflara duyurulur.", "SUP.7.BP7"],
-            ["8", "Dokümanı sürdürme", "Dokümanın güncelliği, erişilebilirliği, değişiklikleri, gözden geçirme kayıtları ve arşivleme ihtiyacı yönetilir.", "SUP.7.BP8"],
-        ],
-    )
-
-
-def content_is_urunleri() -> str:
+def section_roller() -> str:
     return table(
         ["Referans Kayıt", "Kullanım"],
         [
-            [link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 kapsamında üretilen veya kontrol edilen iş ürünleri ile kalite kriterlerinin güncel kaydıdır."],
-            [link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"), "Aktif dokümanların durum, sürüm, sahiplik ve erişim bilgilerini izlemek için kullanılır."],
-            [link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı"), "Doküman değişikliklerinin ve sürüm geçişlerinin kayıt altına alınması için kullanılır."],
-            [link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı"), "Doküman gözden geçirme sonuçlarının kayıt altına alınması için kullanılır."],
+            [link("İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 kapsamındaki rol, sorumluluk, yetki, RACI ve yetkinlik gereksinimlerinin güncel kaydıdır. Roller ve sorumluluklar bu süreç dokümanında tekrar yazılmaz; ilgili kayıt üzerinden yönetilir."],
         ],
     )
 
 
-def content_performans() -> str:
-    return "".join(
-        [
-            p("Sürecin performansı, SRÇ.001 için tanımlanan ölçüm seti üzerinden izlenir. Ölçüm tanımları, veri kaynağı, ölçüm sıklığı, hedef değer ve değerlendirme yöntemi ilgili kayıt üzerinde yönetilir."),
-            table(
-                ["Referans Kayıt", "Kullanım"],
-                [[link("İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 performans hedefleri, ölçüm tanımları ve izleme kayıtları"]],
-            ),
-        ]
-    )
-
-
-def content_etkilesimler() -> str:
+def section_girdiler() -> str:
     return table(
-        ["İlişkili Süreç", "Etkileşim"],
+        ["Girdi", "Kaynak", "Kullanım Amacı"],
         [
-            [link("İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci"), "Doküman kalite kriterlerinin, gözden geçirme sonuçlarının ve uygunsuzlukların yönetilmesi"],
-            [link("İÜC.BİDB.SRÇ.003 - Doğrulama Süreci"), "Dokümanların yayımlanmadan önce gözden geçirilmesi ve doğrulanması"],
-            [link("İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci"), "Süreç dokümanlarının kurulması, şablonların kullanılması ve süreç mimarisine uyumun sağlanması"],
-            [link("İÜC.BİDB.SRÇ.016 - Yapılandırma Yönetimi Süreci"), "Sürüm, baseline, kontrollü doküman ve repository yönetimi"],
-            [link("İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"), "Doküman değişiklik taleplerinin alınması ve değerlendirilmesi"],
+            ["Yeni doküman ihtiyacı", "Süreç sahibi, proje ekibi, kalite güvence, yönetim veya denetim sonucu", "Üretilecek dokümanın türünü, kapsamını ve önceliğini belirlemek"],
+            ["Doküman değişiklik ihtiyacı", "Kullanıcılar, süreç sahipleri, proje ekibi, denetim veya gözden geçirme kaydı", "Mevcut dokümanın güncellenmesini veya pasife alınmasını başlatmak"],
+            ["Yaşam döngüsü doküman ihtiyacı", link("İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi"), "Proje veya süreç aşamasında hangi dokümanların üretileceğini belirlemek"],
+            ["Doküman türü ve kodlama yapısı", "Dokümantasyon süreci ve ilgili şablonlar", "Dokümanın sınıflandırılmasını ve izlenebilirliğini sağlamak"],
+            ["Şablonlar", "02 - Şablonlar", "Dokümanın standart biçimde hazırlanmasını sağlamak"],
+            ["Gözden geçirme görüşleri", link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı"), "Dokümanın uygunluğunu değerlendirmek ve düzeltmeleri izlemek"],
+            ["Onay kararı", "Yetkili onaylayan rol / süreç sahibi", "Dokümanın yürürlüğe alınmasını sağlamak"],
+            ["Repository bilgisi", link("İÜC.BİDB.LST.011 - Repository Yapısı"), "Dokümanın yayımlanacağı ve saklanacağı alanı belirlemek"],
         ],
     )
 
 
-def content_gozden_gecirme() -> str:
+def section_ciktilar() -> str:
     return table(
-        ["Faaliyet", "Kayıt / Kanıt", "Sıklık / Tetikleyici"],
+        ["Çıktı / Kayıt / Doküman", "Açıklama", "Saklama Yeri"],
         [
-            ["Doküman gözden geçirme", link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı"), "Yılda bir veya ihtiyaç halinde"],
-            ["Süreç gözden geçirme", link("İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)"), "Süreç değerlendirme / iç denetim / iyileştirme ihtiyacında"],
-            ["Doküman değişikliği", link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı"), "Değişiklik ihtiyacı oluştuğunda"],
-            ["Yaygınlaştırma", link("İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"), "Yeni yayın, değişiklik veya süreç duyurusu sonrasında"],
+            [link("İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"), "Yazılım projeleri için dokümantasyon stratejisi ve doküman yönetim kurallarını tanımlar.", "07 - Prosedürler"],
+            [link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"), "Aktif doküman envanterini ve erişim bilgisini gösterir.", "SRÇ.001 altı"],
+            [link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı"), "Doküman değişikliklerinin tarih, kapsam, gerekçe ve sorumluluk bilgileriyle izlenmesini sağlar.", "03 - Kayıtlar ve Listeler"],
+            [link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı"), "Dokümanların gözden geçirilme ve uygunluk kayıtlarını içerir.", "03 - Kayıtlar ve Listeler"],
+            [link("İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi"), "Yaşam döngüsü aşamalarına göre doküman üretim ihtiyaçlarını gösterir.", "03 - Kayıtlar ve Listeler"],
+            [link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 iş ürünleri ve kalite kriterlerini tanımlar.", "SRÇ.001 altı"],
+            [link("İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 performans ölçüm göstergelerini ve izleme yöntemini tanımlar.", "SRÇ.001 altı"],
+            [link("İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 rol, sorumluluk, yetki, RACI ve yetkinlik kayıtlarını içerir.", "SRÇ.001 altı"],
+            [link("İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 BP/GP gözden geçirme ve tamamlayıcı aksiyon kayıtlarını içerir.", "SRÇ.001 altı"],
         ],
     )
 
 
-def fallback_section(section_title: str) -> str:
-    return "".join(
+def section_faaliyetler() -> str:
+    return table(
+        ["Adım", "Faaliyet", "Standart İzlenebilirliği", "Temel Çıktı / Kayıt"],
         [
-            p(f"Bu bölüm, güncel süreç tanımı şablonundaki '{section_title}' bölüm yapısı korunarak SRÇ.001 kapsamında değerlendirilmiştir."),
-            table(
-                ["Referans", "Açıklama"],
-                [[link("İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"), "SRÇ.001 uygulama yaklaşımı ve dokümantasyon yönetimi kuralları"]],
-            ),
-        ]
+            ["1", "Dokümantasyon yönetim stratejisini ve kapsamını belirle", "SUP.7.BP1", link("İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü")],
+            ["2", "Doküman türü, kodlama, şablon ve yazım kurallarını uygula", "SUP.7.BP2", link("İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı")],
+            ["3", "Doküman gereksinimlerini belirle", "SUP.7.BP3", link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)")],
+            ["4", "Yaşam döngüsünde üretilecek dokümanları belirle", "SUP.7.BP4", link("İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi")],
+            ["5", "Dokümanı ilgili şablona göre hazırla", "SUP.7.BP5", "Taslak / güncellenmiş doküman"],
+            ["6", "Dokümanı gözden geçir ve onaylat", "SUP.7.BP6", link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı")],
+            ["7", "Onaylanan dokümanı repository üzerinden yayımla ve erişilebilir hale getir", "SUP.7.BP7", link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi")],
+            ["8", "Dokümanı değişiklik, gözden geçirme ve arşivleme kriterlerine göre sürdür", "SUP.7.BP8", link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı")],
+        ],
     )
 
 
-def content_for_section(section_title: str) -> str:
-    normalized = re.sub(r"^\s*\d+\s*[\.-]\s*", "", section_title).strip().lower()
-    if "amaç" in normalized:
-        return content_amac()
+def section_izleme_olcme() -> str:
+    return table(
+        ["İzleme / Ölçüm Alanı", "Yöntem", "Kayıt"],
+        [
+            ["Dokümanların şablona uygunluğu", "Gözden geçirme ve kalite kriteri kontrolü", link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı")],
+            ["Aktif doküman envanterinin güncelliği", "Aktif doküman listesi üzerinden dönemsel kontrol", link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi")],
+            ["Doküman değişikliklerinin izlenebilirliği", "Değişiklik kayıtlarının kontrol edilmesi", link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı")],
+            ["Süreç performansı", "SRÇ.001 performans göstergelerinin izlenmesi", link("İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)")],
+            ["Süreç yaygınlaştırma durumu", "Bilgilendirme/yaygınlaştırma kayıtlarının kontrolü", link("İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı")],
+        ],
+    )
+
+
+def section_iliskili_dokumanlar() -> str:
+    return table(
+        ["Doküman / Kayıt", "İlişki"],
+        [
+            [link("İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"), "Dokümantasyon yönetim prosedürü"],
+            [link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"), "Aktif doküman envanteri"],
+            [link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı"), "Değişiklik izleme kaydı"],
+            [link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı"), "Gözden geçirme kaydı"],
+            [link("İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi"), "Yaşam döngüsü doküman ihtiyacı"],
+            [link("İÜC.BİDB.LST.007 - Süreç Mimari ve Etkileşim Matrisi"), "Süreç etkileşim kaydı"],
+            [link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)"), "İş ürünü ve kalite kriterleri"],
+            [link("İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)"), "Performans ölçüm seti"],
+            [link("İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)"), "Rol, yetki, RACI ve yetkinlik kaydı"],
+            [link("İÜC.BİDB.LST.011 - Repository Yapısı"), "Dokümantasyon repository yapısı"],
+            [link("İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"), "Yaygınlaştırma kaydı"],
+            [link("İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı"), "Doküman yazım kuralları"],
+            [link("İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu"), "Süreç tasarım kontrol desteği"],
+        ],
+    )
+
+
+def section_surumu_gecmisi() -> str:
+    return table(
+        ["Sürüm", "Tarih", "Açıklama", "Hazırlayan / Güncelleyen", "Onay"],
+        [
+            ["v1.0", "29-06-2026", "Dokümantasyon Süreci güncel süreç tanımı şablonuna göre düzenlendi.", "Soner DEDEOĞLU - Kalite Danışmanı", "Levent BAYEZİT - Dokümantasyon Süreç Sahibi"],
+        ],
+    )
+
+
+def section_default_for_heading(heading: str) -> str:
+    normalized = normalize_heading(heading)
+
+    if "surec bilgileri" in normalized:
+        return section_surec_bilgileri()
+    if normalized == "amac" or normalized.endswith(" amac"):
+        return section_amac()
     if "kapsam" in normalized:
-        return content_kapsam()
+        return section_kapsam()
     if "referans" in normalized:
-        return content_referanslar()
-    if "terim" in normalized or "kısalt" in normalized:
-        return content_terimler()
-    if "süreç özeti" in normalized or normalized == "özet":
-        return content_ozet()
+        return section_referanslar()
+    if "terim" in normalized or "kisalt" in normalized:
+        return section_terimler()
+    if "surec ozeti" in normalized or normalized == "ozet":
+        return section_surec_ozeti()
     if "rol" in normalized or "sorumluluk" in normalized:
-        return content_roller()
+        return section_roller()
     if "girdi" in normalized:
-        return content_girdiler()
-    if "çıktı" in normalized:
-        return content_ciktilar()
-    if "faaliyet" in normalized or "akış" in normalized:
-        return content_faaliyetler()
-    if "iş ürün" in normalized or "kayıt" in normalized or "doküman set" in normalized:
-        return content_is_urunleri()
-    if "performans" in normalized or "ölç" in normalized or "izleme" in normalized:
-        return content_performans()
-    if "etkileşim" in normalized or "arayüz" in normalized or "ilişkili süreç" in normalized:
-        return content_etkilesimler()
-    if "gözden" in normalized or "güncelle" in normalized or "bakım" in normalized or "sürdür" in normalized:
-        return content_gozden_gecirme()
-    return fallback_section(section_title)
+        return section_girdiler()
+    if "cikti" in normalized or "urun" in normalized and "is" in normalized:
+        return section_ciktilar()
+    if "faaliyet" in normalized or "akis" in normalized or "isleyis" in normalized or "uygulama" in normalized:
+        return section_faaliyetler()
+    if "izleme" in normalized or "olc" in normalized or "performans" in normalized or "kontrol" in normalized:
+        return section_izleme_olcme()
+    if "iliskili" in normalized or "dokuman" in normalized and "kayit" in normalized:
+        return section_iliskili_dokumanlar()
+    if "surum" in normalized or "degisiklik gecmisi" in normalized:
+        return section_surumu_gecmisi()
+
+    raise RuntimeError(
+        "SRÇ.001 içerik eşlemesi yapılamayan şablon bölümü var: "
+        f"{heading}. Scripti bu başlığa göre güncelleyin."
+    )
 
 
-def build_src001_body(sections: list[str]) -> str:
-    body = [meta_table()]
-    for section in sections:
-        if re.match(r"^\s*0\s*[\.-]", section):
-            continue
-        body.append(f"<h2>{e(section)}</h2>")
-        body.append(content_for_section(section))
-    return "\n".join(body) + "\n"
+def build_storage_body(sections: list[str]) -> str:
+    body_parts: list[str] = []
+    for heading in sections:
+        body_parts.append(f"<h2>{e(heading)}</h2>")
+        body_parts.append(section_default_for_heading(heading))
+    return "".join(body_parts) + "\n"
 
 
-def build_view_html(title: str, storage_body: str) -> str:
+def build_view_html(storage_body: str) -> str:
     return f"""<!doctype html>
 <html lang="tr">
 <head>
   <meta charset="utf-8">
-  <title>{e(title)}</title>
+  <title>{e(SRC001_TITLE)}</title>
   <style>{CSS}</style>
 </head>
 <body>
 <main class="confluence-page">
-<h1>{e(title)}</h1>
+<h1>{e(SRC001_TITLE)}</h1>
 {storage_body}
 </main>
 </body>
@@ -399,22 +373,22 @@ def build_view_html(title: str, storage_body: str) -> str:
 
 
 def update_page_yaml() -> None:
-    page_yaml_path = SRC001_DIR / "page.yaml"
-    metadata = read_yaml(page_yaml_path)
+    page_yaml = SRC001_DIR / "page.yaml"
+    metadata = read_yaml(page_yaml)
     metadata.update(
         {
             "title": SRC001_TITLE,
             "document_code": SRC001_CODE,
             "document_type": "Süreç",
-            "process_reference": "ISO/IEC 15504-5 SUP.7 - Documentation",
-            "process_owner": "Levent BAYEZİT - Proje Yöneticisi",
+            "template": "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
             "status": "active",
-            "version_label": "v1.0",
+            "version": "v1.0",
+            "updated_at": datetime.now(timezone.utc).isoformat(),
             "storage_file": "body.storage.xhtml",
             "view_file": "body.view.html",
         }
     )
-    write_yaml(page_yaml_path, metadata)
+    write_yaml(page_yaml, metadata)
 
 
 def write_report(sections: list[str]) -> None:
@@ -422,28 +396,41 @@ def write_report(sections: list[str]) -> None:
     lines = [
         "# SRÇ.001 Süreç Tanımı Yeniden Düzenleme Raporu",
         "",
-        f"Zaman: {datetime.now(timezone.utc).isoformat()}",
-        "Kapsam: Yalnızca İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci",
-        "LST.007 veya diğer ilişkili dokümanlar bu çalışmada değiştirilmemiştir.",
-        "Şablondaki 0 numaralı bölüm süreç dokümanına alınmamıştır.",
+        "Kapsam: Yalnızca `İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci` güncellendi.",
         "",
-        "## Kullanılan Şablon Bölümleri",
+        "## Uygulanan Şablon Bölümleri",
     ]
-    lines.extend(f"- {section}" for section in sections)
-    lines.append("")
+    for section in sections:
+        lines.append(f"- {section}")
+    lines.extend(
+        [
+            "",
+            "## Kontroller",
+            "- 0 numaralı şablon bölümleri SRÇ.001 içeriğine alınmadı.",
+            "- SRÇ.001 gövdesi doğrudan `1.` numaralı şablon bölümüyle başlatıldı.",
+            "- LST.007 veya diğer ilişkili dokümanlarda taşıma/yeniden adlandırma/değişiklik yapılmadı.",
+            "- Referanslar bölümünde süreç içinde üretilen kayıtlar yerine standart/kurumsal referanslar tutuldu; süreç çıktı ve kayıtları ilgili doküman/kayıt bölümlerinde verildi.",
+            "",
+        ]
+    )
     REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
 def main() -> None:
     sections = extract_template_sections()
-    storage_body = build_src001_body(sections)
+    storage_body = build_storage_body(sections)
+
+    if re.search(r"<h2>\s*0\s*[\.-]", storage_body):
+        raise RuntimeError("0 numaralı bölüm yanlışlıkla SRÇ.001 gövdesine dahil edildi.")
+    if not storage_body.lstrip().startswith("<h2>1."):
+        raise RuntimeError("SRÇ.001 gövdesi doğrudan 1. bölümle başlamıyor.")
+
     (SRC001_DIR / "body.storage.xhtml").write_text(storage_body, encoding="utf-8")
-    (SRC001_DIR / "body.view.html").write_text(build_view_html(SRC001_TITLE, storage_body), encoding="utf-8")
+    (SRC001_DIR / "body.view.html").write_text(build_view_html(storage_body), encoding="utf-8")
     update_page_yaml()
     write_report(sections)
-    print("[DONE] SRÇ.001 güncel süreç tanımı şablonuna göre yeniden düzenlendi.")
-    print("[INFO] 0 numaralı şablon bölümü dahil edilmedi.")
-    print("[INFO] LST.007 ve diğer ilişkili dokümanlar değiştirilmedi.")
+
+    print("[DONE] SRÇ.001 süreç tanımı güncel şablon yapısına göre yeniden düzenlendi.")
     print(f"[REPORT] {REPORT_PATH.relative_to(ROOT)}")
 
 
