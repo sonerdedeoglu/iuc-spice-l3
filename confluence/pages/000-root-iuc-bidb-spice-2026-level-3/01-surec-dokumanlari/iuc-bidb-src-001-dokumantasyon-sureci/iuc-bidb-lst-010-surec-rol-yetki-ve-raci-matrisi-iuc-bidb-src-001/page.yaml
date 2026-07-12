@@ -14,3 +14,8 @@ slug: iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-001
 has_view_html: true
 view_file: body.view.html
 storage_file: body.storage.xhtml
+updated_at: '2026-07-12T22:38:27.548339+00:00'
+template: İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu
+document_code: İÜC.BİDB.LST.010
+document_type: Liste
+related_process: İÜC.BİDB.SRÇ.001
