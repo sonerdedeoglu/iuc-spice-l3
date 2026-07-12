@@ -24,7 +24,6 @@ STANDARD_PATH = ROOT / "resources/standards/spice_practices.yaml"
 TITLE = "İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)"
 PROCESS_CODE = "İÜC.BİDB.SRÇ.001"
 PROCESS_NAME = "Dokümantasyon Süreci"
-PROCESS_REF = "SUP.7 - Documentation"
 TEMPLATE_NAME = "İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu"
 
 CSS = """
@@ -43,10 +42,6 @@ def e(value: object) -> str:
     return html.escape(str(value), quote=False)
 
 
-def p(text: str) -> str:
-    return f"<p>{e(text)}</p>"
-
-
 def table(headers: list[str], rows: list[list[str]]) -> str:
     head = "".join(f"<th>{e(h)}</th>" for h in headers)
     body = "".join("<tr>" + "".join(f"<td>{cell}</td>" for cell in row) + "</tr>" for row in rows)
@@ -61,14 +56,13 @@ def write_yaml(path: Path, data: dict[str, Any]) -> None:
     path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
 
 
-def link(text: str) -> str:
-    return e(text)
-
-
 def load_sup7_bps() -> list[dict[str, str]]:
     data = load_yaml(STANDARD_PATH)
-    processes = data.get("processes") or {}
-    sup7 = processes.get("SUP.7") or processes.get("SUP7") or {}
+    processes = data.get("processes") or []
+    if isinstance(processes, dict):
+        sup7 = processes.get("SUP.7") or processes.get("SUP7") or {}
+    else:
+        sup7 = next((p for p in processes if str(p.get("spice_code") or "") == "SUP.7"), {})
     bps = sup7.get("base_practices") or []
     result: list[dict[str, str]] = []
     for bp in bps:
@@ -90,9 +84,7 @@ def bp_title(code: str) -> str:
 
 
 def build_storage() -> str:
-    bp = {item["code"]: item for item in load_sup7_bps()}
     parts: list[str] = []
-
     parts.append("<h2>1. Liste Özeti</h2>")
     parts.append(table(["Alan", "Değer"], [
         ["İlgili Süreç", f"{PROCESS_CODE} - {PROCESS_NAME}"],
@@ -103,7 +95,6 @@ def build_storage() -> str:
         ["Listeyi Onaylayan", "Mustafa Nusret SARISAKAL - BİD Başkanı"],
         ["Genel Not", "Bu liste, Dokümantasyon Süreci için iş ürünlerinin tekil ve izlenebilir şekilde yönetilmesi amacıyla oluşturulmuştur."],
     ]))
-
     parts.append("<h2>2. Kullanım Değerleri</h2>")
     parts.append(table(["Değer", "Anlamı"], [
         ["Girdi", "Sürecin yürütülmesi için başka süreç, proje, sistem veya kayıttan alınan iş ürünü."],
@@ -116,7 +107,6 @@ def build_storage() -> str:
         ["Yok", "Beklenen iş ürünü henüz oluşturulmamış veya erişilebilir değildir."],
         ["Kapsam Dışı", "İlgili süreç veya proje bağlamında uygulanmıyor."],
     ]))
-
     parts.append("<h2>3. Girdi İş Ürünleri Matrisi</h2>")
     parts.append(table(["Girdi İş Ürünü", "Kaynak Süreç / Kaynak Doküman", "Kullanım Amacı", "Zorunluluk", "Durum / Not"], [
         ["Yeni doküman veya değişiklik ihtiyacı", "Süreç sahipleri, proje ekibi, kalite güvence, denetim/gözden geçirme sonuçları", "Doküman oluşturma, güncelleme, pasife alma veya arşivleme faaliyetini başlatmak", "Zorunlu", "İhtiyaç kaynağı ve gerekçesi ilgili kayıt veya talep üzerinden izlenebilir olmalıdır."],
@@ -128,7 +118,6 @@ def build_storage() -> str:
         ["Gözden geçirme geri bildirimleri", "İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "Dokümanın uygunluğunu değerlendirmek ve düzeltmeleri izlemek", "Koşullu", "Gözden geçirme gereken dokümanlarda kayıt oluşturulmalıdır."],
         ["Onay kararı", "Süreç sahibi / yetkili onaylayan", "Dokümanın yürürlüğe alınmasını sağlamak", "Zorunlu", "Onay bilgisi doküman veya ilgili kayıt üzerinden izlenebilir olmalıdır."],
     ]))
-
     parts.append("<h2>4. Çıktı İş Ürünleri Matrisi</h2>")
     parts.append(table(["Çıktı İş Ürünü", "Üreten Faaliyet", "Kullanım Amacı", "Zorunluluk", "Saklama Yeri / Kayıt", "Durum / Not"], [
         ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", bp_title("SUP.7.BP1"), "Dokümantasyon yönetim stratejisi ve yazılım projeleri için doküman yönetim kurallarını tanımlamak", "Zorunlu", "07 - Prosedürler", "Aktif ve onaylı prosedür olarak yönetilir."],
@@ -142,7 +131,6 @@ def build_storage() -> str:
         ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", bp_title("SUP.7.BP7"), "Yayımlanan veya güncellenen dokümanlar hakkında ilgili tarafların bilgilendirildiğini izlemek", "Koşullu", "03 - Kayıtlar ve Listeler", "Yaygınlaştırma gereken dokümanlar için hedef kitle ve bilgilendirme tarihi izlenir."],
         ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", "Süreç gözden geçirme", "SRÇ.001 BP/GP uygunluk durumunu ve tamamlayıcı aksiyonları izlemek", "Zorunlu", "SRÇ.001 alt sayfası", "BP/GP durumları ve aksiyon kayıtları güncel tutulmalıdır."],
     ]))
-
     parts.append("<h2>5. Kalite Kriterleri Kontrol Matrisi</h2>")
     parts.append(table(["İş Ürünü", "Kalite Kriteri", "Kontrol Sorusu", "Kontrol Yöntemi", "Kontrol Sorumlusu", "Kabul Ölçütü", "Uygunsuzluk / Tamamlayıcı Aksiyon"], [
         ["PRS.001", "Dokümantasyon stratejisi tanımlı olmalı", "Dokümantasyon yönetim yaklaşımı, kapsamı ve sorumlulukları tanımlı mı?", "Doküman gözden geçirme", "Süreç Sahibi / Kalite Danışmanı", "Strateji ve uygulama kuralları açık, onaylı ve erişilebilir olmalıdır.", "Eksikse prosedür revize edilir ve onaya sunulur."],
@@ -155,29 +143,18 @@ def build_storage() -> str:
         ["LST.012", "Yaygınlaştırma kayıtları gerektiğinde tutulmalı", "Yayımlanan/güncellenen doküman için hedef kitle bilgilendirilmiş mi?", "Kayıt kontrolü", "Süreç Sahibi", "Bilgilendirme gereken durumlarda hedef kitle ve tarih kaydı bulunmalıdır.", "Eksikse bilgilendirme ve kayıt tamamlanır."],
         ["FRM.001", "BP/GP uygunluk izlenebilirliği sağlanmalı", "SRÇ.001 BP/GP durumu, kanıt ve aksiyon bilgileri formda izleniyor mu?", "Form kontrolü", "Kalite Danışmanı", "BP/GP satırları güncel kanıt ve durum bilgisi içermelidir.", "Eksikse form güncellenir ve aksiyon kapatma takibi yapılır."],
     ]))
-
     parts.append("<h2>6. Sürüm Geçmişi</h2>")
     parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan/Güncelleyen", "Gözden Geçiren", "Onay"], [
         ["v1.0", "01-09-2025", "Dokümantasyon Süreci iş ürünleri ve kalite kriterleri listesi oluşturuldu.", "Soner DEDEOĞLU - Kalite Danışmanı", "Levent BAYEZİT - Proje Yöneticisi", "Mustafa Nusret SARISAKAL - BİD Başkanı"],
     ]))
-
     return "".join(parts) + "\n"
 
 
 def build_view(storage: str) -> str:
     return f"""<!doctype html>
 <html lang=\"tr\">
-<head>
-  <meta charset=\"utf-8\">
-  <title>{e(TITLE)}</title>
-  <style>{CSS}</style>
-</head>
-<body>
-<main class=\"confluence-page\">
-<h1>{e(TITLE)}</h1>
-{storage}
-</main>
-</body>
+<head><meta charset=\"utf-8\"><title>{e(TITLE)}</title><style>{CSS}</style></head>
+<body><main class=\"confluence-page\"><h1>{e(TITLE)}</h1>{storage}</main></body>
 </html>
 """
 
