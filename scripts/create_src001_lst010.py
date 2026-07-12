@@ -5,7 +5,7 @@ This script updates the existing SRÇ.001 child page:
 İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)
 
 It follows the active LST.010 template structure and uses SRÇ.001 section
-`10. Süreç Faaliyetleri` as the source for F1-F8 activity codes/names.
+`10. Süreç Faaliyetleri` as the source for activity codes/names.
 """
 from __future__ import annotations
 
@@ -124,12 +124,12 @@ def activities() -> list[dict[str, str]]:
     result: list[dict[str, str]] = []
     for index, row in enumerate(extract_src001_activity_rows(), start=1):
         code = activity_code(row, index)
-        if not re.fullmatch(r"F[1-8]", code):
+        if not re.fullmatch(r"F[0-9]+", code):
             continue
         result.append({"code": code, "name": activity_name(row)})
-    if len(result) < 8:
-        raise RuntimeError(f"SRÇ.001 faaliyetlerinden F1-F8 bekleniyor; okunan faaliyetler: {result}")
-    return sorted(result[:8], key=lambda item: int(item["code"][1:]))
+    if len(result) < 1:
+        raise RuntimeError(f"SRÇ.001 faaliyet kodları okunamadı; okunan faaliyetler: {result}")
+    return sorted(result, key=lambda item: int(item["code"][1:]))
 
 
 def role_rows() -> list[list[str]]:
@@ -168,13 +168,13 @@ def work_product_raci_rows() -> list[list[str]]:
         ["Doküman şablonları", "F2", "Kalite Danışmanı / Doküman Sorumlusu", "Süreç Sahibi", "Doküman Hazırlayan / Doküman Gözden Geçiren", "İlgili Paydaş", "Aktif şablonlar ve kaldırılan şablonlar kontrollü yönetilir."],
         ["İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "F2", "Kalite Danışmanı / Doküman Sorumlusu", "Süreç Sahibi", "Doküman Gözden Geçiren", "Doküman Hazırlayan", "Doküman yazım ve biçim kurallarını tanımlar."],
         ["İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)", "F3", "Kalite Danışmanı", "Süreç Sahibi", "Doküman Gözden Geçiren", "Doküman Sorumlusu", "İş ürünleri ve kalite kriterleri için ana izleme kaydıdır."],
-        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "F4", "Doküman Sorumlusu / Süreç Sahibi", "Süreç Sahibi", "Kalite Danışmanı / İlgili Paydaş", "Onaylayan", "Yaşam döngüsü aşamalarındaki doküman ihtiyacını tanımlar."],
-        ["Hazırlanmış veya güncellenmiş doküman", "F5", "Doküman Hazırlayan", "Süreç Sahibi", "Kalite Danışmanı / İlgili Paydaş", "Doküman Sorumlusu", "İlgili şablon ve kurallara göre hazırlanır."],
-        ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "F6", "Doküman Gözden Geçiren", "Süreç Sahibi", "Kalite Danışmanı / Onaylayan", "Doküman Hazırlayan", "Gözden geçirme sonucu ve aksiyonları izler."],
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "F7", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı", "İlgili Paydaş", "Aktif doküman envanterini izler."],
-        ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", "F8", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı / Doküman Gözden Geçiren", "İlgili Paydaş", "Değişiklik, bakım ve arşiv kayıtlarını izler."],
-        ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "F7", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı", "İlgili Paydaş", "Yaygınlaştırma ve bilgilendirme kayıtlarını izler."],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", "F6", "Kalite Danışmanı", "Süreç Sahibi", "Doküman Gözden Geçiren", "Onaylayan", "SRÇ.001 BP/GP uygunluk ve aksiyon takibini destekler."],
+        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "F3", "Doküman Sorumlusu / Süreç Sahibi", "Süreç Sahibi", "Kalite Danışmanı / İlgili Paydaş", "Onaylayan", "Yaşam döngüsü aşamalarındaki doküman ihtiyacını tanımlar."],
+        ["Hazırlanmış veya güncellenmiş doküman", "F4", "Doküman Hazırlayan", "Süreç Sahibi", "Kalite Danışmanı / İlgili Paydaş", "Doküman Sorumlusu", "İlgili şablon ve kurallara göre hazırlanır."],
+        ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "F5", "Doküman Gözden Geçiren", "Süreç Sahibi", "Kalite Danışmanı / Onaylayan", "Doküman Hazırlayan", "Gözden geçirme sonucu ve aksiyonları izler."],
+        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "F6", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı", "İlgili Paydaş", "Aktif doküman envanterini izler."],
+        ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", "F7", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı / Doküman Gözden Geçiren", "İlgili Paydaş", "Değişiklik, bakım ve arşiv kayıtlarını izler."],
+        ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "F6", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı", "İlgili Paydaş", "Yaygınlaştırma ve bilgilendirme kayıtlarını izler."],
+        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", "F5", "Kalite Danışmanı", "Süreç Sahibi", "Doküman Gözden Geçiren", "Onaylayan", "SRÇ.001 BP/GP uygunluk ve aksiyon takibini destekler."],
     ]
 
 
