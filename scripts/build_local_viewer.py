@@ -1,7 +1,10 @@
 import json
 from pathlib import Path
 
-import yaml
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -13,7 +16,84 @@ PAGES_JSON_PATH = VIEWER_DIR / "pages.json"
 
 def load_yaml(path):
     with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+        content = f.read()
+
+    if yaml is not None:
+        return yaml.safe_load(content) or {}
+
+    return parse_simple_yaml(content)
+
+
+def parse_simple_yaml(content):
+    data = {}
+    current_list_key = None
+    current_item = None
+
+    for raw_line in content.splitlines():
+        if not raw_line.strip() or raw_line.lstrip().startswith("#"):
+            continue
+
+        if raw_line.startswith("- "):
+            if current_list_key is None:
+                raise ValueError("Unsupported YAML list without a parent key")
+
+            current_item = {}
+            data[current_list_key].append(current_item)
+            assign_yaml_value(current_item, raw_line[2:].strip())
+            continue
+
+        if raw_line.startswith("  ") and current_item is not None:
+            assign_yaml_value(current_item, raw_line.strip())
+            continue
+
+        key, value = split_yaml_assignment(raw_line)
+
+        if value == "":
+            data[key] = []
+            current_list_key = key
+            current_item = None
+        else:
+            data[key] = parse_yaml_scalar(value)
+            current_list_key = None
+            current_item = None
+
+    return data
+
+
+def assign_yaml_value(target, line):
+    key, value = split_yaml_assignment(line)
+    target[key] = parse_yaml_scalar(value)
+
+
+def split_yaml_assignment(line):
+    if ":" not in line:
+        raise ValueError(f"Unsupported YAML line: {line}")
+
+    key, value = line.split(":", 1)
+    return key.strip(), value.strip()
+
+
+def parse_yaml_scalar(value):
+    if value in {"''", '""'}:
+        return ""
+
+    if (
+        len(value) >= 2
+        and value[0] == value[-1]
+        and value[0] in {"'", '"'}
+    ):
+        return value[1:-1]
+
+    if value == "true":
+        return True
+
+    if value == "false":
+        return False
+
+    if value.isdigit():
+        return int(value)
+
+    return value
 
 
 def load_index():
