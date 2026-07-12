@@ -125,7 +125,7 @@ class ConfluenceClient:
             {
                 "spaceKey": space_key,
                 "title": title,
-                "expand": "version",
+                "expand": "version,ancestors",
             },
         )
 
@@ -158,11 +158,11 @@ class ConfluenceClient:
         return self.get(
             f"/rest/api/content/{page_id}",
             {
-                "expand": "version,body.storage",
+                "expand": "version,body.storage,ancestors",
             },
         )
 
-    def update_page(self, page_id, space_key, title, body, version_number):
+    def update_page(self, page_id, space_key, title, body, version_number, parent_id=None):
         payload = {
             "id": str(page_id),
             "type": "page",
@@ -180,6 +180,13 @@ class ConfluenceClient:
                 "number": version_number,
             },
         }
+
+        if parent_id:
+            payload["ancestors"] = [
+                {
+                    "id": str(parent_id),
+                }
+            ]
 
         return self.put(
             f"/rest/api/content/{page_id}",
