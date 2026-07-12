@@ -131,6 +131,20 @@ def page_file_path(index_page, metadata, file_key, default_name):
     return viewer_relative_path(f"{index_page['relative_path']}/{metadata_file or default_name}")
 
 
+def stable_page_id(index_page):
+    """Return a unique viewer id even for not-yet-published draft pages.
+
+    Exported Confluence pages have numeric page_id values. Locally materialized pages
+    that are not yet published can have an empty page_id. Using an empty value for all
+    such pages creates duplicate ids and can make the tree circular. For those pages,
+    use the relative path as a stable local id.
+    """
+    raw_id = str(index_page.get("page_id") or "").strip()
+    if raw_id:
+        return raw_id
+    return f"local:{index_page['relative_path']}"
+
+
 def build_flat_pages(index):
     pages = []
 
@@ -138,7 +152,8 @@ def build_flat_pages(index):
         metadata = load_page_metadata(index_page)
         pages.append(
             {
-                "page_id": str(index_page["page_id"]),
+                "page_id": stable_page_id(index_page),
+                "confluence_page_id": str(index_page.get("page_id") or ""),
                 "title": metadata.get("title", index_page.get("title", "")),
                 "parent_id": str(index_page.get("parent_id") or ""),
                 "depth": int(index_page.get("depth", metadata.get("depth", 0))),
@@ -164,17 +179,14 @@ def build_flat_pages(index):
 
 
 def build_tree(flat_pages):
-    pages_by_id = {
-        page["page_id"]: page
-        for page in flat_pages
-    }
+    pages_by_id = {page["page_id"]: page for page in flat_pages}
     roots = []
 
     for page in flat_pages:
         parent_id = page["parent_id"]
         parent = pages_by_id.get(parent_id)
 
-        if parent is None:
+        if parent is None or parent is page:
             roots.append(page)
         else:
             parent["children"].append(page)
