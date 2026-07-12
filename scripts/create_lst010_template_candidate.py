@@ -65,6 +65,13 @@ def version_history_rows() -> list[list[str]]:
     ]
 
 
+def record_version_history_rows() -> list[list[str]]:
+    return [
+        ["v0.1", placeholder("GG-AA-YYYY"), placeholder("İlk Taslak"), placeholder("Rol / birim"), placeholder("Rol / birim"), placeholder("Rol / birim")],
+        ["v1.0", placeholder("GG-AA-YYYY"), placeholder("Onaylı sürüm"), placeholder("Rol / birim"), placeholder("Rol / birim"), placeholder("Rol / birim")],
+    ]
+
+
 def build_storage() -> str:
     parts: list[str] = []
 
@@ -149,7 +156,7 @@ def build_storage() -> str:
     ]))
 
     parts.append("<h2>7. Sürüm Geçmişi</h2>")
-    parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan/Güncelleyen", "Gözden Geçiren", "Onay"], version_history_rows()))
+    parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan/Güncelleyen", "Gözden Geçiren", "Onay"], record_version_history_rows()))
 
     return "".join(parts) + "\n"
 
