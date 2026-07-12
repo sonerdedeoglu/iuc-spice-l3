@@ -58,6 +58,13 @@ def placeholder(text: str) -> str:
     return f"<em>{e(text)}</em>"
 
 
+def version_history_rows() -> list[list[str]]:
+    return [
+        ["v0.1", "27-11-2024", "İlk taslak oluşturuldu.", "Soner DEDEOĞLU - Kalite Danışmanı", "-", "-"],
+        ["v1.0", "02-01-2025", "Taslak onaylanıp yürürlüğe girdi", "Soner DEDEOĞLU - Kalite Danışmanı", "Levent BAYEZİT - Proje Yöneticisi", "Mustafa Nusret SARISAKAL - BİD Başkanı"],
+    ]
+
+
 def build_storage() -> str:
     parts: list[str] = []
 
@@ -68,10 +75,10 @@ def build_storage() -> str:
         ["Doküman Kodu", "İÜC.BİDB.LST.008.Ş"],
         ["Doküman Türü", "Liste Şablonu"],
         ["Kullanım Alanı", "Süreç İş Ürünleri ve Kalite Kriterleri Listesi"],
-        ["Durum", "Taslak"],
-        ["Sürüm", "v0.1"],
-        ["Yürürlük Tarihi", placeholder("GG-AA-YYYY")],
-        ["Son Gözden Geçirme Tarihi", placeholder("GG-AA-YYYY")],
+        ["Durum", "Aktif"],
+        ["Sürüm", "v1.0"],
+        ["Yürürlük Tarihi", "02-01-2025"],
+        ["Son Gözden Geçirme Tarihi", "01-02-2026"],
         ["Güncelleme Sıklığı", "Yılda bir kez, süreç değişikliği olduğunda veya değerlendirme/denetim sonucu ihtiyaç oluştuğunda"],
     ]))
 
@@ -85,17 +92,12 @@ def build_storage() -> str:
     parts.append(p("Parantez içindeki kod, SPICE süreç kodu değil, kurum içinde kullanılan standart süreç kodudur."))
 
     parts.append("<h3>0.4. Sürüm Geçmişi</h3>")
-    parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan / Güncelleyen", "Gözden Geçiren", "Onay"], [
-        ["v0.1", placeholder("GG-AA-YYYY"), "İlk taslak oluşturuldu.", "Soner DEDEOĞLU - Kalite Danışmanı", placeholder("Rol / kişi"), placeholder("Rol / kişi")],
-    ]))
+    parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan / Güncelleyen", "Gözden Geçiren", "Onay"], version_history_rows()))
 
     parts.append("<h2>1. Liste Özeti</h2>")
     parts.append(table(["Alan", "Değer"], [
         ["İlgili Süreç", placeholder("İÜC.BİDB.SRÇ.XXX - Süreç Adı")],
-        ["Süreç Referansı", placeholder("SPICE süreç kodu ve adı")],
         ["Liste Kapsamı", placeholder("Girdi iş ürünleri / çıktı iş ürünleri / kalite kriterleri kapsamı")],
-        ["Süreç Durumu", placeholder("Taslak / Aktif / Gözden Geçirilecek / Pasif / Arşiv")],
-        ["Süreç Sürümü", placeholder("Sürüm")],
         ["Liste Tarihi", placeholder("GG-AA-YYYY")],
         ["Listeyi Hazırlayan", placeholder("Rol / kişi")],
         ["Listeyi Gözden Geçiren", placeholder("Rol / kişi")],
@@ -118,18 +120,18 @@ def build_storage() -> str:
 
     parts.append("<h2>3. Girdi İş Ürünleri Matrisi</h2>")
     parts.append(table([
-        "Girdi İş Ürünü", "Kaynak Süreç / Kaynak Doküman", "Kullanım Amacı", "Zorunluluk", "Kalite Kriteri", "Kontrol Yöntemi", "Durum / Not"
+        "Girdi İş Ürünü", "Kaynak Süreç / Kaynak Doküman", "Kullanım Amacı", "Zorunluluk", "Durum / Not"
     ], [
-        [placeholder("Girdi iş ürünü adı"), placeholder("Kaynak süreç / doküman / kayıt"), placeholder("Bu süreçte nasıl kullanılır?"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Beklenen kalite kriteri"), placeholder("Nasıl kontrol edilir?"), placeholder("Durum veya açıklama")],
-        [placeholder("Girdi iş ürünü adı"), placeholder("Kaynak süreç / doküman / kayıt"), placeholder("Bu süreçte nasıl kullanılır?"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Beklenen kalite kriteri"), placeholder("Nasıl kontrol edilir?"), placeholder("Durum veya açıklama")],
+        [placeholder("Girdi iş ürünü adı"), placeholder("Kaynak süreç / doküman / kayıt"), placeholder("Bu süreçte nasıl kullanılır?"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Durum veya açıklama")],
+        [placeholder("Girdi iş ürünü adı"), placeholder("Kaynak süreç / doküman / kayıt"), placeholder("Bu süreçte nasıl kullanılır?"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Durum veya açıklama")],
     ]))
 
     parts.append("<h2>4. Çıktı İş Ürünleri Matrisi</h2>")
     parts.append(table([
-        "Çıktı İş Ürünü", "Üreten Faaliyet / BP", "Kullanım Amacı", "Zorunluluk", "Kalite Kriteri", "Saklama Yeri / Kayıt", "Durum / Not"
+        "Çıktı İş Ürünü", "Üreten Faaliyet", "Kullanım Amacı", "Zorunluluk", "Saklama Yeri / Kayıt", "Durum / Not"
     ], [
-        [placeholder("Çıktı iş ürünü adı"), placeholder("Faaliyet / BP"), placeholder("Ne için kullanılır?"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Beklenen kalite kriteri"), placeholder("Confluence / Jira / Bitbucket / Drive / kayıt"), placeholder("Durum veya açıklama")],
-        [placeholder("Çıktı iş ürünü adı"), placeholder("Faaliyet / BP"), placeholder("Ne için kullanılır?"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Beklenen kalite kriteri"), placeholder("Confluence / Jira / Bitbucket / Drive / kayıt"), placeholder("Durum veya açıklama")],
+        [placeholder("Çıktı iş ürünü adı"), placeholder("Faaliyet"), placeholder("Ne için kullanılır?"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Confluence / Jira / Bitbucket / Drive / kayıt"), placeholder("Durum veya açıklama")],
+        [placeholder("Çıktı iş ürünü adı"), placeholder("Faaliyet"), placeholder("Ne için kullanılır?"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Confluence / Jira / Bitbucket / Drive / kayıt"), placeholder("Durum veya açıklama")],
     ]))
 
     parts.append("<h2>5. Kalite Kriterleri Kontrol Matrisi</h2>")
@@ -140,13 +142,8 @@ def build_storage() -> str:
         [placeholder("İş ürünü adı"), placeholder("Kalite kriteri"), placeholder("Kontrol sorusu"), placeholder("Gözden geçirme / doğrulama / liste kontrolü"), placeholder("Rol / kişi"), placeholder("Kabul ölçütü"), placeholder("Gereken aksiyon")],
     ]))
 
-    parts.append("<h2>6. İzlenebilirlik ve Tamamlayıcı Notlar</h2>")
-    parts.append(table(["Konu", "Açıklama"], [
-        ["İzlenebilirlik", placeholder("İş ürünlerinin ilgili süreç faaliyeti, BP, kayıt veya kanıt ile ilişkisi")],
-        ["Eksik İş Ürünleri", placeholder("Eksik, koşullu veya ileride tamamlanacak iş ürünlerine ilişkin not")],
-        ["Kalite Kriteri Sapmaları", placeholder("Kriterden sapma varsa gerekçe ve aksiyon")],
-        ["Açık Aksiyonlar", placeholder("Tamamlanması gereken aksiyonlar ve sorumlular")],
-    ]))
+    parts.append("<h2>6. Sürüm Geçmişi</h2>")
+    parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan/Güncelleyen", "Gözden Geçiren", "Onay"], version_history_rows()))
 
     return "".join(parts) + "\n"
 
