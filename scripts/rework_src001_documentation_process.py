@@ -6,13 +6,13 @@ Rules:
 - Does not move, rename or edit LST.007 or any other related document.
 - Reads İÜC.BİDB.SRÇ.XXX.Ş h2 headings and preserves that order.
 - Excludes 0. Şablon Hakkında.
-- Preserves 12. Uygulama ve Uyarlama Kuralları sub-headings from the template.
-- Produces Mermaid source blocks where diagrams are expected; PNG files are not generated.
+- Uses process-specific text but preserves template-controlled sections and fixed text rules.
 """
 from __future__ import annotations
 
 import html
 import re
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -37,7 +37,6 @@ CSS = (
     'table{width:100%;border-collapse:collapse;margin:16px 0;table-layout:auto}'
     'th,td{border:1px solid #c9d1d9;padding:8px 10px;vertical-align:top}'
     'th{background:#f6f8fa;font-weight:600;text-align:left}'
-    'pre{background:#f6f8fa;border:1px solid #d8dee4;border-radius:6px;padding:12px;overflow:auto}'
 )
 
 
@@ -61,9 +60,12 @@ def strip_tags(value: str) -> str:
 
 
 def norm(value: str) -> str:
-    value = strip_tags(value).lower()
-    value = re.sub(r"^\s*\d+(?:\.\d+)?\s*[\.-]\s*", "", value)
-    tr = str.maketrans({"ı":"i","ş":"s","ç":"c","ö":"o","ü":"u","ğ":"g","İ":"i","Ş":"s","Ç":"c","Ö":"o","Ü":"u","Ğ":"g"})
+    value = strip_tags(value)
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    value = value.lower()
+    value = re.sub(r"^\s*\d+(?:\.\d+|\.n)?\s*[\.-]\s*", "", value)
+    tr = str.maketrans({"ı":"i","ş":"s","ç":"c","ö":"o","ü":"u","ğ":"g"})
     return re.sub(r"\s+", " ", value.translate(tr)).strip()
 
 
@@ -79,12 +81,18 @@ def extract_h2_sections() -> list[str]:
     return sections
 
 
-def extract_subheads_for_section(section_prefix: str) -> list[str]:
+def section_html(section_number: str) -> str:
     body = template_body()
-    m = re.search(rf"<h2[^>]*>\s*{re.escape(section_prefix)}[^<]*</h2>(.*?)(?=<h2[^>]*>\s*\d+\s*[\.-]|\Z)", body, flags=re.I | re.S)
+    m = re.search(rf"<h2[^>]*>\s*{re.escape(section_number)}[^<]*</h2>(.*?)(?=<h2[^>]*>\s*\d+\s*[\.-]|\Z)", body, flags=re.I | re.S)
+    return m.group(1) if m else ""
+
+
+def first_table_headers(section_number: str) -> list[str]:
+    sec = section_html(section_number)
+    m = re.search(r"<table[^>]*>.*?<thead[^>]*>\s*<tr[^>]*>(.*?)</tr>", sec, flags=re.I | re.S)
     if not m:
         return []
-    return [strip_tags(x) for x in re.findall(r"<h3[^>]*>(.*?)</h3>", m.group(1), flags=re.I | re.S)]
+    return [strip_tags(x) for x in re.findall(r"<th[^>]*>(.*?)</th>", m.group(1), flags=re.I | re.S)]
 
 
 def load_pages() -> dict[str, str]:
@@ -115,10 +123,6 @@ def table(headers: list[str], rows: list[list[str]]) -> str:
     return f'<div class="table-wrap"><table class="wrapped confluenceTable"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
 
 
-def mermaid(src: str) -> str:
-    return f'<pre><code class="language-mermaid">{e(src.strip())}</code></pre>'
-
-
 def surec_bilgileri() -> str:
     return table(["Alan", "Değer"], [
         ["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"],
@@ -127,8 +131,8 @@ def surec_bilgileri() -> str:
         ["Süreç Sahibi", "Levent BAYEZİT - Proje Yöneticisi"],
         ["Durum", "Aktif"],
         ["Sürüm", "v1.0"],
-        ["Yürürlük Tarihi", "29-06-2026"],
-        ["Son Gözden Geçirme Tarihi", "01-07-2026"],
+        ["Yürürlük Tarihi", "15 Şubat 2025"],
+        ["Son Gözden Geçirme Tarihi", "01 Eylül 2025"],
     ])
 
 
@@ -167,127 +171,108 @@ def terimler() -> str:
     ])
 
 
-def aktivite_ozet() -> str:
+def surec_aktivitesi() -> str:
     return table(["Alan", "Açıklama"], [
-        ["Süreç Başlatıcısı", "Yeni doküman ihtiyacı, doküman değişiklik ihtiyacı, proje yaşam döngüsü aşaması, süreç gözden geçirme sonucu, denetim bulgusu veya iyileştirme ihtiyacı"],
-        ["Başlangıç", "Doküman ihtiyacının veya mevcut dokümanda değişiklik/bakım ihtiyacının belirlenmesi"],
-        ["Bitiş", "Dokümanın onaylanması, yayımlanması, dağıtılması, güncellenmesi, pasife alınması veya arşivlenmesi"],
-        ["Temel Yaklaşım", "Dokümanlar ilgili şablon ve kalite kriterlerine göre hazırlanır; gözden geçirilir; yetkili rol tarafından onaylanır; repository üzerinden yayımlanır; değişiklik ve gözden geçirme kayıtlarıyla sürdürülür."],
+        ["Süreç Başlatıcısı", "Yeni doküman ihtiyacı, mevcut doküman değişiklik ihtiyacı, proje yaşam döngüsü aşaması, süreç gözden geçirme sonucu, denetim bulgusu veya iyileştirme ihtiyacı"],
+        ["Süreç Başlangıcı", "Doküman ihtiyacının, değişiklik ihtiyacının veya bakım/gözden geçirme ihtiyacının belirlenmesi"],
+        ["Süreç Bitişi", "Dokümanın onaylanması, yayımlanması, dağıtılması, güncellenmesi, pasife alınması veya arşivlenmesi"],
+        ["Ana Faaliyetler", "Dokümantasyon stratejisinin uygulanması; doküman standardı ve şablon seçimi; doküman hazırlama; gözden geçirme; onay; yayın; dağıtım; değişiklik ve bakım takibi"],
+        ["İlgili Süreçler", ", ".join([
+            link("İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci"),
+            link("İÜC.BİDB.SRÇ.003 - Doğrulama Süreci"),
+            link("İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci"),
+            link("İÜC.BİDB.SRÇ.016 - Yapılandırma Yönetimi Süreci"),
+            link("İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"),
+        ])],
     ])
 
 
 def roller() -> str:
-    return table(["Referans Kayıt", "Kullanım"], [
-        [link("İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 kapsamındaki rol, sorumluluk, yetki, RACI ve yetkinlik gereksinimlerinin güncel kaydıdır. Roller süreç dokümanında tekrar tanımlanmaz; ilgili kayıt üzerinden yönetilir."],
-    ])
+    return p("Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik tanımları, süreç özel kaydı olan İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001) dokümanında yönetilir.")
 
 
 def is_urunleri() -> str:
-    return table(["İş Ürünü", "Amaç", "Kontrol / Kalite Kriteri", "İlgili Kayıt"], [
-        [link("İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"), "Dokümantasyon stratejisi ve uygulama kurallarını tanımlamak", "Onaylı, yürürlükte ve SRÇ.001 ile uyumlu olmalıdır", link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi")],
-        [link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"), "Aktif doküman envanterini izlemek", "Doküman kodu, ad, sürüm, durum ve erişim bilgisi güncel olmalıdır", link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı")],
-        [link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı"), "Gözden geçirme ve uygunluk kayıtlarını izlemek", "Gözden geçirme sonucu, sorumlu ve karar bilgisi içermelidir", link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)")],
-        [link("İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi"), "Yaşam döngüsü aşamalarına göre üretilecek dokümanları belirlemek", "Aşama, doküman türü, sorumlu ve kullanım amacı net olmalıdır", link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)")],
-        [link("İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)"), "SRÇ.001 BP/GP uygunluğunu ve tamamlayıcı aksiyonları izlemek", "BP/GP, durum, kanıt ve aksiyon alanları dolu olmalıdır", link("İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)")],
-    ])
+    return p("Bu süreç kapsamında kullanılan girdi iş ürünleri ve üretilen çıktı iş ürünleri, süreç özel kaydı olan İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001) dokümanında yönetilir.")
 
 
 def surec_akisi() -> str:
-    code = """
-flowchart TD
-    A[Doküman ihtiyacı veya değişiklik ihtiyacı belirlenir] --> B[Doküman türü, kodu ve şablonu belirlenir]
-    B --> C[Doküman taslağı hazırlanır veya mevcut doküman güncellenir]
-    C --> D[Kalite kriterlerine göre gözden geçirme yapılır]
-    D --> E{Uygun mu?}
-    E -- Hayır --> F[Düzeltme yapılır]
-    F --> D
-    E -- Evet --> G[Yetkili rol tarafından onaylanır]
-    G --> H[Repository üzerinde yayımlanır]
-    H --> I[Aktif doküman listesi ve ilgili kayıtlar güncellenir]
-    I --> J[Hedef kitle bilgilendirilir]
-    J --> K[Periyodik gözden geçirme ve bakım yapılır]
-"""
-    return p("Aşağıdaki Mermaid kodu süreç akış diyagramının kaynak kodudur. PNG çıktısı ayrıca üretilerek dokümana görsel olarak eklenebilir.") + mermaid(code)
+    return ""
 
 
-def faaliyetler() -> str:
-    return table(["Adım", "Faaliyet", "SUP.7 İzlenebilirliği", "Çıktı / Kayıt"], [
-        ["1", "Dokümantasyon yönetim stratejisini ve kapsamını belirle", "SUP.7.BP1", link("İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü")],
-        ["2", "Doküman türü, kodlama, şablon ve yazım kurallarını uygula", "SUP.7.BP2", link("İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı")],
-        ["3", "Doküman gereksinimlerini ve kalite kriterlerini belirle", "SUP.7.BP3", link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)")],
-        ["4", "Yaşam döngüsünde üretilecek dokümanları belirle", "SUP.7.BP4", link("İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi")],
-        ["5", "Dokümanı ilgili şablona göre hazırla veya güncelle", "SUP.7.BP5", "Taslak / güncellenmiş doküman"],
-        ["6", "Dokümanı gözden geçir ve onaylat", "SUP.7.BP6", link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı")],
-        ["7", "Onaylanan dokümanı yayımla ve erişilebilir hale getir", "SUP.7.BP7", link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi")],
-        ["8", "Dokümanı bakım, değişiklik ve arşivleme kriterlerine göre sürdür", "SUP.7.BP8", link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı")],
-    ])
+def faaliyet_table(headers: list[str]) -> str:
+    if not headers:
+        headers = ["No", "Faaliyet", "Açıklama", "Sorumlu", "Girdi", "Çıktı / Kayıt"]
+    activities = [
+        {"no":"1", "faaliyet":"Dokümantasyon stratejisini ve kapsamını uygula", "aciklama":"Doküman yönetimi kapsamı ve kullanılacak standart yaklaşım belirlenir.", "sorumlu":"Süreç Sahibi", "girdi":"Yeni doküman/değişiklik ihtiyacı", "cikti":"Dokümantasyon yaklaşımı, PRS.001", "bp":"SUP.7.BP1"},
+        {"no":"2", "faaliyet":"Doküman standardı ve şablonu belirle", "aciklama":"Doküman türü, kodu, adlandırması ve kullanılacak şablon belirlenir.", "sorumlu":"Doküman Hazırlayan", "girdi":"Doküman ihtiyacı, şablon seti", "cikti":"Seçilen şablon ve doküman kodu", "bp":"SUP.7.BP2, SUP.7.BP3"},
+        {"no":"3", "faaliyet":"Üretilecek dokümanı tanımla", "aciklama":"Yaşam döngüsü aşamasına göre üretilecek doküman ve amacı belirlenir.", "sorumlu":"Süreç Sahibi / Proje Ekibi", "girdi":"LST.005, proje/süreç ihtiyacı", "cikti":"Doküman ihtiyacı kaydı", "bp":"SUP.7.BP4"},
+        {"no":"4", "faaliyet":"Dokümanı hazırla veya güncelle", "aciklama":"Doküman ilgili şablona, yazım kurallarına ve kalite kriterlerine uygun biçimde hazırlanır.", "sorumlu":"Doküman Hazırlayan", "girdi":"Şablon, gereksinimler, mevcut doküman", "cikti":"Taslak veya güncellenmiş doküman", "bp":"SUP.7.BP5"},
+        {"no":"5", "faaliyet":"Dokümanı gözden geçir ve onaylat", "aciklama":"Doküman kalite kriterlerine göre gözden geçirilir ve yetkili rol tarafından onaylanır.", "sorumlu":"Gözden Geçiren / Onaylayan", "girdi":"Taslak doküman", "cikti":"Gözden geçirme ve onay kaydı", "bp":"SUP.7.BP6"},
+        {"no":"6", "faaliyet":"Dokümanı yayımla ve erişime aç", "aciklama":"Onaylanan doküman repository üzerinde yayımlanır ve ilgili hedef kitleye erişilebilir hale getirilir.", "sorumlu":"Doküman Sorumlusu", "girdi":"Onaylı doküman", "cikti":"Yayımlanmış doküman, LST.001", "bp":"SUP.7.BP7"},
+        {"no":"7", "faaliyet":"Dokümanı sürdür ve arşivle", "aciklama":"Doküman değişiklik, periyodik gözden geçirme, pasife alma ve arşivleme kriterlerine göre yönetilir.", "sorumlu":"Süreç Sahibi / Doküman Sorumlusu", "girdi":"Değişiklik/gözden geçirme ihtiyacı", "cikti":"LST.002, LST.003, güncel doküman", "bp":"SUP.7.BP8"},
+    ]
+    rows = []
+    for item in activities:
+        row = []
+        for h in headers:
+            n = norm(h)
+            if "no" in n or "adim" in n or "sira" in n:
+                row.append(e(item["no"]))
+            elif "faaliyet" in n or "aktivite" in n:
+                row.append(e(item["faaliyet"]))
+            elif "aciklama" in n or "tanim" in n:
+                row.append(e(item["aciklama"]))
+            elif "sorumlu" in n or "rol" in n:
+                row.append(e(item["sorumlu"]))
+            elif "girdi" in n:
+                row.append(e(item["girdi"]))
+            elif "cikti" in n or "kayit" in n or "urun" in n:
+                row.append(e(item["cikti"]))
+            elif "bp" in n or "standart" in n or "izlen" in n:
+                row.append(e(item["bp"]))
+            else:
+                row.append("")
+        rows.append(row)
+    return table(headers, rows)
+
+
+def surec_faaliyetleri() -> str:
+    return faaliyet_table(first_table_headers("10."))
 
 
 def olcum() -> str:
-    return table(["Ölçüm / İzleme Alanı", "Yöntem", "Kayıt"], [
-        ["Dokümanların şablona uygunluğu", "Gözden geçirme ve kalite kriteri kontrolü", link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı")],
-        ["Aktif doküman envanterinin güncelliği", "Aktif doküman listesi üzerinden dönemsel kontrol", link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi")],
-        ["Doküman değişikliklerinin izlenebilirliği", "Değişiklik kayıtlarının kontrol edilmesi", link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı")],
-        ["Süreç performansı", "SRÇ.001 performans göstergelerinin izlenmesi", link("İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)")],
-        ["Süreç yaygınlaştırma durumu", "Bilgilendirme/yaygınlaştırma kayıtlarının kontrolü", link("İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı")],
-    ])
+    return p("Bu süreç kapsamında takip edilecek süreç performansı ölçüm seti, süreç özel kaydı olan İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001) dokümanında yönetilir.")
 
 
 def uygulama_uyarlama() -> str:
-    subheads = extract_subheads_for_section("12.")
-    if not subheads:
-        subheads = ["12.1. Uygulama Kapsamı", "12.2. Uyarlama Kuralları", "12.3. İstisna Yönetimi", "12.4. Uygunluk Kontrolü"]
-    parts: list[str] = []
-    for sh in subheads:
-        parts.append(f"<h3>{e(sh)}</h3>")
-        n = norm(sh)
-        if "kapsam" in n:
-            parts.append(p("SRÇ.001, İÜC BİDB süreç dokümantasyonu ve yazılım proje dokümantasyonu için uygulanır. Her kontrollü doküman ilgili tür, kod, şablon, sahiplik, gözden geçirme, onay, yayın ve bakım kurallarına göre yönetilir."))
-        elif "uyarl" in n:
-            parts.append(table(["Uyarlama Alanı", "Kural"], [
-                ["Doküman türü", "Doküman türü süreç veya proje ihtiyacına göre belirlenebilir; ancak kodlama, sahiplik ve onay alanları korunur."],
-                ["Şablon kullanımı", "İlgili doküman türü için tanımlı şablon esas alınır; kullanılmayan bölüm varsa gerekçe dokümanda veya gözden geçirme kaydında belirtilir."],
-                ["Proje dokümantasyonu", "Proje büyüklüğü ve yaşam döngüsü aşamasına göre LST.005 doküman ihtiyaç matrisi esas alınır."],
-            ]))
-        elif "istisna" in n or "sapma" in n:
-            parts.append(p("Şablon, kodlama, onay veya yayın kurallarından sapma gerekiyorsa sapmanın gerekçesi süreç sahibi veya yetkili rol tarafından değerlendirilir. Kabul edilen istisna ilgili değişiklik/gözden geçirme kaydında izlenir."))
-        elif "uygun" in n or "kontrol" in n or "gozden" in n:
-            parts.append(p("Sürecin uygulanma uygunluğu LST.003, LST.008, LST.009 ve FRM.001 kayıtları üzerinden izlenir. Uygunsuzluk veya eksik kanıt tespit edilirse tamamlayıcı aksiyon açılır."))
-        else:
-            parts.append(p("Bu alt başlık kapsamında SRÇ.001 uygulaması, ilgili dokümantasyon kayıtları ve süreç sahibi sorumluluğunda yönetilir. Gereken kanıtlar ilgili liste, form veya prosedür kayıtlarına bağlanır."))
+    custom = [
+        ("12.1. Doküman Türleri ve Kodlama Yaklaşımı", "SRÇ.001 kapsamında süreç, form, liste/kayıt, prosedür, kılavuz/talimat ve plan türündeki dokümanlar kurumsal kodlama yapısına uygun olarak yönetilir. Doküman kodu, dokümanın türünü ve ilgili olduğu süreci izlenebilir kılacak şekilde kullanılır."),
+        ("12.2. Doküman Adlandırma", "Doküman adları, doküman kodu ve dokümanın açık adını içerecek şekilde kullanılır. Sürece özel kayıt ve listelerde ilgili süreç kodu parantez içinde belirtilir."),
+        ("12.3. Yazım Standartları", "Dokümanlar ilgili şablon, yazım kuralları ve kalite kriterlerine uygun biçimde hazırlanır. Zorunlu alanlar boş bırakılmaz; kullanılmayan alanlar gerekçeli olarak yönetilir."),
+        ("12.4. Sürüm Tipleri", "Taslak, gözden geçirilmiş, onaylı, aktif, pasif ve arşiv durumları dokümanın yaşam döngüsü içinde kullanılır. Değişiklikler sürüm ve değişiklik kayıtları ile izlenir."),
+        ("12.5. Dokümanların Dağıtımı ve Erişimi", "Onaylanan dokümanlar repository üzerinde yayımlanır. Erişim ihtiyacı olan hedef kitleye uygun bağlantı, duyuru veya bilgilendirme yoluyla erişim sağlanır."),
+        ("12.6. Doküman Bakımı ve Arşivleme", "Dokümanlar yılda en az bir kez veya ihtiyaç halinde gözden geçirilir. Geçerliliğini yitiren dokümanlar pasife alınır veya arşivlenir; aktif doküman listesi güncel tutulur."),
+    ]
+    parts = []
+    for h, text in custom:
+        parts.append(f"<h3>{e(h)}</h3>")
+        parts.append(p(text))
+    parts.append("<h3>12.7. Uyarlama Kuralları</h3>")
+    parts.append(table(["Uyarlama Alanı", "Kural"], [
+        ["Zorunlu Adımlar", "Doküman türü/kodu belirleme, uygun şablon kullanma, zorunlu meta alanları doldurma, gözden geçirme/onay ihtiyacını değerlendirme, onaylı dokümanı repository üzerinde yayımlama ve aktif doküman listesini güncelleme adımları uyarlanamaz."],
+        ["Uyarlanabilir Adımlar", "Doküman kapsamı, detay seviyesi, gözden geçirme yöntemi, dağıtım kapsamı ve proje özel doküman seti; süreç sahibi ve proje ihtiyacına göre uyarlanabilir."],
+        ["Onay Gerektiren Durumlar", "Şablondan sapma, zorunlu bölümün kullanılmaması, dokümanın kapsam dışı bırakılması, pasife alma/arşivleme veya kritik doküman değişiklikleri süreç sahibi/onaylayan rol kararı gerektirir."],
+    ]))
     return "".join(parts)
 
 
 def etkilesimler() -> str:
-    code = """
-flowchart LR
-    SR001[SRÇ.001 Dokümantasyon Süreci]
-    SR002[SRÇ.002 Kalite Güvencesi]
-    SR003[SRÇ.003 Doğrulama]
-    SR004[SRÇ.004 Süreç Kurulumu]
-    SR016[SRÇ.016 Yapılandırma Yönetimi]
-    SR018[SRÇ.018 Değişiklik Talebi Yönetimi]
-    SR025[SRÇ.025 Ölçüm]
-
-    SR004 -->|Süreç dokümanı ihtiyacı| SR001
-    SR001 -->|Doküman ve kayıtlar| SR002
-    SR003 -->|Gözden geçirme / doğrulama sonucu| SR001
-    SR016 <--> |Sürüm, baseline, repository| SR001
-    SR018 -->|Doküman değişiklik talebi| SR001
-    SR001 -->|Performans verisi| SR025
-"""
-    return table(["Etkileşim", "Açıklama", "Kayıt"], [
-        ["SRÇ.004 ↔ SRÇ.001", "Süreç kurulumu sırasında üretilecek süreç dokümanları ve şablon uyumu yönetilir.", link("İÜC.BİDB.LST.007 - Süreç Mimari ve Etkileşim Matrisi")],
-        ["SRÇ.002 ↔ SRÇ.001", "Doküman kalite kriterleri ve uygunsuzluk/tamamlayıcı aksiyonlar kalite güvence kapsamında izlenir.", link("İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)")],
-        ["SRÇ.003 ↔ SRÇ.001", "Doküman gözden geçirme ve doğrulama sonuçları SRÇ.001 bakım faaliyetlerine girdi sağlar.", link("İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı")],
-        ["SRÇ.016 ↔ SRÇ.001", "Doküman sürümü, baseline, repository ve değişiklik kontrolü yapılandırma yönetimi ile uyumlu yürütülür.", link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı")],
-        ["SRÇ.018 ↔ SRÇ.001", "Doküman değişiklik talepleri değerlendirilir ve uygun görülenler doküman bakım faaliyetine alınır.", link("İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı")],
-    ]) + p("Aşağıdaki Mermaid kodu süreç etkileşim diyagramının kaynak kodudur. PNG çıktısı ayrıca üretilerek dokümana görsel olarak eklenebilir.") + mermaid(code)
+    return p("Bu süreç kapsamındaki faaliyetlerin farklı süreçler ile olan etkileşimleri, süreç özel kaydı olan İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001) dokümanında yönetilir.")
 
 
 def surum() -> str:
-    return table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan / Güncelleyen", "Onay"], [
-        ["v1.0", "29-06-2026", "Dokümantasyon Süreci güncel süreç tanımı şablonuna göre sıfırdan oluşturuldu.", "Soner DEDEOĞLU - Kalite Danışmanı", "Levent BAYEZİT - Dokümantasyon Süreç Sahibi"],
+    return table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan / Güncelleyen", "Gözden Geçiren", "Onay"], [
+        ["v1.0", "15 Şubat 2025", "Dokümantasyon Süreci güncel süreç tanımı şablonuna göre oluşturuldu.", "Soner DEDEOĞLU - Kalite Danışmanı", "<Gözden geçiren>", "<Onay bilgisi>"],
     ])
 
 
@@ -298,11 +283,11 @@ def content_for(heading: str) -> str:
     if "kapsam" in n: return kapsam()
     if "referans" in n: return referanslar()
     if "terim" in n or "kisalt" in n: return terimler()
-    if "aktivite" in n: return aktivite_ozet()
+    if "surec aktivitesi" in n: return surec_aktivitesi()
     if "rol" in n or "sorumluluk" in n: return roller()
     if "is" in n and "urun" in n: return is_urunleri()
-    if "akis" in n: return surec_akisi()
-    if "faaliyet" in n: return faaliyetler()
+    if "surec akisi" in n: return surec_akisi()
+    if "surec faaliyet" in n: return surec_faaliyetleri()
     if "olcum" in n or "izleme" in n: return olcum()
     if "uygulama" in n or "uyarlama" in n: return uygulama_uyarlama()
     if "etkilesim" in n: return etkilesimler()
@@ -318,20 +303,11 @@ def build_storage_body(sections: list[str]) -> str:
     return "".join(parts) + "\n"
 
 
-def build_view_html(storage_body: str) -> str:
+def build_view_html(storage: str) -> str:
     return f"""<!doctype html>
 <html lang="tr">
-<head>
-  <meta charset="utf-8">
-  <title>{e(SRC001_TITLE)}</title>
-  <style>{CSS}</style>
-</head>
-<body>
-<main class="confluence-page">
-<h1>{e(SRC001_TITLE)}</h1>
-{storage_body}
-</main>
-</body>
+<head><meta charset="utf-8"><title>{e(SRC001_TITLE)}</title><style>{CSS}</style></head>
+<body><main class="confluence-page"><h1>{e(SRC001_TITLE)}</h1>{storage}</main></body>
 </html>
 """
 
@@ -355,25 +331,18 @@ def update_page_yaml() -> None:
 
 def write_report(sections: list[str]) -> None:
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    subheads = extract_subheads_for_section("12.")
     lines = [
-        "# SRÇ.001 Süreç Tanımı Yeniden Oluşturma Raporu",
-        "",
-        "Kapsam: Yalnızca `İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci` sıfırdan oluşturuldu.",
-        "",
-        "## Uygulanan Şablon Bölümleri",
-        *[f"- {s}" for s in sections],
-        "",
-        "## 12. Madde Alt Başlıkları",
-        *[f"- {s}" for s in subheads],
-        "",
+        "# SRÇ.001 Süreç Tanımı Yeniden Oluşturma Raporu", "",
+        "Kapsam: Yalnızca `İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci` oluşturuldu.", "",
+        "## Uygulanan Şablon Bölümleri", *[f"- {s}" for s in sections], "",
         "## Kontroller",
         "- 0 numaralı şablon bölümleri SRÇ.001 içeriğine alınmadı.",
-        "- SRÇ.001 gövdesi doğrudan 1. bölümle başlatıldı.",
-        "- Eski SRÇ.001 gövdesi taşınmadı; içerik baştan oluşturuldu.",
-        "- Mermaid kaynak kodları süreç akışı ve süreç etkileşimleri bölümlerine eklendi.",
-        "- LST.007 veya diğer ilişkili dokümanlarda taşıma/yeniden adlandırma/değişiklik yapılmadı.",
-        "",
+        "- 6. Süreç Aktivitesi sabit satırları korundu.",
+        "- 7, 8, 11 ve 13. maddelerde şablon metin yapısı korundu.",
+        "- 9. Süreç Akışı boş bırakıldı; PNG görsel kullanıcı tarafından eklenecek.",
+        "- 10. Süreç Faaliyetleri tablo başlıkları şablondan okundu.",
+        "- 12. madde süreç özel alt başlıklarla dolduruldu ve Uyarlama Kuralları tablosu eklendi.",
+        "- 14. Sürüm Geçmişi tablosunda Gözden Geçiren sütunu yer alıyor.", "",
     ]
     REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
 
@@ -389,7 +358,7 @@ def main() -> None:
     (SRC001_DIR / "body.view.html").write_text(build_view_html(storage), encoding="utf-8")
     update_page_yaml()
     write_report(sections)
-    print("[DONE] SRÇ.001 süreç tanımı şablona göre sıfırdan oluşturuldu.")
+    print("[DONE] SRÇ.001 süreç tanımı düzeltme kurallarına göre oluşturuldu.")
     print(f"[REPORT] {REPORT_PATH.relative_to(ROOT)}")
 
 
