@@ -38,39 +38,51 @@ TEMPLATES = [
     {
         "kind": "PRS",
         "title": "TASLAK - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
-        "active_title": "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
         "slug": "taslak-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
         "document_code": "İÜC.BİDB.PRS.XXX.Ş",
         "usage": "Prosedür Tanımı",
         "name_example": "İÜC.BİDB.PRS.XXX - Prosedür Adı",
-        "purpose": "Bu şablon, kurum genelinde uygulanacak prosedürlerin amaç, kapsam, referans, rol, sorumluluk, uygulama adımı, kayıt ve gözden geçirme bilgilerinin standart yapıda tanımlanması için kullanılır.",
-        "note": "Prosedür dokümanları, bir süreç veya yönetim alanında uyulması gereken kuralları ve uygulama esaslarını tanımlar; günlük operasyon kaydı yerine normatif doküman olarak yönetilir.",
-        "section_6": "Genel Esaslar",
-        "section_6_desc": "Prosedürün uygulanmasında geçerli olan temel prensipler, zorunlu kurallar, politika bağlantıları ve genel yaklaşım bu bölümde tanımlanır.",
-        "section_8": "Prosedür Adımları",
-        "section_8_headers": ["Adım", "Uygulama Adımı", "Açıklama", "Sorumlu Rol", "Kayıt / Kanıt"],
-        "section_8_rows": [
-            ["1", "<em>Prosedür adımı</em>", "<em>Adımın nasıl uygulanacağı</em>", "<em>Rol / birim</em>", "<em>Kayıt veya kanıt</em>"],
-            ["2", "<em>Prosedür adımı</em>", "<em>Adımın nasıl uygulanacağı</em>", "<em>Rol / birim</em>", "<em>Kayıt veya kanıt</em>"],
+        "purpose": "Bu şablon, kurum genelinde uygulanacak prosedürlerin amaç, kapsam, kapsam dışı durumlar, referanslar, roller, ilkeler, uygulama esasları, yayın/erişim/bakım kuralları ve sürüm geçmişi bilgilerinin standart yapıda tanımlanması için kullanılır.",
+        "note": "Prosedür dokümanları süreç şablonu gibi süreç akışı veya uyarlama matrisi içermek zorunda değildir; prosedürün gerçek uygulama içeriğini taşıyacak sade ve normatif yapı kullanılır.",
+        "sections": [
+            {"title": "1. Doküman Bilgileri", "type": "info"},
+            {"title": "2. Amaç", "type": "paragraph", "text": "Bu bölümde prosedürün hangi ihtiyacı karşılamak için hazırlandığı ve kurum içinde hangi amacı gerçekleştirdiği açıklanır."},
+            {"title": "3. Kapsam", "type": "paragraph_list", "text": "Bu bölümde prosedürün uygulanacağı süreçler, projeler, birimler, doküman türleri, sistemler ve faaliyetler tanımlanır.", "items": ["<em>Kapsama dahil faaliyet / alan</em>", "<em>Kapsama dahil faaliyet / alan</em>"]},
+            {"title": "4. Kapsam Dışı", "type": "paragraph_list", "text": "Bu bölümde prosedürün uygulanmadığı doküman, kayıt, faaliyet veya istisna durumları tanımlanır.", "items": ["<em>Kapsam dışı durum</em>", "<em>Kapsam dışı durum</em>"]},
+            {"title": "5. Referanslar", "type": "reference"},
+            {"title": "6. Terimler ve Kısaltmalar", "type": "terms"},
+            {"title": "7. Roller ve Sorumluluklar", "type": "roles"},
+            {"title": "8. Genel İlkeler", "type": "principles", "headers": ["İlke", "Açıklama"]},
+            {"title": "9. Prosedür Esasları", "type": "custom_table", "intro": "Bu bölümde prosedürün ana uygulama yaklaşımı, sınıflandırmaları, zorunluluk seviyeleri ve karar kuralları tanımlanır.", "headers": ["Esas / Kural", "Açıklama", "Zorunluluk", "Not"]},
+            {"title": "10. Uygulama / Strateji Matrisi", "type": "custom_table", "intro": "Bu bölümde prosedürün temel uygulama adımları veya strateji matrisi tablo halinde verilir. Yaşam döngüsü, doküman sınıflandırması, yayın ortamı veya erişim stratejisi gibi kapsamlar bu bölümde yönetilebilir.", "headers": ["Alan / Aşama", "Uygulama Kuralı", "Sorumlu", "Kayıt / Kanıt", "Not"]},
+            {"title": "11. Yayın, Erişim ve Bakım Kuralları", "type": "custom_table", "intro": "Bu bölümde prosedür kapsamındaki yayın ortamı, erişim, dağıtım, bakım ve arşivleme kuralları tanımlanır.", "headers": ["Kural Alanı", "Kural", "Sorumlu", "Kayıt / Kanıt"]},
+            {"title": "12. Kayıtlar ve Kanıtlar", "type": "records"},
+            {"title": "13. Sürüm Geçmişi", "type": "record_history"},
         ],
     },
     {
         "kind": "KLV",
         "title": "TASLAK - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-        "active_title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
         "slug": "taslak-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
         "document_code": "İÜC.BİDB.KLV.XXX.Ş",
         "usage": "Kılavuz ve Talimat Tanımı",
         "name_example": "İÜC.BİDB.KLV.XXX - Kılavuz / Talimat Adı",
-        "purpose": "Bu şablon, kurum genelinde kullanılacak kılavuz ve talimatların amaç, kapsam, uygulama kuralları, adımlar, örnekler, kayıtlar ve gözden geçirme bilgilerinin standart yapıda tanımlanması için kullanılır.",
-        "note": "Kılavuz ve talimat dokümanları, prosedürlerde belirlenen kuralların nasıl uygulanacağını açıklayan destekleyici dokümanlardır.",
-        "section_6": "Kullanım Esasları",
-        "section_6_desc": "Kılavuz veya talimatın hangi koşullarda, kimler tarafından ve hangi sınırlar içinde kullanılacağı bu bölümde tanımlanır.",
-        "section_8": "Talimat / Uygulama Adımları",
-        "section_8_headers": ["Adım", "Talimat / Uygulama Adımı", "Açıklama", "Kullanıcı / Sorumlu Rol", "Kayıt / Kanıt"],
-        "section_8_rows": [
-            ["1", "<em>Uygulama adımı</em>", "<em>Adımın nasıl uygulanacağı</em>", "<em>Rol / kullanıcı</em>", "<em>Kayıt veya kanıt</em>"],
-            ["2", "<em>Uygulama adımı</em>", "<em>Adımın nasıl uygulanacağı</em>", "<em>Rol / kullanıcı</em>", "<em>Kayıt veya kanıt</em>"],
+        "purpose": "Bu şablon, kurum genelinde kullanılacak kılavuz ve talimatların amaç, kapsam, kapsam dışı durumlar, referanslar, terimler, genel ilkeler, kural/adım tabloları, örnekler, kayıtlar ve sürüm geçmişi bilgilerinin standart yapıda tanımlanması için kullanılır.",
+        "note": "Kılavuz ve talimat dokümanları süreç akışı veya RACI gibi süreç dokümanı bölümleri içermek zorunda değildir; kullanıcıyı yönlendiren kural, örnek ve uygulama açıklamalarını taşıyacak esnek yapı kullanılır.",
+        "sections": [
+            {"title": "1. Doküman Bilgileri", "type": "info"},
+            {"title": "2. Amaç", "type": "paragraph", "text": "Bu bölümde kılavuz veya talimatın hangi ihtiyacı karşılamak için hazırlandığı ve kullanıcıya hangi konuda yönlendirme sağladığı açıklanır."},
+            {"title": "3. Kapsam", "type": "paragraph_list", "text": "Bu bölümde kılavuz veya talimatın uygulanacağı doküman türleri, kullanıcı grupları, sistemler, süreçler veya faaliyetler tanımlanır.", "items": ["<em>Kapsama dahil alan</em>", "<em>Kapsama dahil alan</em>"]},
+            {"title": "4. Kapsam Dışı", "type": "paragraph_list", "text": "Bu bölümde kılavuz veya talimatın uygulanmadığı durumlar ve istisnalar tanımlanır.", "items": ["<em>Kapsam dışı durum</em>", "<em>Kapsam dışı durum</em>"]},
+            {"title": "5. Referanslar", "type": "reference"},
+            {"title": "6. Terimler ve Kısaltmalar", "type": "terms"},
+            {"title": "7. Genel İlkeler", "type": "principles", "headers": ["İlke", "Açıklama"]},
+            {"title": "8. Kural ve Uygulama Alanları", "type": "custom_table", "intro": "Bu bölümde kılavuz veya talimatın temel kural alanları ve uygulama başlıkları tanımlanır. Örneğin başlık kuralları, tablo kullanımı, tarih/sürüm kuralları veya sistem kullanım adımları bu bölümde ele alınabilir.", "headers": ["Kural / Alan", "Açıklama", "Örnek", "Not"]},
+            {"title": "9. Uygulama Adımları / Talimatlar", "type": "custom_table", "intro": "Bu bölümde kullanıcı tarafından izlenecek adımlar veya talimatlar tablo halinde tanımlanır.", "headers": ["Adım", "Talimat / Uygulama Adımı", "Açıklama", "Örnek / Kanıt"]},
+            {"title": "10. Örnekler ve Formatlar", "type": "custom_table", "intro": "Bu bölümde dosya adı, başlık, tablo, kod bloğu, görsel veya diğer format örnekleri verilebilir.", "headers": ["Örnek Alanı", "Kullanım", "Örnek", "Açıklama"]},
+            {"title": "11. Kontrol ve Gözden Geçirme Kuralları", "type": "custom_table", "intro": "Bu bölümde kılavuz veya talimatın uygulanırken nasıl kontrol edileceği ve ne zaman gözden geçirileceği tanımlanır.", "headers": ["Kontrol Alanı", "Kontrol Yöntemi", "Sıklık", "Sorumlu", "Kayıt / Kanıt"]},
+            {"title": "12. Kayıtlar ve Kanıtlar", "type": "records"},
+            {"title": "13. Sürüm Geçmişi", "type": "record_history"},
         ],
     },
 ]
@@ -94,6 +106,10 @@ def table(headers: list[str], rows: list[list[str]]) -> str:
     return f'<table class="wrapped"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>'
 
 
+def bullet_list(items: list[str]) -> str:
+    return "<ul>" + "".join(f"<li>{item}</li>" for item in items) + "</ul>"
+
+
 def template_version_history_rows() -> list[list[str]]:
     return [
         ["v0.1", "27-11-2024", "İlk taslak oluşturuldu.", "Soner DEDEOĞLU - Kalite Danışmanı", "-", "-"],
@@ -106,6 +122,70 @@ def record_version_history_rows() -> list[list[str]]:
         ["v0.1", placeholder("GG-AA-YYYY"), placeholder("İlk Taslak"), placeholder("Rol / birim"), placeholder("Rol / birim"), placeholder("Rol / birim")],
         ["v1.0", placeholder("GG-AA-YYYY"), placeholder("Onaylı sürüm"), placeholder("Rol / birim"), placeholder("Rol / birim"), placeholder("Rol / birim")],
     ]
+
+
+def render_section(section: dict[str, Any], cfg: dict[str, Any]) -> str:
+    title = section["title"]
+    kind = section["type"]
+    parts: list[str] = [f"<h2>{e(title)}</h2>"]
+
+    if kind == "info":
+        parts.append(table(["Alan", "Değer"], [
+            ["Doküman Kodu", placeholder("İÜC.BİDB." + cfg["kind"] + ".XXX")],
+            ["Doküman Adı", placeholder("Doküman adı")],
+            ["Doküman Türü", cfg["usage"].replace(" Tanımı", "")],
+            ["İlişkili Süreç / Kapsam", placeholder("İlgili süreç, yönetim alanı veya kullanım kapsamı")],
+            ["Süreç Referansı", placeholder("Varsa standart / süreç referansı")],
+            ["Doküman Sahibi", placeholder("Rol / birim")],
+            ["Hazırlayan", placeholder("Rol / kişi")],
+            ["Gözden Geçiren", placeholder("Rol / kişi")],
+            ["Onaylayan", placeholder("Rol / kişi")],
+            ["Onay Tarihi", placeholder("GG-AA-YYYY")],
+            ["Durum", placeholder("Taslak / Gözden Geçirildi / Onaylı / Aktif / Pasif / Arşiv")],
+            ["Sürüm", placeholder("v0.1 / v1.0 / v1.1")],
+            ["Yürürlük Tarihi", placeholder("GG-AA-YYYY")],
+            ["Son Gözden Geçirme Tarihi", placeholder("GG-AA-YYYY")],
+            ["Güncelleme Sıklığı", placeholder("Yılda bir veya ihtiyaç halinde")],
+        ]))
+    elif kind == "paragraph":
+        parts.append(p(section["text"]))
+    elif kind == "paragraph_list":
+        parts.append(p(section["text"]))
+        parts.append(bullet_list(section["items"]))
+    elif kind == "reference":
+        parts.append(table(["Referans", "Açıklama"], [
+            [placeholder("İlgili süreç / prosedür / kılavuz / standart"), placeholder("Referansın bu dokümanla ilişkisi")],
+            [placeholder("İlgili kayıt / liste / sistem"), placeholder("Referansın bu dokümanla ilişkisi")],
+        ]))
+    elif kind == "terms":
+        parts.append(table(["Terim / Kısaltma", "Açıklama"], [
+            [placeholder("Terim"), placeholder("Açıklama")],
+            [placeholder("Kısaltma"), placeholder("Açıklama")],
+        ]))
+    elif kind == "roles":
+        parts.append(table(["Rol", "Sorumluluk", "Yetki"], [
+            [placeholder("Rol adı"), placeholder("Sorumluluk açıklaması"), placeholder("Yetki açıklaması")],
+            [placeholder("Rol adı"), placeholder("Sorumluluk açıklaması"), placeholder("Yetki açıklaması")],
+        ]))
+    elif kind == "principles":
+        parts.append(table(section["headers"], [
+            [placeholder("İlke"), placeholder("Açıklama")],
+            [placeholder("İlke"), placeholder("Açıklama")],
+        ]))
+    elif kind == "custom_table":
+        parts.append(p(section["intro"]))
+        parts.append(table(section["headers"], [[placeholder(header) for header in section["headers"]] for _ in range(2)]))
+    elif kind == "records":
+        parts.append(table(["Kayıt / Kanıt", "Kullanım Amacı", "Saklama Yeri", "Sorumlu", "Not"], [
+            [placeholder("Kayıt / kanıt adı"), placeholder("Ne için kullanılır?"), placeholder("Confluence / Drive / Jira / sistem"), placeholder("Rol"), placeholder("Not")],
+            [placeholder("Kayıt / kanıt adı"), placeholder("Ne için kullanılır?"), placeholder("Confluence / Drive / Jira / sistem"), placeholder("Rol"), placeholder("Not")],
+        ]))
+    elif kind == "record_history":
+        parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan/Güncelleyen", "Gözden Geçiren", "Onay"], record_version_history_rows()))
+    else:
+        raise ValueError(f"Unknown section type: {kind}")
+
+    return "".join(parts)
 
 
 def build_storage(cfg: dict[str, Any]) -> str:
@@ -137,76 +217,8 @@ def build_storage(cfg: dict[str, Any]) -> str:
     parts.append("<h3>0.4. Sürüm Geçmişi</h3>")
     parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan / Güncelleyen", "Gözden Geçiren", "Onay"], template_version_history_rows()))
 
-    parts.append("<h2>1. Doküman Bilgileri</h2>")
-    parts.append(table(["Alan", "Değer"], [
-        ["Doküman Kodu", placeholder("İÜC.BİDB." + cfg["kind"] + ".XXX")],
-        ["Doküman Adı", placeholder("Doküman adı")],
-        ["Doküman Türü", cfg["usage"].replace(" Tanımı", "")],
-        ["İlgili Süreç / Kapsam", placeholder("İlgili süreç, yönetim alanı veya kullanım kapsamı")],
-        ["Yürürlük Tarihi", placeholder("GG-AA-YYYY")],
-        ["Son Gözden Geçirme Tarihi", placeholder("GG-AA-YYYY")],
-        ["Hazırlayan", placeholder("Rol / kişi")],
-        ["Gözden Geçiren", placeholder("Rol / kişi")],
-        ["Onaylayan", placeholder("Rol / kişi")],
-        ["Durum", placeholder("Taslak / Aktif / Pasif / Arşiv")],
-    ]))
-
-    parts.append("<h2>2. Amaç</h2>")
-    parts.append(p("Bu bölümde dokümanın hangi ihtiyacı karşılamak için hazırlandığı, hangi sonucu sağlamayı hedeflediği ve kurum içinde hangi amaçla kullanılacağı açıklanır."))
-
-    parts.append("<h2>3. Kapsam</h2>")
-    parts.append(p("Bu bölümde dokümanın uygulanacağı birimler, süreçler, sistemler, projeler, kullanıcı grupları ve kapsam dışı durumlar tanımlanır."))
-
-    parts.append("<h2>4. Referanslar</h2>")
-    parts.append(table(["Referans", "Açıklama"], [
-        [placeholder("İlgili süreç / prosedür / kılavuz / standart"), placeholder("Referansın bu dokümanla ilişkisi")],
-        [placeholder("İlgili kayıt / liste / sistem"), placeholder("Referansın bu dokümanla ilişkisi")],
-    ]))
-
-    parts.append("<h2>5. Terimler ve Kısaltmalar</h2>")
-    parts.append(table(["Terim / Kısaltma", "Açıklama"], [
-        [placeholder("Terim"), placeholder("Açıklama")],
-        [placeholder("Kısaltma"), placeholder("Açıklama")],
-    ]))
-
-    parts.append(f"<h2>6. {e(cfg['section_6'])}</h2>")
-    parts.append(p(cfg["section_6_desc"]))
-    parts.append(table(["Kural / Esas", "Açıklama", "Zorunluluk", "Not"], [
-        [placeholder("Kural veya esas"), placeholder("Açıklama"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Not")],
-        [placeholder("Kural veya esas"), placeholder("Açıklama"), placeholder("Zorunlu / Koşullu / Opsiyonel"), placeholder("Not")],
-    ]))
-
-    parts.append("<h2>7. Roller ve Sorumluluklar</h2>")
-    parts.append(table(["Rol", "Sorumluluk", "Yetki", "İlgili Kayıt / Kanıt"], [
-        [placeholder("Rol adı"), placeholder("Sorumluluk açıklaması"), placeholder("Yetki açıklaması"), placeholder("Kayıt / kanıt")],
-        [placeholder("Rol adı"), placeholder("Sorumluluk açıklaması"), placeholder("Yetki açıklaması"), placeholder("Kayıt / kanıt")],
-    ]))
-
-    parts.append(f"<h2>8. {e(cfg['section_8'])}</h2>")
-    parts.append(table(cfg["section_8_headers"], cfg["section_8_rows"]))
-
-    parts.append("<h2>9. Kayıtlar ve Kanıtlar</h2>")
-    parts.append(table(["Kayıt / Kanıt", "Kullanım Amacı", "Saklama Yeri", "Sorumlu", "Not"], [
-        [placeholder("Kayıt / kanıt adı"), placeholder("Ne için kullanılır?"), placeholder("Confluence / Drive / Jira / sistem"), placeholder("Rol"), placeholder("Not")],
-        [placeholder("Kayıt / kanıt adı"), placeholder("Ne için kullanılır?"), placeholder("Confluence / Drive / Jira / sistem"), placeholder("Rol"), placeholder("Not")],
-    ]))
-
-    parts.append("<h2>10. Kontrol ve Gözden Geçirme</h2>")
-    parts.append(table(["Kontrol Alanı", "Kontrol Yöntemi", "Sıklık", "Sorumlu", "Kayıt / Kanıt"], [
-        [placeholder("Kontrol alanı"), placeholder("Gözden geçirme / doğrulama / onay kontrolü"), placeholder("Periyot"), placeholder("Rol"), placeholder("Kayıt / kanıt")],
-        [placeholder("Kontrol alanı"), placeholder("Gözden geçirme / doğrulama / onay kontrolü"), placeholder("Periyot"), placeholder("Rol"), placeholder("Kayıt / kanıt")],
-    ]))
-
-    parts.append("<h2>11. Uygulama ve Uyarlama Kuralları</h2>")
-    parts.append("<h3>11.1. Zorunlu Adımlar</h3>")
-    parts.append(p("Bu bölümde dokümanın uygulanmasında her durumda yerine getirilmesi gereken zorunlu adımlar tanımlanır."))
-    parts.append("<h3>11.2. Uyarlanabilir Adımlar</h3>")
-    parts.append(p("Bu bölümde proje, süreç, kapsam veya kurum ihtiyacına göre uyarlanabilecek adımlar tanımlanır."))
-    parts.append("<h3>11.3. Onay Gerektiren Durumlar</h3>")
-    parts.append(p("Bu bölümde dokümanın uygulanması veya uyarlanması sırasında ek onay gerektiren durumlar tanımlanır."))
-
-    parts.append("<h2>12. Sürüm Geçmişi</h2>")
-    parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan/Güncelleyen", "Gözden Geçiren", "Onay"], record_version_history_rows()))
+    for section in cfg["sections"]:
+        parts.append(render_section(section, cfg))
 
     return "".join(parts) + "\n"
 
