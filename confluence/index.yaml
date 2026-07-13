@@ -1,4 +1,4 @@
-exported_at: '2026-07-12T23:08:08+00:00'
+exported_at: '2026-07-13T07:24:48+00:00'
 root_page_id: '137265781'
 root_title: İÜC BİDB SPICE 2026 Level 3
 total_page_count: 106
@@ -43,14 +43,6 @@ pages:
   slug: iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001/body.view.html
-- page_id: '137265902'
-  title: İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi
-  parent_id: '137265842'
-  depth: 3
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-001-aktif-dokumanlar-listesi
-  slug: iuc-bidb-lst-001-aktif-dokumanlar-listesi
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-001-aktif-dokumanlar-listesi/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-001-aktif-dokumanlar-listesi/body.view.html
 - page_id: '137265843'
   title: İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)
   parent_id: '137265842'
@@ -652,6 +644,14 @@ pages:
   slug: 03-kayitlar-ve-listeler
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/body.view.html
+- page_id: '137265902'
+  title: İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi
+  parent_id: '137265786'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi
+  slug: iuc-bidb-lst-001-aktif-dokumanlar-listesi
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi/body.view.html
 - page_id: '137265903'
   title: İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı
   parent_id: '137265786'
