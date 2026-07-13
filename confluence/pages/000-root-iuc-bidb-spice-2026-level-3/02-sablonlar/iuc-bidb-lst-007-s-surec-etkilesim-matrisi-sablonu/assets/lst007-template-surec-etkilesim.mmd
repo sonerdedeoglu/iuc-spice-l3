@@ -1,0 +1,8 @@
+flowchart LR
+  PROCESS["Süreç"]
+  INPUT["Girdi Süreç / Kaynak"]
+  OUTPUT["Çıktı Süreç / Hedef"]
+  RECORD["Etkileşim Kaydı"]
+  INPUT -->|"Girdi / tetikleyici"| PROCESS
+  PROCESS -->|"Çıktı / yönlendirme"| OUTPUT
+  PROCESS -->|"İzlenebilir kayıt"| RECORD

@@ -1,0 +1,46 @@
+<h2>1. Liste Özeti</h2><table class="wrapped"><thead><tr><th>Alan</th><th>Değer</th></tr></thead><tbody><tr><td>Liste Kodu ve Adı</td><td>İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001)</td></tr><tr><td>İlgili Süreç</td><td>İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci</td></tr><tr><td>Kullanım Amacı</td><td>Dokümantasyon Süreci’nin diğer süreç, prosedür, kılavuz, liste ve proje dokümantasyonu bileşenleriyle etkileşimini göstermek</td></tr><tr><td>Sorumlu</td><td>Levent BAYEZİT - Dokümantasyon Süreç Sahibi</td></tr><tr><td>Durum</td><td>Onaylı</td></tr><tr><td>Sürüm</td><td>v1.0</td></tr><tr><td>Yürürlük Tarihi</td><td>15-02-2025</td></tr><tr><td>Son Gözden Geçirme Tarihi</td><td>15-02-2025</td></tr></tbody></table><h2>2. Kullanım Değerleri</h2><table class="wrapped"><thead><tr><th>Alan</th><th>Değer</th></tr></thead><tbody><tr><td>Diyagram Kaynağı</td><td>Mermaid kodu</td></tr><tr><td>Görsel Çıktı</td><td>src001-surec-etkilesim.png</td></tr><tr><td>Etkileşim Kapsamı</td><td>SRÇ.001’in dokümantasyon yönetimi çıktıları ve bu çıktıların desteklediği süreç/dokümanlar</td></tr><tr><td>Kapsam Dışı</td><td>Tüm süreçlerin ayrıntılı operasyonel veri akışları</td></tr><tr><td>Güncelleme Sıklığı</td><td>Süreç mimarisi veya dokümantasyon yapısı değiştiğinde</td></tr></tbody></table><h2>3. Süreç Etkileşim Diyagramı</h2><h3>3.1. Mermaid Kodu</h3><pre><code class="language-mermaid">flowchart LR
+  SRC004["SRÇ.004
+Süreç Kurulumu"]
+  SRC001["SRÇ.001
+Dokümantasyon Süreci"]
+  PRS001["PRS.001
+Yazılım Projesi
+Dokümantasyon Stratejisi"]
+  KLV001["KLV.001
+Doküman Yazım
+Kuralları"]
+  LST001["LST.001
+Aktif Dokümanlar"]
+  LST002["LST.002
+Değişiklik Kaydı"]
+  LST003["LST.003
+Gözden Geçirme Kaydı"]
+  LST008["LST.008
+İş Ürünleri ve
+Kalite Kriterleri"]
+  LST009["LST.009
+Performans Ölçüm Seti"]
+  LST010["LST.010
+RACI Matrisi"]
+  SRC002["SRÇ.002
+Kalite Güvencesi"]
+  SRC005["SRÇ.005
+Süreç Değerlendirme"]
+  PROJECTS["Yazılım Projeleri
+Doküman/Kayıt Seti"]
+  ALL["Diğer Süreçler
+ve Dokümanlar"]
+  SRC004 --&gt;|"süreç yapısı / doküman ihtiyacı"| SRC001
+  SRC001 --&gt;|"proje dokümantasyon stratejisi"| PRS001
+  SRC001 --&gt;|"yazım ve format kuralları"| KLV001
+  SRC001 --&gt;|"aktif doküman envanteri"| LST001
+  SRC001 --&gt;|"değişiklik izleme"| LST002
+  SRC001 --&gt;|"gözden geçirme izleme"| LST003
+  SRC001 --&gt;|"iş ürünü / kalite kriteri"| LST008
+  SRC001 --&gt;|"ölçüm ve izleme"| LST009
+  SRC001 --&gt;|"rol ve yetki"| LST010
+  PRS001 --&gt;|"yaşam döngüsü doküman/kayıt seti"| PROJECTS
+  KLV001 --&gt;|"ortak yazım standardı"| ALL
+  SRC001 --&gt;|"doküman gözden geçirme kanıtları"| SRC002
+  SRC001 --&gt;|"değerlendirme kanıtları"| SRC005
+</code></pre><h3>3.2. PNG Görsel</h3><p><ac:image ac:alt="src001-surec-etkilesim.png"><ri:attachment ri:filename="src001-surec-etkilesim.png" /></ac:image></p><h2>4. Girdi Etkileşimleri Matrisi</h2><table class="wrapped"><thead><tr><th>Kaynak Süreç / Kaynak</th><th>Etkileşim Türü</th><th>Girdi / Tetikleyici</th><th>Kayıt / Kanıt</th><th>Açıklama</th></tr></thead><tbody><tr><td>İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci</td><td>Süreç yapısı / ihtiyaç</td><td>Süreç dokümantasyon ihtiyacı</td><td>Süreç tanımı ve ilgili alt kayıtlar</td><td>SRÇ.001, süreç dokümanlarının ve bağlı kayıtların ortak yönetim yaklaşımını sağlar.</td></tr><tr><td>Yazılım Projeleri</td><td>Proje dokümantasyon ihtiyacı</td><td>Proje yaşam döngüsünde oluşan doküman/kayıt gereksinimi</td><td>Jira / Confluence / Bitbucket / Bamboo / Drive kayıtları</td><td>PRS.001 aracılığıyla yazılım projeleri için özel stratejiye dönüştürülür.</td></tr><tr><td>İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci</td><td>Gözden geçirme girdisi</td><td>Doküman kalite gözden geçirme ihtiyacı</td><td>LST.003 ve ilgili gözden geçirme kayıtları</td><td>Kalite kontrolleri dokümantasyon kayıtlarına yansıtılır.</td></tr><tr><td>İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci</td><td>Değerlendirme girdisi</td><td>Süreç doküman ve kayıt kanıtı ihtiyacı</td><td>FRM.001, LST.008, LST.009, LST.010</td><td>Süreç değerlendirmelerinde kullanılacak dokümantasyon kanıtları SRÇ.001 çıktılarıyla desteklenir.</td></tr></tbody></table><h2>5. Çıktı Etkileşimleri Matrisi</h2><table class="wrapped"><thead><tr><th>Hedef Süreç / Hedef</th><th>Etkileşim Türü</th><th>Çıktı / Yönlendirme</th><th>Kayıt / Kanıt</th><th>Açıklama</th></tr></thead><tbody><tr><td>İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü</td><td>Prosedür yönlendirmesi</td><td>Yazılım projeleri dokümantasyon stratejisi</td><td>PRS.001</td><td>SRÇ.001’in genel dokümantasyon yaklaşımı yazılım projelerine özel hale getirilir.</td></tr><tr><td>İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı</td><td>Kılavuz / talimat</td><td>Doküman yazım, başlık, tablo, sürüm ve yayın kuralları</td><td>KLV.001</td><td>Tüm doküman türleri için ortak yazım standardı sağlar.</td></tr><tr><td>İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi</td><td>Envanter çıktısı</td><td>Genel aktif doküman envanteri</td><td>LST.001</td><td>Genel kullanıma açık dokümanların güncel durumunu izler.</td></tr><tr><td>İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı</td><td>Değişiklik izleme</td><td>Doküman değişikliklerinin kaydı</td><td>LST.002</td><td>Doküman değişikliklerinin izlenebilirliğini destekler.</td></tr><tr><td>İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı</td><td>Gözden geçirme izleme</td><td>Doküman gözden geçirme kayıtları</td><td>LST.003</td><td>Doküman kontrolleri ve onay öncesi değerlendirmeleri izler.</td></tr><tr><td>SRÇ.001 alt kayıtları</td><td>Süreç kanıtı</td><td>LST.008, LST.009, LST.010 ve FRM.001</td><td>İlgili süreç alt kayıtları</td><td>SRÇ.001’in iş ürünü, ölçüm, RACI ve gözden geçirme kanıtlarını sağlar.</td></tr><tr><td>Diğer süreç dokümanları</td><td>Ortak dokümantasyon yapısı</td><td>Şablon, yazım kuralı ve kayıt yönetimi yaklaşımı</td><td>Şablonlar ve ilgili süreç kayıtları</td><td>Tüm süreçlerin tutarlı doküman yapısında hazırlanmasını destekler.</td></tr></tbody></table><h2>6. Etkileşim Notları</h2><p>SRÇ.001, diğer süreçlerin operasyonel akışını tekrar tanımlamaz. Bu matris yalnızca dokümantasyon yönetimi açısından oluşan girdi, çıktı, kayıt ve yönlendirme etkileşimlerini gösterir.</p><p>PRS.001 ve KLV.001, SRÇ.001’in uzantısı niteliğindedir. PRS.001 yazılım projeleri özelinde stratejiyi; KLV.001 ise dokümanların yazım ve biçim kurallarını tanımlar.</p><h2>7. Sürüm Geçmişi</h2><table class="wrapped"><thead><tr><th>Sürüm</th><th>Tarih</th><th>Açıklama</th><th>Hazırlayan/Güncelleyen</th><th>Gözden Geçiren</th><th>Onay</th></tr></thead><tbody><tr><td>v0.1</td><td>01-02-2025</td><td>İlk taslak oluşturuldu.</td><td>Soner DEDEOĞLU - Kalite Danışmanı</td><td>Levent BAYEZİT - Dokümantasyon Süreç Sahibi</td><td>-</td></tr><tr><td>v1.0</td><td>15-02-2025</td><td>Matris onaylanarak yürürlüğe alındı.</td><td>Soner DEDEOĞLU - Kalite Danışmanı</td><td>Levent BAYEZİT - Dokümantasyon Süreç Sahibi</td><td>Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı</td></tr></tbody></table>
