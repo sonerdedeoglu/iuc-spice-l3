@@ -1,7 +1,7 @@
 exported_at: '2026-07-13T08:46:35+00:00'
 root_page_id: '137265781'
 root_title: İÜC BİDB SPICE 2026 Level 3
-total_page_count: 107
+total_page_count: 109
 pages:
 - page_id: '137265781'
   title: İÜC BİDB SPICE 2026 Level 3
@@ -860,3 +860,19 @@ pages:
   slug: iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.view.html
+- page_id: ''
+  title: TASLAK - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu
+  slug: taslak-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.view.html
+- page_id: ''
+  title: TASLAK - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu
+  slug: taslak-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html
