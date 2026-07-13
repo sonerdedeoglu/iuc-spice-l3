@@ -225,7 +225,29 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
         update_page_metadata(record, page_id, parent_id, created.get("version", {}).get("number"))
         print(f"[CREATE] {title}")
     elif action in {"UPDATE", "MOVE", "UPDATE+MOVE"}:
-        updated = client.update_page(page_id, SPACE_KEY, title, body, version_number + 1, parent_id=parent_id)
+        try:
+            updated = client.update_page(page_id, SPACE_KEY, title, body, version_number + 1, parent_id=parent_id)
+        except Exception as exc:
+            response = getattr(exc, "response", None)
+            status_code = getattr(response, "status_code", None)
+
+            if status_code != 409:
+                raise
+
+            latest = client.get_page(page_id)
+            latest_version = int(latest.get("version", {}).get("number") or version_number)
+            latest_body = latest.get("body", {}).get("storage", {}).get("value", "")
+            latest_parent_id = existing_parent_id(latest)
+
+            body_already_applied = hash_body(latest_body) == hash_body(body)
+            parent_already_applied = (not parent_id) or latest_parent_id == str(parent_id)
+
+            if body_already_applied and parent_already_applied:
+                updated = latest
+                print(f"[{action}] {title} (already applied after retry/version conflict)")
+            else:
+                updated = client.update_page(page_id, SPACE_KEY, title, body, latest_version + 1, parent_id=parent_id)
+
         update_page_metadata(record, page_id, parent_id, updated.get("version", {}).get("number"))
         print(f"[{action}] {title}")
     else:
