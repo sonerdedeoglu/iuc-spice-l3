@@ -1,4 +1,4 @@
-exported_at: '2026-07-13T07:24:48+00:00'
+exported_at: '2026-07-13T08:46:35+00:00'
 root_page_id: '137265781'
 root_title: İÜC BİDB SPICE 2026 Level 3
 total_page_count: 107
@@ -524,6 +524,14 @@ pages:
   slug: kaldirildi-iuc-bidb-sbl-016-repository-yapisi-sablonu
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-sbl-016-repository-yapisi-sablonu/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-sbl-016-repository-yapisi-sablonu/body.view.html
+- page_id: '137265832'
+  title: KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu
+  parent_id: '137266043'
+  depth: 3
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu
+  slug: kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html
 - page_id: '137265833'
   title: KALDIRILDI - İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu
   parent_id: '137266043'
@@ -596,6 +604,14 @@ pages:
   slug: iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu/body.view.html
+- page_id: '137266257'
+  title: İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu
+  slug: iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html
 - page_id: '137266244'
   title: İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu
   parent_id: '137265785'
@@ -844,19 +860,3 @@ pages:
   slug: iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.view.html
-- page_id: '137265832'
-  title: KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu
-  parent_id: '137266043'
-  depth: 3
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu
-  slug: kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html
-- page_id: ''
-  title: İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu
-  parent_id: '137265785'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu
-  slug: iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html
