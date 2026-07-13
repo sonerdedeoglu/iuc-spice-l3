@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
-"""Create SRÇ.001 review assessment #1 from the customized SRÇ.001 FRM.001 form.
+"""Create SRÇ.001 Assessment #1 without changing the customized form structure.
 
-Important design rule:
-- The SRÇ.001 form under the process page is treated as the process-specific form template.
-- This script copies that form structure to 91 - İç Denetimler / Süreç Gözden Geçirmeleri.
-- It fills only the tables that match the existing customized form headers.
-- It does not change the SRÇ.001 form template itself.
-- PA/GP rows are generated from resources/standards/spice_practices.yaml.
+Rules:
+- Source form under SRÇ.001 is copied as-is.
+- Headings, table headers, Turkish BP/GP descriptions and expected-content cells are preserved.
+- Only evidence, assessment result, auditor note/current coverage and action cells are filled.
+- Every BP/GP is evaluated individually against the exact ISO/IEC 15504-5:2006
+  requirement loaded from resources/standards/spice_practices.yaml.
 """
 from __future__ import annotations
 
 import html
 import re
+from copy import deepcopy
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -22,7 +23,6 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFLUENCE_DIR = ROOT / "confluence"
 INDEX_PATH = CONFLUENCE_DIR / "index.yaml"
 STANDARD_PATH = ROOT / "resources/standards/spice_practices.yaml"
-
 SRC_FORM_DIR = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001"
 TARGET_PARENT_DIR = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri"
 TARGET_PARENT_ID = "137265917"
@@ -36,90 +36,68 @@ body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSy
 .confluence-page{max-width:1180px;margin:0 auto;padding:32px 24px 56px}
 h1,h2,h3,h4,h5,h6{margin:1.4em 0 .55em;line-height:1.25;color:#0f172a}
 h1{margin-top:0;padding-bottom:12px;border-bottom:1px solid #d8dee4}
-p{margin:0 0 12px}
-table{width:100%;border-collapse:collapse;margin:16px 0;table-layout:auto}
+p{margin:0 0 12px} table{width:100%;border-collapse:collapse;margin:16px 0;table-layout:auto}
 th,td{border:1px solid #c9d1d9;padding:8px 10px;vertical-align:top}
 th{background:#f6f8fa;font-weight:600;text-align:left}
 """.strip()
 
-SCALE_ROWS = [
-    ["YOK", "%0: Kanıt yok veya beklenti hiç karşılanmıyor."],
-    ["ZAYIF", "%0-%40: Kısmi başlangıç kanıtı var; uygulama yetersiz."],
-    ["DAĞINIK", "%40-%70: Kanıt var ancak sistematik, tamamlanmış veya tutarlı değil."],
-    ["VAR", "%70-%100: Beklenti kanıtlarla büyük ölçüde karşılanıyor."],
+EXPECTED_BP_IDS = [f"SUP.7.BP{i}" for i in range(1, 9)]
+EXPECTED_GP_IDS = [
+    *[f"GP.2.1.{i}" for i in range(1, 7)],
+    *[f"GP.2.2.{i}" for i in range(1, 5)],
+    *[f"GP.3.1.{i}" for i in range(1, 6)],
+    *[f"GP.3.2.{i}" for i in range(1, 7)],
 ]
 
-BP_EVAL = {
-    "SUP.7.BP1": {
-        "pct": 90,
-        "current": "Dokümantasyon stratejisi SRÇ.001 ana süreç dokümanı ile kurulmuş; yazılım projelerine özel uygulama PRS.001 ile ayrıştırılmıştır. LST.005 şablonu ve Soru Bankası taslak kaydı proje düzeyi doküman üretimine bağlanmıştır.",
-        "evidence": ["SRÇ.001 - Dokümantasyon Süreci", "PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu", "Soru Bankası Projesi / LST.005 (SB)"],
-        "action": "-",
-    },
-    "SUP.7.BP2": {
-        "pct": 95,
-        "current": "Doküman yazım, başlık, tablo, sürüm ve şablon kullanımı kuralları tanımlanmış; süreç, prosedür, kılavuz, form ve LST şablon ailesi güncellenmiştir.",
-        "evidence": ["KLV.001 - Doküman Yazım Kuralları Talimatı", "SRÇ.XXX.Ş", "PRS.XXX.Ş", "KLV.XXX.Ş", "FRM.001.Ş", "LST.001.Ş / LST.003.Ş / LST.005.Ş / LST.007.Ş / LST.008.Ş / LST.009.Ş / LST.010.Ş / LST.011.Ş / LST.012.Ş"],
-        "action": "-",
-    },
-    "SUP.7.BP3": {
-        "pct": 85,
-        "current": "SRÇ.001 için iş ürünleri, kalite kriterleri, genel doküman envanteri ve proje özel doküman üretim ihtiyacı ayrı yapılarda tanımlanmıştır.",
-        "evidence": ["LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.001)", "LST.001 - Aktif Dokümanlar Listesi", "PRS.001", "LST.005.Ş"],
-        "action": "-",
-    },
-    "SUP.7.BP4": {
-        "pct": 90,
-        "current": "Genel aktif dokümanlar, SRÇ.001’e özel kayıtlar ve proje özel doküman üretimi ayrı sayfa/kayıt yapılarıyla izlenebilir hale getirilmiştir.",
-        "evidence": ["LST.001 - Aktif Dokümanlar Listesi", "SRÇ.001 altındaki FRM.001 / LST.007 / LST.008 / LST.009 / LST.010", "Soru Bankası Projesi / LST.005 (SB)"],
-        "action": "-",
-    },
-    "SUP.7.BP5": {
-        "pct": 95,
-        "current": "SRÇ.001 kapsamında ana süreç dokümanı, destek prosedürü, yazım talimatı, şablonlar ve süreç kayıtları oluşturulmuş ve Confluence/repository yapısında yayımlanabilir hale getirilmiştir.",
-        "evidence": ["SRÇ.001", "PRS.001", "KLV.001", "LST.001", "LST.007", "LST.008", "LST.009", "LST.010", "Confluence publish/export ve Git commit kayıtları"],
-        "action": "-",
-    },
-    "SUP.7.BP6": {
-        "pct": 65,
-        "current": "Gözden geçirme pratiği uygulanıyor; SRÇ.001 süreç bazlı FRM.001 özelleştirildi. Ancak LST.003 gerçek gözden geçirme kayıtlarının son revizyonları kapsayacak şekilde sistematik doldurulması gerekiyor.",
-        "evidence": ["SRÇ.001 altındaki FRM.001 süreç bazlı form", "Bu değerlendirme #1", "LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu", "Confluence düzenleme kayıtları"],
-        "action": "SRÇ.001, PRS.001, KLV.001, LST.001 ve LST.007 için LST.003 gerçek gözden geçirme kayıtları oluşturulmalı.",
-    },
-    "SUP.7.BP7": {
-        "pct": 90,
-        "current": "Dokümanlar Confluence sayfa ağacında yayımlanmış; LST.001 doküman türü bazında konum ve durum bilgisi sağlamaktadır.",
-        "evidence": ["Confluence sayfa ağacı", "LST.001 - Aktif Dokümanlar Listesi", "publish_confluence_tree.py raporları"],
-        "action": "-",
-    },
-    "SUP.7.BP8": {
-        "pct": 60,
-        "current": "Bakım ve arşivleme yaklaşımı kullanılıyor; eski şablonlar arşive alınmış ve sürüm geçmişleri tutulmuştur. Ancak LST.002 gerçek değişiklik kayıtları son revizyonların tamamını kapsayacak olgunlukta değildir.",
-        "evidence": ["LST.002 - Doküman Değişiklik Kaydı", "Doküman sürüm geçmişleri", "Arşiv - Kaldırılan Şablonlar", "Git commit geçmişi"],
-        "action": "Son şablon ve doküman revizyonları için LST.002 değişiklik kayıtları tamamlanmalı.",
-    },
+# Scores are conservative and evidence-based. A score of 70 or more is VAR.
+EVAL: dict[str, dict[str, Any]] = {
+    "SUP.7.BP1": {"pct": 85, "evidence": ["İÜC.BİDB.SRÇ.001", "İÜC.BİDB.PRS.001", "İÜC.BİDB.LST.005.Ş", "Soru Bankası Projesi / İÜC.BİDB.LST.005 (SB)"], "note": "Standart; neyin, hangi organizasyonel yapı içinde ve ürün/hizmet yaşam döngüsünün hangi aşamalarında dokümante edileceğini kapsayan bir strateji ister. SRÇ.001 kurumsal yaklaşımı, PRS.001 yazılım projesi stratejisini, LST.005.Ş ise yaşam döngüsü doküman üretimini tanımlar. SB kaydı henüz taslak olsa da strateji seviyesi büyük ölçüde karşılanmaktadır.", "action": "-"},
+    "SUP.7.BP2": {"pct": 90, "evidence": ["İÜC.BİDB.KLV.001", "İÜC.BİDB.SRÇ.XXX.Ş", "İÜC.BİDB.PRS.XXX.Ş", "İÜC.BİDB.KLV.XXX.Ş", "LST şablon ailesi"], "note": "Standart, dokümanların geliştirilmesi, değiştirilmesi ve sürdürülmesi için standartlar kurulmasını ister. KLV.001 ile yazım/sürüm kuralları; güncel şablon ailesi ile yapı ve içerik standartları tanımlanmıştır.", "action": "-"},
+    "SUP.7.BP3": {"pct": 85, "evidence": ["İÜC.BİDB.KLV.001", "SRÇ/PRS/KLV/LST şablonları", "İÜC.BİDB.LST.001", "Doküman sürüm geçmişleri"], "note": "Standart; format, başlık, tarih, tanımlayıcı, sürüm geçmişi, hazırlayan, gözden geçiren, onaylayan, içerik ana hatları, amaç ve dağıtım bilgilerini ister. Bu alanların büyük bölümü şablonlarda ve KLV.001'de bulunur. Dağıtım hedef kitlesi bilgisi her dokümanda aynı açıklıkta değildir.", "action": "-"},
+    "SUP.7.BP4": {"pct": 80, "evidence": ["İÜC.BİDB.LST.001", "İÜC.BİDB.LST.005.Ş", "Soru Bankası Projesi / LST.005 (SB)", "SRÇ.001 alt kayıtları"], "note": "Standart, belirli bir yaşam döngüsü geliştirmesinde üretilecek dokümanların belirlenmesini ister. Genel doküman envanteri ve yaşam döngüsü matrisi vardır; proje özel matrisin gerçek kanıtlarla tamamlanması gerekmektedir.", "action": "-"},
+    "SUP.7.BP5": {"pct": 85, "evidence": ["İÜC.BİDB.SRÇ.001", "İÜC.BİDB.PRS.001", "İÜC.BİDB.KLV.001", "İÜC.BİDB.LST.001", "SRÇ.001 altındaki LST.007/LST.008/LST.009/LST.010", "Confluence ve Git geçmişi"], "note": "Standart, dokümanların gerekli süreç noktalarında belirlenmiş standart ve politikalara göre geliştirilmesini ister. SRÇ.001 doküman seti üretilmiştir; proje yaşam döngüsü boyunca üretimin sürekliliği SB örneğinde henüz tam kanıtlanmamıştır.", "action": "-"},
+    "SUP.7.BP6": {"pct": 55, "evidence": ["SRÇ.001 altındaki özelleştirilmiş FRM.001", "İÜC.BİDB.LST.003.Ş", "Doküman sürüm geçmişleri", "Confluence revizyon geçmişi"], "note": "Standart, dağıtım öncesi gözden geçirme ve yayın öncesi yetkilendirme ister; ayrıca doğrulama/validasyon ve paydaş katılımını not eder. Form ve onay yapısı vardır fakat son revizyonlar için sistematik gerçek LST.003 kayıtları ve bağımsız doğrulama/paydaş kanıtları yetersizdir.", "action": "SRÇ.001, PRS.001, KLV.001, LST.001 ve LST.007 için gerçek gözden geçirme/onay kayıtları LST.003 içinde tamamlanmalı; gerekli paydaş doğrulaması ilişkilendirilmelidir."},
+    "SUP.7.BP7": {"pct": 55, "evidence": ["Confluence sayfa ağacı", "İÜC.BİDB.LST.001", "İÜC.BİDB.PRS.001", "Publish raporları"], "note": "Standart, belirlenmiş dağıtım yöntemleri ve medya üzerinden belirli hedef kitlelere dağıtımı ve gerektiğinde teslim teyidini ister. Confluence fiili yayın ortamıdır; ancak hedef kitle, duyuru/teslim ve gerektiğinde alındı teyidi kayıtları sistematik değildir.", "action": "Doküman türü bazında hedef kitle ve dağıtım yöntemi netleştirilmeli; kritik yayınlar için LST.012 veya eşdeğer iletişim/teslim kayıtları tutulmalıdır."},
+    "SUP.7.BP8": {"pct": 60, "evidence": ["İÜC.BİDB.LST.002", "Doküman sürüm geçmişleri", "Arşiv - Kaldırılan Şablonlar", "Git commit geçmişi", "İÜC.BİDB.SRÇ.016"], "note": "Standart, dokümanların belirlenmiş stratejiye göre sürdürülmesini; kontrollü/baseline dokümanlarda SUP.8 ile bağlantıyı ister. Sürümleme ve arşiv vardır fakat LST.002 güncelliği ve formal yapılandırma/baseline bağlantısı tam değildir.", "action": "Son doküman ve şablon revizyonları LST.002'ye işlenmeli; kontrollü dokümanların SRÇ.016 kapsamındaki değişiklik/baseline kurallarıyla bağı açıklaştırılmalıdır."},
+
+    "GP.2.1.1": {"pct": 75, "evidence": ["İÜC.BİDB.LST.009 (SRÇ.001)", "İÜC.BİDB.SRÇ.001"], "note": "Standart; kalite, çevrim/frekans, kaynak kullanımı ve süreç sınırları gibi performans amaçlarını; kapsam, varsayım ve kısıtları ister. LST.009 üç temel ölçüm hedefi tanımlar. Kaynak kullanımı ile varsayım/kısıt boyutu sınırlı kalmıştır.", "action": "-"},
+    "GP.2.1.2": {"pct": 55, "evidence": ["İÜC.BİDB.SRÇ.001 faaliyetleri", "İÜC.BİDB.LST.009", "FRM.001 değerlendirme yapısı"], "note": "Standart; performans planı, çevrim, kilometre taşları, tahminler, görevler, takvim, iş ürünü gözden geçirmeleri ve fiili izlemeyi birlikte ister. Faaliyetler ve ölçüm seti tanımlıdır; periyotlu uygulama planı, kilometre taşı ve gerçekleşen ölçüm kayıtları yetersizdir.", "action": "Süreç performans çevrimi, ölçüm periyodu, sorumlular, kilometre taşları ve gerçekleşen ölçüm sonuçları kayıt altına alınmalıdır."},
+    "GP.2.1.3": {"pct": 40, "evidence": ["FRM.001 değerlendirme kayıtları", "Confluence/Git revizyon geçmişi"], "note": "Standart, performans sorunlarının belirlenmesini, hedef sapmalarında aksiyon alınmasını ve plan/takvimin ayarlanmasını ister. Revizyonlar yapılmış olsa da performans sapması, karar, yeniden planlama ve kapanış kayıtları sistematik değildir.", "action": "Performans sapmaları için neden, karar, aksiyon, sorumlu, yeniden planlama ve kapanış bilgilerini içeren izleme kaydı oluşturulmalıdır."},
+    "GP.2.1.4": {"pct": 80, "evidence": ["İÜC.BİDB.LST.010 (SRÇ.001)", "İÜC.BİDB.SRÇ.001 roller bölümü"], "note": "Standart; yürütme ve doğrulama sorumlulukları/yetkileri ile gerekli deneyim, bilgi ve becerilerin tanımlanmasını ister. RACI ve yetkiler güçlüdür; yetkinlik beklentileri daha sınırlı ayrıntıdadır.", "action": "-"},
+    "GP.2.1.5": {"pct": 60, "evidence": ["Confluence/repository altyapısı", "İÜC.BİDB.KLV.004", "İÜC.BİDB.LST.011", "İÜC.BİDB.PRS.001"], "note": "Standart, insan ve altyapı kaynaklarının ve gerekli bilginin belirlenmesini, tahsis edilmesini ve kullanılmasını ister. Araçlar ve bilgi alanları mevcuttur; insan kaynağı tahsisi ve kullanım kayıtları formal değildir.", "action": "SRÇ.001 için gerekli insan kaynağı, zaman, araç ve bilgi kaynakları ile bunların tahsis/kullanım durumu kayıt altına alınmalıdır."},
+    "GP.2.1.6": {"pct": 65, "evidence": ["İÜC.BİDB.LST.007 (SRÇ.001)", "İÜC.BİDB.LST.010 (SRÇ.001)", "İÜC.BİDB.LST.012.Ş"], "note": "Standart, ilgili tarafların belirlenmesini, sorumlulukların atanmasını, arayüzlerin yönetilmesini ve etkili iletişimi ister. Etkileşim ve RACI tanımlıdır; iletişimin fiilen yürütüldüğünü gösteren yaygınlaştırma/iletişim kayıtları sınırlıdır.", "action": "İlgili taraf iletişimleri ve süreç yaygınlaştırma faaliyetleri LST.012 veya eşdeğer kayıtla kanıtlanmalıdır."},
+
+    "GP.2.2.1": {"pct": 85, "evidence": ["İÜC.BİDB.LST.008 (SRÇ.001)", "Şablon ailesi", "KLV.001"], "note": "Standart; iş ürünü içerik/yapı gereksinimleri, kalite kriterleri ve gözden geçirme/onay kriterlerini ister. LST.008 ve şablonlar bu beklentiyi büyük ölçüde karşılar.", "action": "-"},
+    "GP.2.2.2": {"pct": 75, "evidence": ["İÜC.BİDB.KLV.001", "İÜC.BİDB.PRS.001", "İÜC.BİDB.LST.001", "İÜC.BİDB.LST.007"], "note": "Standart; dağıtım, tanımlama, bileşenler, izlenebilirlik/bağımlılıklar ve onay gereksinimlerini ister. Doküman kontrol kuralları ve etkileşimler vardır; bağımlılıkların tüm iş ürünlerinde tekil izlenebilirliği sınırlıdır.", "action": "-"},
+    "GP.2.2.3": {"pct": 60, "evidence": ["İÜC.BİDB.LST.001", "Doküman sürüm geçmişleri", "Confluence erişim yapısı", "Git geçmişi", "İÜC.BİDB.LST.002"], "note": "Standart; kontrollü iş ürünlerinin belirlenmesi, değişiklik kontrolü, sürüm/configuration ilişkisi, erişim ve revizyon durumunun görülebilmesini ister. Tanımlama, sürüm ve erişim vardır; değişiklik kontrolü ve configuration/baseline ilişkisi tam değildir.", "action": "Kontrollü doküman kapsamı, değişiklik akışı, sürüm/baseline ilişkisi ve güncel revizyon durumu LST.002 ve SRÇ.016 ile tutarlı hale getirilmelidir."},
+    "GP.2.2.4": {"pct": 50, "evidence": ["SRÇ.001 altındaki FRM.001", "İÜC.BİDB.LST.003.Ş", "Confluence revizyon geçmişi"], "note": "Standart, iş ürünlerinin planlı düzenlemelere göre gereksinimlere karşı gözden geçirilmesini ve bulguların çözülmesini ister. Gözden geçirme yapısı vardır; planlı inceleme, bulgu ve kapanış kayıtları yeterince sistematik değildir.", "action": "İş ürünü bazında planlı gözden geçirme, bulgu, sorumlu, çözüm ve kapanış bilgileri LST.003 gerçek kayıtlarında tutulmalıdır."},
+
+    "GP.3.1.1": {"pct": 90, "evidence": ["İÜC.BİDB.SRÇ.001", "İÜC.BİDB.SRÇ.XXX.Ş", "İÜC.BİDB.KLV.002", "İÜC.BİDB.KLV.003", "İÜC.BİDB.PRS.001"], "note": "Standart süreç; temel süreç öğelerini, yayılım bağlamını, uygulama rehberini ve uyarlama kılavuzlarını içermelidir. SRÇ.001 ve destek dokümanları bu yapıyı güçlü biçimde sağlar.", "action": "-"},
+    "GP.3.1.2": {"pct": 85, "evidence": ["İÜC.BİDB.LST.007 (SRÇ.001)", "SRÇ.001 süreç akışı ve etkileşimler bölümü"], "note": "Standart, süreç sırası ve diğer süreçlerle etkileşimin bütünleşik sistem olarak belirlenmesini ister. Akış ve etkileşim matrisi mevcuttur.", "action": "-"},
+    "GP.3.1.3": {"pct": 75, "evidence": ["İÜC.BİDB.LST.010 (SRÇ.001)", "SRÇ.001 roller bölümü"], "note": "Standart, standart süreci yürütecek rolleri ve yetkinlikleri ister. Roller/RACI tanımlıdır; yetkinliklerin rol bazında ayrıntılı tanımı sınırlıdır.", "action": "-"},
+    "GP.3.1.4": {"pct": 70, "evidence": ["İÜC.BİDB.KLV.004", "İÜC.BİDB.LST.011", "Confluence/repository yapısı", "İÜC.BİDB.SRÇ.022"], "note": "Standart, tesis, araç, ağ, yöntem ve çalışma ortamı gereksinimlerini ister. Dokümantasyon altyapısı ve repository yapısı tanımlıdır; çalışma ortamı gereksinimleri kısmen dolaylıdır.", "action": "-"},
+    "GP.3.1.5": {"pct": 55, "evidence": ["İÜC.BİDB.LST.009 (SRÇ.001)", "SRÇ.001 altındaki FRM.001", "91 - İç Denetimler"], "note": "Standart, etkinlik/uygunluk izleme yöntemleri, kriter/veri, süreç karakteristikleri, iç denetim ve yönetim gözden geçirme ihtiyacı ile süreç değişikliklerini ister. Yöntemler tanımlı; gerçekleşen veri, iç denetim ve yönetim gözden geçirme kanıtı sınırlıdır.", "action": "LST.009 ölçüm sonuçları dönemsel işlenmeli; iç denetim ve yönetim gözden geçirme kayıtlarıyla süreç değişikliği kararları ilişkilendirilmelidir."},
+
+    "GP.3.2.1": {"pct": 55, "evidence": ["İÜC.BİDB.SRÇ.001", "İÜC.BİDB.KLV.002", "İÜC.BİDB.KLV.003", "Soru Bankası Projesi / LST.005 (SB)"], "note": "Standart, tanımlı sürecin standart süreçten bağlama göre seçilip/uyarlanmasını ve uygunluğunun doğrulanmasını ister. Standart süreç ve uyarlama rehberi vardır; belirli kullanım bağlamında uygulanmış uyarlama ve uygunluk doğrulama kaydı sınırlıdır.", "action": "Soru Bankası Projesi için kullanılan SRÇ.001 uyarlamaları, gerekçeleri ve standart sürece uygunluk kontrolü kayıt altına alınmalıdır."},
+    "GP.3.2.2": {"pct": 60, "evidence": ["İÜC.BİDB.LST.010 (SRÇ.001)", "SRÇ.001 roller bölümü", "İÜC.BİDB.LST.012.Ş"], "note": "Standart, rollerin, sorumlulukların ve yetkilerin atanmasını ve duyurulmasını ister. Atama/RACI vardır; fiili iletişim ve kabul kanıtı sınırlıdır.", "action": "Rol ve sorumlulukların ilgili kişilere duyurulduğunu gösteren LST.012 veya eşdeğer iletişim kaydı oluşturulmalıdır."},
+    "GP.3.2.3": {"pct": 35, "evidence": ["İÜC.BİDB.LST.010 (SRÇ.001)", "İÜC.BİDB.SRÇ.020 - Eğitim Süreci"], "note": "Standart, atanmış personel için uygun yetkinliklerin belirlenmesini ve süreci uygulayanlara uygun eğitimin sunulmasını ister. Rol tanımları vardır; SRÇ.001'e özel yetkinlik matrisi, eğitim planı ve eğitim kayıtları bulunmamaktadır.", "action": "SRÇ.001 rollerine gerekli yetkinlikler tanımlanmalı; ilgili personele eğitim/bilgilendirme verilmeli ve kayıtları tutulmalıdır."},
+    "GP.3.2.4": {"pct": 60, "evidence": ["Confluence doküman alanı", "İÜC.BİDB.PRS.001", "İÜC.BİDB.LST.010", "İÜC.BİDB.LST.011"], "note": "Standart, gerekli insan kaynağı ve bilginin sağlanmasını, tahsis edilmesini ve kullanılmasını ister. Bilgi ve araçlar erişilebilirdir; insan kaynağı tahsis/kullanım kanıtları formal değildir.", "action": "Süreç için gerekli insan kaynağı ve bilgi kaynaklarının tahsisi ile fiili kullanım durumu kayıt altına alınmalıdır."},
+    "GP.3.2.5": {"pct": 70, "evidence": ["Confluence/repository yapısı", "İÜC.BİDB.KLV.004", "İÜC.BİDB.LST.011", "İÜC.BİDB.SRÇ.022"], "note": "Standart, gerekli altyapı ve çalışma ortamının mevcut, desteklenen, kullanılan ve sürdürülen olmasını ister. Ortam mevcuttur ve kullanılmaktadır; bakım desteği kanıtı sınırlı olsa da temel beklenti karşılanmaktadır.", "action": "-"},
+    "GP.3.2.6": {"pct": 40, "evidence": ["İÜC.BİDB.LST.009 (SRÇ.001)", "SRÇ.001 değerlendirme kayıtları"], "note": "Standart, davranış/uygunluk/etkinliği anlamak için verinin belirlenmesini, toplanmasını, analiz edilmesini ve sonuçların sürekli iyileştirmede kullanılmasını ister. Ölçüler tanımlıdır; gerçekleşen veri, analiz ve iyileştirme geri beslemesi henüz yeterli değildir.", "action": "LST.009 ölçümleri için gerçekleşen veriler toplanmalı, analiz edilmeli ve iyileştirme kararlarına bağlanmalıdır."},
 }
 
-GP_EVAL_DEFAULT = {
-    "pct": 75,
-    "current": "SRÇ.001 kapsamında süreç tanımı, şablonlar, roller, ölçüm ve kayıt yapıları oluşturulmuştur. Uygulama kanıtları oluşmuş, dönemsel kayıt birikimi devam etmektedir.",
-    "evidence": ["SRÇ.001", "LST.007", "LST.008", "LST.009", "LST.010", "FRM.001"],
-    "action": "-",
-}
-
-GP_OVERRIDES = {
-    "GP 2.1.6": {"pct": 75, "current": "Aksiyonlar FRM.001 değerlendirme yapısında izlenebilir; kapanış kayıtlarının LST.002/LST.003 ile ilişkilendirilmesi güçlendirilmelidir.", "evidence": ["FRM.001", "LST.002", "LST.003.Ş"], "action": "Aksiyon kapanışları LST.002 ve LST.003 gerçek kayıtlarıyla ilişkilendirilmeli."},
-    "GP 3.2.4": {"pct": 65, "current": "Süreç yayımlanmış ve dokümanlar oluşturulmuştur; ancak LST.012 gerçek yaygınlaştırma/bilgilendirme kayıtları henüz tamamlanmamıştır.", "evidence": ["LST.012.Ş", "Confluence sayfa ağacı", "publish/export kayıtları"], "action": "LST.012 gerçek yaygınlaştırma ve bilgilendirme kayıtları doldurulmalı."},
-    "GP 3.2.6": {"pct": 65, "current": "FRM.001 ve LST.009 ile performans izlenebilir; dönemsel ölçüm veri seti sınırlıdır.", "evidence": ["FRM.001", "LST.009"], "action": "LST.009 ölçüm sonuçları dönemsel olarak işlenmeli ve FRM.001 aksiyonlarıyla bağlanmalı."},
-}
+EVIDENCE_HEADERS = {"Kanıt", "Karşılayan Doküman / Kayıt"}
+RESULT_HEADERS = {"Değerlendirme Sonucu", "Durum"}
+NOTE_HEADERS = {"Denetçi Notu", "Mevcut Karşılama"}
+ACTION_HEADERS = {"Eksik / Tamamlayıcı Aksiyon"}
 
 
-def e(value: object) -> str:
+def esc(value: object) -> str:
     return html.escape(str(value), quote=False)
 
 
-def strip_tags(text: str) -> str:
-    return html.unescape(re.sub(r"<.*?>", "", text, flags=re.DOTALL)).strip()
+def clean(value: str) -> str:
+    return html.unescape(re.sub(r"<.*?>", "", value, flags=re.DOTALL)).strip()
 
 
 def status(pct: int) -> str:
@@ -132,178 +110,128 @@ def status(pct: int) -> str:
     return "VAR"
 
 
-def status_text(pct: int) -> str:
-    return f"%{pct} - {status(pct)}"
-
-
 def ul(items: list[str]) -> str:
-    return "<ul>" + "".join(f"<li>{e(item)}</li>" for item in items) + "</ul>"
+    return "<ul>" + "".join(f"<li>{esc(item)}</li>" for item in items) + "</ul>"
 
 
-def table(headers: list[str], rows: list[list[str]]) -> str:
-    head = "".join(f"<th>{e(h)}</th>" for h in headers)
+def load_standard_ids() -> set[str]:
+    data = yaml.safe_load(STANDARD_PATH.read_text(encoding="utf-8")) or {}
+    ids: set[str] = set()
+
+    def walk(obj: Any) -> None:
+        if isinstance(obj, dict):
+            item_id = obj.get("id")
+            if isinstance(item_id, str):
+                ids.add(item_id)
+            for value in obj.values():
+                walk(value)
+        elif isinstance(obj, list):
+            for item in obj:
+                walk(item)
+
+    walk(data)
+    return ids
+
+
+def validate_standard() -> None:
+    ids = load_standard_ids()
+    missing = [identifier for identifier in EXPECTED_BP_IDS + EXPECTED_GP_IDS if identifier not in ids]
+    if missing:
+        raise RuntimeError(f"Standart YAML içinde beklenen BP/GP kimlikleri eksik: {missing}")
+    missing_eval = [identifier for identifier in EXPECTED_BP_IDS + EXPECTED_GP_IDS if identifier not in EVAL]
+    if missing_eval:
+        raise RuntimeError(f"Değerlendirmesi tanımlanmamış BP/GP var: {missing_eval}")
+
+
+def parse_table(table_html: str) -> tuple[list[str], list[list[str]]]:
+    headers = [clean(h) for h in re.findall(r"<th[^>]*>(.*?)</th>", table_html, flags=re.DOTALL)]
+    tbody = re.search(r"<tbody[^>]*>(.*?)</tbody>", table_html, flags=re.DOTALL)
+    rows: list[list[str]] = []
+    if tbody:
+        for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", tbody.group(1), flags=re.DOTALL):
+            rows.append(re.findall(r"<td[^>]*>(.*?)</td>", tr, flags=re.DOTALL))
+    return headers, rows
+
+
+def render_table(headers: list[str], rows: list[list[str]]) -> str:
+    head = "".join(f"<th>{esc(h)}</th>" for h in headers)
     body = "".join("<tr>" + "".join(f"<td>{cell}</td>" for cell in row) + "</tr>" for row in rows)
     return f'<table class="wrapped"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>'
 
 
-def load_standard() -> dict[str, Any]:
-    return yaml.safe_load(STANDARD_PATH.read_text(encoding="utf-8")) or {}
+def find_ref(row: list[str]) -> str | None:
+    for cell in row:
+        text = clean(cell)
+        m = re.search(r"SUP\.7\.BP[1-8]|GP\.[23]\.[12]\.[1-6]", text)
+        if m:
+            return m.group(0)
+    return None
 
 
-def iter_dicts(obj: Any):
-    if isinstance(obj, dict):
-        yield obj
-        for value in obj.values():
-            yield from iter_dicts(value)
-    elif isinstance(obj, list):
-        for item in obj:
-            yield from iter_dicts(item)
+def fill_assessment_table(headers: list[str], rows: list[list[str]]) -> tuple[list[list[str]], int]:
+    header_index = {header: i for i, header in enumerate(headers)}
+    evidence_idx = next((header_index[h] for h in EVIDENCE_HEADERS if h in header_index), None)
+    result_idx = next((header_index[h] for h in RESULT_HEADERS if h in header_index), None)
+    note_idx = next((header_index[h] for h in NOTE_HEADERS if h in header_index), None)
+    action_idx = next((header_index[h] for h in ACTION_HEADERS if h in header_index), None)
 
+    if evidence_idx is None or result_idx is None or note_idx is None:
+        return rows, 0
 
-def title_of(item: dict[str, Any]) -> str:
-    return str(item.get("title") or item.get("name") or item.get("practice") or item.get("description") or "").strip()
-
-
-def standard_bp_rows() -> list[tuple[str, str]]:
-    data = load_standard()
-    rows: list[tuple[str, str]] = []
-    for item in iter_dicts(data):
-        item_id = str(item.get("id") or "")
-        if item_id.startswith("SUP.7.BP"):
-            rows.append((item_id, title_of(item)))
-    rows = sorted(set(rows), key=lambda x: int(re.search(r"BP(\d+)", x[0]).group(1)))
-    if len(rows) != 8:
-        raise RuntimeError(f"SUP.7 BP sayısı beklenen 8 değil: {rows}")
-    return rows
-
-
-def standard_gp_rows() -> list[tuple[str, str, str]]:
-    data = load_standard()
-    rows: list[tuple[str, str, str]] = []
-    current_pa = ""
-
-    def walk(obj: Any, pa_hint: str = ""):
-        if isinstance(obj, dict):
-            local_pa = pa_hint
-            obj_id = str(obj.get("id") or "")
-            if obj_id.startswith("PA_") or obj_id.startswith("PA "):
-                local_pa = obj_id.replace("_", " ")
-            if obj_id.startswith("GP ") or obj_id.startswith("GP."):
-                rows.append((local_pa, obj_id.replace("GP.", "GP "), title_of(obj)))
-            for key, value in obj.items():
-                key_pa = local_pa
-                if str(key).startswith("PA_"):
-                    key_pa = str(key).replace("_", " ")
-                walk(value, key_pa)
-        elif isinstance(obj, list):
-            for item in obj:
-                walk(item, pa_hint)
-
-    walk(data)
-    wanted = {"PA 2 1", "PA 2 2", "PA 3 1", "PA 3 2"}
-    cleaned: list[tuple[str, str, str]] = []
-    seen: set[tuple[str, str]] = set()
-    for pa, gp, title in rows:
-        pa = pa.replace("PA ", "PA ").replace("_", " ")
-        # Normalize PA_2_1 -> PA 2.1 style.
-        m = re.search(r"PA\s*(\d+)\s*(?:\.|\s)(\d+)", pa)
-        pa_norm = f"PA {m.group(1)}.{m.group(2)}" if m else pa
-        if pa_norm not in {"PA 2.1", "PA 2.2", "PA 3.1", "PA 3.2"}:
+    changed = 0
+    new_rows = deepcopy(rows)
+    for row in new_rows:
+        ref = find_ref(row)
+        if ref not in EVAL:
             continue
-        key = (pa_norm, gp)
-        if key not in seen:
-            cleaned.append((pa_norm, gp, title))
-            seen.add(key)
-    if not cleaned:
-        raise RuntimeError("Standart YAML içinde PA 2.1/2.2/3.1/3.2 Generic Practice bulunamadı.")
-    def gp_sort(row: tuple[str, str, str]) -> tuple[int, int, int]:
-        pa, gp, _ = row
-        pm = re.search(r"PA (\d+)\.(\d+)", pa)
-        gm = re.search(r"GP\s*(\d+)\.(\d+)\.(\d+)", gp)
-        return (int(pm.group(1)), int(pm.group(2)), int(gm.group(3)) if gm else 0)
-    return sorted(cleaned, key=gp_sort)
+        ev = EVAL[ref]
+        row[evidence_idx] = ul(ev["evidence"])
+        row[result_idx] = esc(f"%{ev['pct']} - {status(ev['pct'])}")
+        row[note_idx] = esc(ev["note"])
+        if action_idx is not None:
+            row[action_idx] = esc("-" if status(ev["pct"]) == "VAR" else ev["action"])
+        elif status(ev["pct"]) != "VAR":
+            row[note_idx] += f"<p><strong>Tamamlayıcı aksiyon:</strong> {esc(ev['action'])}</p>"
+        changed += 1
+    return new_rows, changed
 
 
-def summary_rows(bp_avg: int, gp_avg: int) -> list[list[str]]:
-    overall = round((bp_avg + gp_avg) / 2)
-    return [
-        ["Değerlendirilen Süreç", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"],
-        ["Standart Süreç Referansı", "ISO/IEC 15504-5 SUP.7 - Documentation"],
-        ["Değerlendirme No", "Değerlendirme #1"],
-        ["Değerlendirme Tarihi", "13-07-2026"],
-        ["Değerlendiren", "Soner DEDEOĞLU - Kalite Danışmanı"],
-        ["Genel Sonuç", f"BP ortalaması %{bp_avg}, PA/GP ortalaması %{gp_avg}; genel durum %{overall} - {status(overall)}"],
-    ]
-
-
-def bp_rows() -> list[list[str]]:
-    rows = []
-    for bp_id, expectation in standard_bp_rows():
-        ev = BP_EVAL[bp_id]
-        rows.append([bp_id, e(expectation), e(ev["current"]), ul(ev["evidence"]), status_text(ev["pct"]), e("-" if status(ev["pct"]) == "VAR" else ev["action"])])
-    return rows
-
-
-def gp_rows() -> list[list[str]]:
-    rows = []
-    for pa, gp, expectation in standard_gp_rows():
-        ev = {**GP_EVAL_DEFAULT, **GP_OVERRIDES.get(gp, {})}
-        rows.append([pa, gp, e(expectation), e(ev["current"]), ul(ev["evidence"]), status_text(ev["pct"]), e("-" if status(ev["pct"]) == "VAR" else ev["action"])])
-    return rows
-
-
-def action_rows(bp_data: list[list[str]], gp_data: list[list[str]]) -> list[list[str]]:
-    rows: list[list[str]] = []
-    for row in bp_data:
-        source = row[0]
-        durum = row[4]
-        action = row[5]
-        if not durum.endswith("VAR") and action != "-":
-            rows.append(["Orta", action, source, "31-07-2026"])
-    for row in gp_data:
-        source = row[1]
-        durum = row[5]
-        action = row[6]
-        if not durum.endswith("VAR") and action != "-":
-            rows.append(["Orta", action, source, "31-07-2026"])
-    return rows
-
-
-def replace_table_by_headers(storage: str, expected_headers: list[str], rows: list[list[str]]) -> str:
-    tables = list(re.finditer(r"<table.*?</table>", storage, flags=re.DOTALL))
-    for match in tables:
+def fill_all_matrices(storage: str) -> tuple[str, set[str]]:
+    output: list[str] = []
+    last = 0
+    filled_refs: set[str] = set()
+    for match in re.finditer(r"<table.*?</table>", storage, flags=re.DOTALL):
+        output.append(storage[last:match.start()])
         block = match.group(0)
-        headers = [strip_tags(h) for h in re.findall(r"<th[^>]*>(.*?)</th>", block, flags=re.DOTALL)]
-        if headers == expected_headers:
-            return storage[:match.start()] + table(expected_headers, rows) + storage[match.end():]
-    raise RuntimeError(f"Beklenen tablo başlıkları bulunamadı: {' | '.join(expected_headers)}")
+        headers, rows = parse_table(block)
+        new_rows, changed = fill_assessment_table(headers, rows)
+        if changed:
+            for row in new_rows:
+                ref = find_ref(row)
+                if ref in EVAL:
+                    filled_refs.add(ref)
+            output.append(render_table(headers, new_rows))
+        else:
+            output.append(block)
+        last = match.end()
+    output.append(storage[last:])
+    return "".join(output), filled_refs
 
 
 def build_view(storage: str) -> str:
-    return f"""<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>{e(TARGET_TITLE)}</title><style>{CSS}</style></head><body><main class="confluence-page"><h1>{e(TARGET_TITLE)}</h1>{storage}</main></body></html>\n"""
+    return f"""<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>{esc(TARGET_TITLE)}</title><style>{CSS}</style></head><body><main class="confluence-page"><h1>{esc(TARGET_TITLE)}</h1>{storage}</main></body></html>\n"""
 
 
 def write_page_yaml() -> None:
     rel = str(TARGET_DIR.relative_to(CONFLUENCE_DIR)).replace("\\", "/")
-    meta = yaml.safe_load((TARGET_DIR / "page.yaml").read_text(encoding="utf-8")) if (TARGET_DIR / "page.yaml").exists() else {}
-    meta.update({
-        "page_id": "",
-        "space": "SSSS",
-        "title": TARGET_TITLE,
-        "parent_id": TARGET_PARENT_ID,
-        "parent_title": TARGET_PARENT_TITLE,
-        "version": "",
-        "url": "",
-        "depth": 3,
-        "status": "active",
-        "exported_at": datetime.now(timezone.utc).isoformat(),
-        "children_count": 0,
-        "relative_path": rel,
-        "slug": TARGET_SLUG,
-        "has_view_html": True,
-        "view_file": "body.view.html",
-        "storage_file": "body.storage.xhtml",
-    })
+    meta = {
+        "page_id": "", "space": "SSSS", "title": TARGET_TITLE,
+        "parent_id": TARGET_PARENT_ID, "parent_title": TARGET_PARENT_TITLE,
+        "version": "", "url": "", "depth": 3, "status": "active",
+        "exported_at": datetime.now(timezone.utc).isoformat(), "children_count": 0,
+        "relative_path": rel, "slug": TARGET_SLUG, "has_view_html": True,
+        "view_file": "body.view.html", "storage_file": "body.storage.xhtml",
+    }
     (TARGET_DIR / "page.yaml").write_text(yaml.safe_dump(meta, allow_unicode=True, sort_keys=False), encoding="utf-8")
 
 
@@ -312,44 +240,37 @@ def update_index() -> None:
     pages = index.setdefault("pages", [])
     rel = str(TARGET_DIR.relative_to(CONFLUENCE_DIR)).replace("\\", "/")
     pages[:] = [p for p in pages if p.get("relative_path") != rel]
-    pages.append({
-        "page_id": "",
-        "title": TARGET_TITLE,
-        "parent_id": TARGET_PARENT_ID,
-        "depth": 3,
-        "relative_path": rel,
-        "slug": TARGET_SLUG,
-        "storage_file": f"{rel}/body.storage.xhtml",
-        "view_file": f"{rel}/body.view.html",
-    })
+    pages.append({"page_id": "", "title": TARGET_TITLE, "parent_id": TARGET_PARENT_ID,
+                  "depth": 3, "relative_path": rel, "slug": TARGET_SLUG,
+                  "storage_file": f"{rel}/body.storage.xhtml", "view_file": f"{rel}/body.view.html"})
     index["total_page_count"] = len(pages)
     INDEX_PATH.write_text(yaml.safe_dump(index, allow_unicode=True, sort_keys=False), encoding="utf-8")
 
 
 def main() -> None:
-    if not (SRC_FORM_DIR / "body.storage.xhtml").exists():
-        raise RuntimeError("Önce Confluence export alınmalı; SRÇ.001 altındaki özelleştirilmiş FRM.001 localde bulunamadı.")
+    validate_standard()
+    source = SRC_FORM_DIR / "body.storage.xhtml"
+    if not source.exists():
+        raise RuntimeError("Özelleştirilmiş SRÇ.001 FRM.001 localde bulunamadı. Önce Confluence export alınmalı.")
 
-    storage = (SRC_FORM_DIR / "body.storage.xhtml").read_text(encoding="utf-8")
+    storage = source.read_text(encoding="utf-8")
     storage = storage.replace("İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", TARGET_TITLE)
+    storage, filled = fill_all_matrices(storage)
 
-    bp_data = bp_rows()
-    gp_data = gp_rows()
-    bp_avg = round(sum(BP_EVAL[row[0]]["pct"] for row in bp_data) / len(bp_data))
-    gp_avg = round(sum(int(re.search(r"%(\d+)", row[5]).group(1)) for row in gp_data) / len(gp_data))
-
-    storage = replace_table_by_headers(storage, ["Alan", "Değer"], summary_rows(bp_avg, gp_avg))
-    storage = replace_table_by_headers(storage, ["Durum", "Anlamı"], SCALE_ROWS)
-    storage = replace_table_by_headers(storage, ["BP", "Standart Beklentisi", "Mevcut Karşılama", "Karşılayan Doküman / Kayıt", "Durum", "Eksik / Tamamlayıcı Aksiyon"], bp_data)
-    storage = replace_table_by_headers(storage, ["PA", "GP", "Standart Beklentisi", "Mevcut Karşılama", "Karşılayan Doküman / Kayıt", "Durum", "Eksik / Tamamlayıcı Aksiyon"], gp_data)
-    storage = replace_table_by_headers(storage, ["Öncelik", "Aksiyon", "İlgili BP / GP", "Hedef Kapanış"], action_rows(bp_data, gp_data))
+    expected = set(EXPECTED_BP_IDS + EXPECTED_GP_IDS)
+    missing = sorted(expected - filled)
+    if missing:
+        raise RuntimeError(
+            "Form yapısı korunarak doldurma yapılamadı. Aşağıdaki BP/GP satırları formda bulunamadı: "
+            + ", ".join(missing)
+        )
 
     TARGET_DIR.mkdir(parents=True, exist_ok=True)
     (TARGET_DIR / "body.storage.xhtml").write_text(storage, encoding="utf-8")
     (TARGET_DIR / "body.view.html").write_text(build_view(storage), encoding="utf-8")
     write_page_yaml()
     update_index()
-    print(f"[DONE] Created {TARGET_TITLE}")
+    print(f"[DONE] Exact-standard assessment created without changing form structure: {TARGET_TITLE}")
 
 
 if __name__ == "__main__":
