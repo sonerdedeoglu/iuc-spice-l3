@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-07-13T08:46:35+00:00",
+  "exported_at": "2026-07-13T09:53:24+00:00",
   "root_page_id": "137265781",
   "root_title": "İÜC BİDB SPICE 2026 Level 3",
   "total_page_count": 109,
@@ -809,6 +809,18 @@
                   "children": []
                 },
                 {
+                  "page_id": "137265828",
+                  "confluence_page_id": "137265828",
+                  "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+                  "parent_id": "137266043",
+                  "depth": 3,
+                  "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+                  "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+                  "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
+                  "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
+                  "children": []
+                },
+                {
                   "page_id": "137265832",
                   "confluence_page_id": "137265832",
                   "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
@@ -843,18 +855,6 @@
                   "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.view.html",
                   "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
                   "children": []
-                },
-                {
-                  "page_id": "137265828",
-                  "confluence_page_id": "137265828",
-                  "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-                  "parent_id": "137266043",
-                  "depth": 3,
-                  "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-                  "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-                  "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
-                  "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
-                  "children": []
                 }
               ]
             },
@@ -868,6 +868,18 @@
               "slug": "iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu",
               "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu/body.view.html",
               "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu/body.storage.xhtml",
+              "children": []
+            },
+            {
+              "page_id": "137266266",
+              "confluence_page_id": "137266266",
+              "title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+              "parent_id": "137265785",
+              "depth": 2,
+              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+              "slug": "iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
+              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
               "children": []
             },
             {
@@ -979,20 +991,8 @@
               "children": []
             },
             {
-              "page_id": "137265819",
-              "confluence_page_id": "137265819",
-              "title": "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
-              "parent_id": "137265785",
-              "depth": 2,
-              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
-              "slug": "iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
-              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.view.html",
-              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.storage.xhtml",
-              "children": []
-            },
-            {
-              "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-              "confluence_page_id": "",
+              "page_id": "137266269",
+              "confluence_page_id": "137266269",
               "title": "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
               "parent_id": "137265785",
               "depth": 2,
@@ -1003,15 +1003,15 @@
               "children": []
             },
             {
-              "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-              "confluence_page_id": "",
-              "title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+              "page_id": "137265819",
+              "confluence_page_id": "137265819",
+              "title": "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
               "parent_id": "137265785",
               "depth": 2,
-              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-              "slug": "iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
-              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
+              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
+              "slug": "iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
+              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.view.html",
+              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.storage.xhtml",
               "children": []
             }
           ]
@@ -3175,6 +3175,18 @@
               "children": []
             },
             {
+              "page_id": "137265828",
+              "confluence_page_id": "137265828",
+              "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+              "parent_id": "137266043",
+              "depth": 3,
+              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+              "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
+              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
+              "children": []
+            },
+            {
               "page_id": "137265832",
               "confluence_page_id": "137265832",
               "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
@@ -3209,18 +3221,6 @@
               "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.view.html",
               "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
               "children": []
-            },
-            {
-              "page_id": "137265828",
-              "confluence_page_id": "137265828",
-              "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-              "parent_id": "137266043",
-              "depth": 3,
-              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-              "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
-              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
-              "children": []
             }
           ]
         },
@@ -3234,6 +3234,18 @@
           "slug": "iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu",
           "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu/body.view.html",
           "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu/body.storage.xhtml",
+          "children": []
+        },
+        {
+          "page_id": "137266266",
+          "confluence_page_id": "137266266",
+          "title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+          "parent_id": "137265785",
+          "depth": 2,
+          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+          "slug": "iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
+          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
           "children": []
         },
         {
@@ -3345,20 +3357,8 @@
           "children": []
         },
         {
-          "page_id": "137265819",
-          "confluence_page_id": "137265819",
-          "title": "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
-          "parent_id": "137265785",
-          "depth": 2,
-          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
-          "slug": "iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
-          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.view.html",
-          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.storage.xhtml",
-          "children": []
-        },
-        {
-          "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-          "confluence_page_id": "",
+          "page_id": "137266269",
+          "confluence_page_id": "137266269",
           "title": "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
           "parent_id": "137265785",
           "depth": 2,
@@ -3369,15 +3369,15 @@
           "children": []
         },
         {
-          "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-          "confluence_page_id": "",
-          "title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+          "page_id": "137265819",
+          "confluence_page_id": "137265819",
+          "title": "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
           "parent_id": "137265785",
           "depth": 2,
-          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-          "slug": "iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
-          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
+          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
+          "slug": "iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
+          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.view.html",
+          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.storage.xhtml",
           "children": []
         }
       ]
@@ -3454,6 +3454,18 @@
           "children": []
         },
         {
+          "page_id": "137265828",
+          "confluence_page_id": "137265828",
+          "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+          "parent_id": "137266043",
+          "depth": 3,
+          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+          "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
+          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
+          "children": []
+        },
+        {
           "page_id": "137265832",
           "confluence_page_id": "137265832",
           "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
@@ -3487,18 +3499,6 @@
           "slug": "kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
           "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.view.html",
           "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
-          "children": []
-        },
-        {
-          "page_id": "137265828",
-          "confluence_page_id": "137265828",
-          "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-          "parent_id": "137266043",
-          "depth": 3,
-          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-          "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
-          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
           "children": []
         }
       ]
@@ -3564,6 +3564,18 @@
       "children": []
     },
     {
+      "page_id": "137265828",
+      "confluence_page_id": "137265828",
+      "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+      "parent_id": "137266043",
+      "depth": 3,
+      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+      "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
+      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
+      "children": []
+    },
+    {
       "page_id": "137265832",
       "confluence_page_id": "137265832",
       "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
@@ -3588,6 +3600,18 @@
       "children": []
     },
     {
+      "page_id": "137265826",
+      "confluence_page_id": "137265826",
+      "title": "KALDIRILDI - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
+      "parent_id": "137266043",
+      "depth": 3,
+      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
+      "slug": "kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
+      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.view.html",
+      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
+      "children": []
+    },
+    {
       "page_id": "137265825",
       "confluence_page_id": "137265825",
       "title": "İÜC.BİDB.FRM.001.Ş - Süreç Gözden Geçirme Formu Şablonu",
@@ -3597,6 +3621,18 @@
       "slug": "iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu",
       "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu/body.view.html",
       "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu/body.storage.xhtml",
+      "children": []
+    },
+    {
+      "page_id": "137266266",
+      "confluence_page_id": "137266266",
+      "title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+      "parent_id": "137265785",
+      "depth": 2,
+      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+      "slug": "iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
+      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
       "children": []
     },
     {
@@ -3705,6 +3741,18 @@
       "slug": "iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu",
       "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu/body.view.html",
       "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu/body.storage.xhtml",
+      "children": []
+    },
+    {
+      "page_id": "137266269",
+      "confluence_page_id": "137266269",
+      "title": "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
+      "parent_id": "137265785",
+      "depth": 2,
+      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
+      "slug": "iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
+      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.view.html",
+      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
       "children": []
     },
     {
@@ -4299,54 +4347,6 @@
       "slug": "iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004",
       "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.view.html",
       "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.storage.xhtml",
-      "children": []
-    },
-    {
-      "page_id": "137265826",
-      "confluence_page_id": "137265826",
-      "title": "KALDIRILDI - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
-      "parent_id": "137266043",
-      "depth": 3,
-      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-      "slug": "kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.view.html",
-      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
-      "children": []
-    },
-    {
-      "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-      "confluence_page_id": "",
-      "title": "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
-      "parent_id": "137265785",
-      "depth": 2,
-      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-      "slug": "iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.view.html",
-      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
-      "children": []
-    },
-    {
-      "page_id": "137265828",
-      "confluence_page_id": "137265828",
-      "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-      "parent_id": "137266043",
-      "depth": 3,
-      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-      "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
-      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
-      "children": []
-    },
-    {
-      "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-      "confluence_page_id": "",
-      "title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-      "parent_id": "137265785",
-      "depth": 2,
-      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-      "slug": "iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
-      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
       "children": []
     }
   ],
@@ -5155,6 +5155,18 @@
                 "children": []
               },
               {
+                "page_id": "137265828",
+                "confluence_page_id": "137265828",
+                "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+                "parent_id": "137266043",
+                "depth": 3,
+                "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+                "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+                "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
+                "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
+                "children": []
+              },
+              {
                 "page_id": "137265832",
                 "confluence_page_id": "137265832",
                 "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
@@ -5189,18 +5201,6 @@
                 "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.view.html",
                 "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
                 "children": []
-              },
-              {
-                "page_id": "137265828",
-                "confluence_page_id": "137265828",
-                "title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-                "parent_id": "137266043",
-                "depth": 3,
-                "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-                "slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-                "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
-                "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
-                "children": []
               }
             ]
           },
@@ -5214,6 +5214,18 @@
             "slug": "iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu",
             "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu/body.view.html",
             "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu/body.storage.xhtml",
+            "children": []
+          },
+          {
+            "page_id": "137266266",
+            "confluence_page_id": "137266266",
+            "title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+            "parent_id": "137265785",
+            "depth": 2,
+            "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+            "slug": "iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+            "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
+            "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
             "children": []
           },
           {
@@ -5325,20 +5337,8 @@
             "children": []
           },
           {
-            "page_id": "137265819",
-            "confluence_page_id": "137265819",
-            "title": "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
-            "parent_id": "137265785",
-            "depth": 2,
-            "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
-            "slug": "iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
-            "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.view.html",
-            "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.storage.xhtml",
-            "children": []
-          },
-          {
-            "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-            "confluence_page_id": "",
+            "page_id": "137266269",
+            "confluence_page_id": "137266269",
             "title": "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
             "parent_id": "137265785",
             "depth": 2,
@@ -5349,15 +5349,15 @@
             "children": []
           },
           {
-            "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-            "confluence_page_id": "",
-            "title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+            "page_id": "137265819",
+            "confluence_page_id": "137265819",
+            "title": "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
             "parent_id": "137265785",
             "depth": 2,
-            "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-            "slug": "iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-            "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html",
-            "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
+            "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
+            "slug": "iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
+            "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.view.html",
+            "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.storage.xhtml",
             "children": []
           }
         ]
