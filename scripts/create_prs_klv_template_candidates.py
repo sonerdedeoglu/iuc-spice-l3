@@ -192,7 +192,7 @@ def build_storage(cfg: dict[str, Any]) -> str:
     parts: list[str] = []
 
     parts.append("<h2>0. Şablon Hakkında</h2>")
-    parts.append("<h3>0.1. Doküman Üst Bilgisi</h3>")
+    parts.append("<h3>0.1. Şablon Üst Bilgisi</h3>")
     parts.append(table(["Alan", "Değer"], [
         ["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"],
         ["Doküman Kodu", cfg["document_code"]],
