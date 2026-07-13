@@ -1,7 +1,7 @@
-exported_at: '2026-07-13T11:36:08+00:00'
+exported_at: '2026-07-13T14:56:33+00:00'
 root_page_id: '137265781'
 root_title: İÜC BİDB SPICE 2026 Level 3
-total_page_count: 115
+total_page_count: 113
 pages:
 - page_id: '137265781'
   title: İÜC BİDB SPICE 2026 Level 3
@@ -27,6 +27,14 @@ pages:
   slug: 01-surec-dokumanlari
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/body.view.html
+- page_id: '137265842'
+  title: İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci
+  parent_id: '137265784'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci
+  slug: iuc-bidb-src-001-dokumantasyon-sureci
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/body.view.html
 - page_id: '137266144'
   title: İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)
   parent_id: '137265842'
@@ -35,6 +43,14 @@ pages:
   slug: iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001/body.view.html
+- page_id: '137266284'
+  title: İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001)
+  parent_id: '137265842'
+  depth: 3
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001
+  slug: iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001/body.view.html
 - page_id: '137265843'
   title: İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)
   parent_id: '137265842'
@@ -524,6 +540,14 @@ pages:
   slug: kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html
+- page_id: '137265830'
+  title: KALDIRILDI - İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu
+  parent_id: '137266043'
+  depth: 3
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu
+  slug: kaldirildi-iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu/body.view.html
 - page_id: '137265832'
   title: KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu
   parent_id: '137266043'
@@ -564,14 +588,46 @@ pages:
   slug: iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.view.html
-- page_id: '137265830'
-  title: İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu
+- page_id: '137265823'
+  title: İÜC.BİDB.LST.001.Ş - Aktif Dokümanlar Listesi Şablonu
   parent_id: '137265785'
   depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu
-  slug: iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu/body.view.html
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-001-s-aktif-dokumanlar-listesi-sablonu
+  slug: iuc-bidb-lst-001-s-aktif-dokumanlar-listesi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-001-s-aktif-dokumanlar-listesi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-001-s-aktif-dokumanlar-listesi-sablonu/body.view.html
+- page_id: '137265820'
+  title: İÜC.BİDB.LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-003-s-dokuman-gozden-gecirme-kaydi-sablonu
+  slug: iuc-bidb-lst-003-s-dokuman-gozden-gecirme-kaydi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-003-s-dokuman-gozden-gecirme-kaydi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-003-s-dokuman-gozden-gecirme-kaydi-sablonu/body.view.html
+- page_id: '137265827'
+  title: İÜC.BİDB.LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-005-s-yasam-dongusu-dokuman-uretim-matrisi-sablonu
+  slug: iuc-bidb-lst-005-s-yasam-dongusu-dokuman-uretim-matrisi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-005-s-yasam-dongusu-dokuman-uretim-matrisi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-005-s-yasam-dongusu-dokuman-uretim-matrisi-sablonu/body.view.html
+- page_id: '137265829'
+  title: İÜC.BİDB.LST.006.Ş - Standart Süreç Envanteri Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-006-s-standart-surec-envanteri-sablonu
+  slug: iuc-bidb-lst-006-s-standart-surec-envanteri-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-006-s-standart-surec-envanteri-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-006-s-standart-surec-envanteri-sablonu/body.view.html
+- page_id: '137266280'
+  title: İÜC.BİDB.LST.007.Ş - Süreç Etkileşim Matrisi Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-etkilesim-matrisi-sablonu
+  slug: iuc-bidb-lst-007-s-surec-etkilesim-matrisi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-etkilesim-matrisi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-etkilesim-matrisi-sablonu/body.view.html
 - page_id: '137266235'
   title: İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu
   parent_id: '137265785'
@@ -596,6 +652,22 @@ pages:
   slug: iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.view.html
+- page_id: '137266312'
+  title: İÜC.BİDB.LST.011.Ş - Repository Yapısı Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-011-s-repository-yapisi-sablonu
+  slug: iuc-bidb-lst-011-s-repository-yapisi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-011-s-repository-yapisi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-011-s-repository-yapisi-sablonu/body.view.html
+- page_id: '137265835'
+  title: İÜC.BİDB.LST.012.Ş - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu
+  parent_id: '137265785'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu
+  slug: iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu/body.view.html
 - page_id: '137266269'
   title: İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu
   parent_id: '137265785'
@@ -620,6 +692,14 @@ pages:
   slug: 03-kayitlar-ve-listeler
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/body.view.html
+- page_id: '137265902'
+  title: İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi
+  parent_id: '137265786'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi
+  slug: iuc-bidb-lst-001-aktif-dokumanlar-listesi
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi/body.view.html
 - page_id: '137265903'
   title: İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı
   parent_id: '137265786'
@@ -636,14 +716,6 @@ pages:
   slug: iuc-bidb-lst-003-dokuman-gozden-gecirme-kaydi
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-003-dokuman-gozden-gecirme-kaydi/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-003-dokuman-gozden-gecirme-kaydi/body.view.html
-- page_id: '137265905'
-  title: İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi
-  parent_id: '137265786'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-005-yasam-dongusu-dokuman-ihtiyac-matrisi
-  slug: iuc-bidb-lst-005-yasam-dongusu-dokuman-ihtiyac-matrisi
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-005-yasam-dongusu-dokuman-ihtiyac-matrisi/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-005-yasam-dongusu-dokuman-ihtiyac-matrisi/body.view.html
 - page_id: '137265906'
   title: İÜC.BİDB.LST.006 - Standart Süreç Envanteri
   parent_id: '137265786'
@@ -700,6 +772,22 @@ pages:
   slug: iuc-bidb-lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi/body.view.html
+- page_id: '137266316'
+  title: Soru Bankası Projesi
+  parent_id: '137265786'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi
+  slug: soru-bankasi-projesi
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/body.view.html
+- page_id: '137266318'
+  title: İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman Üretim Matrisi (SB)
+  parent_id: '137266316'
+  depth: 3
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/iuc-bidb-lst-005-yasam-dongusu-dokuman-uretim-matrisi-sb
+  slug: iuc-bidb-lst-005-yasam-dongusu-dokuman-uretim-matrisi-sb
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/iuc-bidb-lst-005-yasam-dongusu-dokuman-uretim-matrisi-sb/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/iuc-bidb-lst-005-yasam-dongusu-dokuman-uretim-matrisi-sb/body.view.html
 - page_id: '137265787'
   title: 04 - Formlar
   parent_id: '137265781'
@@ -764,6 +852,14 @@ pages:
   slug: 07-prosedurler
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/body.view.html
+- page_id: '137265916'
+  title: İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü
+  parent_id: '137265790'
+  depth: 2
+  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru
+  slug: iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru
+  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru/body.storage.xhtml
+  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru/body.view.html
 - page_id: '137265791'
   title: 08 - Planlar
   parent_id: '137265781'
@@ -812,115 +908,3 @@ pages:
   slug: iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004
   storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.storage.xhtml
   view_file: pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.view.html
-- page_id: ''
-  title: İÜC.BİDB.LST.007.Ş - Süreç Etkileşim Matrisi Şablonu
-  parent_id: '137265785'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-etkilesim-matrisi-sablonu
-  slug: iuc-bidb-lst-007-s-surec-etkilesim-matrisi-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-etkilesim-matrisi-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-007-s-surec-etkilesim-matrisi-sablonu/body.view.html
-- page_id: ''
-  title: İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001)
-  parent_id: '137265796'
-  depth: 3
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001
-  slug: iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001/body.view.html
-- page_id: '137265830'
-  title: KALDIRILDI - İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu
-  parent_id: '137266043'
-  depth: 3
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu
-  slug: kaldirildi-iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu/body.view.html
-- page_id: '137265823'
-  title: İÜC.BİDB.LST.001.Ş - Aktif Dokümanlar Listesi Şablonu
-  parent_id: '137265785'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-001-s-aktif-dokumanlar-listesi-sablonu
-  slug: iuc-bidb-lst-001-s-aktif-dokumanlar-listesi-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-001-s-aktif-dokumanlar-listesi-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-001-s-aktif-dokumanlar-listesi-sablonu/body.view.html
-- page_id: '137265820'
-  title: İÜC.BİDB.LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu
-  parent_id: '137265785'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-003-s-dokuman-gozden-gecirme-kaydi-sablonu
-  slug: iuc-bidb-lst-003-s-dokuman-gozden-gecirme-kaydi-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-003-s-dokuman-gozden-gecirme-kaydi-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-003-s-dokuman-gozden-gecirme-kaydi-sablonu/body.view.html
-- page_id: '137265827'
-  title: İÜC.BİDB.LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu
-  parent_id: '137265785'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-005-s-yasam-dongusu-dokuman-uretim-matrisi-sablonu
-  slug: iuc-bidb-lst-005-s-yasam-dongusu-dokuman-uretim-matrisi-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-005-s-yasam-dongusu-dokuman-uretim-matrisi-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-005-s-yasam-dongusu-dokuman-uretim-matrisi-sablonu/body.view.html
-- page_id: '137265829'
-  title: İÜC.BİDB.LST.006.Ş - Standart Süreç Envanteri Şablonu
-  parent_id: '137265785'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-006-s-standart-surec-envanteri-sablonu
-  slug: iuc-bidb-lst-006-s-standart-surec-envanteri-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-006-s-standart-surec-envanteri-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-006-s-standart-surec-envanteri-sablonu/body.view.html
-- page_id: ''
-  title: İÜC.BİDB.LST.011.Ş - Repository Yapısı Şablonu
-  parent_id: '137265785'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-011-s-repository-yapisi-sablonu
-  slug: iuc-bidb-lst-011-s-repository-yapisi-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-011-s-repository-yapisi-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-011-s-repository-yapisi-sablonu/body.view.html
-- page_id: '137265835'
-  title: İÜC.BİDB.LST.012.Ş - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu
-  parent_id: '137265785'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu
-  slug: iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-012-s-surec-yayginlastirma-ve-bilgilendirme-kaydi-sablonu/body.view.html
-- page_id: '137265902'
-  title: İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi
-  parent_id: '137265786'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi
-  slug: iuc-bidb-lst-001-aktif-dokumanlar-listesi
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi/body.view.html
-- page_id: ''
-  title: Soru Bankası Projesi
-  parent_id: '137265786'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi
-  slug: soru-bankasi-projesi
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/body.view.html
-- page_id: ''
-  title: İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman Üretim Matrisi (SB)
-  parent_id: ''
-  depth: 3
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/iuc-bidb-lst-005-yasam-dongusu-dokuman-uretim-matrisi-sb
-  slug: iuc-bidb-lst-005-yasam-dongusu-dokuman-uretim-matrisi-sb
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/iuc-bidb-lst-005-yasam-dongusu-dokuman-uretim-matrisi-sb/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi/iuc-bidb-lst-005-yasam-dongusu-dokuman-uretim-matrisi-sb/body.view.html
-- page_id: '137265842'
-  title: İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci
-  parent_id: '137265784'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci
-  slug: iuc-bidb-src-001-dokumantasyon-sureci
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/body.view.html
-- page_id: '137265916'
-  title: İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü
-  parent_id: '137265790'
-  depth: 2
-  relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru
-  slug: iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru
-  storage_file: pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru/body.storage.xhtml
-  view_file: pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru/body.view.html
