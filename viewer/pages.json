@@ -819,6 +819,18 @@
                   "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.view.html",
                   "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.storage.xhtml",
                   "children": []
+                },
+                {
+                  "page_id": "137265832",
+                  "confluence_page_id": "137265832",
+                  "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+                  "parent_id": "137266043",
+                  "depth": 3,
+                  "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+                  "slug": "kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+                  "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
+                  "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
+                  "children": []
                 }
               ]
             },
@@ -919,30 +931,6 @@
               "children": []
             },
             {
-              "page_id": "137265832",
-              "confluence_page_id": "137265832",
-              "title": "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
-              "parent_id": "137265785",
-              "depth": 2,
-              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-              "slug": "iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
-              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
-              "children": []
-            },
-            {
-              "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-              "confluence_page_id": "",
-              "title": "TASLAK - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
-              "parent_id": "137265785",
-              "depth": 2,
-              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-              "slug": "taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
-              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
-              "children": []
-            },
-            {
               "page_id": "137266244",
               "confluence_page_id": "137266244",
               "title": "İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu",
@@ -988,6 +976,18 @@
               "slug": "iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
               "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.view.html",
               "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.storage.xhtml",
+              "children": []
+            },
+            {
+              "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+              "confluence_page_id": "",
+              "title": "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+              "parent_id": "137265785",
+              "depth": 2,
+              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+              "slug": "iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
+              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
               "children": []
             }
           ]
@@ -3161,6 +3161,18 @@
               "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.view.html",
               "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.storage.xhtml",
               "children": []
+            },
+            {
+              "page_id": "137265832",
+              "confluence_page_id": "137265832",
+              "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+              "parent_id": "137266043",
+              "depth": 3,
+              "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+              "slug": "kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+              "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
+              "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
+              "children": []
             }
           ]
         },
@@ -3261,30 +3273,6 @@
           "children": []
         },
         {
-          "page_id": "137265832",
-          "confluence_page_id": "137265832",
-          "title": "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
-          "parent_id": "137265785",
-          "depth": 2,
-          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-          "slug": "iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
-          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
-          "children": []
-        },
-        {
-          "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-          "confluence_page_id": "",
-          "title": "TASLAK - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
-          "parent_id": "137265785",
-          "depth": 2,
-          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-          "slug": "taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
-          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
-          "children": []
-        },
-        {
           "page_id": "137266244",
           "confluence_page_id": "137266244",
           "title": "İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu",
@@ -3330,6 +3318,18 @@
           "slug": "iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
           "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.view.html",
           "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.storage.xhtml",
+          "children": []
+        },
+        {
+          "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+          "confluence_page_id": "",
+          "title": "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+          "parent_id": "137265785",
+          "depth": 2,
+          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+          "slug": "iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
+          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
           "children": []
         }
       ]
@@ -3415,6 +3415,18 @@
           "slug": "kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu",
           "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.view.html",
           "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.storage.xhtml",
+          "children": []
+        },
+        {
+          "page_id": "137265832",
+          "confluence_page_id": "137265832",
+          "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+          "parent_id": "137266043",
+          "depth": 3,
+          "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+          "slug": "kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+          "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
+          "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
           "children": []
         }
       ]
@@ -3585,30 +3597,6 @@
       "slug": "iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu",
       "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu/body.view.html",
       "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-008-s-is-urunleri-ve-kalite-kriterleri-listesi-sablonu/body.storage.xhtml",
-      "children": []
-    },
-    {
-      "page_id": "137265832",
-      "confluence_page_id": "137265832",
-      "title": "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
-      "parent_id": "137265785",
-      "depth": 2,
-      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-      "slug": "iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
-      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
-      "children": []
-    },
-    {
-      "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-      "confluence_page_id": "",
-      "title": "TASLAK - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
-      "parent_id": "137265785",
-      "depth": 2,
-      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-      "slug": "taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
-      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
       "children": []
     },
     {
@@ -4239,6 +4227,30 @@
       "slug": "iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004",
       "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.view.html",
       "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004/body.storage.xhtml",
+      "children": []
+    },
+    {
+      "page_id": "137265832",
+      "confluence_page_id": "137265832",
+      "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+      "parent_id": "137266043",
+      "depth": 3,
+      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+      "slug": "kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
+      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
+      "children": []
+    },
+    {
+      "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+      "confluence_page_id": "",
+      "title": "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+      "parent_id": "137265785",
+      "depth": 2,
+      "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+      "slug": "iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+      "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
+      "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
       "children": []
     }
   ],
@@ -5057,6 +5069,18 @@
                 "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.view.html",
                 "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu/body.storage.xhtml",
                 "children": []
+              },
+              {
+                "page_id": "137265832",
+                "confluence_page_id": "137265832",
+                "title": "KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+                "parent_id": "137266043",
+                "depth": 3,
+                "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+                "slug": "kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+                "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
+                "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/arsiv-kaldirilan-sablonlar/kaldirildi-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
+                "children": []
               }
             ]
           },
@@ -5157,30 +5181,6 @@
             "children": []
           },
           {
-            "page_id": "137265832",
-            "confluence_page_id": "137265832",
-            "title": "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
-            "parent_id": "137265785",
-            "depth": 2,
-            "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-            "slug": "iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-            "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
-            "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
-            "children": []
-          },
-          {
-            "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-            "confluence_page_id": "",
-            "title": "TASLAK - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
-            "parent_id": "137265785",
-            "depth": 2,
-            "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-            "slug": "taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
-            "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
-            "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
-            "children": []
-          },
-          {
             "page_id": "137266244",
             "confluence_page_id": "137266244",
             "title": "İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu",
@@ -5226,6 +5226,18 @@
             "slug": "iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
             "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.view.html",
             "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu/body.storage.xhtml",
+            "children": []
+          },
+          {
+            "page_id": "local:pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+            "confluence_page_id": "",
+            "title": "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+            "parent_id": "137265785",
+            "depth": 2,
+            "relative_path": "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+            "slug": "iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu",
+            "view_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.view.html",
+            "storage_file": "../confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu/body.storage.xhtml",
             "children": []
           }
         ]
