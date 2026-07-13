@@ -305,7 +305,26 @@ def main() -> None:
     results: list[dict[str, Any]] = []
 
     for record in records:
+        # Dry-run can include a new child page whose parent is also a new page.
+        # Since the parent has no real Confluence page_id yet, register a synthetic
+        # parent id so dry-run can continue and show the full plan.
+        if args.dry_run:
+            parent_path = str(record.get("parent_relative_path") or "").strip()
+            parent_id = str(record.get("parent_id") or "").strip()
+            if parent_path and not parent_id and parent_path not in path_to_id:
+                path_to_id[parent_path] = f"DRY_RUN_PARENT::{parent_path}"
+
         result = publish_record(client, record, path_to_id, args.dry_run)
+
+        # In dry-run, a newly created page does not receive a real Confluence
+        # page_id. Register its own relative_path with a synthetic id so that
+        # nested new child pages can resolve this page as their parent later
+        # in the same dry-run pass.
+        if args.dry_run:
+            current_path = str(record.get("relative_path") or "").strip()
+            current_id = str(record.get("page_id") or "").strip()
+            if current_path and not current_id and current_path not in path_to_id:
+                path_to_id[current_path] = f"DRY_RUN_PAGE::{current_path}"
         page_id = result.get("page_id") or str(record["metadata"].get("page_id") or "")
         if page_id:
             path_to_id[record["relative_path"]] = str(page_id)
