@@ -14,3 +14,8 @@ slug: iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-001
 has_view_html: true
 view_file: body.view.html
 storage_file: body.storage.xhtml
+updated_at: '2026-07-13T08:24:23.427014+00:00'
+template: İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu
+document_code: İÜC.BİDB.LST.009
+document_type: Liste
+related_process: İÜC.BİDB.SRÇ.001
