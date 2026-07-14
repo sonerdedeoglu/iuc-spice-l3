@@ -44,7 +44,7 @@ Son yerel inceleme: 14 Temmuz 2026.
 
 ## Bilinen riskler ve açık noktalar
 
-- Canlı Confluence üzerinde 14 Temmuz 2026 tarihinde yeniden çalıştırılan audit 75 alt sayfa bildirirken son export 114 toplam sayfa bildiriyor. Audit ve export sayım kapsamları/algoritmaları uzlaştırılmadan bu iki sayı birbirinin yerine kullanılmamalıdır.
+- Canlı Confluence üzerinde 14 Temmuz 2026 tarihinde yeniden çalıştırılan audit 113 alt sayfa bildirdi. Son exporttaki 114 toplam sayfa, kök sayfa ile 113 alt sayfanın toplamıdır; sayımlar birbiriyle tutarlıdır.
 - Legacy `LST.004` sayfaları repository'de hâlen vardır; yeni karar bunların kullanılmamasıdır. Silme/taşıma ayrı ve onaylı bir temizlik işi olmalıdır.
 - ISO/IEC 15504-5 PDF ChatGPT proje kaynaklarında görünür, repository'de yoktur. Lisanslı yerel kopya gerekip gerekmediği netleştirilmelidir.
 - “SUP.7 - Süreç Hazırlığı” ve “SUP.7 - Revizyonu” ChatGPT sayfaları listelenmekte ancak tarayıcı otomasyonunda mesaj gövdeleri boş dönmektedir. SUP.7'nin somut sonuçları repository ve Git geçmişinden alınmıştır.
@@ -54,6 +54,5 @@ Son yerel inceleme: 14 Temmuz 2026.
 
 ## Önerilen bir sonraki iş
 
-1. Audit ile export arasındaki 75/114 sayfa farkının nedenini incele.
-2. SRÇ.001 değerlendirme sonucundaki açık aksiyonları gözden geçir.
-3. Ardından PIM.1/SRÇ.004 veya sıradaki placeholder süreci için kullanıcıyla kapsam seç.
+1. SRÇ.001 değerlendirme sonucundaki açık aksiyonları gözden geçir.
+2. Ardından PIM.1/SRÇ.004 veya sıradaki placeholder süreci için kullanıcıyla kapsam seç.

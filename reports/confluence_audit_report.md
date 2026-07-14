@@ -2,13 +2,13 @@
 
 ## Summary
 - Root page: İÜC BİDB SPICE 2026 Level 3 (`137265781`)
-- Total descendant pages: 75
+- Total descendant pages: 113
 - Top-level ROOT pages found: ROOT-00, ROOT-01, ROOT-02, ROOT-03, ROOT-04, ROOT-05, ROOT-06, ROOT-07, ROOT-08, ROOT-90, ROOT-91
-- Register findings: 27
-- Content cleanup candidates: 23
+- Register findings: 36
+- Content cleanup candidates: 11
 - Heading duplication findings: 0
-- Formatting findings: 39
-- Content completeness findings: 34
+- Formatting findings: 21
+- Content completeness findings: 36
 
 ## Page Tree Findings
 ### Top-Level ROOT Pages
@@ -26,30 +26,6 @@
 
 ### Pages With No Children And Very Short Body
 - İÜC BİDB SPICE 2026 Level 3 / 00 - Genel Bilgiler (`137265783`) - 126 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci (`137265860`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.003 - Doğrulama Süreci (`137265861`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci (`137265863`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci (`137265864`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.007 - Proje Yönetimi Süreci (`137265865`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.008 - Risk Yönetimi Süreci (`137265866`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.009 - Gereksinimlerin Toplanması Süreci (`137265867`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.010 - Yazılım Gereksinim Analizi Süreci (`137265868`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.011 - Yazılım Tasarımı Süreci (`137265869`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.012 - Yazılım Geliştirme Süreci (`137265870`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.013 - Yazılım Entegrasyonu Süreci (`137265871`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.014 - Yazılım Test Süreci (`137265872`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.015 - Ürün Yayınlama - Sürüm Süreci (`137265873`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.016 - Yapılandırma Yönetimi Süreci (`137265874`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.017 - Problem Çözüm Yönetimi Süreci (`137265875`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci (`137265876`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.019 - İnsan Kaynakları Yönetimi Süreci (`137265877`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.020 - Eğitim Süreci (`137265878`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.021 - Bilgi Yönetimi Süreci (`137265879`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.022 - Altyapı Süreci (`137265880`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.023 - Organizasyonel Yönetim Süreci (`137265881`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.024 - Kalite Yönetimi Süreci (`137265882`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.025 - Ölçüm Süreci (`137265883`) - 64 chars
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.026 - Denetim Süreci (`137265884`) - 64 chars
 - İÜC BİDB SPICE 2026 Level 3 / 04 - Formlar (`137265787`) - 125 chars
 - İÜC BİDB SPICE 2026 Level 3 / 06 - Politikalar (`137265789`) - 146 chars
 - İÜC BİDB SPICE 2026 Level 3 / 08 - Planlar (`137265791`) - 134 chars
@@ -81,16 +57,25 @@
 - İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.024 - Kalite Yönetimi Süreci (`137265882`)
 - İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.025 - Ölçüm Süreci (`137265883`)
 - İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.026 - Denetim Süreci (`137265884`)
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar (`137266043`)
 - İÜC BİDB SPICE 2026 Level 3 / 91 - İç Denetimler / Süreç Gözden Geçirmeleri (`137265917`)
 
 ### Folder Pages Linked As Documents
 - No findings.
 
 ### Duplicate-Looking Document Codes
+- İÜC.BİDB.FRM.001: İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001) (`137266144`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.002) (`137266145`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.003 - Doğrulama Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.003) (`137266146`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.004) (`137266147`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.005) (`137266148`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.006) (`137266149`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.007 - Proje Yönetimi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.007) (`137266150`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.008 - Risk Yönetimi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.008) (`137266151`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.009 - Gereksinimlerin Toplanması Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.009) (`137266152`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.010 - Yazılım Gereksinim Analizi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.010) (`137266153`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.011 - Yazılım Tasarımı Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.011) (`137266154`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.012 - Yazılım Geliştirme Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.012) (`137266155`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.013 - Yazılım Entegrasyonu Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.013) (`137266156`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.014 - Yazılım Test Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.014) (`137266157`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.015 - Ürün Yayınlama - Sürüm Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.015) (`137266158`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.016 - Yapılandırma Yönetimi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.016) (`137266159`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.017 - Problem Çözüm Yönetimi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.017) (`137266160`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.018) (`137266161`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.019 - İnsan Kaynakları Yönetimi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.019) (`137266162`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.020 - Eğitim Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.020) (`137266163`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.021 - Bilgi Yönetimi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.021) (`137266164`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.022 - Altyapı Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.022) (`137266165`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.023 - Organizasyonel Yönetim Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.023) (`137266166`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.024 - Kalite Yönetimi Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.024) (`137266167`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.025 - Ölçüm Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.025) (`137266168`); İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.026 - Denetim Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.026) (`137266169`); İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.FRM.001.Ş - Süreç Gözden Geçirme Formu Şablonu (`137265825`); İÜC BİDB SPICE 2026 Level 3 / 91 - İç Denetimler / Süreç Gözden Geçirmeleri / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001) - Değerlendirme #1 (`137266333`)
+- İÜC.BİDB.LST.001: İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.001.Ş - Aktif Dokümanlar Listesi Şablonu (`137265823`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi (`137265902`)
+- İÜC.BİDB.LST.003: İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu (`137265820`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı (`137265904`)
 - İÜC.BİDB.LST.004: İÜC BİDB SPICE 2026 Level 3 / 91 - İç Denetimler / Süreç Gözden Geçirmeleri / İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.001) (`137265918`); İÜC BİDB SPICE 2026 Level 3 / 91 - İç Denetimler / Süreç Gözden Geçirmeleri / İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.004) (`137265919`)
-- İÜC.BİDB.LST.008: İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001) (`137265843`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.004) (`137265908`)
-- İÜC.BİDB.LST.009: İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001) (`137265844`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.004) (`137265909`)
-- İÜC.BİDB.LST.010: İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001) (`137265845`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.004) (`137265910`)
+- İÜC.BİDB.LST.005: İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu (`137265827`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / Soru Bankası Projesi / İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman Üretim Matrisi (SB) (`137266318`)
+- İÜC.BİDB.LST.006: İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.006.Ş - Standart Süreç Envanteri Şablonu (`137265829`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.006 - Standart Süreç Envanteri (`137265906`)
+- İÜC.BİDB.LST.007: İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001) (`137266284`); İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu (`137265830`); İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.007.Ş - Süreç Etkileşim Matrisi Şablonu (`137266280`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.007 - Süreç Mimari ve Etkileşim Matrisi (`137265907`)
+- İÜC.BİDB.LST.008: İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001) (`137265843`); İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / [KALDIRILDI] İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu (`137265831`); İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu (`137266235`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.004) (`137265908`)
+- İÜC.BİDB.LST.009: İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001) (`137265844`); İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu (`137265832`); İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu (`137266257`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.004) (`137265909`)
+- İÜC.BİDB.LST.010: İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001) (`137265845`); İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu (`137265833`); İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu (`137266244`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.004) (`137265910`)
+- İÜC.BİDB.LST.011: İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.011.Ş - Repository Yapısı Şablonu (`137266312`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.011 - Repository Yapısı (`137265911`)
+- İÜC.BİDB.LST.012: İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.LST.012.Ş - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu (`137265835`); İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı (`137265912`)
 
 ## Register Findings
 - ROOT-01: row 2 (İÜC.BİDB.SRÇ.002) has empty Erişim Linki.
@@ -117,65 +102,45 @@
 - ROOT-01: row 24 (İÜC.BİDB.SRÇ.024) has empty Erişim Linki.
 - ROOT-01: row 25 (İÜC.BİDB.SRÇ.025) has empty Erişim Linki.
 - ROOT-01: row 26 (İÜC.BİDB.SRÇ.026) has empty Erişim Linki.
+- ROOT-02: code İÜC.BİDB.LST.001.Ş appears to belong under ROOT-03.
+- ROOT-02: code İÜC.BİDB.LST.003.Ş appears to belong under ROOT-03.
+- ROOT-02: code İÜC.BİDB.LST.005.Ş appears to belong under ROOT-03.
+- ROOT-02: code İÜC.BİDB.LST.006.Ş appears to belong under ROOT-03.
+- ROOT-02: code İÜC.BİDB.LST.007.Ş appears to belong under ROOT-03.
+- ROOT-02: code İÜC.BİDB.LST.008.Ş appears to belong under ROOT-03.
+- ROOT-02: code İÜC.BİDB.LST.009.Ş appears to belong under ROOT-03.
+- ROOT-02: code İÜC.BİDB.LST.010.Ş appears to belong under ROOT-03.
+- ROOT-02: code İÜC.BİDB.LST.012.Ş appears to belong under ROOT-03.
 - ROOT-91: code İÜC.BİDB.LST.004 appears to belong under ROOT-03.
 - ROOT-91: duplicate document code İÜC.BİDB.LST.004 in rows 1 and 2.
 - ROOT-91: code İÜC.BİDB.LST.004 appears to belong under ROOT-03.
 
 ## Content Cleanup Candidates
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci (`137265842`) - terms: .md, Dosya Adı, Dosya adı
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001) (`137265843`) - terms: Dosya Adı, Dosya adı
+- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci (`137265842`) - terms: filename
+- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001) (`137266284`) - terms: filename
 - İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci (`137265862`) - terms: .md, Dosya Adı, Dosya adı
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.001 - Süreç Tanımı Şablonu (`137265819`) - terms: .md, Dosya Adı, Dosya adı
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.005 - Aktif Dokümanlar Listesi Şablonu (`137265823`) - terms: .md, Dosya Adı, Dosya adı, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.006 - Doküman Değişiklik Kaydı Şablonu (`137265824`) - terms: .md, Dosya Adı, Dosya adı, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.007 - Süreç Gözden Geçirme Matrisi Şablonu (`137265825`) - terms: .md, Dosya Adı, Dosya adı, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.008 - Prosedür Tanımı Şablonu (`137265826`) - terms: .md, Dosya Adı, Dosya adı, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.009 - Yaşam Döngüsü Doküman İhtiyaç Matrisi Şablonu (`137265827`) - terms: .md, Dosya Adı, Dosya adı, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.010 - Kılavuz ve Talimat Tanımı Şablonu (`137265828`) - terms: .md, Dosya Adı, Dosya adı, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.011 - Standart Süreç Envanteri Şablonu (`137265829`) - terms: .md, Dosya Adı, Dosya adı, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.012 - Süreç Mimari ve Etkileşim Matrisi Şablonu (`137265830`) - terms: .md, Dosya Adı, Dosya adı, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.013 - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu (`137265831`) - terms: .md, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.014 - Süreç Performans Ölçüm Seti Şablonu (`137265832`) - terms: .md, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu (`137265833`) - terms: .md, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.016 - Repository Yapısı Şablonu (`137265834`) - terms: .md, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu (`137265835`) - terms: .md, Markdown
-- İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi (`137265902`) - terms: .md, Dosya Adı, Dosya adı
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / [KALDIRILDI] İÜC.BİDB.ŞBL.006 - Doküman Değişiklik Kaydı Şablonu (`137265824`) - terms: .md, Dosya Adı, Dosya adı
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu (`137265828`) - terms: .md, Dosya Adı, Dosya adı
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu (`137265826`) - terms: .md, Dosya Adı, Dosya adı
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu (`137266266`) - terms: Dosya Adı, Dosya adı
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.011 - Repository Yapısı (`137265911`) - terms: .md, Dosya Adı, Dosya adı
-- İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı (`137265913`) - terms: .md, Dosya Adı, Dosya adı, Markdown, dosya yolu
+- İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı (`137265913`) - terms: Local, dosya yolu
 - İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu (`137265915`) - terms: .md, Dosya Adı, Dosya adı
-- İÜC BİDB SPICE 2026 Level 3 / 07 - Prosedürler / İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü (`137265916`) - terms: Dosya Adı, Dosya adı
 - İÜC BİDB SPICE 2026 Level 3 / 91 - İç Denetimler / Süreç Gözden Geçirmeleri / İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.001) (`137265918`) - terms: .md
 
 ## Heading Duplication Findings
 - No findings.
 
 ## Formatting Findings
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci (`137265842`) - code block may contain regular document text, markdown artifacts: # , raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001) (`137265843`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001) (`137265844`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001) (`137265845`) - raw HTML fragments that may be broken
+- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci (`137265842`) - excessive inline styles (29), font-family attributes, font-size attributes
+- İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001) (`137266144`) - table 3 has many empty cells (32/48), table 4 has many empty cells (84/147), table 5 has many empty cells (16/16)
 - İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci (`137265862`) - code block may contain regular document text, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.001 - Süreç Tanımı Şablonu (`137265819`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.002 - Doküman Gözden Geçirme Kaydı Şablonu (`137265820`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.003 - Doküman Değişiklik Talebi Şablonu (`137265821`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.004 - Doküman Yayın Kaydı Şablonu (`137265822`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.005 - Aktif Dokümanlar Listesi Şablonu (`137265823`) - code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.006 - Doküman Değişiklik Kaydı Şablonu (`137265824`) - code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.007 - Süreç Gözden Geçirme Matrisi Şablonu (`137265825`) - code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.008 - Prosedür Tanımı Şablonu (`137265826`) - excessive inline styles (16), code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.009 - Yaşam Döngüsü Doküman İhtiyaç Matrisi Şablonu (`137265827`) - code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.010 - Kılavuz ve Talimat Tanımı Şablonu (`137265828`) - excessive inline styles (14), code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.011 - Standart Süreç Envanteri Şablonu (`137265829`) - excessive inline styles (11), code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.012 - Süreç Mimari ve Etkileşim Matrisi Şablonu (`137265830`) - code block may contain regular document text, markdown artifacts: # , ## , `, ```, |---, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.013 - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu (`137265831`) - code block may contain regular document text, markdown artifacts: # , |---, raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.014 - Süreç Performans Ölçüm Seti Şablonu (`137265832`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu (`137265833`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.016 - Repository Yapısı Şablonu (`137265834`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu (`137265835`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi (`137265902`) - raw HTML fragments that may be broken
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu (`137265828`) - excessive inline styles (14)
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu (`137265830`) - raw HTML fragments that may be broken
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu (`137265826`) - excessive inline styles (16)
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu (`137265819`) - empty paragraphs repeated (4)
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı (`137265903`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı (`137265904`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi (`137265905`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.006 - Standart Süreç Envanteri (`137265906`) - excessive inline styles (36), raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.007 - Süreç Mimari ve Etkileşim Matrisi (`137265907`) - excessive inline styles (27), code block may contain regular document text, raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.004) (`137265908`) - raw HTML fragments that may be broken
@@ -183,10 +148,9 @@
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.004) (`137265910`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.011 - Repository Yapısı (`137265911`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı (`137265912`) - raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı (`137265913`) - markdown artifacts: # , ## , raw HTML fragments that may be broken
+- İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı (`137265913`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.002 - Süreç Uyarlama Kılavuzu (`137265914`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu (`137265915`) - excessive inline styles (13), raw HTML fragments that may be broken
-- İÜC BİDB SPICE 2026 Level 3 / 07 - Prosedürler / İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü (`137265916`) - raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 91 - İç Denetimler / Süreç Gözden Geçirmeleri / İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.001) (`137265918`) - excessive inline styles (21), raw HTML fragments that may be broken
 - İÜC BİDB SPICE 2026 Level 3 / 91 - İç Denetimler / Süreç Gözden Geçirmeleri / İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.004) (`137265919`) - excessive inline styles (11), raw HTML fragments that may be broken
 
@@ -217,20 +181,22 @@
 - İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.024 - Kalite Yönetimi Süreci (`137265882`) - body length below threshold (64 chars), process page is only the folder placeholder
 - İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.025 - Ölçüm Süreci (`137265883`) - body length below threshold (64 chars), process page is only the folder placeholder
 - İÜC BİDB SPICE 2026 Level 3 / 01 - Süreç Dokümanları / İÜC.BİDB.SRÇ.026 - Denetim Süreci (`137265884`) - body length below threshold (64 chars), process page is only the folder placeholder
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.008 - Prosedür Tanımı Şablonu (`137265826`) - placeholder term: Hazırlanacak
-- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / İÜC.BİDB.ŞBL.010 - Kılavuz ve Talimat Tanımı Şablonu (`137265828`) - placeholder term: Hazırlanacak
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar (`137266043`) - body length below threshold (82 chars)
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu (`137265828`) - placeholder term: Hazırlanacak
+- İÜC BİDB SPICE 2026 Level 3 / 02 - Şablonlar / Arşiv - Kaldırılan Şablonlar / KALDIRILDI - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu (`137265826`) - placeholder term: Hazırlanacak
 - İÜC BİDB SPICE 2026 Level 3 / 03 - Kayıtlar ve Listeler / İÜC.BİDB.LST.006 - Standart Süreç Envanteri (`137265906`) - placeholder term: Hazırlanacak
 - İÜC BİDB SPICE 2026 Level 3 / 04 - Formlar (`137265787`) - body length below threshold (125 chars)
+- İÜC BİDB SPICE 2026 Level 3 / 05 - Kılavuzlar / İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı (`137265913`) - placeholder term: Hazırlanacak
 - İÜC BİDB SPICE 2026 Level 3 / 06 - Politikalar (`137265789`) - body length below threshold (146 chars)
 - İÜC BİDB SPICE 2026 Level 3 / 08 - Planlar (`137265791`) - body length below threshold (134 chars)
 - İÜC BİDB SPICE 2026 Level 3 / 90 - Denetim Hazırlık (`137265792`) - body length below threshold (142 chars)
 - İÜC BİDB SPICE 2026 Level 3 / 91 - İç Denetimler / Süreç Gözden Geçirmeleri (`137265917`) - body length below threshold (64 chars)
 
 ## Process Readiness
-- İÜC.BİDB.SRÇ.001 | Dokümantasyon Süreci | link: İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci | REAL_CONTENT | child support documents: İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001), İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001), İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)
+- İÜC.BİDB.SRÇ.001 | Dokümantasyon Süreci | link: İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci | REAL_CONTENT | child support documents: İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001), İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001), İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001), İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001), İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)
 - İÜC.BİDB.SRÇ.002 | Kalite Güvencesi Süreci | link: None | MISSING_LINK | child support documents: None
 - İÜC.BİDB.SRÇ.003 | Doğrulama Süreci | link: None | MISSING_LINK | child support documents: None
-- İÜC.BİDB.SRÇ.004 | Süreç Kurulumu Süreci | link: İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci | REAL_CONTENT | child support documents: None
+- İÜC.BİDB.SRÇ.004 | Süreç Kurulumu Süreci | link: İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci | REAL_CONTENT | child support documents: İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.004)
 - İÜC.BİDB.SRÇ.005 | Süreç Değerlendirme Süreci | link: None | MISSING_LINK | child support documents: None
 - İÜC.BİDB.SRÇ.006 | Süreç İyileştirme Süreci | link: None | MISSING_LINK | child support documents: None
 - İÜC.BİDB.SRÇ.007 | Proje Yönetimi Süreci | link: None | MISSING_LINK | child support documents: None
@@ -281,34 +247,30 @@
 - ROOT-01: row 25 (İÜC.BİDB.SRÇ.025) has empty Erişim Linki.
 - ROOT-01: row 26 (İÜC.BİDB.SRÇ.026) has empty Erişim Linki.
 - ROOT-91: duplicate document code İÜC.BİDB.LST.004 in rows 1 and 2.
+- Duplicate code İÜC.BİDB.FRM.001
+- Duplicate code İÜC.BİDB.LST.001
+- Duplicate code İÜC.BİDB.LST.003
 - Duplicate code İÜC.BİDB.LST.004
+- Duplicate code İÜC.BİDB.LST.005
+- Duplicate code İÜC.BİDB.LST.006
+- Duplicate code İÜC.BİDB.LST.007
 - Duplicate code İÜC.BİDB.LST.008
 - Duplicate code İÜC.BİDB.LST.009
 - Duplicate code İÜC.BİDB.LST.010
+- Duplicate code İÜC.BİDB.LST.011
+- Duplicate code İÜC.BİDB.LST.012
 
 ### Priority 2
-- İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci contains .md, Dosya Adı, Dosya adı
-- İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001) contains Dosya Adı, Dosya adı
+- İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci contains filename
+- İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001) contains filename
 - İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci contains .md, Dosya Adı, Dosya adı
-- İÜC.BİDB.ŞBL.001 - Süreç Tanımı Şablonu contains .md, Dosya Adı, Dosya adı
-- İÜC.BİDB.ŞBL.005 - Aktif Dokümanlar Listesi Şablonu contains .md, Dosya Adı, Dosya adı, Markdown
-- İÜC.BİDB.ŞBL.006 - Doküman Değişiklik Kaydı Şablonu contains .md, Dosya Adı, Dosya adı, Markdown
-- İÜC.BİDB.ŞBL.007 - Süreç Gözden Geçirme Matrisi Şablonu contains .md, Dosya Adı, Dosya adı, Markdown
-- İÜC.BİDB.ŞBL.008 - Prosedür Tanımı Şablonu contains .md, Dosya Adı, Dosya adı, Markdown
-- İÜC.BİDB.ŞBL.009 - Yaşam Döngüsü Doküman İhtiyaç Matrisi Şablonu contains .md, Dosya Adı, Dosya adı, Markdown
-- İÜC.BİDB.ŞBL.010 - Kılavuz ve Talimat Tanımı Şablonu contains .md, Dosya Adı, Dosya adı, Markdown
-- İÜC.BİDB.ŞBL.011 - Standart Süreç Envanteri Şablonu contains .md, Dosya Adı, Dosya adı, Markdown
-- İÜC.BİDB.ŞBL.012 - Süreç Mimari ve Etkileşim Matrisi Şablonu contains .md, Dosya Adı, Dosya adı, Markdown
-- İÜC.BİDB.ŞBL.013 - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu contains .md, Markdown
-- İÜC.BİDB.ŞBL.014 - Süreç Performans Ölçüm Seti Şablonu contains .md, Markdown
-- İÜC.BİDB.ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu contains .md, Markdown
-- İÜC.BİDB.ŞBL.016 - Repository Yapısı Şablonu contains .md, Markdown
-- İÜC.BİDB.ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu contains .md, Markdown
-- İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi contains .md, Dosya Adı, Dosya adı
+- [KALDIRILDI] İÜC.BİDB.ŞBL.006 - Doküman Değişiklik Kaydı Şablonu contains .md, Dosya Adı, Dosya adı
+- KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu contains .md, Dosya Adı, Dosya adı
+- KALDIRILDI - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu contains .md, Dosya Adı, Dosya adı
+- İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu contains Dosya Adı, Dosya adı
 - İÜC.BİDB.LST.011 - Repository Yapısı contains .md, Dosya Adı, Dosya adı
-- İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı contains .md, Dosya Adı, Dosya adı, Markdown, dosya yolu
+- İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı contains Local, dosya yolu
 - İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu contains .md, Dosya Adı, Dosya adı
-- İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü contains Dosya Adı, Dosya adı
 - İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.001) contains .md
 - İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci has body length below threshold (64 chars), process page is only the folder placeholder
 - İÜC.BİDB.SRÇ.003 - Doğrulama Süreci has body length below threshold (64 chars), process page is only the folder placeholder
@@ -334,37 +296,21 @@
 - İÜC.BİDB.SRÇ.024 - Kalite Yönetimi Süreci has body length below threshold (64 chars), process page is only the folder placeholder
 - İÜC.BİDB.SRÇ.025 - Ölçüm Süreci has body length below threshold (64 chars), process page is only the folder placeholder
 - İÜC.BİDB.SRÇ.026 - Denetim Süreci has body length below threshold (64 chars), process page is only the folder placeholder
-- İÜC.BİDB.ŞBL.008 - Prosedür Tanımı Şablonu has placeholder term: Hazırlanacak
-- İÜC.BİDB.ŞBL.010 - Kılavuz ve Talimat Tanımı Şablonu has placeholder term: Hazırlanacak
+- KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu has placeholder term: Hazırlanacak
+- KALDIRILDI - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu has placeholder term: Hazırlanacak
 - İÜC.BİDB.LST.006 - Standart Süreç Envanteri has placeholder term: Hazırlanacak
+- İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı has placeholder term: Hazırlanacak
 
 ### Priority 3
-- İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci has code block may contain regular document text, markdown artifacts: # , raw HTML fragments that may be broken
-- İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001) has raw HTML fragments that may be broken
-- İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001) has raw HTML fragments that may be broken
-- İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001) has raw HTML fragments that may be broken
+- İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci has excessive inline styles (29), font-family attributes, font-size attributes
+- İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001) has table 3 has many empty cells (32/48), table 4 has many empty cells (84/147), table 5 has many empty cells (16/16)
 - İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci has code block may contain regular document text, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.001 - Süreç Tanımı Şablonu has raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.002 - Doküman Gözden Geçirme Kaydı Şablonu has raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.003 - Doküman Değişiklik Talebi Şablonu has raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.004 - Doküman Yayın Kaydı Şablonu has raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.005 - Aktif Dokümanlar Listesi Şablonu has code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.006 - Doküman Değişiklik Kaydı Şablonu has code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.007 - Süreç Gözden Geçirme Matrisi Şablonu has code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.008 - Prosedür Tanımı Şablonu has excessive inline styles (16), code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.009 - Yaşam Döngüsü Doküman İhtiyaç Matrisi Şablonu has code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.010 - Kılavuz ve Talimat Tanımı Şablonu has excessive inline styles (14), code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.011 - Standart Süreç Envanteri Şablonu has excessive inline styles (11), code block may contain regular document text, markdown artifacts: # , `, |---, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.012 - Süreç Mimari ve Etkileşim Matrisi Şablonu has code block may contain regular document text, markdown artifacts: # , ## , `, ```, |---, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.013 - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu has code block may contain regular document text, markdown artifacts: # , |---, raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.014 - Süreç Performans Ölçüm Seti Şablonu has raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu has raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.016 - Repository Yapısı Şablonu has raw HTML fragments that may be broken
-- İÜC.BİDB.ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu has raw HTML fragments that may be broken
-- İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi has raw HTML fragments that may be broken
+- KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu has excessive inline styles (14)
+- KALDIRILDI - İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu has raw HTML fragments that may be broken
+- KALDIRILDI - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu has excessive inline styles (16)
+- İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu has empty paragraphs repeated (4)
 - İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı has raw HTML fragments that may be broken
 - İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı has raw HTML fragments that may be broken
-- İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi has raw HTML fragments that may be broken
 - İÜC.BİDB.LST.006 - Standart Süreç Envanteri has excessive inline styles (36), raw HTML fragments that may be broken
 - İÜC.BİDB.LST.007 - Süreç Mimari ve Etkileşim Matrisi has excessive inline styles (27), code block may contain regular document text, raw HTML fragments that may be broken
 - İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.004) has raw HTML fragments that may be broken
@@ -372,10 +318,9 @@
 - İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.004) has raw HTML fragments that may be broken
 - İÜC.BİDB.LST.011 - Repository Yapısı has raw HTML fragments that may be broken
 - İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı has raw HTML fragments that may be broken
-- İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı has markdown artifacts: # , ## , raw HTML fragments that may be broken
+- İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı has raw HTML fragments that may be broken
 - İÜC.BİDB.KLV.002 - Süreç Uyarlama Kılavuzu has raw HTML fragments that may be broken
 - İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu has excessive inline styles (13), raw HTML fragments that may be broken
-- İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü has raw HTML fragments that may be broken
 - İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.001) has excessive inline styles (21), raw HTML fragments that may be broken
 - İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.004) has excessive inline styles (11), raw HTML fragments that may be broken
 
