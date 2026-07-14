@@ -166,10 +166,15 @@ function selectPage(pageId) {
   state.selectedPageId = pageId;
   state.expanded.add(pageId);
   pageTitle.textContent = page.title;
-  pageFrame.src = page.view_file;
-  openPreview.href = page.view_file;
-  openStorage.href = page.storage_file;
+  pageFrame.src = withCacheBust(page.view_file);
+  openPreview.href = withCacheBust(page.view_file);
+  openStorage.href = withCacheBust(page.storage_file);
   renderTree();
+}
+
+function withCacheBust(path) {
+  const separator = path.includes("?") ? "&" : "?";
+  return `${path}${separator}viewer_refresh=${Date.now()}`;
 }
 
 searchInput.addEventListener("input", () => {
