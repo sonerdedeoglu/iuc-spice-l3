@@ -162,9 +162,19 @@ def render_table(headers: list[str], rows: list[list[str]]) -> str:
 def find_ref(row: list[str]) -> str | None:
     for cell in row:
         text = clean(cell)
-        m = re.search(r"SUP\.7\.BP[1-8]|GP\.[23]\.[12]\.[1-6]", text)
-        if m:
-            return m.group(0)
+
+        bp_match = re.search(r"SUP\.7\.BP[1-8]", text, flags=re.IGNORECASE)
+        if bp_match:
+            return bp_match.group(0).upper()
+
+        gp_match = re.search(
+            r"GP\s*[\.-]?\s*([23])\s*\.\s*([12])\s*\.\s*([1-6])",
+            text,
+            flags=re.IGNORECASE,
+        )
+        if gp_match:
+            return f"GP.{gp_match.group(1)}.{gp_match.group(2)}.{gp_match.group(3)}"
+
     return None
 
 
