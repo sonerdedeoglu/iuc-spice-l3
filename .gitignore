@@ -6,6 +6,9 @@ __pycache__/
 # Environment
 .env
 
+# Local project-transfer material (may contain confidential chat exports)
+.migration-inbox/
+
 # macOS
 .DS_Store
 
