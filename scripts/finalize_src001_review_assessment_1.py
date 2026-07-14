@@ -153,19 +153,80 @@ def map_action_row(headers: list[str], item: dict[str, str]) -> list[str]:
 
 
 def update_priority_table(storage: str) -> str:
-    heading = re.search(r"<h[1-6][^>]*>\s*5\.\s*Öncelikli Tamamlama Listesi\s*</h[1-6]>", storage, flags=re.DOTALL | re.IGNORECASE)
-    if not heading:
-        raise RuntimeError("5. Öncelikli Tamamlama Listesi başlığı bulunamadı.")
-    table_match = re.search(r"<table.*?</table>", storage[heading.end():], flags=re.DOTALL)
-    if not table_match:
-        raise RuntimeError("5. bölüm altındaki öncelikli tamamlama tablosu bulunamadı.")
-    start = heading.end() + table_match.start()
-    end = heading.end() + table_match.end()
-    headers, _rows = parse_table(table_match.group(0))
-    if not headers:
-        raise RuntimeError("Öncelikli tamamlama tablosunun sütun başlıkları okunamadı.")
+    # Confluence storage içeriğinde bölüm başlıkları h1-h6 olarak bulunmayabilir.
+    # Bu nedenle Öncelikli Tamamlama Listesi tablosunu doğrudan mevcut
+    # sütun başlıklarından tespit et.
+    candidates = []
+
+    for match in re.finditer(
+        r"<table.*?</table>",
+        storage,
+        flags=re.DOTALL | re.IGNORECASE,
+    ):
+        headers, _rows = parse_table(match.group(0))
+        normalized = [
+            re.sub(r"\\s+", " ", header).strip().casefold()
+            for header in headers
+        ]
+
+        has_priority = any("öncelik" in header for header in normalized)
+        has_action = any(
+            "aksiyon" in header
+            or "düzelt" in header
+            or "tamamla" in header
+            for header in normalized
+        )
+
+        # İlave ayırt edici kolonlar:
+        # ilgili BP/GP, kaynak, hedef kapanış, tarih, sorumlu veya durum.
+        has_reference_or_tracking = any(
+            "bp" in header
+            or "gp" in header
+            or "ilgili" in header
+            or "kaynak" in header
+            or "hedef" in header
+            or "kapanış" in header
+            or "tarih" in header
+            or "sorumlu" in header
+            or "durum" in header
+            for header in normalized
+        )
+
+        if has_priority and has_action and has_reference_or_tracking:
+            candidates.append((match, headers))
+
+    if not candidates:
+        all_headers = []
+        for match in re.finditer(
+            r"<table.*?</table>",
+            storage,
+            flags=re.DOTALL | re.IGNORECASE,
+        ):
+            headers, _rows = parse_table(match.group(0))
+            if headers:
+                all_headers.append(headers)
+
+        raise RuntimeError(
+            "Öncelikli Tamamlama Listesi tablosu sütun başlıklarından "
+            f"tespit edilemedi. Dosyada bulunan tablolar: {all_headers}"
+        )
+
+    if len(candidates) > 1:
+        raise RuntimeError(
+            "Öncelikli Tamamlama Listesi olabilecek birden fazla tablo "
+            f"bulundu: {[headers for _match, headers in candidates]}"
+        )
+
+    table_match, headers = candidates[0]
+
+    # Sütun adlarını ve sırasını değiştirmeden yalnızca satırları doldur.
     rows = [map_action_row(headers, item) for item in ACTIONS]
-    return storage[:start] + render_table(headers, rows) + storage[end:]
+
+    return (
+        storage[:table_match.start()]
+        + render_table(headers, rows)
+        + storage[table_match.end():]
+    )
 
 
 def update_view(storage: str) -> None:
