@@ -44,8 +44,12 @@ Her içerik değişikliğinde şu sıra izlenir:
 ## Doküman bütünlüğü
 
 - Kurumsal süreç kodlarında `SRÇ` kullan; dosya sluglarında mevcut `src` biçimini değiştirme.
-- Mevcut sürüm geçmişlerini silme veya yeniden yazma.
-- Kullanıcı açıkça istemedikçe sürüm numarası, sayfa başlığı, doküman kodu veya klasör yolunu değiştirme.
+- Kullanıcı açıkça istemedikçe sürüm numarası, sayfa başlığı, doküman kodu veya klasör yolunu değiştirme. Süreç dokümanları için kullanıcı tarafından onaylanan temel sürüm `v1.0`dır.
+- Her süreç dokümanı üzerinde çalışmaya başlamadan önce süreç sahibi, gözden geçiren ve onaycıyı kullanıcıya sor; rol ve kişi bilgilerini tahmin etme.
+- Süreç dokümanlarında hazırlayan `Soner DEDEOĞLU - Kalite Danışmanı`dır. Sürüm geçmişi `v0.1 / 10 Jan 2025 / İlk taslak oluşturuldu.` ile `v1.0 / 15 Feb 2025 / [Süreç adı] süreci onaylanarak yürürlüğe girmiştir.` satırlarından oluşur; v1.0 rol alanlarını kullanıcıdan doğrula.
+- Süreç `Referanslar` bölümünü ilgili ISO/IEC 15504-5 süreç bölümü, `ISO/IEC 15504-5 Process Assessment Model` ve `ISO/IEC 15504-5 Process Attributes` ile sınırla. İÜC Bilgi İşlem kaynaklarını yalnızca kullanıcı belirlediğinde ekle.
+- `Süreç Aktivitesi / İlgili Süreçler` alanında her süreci ayrı satırda göster.
+- `Süreç Akışı` bölümüne SRÇ.001 biçiminde PNG alanı ve Mermaid kod bloğu koy. PNG, Mermaid Online Editor üzerinden ayrıca dışa aktarılıp eklenecektir.
 - Sayfa ID, süreç sahibi, rol, tarih veya kurumsal kodu tahmin etme; repository ya da Confluence kaynağından doğrula.
 - Eski `LST.004` yaklaşımı yeni çalışmalar için kullanılmaz. Mevcut legacy sayfaları açık onay olmadan silme veya taşıma.
 - Süreç etkileşimleri `LST.007`, iş ürünleri ve kalite kriterleri `LST.008`, performans ölçümleri `LST.009`, roller ve RACI `LST.010`, süreç gözden geçirme kayıtları `FRM.001` ile yönetilir.

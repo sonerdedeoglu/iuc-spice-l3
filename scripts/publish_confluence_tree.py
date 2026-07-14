@@ -18,7 +18,7 @@ from typing import Any
 
 import yaml
 
-from config import SPACE_KEY
+from config import CONFLUENCE_URL, SPACE_KEY
 from confluence_client import ConfluenceClient
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,7 +53,7 @@ def hash_body(value: str) -> str:
     return hashlib.sha256(normalize_body(value).encode("utf-8")).hexdigest()
 
 
-def discover_pages() -> list[dict[str, Any]]:
+def discover_pages(selected_paths: set[str] | None = None) -> list[dict[str, Any]]:
     if not PAGES_DIR.exists():
         raise FileNotFoundError(f"Confluence pages folder not found: {PAGES_DIR}")
 
@@ -68,6 +68,8 @@ def discover_pages() -> list[dict[str, Any]]:
         if not title:
             raise PublishError(f"Missing title in {page_yaml}")
         relative_path = str(folder.relative_to(CONFLUENCE_DIR)).replace("\\", "/")
+        if selected_paths and relative_path not in selected_paths:
+            continue
         depth = int(metadata.get("depth", len(folder.relative_to(PAGES_DIR).parts) - 1))
         records.append(
             {
@@ -167,6 +169,7 @@ def update_page_metadata(record: dict[str, Any], page_id: str, parent_id: str, v
     metadata["relative_path"] = record["relative_path"]
     metadata["storage_file"] = "body.storage.xhtml"
     metadata["view_file"] = "body.view.html"
+    metadata["url"] = f"{CONFLUENCE_URL.rstrip('/')}/pages/viewpage.action?pageId={page_id}"
     if version is not None:
         metadata["version"] = version
     write_yaml(record["page_yaml"], metadata)
@@ -297,9 +300,21 @@ def write_report(results: list[dict[str, Any]], dry_run: bool) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Publish local Confluence export tree to Confluence")
     parser.add_argument("--dry-run", action="store_true", help="Show planned create/update/move/skip actions without writing to Confluence")
+    parser.add_argument(
+        "--path",
+        action="append",
+        default=[],
+        help="Publish only the exact confluence-relative page path; may be repeated",
+    )
     args = parser.parse_args()
 
-    records = discover_pages()
+    selected_paths = {str(path).strip().rstrip("/") for path in args.path if str(path).strip()}
+    records = discover_pages(selected_paths or None)
+    if selected_paths:
+        discovered_paths = {record["relative_path"] for record in records}
+        missing_paths = sorted(selected_paths - discovered_paths)
+        if missing_paths:
+            raise PublishError(f"Selected page path(s) not found: {', '.join(missing_paths)}")
     client = ConfluenceClient()
     path_to_id: dict[str, str] = {}
     results: list[dict[str, Any]] = []
