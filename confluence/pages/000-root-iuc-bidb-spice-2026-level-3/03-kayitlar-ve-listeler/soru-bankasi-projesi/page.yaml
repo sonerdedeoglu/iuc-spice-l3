@@ -1,16 +1,16 @@
+page_id: '137266316'
+space: SSSS
 title: Soru Bankası Projesi
-slug: soru-bankasi-projesi
-relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi
 parent_id: '137265786'
 parent_title: 03 - Kayıtlar ve Listeler
+version: 2
+url: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266316
 depth: 2
 status: active
-exported_at: '2026-07-13T13:00:27.075778+00:00'
+exported_at: '2026-07-14T07:34:04+00:00'
+children_count: 1
+relative_path: pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/soru-bankasi-projesi
+slug: soru-bankasi-projesi
 has_view_html: true
 view_file: body.view.html
 storage_file: body.storage.xhtml
-page_id: ''
-space: SSSS
-version: ''
-url: ''
-children_count: 0
