@@ -86,7 +86,7 @@
 <tr>
 <td><code>01 - S&uuml;re&ccedil; Dok&uuml;manları</code></td>
 <td>SR&Ccedil; s&uuml;re&ccedil; dok&uuml;manlarının s&uuml;re&ccedil; bazlı alt klas&ouml;rlerde saklanması</td>
-<td>26 s&uuml;re&ccedil; alt klas&ouml;r&uuml;</td>
+<td>LST.006 i&ccedil;inde tanımlanan g&uuml;ncel s&uuml;re&ccedil; setinin alt klas&ouml;rleri</td>
 <td>Dok&uuml;man Sorumlusu</td>
 <td>Yeni s&uuml;re&ccedil; oluşturulduğunda ilgili alt klas&ouml;r kullanılır</td>
 </tr>
@@ -111,7 +111,7 @@
 <td>Proje Geliştirme Y&ouml;netimi</td>
 <td>Kılavuz değiştiğinde LST.002/LST.003 g&uuml;ncellenir</td>
 </tr>
-<tr>
+<tr><td class="confluenceTd"><code>04 - Formlar</code></td><td class="confluenceTd">Genel form dok&uuml;manları</td><td class="confluenceTd">FRM şablon ve ortak formlar</td><td class="confluenceTd">Dok&uuml;man Sorumlusu</td><td class="confluenceTd">Form yapısı değiştiğinde g&uuml;ncellenir</td></tr><tr><td class="confluenceTd"><code>05 - Kılavuzlar</code></td><td class="confluenceTd">Kurumsal kılavuz ve talimatlar</td><td class="confluenceTd">KLV dok&uuml;manları</td><td class="confluenceTd">İlgili S&uuml;re&ccedil; Sahibi</td><td class="confluenceTd">Kılavuz değiştiğinde g&uuml;ncellenir</td></tr><tr><td class="confluenceTd"><code>06 - Politikalar</code></td><td class="confluenceTd">Kurumsal politikalar</td><td class="confluenceTd">PLT dok&uuml;manları</td><td class="confluenceTd">İlgili S&uuml;re&ccedil; Sahibi</td><td class="confluenceTd">Politika değiştiğinde g&uuml;ncellenir</td></tr><tr><td class="confluenceTd"><code>07 - Prosed&uuml;rler</code></td><td class="confluenceTd">Kurumsal prosed&uuml;rler</td><td class="confluenceTd">PRS dok&uuml;manları</td><td class="confluenceTd">İlgili S&uuml;re&ccedil; Sahibi</td><td class="confluenceTd">Prosed&uuml;r değiştiğinde g&uuml;ncellenir</td></tr><tr><td class="confluenceTd"><code>08 - Planlar</code></td><td class="confluenceTd">Kurumsal planlar</td><td class="confluenceTd">PLN dok&uuml;manları</td><td class="confluenceTd">İlgili Plan Sahibi</td><td class="confluenceTd">Plan değiştiğinde g&uuml;ncellenir</td></tr><tr><td class="confluenceTd"><code>09 - Raporlar</code></td><td class="confluenceTd">Kurumsal raporlar</td><td class="confluenceTd">RPR dok&uuml;manları</td><td class="confluenceTd">İlgili Rapor Sahibi</td><td class="confluenceTd">Rapor g&uuml;ncellendik&ccedil;e s&uuml;rd&uuml;r&uuml;l&uuml;r</td></tr><tr>
 <td><code>90 - Denetim Hazırlık</code></td>
 <td>Denetim hazırlık destek kayıtları</td>
 <td>Denetim &ouml;ncesi hazırlık notları ve kanıt paketleri</td>
@@ -125,13 +125,7 @@
 <td>Kalite G&uuml;vencesi</td>
 <td>İ&ccedil; denetim/g&ouml;zden ge&ccedil;irme yapıldık&ccedil;a g&uuml;ncellenir</td>
 </tr>
-<tr>
-<td><code>91 - İ&ccedil; Denetimler/S&uuml;re&ccedil; G&ouml;zden Ge&ccedil;irmeleri</code></td>
-<td>S&uuml;re&ccedil; bazlı LST.004 g&ouml;zden ge&ccedil;irme matrisleri</td>
-<td><code>İ&Uuml;C.BİDB.LST.004 - S&uuml;re&ccedil; G&ouml;zden Ge&ccedil;irme Matrisi ([SR&Ccedil;.xxx]).md</code></td>
-<td>Kalite G&uuml;vencesi</td>
-<td>S&uuml;re&ccedil; tasarımı ve yeniden değerlendirme sonrasında g&uuml;ncellenir</td>
-</tr>
+<tr><td class="confluenceTd"><code>91 - İ&ccedil; Denetimler/S&uuml;re&ccedil; G&ouml;zden Ge&ccedil;irmeleri</code></td><td class="confluenceTd">Doldurulmuş s&uuml;re&ccedil; değerlendirme kayıtları</td><td class="confluenceTd"><code>İ&Uuml;C.BİDB.FRM.001 - S&uuml;re&ccedil; G&ouml;zden Ge&ccedil;irme Formu ([SR&Ccedil;.xxx]) - Değerlendirme #1</code></td><td class="confluenceTd">Kalite Danışmanı</td><td class="confluenceTd">Değerlendirme y&uuml;r&uuml;t&uuml;ld&uuml;k&ccedil;e aynı kayıt &uuml;zerinde g&uuml;ncellenir</td></tr>
 </tbody>
 </table>
 <h2>3. S&uuml;re&ccedil; Dok&uuml;manları Alt Klas&ouml;rleri</h2>
@@ -383,7 +377,7 @@
 </tr>
 <tr>
 <td>Kanıt b&uuml;t&uuml;nl&uuml;ğ&uuml;</td>
-<td>Kritik iş &uuml;r&uuml;nleri LST.001, LST.002, LST.003 veya LST.004 ile ilişkilendirilir.</td>
+<td>Kritik iş &uuml;r&uuml;nleri LST.001, LST.002, LST.003 veya FRM.001 ile ilişkilendirilir.</td>
 </tr>
 </tbody>
 </table>
@@ -403,11 +397,7 @@
 <td><code>İ&Uuml;C.BİDB.SR&Ccedil;.xxx - [S&uuml;re&ccedil; Adı].md</code></td>
 <td><code>01 - S&uuml;re&ccedil; Dok&uuml;manları/İ&Uuml;C.BİDB.SR&Ccedil;.xxx - [S&uuml;re&ccedil; Adı]</code></td>
 </tr>
-<tr>
-<td>S&uuml;re&ccedil; g&ouml;zden ge&ccedil;irme matrisi</td>
-<td><code>İ&Uuml;C.BİDB.LST.004 - S&uuml;re&ccedil; G&ouml;zden Ge&ccedil;irme Matrisi (İ&Uuml;C.BİDB.SR&Ccedil;.xxx).md</code></td>
-<td><code>91 - İ&ccedil; Denetimler/S&uuml;re&ccedil; G&ouml;zden Ge&ccedil;irmeleri</code></td>
-</tr>
+<tr><td class="confluenceTd">S&uuml;re&ccedil; g&ouml;zden ge&ccedil;irme formu</td><td class="confluenceTd"><code>İ&Uuml;C.BİDB.FRM.001 - S&uuml;re&ccedil; G&ouml;zden Ge&ccedil;irme Formu (İ&Uuml;C.BİDB.SR&Ccedil;.xxx) - Değerlendirme #1</code></td><td class="confluenceTd"><code>91 - İ&ccedil; Denetimler/S&uuml;re&ccedil; G&ouml;zden Ge&ccedil;irmeleri</code></td></tr>
 <tr>
 <td>İş &uuml;r&uuml;nleri ve kalite kriterleri listesi</td>
 <td><code>İ&Uuml;C.BİDB.LST.008 - İş &Uuml;r&uuml;nleri ve Kalite Kriterleri Listesi (İ&Uuml;C.BİDB.SR&Ccedil;.xxx).md</code></td>
@@ -458,7 +448,7 @@
 <tr>
 <td>v0.3</td>
 <td>30-06-2026</td>
-<td><code>01 - S&uuml;re&ccedil; Dok&uuml;manları</code> klas&ouml;r&uuml; ve 26 s&uuml;re&ccedil; alt klas&ouml;r&uuml; repository yapısına işlendi.</td>
+<td><code>01 - S&uuml;re&ccedil; Dok&uuml;manları</code> klas&ouml;r&uuml; ve LST.006 i&ccedil;inde tanımlanan g&uuml;ncel s&uuml;re&ccedil; setinin alt klas&ouml;rleri repository yapısına işlendi.</td>
 <td>Soner DEDEOĞLU - Kalite Danışmanı</td>
 <td><code>&lt;Rol / kişi&gt;</code></td>
 <td><code>&lt;Onay bilgisi&gt;</code></td>

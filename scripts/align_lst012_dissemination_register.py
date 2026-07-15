@@ -37,6 +37,22 @@ PAGES = {
         "İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci",
         "https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265862",
     ),
+    "SRÇ.005": (
+        "İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci",
+        "https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265863",
+    ),
+    "SRÇ.006": (
+        "İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci",
+        "https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265864",
+    ),
+    "SRÇ.021": (
+        "İÜC.BİDB.SRÇ.021 - Bilgi Yönetimi Süreci",
+        "https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265879",
+    ),
+    "SRÇ.023": (
+        "İÜC.BİDB.SRÇ.023 - Organizasyonel Yönetim Süreci",
+        "https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265881",
+    ),
 }
 
 
@@ -96,6 +112,46 @@ def body(view: bool) -> str:
                 page_link("SRÇ.004", view),
                 t("Yayın doğrulandı; hedef kitleye ayrı bir duyuru yapıldığı henüz doğrulanmadı. Bilgilendirme bekleniyor."),
             ],
+            [
+                t("14-07-2026"),
+                t(PAGES["SRÇ.005"][0]),
+                t("SRÇ.005 Süreç Değerlendirme Süreci, PRS.003, PLN.001, RPR.001, ilgili şablonlar ve süreç özel destek dokümanlarının Confluence yayını"),
+                t("Süreç sahibi, gözden geçiren, onaycı, proje yöneticisi, kalite danışmanı ve ilgili süreç sahipleri"),
+                t("Confluence yayını"),
+                t("Proje Yöneticisi / Yayımlayan"),
+                page_link("SRÇ.005", view),
+                t("Yayın doğrulandı; hedef kitleye ayrı bir duyuru yapıldığı henüz doğrulanmadı. Bilgilendirme bekleniyor."),
+            ],
+            [
+                t("15-07-2026"),
+                t(PAGES["SRÇ.006"][0]),
+                t("SRÇ.006 Süreç İyileştirme Süreci, PRS.004, PLN.002.Ş, RPR.001 güncellemesi ve süreç özel destek dokümanlarının Confluence yayını"),
+                t("Süreç sahibi, gözden geçiren, onaycı, proje yöneticisi, kalite danışmanı ve ilgili süreç sahipleri"),
+                t("Confluence yayını"),
+                t("Proje Yöneticisi / Yayımlayan"),
+                page_link("SRÇ.006", view),
+                t("Yayın ve iki PNG eki doğrulandı; hedef kitleye ayrı bir duyuru yapıldığı henüz doğrulanmadı. Bilgilendirme bekleniyor."),
+            ],
+            [
+                t("15-07-2026"),
+                t(PAGES["SRÇ.021"][0]),
+                t("SRÇ.021 Bilgi Yönetimi Süreci, PRS.005, LST.002, LST.004, ilgili şablonlar, RPR.001 güncellemesi ve süreç özel destek dokümanlarının Confluence yayını"),
+                t("Süreç sahibi, gözden geçiren, onaycı, proje yöneticisi, kalite danışmanı, ilgili uzmanlar ve bilgi kullanıcıları"),
+                t("Confluence yayını"),
+                t("Proje Yöneticisi / Yayımlayan"),
+                page_link("SRÇ.021", view),
+                t("Yayın ve iki PNG eki doğrulandı; hedef kitleye ayrı bir duyuru yapıldığı henüz doğrulanmadı. Bilgilendirme bekleniyor."),
+            ],
+            [
+                t("15-07-2026"),
+                t(PAGES["SRÇ.023"][0]),
+                t("SRÇ.023 Organizasyonel Yönetim Süreci, PRS.006, FRM.002.Ş, LST.013.Ş, LST.013, RPR.001 güncellemesi ve süreç özel destek dokümanlarının Confluence yayını"),
+                t("Süreç sahibi, gözden geçiren, onaycı, proje yöneticisi, kalite danışmanı, ilgili süreç sahipleri ve yönetim/personel bağlantılarını kullanacak roller"),
+                t("Confluence yayını"),
+                t("Proje Yöneticisi / Yayımlayan"),
+                page_link("SRÇ.023", view),
+                t("Yayın ve iki PNG eki doğrulandı; hedef kitleye ayrı bir duyuru yapıldığı henüz doğrulanmadı. Bilgilendirme bekleniyor."),
+            ],
         ],
         view,
     ))
@@ -137,12 +193,17 @@ def verify(storage: str) -> None:
         TEMPLATE,
         "SRÇ.001 Dokümantasyon Süreci",
         "SRÇ.004 Süreç Kurulumu Süreci",
+        "SRÇ.005 Süreç Değerlendirme Süreci",
+        "SRÇ.006 Süreç İyileştirme Süreci",
+        "SRÇ.021 Bilgi Yönetimi Süreci",
+        "SRÇ.023 Organizasyonel Yönetim Süreci",
+        "RPR.001 güncellemesi",
         "Bilgilendirme bekleniyor",
     )
     missing = [item for item in required if item not in storage]
     if missing:
         raise RuntimeError(f"LST.012 zorunlu içerik eksik: {missing}")
-    forbidden = ("ŞBL.017", "LST.004", "Drive paylaşımı", "<Rol / kişi>", "<Onay bilgisi>")
+    forbidden = ("ŞBL.017", "Drive paylaşımı", "<Rol / kişi>", "<Onay bilgisi>")
     found = [item for item in forbidden if item in storage]
     if found:
         raise RuntimeError(f"LST.012 eski veya doğrulanmamış içerik barındırıyor: {found}")
@@ -200,14 +261,15 @@ def main() -> None:
         "\n".join([
             "# LST.012 Aktif Şablona Uyum Raporu",
             "",
-            "Tarih: 14-07-2026",
+            "Tarih: 15-07-2026",
             "",
             "- LST.012, aktif LST.012.Ş bölüm ve tablo yapısına taşındı.",
             "- LST.012.Ş ve LST.012 kayıt tablosuna Süreç sütunu eklendi.",
             "- Eski ŞBL.017 ve LST.004 referansları kaldırıldı.",
             "- Gerçek duyuru kanıtı olmayan hazırlık satırları tamamlanmış kayıt olarak taşınmadı.",
-            "- SRÇ.001 ve SRÇ.004 için doğrulanan Confluence yayınları kaydedildi.",
-            "- Ayrı hedef kitle duyurusu doğrulanmadığı için iki kayıt da 'Bilgilendirme bekleniyor' notuyla tutuldu.",
+            "- SRÇ.001, SRÇ.004 ve SRÇ.005 için doğrulanan Confluence yayınları kaydedildi.",
+            "- SRÇ.006, SRÇ.021 ve SRÇ.023 süreç paketleri ile ilgili PNG ekleri için doğrulanan Confluence yayınları kaydedildi.",
+            "- Ayrı hedef kitle duyurusu doğrulanmadığı için yayımlanmış kayıtlar 'Bilgilendirme bekleniyor' notuyla tutuldu.",
             "- Confluence yayını kullanıcı incelemesi ve onayından önce yapılmadı.",
             "",
         ]),

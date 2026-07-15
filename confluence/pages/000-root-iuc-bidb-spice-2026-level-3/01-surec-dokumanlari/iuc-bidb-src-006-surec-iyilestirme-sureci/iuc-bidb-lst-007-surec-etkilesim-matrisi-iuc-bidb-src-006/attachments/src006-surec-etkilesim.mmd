@@ -1,0 +1,15 @@
+flowchart LR
+A["SRÇ.005 Değerlendirme sonuçları"] --> I["SRÇ.006 Süreç İyileştirme"]
+B["SRÇ.026 Denetim sonuçları"] --> I
+C["SRÇ.017 Problem çözüm sonuçları"] --> I
+D["LST.009 ve RPR.001 performans sonuçları"] --> I
+E["SRÇ.008 Risk sonuçları"] --> I
+F["SRÇ.007 Öğrenilmiş dersler"] --> I
+G["SRÇ.002 Müşteri memnuniyeti ve YGG çıktıları"] --> I
+H["Kullanıcı ve paydaş geri bildirimleri"] --> I
+I <--> J["SRÇ.018 Değişiklik kaydı ve uygulama"]
+I --> K["PLN.002 Süreç İyileştirme Planı"]
+J --> L["SRÇ.018 Değişiklik gözden geçirme sonucu"]
+L --> M["RPR.001 Süreç Performansları Raporu"]
+L --> N["LST.012 Yaygınlaştırma ve bilgilendirme"]
+L --> O["Yeniden kullanım kararı ve yeni SRÇ.018 kayıtları"]

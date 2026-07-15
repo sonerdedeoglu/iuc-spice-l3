@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish only the approved SRÇ.001 and SRÇ.004 flowchart PNG attachments.
+"""Publish approved process flowchart PNG attachments.
 
 The command is intentionally scoped to two known process pages and supports a
 mandatory dry-run before any Confluence write.
@@ -26,11 +26,37 @@ SPECS = [
         "folder": PAGES_ROOT / "iuc-bidb-src-001-dokumantasyon-sureci",
         "title": "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci",
         "filename": unicodedata.normalize("NFD", "İÜC.BİDB.SRÇ.001 - Flowchart.png"),
+        "process": "SRÇ.001",
     },
     {
         "folder": PAGES_ROOT / "iuc-bidb-src-004-surec-kurulumu-sureci",
         "title": "İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci",
         "filename": unicodedata.normalize("NFD", "İÜC.BİDB.SRÇ.004 - Flowchart.png"),
+        "process": "SRÇ.004",
+    },
+    {
+        "folder": PAGES_ROOT / "iuc-bidb-src-005-surec-degerlendirme-sureci",
+        "title": "İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci",
+        "filename": unicodedata.normalize("NFD", "İÜC.BİDB.SRÇ.005 - Flowchart.png"),
+        "process": "SRÇ.005",
+    },
+    {
+        "folder": PAGES_ROOT / "iuc-bidb-src-006-surec-iyilestirme-sureci",
+        "title": "İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci",
+        "filename": unicodedata.normalize("NFD", "İÜC.BİDB.SRÇ.006 - Flowchart.png"),
+        "process": "SRÇ.006",
+    },
+    {
+        "folder": PAGES_ROOT / "iuc-bidb-src-021-bilgi-yonetimi-sureci",
+        "title": "İÜC.BİDB.SRÇ.021 - Bilgi Yönetimi Süreci",
+        "filename": unicodedata.normalize("NFD", "İÜC.BİDB.SRÇ.021 - Flowchart.png"),
+        "process": "SRÇ.021",
+    },
+    {
+        "folder": PAGES_ROOT / "iuc-bidb-src-023-organizasyonel-yonetim-sureci",
+        "title": "İÜC.BİDB.SRÇ.023 - Organizasyonel Yönetim Süreci",
+        "filename": unicodedata.normalize("NFD", "İÜC.BİDB.SRÇ.023 - Flowchart.png"),
+        "process": "SRÇ.023",
     },
 ]
 
@@ -123,13 +149,15 @@ def write_report(results: list[dict[str, Any]], dry_run: bool) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Publish SRÇ.001/SRÇ.004 flowchart PNG attachments")
+    parser = argparse.ArgumentParser(description="Publish approved process flowchart PNG attachments")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--process", action="append", choices=sorted({spec["process"] for spec in SPECS}), help="Publish only the selected process; may be repeated")
     args = parser.parse_args()
 
     client = ConfluenceClient()
     results: list[dict[str, Any]] = []
-    for spec in SPECS:
+    selected = set(args.process or [])
+    for spec in (item for item in SPECS if not selected or item["process"] in selected):
         page_id, path, size = validate_local(spec)
         attachments = list_attachments(client, page_id)
         existing = find_attachment(attachments, spec["filename"])

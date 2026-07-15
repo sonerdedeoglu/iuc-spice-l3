@@ -190,6 +190,10 @@ def authority_rows() -> list[list[str]]:
 
 
 def build_storage() -> str:
+    # Keep regenerated records on the SRÇ.006 reference structure.
+    from align_lst010_to_src006_structure import process_body, src001
+    return process_body(src001())
+
     parts: list[str] = []
     parts.append("<h2>1. Liste Özeti</h2>")
     parts.append(table(["Alan", "Değer"], [

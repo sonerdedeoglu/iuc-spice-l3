@@ -1,0 +1,22 @@
+flowchart TD
+A["Değerlendirme, denetim, performans, risk veya geri bildirim girdisi"] --> B["SRÇ.018 değişiklik kaydı açılır"]
+B --> C["Ön değerlendirme ve etki analizi yapılır"]
+C --> D{"İyileştirme fırsatı mı?"}
+D -- "Hayır" --> E["Normal değişiklik SRÇ.018 akışında sürdürülür"]
+D -- "Evet" --> F["Mevcut durum, gerekçe ve iyileştirme hedefi belirlenir"]
+F --> G["Kaynak taahhüdü ile onay yetkisi netleştirilir"]
+G --> H["Etki ve uygulama önceliği ayrı ayrı belirlenir"]
+H --> I{"Kapsamlı plan gerekli mi?"}
+I -- "Hayır" --> J["Faaliyetler SRÇ.018 kaydında planlanır"]
+I -- "Evet" --> K["PLN.002 Süreç İyileştirme Planı hazırlanır"]
+J --> L["Değişiklik SRÇ.018 kapsamında uygulanır"]
+K --> L
+L --> M["SRÇ.018 değişiklik gözden geçirmesi yapılır"]
+M --> N{"İyileştirme hedefi gerçekleşti mi?"}
+N -- "Hayır" --> C
+N -- "Evet" --> O["Sonuç raporlanır ve ilgili taraflara duyurulur"]
+O --> P["Başka süreçlerde yeniden kullanım değerlendirilir"]
+P --> Q{"Yeni uygulama alanı var mı?"}
+Q -- "Evet" --> R["Her yeni kapsam için ayrı SRÇ.018 kaydı açılır"]
+Q -- "Hayır" --> S["İyileştirme kapatılır"]
+R --> B

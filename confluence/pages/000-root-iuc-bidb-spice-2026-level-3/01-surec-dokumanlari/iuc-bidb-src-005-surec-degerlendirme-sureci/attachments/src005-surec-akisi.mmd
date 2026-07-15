@@ -1,0 +1,15 @@
+flowchart TD
+A[Yıllık takvim veya değerlendirme tetikleyicisi] --> B[Değerlendirme hedefi ve kapsamı belirlenir]
+B --> C[Süreç sahibi ve ilgili taraflarla takvim ve kaynaklar netleştirilir]
+C --> D[BP ve PA/GP için mevcut tanım ve kanıtlar toplanır]
+D --> E[Değerlendirme verileri doğrulanır]
+E --> F[Veriler analiz edilir ve etiketler atanır]
+F --> G[Bulgular sınıflandırılır]
+G --> H{Bulgu türü}
+H -- Uygunsuzluk --> I[SRÇ.017 üzerinden düzeltici ve iyileştirici faaliyet]
+H -- İyileştirme fırsatı --> J[SRÇ.018'e aktarım]
+H -- Gözlem veya güçlü uygulama --> K[Değerlendirme kaydında izleme]
+I --> L[Sonuçlar gözden geçirilir ve onaylanır]
+J --> L
+K --> L
+L --> M[Değerlendirme kaydı ve RPR.001 güncellenir]

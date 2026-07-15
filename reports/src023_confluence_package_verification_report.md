@@ -1,0 +1,96 @@
+# SRÇ.023 Confluence Paket Doğrulama Raporu
+
+Zaman: 2026-07-15T12:41:59.365270+00:00
+
+Doğrulanan sayfa sayısı: 18
+
+- **İÜC.BİDB.SRÇ.023 - Organizasyonel Yönetim Süreci**
+  - Sayfa ID / sürüm: 137265881 / 2
+  - Ebeveyn ID: 137265784
+  - Ek: başarılı (177574 bayt)
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265881
+- **İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.023)**
+  - Sayfa ID / sürüm: 137266505 / 1
+  - Ebeveyn ID: 137265881
+  - Ek: başarılı (179549 bayt)
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266505
+- **İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.023)**
+  - Sayfa ID / sürüm: 137266506 / 1
+  - Ebeveyn ID: 137265881
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266506
+- **İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.023)**
+  - Sayfa ID / sürüm: 137266507 / 1
+  - Ebeveyn ID: 137265881
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266507
+- **İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.023)**
+  - Sayfa ID / sürüm: 137266508 / 1
+  - Ebeveyn ID: 137265881
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266508
+- **İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.023)**
+  - Sayfa ID / sürüm: 137266166 / 4
+  - Ebeveyn ID: 137265881
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266166
+- **İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.023) - Değerlendirme #1**
+  - Sayfa ID / sürüm: 137266509 / 1
+  - Ebeveyn ID: 137265917
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266509
+- **İÜC.BİDB.PRS.006 - Organizasyonel Yönetim Prosedürü**
+  - Sayfa ID / sürüm: 137266502 / 1
+  - Ebeveyn ID: 137265790
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266502
+- **İÜC.BİDB.FRM.002.Ş - Toplantı Tutanağı Şablonu**
+  - Sayfa ID / sürüm: 137266497 / 1
+  - Ebeveyn ID: 137265785
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266497
+- **İÜC.BİDB.LST.013.Ş - Görev Tanımları ve Görevli Personel Listesi Şablonu**
+  - Sayfa ID / sürüm: 137266498 / 1
+  - Ebeveyn ID: 137265785
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266498
+- **İÜC.BİDB.LST.013 - Görev Tanımları ve Görevli Personel Listesi**
+  - Sayfa ID / sürüm: 137266501 / 1
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266501
+- **İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi**
+  - Sayfa ID / sürüm: 137265902 / 17
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265902
+- **İÜC.BİDB.LST.006 - Standart Süreç Envanteri**
+  - Sayfa ID / sürüm: 137265906 / 10
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265906
+- **İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı**
+  - Sayfa ID / sürüm: 137265912 / 8
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265912
+- **İÜC.BİDB.RPR.001 - Süreç Performansları Raporu**
+  - Sayfa ID / sürüm: 137266387 / 5
+  - Ebeveyn ID: 137266368
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266387
+- **02 - Şablonlar**
+  - Sayfa ID / sürüm: 137265785 / 12
+  - Ebeveyn ID: 137265781
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265785
+- **03 - Kayıtlar ve Listeler**
+  - Sayfa ID / sürüm: 137265786 / 7
+  - Ebeveyn ID: 137265781
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265786
+- **07 - Prosedürler**
+  - Sayfa ID / sürüm: 137265790 / 8
+  - Ebeveyn ID: 137265781
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265790

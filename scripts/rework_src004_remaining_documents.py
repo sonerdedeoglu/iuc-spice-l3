@@ -184,6 +184,11 @@ def lst009_data(view: bool) -> str:
 
 
 def lst010_data(view: bool) -> str:
+    # LST.010 is maintained in the SRÇ.006 role-column structure.
+    from align_lst010_to_src006_structure import build_view, process_body, src004
+    storage = process_body(src004())
+    return build_view(LST010, storage) if view else storage
+
     parts: list[str] = ["<h2>1. Liste Özeti</h2>"]
     parts.append(table(["Alan", "Değer"], [
         [t("İlgili Süreç"), t(SRC004_TITLE)],

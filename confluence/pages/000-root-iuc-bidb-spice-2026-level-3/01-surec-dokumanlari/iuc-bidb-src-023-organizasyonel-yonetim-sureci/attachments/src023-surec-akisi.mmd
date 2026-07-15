@@ -1,0 +1,21 @@
+%%{init: {'flowchart': {'htmlLabels': false}}}%%
+flowchart TD
+A["Kurumsal hedefler, mevzuat, süreç ve performans girdileri"] --> B["Yönetim altyapısı ve uygulamaları belirlenir"]
+B --> C["Kurumsal rol ve yetkiler ile süreç RACI yapıları doğrulanır"]
+C --> D["Yönetim uygulamaları süreçlerde yürütülür"]
+D --> E["RPR.001, FRM.001 ve doğal yönetim kayıtları hazırlanır"]
+E --> F{"Yıllık veya olağanüstü YGG gerekli mi?"}
+F -- "Hayır" --> D
+F -- "Evet" --> G["YGG girdileri ve gündemi hazırlanır"]
+G --> H["YGG gerçekleştirilir ve FRM.002 ile kaydedilir"]
+H --> I["Kararlar, sorumlular, hedef tarihler ve takip koordinatörleri atanır"]
+I --> J{"Karar türü"}
+J -- "Problem veya uygunsuzluk" --> K["SRÇ.017"]
+J -- "Değişiklik veya iyileştirme" --> L["SRÇ.018 ve gerekirse SRÇ.006"]
+J -- "Eğitim, altyapı, değerlendirme veya bilgi" --> M["İlgili destek süreci"]
+K --> N["Uygulama sonucu ve kanıt bağlantısı güncellenir"]
+L --> N
+M --> N
+N --> O["Takip koordinatörü sonucu doğrular ve aksiyonu kapatır"]
+O --> P["Açık aksiyonlar sonraki YGG girdisi olur"]
+P --> D

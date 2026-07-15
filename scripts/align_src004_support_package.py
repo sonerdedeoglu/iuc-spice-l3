@@ -404,6 +404,10 @@ def load_inventory_rows() -> list[list[str]]:
                     owner, status, note = "Levent BAYEZİT - Proje Yöneticisi", "Aktif", "Süreç paketi oluşturulmuş ve süreç özel kayıtlarıyla yönetilmektedir."
                 elif corporate_code == "İÜC.BİDB.SRÇ.004":
                     owner, status, note = PROCESS_OWNER, "Aktif", "Süreç paketi güncel aktif şablonlara göre yerelde tamamlanmaktadır."
+                elif corporate_code == "İÜC.BİDB.SRÇ.005":
+                    owner, status, note = PROCESS_OWNER, "Aktif", "Süreç paketi oluşturulmuş, Confluence'ta yayımlanmış ve süreç özel kayıtlarıyla yönetilmektedir."
+                elif corporate_code == "İÜC.BİDB.SRÇ.006":
+                    owner, status, note = PROCESS_OWNER, "Aktif", "Süreç paketi oluşturulmuş, Confluence'ta yayımlanmış ve süreç özel kayıtlarıyla yönetilmektedir."
                 else:
                     owner, status, note = "İlgili süreç çalışmasında belirlenecek", "Taslak", "Süreç sahibi, kapsamı ve süreç özel paketi ilgili süreç çalışmasında doğrulanacaktır."
                 output.append([standard_code, standard_name, corporate_code, corporate_name, owner, status, note])

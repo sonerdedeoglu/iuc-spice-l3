@@ -177,7 +177,7 @@
 <tr>
 <td class="confluenceTd"><code>01 - Süreç Dokümanları</code></td>
 <td class="confluenceTd">SRÇ süreç dokümanlarının süreç bazlı alt klasörlerde saklanması</td>
-<td class="confluenceTd">26 süreç alt klasörü</td>
+<td class="confluenceTd">LST.006 içinde tanımlanan güncel süreç setinin alt klasörleri</td>
 <td class="confluenceTd">Doküman Sorumlusu</td>
 <td class="confluenceTd">Yeni süreç oluşturulduğunda ilgili alt klasör kullanılır</td>
 </tr>
@@ -202,7 +202,7 @@
 <td class="confluenceTd">Proje Geliştirme Yönetimi</td>
 <td class="confluenceTd">Kılavuz değiştiğinde LST.002/LST.003 güncellenir</td>
 </tr>
-<tr>
+<tr><td class="confluenceTd"><code>04 - Formlar</code></td><td class="confluenceTd">Genel form dokümanları</td><td class="confluenceTd">FRM şablon ve ortak formlar</td><td class="confluenceTd">Doküman Sorumlusu</td><td class="confluenceTd">Form yapısı değiştiğinde güncellenir</td></tr><tr><td class="confluenceTd"><code>05 - Kılavuzlar</code></td><td class="confluenceTd">Kurumsal kılavuz ve talimatlar</td><td class="confluenceTd">KLV dokümanları</td><td class="confluenceTd">İlgili Süreç Sahibi</td><td class="confluenceTd">Kılavuz değiştiğinde güncellenir</td></tr><tr><td class="confluenceTd"><code>06 - Politikalar</code></td><td class="confluenceTd">Kurumsal politikalar</td><td class="confluenceTd">PLT dokümanları</td><td class="confluenceTd">İlgili Süreç Sahibi</td><td class="confluenceTd">Politika değiştiğinde güncellenir</td></tr><tr><td class="confluenceTd"><code>07 - Prosedürler</code></td><td class="confluenceTd">Kurumsal prosedürler</td><td class="confluenceTd">PRS dokümanları</td><td class="confluenceTd">İlgili Süreç Sahibi</td><td class="confluenceTd">Prosedür değiştiğinde güncellenir</td></tr><tr><td class="confluenceTd"><code>08 - Planlar</code></td><td class="confluenceTd">Kurumsal planlar</td><td class="confluenceTd">PLN dokümanları</td><td class="confluenceTd">İlgili Plan Sahibi</td><td class="confluenceTd">Plan değiştiğinde güncellenir</td></tr><tr><td class="confluenceTd"><code>09 - Raporlar</code></td><td class="confluenceTd">Kurumsal raporlar</td><td class="confluenceTd">RPR dokümanları</td><td class="confluenceTd">İlgili Rapor Sahibi</td><td class="confluenceTd">Rapor güncellendikçe sürdürülür</td></tr><tr>
 <td class="confluenceTd"><code>90 - Denetim Hazırlık</code></td>
 <td class="confluenceTd">Denetim hazırlık destek kayıtları</td>
 <td class="confluenceTd">Denetim öncesi hazırlık notları ve kanıt paketleri</td>
@@ -216,13 +216,7 @@
 <td class="confluenceTd">Kalite Güvencesi</td>
 <td class="confluenceTd">İç denetim/gözden geçirme yapıldıkça güncellenir</td>
 </tr>
-<tr>
-<td class="confluenceTd"><code>91 - İç Denetimler/Süreç Gözden Geçirmeleri</code></td>
-<td class="confluenceTd">Süreç bazlı LST.004 gözden geçirme matrisleri</td>
-<td class="confluenceTd"><code>İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi ([SRÇ.xxx]).md</code></td>
-<td class="confluenceTd">Kalite Güvencesi</td>
-<td class="confluenceTd">Süreç tasarımı ve yeniden değerlendirme sonrasında güncellenir</td>
-</tr>
+<tr><td class="confluenceTd"><code>91 - İç Denetimler/Süreç Gözden Geçirmeleri</code></td><td class="confluenceTd">Doldurulmuş süreç değerlendirme kayıtları</td><td class="confluenceTd"><code>İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu ([SRÇ.xxx]) - Değerlendirme #1</code></td><td class="confluenceTd">Kalite Danışmanı</td><td class="confluenceTd">Değerlendirme yürütüldükçe aynı kayıt üzerinde güncellenir</td></tr>
 </tbody>
 </table></div>
 <h2 id="id-İÜC.BİDB.LST.011RepositoryYapısı-3.SüreçDokümanlarıAltKlasörleri">3. Süreç Dokümanları Alt Klasörleri</h2>
@@ -474,7 +468,7 @@
 </tr>
 <tr>
 <td class="confluenceTd">Kanıt bütünlüğü</td>
-<td class="confluenceTd">Kritik iş ürünleri LST.001, LST.002, LST.003 veya LST.004 ile ilişkilendirilir.</td>
+<td class="confluenceTd">Kritik iş ürünleri LST.001, LST.002, LST.003 veya FRM.001 ile ilişkilendirilir.</td>
 </tr>
 </tbody>
 </table></div>
@@ -494,11 +488,7 @@
 <td class="confluenceTd"><code>İÜC.BİDB.SRÇ.xxx - [Süreç Adı].md</code></td>
 <td class="confluenceTd"><code>01 - Süreç Dokümanları/İÜC.BİDB.SRÇ.xxx - [Süreç Adı]</code></td>
 </tr>
-<tr>
-<td class="confluenceTd">Süreç gözden geçirme matrisi</td>
-<td class="confluenceTd"><code>İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.xxx).md</code></td>
-<td class="confluenceTd"><code>91 - İç Denetimler/Süreç Gözden Geçirmeleri</code></td>
-</tr>
+<tr><td class="confluenceTd">Süreç gözden geçirme formu</td><td class="confluenceTd"><code>İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.xxx) - Değerlendirme #1</code></td><td class="confluenceTd"><code>91 - İç Denetimler/Süreç Gözden Geçirmeleri</code></td></tr>
 <tr>
 <td class="confluenceTd">İş ürünleri ve kalite kriterleri listesi</td>
 <td class="confluenceTd"><code>İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.xxx).md</code></td>
@@ -549,7 +539,7 @@
 <tr>
 <td class="confluenceTd">v0.3</td>
 <td class="confluenceTd">30-06-2026</td>
-<td class="confluenceTd"><code>01 - Süreç Dokümanları</code> klasörü ve 26 süreç alt klasörü repository yapısına işlendi.</td>
+<td class="confluenceTd"><code>01 - Süreç Dokümanları</code> klasörü ve LST.006 içinde tanımlanan güncel süreç setinin alt klasörleri repository yapısına işlendi.</td>
 <td class="confluenceTd">Soner DEDEOĞLU - Kalite Danışmanı</td>
 <td class="confluenceTd"><code>&lt;Rol / kişi&gt;</code></td>
 <td class="confluenceTd"><code>&lt;Onay bilgisi&gt;</code></td>

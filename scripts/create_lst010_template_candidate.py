@@ -73,6 +73,10 @@ def record_version_history_rows() -> list[list[str]]:
 
 
 def build_storage() -> str:
+    # Keep future candidates on the same structure as the active SRÇ.006 model.
+    from align_lst010_to_src006_structure import template_body
+    return template_body()
+
     parts: list[str] = []
 
     parts.append("<h2>0. Liste Hakkında</h2>")

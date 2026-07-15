@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish the approved SRÇ.001/SRÇ.004 LST.007 Mermaid PNG attachments."""
+"""Publish approved process-specific LST.007 Mermaid PNG attachments."""
 from __future__ import annotations
 
 import argparse
@@ -22,11 +22,37 @@ SPECS = [
         "folder": PAGES / "iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001",
         "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001)",
         "filename": "src001-surec-etkilesim.png",
+        "process": "SRÇ.001",
     },
     {
         "folder": PAGES / "iuc-bidb-src-004-surec-kurulumu-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-004",
         "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004)",
         "filename": "src004-surec-etkilesim.png",
+        "process": "SRÇ.004",
+    },
+    {
+        "folder": PAGES / "iuc-bidb-src-005-surec-degerlendirme-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-005",
+        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.005)",
+        "filename": "src005-surec-etkilesim.png",
+        "process": "SRÇ.005",
+    },
+    {
+        "folder": PAGES / "iuc-bidb-src-006-surec-iyilestirme-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-006",
+        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.006)",
+        "filename": "src006-surec-etkilesim.png",
+        "process": "SRÇ.006",
+    },
+    {
+        "folder": PAGES / "iuc-bidb-src-021-bilgi-yonetimi-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-021",
+        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.021)",
+        "filename": "src021-surec-etkilesim.png",
+        "process": "SRÇ.021",
+    },
+    {
+        "folder": PAGES / "iuc-bidb-src-023-organizasyonel-yonetim-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-023",
+        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.023)",
+        "filename": "src023-surec-etkilesim.png",
+        "process": "SRÇ.023",
     },
 ]
 
@@ -39,10 +65,10 @@ def load_yaml(path: Path) -> dict[str, Any]:
     return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
 
-def validate_local(spec: dict[str, Any]) -> tuple[str, Path, int]:
+def validate_local(spec: dict[str, Any], allow_missing_page_id: bool = False) -> tuple[str, Path, int]:
     metadata = load_yaml(spec["folder"] / "page.yaml")
     page_id = str(metadata.get("page_id") or "").strip()
-    if not page_id:
+    if not page_id and not allow_missing_page_id:
         raise RuntimeError(f"Confluence page_id eksik: {spec['title']}")
     if nfc(str(metadata.get("title") or "")) != nfc(spec["title"]):
         raise RuntimeError(f"Sayfa başlığı uyuşmuyor: {spec['title']}")
@@ -100,14 +126,20 @@ def write_report(results: list[dict[str, Any]], dry_run: bool) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Publish approved LST.007 Mermaid PNG attachments")
+    parser = argparse.ArgumentParser(description="Publish approved process-specific LST.007 Mermaid PNG attachments")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--process", action="append", choices=sorted({spec["process"] for spec in SPECS}), help="Publish only the selected process; may be repeated")
     args = parser.parse_args()
 
     client = ConfluenceClient()
     results: list[dict[str, Any]] = []
-    for spec in SPECS:
-        page_id, path, size = validate_local(spec)
+    selected = set(args.process or [])
+    for spec in (item for item in SPECS if not selected or item["process"] in selected):
+        page_id, path, size = validate_local(spec, allow_missing_page_id=args.dry_run)
+        if args.dry_run and not page_id:
+            print(f"[DRY-RUN] CREATE {spec['title']} — {spec['filename']} (sayfa yayını sonrasında)")
+            results.append({"action": "CREATE", "title": spec["title"], "filename": spec["filename"], "size": size, "verified": "sayfa yayını sonrasında planlandı"})
+            continue
         remote_page = client.get_page(page_id)
         if nfc(str(remote_page.get("title") or "")) != nfc(spec["title"]):
             raise RuntimeError(f"Uzak sayfa başlığı uyuşmuyor: {spec['title']}")
