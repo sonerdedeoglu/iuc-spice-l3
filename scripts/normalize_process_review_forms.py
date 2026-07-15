@@ -7,7 +7,7 @@ Fixes:
 - Rebuild body.view.html with one visible title.
 - Rename local folders and update page.yaml + confluence/index.yaml.
 
-This script only touches generated İÜC.BİDB.FRM.001 process review forms under:
+This script only touches generated FRM.001 process review forms under:
 confluence/pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/
 """
 from __future__ import annotations
@@ -69,7 +69,7 @@ def e(value: object) -> str:
 
 
 def desired_title(process_code: str) -> str:
-    return f"İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu ({process_code})"
+    return f"FRM.001 - Süreç Gözden Geçirme Formu ({process_code})"
 
 
 def strip_leading_h1(body: str) -> str:
@@ -145,7 +145,7 @@ def normalize_folder(folder: Path) -> dict[str, Any]:
     meta["relative_path"] = relative_path
     meta["storage_file"] = "body.storage.xhtml"
     meta["view_file"] = "body.view.html"
-    meta["document_code"] = "İÜC.BİDB.FRM.001"
+    meta["document_code"] = "FRM.001"
     meta["related_process_code"] = process_code
 
     storage_path.write_text(storage_body, encoding="utf-8")

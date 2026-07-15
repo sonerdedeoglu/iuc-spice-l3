@@ -1,0 +1,45 @@
+flowchart LR
+  SRC004["SRÇ.004
+Süreç Kurulumu"]
+  SRC001["SRÇ.001
+Dokümantasyon Süreci"]
+  PRS001["PRS.001
+Yazılım Projesi
+Dokümantasyon Stratejisi"]
+  KLV001["KLV.001
+Doküman Yazım
+Kuralları"]
+  LST001["LST.001
+Aktif Dokümanlar"]
+  LST002["LST.002
+Değişiklik Kaydı"]
+  LST003["LST.003
+Gözden Geçirme Kaydı"]
+  LST008["LST.008
+İş Ürünleri ve
+Kalite Kriterleri"]
+  LST009["LST.009
+Performans Ölçüm Seti"]
+  LST010["LST.010
+RACI Matrisi"]
+  SRC002["SRÇ.002
+Kalite Güvencesi"]
+  SRC005["SRÇ.005
+Süreç Değerlendirme"]
+  PROJECTS["Yazılım Projeleri
+Doküman/Kayıt Seti"]
+  ALL["Diğer Süreçler
+ve Dokümanlar"]
+  SRC004 -->|"süreç yapısı / doküman ihtiyacı"| SRC001
+  SRC001 -->|"proje dokümantasyon stratejisi"| PRS001
+  SRC001 -->|"yazım ve format kuralları"| KLV001
+  SRC001 -->|"aktif doküman envanteri"| LST001
+  SRC001 -->|"değişiklik izleme"| LST002
+  SRC001 -->|"gözden geçirme izleme"| LST003
+  SRC001 -->|"iş ürünü / kalite kriteri"| LST008
+  SRC001 -->|"ölçüm ve izleme"| LST009
+  SRC001 -->|"rol ve yetki"| LST010
+  PRS001 -->|"yaşam döngüsü doküman/kayıt seti"| PROJECTS
+  KLV001 -->|"ortak yazım standardı"| ALL
+  SRC001 -->|"doküman gözden geçirme kanıtları"| SRC002
+  SRC001 -->|"değerlendirme kanıtları"| SRC005

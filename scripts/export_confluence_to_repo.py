@@ -3,7 +3,9 @@ from html import escape
 from pathlib import Path
 import re
 import shutil
+import tempfile
 import unicodedata
+import uuid
 
 import yaml
 
@@ -202,10 +204,34 @@ def remove_path(path):
         return
 
     if path.is_dir() and not path.is_symlink():
-        shutil.rmtree(path)
+        stale_path = path.with_name(f".{path.name}.stale-{uuid.uuid4().hex}")
+        path.replace(stale_path)
+        shutil.rmtree(stale_path, ignore_errors=True)
         return
 
     path.unlink()
+
+
+def backup_support_assets():
+    backup_root = Path(tempfile.mkdtemp(prefix="iuc-spice-confluence-assets-"))
+
+    if not PAGES_DIR.exists():
+        return backup_root
+
+    for directory_name in ("assets", "attachments"):
+        for source in PAGES_DIR.rglob(directory_name):
+            if not source.is_dir():
+                continue
+
+            target = backup_root / source.relative_to(PAGES_DIR)
+            shutil.copytree(source, target, dirs_exist_ok=True)
+
+    return backup_root
+
+
+def restore_support_assets(backup_root):
+    if backup_root.exists():
+        shutil.copytree(backup_root, PAGES_DIR, dirs_exist_ok=True)
 
 
 def write_page_export(page, exported_at):
@@ -512,25 +538,32 @@ def main():
     )
     warnings = assign_export_paths(pages)
 
-    clear_generated_export_paths()
-    PAGES_DIR.mkdir(parents=True, exist_ok=True)
+    support_assets_backup = backup_support_assets()
 
-    for page in pages:
-        write_page_export(
-            page,
+    try:
+        clear_generated_export_paths()
+        PAGES_DIR.mkdir(parents=True, exist_ok=True)
+
+        for page in pages:
+            write_page_export(
+                page,
+                exported_at,
+            )
+            print(f"[EXPORT] {'  ' * page['depth']}{page['title']}")
+
+        restore_support_assets(support_assets_backup)
+        write_index(
+            manifest,
+            pages,
             exported_at,
         )
-        print(f"[EXPORT] {'  ' * page['depth']}{page['title']}")
+        write_report(
+            pages,
+            warnings,
+        )
+    finally:
+        shutil.rmtree(support_assets_backup, ignore_errors=True)
 
-    write_index(
-        manifest,
-        pages,
-        exported_at,
-    )
-    write_report(
-        pages,
-        warnings,
-    )
     print(f"[DONE] Confluence export completed. {len(pages)} pages exported.")
 
 

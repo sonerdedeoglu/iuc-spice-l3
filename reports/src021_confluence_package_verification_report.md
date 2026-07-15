@@ -1,0 +1,111 @@
+# SRÇ.021 Confluence Paket Doğrulama Raporu
+
+Zaman: 2026-07-15T13:26:40.530321+00:00
+
+Doğrulanan sayfa sayısı: 21
+
+- **SRÇ.021 - Bilgi Yönetimi Süreci**
+  - Sayfa ID / sürüm: 137265879 / 4
+  - Ebeveyn ID: 137265784
+  - Ek: başarılı (124527 bayt)
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265879
+- **LST.007 - Süreç Etkileşim Matrisi (SRÇ.021)**
+  - Sayfa ID / sürüm: 137266456 / 3
+  - Ebeveyn ID: 137265879
+  - Ek: başarılı (59792 bayt)
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266456
+- **LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.021)**
+  - Sayfa ID / sürüm: 137266457 / 3
+  - Ebeveyn ID: 137265879
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266457
+- **LST.009 - Süreç Performans Ölçüm Seti (SRÇ.021)**
+  - Sayfa ID / sürüm: 137266458 / 3
+  - Ebeveyn ID: 137265879
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266458
+- **LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.021)**
+  - Sayfa ID / sürüm: 137266459 / 3
+  - Ebeveyn ID: 137265879
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266459
+- **FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.021)**
+  - Sayfa ID / sürüm: 137266164 / 6
+  - Ebeveyn ID: 137265879
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266164
+- **FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.021) - Değerlendirme #1**
+  - Sayfa ID / sürüm: 137266460 / 3
+  - Ebeveyn ID: 137265917
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266460
+- **PRS.005 - Bilgi Yönetimi Prosedürü**
+  - Sayfa ID / sürüm: 137266450 / 3
+  - Ebeveyn ID: 137265790
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266450
+- **LST.002.Ş - Doküman Değişiklik Kaydı Şablonu**
+  - Sayfa ID / sürüm: 137266442 / 3
+  - Ebeveyn ID: 137265785
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266442
+- **LST.004.Ş - Bilgi Kataloğu Şablonu**
+  - Sayfa ID / sürüm: 137266443 / 3
+  - Ebeveyn ID: 137265785
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266443
+- **LST.002 - Doküman Değişiklik Kaydı**
+  - Sayfa ID / sürüm: 137265903 / 6
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265903
+- **LST.004 - Bilgi Kataloğu**
+  - Sayfa ID / sürüm: 137266448 / 3
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266448
+- **RPR.001.Ş - Süreç Performansları Raporu Şablonu**
+  - Sayfa ID / sürüm: 137266374 / 6
+  - Ebeveyn ID: 137265785
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266374
+- **RPR.001 - Süreç Performansları Raporu**
+  - Sayfa ID / sürüm: 137266387 / 6
+  - Ebeveyn ID: 137266368
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266387
+- **LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu**
+  - Sayfa ID / sürüm: 137266244 / 14
+  - Ebeveyn ID: 137265785
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266244
+- **LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.001)**
+  - Sayfa ID / sürüm: 137265845 / 9
+  - Ebeveyn ID: 137265842
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265845
+- **LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.004)**
+  - Sayfa ID / sürüm: 137265910 / 7
+  - Ebeveyn ID: 137265862
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265910
+- **LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.005)**
+  - Sayfa ID / sürüm: 137266399 / 4
+  - Ebeveyn ID: 137265863
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266399
+- **LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.006)**
+  - Sayfa ID / sürüm: 137266428 / 2
+  - Ebeveyn ID: 137265864
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266428
+- **LST.006 - Standart Süreç Envanteri**
+  - Sayfa ID / sürüm: 137265906 / 11
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265906
+- **LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı**
+  - Sayfa ID / sürüm: 137265912 / 9
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265912

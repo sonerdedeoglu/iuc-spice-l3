@@ -18,39 +18,39 @@ PREVIEW_DIR = ROOT / "reports" / "process_review_forms"
 ROOT_01_CODE = "ROOT-01"
 ROOT_91_CODE = "ROOT-91"
 TARGET_PARENT_TITLE = "Süreç Gözden Geçirmeleri"
-TEMPLATE_TITLE = "İÜC.BİDB.FRM.001.Ş - Süreç Gözden Geçirme Formu Şablonu"
-FORM_CODE = "İÜC.BİDB.FRM.0041"
+TEMPLATE_TITLE = "FRM.001.Ş - Süreç Gözden Geçirme Formu Şablonu"
+FORM_CODE = "FRM.0041"
 ASSESSOR = "Soner DEDEOĞLU - Kalite Danışmanı"
 DEFAULT_OWNER = "SÜREÇ SAHİBİ"
 FOLDER_PLACEHOLDER = "Bu sayfa, alt dokümanların gruplanması amacıyla oluşturulmuştur."
 
 PROCESS_ORDER = [
-    "İÜC.BİDB.SRÇ.001",
-    "İÜC.BİDB.SRÇ.002",
-    "İÜC.BİDB.SRÇ.003",
-    "İÜC.BİDB.SRÇ.004",
-    "İÜC.BİDB.SRÇ.005",
-    "İÜC.BİDB.SRÇ.006",
-    "İÜC.BİDB.SRÇ.007",
-    "İÜC.BİDB.SRÇ.008",
-    "İÜC.BİDB.SRÇ.009",
-    "İÜC.BİDB.SRÇ.010",
-    "İÜC.BİDB.SRÇ.011",
-    "İÜC.BİDB.SRÇ.012",
-    "İÜC.BİDB.SRÇ.013",
-    "İÜC.BİDB.SRÇ.014",
-    "İÜC.BİDB.SRÇ.015",
-    "İÜC.BİDB.SRÇ.016",
-    "İÜC.BİDB.SRÇ.017",
-    "İÜC.BİDB.SRÇ.018",
-    "İÜC.BİDB.SRÇ.019",
-    "İÜC.BİDB.SRÇ.020",
-    "İÜC.BİDB.SRÇ.021",
-    "İÜC.BİDB.SRÇ.022",
-    "İÜC.BİDB.SRÇ.023",
-    "İÜC.BİDB.SRÇ.024",
-    "İÜC.BİDB.SRÇ.025",
-    "İÜC.BİDB.SRÇ.026",
+    "SRÇ.001",
+    "SRÇ.002",
+    "SRÇ.003",
+    "SRÇ.004",
+    "SRÇ.005",
+    "SRÇ.006",
+    "SRÇ.007",
+    "SRÇ.008",
+    "SRÇ.009",
+    "SRÇ.010",
+    "SRÇ.011",
+    "SRÇ.012",
+    "SRÇ.013",
+    "SRÇ.014",
+    "SRÇ.015",
+    "SRÇ.016",
+    "SRÇ.017",
+    "SRÇ.018",
+    "SRÇ.019",
+    "SRÇ.020",
+    "SRÇ.021",
+    "SRÇ.022",
+    "SRÇ.023",
+    "SRÇ.024",
+    "SRÇ.025",
+    "SRÇ.026",
 ]
 
 REQUIRED_PA_2_1_IDS = [

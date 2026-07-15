@@ -14,7 +14,7 @@ REPORT_DIR = ROOT / "reports" / "placeholders"
 REPORT_PATH = REPORT_DIR / "templates_placeholder_style_report.md"
 
 ROOT_02_CODE = "ROOT-02"
-TEMPLATE_TITLE_PREFIX = "İÜC.BİDB.ŞBL."
+TEMPLATE_TITLE_PREFIX = "ŞBL."
 
 PROTECTED_PATTERN = re.compile(
     r"(<ac:link\b.*?</ac:link>|"

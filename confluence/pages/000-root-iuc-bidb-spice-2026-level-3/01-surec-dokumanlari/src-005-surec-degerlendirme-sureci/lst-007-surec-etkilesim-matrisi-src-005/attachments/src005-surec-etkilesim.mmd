@@ -1,0 +1,10 @@
+flowchart LR
+PLN[PLN.001 Süreç Kalite Planı] --> SRC[SRÇ.005 Süreç Değerlendirme]
+SET[LST.006 ve süreç paketleri] --> SRC
+AUD[SRÇ.026 Denetim sonuçları] --> SRC
+SRC --> FRM[FRM.001 Değerlendirme Kaydı]
+FRM --> RPR[RPR.001 Süreç Performansları Raporu]
+FRM --> PRB[SRÇ.017 Uygunsuzluklar]
+FRM --> CHG[SRÇ.018 İyileştirme fırsatları]
+RPR --> QA[SRÇ.002 Kalite Güvencesi]
+RPR --> IMP[SRÇ.006 Süreç İyileştirme]

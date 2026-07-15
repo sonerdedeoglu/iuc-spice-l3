@@ -1,0 +1,15 @@
+%%{init: {'flowchart': {'htmlLabels': false}}}%%
+flowchart LR
+A["Müşteri ve proje gereksinimleri"] --> Q["SRÇ.024 Kalite Yönetimi"]
+B["SRÇ.002 kalite güvence sonuçları"] --> Q
+C["SRÇ.005 süreç değerlendirmeleri"] --> Q
+D["SRÇ.023 YGG girdileri ve kararları"] --> Q
+E["Standart, mevzuat, LST.009 ve proje kayıtları"] --> Q
+Q --> P1["PRS.007 Kalite Yönetimi Prosedürü"]
+Q --> P2["PRS.008 Müşteri Memnuniyeti Prosedürü"]
+P2 --> F["FRM.003 müşteri memnuniyeti anket kayıtları"]
+F --> R["RPR.002 proje müşteri memnuniyeti raporu"]
+Q --> G["SRÇ.017 kalite uygunsuzlukları ve kök neden"]
+G --> H["SRÇ.018 gerekli değişiklikler"]
+Q --> I["SRÇ.006 iyileştirme girdileri"]
+Q --> J["SRÇ.023 yıllık YGG"]

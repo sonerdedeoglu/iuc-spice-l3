@@ -1,6 +1,6 @@
 # Süreç Tanımı Şablonu Uygulama Kuralları
 
-Bu kurallar `İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu` kullanılarak süreç tanımı dokümanı oluşturulurken uygulanır.
+Bu kurallar `SRÇ.XXX.Ş - Süreç Tanımı Şablonu` kullanılarak süreç tanımı dokümanı oluşturulurken uygulanır.
 
 ## Genel Kurallar
 
@@ -9,6 +9,8 @@ Bu kurallar `İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu` kullanılarak 
 - Şablondaki ana başlık sırası korunur.
 - Şablonda sabit metin olarak tanımlanan yönlendirme bölümleri tabloya çevrilmez.
 - `SRÇ.XXX` kullanılan şablon ifadeleri gerçek süreçte ilgili süreç koduna dönüştürülür.
+- `1. Süreç Bilgileri` tablosunda `Hedef Kitle` ile `Yayın ve Erişim Ortamı` alanları bulunur.
+- `2. Amaç` bölümünün altında standart veya iç süreç referansındaki beklenen sonuçları içeren `2.1. Süreç Sonuçları` alt bölümü bulunur.
 
 ## Sabit Bölüm Kuralları
 
@@ -28,29 +30,39 @@ Yalnızca açıklama hücreleri süreç özelinde doldurulur.
 
 Tablo kullanılmaz. Sürece özel metin aşağıdaki yapıda verilir:
 
-> Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik tanımları, süreç özel kaydı olan `İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.XXX)` dokümanında yönetilir.
+> Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik tanımları, süreç özel kaydı olan `LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.XXX)` dokümanında yönetilir.
 
-### 8. Süreç İş Ürünleri
+### 8. Araçlar ve Altyapı
+
+Sürecin uygulanması için gerekli araçlar, altyapı bileşenleri ve çalışma ortamları aşağıdaki alanlarla tanımlanır:
+
+- Tür
+- Araç / Altyapı Bileşeni
+- Kullanım Amacı
+- Erişim ve Kullanım Koşulu
+- Sorumlu Rol / Birim
+
+### 9. Süreç İş Ürünleri
 
 Tablo kullanılmaz. Sürece özel metin aşağıdaki yapıda verilir:
 
-> Bu süreç kapsamında kullanılan girdi iş ürünleri ve üretilen çıktı iş ürünleri, süreç özel kaydı olan `İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.XXX)` dokümanında yönetilir.
+> Bu süreç kapsamında kullanılan girdi iş ürünleri ve üretilen çıktı iş ürünleri, süreç özel kaydı olan `LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.XXX)` dokümanında yönetilir.
 
-### 9. Süreç Akışı
+### 10. Süreç Akışı
 
 Bu bölümde süreç akış görseli yer alır. Görsel PNG olarak Confluence üzerinde eklenecektir. Script bu bölümü otomatik tablo veya Mermaid ile doldurmaz.
 
-### 10. Süreç Faaliyetleri
+### 11. Süreç Faaliyetleri
 
 Şablondaki tablo başlıkları birebir korunur. Satırlar süreç özelinde doldurulur.
 
-### 11. Ölçüm ve İzleme
+### 12. Ölçüm ve İzleme
 
 Tablo kullanılmaz. Sürece özel metin aşağıdaki yapıda verilir:
 
-> Bu süreç kapsamında takip edilecek süreç performansı ölçüm seti, süreç özel kaydı olan `İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.XXX)` dokümanında yönetilir.
+> Bu süreç kapsamında takip edilecek süreç performansı ölçüm seti, süreç özel kaydı olan `LST.009 - Süreç Performans Ölçüm Seti (SRÇ.XXX)` dokümanında yönetilir.
 
-### 12. Uygulama ve Uyarlama Kuralları
+### 13. Uygulama ve Uyarlama Kuralları
 
 Bu bölümde süreç özelinde serbest alt başlıklar tanımlanabilir. Son alt başlık `Uyarlama Kuralları` olmalıdır.
 
@@ -60,12 +72,12 @@ Uyarlama Kuralları altında şablondaki tablo yapısı korunur ve şu satırlar
 - Uyarlanabilir Adımlar
 - Onay Gerektiren Durumlar
 
-### 13. Süreç Etkileşimleri
+### 14. Süreç Etkileşimleri
 
 Tablo kullanılmaz. Sürece özel metin aşağıdaki yapıda verilir:
 
-> Bu süreç kapsamındaki faaliyetlerin farklı süreçler ile olan etkileşimleri, süreç özel kaydı olan `İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.XXX)` dokümanında yönetilir.
+> Bu süreç kapsamındaki faaliyetlerin farklı süreçler ile olan etkileşimleri, süreç özel kaydı olan `LST.007 - Süreç Etkileşim Matrisi (SRÇ.XXX)` dokümanında yönetilir.
 
-### 14. Sürüm Geçmişi
+### 15. Sürüm Geçmişi
 
 Sürüm geçmişi tablosunda `Gözden Geçiren` sütunu yer alır.

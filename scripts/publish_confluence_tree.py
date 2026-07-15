@@ -18,7 +18,7 @@ from typing import Any
 
 import yaml
 
-from config import SPACE_KEY
+from config import CONFLUENCE_URL, SPACE_KEY
 from confluence_client import ConfluenceClient
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,7 +53,7 @@ def hash_body(value: str) -> str:
     return hashlib.sha256(normalize_body(value).encode("utf-8")).hexdigest()
 
 
-def discover_pages() -> list[dict[str, Any]]:
+def discover_pages(selected_paths: set[str] | None = None) -> list[dict[str, Any]]:
     if not PAGES_DIR.exists():
         raise FileNotFoundError(f"Confluence pages folder not found: {PAGES_DIR}")
 
@@ -68,6 +68,8 @@ def discover_pages() -> list[dict[str, Any]]:
         if not title:
             raise PublishError(f"Missing title in {page_yaml}")
         relative_path = str(folder.relative_to(CONFLUENCE_DIR)).replace("\\", "/")
+        if selected_paths and relative_path not in selected_paths:
+            continue
         depth = int(metadata.get("depth", len(folder.relative_to(PAGES_DIR).parts) - 1))
         records.append(
             {
@@ -167,6 +169,7 @@ def update_page_metadata(record: dict[str, Any], page_id: str, parent_id: str, v
     metadata["relative_path"] = record["relative_path"]
     metadata["storage_file"] = "body.storage.xhtml"
     metadata["view_file"] = "body.view.html"
+    metadata["url"] = f"{CONFLUENCE_URL.rstrip('/')}/pages/viewpage.action?pageId={page_id}"
     if version is not None:
         metadata["version"] = version
     write_yaml(record["page_yaml"], metadata)
@@ -190,17 +193,20 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
         page_id = ""
         version_number = None
         body_changed = True
+        title_changed = True
         parent_changed = False
     else:
         page_id = str(existing["id"])
         version_number = int(existing["version"]["number"])
+        existing_title = str(existing.get("title") or "")
         existing_body = existing.get("body", {}).get("storage", {}).get("value", "")
+        title_changed = existing_title != title
         body_changed = hash_body(existing_body) != hash_body(body)
         current_parent_id = existing_parent_id(existing)
         parent_changed = bool(parent_id) and current_parent_id != str(parent_id)
-        if body_changed and parent_changed:
+        if (body_changed or title_changed) and parent_changed:
             action = "UPDATE+MOVE"
-        elif body_changed:
+        elif body_changed or title_changed:
             action = "UPDATE"
         elif parent_changed:
             action = "MOVE"
@@ -213,8 +219,9 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
             "title": title,
             "action": action,
             "page_id": page_id,
-            "changed": body_changed or parent_changed,
+            "changed": body_changed or title_changed or parent_changed,
             "body_changed": body_changed,
+            "title_changed": title_changed,
             "parent_changed": parent_changed,
             "relative_path": record["relative_path"],
         }
@@ -236,13 +243,15 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
 
             latest = client.get_page(page_id)
             latest_version = int(latest.get("version", {}).get("number") or version_number)
+            latest_title = str(latest.get("title") or "")
             latest_body = latest.get("body", {}).get("storage", {}).get("value", "")
             latest_parent_id = existing_parent_id(latest)
 
+            title_already_applied = latest_title == title
             body_already_applied = hash_body(latest_body) == hash_body(body)
             parent_already_applied = (not parent_id) or latest_parent_id == str(parent_id)
 
-            if body_already_applied and parent_already_applied:
+            if title_already_applied and body_already_applied and parent_already_applied:
                 updated = latest
                 print(f"[{action}] {title} (already applied after retry/version conflict)")
             else:
@@ -258,8 +267,9 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
         "title": title,
         "action": action,
         "page_id": page_id,
-        "changed": body_changed or parent_changed,
+        "changed": body_changed or title_changed or parent_changed,
         "body_changed": body_changed,
+        "title_changed": title_changed,
         "parent_changed": parent_changed,
         "relative_path": record["relative_path"],
     }
@@ -297,9 +307,21 @@ def write_report(results: list[dict[str, Any]], dry_run: bool) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Publish local Confluence export tree to Confluence")
     parser.add_argument("--dry-run", action="store_true", help="Show planned create/update/move/skip actions without writing to Confluence")
+    parser.add_argument(
+        "--path",
+        action="append",
+        default=[],
+        help="Publish only the exact confluence-relative page path; may be repeated",
+    )
     args = parser.parse_args()
 
-    records = discover_pages()
+    selected_paths = {str(path).strip().rstrip("/") for path in args.path if str(path).strip()}
+    records = discover_pages(selected_paths or None)
+    if selected_paths:
+        discovered_paths = {record["relative_path"] for record in records}
+        missing_paths = sorted(selected_paths - discovered_paths)
+        if missing_paths:
+            raise PublishError(f"Selected page path(s) not found: {', '.join(missing_paths)}")
     client = ConfluenceClient()
     path_to_id: dict[str, str] = {}
     results: list[dict[str, Any]] = []

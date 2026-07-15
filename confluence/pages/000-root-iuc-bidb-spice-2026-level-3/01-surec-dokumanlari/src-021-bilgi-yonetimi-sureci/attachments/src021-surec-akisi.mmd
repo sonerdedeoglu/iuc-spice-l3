@@ -1,0 +1,23 @@
+%%{init: {'flowchart': {'htmlLabels': false}}}%%
+flowchart TD
+A["Yeni veya değişen bilgi kaynağı"] --> B["Bilgi adayı ve kaynak sistem belirlenir"]
+B --> C["Kategori, ilgili süreç/proje/sistem ve erişim sınıfı belirlenir"]
+C --> D{"Kataloğa alınması gerekli mi?"}
+D -- "Hayır" --> E["Bilgi kendi kaynak sisteminde kullanılır"]
+D -- "Evet" --> F["Bağlantı ve erişim koşulları doğrulanır"]
+F --> G["LST.004 kaydı oluşturulur veya güncellenir"]
+G --> H{"Teknik ya da standart/mevzuat doğrulaması gerekli mi?"}
+H -- "Evet" --> I["İlgili uzman/birim veya Kalite Danışmanı içeriği doğrular"]
+H -- "Hayır" --> J["Bilgi Confluence başlangıç noktasından erişilebilir hale gelir"]
+I --> J
+J --> K{"Hedef kitle için önemli duyuru gerekli mi?"}
+K -- "Evet" --> L["Uygun kurumsal kanaldan bilgilendirme yapılır"]
+K -- "Hayır" --> M["Rutin kullanıma alınır"]
+L --> N["Yıllık veya olay bazlı gözden geçirme"]
+M --> N
+N --> O{"Bilgi güncel ve kullanılabilir mi?"}
+O -- "Evet" --> P["Aktif olarak sürdürülür"]
+O -- "Düzeltme gerekli" --> Q["Gözden Geçirilecek durumuna alınır ve güncellenir"]
+O -- "Geçersiz" --> R["Arşivlenir ve varsa ardıl bilgi bağlanır"]
+Q --> G
+P --> N

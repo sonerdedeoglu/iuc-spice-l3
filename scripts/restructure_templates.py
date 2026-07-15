@@ -29,7 +29,7 @@ ROOT_02_REGISTER_COLUMNS = [
     "Erişim Linki",
 ]
 
-KLV_004_TITLE = "İÜC.BİDB.KLV.004 - Dokümantasyon Deposu Oluşturma Kılavuzu"
+KLV_004_TITLE = "KLV.004 - Dokümantasyon Deposu Oluşturma Kılavuzu"
 KLV_004_NOTE = (
     "Bu kılavuz, İÜC BİDB SPICE 2026 Level 3 çalışmasında dokümantasyon "
     "deposu yapısının oluşturulması ve sürdürülmesi amacıyla kullanılır."
@@ -37,94 +37,94 @@ KLV_004_NOTE = (
 
 ACTIVE_TEMPLATE_MAPPINGS = [
     {
-        "old_title": "İÜC.BİDB.ŞBL.001 - Süreç Tanımı Şablonu",
-        "new_title": "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
+        "old_title": "ŞBL.001 - Süreç Tanımı Şablonu",
+        "new_title": "SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.002 - Doküman Gözden Geçirme Kaydı Şablonu",
-        "new_title": "İÜC.BİDB.LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu",
+        "old_title": "ŞBL.002 - Doküman Gözden Geçirme Kaydı Şablonu",
+        "new_title": "LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.005 - Aktif Dokümanlar Listesi Şablonu",
-        "new_title": "İÜC.BİDB.LST.001.Ş - Aktif Dokümanlar Listesi Şablonu",
+        "old_title": "ŞBL.005 - Aktif Dokümanlar Listesi Şablonu",
+        "new_title": "LST.001.Ş - Aktif Dokümanlar Listesi Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.007 - Süreç Gözden Geçirme Matrisi Şablonu",
-        "new_title": "İÜC.BİDB.FRM.001.Ş - Süreç Gözden Geçirme Formu Şablonu",
+        "old_title": "ŞBL.007 - Süreç Gözden Geçirme Matrisi Şablonu",
+        "new_title": "FRM.001.Ş - Süreç Gözden Geçirme Formu Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.008 - Prosedür Tanımı Şablonu",
-        "new_title": "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
+        "old_title": "ŞBL.008 - Prosedür Tanımı Şablonu",
+        "new_title": "PRS.XXX.Ş - Prosedür Tanımı Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.009 - Yaşam Döngüsü Doküman İhtiyaç Matrisi Şablonu",
-        "new_title": "İÜC.BİDB.LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu",
+        "old_title": "ŞBL.009 - Yaşam Döngüsü Doküman İhtiyaç Matrisi Şablonu",
+        "new_title": "LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.010 - Kılavuz ve Talimat Tanımı Şablonu",
-        "new_title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+        "old_title": "ŞBL.010 - Kılavuz ve Talimat Tanımı Şablonu",
+        "new_title": "KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.011 - Standart Süreç Envanteri Şablonu",
-        "new_title": "İÜC.BİDB.LST.006.Ş - Standart Süreç Envanteri Şablonu",
+        "old_title": "ŞBL.011 - Standart Süreç Envanteri Şablonu",
+        "new_title": "LST.006.Ş - Standart Süreç Envanteri Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.012 - Süreç Mimari ve Etkileşim Matrisi Şablonu",
-        "new_title": "İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu",
+        "old_title": "ŞBL.012 - Süreç Mimari ve Etkileşim Matrisi Şablonu",
+        "new_title": "LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.013 - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu",
-        "new_title": "İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu",
+        "old_title": "ŞBL.013 - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu",
+        "new_title": "LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.014 - Süreç Performans Ölçüm Seti Şablonu",
-        "new_title": "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+        "old_title": "ŞBL.014 - Süreç Performans Ölçüm Seti Şablonu",
+        "new_title": "LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu",
-        "new_title": "İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu",
+        "old_title": "ŞBL.015 - Süreç Rol Yetki ve RACI Matrisi Şablonu",
+        "new_title": "LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu",
-        "new_title": "İÜC.BİDB.LST.012.Ş - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu",
+        "old_title": "ŞBL.017 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu",
+        "new_title": "LST.012.Ş - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu",
     },
 ]
 
 ARCHIVE_TEMPLATE_MAPPINGS = [
     {
-        "old_title": "İÜC.BİDB.ŞBL.003 - Doküman Değişiklik Talebi Şablonu",
+        "old_title": "ŞBL.003 - Doküman Değişiklik Talebi Şablonu",
         "reason": "SUP.10 kapsamında genel değişiklik formu olarak ele alınacaktır.",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.004 - Doküman Yayın Kaydı Şablonu",
+        "old_title": "ŞBL.004 - Doküman Yayın Kaydı Şablonu",
         "reason": "Aktif Dokümanlar Listesi iyileştirmesi kapsamında yönetilecektir.",
     },
     {
-        "old_title": "İÜC.BİDB.ŞBL.006 - Doküman Değişiklik Kaydı Şablonu",
+        "old_title": "ŞBL.006 - Doküman Değişiklik Kaydı Şablonu",
         "reason": "Doküman revizyonları her dokümanın sürüm geçmişi ve aktif doküman listesi üzerinden izlenmektedir.",
     },
 ]
 
 KLV_TEMPLATE_MAPPING = {
-    "old_title": "İÜC.BİDB.ŞBL.016 - Repository Yapısı Şablonu",
+    "old_title": "ŞBL.016 - Repository Yapısı Şablonu",
     "new_title": KLV_004_TITLE,
     "reason": "Repository yapısı şablon niteliğinden çıkarılarak kılavuz doküman olarak yönetilecektir.",
 }
 
 REGISTER_TITLES = [
-    "İÜC.BİDB.FRM.001.Ş - Süreç Gözden Geçirme Formu Şablonu",
-    "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-    "İÜC.BİDB.LST.001.Ş - Aktif Dokümanlar Listesi Şablonu",
-    "İÜC.BİDB.LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu",
-    "İÜC.BİDB.LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu",
-    "İÜC.BİDB.LST.006.Ş - Standart Süreç Envanteri Şablonu",
-    "İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu",
-    "İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu",
-    "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
-    "İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu",
-    "İÜC.BİDB.LST.012.Ş - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu",
-    "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
-    "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
+    "FRM.001.Ş - Süreç Gözden Geçirme Formu Şablonu",
+    "KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+    "LST.001.Ş - Aktif Dokümanlar Listesi Şablonu",
+    "LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu",
+    "LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu",
+    "LST.006.Ş - Standart Süreç Envanteri Şablonu",
+    "LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu",
+    "LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu",
+    "LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu",
+    "LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu",
+    "LST.012.Ş - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı Şablonu",
+    "PRS.XXX.Ş - Prosedür Tanımı Şablonu",
+    "SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
 ]
 
 RI_PAGE_TAG_PATTERN = re.compile(r"<ri:page\b[^>]*/?>", flags=re.I | re.S)
@@ -602,7 +602,7 @@ def detect_unmapped_legacy_templates(plan, root_02_children):
     for page in root_02_children:
         title = normalize_text(page["title"])
 
-        if not title.startswith("İÜC.BİDB.ŞBL."):
+        if not title.startswith("ŞBL."):
             continue
 
         if title in mapped_old_titles:
@@ -770,8 +770,8 @@ def build_klv_004_body(source_body):
         escape(KLV_004_TITLE, quote=True),
     )
     body = body.replace(
-        "İÜC.BİDB.ŞBL.016",
-        "İÜC.BİDB.KLV.004",
+        "ŞBL.016",
+        "KLV.004",
     )
     body = body.replace(
         "Repository Yapısı Şablonu",

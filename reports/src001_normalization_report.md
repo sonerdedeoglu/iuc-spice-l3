@@ -3,7 +3,7 @@
 ## Summary
 
 - Mode: dry-run
-- Page title: İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci
+- Page title: SRÇ.001 - Dokümantasyon Süreci
 - Page ID: 137265842
 - Original body length: 34524
 - Normalized body length: 33776
@@ -18,5 +18,5 @@
 
 ## Scope
 
-- Target page only: İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci
+- Target page only: SRÇ.001 - Dokümantasyon Süreci
 - Child pages were not updated by this script.

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Create/replace LST.009 for İÜC.BİDB.SRÇ.001.
+"""Create/replace LST.009 for SRÇ.001.
 
 This script updates the existing SRÇ.001 child page:
-İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)
+LST.009 - Süreç Performans Ölçüm Seti (SRÇ.001)
 
 Measurement count is intentionally kept low. Metrics are selected from values
 that the institution can collect easily from Confluence lists/records.
@@ -18,12 +18,12 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_PAGE = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
-PAGE_DIR = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-001"
+PAGE_DIR = ROOT_PAGE / "01-surec-dokumanlari/src-001-dokumantasyon-sureci/lst-009-surec-performans-olcum-seti-src-001"
 
-TITLE = "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001)"
-PROCESS_CODE = "İÜC.BİDB.SRÇ.001"
+TITLE = "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.001)"
+PROCESS_CODE = "SRÇ.001"
 PROCESS_NAME = "Dokümantasyon Süreci"
-TEMPLATE_NAME = "İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu"
+TEMPLATE_NAME = "LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu"
 
 CSS = """
 body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
@@ -62,7 +62,7 @@ def measurement_rows() -> list[list[str]]:
             "Aktif doküman envanteri güncelliği",
             "Aktif dokümanların LST.001 üzerinden izlenebilir ve güncel tutulduğunu görmek",
             "Aktif doküman listesinde yer alan kayıtların kod, ad, sürüm, durum ve erişim bilgisi açısından dolu olması kontrol edilir.",
-            "İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi; Confluence aktif doküman sayfaları",
+            "LST.001 - Aktif Dokümanlar Listesi; Confluence aktif doküman sayfaları",
             "Aylık / süreç gözden geçirme öncesi",
             "%100 kayıt doluluğu; aktif dokümanların LST.001'de yer alması",
             "Doküman Sorumlusu",
@@ -74,7 +74,7 @@ def measurement_rows() -> list[list[str]]:
             "Doküman gözden geçirme kayıt tamlığı",
             "Yeni veya güncellenen dokümanların gözden geçirme kaydıyla desteklendiğini izlemek",
             "Gözden geçirme gerektiren dokümanlar için LST.003 kaydı bulunup bulunmadığı kontrol edilir.",
-            "İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı; ilgili doküman sürüm geçmişi",
+            "LST.003 - Doküman Gözden Geçirme Kaydı; ilgili doküman sürüm geçmişi",
             "Süreç gözden geçirme döneminde",
             "%90 ve üzeri kayıt tamlığı; kritik dokümanlarda %100",
             "Doküman Gözden Geçiren / Kalite Danışmanı",
@@ -86,7 +86,7 @@ def measurement_rows() -> list[list[str]]:
             "Doküman değişiklik kaydı tamlığı",
             "Doküman değişikliklerinin gerekçe, tarih, sorumlu ve etkilenen doküman bilgisiyle izlenmesini sağlamak",
             "Değişiklik yapılan dokümanlar için LST.002 kaydı ve doküman sürüm geçmişi tutarlılığı kontrol edilir.",
-            "İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı; doküman sürüm geçmişi",
+            "LST.002 - Doküman Değişiklik Kaydı; doküman sürüm geçmişi",
             "Süreç gözden geçirme döneminde",
             "%100 kayıt tamlığı",
             "Doküman Sorumlusu",
@@ -219,7 +219,7 @@ def update_page_yaml() -> None:
         "status": "active",
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "template": TEMPLATE_NAME,
-        "document_code": "İÜC.BİDB.LST.009",
+        "document_code": "LST.009",
         "document_type": "Liste",
         "related_process": PROCESS_CODE,
         "storage_file": "body.storage.xhtml",

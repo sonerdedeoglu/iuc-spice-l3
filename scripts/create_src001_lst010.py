@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Create/replace LST.010 for İÜC.BİDB.SRÇ.001.
+"""Create/replace LST.010 for SRÇ.001.
 
 This script updates the existing SRÇ.001 child page:
-İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)
+LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.001)
 
 It follows the active LST.010 template structure and uses SRÇ.001 section
 `10. Süreç Faaliyetleri` as the source for activity codes/names.
@@ -19,13 +19,13 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_PAGE = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
-SRC001_BODY = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/body.storage.xhtml"
-PAGE_DIR = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-001"
+SRC001_BODY = ROOT_PAGE / "01-surec-dokumanlari/src-001-dokumantasyon-sureci/body.storage.xhtml"
+PAGE_DIR = ROOT_PAGE / "01-surec-dokumanlari/src-001-dokumantasyon-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-001"
 
-TITLE = "İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001)"
-PROCESS_CODE = "İÜC.BİDB.SRÇ.001"
+TITLE = "LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.001)"
+PROCESS_CODE = "SRÇ.001"
 PROCESS_NAME = "Dokümantasyon Süreci"
-TEMPLATE_NAME = "İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu"
+TEMPLATE_NAME = "LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu"
 
 CSS = """
 body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
@@ -164,17 +164,17 @@ def activity_raci_rows() -> list[list[str]]:
 
 def work_product_raci_rows() -> list[list[str]]:
     return [
-        ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "F1", "Kalite Danışmanı / Süreç Sahibi", "Süreç Sahibi", "Doküman Sorumlusu / İlgili Paydaş", "Onaylayan", "Dokümantasyon yönetim stratejisini destekleyen prosedürdür."],
+        ["PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "F1", "Kalite Danışmanı / Süreç Sahibi", "Süreç Sahibi", "Doküman Sorumlusu / İlgili Paydaş", "Onaylayan", "Dokümantasyon yönetim stratejisini destekleyen prosedürdür."],
         ["Doküman şablonları", "F2", "Kalite Danışmanı / Doküman Sorumlusu", "Süreç Sahibi", "Doküman Hazırlayan / Doküman Gözden Geçiren", "İlgili Paydaş", "Aktif şablonlar ve kaldırılan şablonlar kontrollü yönetilir."],
-        ["İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "F2", "Kalite Danışmanı / Doküman Sorumlusu", "Süreç Sahibi", "Doküman Gözden Geçiren", "Doküman Hazırlayan", "Doküman yazım ve biçim kurallarını tanımlar."],
-        ["İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)", "F3", "Kalite Danışmanı", "Süreç Sahibi", "Doküman Gözden Geçiren", "Doküman Sorumlusu", "İş ürünleri ve kalite kriterleri için ana izleme kaydıdır."],
-        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "F3", "Doküman Sorumlusu / Süreç Sahibi", "Süreç Sahibi", "Kalite Danışmanı / İlgili Paydaş", "Onaylayan", "Yaşam döngüsü aşamalarındaki doküman ihtiyacını tanımlar."],
+        ["KLV.001 - Doküman Yazım Kuralları Talimatı", "F2", "Kalite Danışmanı / Doküman Sorumlusu", "Süreç Sahibi", "Doküman Gözden Geçiren", "Doküman Hazırlayan", "Doküman yazım ve biçim kurallarını tanımlar."],
+        ["LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.001)", "F3", "Kalite Danışmanı", "Süreç Sahibi", "Doküman Gözden Geçiren", "Doküman Sorumlusu", "İş ürünleri ve kalite kriterleri için ana izleme kaydıdır."],
+        ["LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "F3", "Doküman Sorumlusu / Süreç Sahibi", "Süreç Sahibi", "Kalite Danışmanı / İlgili Paydaş", "Onaylayan", "Yaşam döngüsü aşamalarındaki doküman ihtiyacını tanımlar."],
         ["Hazırlanmış veya güncellenmiş doküman", "F4", "Doküman Hazırlayan", "Süreç Sahibi", "Kalite Danışmanı / İlgili Paydaş", "Doküman Sorumlusu", "İlgili şablon ve kurallara göre hazırlanır."],
-        ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "F5", "Doküman Gözden Geçiren", "Süreç Sahibi", "Kalite Danışmanı / Onaylayan", "Doküman Hazırlayan", "Gözden geçirme sonucu ve aksiyonları izler."],
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "F6", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı", "İlgili Paydaş", "Aktif doküman envanterini izler."],
-        ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", "F7", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı / Doküman Gözden Geçiren", "İlgili Paydaş", "Değişiklik, bakım ve arşiv kayıtlarını izler."],
-        ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "F6", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı", "İlgili Paydaş", "Yaygınlaştırma ve bilgilendirme kayıtlarını izler."],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", "F5", "Kalite Danışmanı", "Süreç Sahibi", "Doküman Gözden Geçiren", "Onaylayan", "SRÇ.001 BP/GP uygunluk ve aksiyon takibini destekler."],
+        ["LST.003 - Doküman Gözden Geçirme Kaydı", "F5", "Doküman Gözden Geçiren", "Süreç Sahibi", "Kalite Danışmanı / Onaylayan", "Doküman Hazırlayan", "Gözden geçirme sonucu ve aksiyonları izler."],
+        ["LST.001 - Aktif Dokümanlar Listesi", "F6", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı", "İlgili Paydaş", "Aktif doküman envanterini izler."],
+        ["LST.002 - Doküman Değişiklik Kaydı", "F7", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı / Doküman Gözden Geçiren", "İlgili Paydaş", "Değişiklik, bakım ve arşiv kayıtlarını izler."],
+        ["LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "F6", "Doküman Sorumlusu", "Süreç Sahibi", "Kalite Danışmanı", "İlgili Paydaş", "Yaygınlaştırma ve bilgilendirme kayıtlarını izler."],
+        ["FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.001)", "F5", "Kalite Danışmanı", "Süreç Sahibi", "Doküman Gözden Geçiren", "Onaylayan", "SRÇ.001 BP/GP uygunluk ve aksiyon takibini destekler."],
     ]
 
 
@@ -190,6 +190,10 @@ def authority_rows() -> list[list[str]]:
 
 
 def build_storage() -> str:
+    # Keep regenerated records on the SRÇ.006 reference structure.
+    from align_lst010_to_src006_structure import process_body, src001
+    return process_body(src001())
+
     parts: list[str] = []
     parts.append("<h2>1. Liste Özeti</h2>")
     parts.append(table(["Alan", "Değer"], [
@@ -243,7 +247,7 @@ def update_page_yaml() -> None:
         "status": "active",
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "template": TEMPLATE_NAME,
-        "document_code": "İÜC.BİDB.LST.010",
+        "document_code": "LST.010",
         "document_type": "Liste",
         "related_process": PROCESS_CODE,
         "storage_file": "body.storage.xhtml",

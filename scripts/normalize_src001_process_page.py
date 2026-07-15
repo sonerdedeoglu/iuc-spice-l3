@@ -15,7 +15,7 @@ BEFORE_STORAGE_PATH = REPORT_DIR / "src001_before_storage.xhtml"
 AFTER_STORAGE_PATH = REPORT_DIR / "src001_after_storage.xhtml"
 REPORT_PATH = REPORT_DIR / "src001_normalization_report.md"
 
-TARGET_TITLE = "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"
+TARGET_TITLE = "SRÇ.001 - Dokümantasyon Süreci"
 
 HIGH_LEVEL_SECTIONS = [
     "Doküman Bilgileri",

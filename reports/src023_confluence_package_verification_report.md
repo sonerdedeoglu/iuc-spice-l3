@@ -1,0 +1,96 @@
+# SRÇ.023 Confluence Paket Doğrulama Raporu
+
+Zaman: 2026-07-15T13:26:41.626106+00:00
+
+Doğrulanan sayfa sayısı: 18
+
+- **SRÇ.023 - Organizasyonel Yönetim Süreci**
+  - Sayfa ID / sürüm: 137265881 / 3
+  - Ebeveyn ID: 137265784
+  - Ek: başarılı (177574 bayt)
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265881
+- **LST.007 - Süreç Etkileşim Matrisi (SRÇ.023)**
+  - Sayfa ID / sürüm: 137266505 / 2
+  - Ebeveyn ID: 137265881
+  - Ek: başarılı (179549 bayt)
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266505
+- **LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.023)**
+  - Sayfa ID / sürüm: 137266506 / 2
+  - Ebeveyn ID: 137265881
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266506
+- **LST.009 - Süreç Performans Ölçüm Seti (SRÇ.023)**
+  - Sayfa ID / sürüm: 137266507 / 2
+  - Ebeveyn ID: 137265881
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266507
+- **LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.023)**
+  - Sayfa ID / sürüm: 137266508 / 2
+  - Ebeveyn ID: 137265881
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266508
+- **FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.023)**
+  - Sayfa ID / sürüm: 137266166 / 5
+  - Ebeveyn ID: 137265881
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266166
+- **FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.023) - Değerlendirme #1**
+  - Sayfa ID / sürüm: 137266509 / 2
+  - Ebeveyn ID: 137265917
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266509
+- **PRS.006 - Organizasyonel Yönetim Prosedürü**
+  - Sayfa ID / sürüm: 137266502 / 2
+  - Ebeveyn ID: 137265790
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266502
+- **FRM.002.Ş - Toplantı Tutanağı Şablonu**
+  - Sayfa ID / sürüm: 137266497 / 2
+  - Ebeveyn ID: 137265785
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266497
+- **LST.013.Ş - Görev Tanımları ve Görevli Personel Listesi Şablonu**
+  - Sayfa ID / sürüm: 137266498 / 2
+  - Ebeveyn ID: 137265785
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266498
+- **LST.013 - Görev Tanımları ve Görevli Personel Listesi**
+  - Sayfa ID / sürüm: 137266501 / 2
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266501
+- **LST.001 - Aktif Dokümanlar Listesi**
+  - Sayfa ID / sürüm: 137265902 / 18
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265902
+- **LST.006 - Standart Süreç Envanteri**
+  - Sayfa ID / sürüm: 137265906 / 11
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265906
+- **LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı**
+  - Sayfa ID / sürüm: 137265912 / 9
+  - Ebeveyn ID: 137265786
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265912
+- **RPR.001 - Süreç Performansları Raporu**
+  - Sayfa ID / sürüm: 137266387 / 6
+  - Ebeveyn ID: 137266368
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266387
+- **02 - Şablonlar**
+  - Sayfa ID / sürüm: 137265785 / 13
+  - Ebeveyn ID: 137265781
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265785
+- **03 - Kayıtlar ve Listeler**
+  - Sayfa ID / sürüm: 137265786 / 8
+  - Ebeveyn ID: 137265781
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265786
+- **07 - Prosedürler**
+  - Sayfa ID / sürüm: 137265790 / 9
+  - Ebeveyn ID: 137265781
+  - Ek: uygulanamaz
+  - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265790

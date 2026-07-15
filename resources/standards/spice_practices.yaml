@@ -13,7 +13,7 @@ scope:
   - PA 3.1
   - PA 3.2
 processes:
-- corporate_code: İÜC.BİDB.SRÇ.001
+- corporate_code: SRÇ.001
   corporate_name: Dokümantasyon Süreci
   spice_code: SUP.7
   spice_name: Documentation
@@ -94,14 +94,8 @@ processes:
     - id: NOTE 3
       text: 'If the document is part of a product baseline or if its control and stability are important, it should be modified
         and distributed in accordance with Configuration management process (SUP.8). If the document is part of a product
-        baseline under maintenance, its maintenance is covered by Software and system maintenance process (ENG.12). Work Products
-        Inputs Outputs 08-26 Documentation plan [Outcome: 1, 2] 10-00 Process description [Outcome: 1, 2, 3] 10-01 Life cycle
-        model [Outcome: 1] 13-01 Acceptance record [Outcome: 4, 5] 13-16 Change request [Outcome: 6] 13-17 Customer request
-        [Outcome: 1, 2, 4] 13-19 Review record [Outcome: 4, 5] 14-01 Change history [Outcome: 5, 6] 14-10 Work product distribution
-        register [Outcome: 2, 4] 14-11 Work product list [Outcome: 3] 17-05 Documentation requirements [Outcome: 5, 6] 17-05
-        Documentation requirements [Outcome: 1, 2, 3] 18-00 Standard [Outcome: 2] 18-07 Quality criteria [Outcome: 4] 20-00
-        Template [Outcome: 2] 21-00 Work product [Outcome: 5, 6] 5.5.8 SUP.8 Configuration management'
-- corporate_code: İÜC.BİDB.SRÇ.002
+        baseline under maintenance, its maintenance is covered by Software and system maintenance process (ENG.12).'
+- corporate_code: SRÇ.002
   corporate_name: Kalite Güvencesi Süreci
   spice_code: SUP.1
   spice_name: Quality assurance
@@ -156,17 +150,10 @@ processes:
     number: 5
     title: Act on non-conformances
     text: 'Deviations or non-conformance with agreed requirements or organizational quality goals are analyzed and resolved.
-      [Outcome: 4] Work Products Inputs Outputs 03-06 Process performance data [Outcome: 2, 4] 03-06 Process performance data
-      [Outcome: 2, 4] 05-06 Quality goals [Outcome: 2, 3, 4] 05-06 Quality goals [Outcome: 1] 07-04 Process measure [Outcome:
-      2, 3, 4] 07-06 Quality measure [Outcome: 2, 3, 4] 08-13 Quality plan [Outcome: 1] 08-13 Quality plan [Outcome: 1] 09-02
-      Quality policy [Outcome: 1] 10-00 Process description [Outcome: 4] 10-00 Process description [Outcome: 2] 13-07 Problem
-      record [Outcome: 3,4] 13-18 Quality record [Outcome: 2, 3, 4] 13-18 Quality Record [Outcome: 2, 3, 4] 13-19 Review Record
-      [Outcome: 2, 3, 4] 14-02 Corrective action register [Outcome: 3] 14-02 Corrective action register [Outcome: 3] Work
-      Products Inputs Outputs 14-08 Tracking system [Outcome: 3, 4] 18-00 Standard [Outcome: 4] 18-07 Quality criteria [Outcome:
-      4] 18-07 Quality criteria [Outcome: 4] 21-00 Work product [Outcome: 4] 5.5.2 SUP.2 Verification'
+      [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.003
+- corporate_code: SRÇ.003
   corporate_name: Doğrulama Süreci
   spice_code: SUP.2
   spice_name: Verification
@@ -189,8 +176,10 @@ processes:
     title: Develop verification strategy
     text: 'Develop and implement a verification strategy, including verification activities with associated methods, techniques,
       and tools; work product or processes under verification; degrees of independence for verification and schedule for performing
-      these activities. [Outcome: 1]] NOTE. Software verification provides objective evidence that the design outputs of a
-      particular phase of the software development life cycle meet all of the specified requirements for that phase.'
+      these activities. [Outcome: 1]'
+    notes:
+    - id: NOTE 1
+      text: 'Software verification provides objective evidence that the design outputs of a particular phase of the software development life cycle meet all of the specified requirements for that phase.'
     outcome_refs:
     - 1
   - id: SUP.2.BP2
@@ -216,16 +205,10 @@ processes:
     number: 5
     title: Make verification results available to the stakeholders
     text: 'The verification results should be made available to the stakeholders, including the customers and other involved
-      parties. [Outcome: 5] Work Products Inputs Outputs 07-06 Quality measure [Outcome: 2] 08-13 Quality plan [Outcome: 1]
-      08-30 Verification Plan [Outcome: 1] 09-02 Quality policy [Outcome: 1] 13-04 Communication record [Outcome: 5] 13-07
-      Problem record [Outcome: 3, 4, 5] 13-16 Change request [Outcome: 3, 4] Work Products Inputs Outputs 13-18 Quality record
-      [Outcome: 3, 4] 13-18 Quality record [Outcome: 4, 5] 13-22 Traceability record [Outcome: 3] 13-25 Verification results
-      [Outcome: 2, 3, 4, 5] 14-02 Corrective action register [Outcome: 4] 14-02 Corrective action register [Outcome: 4] 14-08
-      Tracking system [Outcome: 4] 15-10 Test incident report [Outcome: 2, 3] 18-07 Quality criteria [Outcome: 2] 18-07 Quality
-      criteria [Outcome: 2] 19-10 Verification strategy [Outcome: 1] 5.5.3 SUP.3 Validation'
+      parties. [Outcome: 5]'
     outcome_refs:
     - 5
-- corporate_code: İÜC.BİDB.SRÇ.004
+- corporate_code: SRÇ.004
   corporate_name: Süreç Kurulumu Süreci
   spice_code: PIM.1
   spice_name: Process establishment
@@ -281,16 +264,10 @@ processes:
   - id: PIM.1.BP6
     number: 6
     title: Maintain process data
-    text: 'Capture and maintain information and data related to the use of standard processes. [Outcome: 4] Work Products
-      Inputs Outputs 03-03 Benchmarking data [Outcome: 2] 03-06 Process performance data [Outcome: 4] 07-04 Process measure
-      [Outcome: 4] 07-06 Quality measure [Outcome: 4] 09-00 Policy [Outcome: 1, 3] 09-02 Quality policy [Outcome: 1, 3] 10-00
-      Process description [Outcome: 3, 4] 10-00 Process description [Outcome: 1, 2] 13-18 Quality record [Outcome: 4] 13-19
-      Review record [Outcome: 4] 15-01 Analysis report [Outcome: 4] 16-06 Process repository [Outcome: 4] 16-06 Process repository
-      [Outcome: 4] 17-00 Requirement specification [Outcome: 2] 18-03 Coding standard [Outcome: 1] 19-07 Software development
-      methodology [Outcome: 2] 5.7.2 PIM.2 Process assessment'
+    text: 'Capture and maintain information and data related to the use of standard processes. [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.005
+- corporate_code: SRÇ.005
   corporate_name: Süreç Değerlendirme Süreci
   spice_code: PIM.2
   spice_name: Process assessment
@@ -360,17 +337,11 @@ processes:
     number: 8
     title: Maintain assessment record
     text: 'Maintain record of the assessment including accurate and current assessment results in an accessible location and
-      format. [Outcome: 1, 3] Work Products Inputs Outputs 03-01 Assessment data [Outcome: 1] 03-01 Assessment data [Outcome:
-      1] 05-01 Assessment goals [Outcome: 1] 05-01 Assessment goals [Outcome: 1] 08-03 Process assessment plan [Outcome: 1]
-      08-03 Process assessment plan [Outcome: 1] 13-00 Record [Outcome: 1, 3] 13-03 Back-up / recovery record [Outcome: 3]
-      13-04 Communication record [Outcome: 1, 2, 3] 13-19 Review record [Outcome: 3] 13-26 Assessment record [Outcome: 3]
-      15-13 Assessment report [Outcome: 1, 2, 3] 15-16 Improvement opportunity [Outcome: 2, 3] 16-01 Assessment results repository
-      [Outcome: 3] 16-06 Process repository [Outcome: 1] 18-02 Assessment method standard [Outcome: 2, 3] 21-00 Work product
-      [Outcome: 1, 2] 5.7.3 PIM.3 Process improvement'
+      format.'
     outcome_refs:
     - 1
     - 3
-- corporate_code: İÜC.BİDB.SRÇ.006
+- corporate_code: SRÇ.006
   corporate_name: Süreç İyileştirme Süreci
   spice_code: PIM.3
   spice_name: Process Improvement
@@ -454,18 +425,10 @@ processes:
     number: 9
     title: Evaluate the results of the improvement project
     text: 'Evaluate the results of the improvement project to see if the solution can be used elsewhere in the organization.
-      [Outcome: 7] Work Products Inputs Outputs 02-01 Commitment / agreement [Outcome: 1] 03-03 Benchmarking data [Outcome:
-      2, 3, 4] 03-04 Customer satisfaction data [Outcome: 2, 3, 4] 03-06 Process performance data [Outcome: 2, 3, 4, 5, 7]
-      05-00 Goals [Outcome: 4, 5] 05-00 Goals [Outcome: 4] 07-04 Process measure [Outcome: 6] 08-00 Plan [Outcome: 2, 3, 4,
-      5] 08-00 Plan [Outcome: 2, 4, 7] 08-29 Improvement plan [Outcome: 4] 10-00 Process description [Outcome: 3, 5] 10-00
-      Process description [Outcome: 4] 13-04 Communication record [Outcome: 7] 13-04 Communication record [Outcome: 6] 15-05
-      Evaluation report [Outcome: 2, 3] 15-05 Evaluation report [Outcome: 2, 3, 4, 7] 15-13 Assessment report [Outcome: 2,
-      3, 4, 5, 7] 15-13 Assessment report [Outcome: 3] 15-16 Improvement opportunity [Outcome: 4, 6, 7] 15-16 Improvement
-      opportunity [Outcome: 2, 3, 4, 7] 16-06 Process repository [Outcome: 3] 16-06 Process repository [Outcome: 4] 5.8 Resource
-      and Infrastructure Process Group (RIN) 5.8.1 RIN.1 Human resource management'
+      [Outcome: 7]'
     outcome_refs:
     - 7
-- corporate_code: İÜC.BİDB.SRÇ.007
+- corporate_code: SRÇ.007
   corporate_name: Proje Yönetimi Süreci
   spice_code: MAN.3
   spice_name: Project management
@@ -593,22 +556,18 @@ processes:
     number: 14
     title: Act to correct deviations
     text: 'Take action when project goals are not achieved, to correct deviations from the plan and to prevent recurrence
-      of problems identified in the project. Update project plans accordingly. [Outcome: 7] MAN.3. BP15: Perform project close-out
-      review. Perform a review of the performance of the project in order to provide an experience record for establishing
-      the feasibility of future projects and updating historical estimating data. [Outcome 2, 3] Work Products Inputs Outputs
-      02-00 Contract [Outcome: 1, 2] 03-06 Process performance data [Outcome: 3, 7] 07-05 Project measure [Outcome: 6] 08-06
-      Project activity network [Outcome: 5] 08-06 Project activity network [Outcome: 4] 08-08 Human resource management plan
-      [Outcome: 2] 08-12 Project plan [Outcome: 3, 6, 7] 08-12 Project plan [Outcome: 1, 2, 3, 4, 5] 08-19 Risk management
-      plan [Outcome: 6, 7] 08-19 Risk management plan [Outcome: 5] 10-01 Life cycle model [Outcome: 1, 3, 4, 5] 12-01 Request
-      for proposal [Outcome: 1] 13-04 Communication record [Outcome: 6] 13-07 Problem record [Outcome: 7] 13-14 Progress status
-      record [Outcome: 7] 13-14 Progress status record [Outcome: 6] 13-16 Change request [Outcome: 1] 13-16 Change request
-      [Outcome: 7] 13-17 Customer request [Outcome: 1] 13-19 Review record [Outcome: 7] 14-02 Corrective action register [Outcome:
-      7] 14-06 Schedule [Outcome: 1, 3] 14-06 Schedule [Outcome: 5] 14-08 Tracking system [Outcome: 4, 6] 14-09 Work breakdown
-      structure [Outcome: 5] 14-09 Work breakdown structure [Outcome: 4] 15-06 Project status report [Outcome: 4, 6] 17-03
-      Customer requirements [Outcome: 2] 19-07 Software development methodology [Outcome: 5] 5.6.4 MAN.4 Quality management'
+      of problems identified in the project. Update project plans accordingly. [Outcome: 7]'
     outcome_refs:
     - 7
-- corporate_code: İÜC.BİDB.SRÇ.008
+  - id: MAN.3.BP15
+    number: 15
+    title: Perform project close-out review
+    text: 'Perform a review of the performance of the project in order to provide an experience record for establishing
+      the feasibility of future projects and updating historical estimating data. [Outcome 2, 3]'
+    outcome_refs:
+    - 2
+    - 3
+- corporate_code: SRÇ.008
   corporate_name: Risk Yönetimi Süreci
   spice_code: MAN.5
   spice_name: Risk management
@@ -692,13 +651,8 @@ processes:
     notes:
     - id: NOTE 3
       text: 'Preventive action may involve developing and implementing new treatment strategies or adjusting the existing
-        strategies. Work Products Inputs Outputs 07-07 Risk measure [Outcome: 5] 08-12 Project plan [Outcome: 1] 08-14 Recovery
-        plan [Outcome: 4, 6] 08-19 Risk management plan [Outcome: 4, 5] 08-19 Risk management plan [Outcome: All] 08-20 Risk
-        mitigation plan [Outcome: 6] 08-20 Risk mitigation plan [Outcome: 3, 4] 13-20 Risk action request [Outcome: 4] 13-20
-        Risk action request [Outcome: 2, 6] 14-02 Corrective action register [Outcome: 6] 14-08 Tracking system [Outcome:
-        3, 4, 5, 6] 14-08 Tracking system [Outcome: 2, 3, 4, 5, 6] 15-08 Risk analysis report [Outcome 4] 15-09 Risk status
-        report [Outcome 4, 5] 5.6.6 MAN.6 Measurement'
-- corporate_code: İÜC.BİDB.SRÇ.009
+        strategies.'
+- corporate_code: SRÇ.009
   corporate_name: Gereksinimlerin Toplanması Süreci
   spice_code: ENG.1
   spice_name: Requirements elicitation
@@ -786,12 +740,8 @@ processes:
     notes:
     - id: NOTE 5
       text: 'This may include joint meetings with the customer or formal communication to review the status for their requirements
-        and requests. Refer to the Joint review process (SUP.4). Work Products Inputs Outputs 02-01 Commitment / agreement
-        [Outcome: 2] 13-00 Record [Outcome: 4, 5] 13-04 Communication record [Outcome: 1, 4] 13-16 Change request [Outcome:
-        3, 6] 13-17 Customer request [Outcome: 1, 3] 13-21 Change control record [Outcome: 3, 4] 15-01 Analysis report [Outcome:
-        2, 3, 6] 17-03 Customer requirements [Outcome: 3] 17-03 Customer requirements [Outcome: 2, 3] 5.4.2 ENG.2 System requirements
-        analysis'
-- corporate_code: İÜC.BİDB.SRÇ.010
+        and requests. Refer to the Joint review process (SUP.4).'
+- corporate_code: SRÇ.010
   corporate_name: Yazılım Gereksinim Analizi Süreci
   spice_code: ENG.4
   spice_name: Software requirements analysis
@@ -866,14 +816,10 @@ processes:
     number: 6
     title: Communicate software requirements
     text: 'Establish communication mechanisms for dissemination of software requirements, and updates to requirements to all
-      parties who will be using them. [Outcome: 8] Work Products Inputs Outputs 04-06 System architecture design [Outcome:
-      1] 13-04 Communication record [Outcome: 8] 13-16 Change request [Outcome: 6, 7] 13-17 Customer request [Outcome: 6,
-      7] 13-21 Change control record [Outcome: 7] 13-22 Traceability record [Outcome: 4] 15-01 Analysis report [Outcome: 2,
-      3, 7] 17-08 Interface requirements [Outcome: 1] 17-11 Software requirements [Outcome: 1, 2, 4, 5, 6] 17-12 System requirements
-      [Outcome: 1, 4] 5.4.5 ENG.5 Software design'
+      parties who will be using them. [Outcome: 8]'
     outcome_refs:
     - 8
-- corporate_code: İÜC.BİDB.SRÇ.011
+- corporate_code: SRÇ.011
   corporate_name: Yazılım Tasarımı Süreci
   spice_code: ENG.5
   spice_name: Software design
@@ -931,14 +877,10 @@ processes:
     number: 5
     title: Ensure consistency
     text: 'Ensure consistency of software requirements analysis to software design. Consistency is supported by establishing
-      and maintaining traceability between software requirements and the software design when needed. [Outcome: 4] Work Products
-      Inputs Outputs 04-01 Database design [Outcome: 3, 4] 04-04 High level software design [Outcome: 1, 2, 4] 04-05 Low level
-      software design [Outcome: 2, 3, 4] 11-02 Software element [Outcome: 1] 13-22 Traceability record [Outcome: 4] 17-08
-      Interface requirements [Outcome: 2] 17-11 Software requirements [Outcome: 1, 4] 17-13 Test design specification [Outcome:
-      3] 5.4.6 ENG.6 Software construction'
+      and maintaining traceability between software requirements and the software design when needed. [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.012
+- corporate_code: SRÇ.012
   corporate_name: Yazılım Geliştirme Süreci
   spice_code: ENG.6
   spice_name: Software construction
@@ -987,15 +929,8 @@ processes:
     - 4
     notes:
     - id: NOTE 2
-      text: 'Code can be verified by various techniques such as static code analysis, code review, etc. Work Products Inputs
-        Outputs 03-07 Test data [Outcome: 4] 03-07 Test data [Outcome: 1] 04-04 High level software design [Outcome: 2, 3]
-        04-05 Low level software design [Outcome: 2, 3] 06-01 Customer manual [Outcome: 2] 08-25 Unit test plan [Outcome:
-        1] 10-02 Test procedure [Outcome: 1] 11-05 Software unit [Outcome: 3, 4] 11-05 Software unit [Outcome: 2] 13-19 Review
-        record [Outcome: 4] 13-22 Traceability record [Outcome: 3] 14-04 Test log [Outcome: 4] 15-10 Test incident report
-        [Outcome: 4] 17-08 Interface requirements [Outcome: 1, 3] 17-11 Software requirements [Outcome: 1, 3] 17-13 Test design
-        specification [Outcome: 1] 17-14 Test case specification [Outcome: 2] 17-14 Test case specification [Outcome: 2] 18-03
-        Coding standard [Outcome: 2, 3, 4] 5.4.7 ENG.7 Software integration'
-- corporate_code: İÜC.BİDB.SRÇ.013
+      text: 'Code can be verified by various techniques such as static code analysis, code review, etc.'
+- corporate_code: SRÇ.013
   corporate_name: Yazılım Entegrasyonu Süreci
   spice_code: ENG.7
   spice_name: Software integration
@@ -1064,20 +999,10 @@ processes:
     number: 6
     title: Regression test integrated software items
     text: 'Develop a software regression test strategy for re-testing the integrated software items. If changes are made to
-      software units, designs or requirements, carry out regression testing according to this strategy. [Outcome: 7] Work
-      Products Inputs Outputs 01-03 Software item [Outcome: 6] 01-03 Software item [Outcome: 4] 03-07 Test data [Outcome:
-      3] 03-07 Test data [Outcome: 2] 04-04 High level software design [Outcome: 1, 6, 7] 04-06 System architecture design
-      [Outcome: 1, 6, 7] 08-10 Software integration test plan [Outcome: 3, 4] 08-10 Software integration test plan [Outcome:
-      1, 2] Work Products Inputs Outputs 08-15 Regression test plan [Outcome: 2, 7] 08-15 Regression test plan [Outcome: 2,
-      7] 10-02 Test procedure [Outcome: 3, 7] 10-02 Test procedure [Outcome: 2] 11-01 Software product [Outcome: 4, 7] 11-05
-      Software unit [Outcome: 4, 7] 13-22 Traceability record [Outcome: 6] 14-04 Test log [Outcome: 3, 5, 7] 15-10 Test incident
-      report [Outcome: 3, 5, 7] 15-23 Test item transmittal report [Outcome: 3] 15-23 Test item transmittal report [Outcome:
-      2, 4] 17-02 Build list [Outcome: 4, 7] 17-02 Build list [Outcome: 1] 17-11 Software requirements [Outcome: 1, 2, 7]
-      17-13 Test design specification [Outcome: 2] 17-13 Test design specification [Outcome: 2] 17-14 Test case specification
-      [Outcome: 3, 7] 17-14 Test case specification [Outcome: 2] 5.4.8 ENG.8 Software testing'
+      software units, designs or requirements, carry out regression testing according to this strategy. [Outcome: 7]'
     outcome_refs:
     - 7
-- corporate_code: İÜC.BİDB.SRÇ.014
+- corporate_code: SRÇ.014
   corporate_name: Yazılım Test Süreci
   spice_code: ENG.8
   spice_name: Software testing
@@ -1118,17 +1043,10 @@ processes:
     number: 3
     title: Regression test integrated software
     text: 'Develop a software regression test strategy for re-testing the integrated software product. If changes are made
-      to software items, carry out regression testing according to the strategy. [Outcome: 4] Work Products Inputs Outputs
-      03-07 Test data [Outcome: 2] 04-04 High level software design [Outcome: 1] 06-01 Customer manual [Outcome: 2] 06-01
-      Customer manual [Outcome: 3] 08-15 Regression test plan [Outcome: 4] 08-15 Regression test plan [Outcome: 4] 08-21 Software
-      test plan [Outcome: 2] 08-21 Software test plan [Outcome: 1] 10-02 Test procedure [Outcome: 2] 10-02 Test procedure
-      [Outcome: 1, 4] 11-01 Software product [Outcome: 2, 4] 14-04 Test log [Outcome: 3, 4] 15-10 Test incident report [Outcome:
-      3, 4] 15-11 Defect report [Outcome: 3, 4] 15-23 Test item transmittal report [Outcome: 2] 17-02 Build list [Outcome:
-      2, 4] 17-11 Software requirements [Outcome: 1, 4] 17-13 Test design specification [Outcome: 1] 17-14 Test case specification
-      [Outcome: 2] 17-14 Test case specification [Outcome: 2] 5.4.9 ENG.9 System integration'
+      to software items, carry out regression testing according to the strategy. [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.015
+- corporate_code: SRÇ.015
   corporate_name: Ürün Yayınlama / Sürüm Süreci
   spice_code: SPL.2
   spice_name: Product release
@@ -1250,14 +1168,8 @@ processes:
     - id: NOTE 8
       text: These practices are typically supported by the Configuration Management process (SUP.8).
     - id: NOTE 9
-      text: 'Refer to ISO/IEC 9127 for guidance on packaging aspects of software product supply. Work Products Inputs Outputs
-        01-00 Configuration item [Outcome: 2] 08-11 Logistics maintenance plan [Outcome: 4] 08-16 Release plan [Outcome: 3]
-        08-16 Release plan [Outcome: 3] 11-00 Product [Outcome: 1] 11-03 Product release information [Outcome: 1] 11-04 Product
-        release package [Outcome: 2, 3] 13-06 Delivery record [Outcome: 6,7] 13-13 Product release approval record [Outcome:
-        5] 15-03 Configuration status report [Outcome: 2] 17-03 Customer requirements [Outcome: 1] 17-04 Delivery instructions
-        [Outcome: 3] 18-06 Product release criteria [Outcome: 1, 5] 18-06 Product release criteria [Outcome: 7] 19-04 Product
-        release strategy [Outcome: 4] 5.2.3 SPL.3 Product acceptance support'
-- corporate_code: İÜC.BİDB.SRÇ.016
+      text: 'Refer to ISO/IEC 9127 for guidance on packaging aspects of software product supply.'
+- corporate_code: SRÇ.016
   corporate_name: Yapılandırma Yönetimi Süreci
   spice_code: SUP.8
   spice_name: Configuration management
@@ -1373,15 +1285,8 @@ processes:
     - 7
     notes:
     - id: NOTE 6
-      text: 'Backups are maintained under the Infrastructure process (RIN.4). Work Products Inputs Outputs 01-00 Configuration
-        item [Outcome: 2] 01-00 Configuration item [Outcome: 2, 3] 01-01 Product configuration [Outcome: 1] 01-01 Product
-        configuration [Outcome: 2] 06-02 Handling and storage guide [Outcome: 7] 08-04 Configuration management plan [Outcome:
-        2, 3, 4, 5, 08-04 Configuration management plan [Outcome: 1, 2, 7] 6] 08-16 Release plan [Outcome: 1, 4] Work Products
-        Inputs Outputs 13-00 Record [Outcome: 5, 6] 13-06 Delivery record [Outcome: 7] 13-10 Configuration management record
-        [Outcome: 5] 13-13 Product release approval record [Outcome: 7] 14-01 Change history [Outcome: 3] 14-08 Tracking system
-        [Outcome: 5] 15-03 Configuration status report [Outcome: 5] 16-03 Configuration management library [Outcome: 7] 5.5.9
-        SUP.9 Problem resolution management'
-- corporate_code: İÜC.BİDB.SRÇ.017
+      text: 'Backups are maintained under the Infrastructure process (RIN.4).'
+- corporate_code: SRÇ.017
   corporate_name: Problem Çözüm Yönetimi Süreci
   spice_code: SUP.9
   spice_name: Problem resolution management
@@ -1470,14 +1375,11 @@ processes:
   - id: SUP.9.BP10
     number: 10
     title: Track problem status
-    text: 'Track to closure the status of identified problems. [Outcome: 5, 6] Work Products Inputs Outputs 08-27 Problem
-      management plan [Outcome: 1] 13-07 Problem record [Outcome: 3] 13-07 Problem record [Outcome: 3, 5] 13-16 Change request
-      [Outcome: 2] 14-08 Tracking system [Outcome: 4, 5, 6] 15-01 Analysis report [Outcome: 3] 15-05 Evaluation report [Outcome:
-      3] 15-12 Problem status report [Outcome: 6] 5.5.10 SUP.10 Change request management'
+    text: 'Track to closure the status of identified problems. [Outcome: 5, 6]'
     outcome_refs:
     - 5
     - 6
-- corporate_code: İÜC.BİDB.SRÇ.018
+- corporate_code: SRÇ.018
   corporate_name: Değişiklik Talebi Yönetimi Süreci
   spice_code: SUP.10
   spice_name: Change request management
@@ -1573,15 +1475,11 @@ processes:
     number: 9
     title: Review the implemented change
     text: 'All changes are reviewed after implementation and before closure to ensure that they had the desired effect and
-      met their objectives. [Outcome: 7, 8] Work Products Inputs Outputs 01-00 Configuration item [Outcome: 2] 01-00 Configuration
-      item [Outcome: 2] 01-01 Product configuration [Outcome: 2] 08-28 Change management plan [Outcome: 1] 13-16 Change request
-      [Outcome: 3] 13-16 Change request [Outcome: 2, 3, 5, 6, 7] Work Products Inputs Outputs 13-21 Change control record
-      [Outcome: 8] 14-08 Tracking system [Outcome: 2, 7, 8] 15-01 Analysis report [Outcome: 3, 4] 16-03 Configuration management
-      library [Outcome: 2] 5.6 Management Process Group (MAN) 5.6.1 MAN.1 Organizational alignment'
+      met their objectives. [Outcome: 7, 8]'
     outcome_refs:
     - 7
     - 8
-- corporate_code: İÜC.BİDB.SRÇ.019
+- corporate_code: SRÇ.019
   corporate_name: İnsan Kaynakları Yönetimi Süreci
   spice_code: RIN.1
   spice_name: Human resource management
@@ -1664,16 +1562,10 @@ processes:
     number: 10
     title: Maintain staff records
     text: 'Maintain adequate records of staff, including not only personnel details, but also information on skills, training
-      completed, and performance evaluations. [Outcome: 4] Work Products Inputs Outputs 02-01 Commitment / agreement [Outcome:
-      1] 08-08 Human resource management plan [Outcome: 2] 08-08 Human resource management plan [Outcome: 1] 08-24 Training
-      plan [Outcome: 3] 09-01 Personnel policy [Outcome: 1] 13-04 Communication record [Outcome: 2] 13-11 Personnel performance
-      review record [Outcome: 3, 4] 13-12 Personnel record [Outcome: 3] 13-12 Personnel record [Outcome: 1] 13-23 Training
-      record [Outcome: 3] 13-23 Training record [Outcome 3] 15-15 Human resource needs analysis [Outcome: 1] 15-15 Human resource
-      needs analysis [Outcome: 1] 15-17 Personnel performance evaluation [Outcome: 4] 15-22 Training evaluation report [Outcome:
-      3,4] 18-05 Personnel performance criteria [Outcome: 4] 5.8.2 RIN.2 Training'
+      completed, and performance evaluations. [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.020
+- corporate_code: SRÇ.020
   corporate_name: Eğitim Süreci
   spice_code: RIN.2
   spice_name: Training
@@ -1731,14 +1623,10 @@ processes:
     number: 7
     title: Evaluate training effectiveness
     text: 'Identify and evaluate added value provided by each training session, including the evaluation of training material.
-      [Outcome: 2] Work Products Inputs Outputs 06-04 Training material [Outcome: 2] 06-04 Training material [Outcome: 1]
-      08-02 Acquisition plan [Outcome 1] 08-08 Human resource management plan [Outcome: 1] 08-24 Training plan [Outcome: 2]
-      08-24 Training plan [Outcome: 1] 09-01 Personnel policy [Outcome: 1] 13-23 Training record [Outcome: 2] 15-15 Human
-      resource needs analysis [Outcome: 1] 15-22 Training evaluation report [Outcome: 2] 19-08 Training strategy [Outcome:
-      2] 19-08 Training strategy [Outcome: 1] 5.8.3 RIN.3 Knowledge management'
+      [Outcome: 2]'
     outcome_refs:
     - 2
-- corporate_code: İÜC.BİDB.SRÇ.021
+- corporate_code: SRÇ.021
   corporate_name: Bilgi Yönetimi Süreci
   spice_code: RIN.3
   spice_name: Knowledge management
@@ -1792,14 +1680,11 @@ processes:
     number: 6
     title: Improve knowledge assets
     text: 'Validate and enrich knowledge assets to ensure their appropriateness and value to the organization. [Outcome: 2,
-      3] Work Products Inputs Outputs 01-04 Knowledge item [Outcome: 2] 03-02 Asset use data [Outcome: 2] 05-02 Business goals
-      [Outcome: 3] 13-04 Communication record [Outcome: 2] 13-04 Communication record [Outcome: 2] 16-04 Knowledge repository
-      [Outcome: 1, 2] 16-04 Knowledge repository [Outcome: 1] 19-03 Knowledge management strategy [Outcome: 3] 5.8.4 RIN.4
-      Infrastructure'
+      3]'
     outcome_refs:
     - 2
     - 3
-- corporate_code: İÜC.BİDB.SRÇ.022
+- corporate_code: SRÇ.022
   corporate_name: Altyapı Süreci
   spice_code: RIN.4
   spice_name: Infrastructure
@@ -1864,17 +1749,10 @@ processes:
     number: 6
     title: Maintain the infrastructure
     text: 'Perform maintenance on the infrastructure process for the purposes of: – correcting defects; and – improving performance.
-      [Outcome: 5] Work Products Inputs Outputs 08-02 Acquisition plan [Outcome: 3] 08-05 Development environment plan [Outcome:
-      3] 08-05 Development environment plan [Outcome: 2] 08-11 Logistics maintenance plan [Outcome: 3] 08-11 Logistics maintenance
-      plan [Outcome: 2] 09-04 Supplier selection policy [Outcome: 3] 10-00 Process description [Outcome: 1, 5] 13-03 Back-up
-      / recovery record [Outcome: 5] 13-06 Delivery record [Outcome: 4, 5] 13-06 Delivery record [Outcome: 3, 4] 14-02 Corrective
-      action register [Outcome: 5] 14-03 Hardware assets register [Outcome: 4, 5] 14-03 Hardware assets register [Outcome:
-      3, 4, 5] 14-07 Software assets register [Outcome: 4, 5] 14-07 Software assets register [Outcome: 3, 4, 5] 14-08 Tracking
-      system [Outcome: 4, 5] 14-08 Tracking system [Outcome: 3, 4, 5] 17-07 Infrastructure requirements [Outcome: 2] 17-07
-      Infrastructure requirements [Outcome: 1] 5.9 Reuse Process Group (REU) 5.9.1 REU.1 Asset management'
+      [Outcome: 5]'
     outcome_refs:
     - 5
-- corporate_code: İÜC.BİDB.SRÇ.023
+- corporate_code: SRÇ.023
   corporate_name: Organizasyonel Yönetim Süreci
   spice_code: MAN.2
   spice_name: Organization management
@@ -1940,13 +1818,8 @@ processes:
     notes:
     - id: NOTE 2
       text: 'Best practice may be related to the achieved or next capability level. See Knowledge management process (RIN.3)
-        to manage and disseminate best practices as part of organizational knowledge assets. Work Products Inputs Outputs
-        03-03 Benchmarking data [Outcome: 3] 03-06 Process performance data [Outcome:3] 04-07 Organizational structure [Outcome:
-        3] 04-07 Organizational structure [Outcome: 1] 05-02 Business goals [Outcome: 1, 2, 3] 07-04 Process measure [Outcome:
-        3] 10-00 Process description [Outcome: 2] 14-08 Tracking system [Outcome: 1] 15-05 Evaluation report [Outcome: 3]
-        07-04 Process measure [Outcome: 2] 15-13 Assessment report [Outcome: 3] 15-24 Audit report [Outcome: 3] 16-06 Process
-        repository [Outcome: 2] 19-00 Strategy [Outcome 1] 19-00 Strategy [Outcome: 1] 5.6.3 MAN.3 Project management'
-- corporate_code: İÜC.BİDB.SRÇ.024
+        to manage and disseminate best practices as part of organizational knowledge assets.'
+- corporate_code: SRÇ.024
   corporate_name: Kalite Yönetimi Süreci
   spice_code: MAN.4
   spice_name: Quality management
@@ -2037,21 +1910,10 @@ processes:
   - id: MAN.4.BP8
     number: 8
     title: Monitor actual performance of quality
-    text: 'Measure and monitor actual performance of quality against the quality goals. [Outcome: 5] Work Products Inputs
-      Outputs 02-00 Contract [Outcome: 1, 5] 03-01 Assessment data [Outcome: 5] 03-03 Benchmarking data [Outcome: 5] 03-04
-      Customer satisfaction data [Outcome: 5] 03-06 Process performance data [Outcome: 5] 05-06 Quality goals [Outcome: 2]
-      07-06 Quality measure [Outcome: 5] 08-12 Project plan [Outcome: 1, 4, 5] 08-13 Quality plan [Outcome: 3, 4, 5] 08-13
-      Quality plan [Outcome: 1, 2] 08-18 Review plan [Outcome: 4] 08-18 Review plan [Outcome: 5] 08-29 Improvement plan [Outcome:
-      4] 09-02 Quality policy [Outcome: 3] Work Products Inputs Outputs 10-04 Quality Manual [Outcome: 3] 13-07 Problem record
-      [Outcome: 6] 13-14 Progress status record [Outcome: 5] 13-18 Quality record [Outcome: 5] 13-19 Review record [Outcome:
-      5] 13-19 Review record [Outcome: 4, 6] 14-02 Corrective action register [Outcome: 6] 15-01 Analysis report [Outcome:
-      4] 15-13 Assessment report [Outcome: 5] 15-24 Audit report [Outcome: 5] 16-06 Process repository [Outcome: 3] 16-06
-      Process repository [Outcome: 3] 17-03 Customer requirements [Outcome: 1] 18-01 Acceptance criteria [Outcome: 2] 18-01
-      Acceptance criteria [Outcome: 1] 18-07 Quality criteria [Outcome: 2] 18-07 Quality criteria [Outcome: 1] 5.6.5 MAN.5
-      Risk management'
+    text: 'Measure and monitor actual performance of quality against the quality goals. [Outcome: 5]'
     outcome_refs:
     - 5
-- corporate_code: İÜC.BİDB.SRÇ.025
+- corporate_code: SRÇ.025
   corporate_name: Ölçüm Süreci
   spice_code: MAN.6
   spice_name: Measurement
@@ -2103,9 +1965,11 @@ processes:
   - id: MAN.6.BP5
     number: 5
     title: Collect and store measurement data
-    text: Identify, collect and store measurement data, including context information necessary to verify, understand, or
-      evaluate the data. [Outcomes 4, 5]
-    outcome_refs: []
+    text: 'Identify, collect and store measurement data, including context information necessary to verify, understand, or
+      evaluate the data. [Outcomes 4, 5]'
+    outcome_refs:
+    - 4
+    - 5
   - id: MAN.6.BP6
     number: 6
     title: Analyze measurement data
@@ -2132,21 +1996,10 @@ processes:
     title: Evaluate and communicate information products and measurement activities to process owners
     text: 'Evaluate information products and measurement activities against the identified information needs and measurement
       strategy, identify potential improvements in measurements, and communicate any identified potential improvement to the
-      process owners. [Outcome: 7] Work Products Inputs Outputs 03-01 Assessment data [Outcome: 6] 03-03 Benchmarking data
-      [Outcome: 5, 6] 03-03 Benchmarking data [Outcome: 5] 03-04 Customer satisfaction data [Outcome: 6] 03-04 Customer satisfaction
-      data [Outcome: 5] 03-06 Process performance data [Outcome: 6] 03-06 Process performance data [Outcome: 6] 07-01 Customer
-      satisfaction survey [Outcome: 3, 4, 5] 07-01 Customer satisfaction survey [Outcome: 3, 7] 07-02 Field measure [Outcome:
-      5] 07-02 Field measure [Outcome: 3, 7] 07-04 Process measure [Outcome: 5] 07-04 Process measure [Outcome: 3, 7] 07-05
-      Project measure [Outcome: 5] 07-05 Project measure [Outcome: 3, 7] Work Products Inputs Outputs 07-06 Quality measure
-      [Outcome: 5] 07-06 Quality measure [Outcome: 3, 7] 07-07 Risk measure [Outcome 5] 07-07 Risk measure [Outcome: 3, 7]
-      07-08 Service level measure [Outcome: 5] 07-08 Service level measure [Outcome: 3, 7] 09-02 Quality policy [Outcome:
-      1] 10-00 Process description [Outcome: 7] 10-00 Process description [Outcome: 7] 13-07 Problem record [Outcome 5] 13-17
-      Customer request [Outcome: 3] 14-10 Work product distribution register [Outcome: 7] 15-01 Analysis report [Outcome:
-      2, 5] 15-05 Evaluation report [Outcome: 5, 7] 15-18 Process performance report [Outcome: 5] 5.7 Process Improvement
-      Process Group (PIM) 5.7.1 PIM.1 Process establishment'
+      process owners. [Outcome: 7]'
     outcome_refs:
     - 7
-- corporate_code: İÜC.BİDB.SRÇ.026
+- corporate_code: SRÇ.026
   corporate_name: Denetim Süreci
   spice_code: SUP.5
   spice_name: Audit
@@ -2203,12 +2056,7 @@ processes:
     number: 6
     title: Track resolution
     text: 'Corrective actions are tracked to resolution. The auditor may review non-conformance resolutions and their results.
-      [Outcome: 4] Work Products Inputs Outputs 03-00 Data [Outcome: 1] 07-00 Measure [Outcome: 1] 08-13 Quality plan [Outcome:
-      1] 09-02 Quality Policy [Outcome: 1] 10-00 Process description [Outcome: 2] 13-00 Record [Outcome: 3, 4] 13-04 Communication
-      record [Outcome: 4] 13-07 Problem record [Outcome: 3, 4] 13-22 Traceability record [Outcome: 2] 14-02 Corrective action
-      register [Outcome: 4] 14-02 Corrective action register [Outcome: 4] 15-01 Analysis report [Outcome: 2, 4] 15-24 Audit
-      report [Outcome: 3, 4] 18-07 Quality criteria [Outcome: 2] 19-12 Audit strategy [Outcome: 1] 19-12 Audit strategy [Outcome:
-      1] 5.5.6 SUP.6 Product evaluation'
+      [Outcome: 4]'
     outcome_refs:
     - 4
 generic_practices:

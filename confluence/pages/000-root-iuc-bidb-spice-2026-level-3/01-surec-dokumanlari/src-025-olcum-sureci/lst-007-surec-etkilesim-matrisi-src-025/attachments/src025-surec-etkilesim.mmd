@@ -1,0 +1,14 @@
+%%{init: {'flowchart': {'htmlLabels': false}}}%%
+flowchart LR
+A["SRÇ.023 yönetim kararları ve bilgi ihtiyaçları"] --> Q["SRÇ.025 Ölçüm"]
+B["SRÇ.024 kalite hedefleri"] --> Q
+C["SRÇ.002 güvence ve SRÇ.005 değerlendirme sonuçları"] --> Q
+D["SRÇ.007 proje yönetimi ve süreç sahipleri"] --> Q
+E["Jira, Confluence, Bitbucket, Google Drive ve doğal kayıtlar"] --> Q
+Q --> P["PRS.009 Ölçüm ve Analiz Prosedürü"]
+Q --> L["Süreç özel LST.009 ölçüm tanımları"]
+Q --> R1["RPR.001 süreç performansı bilgi ürünü"]
+Q --> R2["RPR.002 ve proje özel bilgi ürünleri"]
+Q --> Y["SRÇ.023 YGG karar girdisi"]
+Q --> X["SRÇ.018 ölçüm değişikliği"]
+X --> I["SRÇ.006 kapsamlı iyileştirme"]

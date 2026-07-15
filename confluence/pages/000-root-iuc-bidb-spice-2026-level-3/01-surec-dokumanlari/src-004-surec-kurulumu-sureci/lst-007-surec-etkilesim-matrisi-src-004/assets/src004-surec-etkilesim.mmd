@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph INPUTS["Girdiler"]
+    direction TB
+    SRC001["SRÇ.001 Dokümantasyon Süreci"]
+    SRC005["SRÇ.005 Süreç Değerlendirme Süreci"]
+    SRC006["SRÇ.006 Süreç İyileştirme Süreci"]
+    SRC018["SRÇ.018 Değişiklik Talebi Yönetimi Süreci"]
+    TEMPLATES["Aktif Şablonlar: SRÇ.XXX.Ş / LST.007-LST.010.Ş / FRM.001.Ş"]
+  end
+  SRC004["SRÇ.004 Süreç Kurulumu Süreci"]
+  subgraph ASSETS["Üretilen / Güncellenen Dokümanlar"]
+    direction TB
+    PRS002["PRS.002 Süreç Tasarım Prosedürü"]
+    KLV002["KLV.002 Süreç Uyarlama Kılavuzu"]
+    KLV003["KLV.003 Süreç Tasarımı Kontrol Kılavuzu"]
+    LST006["LST.006 Standart Süreç Envanteri"]
+    LST007["LST.007 Süreç Etkileşim Matrisi"]
+    LST008["LST.008 İş Ürünleri ve Kalite Kriterleri"]
+    LST009["LST.009 Süreç Performans Ölçüm Seti"]
+    LST010["LST.010 Süreç Rol Yetki ve RACI Matrisi"]
+    FRM001["FRM.001 Süreç Gözden Geçirme Formu"]
+    LST012["LST.012 Yaygınlaştırma ve Bilgilendirme Kaydı"]
+  end
+  subgraph TARGETS["İlişkili Süreç Yönlendirmeleri"]
+    direction TB
+    SRC020["SRÇ.020 Eğitim Süreci"]
+    SRC025["SRÇ.025 Ölçüm Süreci"]
+  end
+  SRC001 -->|"doküman ve şablon kuralları"| SRC004
+  SRC005 -->|"değerlendirme bulguları"| SRC004
+  SRC006 -->|"iyileştirme ihtiyacı"| SRC004
+  SRC018 -->|"onaylı değişiklik talebi"| SRC004
+  TEMPLATES -->|"zorunlu doküman yapısı"| SRC004
+  SRC004 -->|"tasarım yöntemi"| PRS002
+  SRC004 -->|"uyarlama kuralları"| KLV002
+  SRC004 -->|"tasarım kontrol kuralları"| KLV003
+  SRC004 -->|"süreç envanteri"| LST006
+  SRC004 -->|"etkileşim kaydı"| LST007
+  SRC004 -->|"iş ürünleri ve kalite kriterleri"| LST008
+  SRC004 -->|"ölçüm seti"| LST009
+  SRC004 -->|"rol ve RACI kaydı"| LST010
+  SRC004 -->|"boş gözden geçirme formu"| FRM001
+  SRC004 -->|"yayın ve bilgilendirme kaydı"| LST012
+  SRC004 -->|"onaylı süreç varlıkları"| SRC001
+  SRC004 -->|"değerlendirme paketi ve kanıt"| SRC005
+  SRC004 -->|"performans ve kullanım bulguları"| SRC006
+  SRC004 -->|"eğitim / bilgilendirme ihtiyacı"| SRC020
+  SRC004 -->|"ölçüm tanımı ve veri ihtiyacı"| SRC025

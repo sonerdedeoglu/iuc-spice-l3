@@ -1,0 +1,19 @@
+%%{init: {'flowchart': {'htmlLabels': false}}}%%
+flowchart TD
+A["Müşteri gereksinimleri, standartlar, süreç ve proje girdileri"] --> B["Kurumsal kalite hedefleri ve stratejisi belirlenir"]
+B --> C["Kalite kriterleri, sorumluluklar ve ölçümler tanımlanır"]
+C --> D["Kalite güvence, süreç ve proje uygulamalarından veriler toplanır"]
+D --> E["Müşteri, proje, süreç ve personel geri bildirimleri derlenir"]
+E --> F["Kalite Danışmanı sonuçları analiz eder"]
+F --> G["Proje Yöneticisi sonuçları operasyonel olarak gözden geçirir"]
+G --> H{"Kalite uygunsuzluğu var mı?"}
+H -- "Evet" --> I["SRÇ.017 Problem Çözüm ve kök neden analizi"]
+I --> J{"Değişiklik gerekli mi?"}
+J -- "Evet" --> K["SRÇ.018 Değişiklik Talebi Yönetimi"]
+J -- "Hayır" --> L["Düzeltici faaliyet sonucu izlenir"]
+H -- "Hayır" --> M["Kalite sonuçları yıllık değerlendirmeye hazırlanır"]
+K --> M
+L --> M
+M --> N["Haziran-Temmuz YGG değerlendirmesi"]
+N --> O["Kalite hedefleri ve iyileştirme kararları güncellenir"]
+O --> B

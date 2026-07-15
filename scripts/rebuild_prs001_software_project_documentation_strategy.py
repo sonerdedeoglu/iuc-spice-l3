@@ -5,11 +5,11 @@ import html
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DOC_DIR = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru"
+DOC_DIR = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/prs-001-yazilim-projeleri-dokumantasyon-proseduru"
 STORAGE_PATH = DOC_DIR / "body.storage.xhtml"
 VIEW_PATH = DOC_DIR / "body.view.html"
 
-TITLE = "İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"
+TITLE = "PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"
 
 CSS = """
 body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
@@ -48,8 +48,8 @@ def build_storage() -> str:
     parts.append("<h2>1. Prosedür Bilgileri</h2>")
     parts.append(table(["Alan", "Değer"], [
         ["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"],
-        ["Prosedür Kodu ve Adı", "İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"],
-        ["Prosedür Referansı", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"],
+        ["Prosedür Kodu ve Adı", "PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"],
+        ["Prosedür Referansı", "SRÇ.001 - Dokümantasyon Süreci"],
         ["Prosedür Sahibi", "Levent BAYEZİT - Proje Yöneticisi"],
         ["Durum", "Onaylı"],
         ["Sürüm", "v1.0"],
@@ -59,7 +59,7 @@ def build_storage() -> str:
 
     parts.append("<h2>2. Amaç</h2>")
     parts.append(p("Bu prosedürün amacı, İÜC BİDB tarafından yürütülen yazılım projelerinde üretilecek doküman ve kayıtların proje yaşam döngüsüne göre nasıl belirleneceğini, nerede tutulacağını, kim tarafından oluşturulacağını, hangi durumda gözden geçirileceğini ve denetim kanıtı olarak nasıl izleneceğini tanımlamaktır."))
-    parts.append(p("Bu prosedür, İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci içinde tanımlanan kurumsal dokümantasyon yaklaşımını tekrar etmez; bu yaklaşımın yazılım projelerine özel uygulanma stratejisini belirler."))
+    parts.append(p("Bu prosedür, SRÇ.001 - Dokümantasyon Süreci içinde tanımlanan kurumsal dokümantasyon yaklaşımını tekrar etmez; bu yaklaşımın yazılım projelerine özel uygulanma stratejisini belirler."))
 
     parts.append("<h2>3. Kapsam</h2>")
     parts.append(p("Bu prosedür, İÜC BİDB yazılım projelerinde proje başlangıcından bakım ve kapanış aşamasına kadar oluşan doküman ve kayıtları kapsar."))
@@ -85,10 +85,10 @@ def build_storage() -> str:
 
     parts.append("<h2>5. Referanslar</h2>")
     parts.append(table(["Referans", "Açıklama"], [
-        ["İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "Kurumsal dokümantasyon yönetimi süreci"],
-        ["İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "Doküman yazım, başlık, tablo, sürüm ve yayın kuralları"],
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "Genel kullanıma açık aktif doküman envanteri"],
-        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "Yazılım proje yaşam döngüsüne göre beklenen doküman/kayıt ihtiyacı"],
+        ["SRÇ.001 - Dokümantasyon Süreci", "Kurumsal dokümantasyon yönetimi süreci"],
+        ["KLV.001 - Doküman Yazım Kuralları Talimatı", "Doküman yazım, başlık, tablo, sürüm ve yayın kuralları"],
+        ["LST.001 - Aktif Dokümanlar Listesi", "Genel kullanıma açık aktif doküman envanteri"],
+        ["LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "Yazılım proje yaşam döngüsüne göre beklenen doküman/kayıt ihtiyacı"],
         ["Jira / Confluence / Bitbucket / Bamboo / Drive", "Yazılım proje doküman ve kayıtlarının tutulduğu kaynak sistemler"],
     ]))
 
@@ -148,7 +148,7 @@ def build_storage() -> str:
     ]))
 
     parts.append("<h2>11. Yaşam Döngüsü Dokümantasyon Stratejisi</h2>")
-    parts.append(p("Aşağıdaki tablo yazılım projelerinde beklenen temel dokümantasyon yaklaşımını gösterir. Detaylı ve güncel doküman ihtiyacı İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi içinde sürdürülebilir."))
+    parts.append(p("Aşağıdaki tablo yazılım projelerinde beklenen temel dokümantasyon yaklaşımını gösterir. Detaylı ve güncel doküman ihtiyacı LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi içinde sürdürülebilir."))
     parts.append(table([
         "Yaşam Döngüsü Aşaması",
         "Beklenen Doküman / Kayıt",
@@ -219,10 +219,10 @@ def build_storage() -> str:
 
     parts.append("<h2>17. Kayıtlar ve Kanıtlar</h2>")
     parts.append(table(["Kayıt / Kanıt", "Kullanım Amacı", "Kaynak / Saklama Yeri"], [
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "Genel aktif doküman envanterini izlemek", "Confluence / Drive"],
-        ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", "Doküman değişikliklerini izlemek", "Confluence / Drive"],
-        ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "Gözden geçirme kayıtlarını izlemek", "Confluence / Drive"],
-        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "Proje yaşam döngüsüne göre doküman ihtiyacını izlemek", "Confluence / Drive"],
+        ["LST.001 - Aktif Dokümanlar Listesi", "Genel aktif doküman envanterini izlemek", "Confluence / Drive"],
+        ["LST.002 - Doküman Değişiklik Kaydı", "Doküman değişikliklerini izlemek", "Confluence / Drive"],
+        ["LST.003 - Doküman Gözden Geçirme Kaydı", "Gözden geçirme kayıtlarını izlemek", "Confluence / Drive"],
+        ["LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "Proje yaşam döngüsüne göre doküman ihtiyacını izlemek", "Confluence / Drive"],
         ["Jira kayıtları", "Görev, hata, değişiklik, talep ve iş akışı kanıtları", "Jira"],
         ["Confluence sayfaları", "Proje dokümanları, toplantı notları ve karar kayıtları", "Confluence"],
         ["Bitbucket kayıtları", "Kod, commit, branch, pull request ve code review kanıtları", "Bitbucket"],

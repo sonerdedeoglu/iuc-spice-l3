@@ -17,8 +17,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = [
-    ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru",
-    ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/05-kilavuzlar/iuc-bidb-klv-001-dokuman-yazim-kurallari-talimati",
+    ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/prs-001-yazilim-projeleri-dokumantasyon-proseduru",
+    ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/05-kilavuzlar/klv-001-dokuman-yazim-kurallari-talimati",
 ]
 
 H2_RE = re.compile(r"<h2>(\d+)\.\s*([^<]+)</h2>")
