@@ -15,7 +15,7 @@ from confluence_client import ConfluenceClient
 ROOT = Path(__file__).resolve().parents[1]
 PAGE_DIR = ROOT / (
     "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/"
-    "iuc-bidb-lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi"
+    "lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi"
 )
 
 
@@ -38,12 +38,12 @@ def main() -> None:
     view = nfc(remote["body"]["view"]["value"])
     combined = f"{storage}\n{view}\n{visible_text(view)}"
     required = [
-        "İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci",
+        "SRÇ.005 - Süreç Değerlendirme Süreci",
         "PRS.003, PLN.001, RPR.001",
         "Confluence yayını",
         "Bilgilendirme bekleniyor",
         "137265863",
-        "İÜC.BİDB.SRÇ.023 - Organizasyonel Yönetim Süreci",
+        "SRÇ.023 - Organizasyonel Yönetim Süreci",
         "PRS.006, FRM.002.Ş, LST.013.Ş, LST.013, RPR.001 güncellemesi",
         "Yayın ve iki PNG eki doğrulandı",
         "137265881",

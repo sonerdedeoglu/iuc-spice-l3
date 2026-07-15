@@ -16,8 +16,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 PAGE_ROOT = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
 PROCESS_ROOT = PAGE_ROOT / "01-surec-dokumanlari"
-TEMPLATE_DIR = PAGE_ROOT / "02-sablonlar/iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu"
-REFERENCE_DIR = PROCESS_ROOT / "iuc-bidb-src-006-surec-iyilestirme-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-006"
+TEMPLATE_DIR = PAGE_ROOT / "02-sablonlar/lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu"
+REFERENCE_DIR = PROCESS_ROOT / "src-006-surec-iyilestirme-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-006"
 
 PREPARED = "Soner DEDEOĞLU - Kalite Danışmanı"
 
@@ -105,24 +105,24 @@ def src001() -> dict[str, Any]:
         ["F7 Dokümanı sürdür ve arşivle", "A", "C", "C", "R", "C", "I", "I"],
     ]
     products = [
-        ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "A", "I", "C", "C", "R", "I", "C"],
+        ["PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "A", "I", "C", "C", "R", "I", "C"],
         ["Aktif doküman şablonları", "A", "C", "C", "R", "R", "I", "I"],
-        ["İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "A", "I", "C", "R", "R", "I", "I"],
-        ["İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)", "A", "I", "C", "I", "R", "I", "I"],
-        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "R/A", "I", "I", "R", "C", "I", "C"],
+        ["KLV.001 - Doküman Yazım Kuralları Talimatı", "A", "I", "C", "R", "R", "I", "I"],
+        ["LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.001)", "A", "I", "C", "I", "R", "I", "I"],
+        ["LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "R/A", "I", "I", "R", "C", "I", "C"],
         ["Hazırlanmış veya güncellenmiş doküman", "A", "R", "C", "I", "C", "I", "C"],
-        ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "A", "I", "R", "C", "C", "I", "I"],
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "A", "I", "C", "R", "C", "I", "I"],
-        ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", "A", "I", "C", "R", "C", "I", "I"],
-        ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "A", "I", "I", "R", "C", "I", "I"],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", "A", "I", "C", "I", "R", "I", "I"],
+        ["LST.003 - Doküman Gözden Geçirme Kaydı", "A", "I", "R", "C", "C", "I", "I"],
+        ["LST.001 - Aktif Dokümanlar Listesi", "A", "I", "C", "R", "C", "I", "I"],
+        ["LST.002 - Doküman Değişiklik Kaydı", "A", "I", "C", "R", "C", "I", "I"],
+        ["LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "A", "I", "I", "R", "C", "I", "I"],
+        ["FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.001)", "A", "I", "C", "I", "R", "I", "I"],
     ]
-    return {"process": "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "name": "Dokümantasyon Süreci", "purpose": "SRÇ.001 rol, yetki, yetkinlik ve RACI yapısını tanımlamak", "owner": "Levent BAYEZİT - Proje Yöneticisi", "reviewer": "Levent BAYEZİT - Proje Yöneticisi", "approver": "Mustafa Nusret SARISAKAL - BİD Başkanı", "raci_roles": rr, "roles": roles, "activities": activities, "products": products, "authority": [
+    return {"process": "SRÇ.001 - Dokümantasyon Süreci", "name": "Dokümantasyon Süreci", "purpose": "SRÇ.001 rol, yetki, yetkinlik ve RACI yapısını tanımlamak", "owner": "Levent BAYEZİT - Proje Yöneticisi", "reviewer": "Levent BAYEZİT - Proje Yöneticisi", "approver": "Mustafa Nusret SARISAKAL - BİD Başkanı", "raci_roles": rr, "roles": roles, "activities": activities, "products": products, "authority": [
         ["Dokümantasyon stratejisi ve prosedür yaklaşımı", "Süreç Sahibi / Kalite Danışmanı", "Doküman Gözden Geçiren", "Bilgi İşlem Daire Başkanı", "Strateji ve prosedür değişiklikleri onaya ve sürüm izlenebilirliğine tabidir."],
         ["Şablon oluşturma veya güncelleme", "Doküman Sorumlusu / Kalite Danışmanı", "Doküman Gözden Geçiren", "Süreç Sahibi", "Aktif şablon değişikliği izlenebilir olmalıdır."],
         ["Doküman hazırlama veya güncelleme", "Doküman Hazırlayan", "Doküman Gözden Geçiren", "Süreç Sahibi; kritik/yürürlük kararında BİD Başkanı", "Yeni yayın veya kritik güncelleme onay gerektirir."],
         ["Doküman yayımlama ve erişime açma", "Doküman Sorumlusu", "Kalite Danışmanı", "Süreç Sahibi", "Yalnızca gözden geçirilmiş ve onaylı sürüm aktif alanda yayımlanır."],
-        ["Doküman pasife alma veya arşivleme", "Doküman Sorumlusu", "Kalite Danışmanı", "Süreç Sahibi", "Gerekçe İÜC.BİDB.LST.002 üzerinde izlenir."],
+        ["Doküman pasife alma veya arşivleme", "Doküman Sorumlusu", "Kalite Danışmanı", "Süreç Sahibi", "Gerekçe LST.002 üzerinde izlenir."],
     ]}
 
 
@@ -146,18 +146,18 @@ def src004() -> dict[str, Any]:
         ["F6 Süreç kullanım verisini sürdür", "A", "C", "I", "R", "R", "I", "I"],
     ]
     products = [
-        ["İÜC.BİDB.LST.006 - Standart Süreç Envanteri", "A", "R", "I", "C", "I", "C", "I"],
-        ["İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004)", "A", "R", "C", "C", "I", "I", "I"],
-        ["İlgili İÜC.BİDB.SRÇ.XXX - Süreç Tanımı", "A", "R", "C", "R", "I", "C", "I"],
-        ["İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.004)", "A", "R", "I", "C", "I", "C", "I"],
-        ["İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.004)", "A", "R", "I", "C", "R", "I", "I"],
-        ["İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.004)", "A", "R", "C", "C", "I", "I", "I"],
-        ["İÜC.BİDB.KLV.002 - Süreç Uyarlama Kılavuzu", "A", "R", "C", "C", "I", "I", "I"],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.004)", "A", "R", "C", "C", "I", "I", "I"],
-        ["Onaylı süreç varlıkları ve İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "A", "C", "R", "I", "I", "R", "C"],
+        ["LST.006 - Standart Süreç Envanteri", "A", "R", "I", "C", "I", "C", "I"],
+        ["LST.007 - Süreç Etkileşim Matrisi (SRÇ.004)", "A", "R", "C", "C", "I", "I", "I"],
+        ["İlgili SRÇ.XXX - Süreç Tanımı", "A", "R", "C", "R", "I", "C", "I"],
+        ["LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.004)", "A", "R", "I", "C", "I", "C", "I"],
+        ["LST.009 - Süreç Performans Ölçüm Seti (SRÇ.004)", "A", "R", "I", "C", "R", "I", "I"],
+        ["LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.004)", "A", "R", "C", "C", "I", "I", "I"],
+        ["KLV.002 - Süreç Uyarlama Kılavuzu", "A", "R", "C", "C", "I", "I", "I"],
+        ["FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.004)", "A", "R", "C", "C", "I", "I", "I"],
+        ["Onaylı süreç varlıkları ve LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "A", "C", "R", "I", "I", "R", "C"],
         ["Süreç kullanım ve performans kayıtları", "A", "C", "I", "R", "R", "I", "I"],
     ]
-    return {"process": "İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci", "name": "Süreç Kurulumu Süreci", "purpose": "SRÇ.004 rol, yetki, yetkinlik ve RACI yapısını tanımlamak", "owner": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "reviewer": "Levent Bayezit - Proje Yöneticisi", "approver": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "raci_roles": rr, "roles": roles, "activities": activities, "products": products, "authority": [
+    return {"process": "SRÇ.004 - Süreç Kurulumu Süreci", "name": "Süreç Kurulumu Süreci", "purpose": "SRÇ.004 rol, yetki, yetkinlik ve RACI yapısını tanımlamak", "owner": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "reviewer": "Levent Bayezit - Proje Yöneticisi", "approver": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "raci_roles": rr, "roles": roles, "activities": activities, "products": products, "authority": [
         ["Standart süreç mimarisi ve kapsamı", "Kalite Danışmanı / Süreç Mimarı", "Proje Yöneticisi / İlgili Süreç Sahipleri", "Bilgi İşlem Daire Başkanı", "Değişiklik ihtiyacı SRÇ.018 kapsamında yönetilir."],
         ["Süreç tasarım paketi", "Kalite Danışmanı / İlgili Süreç Sahibi", "Proje Yöneticisi", "Bilgi İşlem Daire Başkanı", "SRÇ ve süreç özel LST.007-LST.010 ile boş FRM.001 birlikte değerlendirilir."],
         ["Süreç uyarlaması veya zorunlu kontrol sapması", "Kalite Danışmanı / İlgili Süreç Sahibi", "Proje Yöneticisi", "Bilgi İşlem Daire Başkanı", "Süreç amacı ve zorunlu sonuçlar kaldırılamaz."],
@@ -184,12 +184,12 @@ def src005() -> dict[str, Any]:
         ["F7 Raporla ve yönlendir", "R", "A", "C", "C", "I", "R"], ["F8 Kaydı sürdür", "R", "A", "I", "C", "I", "I"],
     ]
     products = [
-        ["İÜC.BİDB.PLN.001 - Süreç Kalite Planı", "R", "C", "A", "C", "I", "I"],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu", "R", "A", "C", "C", "I", "I"],
-        ["İÜC.BİDB.RPR.001 - Süreç Performansları Raporu", "R", "A", "I", "C", "I", "I"],
+        ["PLN.001 - Süreç Kalite Planı", "R", "C", "A", "C", "I", "I"],
+        ["FRM.001 - Süreç Gözden Geçirme Formu", "R", "A", "C", "C", "I", "I"],
+        ["RPR.001 - Süreç Performansları Raporu", "R", "A", "I", "C", "I", "I"],
         ["SRÇ.017 / SRÇ.018 bulgu yönlendirmesi", "R", "A", "C", "I", "I", "R"],
     ]
-    return {"process": "İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci", "name": "Süreç Değerlendirme Süreci", "purpose": "SRÇ.005 rol, yetki, yetkinlik ve RACI yapısını tanımlamak", "owner": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "reviewer": "Levent Bayezit - Proje Yöneticisi", "approver": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "raci_roles": rr, "roles": roles, "activities": activities, "products": products, "authority": [
+    return {"process": "SRÇ.005 - Süreç Değerlendirme Süreci", "name": "Süreç Değerlendirme Süreci", "purpose": "SRÇ.005 rol, yetki, yetkinlik ve RACI yapısını tanımlamak", "owner": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "reviewer": "Levent Bayezit - Proje Yöneticisi", "approver": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "raci_roles": rr, "roles": roles, "activities": activities, "products": products, "authority": [
         ["Değerlendirme kapsamı", "Kalite Danışmanı / SRÇ.005 Süreç Sahibi", "Gözden Geçiren", "Onaylayan", "KAPSAM DIŞI kararları dahil kapsam FRM.001 üzerinde izlenir."],
         ["BP/GP etiketi", "Kalite Danışmanı", "Gözden Geçiren", "SRÇ.005 Süreç Sahibi", "Sayısal puan veya tek toplam süreç etiketi kullanılmaz."],
         ["Değerlendirmeyi sonuçlandırma", "Kalite Danışmanı / SRÇ.005 Süreç Sahibi", "Gözden Geçiren", "Onaylayan", "Tanımlı tamamlama ölçütleri karşılanmalıdır."],
@@ -219,13 +219,13 @@ def src021() -> dict[str, Any]:
         ["Süreç etkisi için SRÇ.018'e aktar", "R", "R/C", "C", "C", "A/I", "I"],
     ]
     products = [
-        ["İÜC.BİDB.LST.004 - Bilgi Kataloğu", "R/A", "C", "C", "C", "I", "I"],
-        ["İÜC.BİDB.PRS.005 - Bilgi Yönetimi Prosedürü", "R", "R", "C", "C", "A", "I"],
-        ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "R/A", "C", "I", "C", "I", "I"],
-        ["İÜC.BİDB.SRÇ.018 etki / değişiklik kaydı", "R", "R", "C", "C", "A", "I"],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.021)", "R/A", "R", "C", "C", "I", "I"],
+        ["LST.004 - Bilgi Kataloğu", "R/A", "C", "C", "C", "I", "I"],
+        ["PRS.005 - Bilgi Yönetimi Prosedürü", "R", "R", "C", "C", "A", "I"],
+        ["LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "R/A", "C", "I", "C", "I", "I"],
+        ["SRÇ.018 etki / değişiklik kaydı", "R", "R", "C", "C", "A", "I"],
+        ["FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.021)", "R/A", "R", "C", "C", "I", "I"],
     ]
-    return {"process": "İÜC.BİDB.SRÇ.021 - Bilgi Yönetimi Süreci", "name": "Bilgi Yönetimi Süreci", "purpose": "SRÇ.021 rol, yetki, yetkinlik ve RACI yapısını tanımlamak", "owner": "Levent BAYEZİT - Proje Yöneticisi", "reviewer": "Levent BAYEZİT - Süreç Sahibi", "approver": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "raci_roles": rr, "roles": roles, "activities": activities, "products": products, "authority": [
+    return {"process": "SRÇ.021 - Bilgi Yönetimi Süreci", "name": "Bilgi Yönetimi Süreci", "purpose": "SRÇ.021 rol, yetki, yetkinlik ve RACI yapısını tanımlamak", "owner": "Levent BAYEZİT - Proje Yöneticisi", "reviewer": "Levent BAYEZİT - Süreç Sahibi", "approver": "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı", "raci_roles": rr, "roles": roles, "activities": activities, "products": products, "authority": [
         ["Bilgi yönetimi süreci ve prosedürü", "Proje Yöneticisi / Kalite Danışmanı", "Süreç Sahibi", "Bilgi İşlem Daire Başkanı", "Kurumsal kapsam ve yönetişim değişiklikleri onaya tabidir."],
         ["Bilgi Kataloğu yapısı ve sınıflandırma kuralları", "Proje Yöneticisi / Kalite Danışmanı", "İlgili Uzman / Birim", "Süreç Sahibi", "Kategori, erişim sınıfı veya zorunlu alan değişikliği kontrollü yapılır."],
         ["Rutin katalog kaydı oluşturma, güncelleme veya arşivleme", "Proje Yöneticisi", "Gerektiğinde İlgili Uzman / Kaynak Sahibi", "Proje Yöneticisi", "Sürekli resmî onay aranmaz; bağlantı, sahiplik ve gerekçe LST.004 üzerinde izlenir."],
@@ -240,7 +240,7 @@ def template_body() -> str:
     role_headers = [em("Rol 1"), em("Rol 2"), em("Rol 3"), em("Rol 4"), em("Rol 5"), em("Rol 6")]
     headers = ["Faaliyet / İş Ürünü", *role_headers]
     return prefix + "".join([
-        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["İlgili Süreç", em("İÜC.BİDB.SRÇ.XXX - Süreç Adı")], ["Kullanım Amacı", em("Sürece özel rol, yetki, yetkinlik ve RACI yapısını tanımlamak")], ["Sorumlu", em("Süreç sahibi / rol")], ["Durum", em("Taslak / Aktif / Pasif")], ["Sürüm", em("v1.0")]]),
+        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["İlgili Süreç", em("SRÇ.XXX - Süreç Adı")], ["Kullanım Amacı", em("Sürece özel rol, yetki, yetkinlik ve RACI yapısını tanımlamak")], ["Sorumlu", em("Süreç sahibi / rol")], ["Durum", em("Taslak / Aktif / Pasif")], ["Sürüm", em("v1.0")]]),
         "<h2>2. Kullanım Değerleri</h2>", table(["Değer", "Anlamı"], [["R", "Faaliyeti gerçekleştiren / iş ürününü hazırlayan"], ["A", "Nihai hesap veren ve onaylayan"], ["C", "Görüşüne başvurulan"], ["I", "Bilgilendirilen"], ["R/A", "Aynı rolün hem uygulayan hem nihai hesap veren olduğu durum"]]),
         "<h2>3. Rol ve Yetkinlik Matrisi</h2>", table(["Rol", "Sorumluluk", "Yetki", "Asgari Yetkinlik", "Süreçteki Konum"], [[em("Rol adı"), em("Temel sorumluluk") , em("Karar / uygulama yetkisi"), em("Gerekli bilgi ve deneyim"), em("Süreç sahibi / hazırlayan / uygulayan / gözden geçiren / onaylayan")], [em("Rol adı"), em("Temel sorumluluk"), em("Karar / uygulama yetkisi"), em("Gerekli bilgi ve deneyim"), em("Süreçteki konum")]]),
         "<h2>4. Süreç Faaliyetleri RACI Matrisi</h2>", table(headers, [[em("F1 Faaliyet adı"), "R", "A", "C", "I", "I", "I"], [em("F2 Faaliyet adı"), em("R/A/C/I"), em("R/A/C/I"), em("R/A/C/I"), em("R/A/C/I"), em("R/A/C/I"), em("R/A/C/I")]]),
@@ -251,10 +251,10 @@ def template_body() -> str:
 
 
 PAGES = {
-    "SRÇ.001": (PROCESS_ROOT / "iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-001", src001),
-    "SRÇ.004": (PROCESS_ROOT / "iuc-bidb-src-004-surec-kurulumu-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-004", src004),
-    "SRÇ.005": (PROCESS_ROOT / "iuc-bidb-src-005-surec-degerlendirme-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-005", src005),
-    "SRÇ.021": (PROCESS_ROOT / "iuc-bidb-src-021-bilgi-yonetimi-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-021", src021),
+    "SRÇ.001": (PROCESS_ROOT / "src-001-dokumantasyon-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-001", src001),
+    "SRÇ.004": (PROCESS_ROOT / "src-004-surec-kurulumu-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-004", src004),
+    "SRÇ.005": (PROCESS_ROOT / "src-005-surec-degerlendirme-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-005", src005),
+    "SRÇ.021": (PROCESS_ROOT / "src-021-bilgi-yonetimi-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-021", src021),
 }
 
 
@@ -313,12 +313,12 @@ def validate(page_dir: Path, *, template: bool = False) -> None:
 
 def main() -> None:
     for code, (page_dir, factory) in PAGES.items():
-        title = f"İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.{code})"
+        title = f"LST.010 - Süreç Rol Yetki ve RACI Matrisi ({code})"
         write_page(page_dir, title, process_body(factory()))
         print(f"[UPDATED] {code} LST.010")
 
     # SRÇ.006 is the approved structural reference; it is intentionally not rewritten.
-    write_page(TEMPLATE_DIR, "İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu", template_body())
+    write_page(TEMPLATE_DIR, "LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu", template_body())
     print("[UPDATED] Active LST.010 template")
     print("[REFERENCE] SRÇ.006 LST.010 preserved without content change")
 

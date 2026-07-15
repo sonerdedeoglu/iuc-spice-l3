@@ -19,17 +19,17 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CONFLUENCE_DIR = ROOT / "confluence"
 ROOT_PAGE = CONFLUENCE_DIR / "pages/000-root-iuc-bidb-spice-2026-level-3"
-SRC004_DIR = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-004-surec-kurulumu-sureci"
-TEMPLATE_DIR = ROOT_PAGE / "02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu"
+SRC004_DIR = ROOT_PAGE / "01-surec-dokumanlari/src-004-surec-kurulumu-sureci"
+TEMPLATE_DIR = ROOT_PAGE / "02-sablonlar/src-xxx-s-surec-tanimi-sablonu"
 INDEX_PATH = CONFLUENCE_DIR / "index.yaml"
 REPORT_PATH = ROOT / "reports/src004_template_alignment_report.md"
-SRC004_TITLE = "İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci"
-SRC004_CODE = "İÜC.BİDB.SRÇ.004"
+SRC004_TITLE = "SRÇ.004 - Süreç Kurulumu Süreci"
+SRC004_CODE = "SRÇ.004"
 PROCESS_OWNER = "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı"
 REVIEWER = "Levent Bayezit - Proje Yöneticisi"
 APPROVER = "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı"
 PREPARER = "Soner DEDEOĞLU - Kalite Danışmanı"
-FLOWCHART_FILENAME = unicodedata.normalize("NFD", "İÜC.BİDB.SRÇ.004 - Flowchart.png")
+FLOWCHART_FILENAME = unicodedata.normalize("NFD", "SRÇ.004 - Flowchart.png")
 
 CSS = (
     'body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}'
@@ -200,17 +200,17 @@ def surec_aktivitesi() -> str:
         ["Süreç Bitişi", "Süreç varlıklarının hazırlanması, gözden geçirilmesi ve onaylanması; yayımlanması, hedef kitleye duyurulması ve kullanım/izleme kayıtlarına bağlanması"],
         ["Ana Faaliyetler", "Süreç mimarisini tanımlama; kurumsal kullanımı destekleme; standart süreçleri tanımlama ve sürdürme; performans beklentilerini belirleme; uyarlama kılavuzlarını oluşturma; süreç kullanım verisini sürdürme"],
         ["İlgili Süreçler", "<br />".join([
-            link("İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"),
-            link("İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci"),
-            link("İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci"),
-            link("İÜC.BİDB.SRÇ.020 - Eğitim Süreci"),
-            link("İÜC.BİDB.SRÇ.025 - Ölçüm Süreci"),
+            link("SRÇ.001 - Dokümantasyon Süreci"),
+            link("SRÇ.005 - Süreç Değerlendirme Süreci"),
+            link("SRÇ.006 - Süreç İyileştirme Süreci"),
+            link("SRÇ.020 - Eğitim Süreci"),
+            link("SRÇ.025 - Ölçüm Süreci"),
         ])],
     ])
 
 
 def roller() -> str:
-    return p("Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik tanımları, süreç özel kaydı olan İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.004) dokümanında yönetilir.")
+    return p("Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik tanımları, süreç özel kaydı olan LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.004) dokümanında yönetilir.")
 
 
 def araclar_altyapi() -> str:
@@ -229,7 +229,7 @@ def araclar_altyapi() -> str:
 
 
 def is_urunleri() -> str:
-    return p("Bu süreç kapsamında kullanılan girdi iş ürünleri ve üretilen çıktı iş ürünleri, süreç özel kaydı olan İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.004) dokümanında yönetilir.")
+    return p("Bu süreç kapsamında kullanılan girdi iş ürünleri ve üretilen çıktı iş ürünleri, süreç özel kaydı olan LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.004) dokümanında yönetilir.")
 
 
 def surec_akisi(*, view: bool = False) -> str:
@@ -268,9 +268,9 @@ def surec_akisi(*, view: bool = False) -> str:
 
 
 ACTIVITIES = [
-    {"id": "F1", "name": "Süreç mimarisini tanımla", "detail": "Standart süreç seti, her sürecin amacı, uygulanabilirliği ve süreçler arası etkileşimler tanımlanır ve sürdürülür. (PIM.1.BP1)", "product": "İÜC.BİDB.LST.006 - Standart Süreç Envanteri; İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004)"},
+    {"id": "F1", "name": "Süreç mimarisini tanımla", "detail": "Standart süreç seti, her sürecin amacı, uygulanabilirliği ve süreçler arası etkileşimler tanımlanır ve sürdürülür. (PIM.1.BP1)", "product": "LST.006 - Standart Süreç Envanteri; LST.007 - Süreç Etkileşim Matrisi (SRÇ.004)"},
     {"id": "F2", "name": "Süreçlerin kurumsal kullanımını destekle", "detail": "Standart süreçlerin amaçlarına uygun olarak organizasyon genelinde erişimi, duyurusu, bilgilendirilmesi ve gerektiğinde eğitimi desteklenir. (PIM.1.BP2)", "product": "Yayımlanmış süreç varlıkları; e-posta duyurusu; SRÇ.020 eğitim kaydı"},
-    {"id": "F3", "name": "Standart süreçleri tanımla ve sürdür", "detail": "Her standart sürecin amacı, sonuçları, kapsamı, faaliyetleri, rolleri, iş ürünleri, etkileşimleri ve uygulama kuralları güncel şablona göre tanımlanır. (PIM.1.BP3)", "product": "İlgili SRÇ süreç tanımı; süreç özel İÜC.BİDB.LST.007, İÜC.BİDB.LST.008 ve İÜC.BİDB.LST.010 kayıtları"},
+    {"id": "F3", "name": "Standart süreçleri tanımla ve sürdür", "detail": "Her standart sürecin amacı, sonuçları, kapsamı, faaliyetleri, rolleri, iş ürünleri, etkileşimleri ve uygulama kuralları güncel şablona göre tanımlanır. (PIM.1.BP3)", "product": "İlgili SRÇ süreç tanımı; süreç özel LST.007, LST.008 ve LST.010 kayıtları"},
     {"id": "F4", "name": "Performans beklentilerini belirle", "detail": "Standart süreçlerin uygulanmasında beklenen performans hedefleri, ölçümler, veri kaynakları ve izleme sıklıkları belirlenir. (PIM.1.BP4)", "product": "LST.009 Süreç Performans Ölçüm Seti"},
     {"id": "F5", "name": "Süreç uyarlama kılavuzlarını oluştur", "detail": "Standart süreçlerin proje, ürün veya hizmet ihtiyaçlarına göre hangi sınırlar içinde uyarlanabileceği ve onay koşulları belirlenir. (PIM.1.BP5)", "product": "KLV.002 Süreç Uyarlama Kılavuzu; uyarlama kararı/kaydı"},
     {"id": "F6", "name": "Süreç kullanım verisini sürdür", "detail": "Standart süreçlerin belirli proje ve hizmetlerde kullanımına ilişkin bilgiler mevcut ilgili kayıt ve sistemlerde tutulur, gözden geçirilir ve iyileştirme döngüsüne aktarılır. Ayrı bir merkezi register oluşturulmaz. (PIM.1.BP6)", "product": "Süreç kullanım ve performans kayıtları; değerlendirme ve analiz sonuçları"},
@@ -299,7 +299,7 @@ def surec_faaliyetleri() -> str:
 
 
 def olcum() -> str:
-    return p("Bu süreç kapsamında takip edilecek süreç performansı ölçüm seti, süreç özel kaydı olan İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.004) dokümanında yönetilir.")
+    return p("Bu süreç kapsamında takip edilecek süreç performansı ölçüm seti, süreç özel kaydı olan LST.009 - Süreç Performans Ölçüm Seti (SRÇ.004) dokümanında yönetilir.")
 
 
 def uygulama_uyarlama() -> str:
@@ -325,7 +325,7 @@ def uygulama_uyarlama() -> str:
 
 
 def etkilesimler() -> str:
-    return p("Bu süreç kapsamındaki faaliyetlerin farklı süreçler ile olan etkileşimleri, süreç özel kaydı olan İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004) dokümanında yönetilir.")
+    return p("Bu süreç kapsamındaki faaliyetlerin farklı süreçler ile olan etkileşimleri, süreç özel kaydı olan LST.007 - Süreç Etkileşim Matrisi (SRÇ.004) dokümanında yönetilir.")
 
 
 def version_table() -> str:
@@ -397,7 +397,7 @@ def validate(storage: str, sections: list[str]) -> None:
         raise RuntimeError(f"SRÇ.004 başlık sırası şablonla eşleşmiyor: {rendered_headings}")
     required = [
         "2.1. Süreç Sonuçları", "8. Araçlar ve Altyapı", "PIM.1.BP1", "PIM.1.BP6",
-        "İÜC.BİDB.LST.007", "İÜC.BİDB.LST.008", "İÜC.BİDB.LST.009", "İÜC.BİDB.LST.010",
+        "LST.007", "LST.008", "LST.009", "LST.010",
         "ISO/IEC 15504-5:2006 - Process Assessment Model",
         "ISO/IEC 15504-5:2006 - Process Attributes",
         "flowchart TD", PROCESS_OWNER, REVIEWER, APPROVER,

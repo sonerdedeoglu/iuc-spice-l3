@@ -30,7 +30,7 @@ def text_content(value: str) -> str:
 
 SPECS = [
     {
-        "folder": PAGES / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci",
+        "folder": PAGES / "01-surec-dokumanlari/src-001-dokumantasyon-sureci",
         "required": [
             "1. Süreç Bilgileri",
             "Araçlar ve Altyapı",
@@ -43,10 +43,10 @@ SPECS = [
             "v1.0",
         ],
         "forbidden": ["Aşağıdaki kaynak kod", "Mermaid Online Editor", "v1.1"],
-        "attachment": "İÜC.BİDB.SRÇ.001 - Flowchart.png",
+        "attachment": "SRÇ.001 - Flowchart.png",
     },
     {
-        "folder": PAGES / "01-surec-dokumanlari/iuc-bidb-src-004-surec-kurulumu-sureci",
+        "folder": PAGES / "01-surec-dokumanlari/src-004-surec-kurulumu-sureci",
         "required": [
             "1. Süreç Bilgileri",
             "Araçlar ve Altyapı",
@@ -59,10 +59,10 @@ SPECS = [
             "v1.0",
         ],
         "forbidden": ["Aşağıdaki kaynak kod", "Mermaid Online Editor", "v0.9"],
-        "attachment": "İÜC.BİDB.SRÇ.004 - Flowchart.png",
+        "attachment": "SRÇ.004 - Flowchart.png",
     },
     {
-        "folder": PAGES / "02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu",
+        "folder": PAGES / "02-sablonlar/src-xxx-s-surec-tanimi-sablonu",
         "required": [
             "1. Süreç Bilgileri",
             "Araçlar ve Altyapı",

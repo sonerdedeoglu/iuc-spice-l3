@@ -20,15 +20,15 @@ REPORT = ROOT / "reports/lst007_confluence_sync_verification_report.md"
 
 SPECS = [
     {
-        "folder": PAGES / "iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001",
-        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001)",
+        "folder": PAGES / "src-001-dokumantasyon-sureci/lst-007-surec-etkilesim-matrisi-src-001",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.001)",
         "parent_id": "137265842",
         "png": "src001-surec-etkilesim.png",
         "required": ("flowchart LR", "PRS001", "KLV001", "LST008", "LST009", "LST010"),
     },
     {
-        "folder": PAGES / "iuc-bidb-src-004-surec-kurulumu-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-004",
-        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004)",
+        "folder": PAGES / "src-004-surec-kurulumu-sureci/lst-007-surec-etkilesim-matrisi-src-004",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.004)",
         "parent_id": "137265862",
         "png": "src004-surec-etkilesim.png",
         "required": ("flowchart LR", "TEMPLATES", "PRS002", "KLV002", "KLV003", "LST008", "LST009", "LST010", "FRM001"),
@@ -36,9 +36,9 @@ SPECS = [
 ]
 
 REMOVED = [
-    ("137265918", "İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.001)"),
-    ("137265919", "İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.004)"),
-    ("137265907", "İÜC.BİDB.LST.007 - Süreç Mimari ve Etkileşim Matrisi"),
+    ("137265918", "LST.004 - Süreç Gözden Geçirme Matrisi (SRÇ.001)"),
+    ("137265919", "LST.004 - Süreç Gözden Geçirme Matrisi (SRÇ.004)"),
+    ("137265907", "LST.007 - Süreç Mimari ve Etkileşim Matrisi"),
 ]
 
 

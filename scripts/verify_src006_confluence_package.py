@@ -23,73 +23,73 @@ def nfc(value: str) -> str:
 
 SPECS = [
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-006-surec-iyilestirme-sureci",
-        "required": ["PIM.3.BP9", "10. Süreç Akışı", "Mermaid Kodu", "İÜC.BİDB.PLN.002"],
-        "attachment": "İÜC.BİDB.SRÇ.006 - Flowchart.png",
+        "path": "01-surec-dokumanlari/src-006-surec-iyilestirme-sureci",
+        "required": ["PIM.3.BP9", "10. Süreç Akışı", "Mermaid Kodu", "PLN.002"],
+        "attachment": "SRÇ.006 - Flowchart.png",
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-006-surec-iyilestirme-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-006",
-        "required": ["flowchart LR", "Mermaid Kodu", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İlgili Süreç)", "İÜC.BİDB.RPR.001"],
-        "forbidden": ["İÜC.BİDB.FRM.001 Değerlendirme #1"],
+        "path": "01-surec-dokumanlari/src-006-surec-iyilestirme-sureci/lst-007-surec-etkilesim-matrisi-src-006",
+        "required": ["flowchart LR", "Mermaid Kodu", "FRM.001 - Süreç Gözden Geçirme Formu (İlgili Süreç)", "RPR.001"],
+        "forbidden": ["FRM.001 Değerlendirme #1"],
         "attachment": "src006-surec-etkilesim.png",
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-006-surec-iyilestirme-sureci/iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-006",
-        "required": ["İÜC.BİDB.PRS.004", "İÜC.BİDB.PLN.002", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İlgili Süreç)"],
-        "forbidden": ["İÜC.BİDB.FRM.001 Değerlendirme #1"],
+        "path": "01-surec-dokumanlari/src-006-surec-iyilestirme-sureci/lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-006",
+        "required": ["PRS.004", "PLN.002", "FRM.001 - Süreç Gözden Geçirme Formu (İlgili Süreç)"],
+        "forbidden": ["FRM.001 Değerlendirme #1"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-006-surec-iyilestirme-sureci/iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-006",
+        "path": "01-surec-dokumanlari/src-006-surec-iyilestirme-sureci/lst-009-surec-performans-olcum-seti-src-006",
         "required": ["ÖLÇ.006.01", "ÖLÇ.006.02", "ÖLÇ.006.03"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-006-surec-iyilestirme-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-006",
+        "path": "01-surec-dokumanlari/src-006-surec-iyilestirme-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-006",
         "required": ["Bilgi İşlem Daire Başkanı", "Proje Yöneticisi", "Kalite Danışmanı", "Yetki ve Onay Matrisi"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-006-surec-iyilestirme-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-006",
+        "path": "01-surec-dokumanlari/src-006-surec-iyilestirme-sureci/frm-001-surec-gozden-gecirme-formu-src-006",
         "required": ["GG-AA-YYYY", "Öncelikli Tamamlama Listesi"],
     },
     {
-        "path": "91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-006-degerlendirme-1",
+        "path": "91-ic-denetimler/surec-gozden-gecirmeleri/frm-001-surec-gozden-gecirme-formu-src-006-degerlendirme-1",
         "required": ["Değerlendirme #1", "PIM.3.BP1", "PIM.3.BP9", "PA 3.2", "Öncelikli Tamamlama Listesi"],
     },
     {
-        "path": "07-prosedurler/iuc-bidb-prs-004-surec-iyilestirme-ve-degisiklik-yonetimi-proseduru",
-        "required": ["İÜC.BİDB.SRÇ.006", "İÜC.BİDB.SRÇ.018", "SRÇ.018 değişiklik gözden geçirmesi", "İÜC.BİDB.PLN.002"],
+        "path": "07-prosedurler/prs-004-surec-iyilestirme-ve-degisiklik-yonetimi-proseduru",
+        "required": ["SRÇ.006", "SRÇ.018", "SRÇ.018 değişiklik gözden geçirmesi", "PLN.002"],
         "forbidden": ["SUP.10.BP9"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-pln-002-s-surec-iyilestirme-plani-sablonu",
-        "required": ["İÜC.BİDB.PLN.002.Ş", "Etki ve Uygulama Önceliği", "Sonuç Doğrulama", "Yeniden Kullanım"],
+        "path": "02-sablonlar/pln-002-s-surec-iyilestirme-plani-sablonu",
+        "required": ["PLN.002.Ş", "Etki ve Uygulama Önceliği", "Sonuç Doğrulama", "Yeniden Kullanım"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-rpr-001-s-surec-performanslari-raporu-sablonu",
+        "path": "02-sablonlar/rpr-001-s-surec-performanslari-raporu-sablonu",
         "required": ["Doğrulanmış İyileştirme Sonuçları", "SRÇ.018 değişiklik gözden geçirme sonucu"],
     },
     {
-        "path": "09-raporlar/iuc-bidb-rpr-001-surec-performanslari-raporu",
-        "required": ["İÜC.BİDB.SRÇ.006", "4 VAR; 2 DAĞINIK; 3 ZAYIF", "Doğrulanmış İyileştirme Sonuçları"],
+        "path": "09-raporlar/rpr-001-surec-performanslari-raporu",
+        "required": ["SRÇ.006", "4 VAR; 2 DAĞINIK; 3 ZAYIF", "Doğrulanmış İyileştirme Sonuçları"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi",
-        "required": ["İÜC.BİDB.PRS.004", "İÜC.BİDB.PLN.002.Ş", "İÜC.BİDB.SRÇ.006"],
+        "path": "03-kayitlar-ve-listeler/lst-001-aktif-dokumanlar-listesi",
+        "required": ["PRS.004", "PLN.002.Ş", "SRÇ.006"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-006-standart-surec-envanteri",
-        "required": ["PIM.2", "PIM.3", "İÜC.BİDB.SRÇ.005", "İÜC.BİDB.SRÇ.006", "Confluence'ta yayımlanmış"],
+        "path": "03-kayitlar-ve-listeler/lst-006-standart-surec-envanteri",
+        "required": ["PIM.2", "PIM.3", "SRÇ.005", "SRÇ.006", "Confluence'ta yayımlanmış"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi",
-        "required": ["İÜC.BİDB.SRÇ.006", "RPR.001 güncellemesi", "Confluence yayını", "iki PNG eki doğrulandı"],
+        "path": "03-kayitlar-ve-listeler/lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi",
+        "required": ["SRÇ.006", "RPR.001 güncellemesi", "Confluence yayını", "iki PNG eki doğrulandı"],
     },
     {
         "path": "02-sablonlar",
-        "required": ["İÜC.BİDB.PLN.002.Ş", "Süreç İyileştirme Planı Şablonu"],
+        "required": ["PLN.002.Ş", "Süreç İyileştirme Planı Şablonu"],
     },
     {
         "path": "07-prosedurler",
-        "required": ["İÜC.BİDB.PRS.004", "Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü"],
+        "required": ["PRS.004", "Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü"],
     },
 ]
 

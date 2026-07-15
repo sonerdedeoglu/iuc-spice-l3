@@ -29,39 +29,39 @@ PAGE_ROOT_REL = "pages/000-root-iuc-bidb-spice-2026-level-3"
 PAGE_ROOT = CONFLUENCE / PAGE_ROOT_REL
 
 SRC004_ID = "137265862"
-SRC004_TITLE = "İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci"
-SRC004_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/iuc-bidb-src-004-surec-kurulumu-sureci"
+SRC004_TITLE = "SRÇ.004 - Süreç Kurulumu Süreci"
+SRC004_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/src-004-surec-kurulumu-sureci"
 
 GUIDES_ID = "137265788"
 GUIDES_TITLE = "05 - Kılavuzlar"
-KLV002_TITLE = "İÜC.BİDB.KLV.002 - Süreç Uyarlama Kılavuzu"
-KLV003_TITLE = "İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu"
-KLV002_REL = f"{PAGE_ROOT_REL}/05-kilavuzlar/iuc-bidb-klv-002-surec-uyarlama-kilavuzu"
-KLV003_REL = f"{PAGE_ROOT_REL}/05-kilavuzlar/iuc-bidb-klv-003-surec-tasarimi-kontrol-kilavuzu"
+KLV002_TITLE = "KLV.002 - Süreç Uyarlama Kılavuzu"
+KLV003_TITLE = "KLV.003 - Süreç Tasarımı Kontrol Kılavuzu"
+KLV002_REL = f"{PAGE_ROOT_REL}/05-kilavuzlar/klv-002-surec-uyarlama-kilavuzu"
+KLV003_REL = f"{PAGE_ROOT_REL}/05-kilavuzlar/klv-003-surec-tasarimi-kontrol-kilavuzu"
 
 LISTS_ID = "137265786"
 LISTS_TITLE = "03 - Kayıtlar ve Listeler"
-LST006_TITLE = "İÜC.BİDB.LST.006 - Standart Süreç Envanteri"
-LST006_REL = f"{PAGE_ROOT_REL}/03-kayitlar-ve-listeler/iuc-bidb-lst-006-standart-surec-envanteri"
+LST006_TITLE = "LST.006 - Standart Süreç Envanteri"
+LST006_REL = f"{PAGE_ROOT_REL}/03-kayitlar-ve-listeler/lst-006-standart-surec-envanteri"
 
-LST007_TITLE = "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004)"
-LST007_SLUG = "iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-004"
+LST007_TITLE = "LST.007 - Süreç Etkileşim Matrisi (SRÇ.004)"
+LST007_SLUG = "lst-007-surec-etkilesim-matrisi-src-004"
 LST007_REL = f"{SRC004_REL}/{LST007_SLUG}"
 LST007_PNG = "src004-surec-etkilesim.png"
 LST007_MMD = "src004-surec-etkilesim.mmd"
 
 SRC001_ID = "137265842"
-SRC001_TITLE = "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"
-SRC001_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci"
-SRC001_LST007_TITLE = "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001)"
-SRC001_LST007_REL = f"{SRC001_REL}/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001"
+SRC001_TITLE = "SRÇ.001 - Dokümantasyon Süreci"
+SRC001_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/src-001-dokumantasyon-sureci"
+SRC001_LST007_TITLE = "LST.007 - Süreç Etkileşim Matrisi (SRÇ.001)"
+SRC001_LST007_REL = f"{SRC001_REL}/lst-007-surec-etkilesim-matrisi-src-001"
 SRC001_LST007_PNG = "src001-surec-etkilesim.png"
 SRC001_LST007_MMD = "src001-surec-etkilesim.mmd"
 
 REMOVED_RELS = {
-    f"{PAGE_ROOT_REL}/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-001",
-    f"{PAGE_ROOT_REL}/91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004",
-    f"{PAGE_ROOT_REL}/03-kayitlar-ve-listeler/iuc-bidb-lst-007-surec-mimari-ve-etkilesim-matrisi",
+    f"{PAGE_ROOT_REL}/91-ic-denetimler/surec-gozden-gecirmeleri/lst-004-surec-gozden-gecirme-matrisi-src-001",
+    f"{PAGE_ROOT_REL}/91-ic-denetimler/surec-gozden-gecirmeleri/lst-004-surec-gozden-gecirme-matrisi-src-004",
+    f"{PAGE_ROOT_REL}/03-kayitlar-ve-listeler/lst-007-surec-mimari-ve-etkilesim-matrisi",
 }
 
 PREPARED_BY = "Soner DEDEOĞLU - Kalite Danışmanı"
@@ -69,20 +69,20 @@ REVIEWED_BY = "Levent Bayezit - Proje Yöneticisi"
 APPROVED_BY = "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı"
 PROCESS_OWNER = APPROVED_BY
 
-SRC001 = "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"
-SRC005 = "İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci"
-SRC006 = "İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci"
-SRC018 = "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"
-SRC020 = "İÜC.BİDB.SRÇ.020 - Eğitim Süreci"
-SRC025 = "İÜC.BİDB.SRÇ.025 - Ölçüm Süreci"
-SRC_TEMPLATE = "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu"
-PRS002 = "İÜC.BİDB.PRS.002 - Süreç Tasarım Prosedürü"
-LST001 = "İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"
-LST008 = "İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.004)"
-LST009 = "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.004)"
-LST010 = "İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.004)"
-LST012 = "İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"
-FRM001 = "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.004)"
+SRC001 = "SRÇ.001 - Dokümantasyon Süreci"
+SRC005 = "SRÇ.005 - Süreç Değerlendirme Süreci"
+SRC006 = "SRÇ.006 - Süreç İyileştirme Süreci"
+SRC018 = "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"
+SRC020 = "SRÇ.020 - Eğitim Süreci"
+SRC025 = "SRÇ.025 - Ölçüm Süreci"
+SRC_TEMPLATE = "SRÇ.XXX.Ş - Süreç Tanımı Şablonu"
+PRS002 = "PRS.002 - Süreç Tasarım Prosedürü"
+LST001 = "LST.001 - Aktif Dokümanlar Listesi"
+LST008 = "LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.004)"
+LST009 = "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.004)"
+LST010 = "LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.004)"
+LST012 = "LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"
+FRM001 = "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.004)"
 
 REPORT = ROOT / "reports/src004_support_package_alignment_report.md"
 
@@ -357,7 +357,7 @@ def klv003_body() -> str:
         ]),
         "<h2>10. Örnekler ve Formatlar</h2>",
         table(["Örnek Alanı", "Kullanım", "Örnek", "Açıklama"], [
-            [t("Süreç özel liste adı"), t("LST.007-LST.010"), t("İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004)"), t("Kod, güncel ad ve ilgili süreç kodu birlikte yazılır.")],
+            [t("Süreç özel liste adı"), t("LST.007-LST.010"), t("LST.007 - Süreç Etkileşim Matrisi (SRÇ.004)"), t("Kod, güncel ad ve ilgili süreç kodu birlikte yazılır.")],
             [t("Boş form adı"), t("Süreç altındaki tekrar kullanılabilir form"), t(FRM001), t("Değerlendirme sıra numarası içermez.")],
             [t("Doldurulmuş form adı"), t("İç denetim kaydı"), t(f"{FRM001} - Değerlendirme #1"), t("Her yeni değerlendirmede sıra numarası artırılır.")],
             [t("Süreç sayısı ifadesi"), t("Kapsam tanımı"), t(f"Güncel standart süreç seti {LST006_TITLE} üzerinden belirlenir."), t("Sabit toplam kullanılmaz.")],
@@ -400,13 +400,13 @@ def load_inventory_rows() -> list[list[str]]:
                 standard_name = clean(row[index["Standart Süreç Adı"]])
                 corporate_code = clean(row[index["Kurumsal Süreç Kodu"]])
                 corporate_name = clean(row[index["Çalışma Adı / Türkçe Ad"]])
-                if corporate_code == "İÜC.BİDB.SRÇ.001":
+                if corporate_code == "SRÇ.001":
                     owner, status, note = "Levent BAYEZİT - Proje Yöneticisi", "Aktif", "Süreç paketi oluşturulmuş ve süreç özel kayıtlarıyla yönetilmektedir."
-                elif corporate_code == "İÜC.BİDB.SRÇ.004":
+                elif corporate_code == "SRÇ.004":
                     owner, status, note = PROCESS_OWNER, "Aktif", "Süreç paketi güncel aktif şablonlara göre yerelde tamamlanmaktadır."
-                elif corporate_code == "İÜC.BİDB.SRÇ.005":
+                elif corporate_code == "SRÇ.005":
                     owner, status, note = PROCESS_OWNER, "Aktif", "Süreç paketi oluşturulmuş, Confluence'ta yayımlanmış ve süreç özel kayıtlarıyla yönetilmektedir."
-                elif corporate_code == "İÜC.BİDB.SRÇ.006":
+                elif corporate_code == "SRÇ.006":
                     owner, status, note = PROCESS_OWNER, "Aktif", "Süreç paketi oluşturulmuş, Confluence'ta yayımlanmış ve süreç özel kayıtlarıyla yönetilmektedir."
                 else:
                     owner, status, note = "İlgili süreç çalışmasında belirlenecek", "Taslak", "Süreç sahibi, kapsamı ve süreç özel paketi ilgili süreç çalışmasında doğrulanacaktır."

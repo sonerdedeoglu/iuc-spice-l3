@@ -15,8 +15,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
-TEMPLATE_DIR = PAGES / "02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu"
-SRC001_DIR = PAGES / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci"
+TEMPLATE_DIR = PAGES / "02-sablonlar/src-xxx-s-surec-tanimi-sablonu"
+SRC001_DIR = PAGES / "01-surec-dokumanlari/src-001-dokumantasyon-sureci"
 REPORT = ROOT / "reports/process_template_src001_local_update.md"
 DATE = "14-07-2026"
 

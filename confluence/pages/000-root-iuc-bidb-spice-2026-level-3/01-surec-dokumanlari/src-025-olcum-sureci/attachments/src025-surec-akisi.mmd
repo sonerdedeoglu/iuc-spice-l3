@@ -1,0 +1,18 @@
+%%{init: {'flowchart': {'htmlLabels': false}}}%%
+flowchart TD
+A["Yönetim, süreç veya proje bilgi ihtiyacı"] --> B["Ölçüm taahhüdü ve stratejisi doğrulanır"]
+B --> C["Desteklenecek karar ve bilgi ihtiyacı tanımlanır"]
+C --> D["Uygulanabilir ölçüm LST.009 içinde tanımlanır"]
+D --> E["Kaynak veri bağlam bilgileriyle doğal sistemden alınır"]
+E --> F["Veri doğrulanır, analiz edilir ve yorumlanır"]
+F --> G["RPR, gösterge, tablo veya karar girdisi hazırlanır"]
+G --> H["Bilgi ürünü yetkili karar sahiplerine sunulur"]
+H --> I["Kullanım ve anlaşılabilirlik geri bildirimi alınır"]
+I --> J["Ölçüm ve bilgi ürünü yıllık YGG hazırlığında değerlendirilir"]
+J --> K{"Ölçüm değişikliği gerekli mi?"}
+K -- "Hayır" --> C
+K -- "Evet" --> L["SRÇ.018 kontrollü değişiklik"]
+L --> M{"Kapsamlı süreç iyileştirmesi mi?"}
+M -- "Evet" --> N["SRÇ.006 süreç iyileştirmesi"]
+M -- "Hayır" --> D
+N --> D

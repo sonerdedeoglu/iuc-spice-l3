@@ -47,7 +47,7 @@ def process_folders() -> dict[str, Path]:
         match = PROCESS_TITLE_RE.match(title)
         if not match:
             continue
-        result[f"İÜC.BİDB.SRÇ.{match.group(1)}"] = page_yaml.parent
+        result[f"SRÇ.{match.group(1)}"] = page_yaml.parent
     return result
 
 

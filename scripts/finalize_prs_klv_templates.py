@@ -30,18 +30,18 @@ ARCHIVE_PARENT_TITLE = "Arşiv - Kaldırılan Şablonlar"
 
 ITEMS = [
     {
-        "old_slug": "iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-        "draft_slug": "taslak-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-        "archived_slug": "kaldirildi-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-        "active_title": "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
-        "archived_title": "KALDIRILDI - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
+        "old_slug": "prs-xxx-s-prosedur-tanimi-sablonu",
+        "draft_slug": "taslak-prs-xxx-s-prosedur-tanimi-sablonu",
+        "archived_slug": "kaldirildi-prs-xxx-s-prosedur-tanimi-sablonu",
+        "active_title": "PRS.XXX.Ş - Prosedür Tanımı Şablonu",
+        "archived_title": "KALDIRILDI - PRS.XXX.Ş - Prosedür Tanımı Şablonu",
     },
     {
-        "old_slug": "iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-        "draft_slug": "taslak-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-        "archived_slug": "kaldirildi-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-        "active_title": "İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-        "archived_title": "KALDIRILDI - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+        "old_slug": "klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+        "draft_slug": "taslak-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+        "archived_slug": "kaldirildi-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+        "active_title": "KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+        "archived_title": "KALDIRILDI - KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
     },
 ]
 

@@ -9,11 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 DOCS = [
     {
-        "path": ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
+        "path": ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/prs-xxx-s-prosedur-tanimi-sablonu/body.storage.xhtml",
         "heading": "1. Prosedür Bilgileri",
         "rows": [
             ("Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"),
-            ("Prosedür Kodu ve Adı", "İÜC.BİDB.PRS.<em>XXX</em> - <em>Prosedür adı</em>"),
+            ("Prosedür Kodu ve Adı", "PRS.<em>XXX</em> - <em>Prosedür adı</em>"),
             ("Prosedür Referansı", "<em>Standart / iç referans / ilişkili süreç</em>"),
             ("Prosedür Sahibi", "<em>Birim / rol</em>"),
             ("Durum", "<em>Taslak / Gözden Geçirildi / Onaylı / Aktif</em>"),
@@ -23,11 +23,11 @@ DOCS = [
         ],
     },
     {
-        "path": ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
+        "path": ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu/body.storage.xhtml",
         "heading": "1. Kılavuz / Talimat Bilgileri",
         "rows": [
             ("Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"),
-            ("Kılavuz / Talimat Kodu ve Adı", "İÜC.BİDB.KLV.<em>XXX</em> - <em>Kılavuz / Talimat adı</em>"),
+            ("Kılavuz / Talimat Kodu ve Adı", "KLV.<em>XXX</em> - <em>Kılavuz / Talimat adı</em>"),
             ("Kılavuz / Talimat Referansı", "<em>Standart / iç referans / ilişkili süreç</em>"),
             ("Kılavuz / Talimat Sahibi", "<em>Birim / rol</em>"),
             ("Durum", "<em>Taslak / Gözden Geçirildi / Onaylı / Aktif</em>"),
@@ -37,12 +37,12 @@ DOCS = [
         ],
     },
     {
-        "path": ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru/body.storage.xhtml",
+        "path": ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/prs-001-yazilim-projeleri-dokumantasyon-proseduru/body.storage.xhtml",
         "heading": "1. Prosedür Bilgileri",
         "rows": [
             ("Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"),
-            ("Prosedür Kodu ve Adı", "İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"),
-            ("Prosedür Referansı", "ISO/IEC 15504-5 SUP.7 - Documentation; İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"),
+            ("Prosedür Kodu ve Adı", "PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"),
+            ("Prosedür Referansı", "ISO/IEC 15504-5 SUP.7 - Documentation; SRÇ.001 - Dokümantasyon Süreci"),
             ("Prosedür Sahibi", "Levent BAYEZİT - Proje Yöneticisi"),
             ("Durum", "Onaylı"),
             ("Sürüm", "v1.2"),
@@ -51,12 +51,12 @@ DOCS = [
         ],
     },
     {
-        "path": ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/05-kilavuzlar/iuc-bidb-klv-001-dokuman-yazim-kurallari-talimati/body.storage.xhtml",
+        "path": ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/05-kilavuzlar/klv-001-dokuman-yazim-kurallari-talimati/body.storage.xhtml",
         "heading": "1. Kılavuz / Talimat Bilgileri",
         "rows": [
             ("Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"),
-            ("Kılavuz / Talimat Kodu ve Adı", "İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı"),
-            ("Kılavuz / Talimat Referansı", "ISO/IEC 15504-5 SUP.7 - Documentation; İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"),
+            ("Kılavuz / Talimat Kodu ve Adı", "KLV.001 - Doküman Yazım Kuralları Talimatı"),
+            ("Kılavuz / Talimat Referansı", "ISO/IEC 15504-5 SUP.7 - Documentation; SRÇ.001 - Dokümantasyon Süreci"),
             ("Kılavuz / Talimat Sahibi", "Proje Geliştirme Yönetimi"),
             ("Durum", "Onaylı"),
             ("Sürüm", "v1.2"),

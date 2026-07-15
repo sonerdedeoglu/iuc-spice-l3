@@ -29,24 +29,24 @@ INDEX_PATH = CONFLUENCE_DIR / "index.yaml"
 ROOT_PAGE = CONFLUENCE_DIR / "pages/000-root-iuc-bidb-spice-2026-level-3"
 TEMPLATE_PARENT = ROOT_PAGE / "02-sablonlar"
 ARCHIVE_PARENT = TEMPLATE_PARENT / "arsiv-kaldirilan-sablonlar"
-SRC001_PARENT = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci"
+SRC001_PARENT = ROOT_PAGE / "01-surec-dokumanlari/src-001-dokumantasyon-sureci"
 
 TEMPLATE_PARENT_ID = "137265785"
 TEMPLATE_PARENT_TITLE = "02 - Şablonlar"
 SRC001_PARENT_ID = "137265796"
-SRC001_PARENT_TITLE = "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"
+SRC001_PARENT_TITLE = "SRÇ.001 - Dokümantasyon Süreci"
 
-OLD_TEMPLATE_SLUG = "iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu"
-OLD_TEMPLATE_TITLE = "İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu"
-ARCHIVED_TEMPLATE_SLUG = "kaldirildi-iuc-bidb-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu"
-ARCHIVED_TEMPLATE_TITLE = "KALDIRILDI - İÜC.BİDB.LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu"
+OLD_TEMPLATE_SLUG = "lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu"
+OLD_TEMPLATE_TITLE = "LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu"
+ARCHIVED_TEMPLATE_SLUG = "kaldirildi-lst-007-s-surec-mimari-ve-etkilesim-matrisi-sablonu"
+ARCHIVED_TEMPLATE_TITLE = "KALDIRILDI - LST.007.Ş - Süreç Mimari ve Etkileşim Matrisi Şablonu"
 
-TEMPLATE_SLUG = "iuc-bidb-lst-007-s-surec-etkilesim-matrisi-sablonu"
-TEMPLATE_TITLE = "İÜC.BİDB.LST.007.Ş - Süreç Etkileşim Matrisi Şablonu"
+TEMPLATE_SLUG = "lst-007-s-surec-etkilesim-matrisi-sablonu"
+TEMPLATE_TITLE = "LST.007.Ş - Süreç Etkileşim Matrisi Şablonu"
 TEMPLATE_DIR = TEMPLATE_PARENT / TEMPLATE_SLUG
 
-SRC001_SLUG = "iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001"
-SRC001_TITLE = "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001)"
+SRC001_SLUG = "lst-007-surec-etkilesim-matrisi-src-001"
+SRC001_TITLE = "LST.007 - Süreç Etkileşim Matrisi (SRÇ.001)"
 SRC001_DIR = SRC001_PARENT / SRC001_SLUG
 
 CSS = """
@@ -223,7 +223,7 @@ def build_template_storage(mermaid_code: str) -> str:
         "<h3>0.1. Liste Üst Bilgisi</h3>",
         table(["Alan", "Değer"], [
             ["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"],
-            ["Doküman Kodu", "İÜC.BİDB.LST.007.Ş"],
+            ["Doküman Kodu", "LST.007.Ş"],
             ["Doküman Türü", "Liste / Matris Şablonu"],
             ["Kullanım Alanı", "Süreç etkileşimlerinin Mermaid kodu, PNG görseli ve matrislerle tanımlanması"],
             ["Durum", "Aktif"],
@@ -234,14 +234,14 @@ def build_template_storage(mermaid_code: str) -> str:
         "<h3>0.2. Listenin Kullanım Amacı</h3>",
         p("Bu şablon, süreçler arasındaki girdi, çıktı, kayıt ve yönlendirme etkileşimlerinin hem görsel diyagram hem de matris yapısıyla tanımlanması için kullanılır."),
         "<h3>0.3. Doküman Adlandırma Kuralı</h3>",
-        p("Bu şablondan üretilen gerçek listeler İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.XXX) formatında adlandırılır."),
+        p("Bu şablondan üretilen gerçek listeler LST.007 - Süreç Etkileşim Matrisi (SRÇ.XXX) formatında adlandırılır."),
         "<h3>0.4. Sürüm Geçmişi</h3>",
         table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan/Güncelleyen", "Gözden Geçiren", "Onay"], [
             ["v0.1", "01-02-2025", "İlk taslak oluşturuldu.", "Soner DEDEOĞLU - Kalite Danışmanı", "-", "-"],
             ["v1.0", "15-02-2025", "Şablon onaylanarak yürürlüğe alındı.", "Soner DEDEOĞLU - Kalite Danışmanı", "Levent BAYEZİT - Dokümantasyon Süreç Sahibi", "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı"],
         ]),
         "<h2>1. Liste Özeti</h2>",
-        table(["Alan", "Değer"], [["Liste Kodu ve Adı", "<em>İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.XXX)</em>"], ["İlgili Süreç", "<em>İÜC.BİDB.SRÇ.XXX - Süreç Adı</em>"], ["Kullanım Amacı", "<em>Süreç etkileşimlerini görsel ve matris yapısıyla izlemek</em>"], ["Sorumlu", "<em>Rol / birim</em>"], ["Durum", "<em>Taslak / Aktif</em>"], ["Sürüm", "<em>v1.0</em>"]]),
+        table(["Alan", "Değer"], [["Liste Kodu ve Adı", "<em>LST.007 - Süreç Etkileşim Matrisi (SRÇ.XXX)</em>"], ["İlgili Süreç", "<em>SRÇ.XXX - Süreç Adı</em>"], ["Kullanım Amacı", "<em>Süreç etkileşimlerini görsel ve matris yapısıyla izlemek</em>"], ["Sorumlu", "<em>Rol / birim</em>"], ["Durum", "<em>Taslak / Aktif</em>"], ["Sürüm", "<em>v1.0</em>"]]),
         "<h2>2. Kullanım Değerleri</h2>",
         table(["Alan", "Kullanım Kuralı"], [["Mermaid Kodu", "Diyagramın kaynak kodu bu bölümde saklanır."], ["PNG Görsel", "Mermaid kodundan üretilmiş görsel, hızlı okuma ve denetim sunumu için kullanılır."], ["Girdi Matrisi", "Sürece gelen etkileşimler tablo halinde açıklanır."], ["Çıktı Matrisi", "Süreçten çıkan etkileşimler tablo halinde açıklanır."], ["Etkileşim Notları", "Varsa özel uygulama ve sınırlamalar yazılır."]]),
         "<h2>3. Süreç Etkileşim Diyagramı</h2>",
@@ -263,7 +263,7 @@ def build_template_storage(mermaid_code: str) -> str:
 def build_src001_storage(mermaid_code: str) -> str:
     return "".join([
         "<h2>1. Liste Özeti</h2>",
-        table(["Alan", "Değer"], [["Liste Kodu ve Adı", "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001)"], ["İlgili Süreç", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"], ["Kullanım Amacı", "Dokümantasyon Süreci’nin diğer süreç, prosedür, kılavuz, liste ve proje dokümantasyonu bileşenleriyle etkileşimini göstermek"], ["Sorumlu", "Levent BAYEZİT - Dokümantasyon Süreç Sahibi"], ["Durum", "Onaylı"], ["Sürüm", "v1.0"], ["Yürürlük Tarihi", "15-02-2025"], ["Son Gözden Geçirme Tarihi", "15-02-2025"]]),
+        table(["Alan", "Değer"], [["Liste Kodu ve Adı", "LST.007 - Süreç Etkileşim Matrisi (SRÇ.001)"], ["İlgili Süreç", "SRÇ.001 - Dokümantasyon Süreci"], ["Kullanım Amacı", "Dokümantasyon Süreci’nin diğer süreç, prosedür, kılavuz, liste ve proje dokümantasyonu bileşenleriyle etkileşimini göstermek"], ["Sorumlu", "Levent BAYEZİT - Dokümantasyon Süreç Sahibi"], ["Durum", "Onaylı"], ["Sürüm", "v1.0"], ["Yürürlük Tarihi", "15-02-2025"], ["Son Gözden Geçirme Tarihi", "15-02-2025"]]),
         "<h2>2. Kullanım Değerleri</h2>",
         table(["Alan", "Değer"], [["Diyagram Kaynağı", "Mermaid kodu"], ["Görsel Çıktı", "src001-surec-etkilesim.png"], ["Etkileşim Kapsamı", "SRÇ.001’in dokümantasyon yönetimi çıktıları ve bu çıktıların desteklediği süreç/dokümanlar"], ["Kapsam Dışı", "Tüm süreçlerin ayrıntılı operasyonel veri akışları"], ["Güncelleme Sıklığı", "Süreç mimarisi veya dokümantasyon yapısı değiştiğinde"]]),
         "<h2>3. Süreç Etkileşim Diyagramı</h2>",
@@ -273,18 +273,18 @@ def build_src001_storage(mermaid_code: str) -> str:
         ac_image("src001-surec-etkilesim.png"),
         "<h2>4. Girdi Etkileşimleri Matrisi</h2>",
         table(["Kaynak Süreç / Kaynak", "Etkileşim Türü", "Girdi / Tetikleyici", "Kayıt / Kanıt", "Açıklama"], [
-            ["İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci", "Süreç yapısı / ihtiyaç", "Süreç dokümantasyon ihtiyacı", "Süreç tanımı ve ilgili alt kayıtlar", "SRÇ.001, süreç dokümanlarının ve bağlı kayıtların ortak yönetim yaklaşımını sağlar."],
+            ["SRÇ.004 - Süreç Kurulumu Süreci", "Süreç yapısı / ihtiyaç", "Süreç dokümantasyon ihtiyacı", "Süreç tanımı ve ilgili alt kayıtlar", "SRÇ.001, süreç dokümanlarının ve bağlı kayıtların ortak yönetim yaklaşımını sağlar."],
             ["Yazılım Projeleri", "Proje dokümantasyon ihtiyacı", "Proje yaşam döngüsünde oluşan doküman/kayıt gereksinimi", "Jira / Confluence / Bitbucket / Bamboo / Drive kayıtları", "PRS.001 aracılığıyla yazılım projeleri için özel stratejiye dönüştürülür."],
-            ["İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci", "Gözden geçirme girdisi", "Doküman kalite gözden geçirme ihtiyacı", "LST.003 ve ilgili gözden geçirme kayıtları", "Kalite kontrolleri dokümantasyon kayıtlarına yansıtılır."],
-            ["İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci", "Değerlendirme girdisi", "Süreç doküman ve kayıt kanıtı ihtiyacı", "FRM.001, LST.008, LST.009, LST.010", "Süreç değerlendirmelerinde kullanılacak dokümantasyon kanıtları SRÇ.001 çıktılarıyla desteklenir."],
+            ["SRÇ.002 - Kalite Güvencesi Süreci", "Gözden geçirme girdisi", "Doküman kalite gözden geçirme ihtiyacı", "LST.003 ve ilgili gözden geçirme kayıtları", "Kalite kontrolleri dokümantasyon kayıtlarına yansıtılır."],
+            ["SRÇ.005 - Süreç Değerlendirme Süreci", "Değerlendirme girdisi", "Süreç doküman ve kayıt kanıtı ihtiyacı", "FRM.001, LST.008, LST.009, LST.010", "Süreç değerlendirmelerinde kullanılacak dokümantasyon kanıtları SRÇ.001 çıktılarıyla desteklenir."],
         ]),
         "<h2>5. Çıktı Etkileşimleri Matrisi</h2>",
         table(["Hedef Süreç / Hedef", "Etkileşim Türü", "Çıktı / Yönlendirme", "Kayıt / Kanıt", "Açıklama"], [
-            ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "Prosedür yönlendirmesi", "Yazılım projeleri dokümantasyon stratejisi", "PRS.001", "SRÇ.001’in genel dokümantasyon yaklaşımı yazılım projelerine özel hale getirilir."],
-            ["İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "Kılavuz / talimat", "Doküman yazım, başlık, tablo, sürüm ve yayın kuralları", "KLV.001", "Tüm doküman türleri için ortak yazım standardı sağlar."],
-            ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "Envanter çıktısı", "Genel aktif doküman envanteri", "LST.001", "Genel kullanıma açık dokümanların güncel durumunu izler."],
-            ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", "Değişiklik izleme", "Doküman değişikliklerinin kaydı", "LST.002", "Doküman değişikliklerinin izlenebilirliğini destekler."],
-            ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "Gözden geçirme izleme", "Doküman gözden geçirme kayıtları", "LST.003", "Doküman kontrolleri ve onay öncesi değerlendirmeleri izler."],
+            ["PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "Prosedür yönlendirmesi", "Yazılım projeleri dokümantasyon stratejisi", "PRS.001", "SRÇ.001’in genel dokümantasyon yaklaşımı yazılım projelerine özel hale getirilir."],
+            ["KLV.001 - Doküman Yazım Kuralları Talimatı", "Kılavuz / talimat", "Doküman yazım, başlık, tablo, sürüm ve yayın kuralları", "KLV.001", "Tüm doküman türleri için ortak yazım standardı sağlar."],
+            ["LST.001 - Aktif Dokümanlar Listesi", "Envanter çıktısı", "Genel aktif doküman envanteri", "LST.001", "Genel kullanıma açık dokümanların güncel durumunu izler."],
+            ["LST.002 - Doküman Değişiklik Kaydı", "Değişiklik izleme", "Doküman değişikliklerinin kaydı", "LST.002", "Doküman değişikliklerinin izlenebilirliğini destekler."],
+            ["LST.003 - Doküman Gözden Geçirme Kaydı", "Gözden geçirme izleme", "Doküman gözden geçirme kayıtları", "LST.003", "Doküman kontrolleri ve onay öncesi değerlendirmeleri izler."],
             ["SRÇ.001 alt kayıtları", "Süreç kanıtı", "LST.008, LST.009, LST.010 ve FRM.001", "İlgili süreç alt kayıtları", "SRÇ.001’in iş ürünü, ölçüm, RACI ve gözden geçirme kanıtlarını sağlar."],
             ["Diğer süreç dokümanları", "Ortak dokümantasyon yapısı", "Şablon, yazım kuralı ve kayıt yönetimi yaklaşımı", "Şablonlar ve ilgili süreç kayıtları", "Tüm süreçlerin tutarlı doküman yapısında hazırlanmasını destekler."],
         ]),

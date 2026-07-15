@@ -1,86 +1,86 @@
 # SRÇ.006 Confluence Paket Doğrulama Raporu
 
-Zaman: 2026-07-14T21:35:28.773898+00:00
+Zaman: 2026-07-15T13:24:59.085321+00:00
 
 Doğrulanan sayfa sayısı: 16
 
-- **İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci**
-  - Sayfa ID / sürüm: 137265864 / 2
+- **SRÇ.006 - Süreç İyileştirme Süreci**
+  - Sayfa ID / sürüm: 137265864 / 3
   - Ebeveyn ID: 137265784
   - Ek: başarılı (138396 bayt)
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265864
-- **İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.006)**
-  - Sayfa ID / sürüm: 137266425 / 1
+- **LST.007 - Süreç Etkileşim Matrisi (SRÇ.006)**
+  - Sayfa ID / sürüm: 137266425 / 2
   - Ebeveyn ID: 137265864
   - Ek: başarılı (106172 bayt)
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266425
-- **İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.006)**
-  - Sayfa ID / sürüm: 137266426 / 1
+- **LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.006)**
+  - Sayfa ID / sürüm: 137266426 / 2
   - Ebeveyn ID: 137265864
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266426
-- **İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.006)**
-  - Sayfa ID / sürüm: 137266427 / 1
+- **LST.009 - Süreç Performans Ölçüm Seti (SRÇ.006)**
+  - Sayfa ID / sürüm: 137266427 / 2
   - Ebeveyn ID: 137265864
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266427
-- **İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.006)**
-  - Sayfa ID / sürüm: 137266428 / 1
+- **LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.006)**
+  - Sayfa ID / sürüm: 137266428 / 2
   - Ebeveyn ID: 137265864
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266428
-- **İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.006)**
-  - Sayfa ID / sürüm: 137266149 / 4
+- **FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.006)**
+  - Sayfa ID / sürüm: 137266149 / 5
   - Ebeveyn ID: 137265864
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266149
-- **İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.006) - Değerlendirme #1**
-  - Sayfa ID / sürüm: 137266429 / 1
+- **FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.006) - Değerlendirme #1**
+  - Sayfa ID / sürüm: 137266429 / 2
   - Ebeveyn ID: 137265917
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266429
-- **İÜC.BİDB.PRS.004 - Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü**
-  - Sayfa ID / sürüm: 137266422 / 1
+- **PRS.004 - Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü**
+  - Sayfa ID / sürüm: 137266422 / 2
   - Ebeveyn ID: 137265790
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266422
-- **İÜC.BİDB.PLN.002.Ş - Süreç İyileştirme Planı Şablonu**
-  - Sayfa ID / sürüm: 137266418 / 1
+- **PLN.002.Ş - Süreç İyileştirme Planı Şablonu**
+  - Sayfa ID / sürüm: 137266418 / 2
   - Ebeveyn ID: 137265785
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266418
-- **İÜC.BİDB.RPR.001.Ş - Süreç Performansları Raporu Şablonu**
-  - Sayfa ID / sürüm: 137266374 / 3
+- **RPR.001.Ş - Süreç Performansları Raporu Şablonu**
+  - Sayfa ID / sürüm: 137266374 / 6
   - Ebeveyn ID: 137265785
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266374
-- **İÜC.BİDB.RPR.001 - Süreç Performansları Raporu**
-  - Sayfa ID / sürüm: 137266387 / 2
+- **RPR.001 - Süreç Performansları Raporu**
+  - Sayfa ID / sürüm: 137266387 / 6
   - Ebeveyn ID: 137266368
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137266387
-- **İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi**
-  - Sayfa ID / sürüm: 137265902 / 14
+- **LST.001 - Aktif Dokümanlar Listesi**
+  - Sayfa ID / sürüm: 137265902 / 18
   - Ebeveyn ID: 137265786
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265902
-- **İÜC.BİDB.LST.006 - Standart Süreç Envanteri**
-  - Sayfa ID / sürüm: 137265906 / 5
+- **LST.006 - Standart Süreç Envanteri**
+  - Sayfa ID / sürüm: 137265906 / 11
   - Ebeveyn ID: 137265786
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265906
-- **İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı**
-  - Sayfa ID / sürüm: 137265912 / 6
+- **LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı**
+  - Sayfa ID / sürüm: 137265912 / 9
   - Ebeveyn ID: 137265786
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265912
 - **02 - Şablonlar**
-  - Sayfa ID / sürüm: 137265785 / 9
+  - Sayfa ID / sürüm: 137265785 / 13
   - Ebeveyn ID: 137265781
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265785
 - **07 - Prosedürler**
-  - Sayfa ID / sürüm: 137265790 / 5
+  - Sayfa ID / sürüm: 137265790 / 9
   - Ebeveyn ID: 137265781
   - Ek: uygulanamaz
   - Bağlantı: https://confluence.iuc.edu.tr/pages/viewpage.action?pageId=137265790

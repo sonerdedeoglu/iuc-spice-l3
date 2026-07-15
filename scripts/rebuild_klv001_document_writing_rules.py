@@ -5,12 +5,12 @@ import html
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DOC_DIR = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/05-kilavuzlar/iuc-bidb-klv-001-dokuman-yazim-kurallari-talimati"
+DOC_DIR = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/05-kilavuzlar/klv-001-dokuman-yazim-kurallari-talimati"
 STORAGE_PATH = DOC_DIR / "body.storage.xhtml"
 VIEW_PATH = DOC_DIR / "body.view.html"
 PAGE_YAML = DOC_DIR / "page.yaml"
 
-TITLE = "İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı"
+TITLE = "KLV.001 - Doküman Yazım Kuralları Talimatı"
 
 CSS = """
 body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
@@ -55,8 +55,8 @@ def build_storage() -> str:
     parts.append("<h2>1. Kılavuz / Talimat Bilgileri</h2>")
     parts.append(table(["Alan", "Değer"], [
         ["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"],
-        ["Kılavuz / Talimat Kodu ve Adı", "İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı"],
-        ["Kılavuz / Talimat Referansı", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"],
+        ["Kılavuz / Talimat Kodu ve Adı", "KLV.001 - Doküman Yazım Kuralları Talimatı"],
+        ["Kılavuz / Talimat Referansı", "SRÇ.001 - Dokümantasyon Süreci"],
         ["Kılavuz / Talimat Sahibi", "Proje Geliştirme Yönetimi"],
         ["Durum", "Onaylı"],
         ["Sürüm", "v1.0"],
@@ -101,13 +101,13 @@ def build_storage() -> str:
 
     parts.append("<h2>5. Referanslar</h2>")
     parts.append(table(["Referans", "Açıklama"], [
-        ["İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "Doküman yönetiminin temel süreci"],
-        ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "Yazılım projelerinde dokümantasyon stratejisi"],
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "Genel kullanıma açık aktif doküman envanteri"],
-        ["İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu", "Süreç dokümanları için yapı referansı"],
-        ["İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Prosedür dokümanları için yapı referansı"],
-        ["İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu", "Kılavuz ve talimat dokümanları için yapı referansı"],
-        ["İÜC.BİDB.LST.008.Ş / LST.009.Ş / LST.010.Ş", "Liste ve matris dokümanları için güncel şablon ailesi"],
+        ["SRÇ.001 - Dokümantasyon Süreci", "Doküman yönetiminin temel süreci"],
+        ["PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "Yazılım projelerinde dokümantasyon stratejisi"],
+        ["LST.001 - Aktif Dokümanlar Listesi", "Genel kullanıma açık aktif doküman envanteri"],
+        ["SRÇ.XXX.Ş - Süreç Tanımı Şablonu", "Süreç dokümanları için yapı referansı"],
+        ["PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Prosedür dokümanları için yapı referansı"],
+        ["KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu", "Kılavuz ve talimat dokümanları için yapı referansı"],
+        ["LST.008.Ş / LST.009.Ş / LST.010.Ş", "Liste ve matris dokümanları için güncel şablon ailesi"],
     ]))
 
     parts.append("<h2>6. Terimler ve Kısaltmalar</h2>")
@@ -166,7 +166,7 @@ def build_storage() -> str:
 
     parts.append("<h2>11. Başlık ve Numaralandırma Kuralları</h2>")
     parts.append(table(["Seviye", "Kullanım", "Örnek"], [
-        ["H1", "Confluence sayfa başlığı / doküman adı için kullanılır.", "İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı"],
+        ["H1", "Confluence sayfa başlığı / doküman adı için kullanılır.", "KLV.001 - Doküman Yazım Kuralları Talimatı"],
         ["H2", "Ana bölüm başlığıdır ve numaralandırılır.", "1. Kılavuz / Talimat Bilgileri"],
         ["H3", "Alt bölüm başlığıdır ve gerektiğinde ilgili H2 numarasını takip eder.", "10.1. Tarih Formatı"],
         ["H4", "Zorunlu olmadıkça kullanılmaz.", "Özel durum açıklaması"],
@@ -175,12 +175,12 @@ def build_storage() -> str:
 
     parts.append("<h2>12. Doküman Kodlama ve Adlandırma Kuralları</h2>")
     parts.append(table(["Doküman Türü", "Kod Formatı", "Adlandırma Örneği"], [
-        ["Süreç", "İÜC.BİDB.SRÇ.XXX", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"],
-        ["Prosedür", "İÜC.BİDB.PRS.XXX", "İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"],
-        ["Kılavuz / Talimat", "İÜC.BİDB.KLV.XXX", "İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı"],
-        ["Liste", "İÜC.BİDB.LST.XXX", "İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"],
-        ["Form", "İÜC.BİDB.FRM.XXX", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu"],
-        ["Şablon", "İÜC.BİDB.[TÜR].XXX.Ş", "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu"],
+        ["Süreç", "SRÇ.XXX", "SRÇ.001 - Dokümantasyon Süreci"],
+        ["Prosedür", "PRS.XXX", "PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"],
+        ["Kılavuz / Talimat", "KLV.XXX", "KLV.001 - Doküman Yazım Kuralları Talimatı"],
+        ["Liste", "LST.XXX", "LST.001 - Aktif Dokümanlar Listesi"],
+        ["Form", "FRM.XXX", "FRM.001 - Süreç Gözden Geçirme Formu"],
+        ["Şablon", "[TÜR].XXX.Ş", "PRS.XXX.Ş - Prosedür Tanımı Şablonu"],
     ]))
     parts.append(p("Sürece veya projeye özel üretilen kayıt niteliğindeki dokümanlarda ilgili süreç kodu parantez içinde belirtilir."))
 

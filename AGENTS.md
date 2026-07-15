@@ -59,12 +59,12 @@ Her içerik değişikliğinde şu sıra izlenir:
 
 Bir süreç için hedeflenen ortak set:
 
-- `İÜC.BİDB.SRÇ.XXX` — Süreç Tanımı
-- `İÜC.BİDB.LST.007` — Süreç Etkileşim Matrisi
-- `İÜC.BİDB.LST.008` — İş Ürünleri ve Kalite Kriterleri Listesi
-- `İÜC.BİDB.LST.009` — Süreç Performans Ölçüm Seti
-- `İÜC.BİDB.LST.010` — Süreç Rol, Yetki ve RACI Matrisi
-- `İÜC.BİDB.FRM.001` — Süreç Gözden Geçirme Formu
+- `SRÇ.XXX` — Süreç Tanımı
+- `LST.007` — Süreç Etkileşim Matrisi
+- `LST.008` — İş Ürünleri ve Kalite Kriterleri Listesi
+- `LST.009` — Süreç Performans Ölçüm Seti
+- `LST.010` — Süreç Rol, Yetki ve RACI Matrisi
+- `FRM.001` — Süreç Gözden Geçirme Formu
 
 ## Yayın ve onay rolleri
 

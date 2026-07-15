@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Create/replace LST.008 for İÜC.BİDB.SRÇ.001.
+"""Create/replace LST.008 for SRÇ.001.
 
 This script updates the existing SRÇ.001 child page:
-İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)
+LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.001)
 
 It intentionally replaces the old local body content in place. The existing page_id is
 preserved so Confluence publishing updates the same page instead of creating a duplicate.
@@ -20,14 +20,14 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_PAGE = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
-SRC001_BODY = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/body.storage.xhtml"
-PAGE_DIR = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-001"
+SRC001_BODY = ROOT_PAGE / "01-surec-dokumanlari/src-001-dokumantasyon-sureci/body.storage.xhtml"
+PAGE_DIR = ROOT_PAGE / "01-surec-dokumanlari/src-001-dokumantasyon-sureci/lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-001"
 STANDARD_PATH = ROOT / "resources/standards/spice_practices.yaml"
 
-TITLE = "İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)"
-PROCESS_CODE = "İÜC.BİDB.SRÇ.001"
+TITLE = "LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.001)"
+PROCESS_CODE = "SRÇ.001"
 PROCESS_NAME = "Dokümantasyon Süreci"
-TEMPLATE_NAME = "İÜC.BİDB.LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu"
+TEMPLATE_NAME = "LST.008.Ş - İş Ürünleri ve Kalite Kriterleri Listesi Şablonu"
 
 CSS = """
 body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
@@ -188,40 +188,40 @@ def build_storage() -> str:
     parts.append("<h2>3. Girdi İş Ürünleri Matrisi</h2>")
     parts.append(table(["Girdi İş Ürünü", "Kaynak Süreç / Kaynak Doküman", "Kullanım Amacı", "Zorunluluk", "Durum / Not"], [
         ["Yeni doküman veya değişiklik ihtiyacı", "Süreç sahipleri, proje ekibi, kalite güvence, denetim/gözden geçirme sonuçları", "Doküman oluşturma, güncelleme, pasife alma veya arşivleme faaliyetini başlatmak", "Zorunlu", "İhtiyaç kaynağı ve gerekçesi ilgili kayıt veya talep üzerinden izlenebilir olmalıdır."],
-        ["Yaşam döngüsü doküman ihtiyacı", "İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "Proje veya süreç aşamasında üretilecek dokümanları belirlemek", "Zorunlu", "Süreç/proje aşaması ile beklenen doküman türü ilişkilendirilmiş olmalıdır."],
-        ["Süreç tanımı ve uygulama kuralları", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "Doküman yönetim faaliyetlerini şablon ve süreç kurallarına göre yürütmek", "Zorunlu", "Güncel ve aktif süreç dokümanı kullanılmalıdır."],
+        ["Yaşam döngüsü doküman ihtiyacı", "LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "Proje veya süreç aşamasında üretilecek dokümanları belirlemek", "Zorunlu", "Süreç/proje aşaması ile beklenen doküman türü ilişkilendirilmiş olmalıdır."],
+        ["Süreç tanımı ve uygulama kuralları", "SRÇ.001 - Dokümantasyon Süreci", "Doküman yönetim faaliyetlerini şablon ve süreç kurallarına göre yürütmek", "Zorunlu", "Güncel ve aktif süreç dokümanı kullanılmalıdır."],
         ["Doküman şablonları", "02 - Şablonlar", "Dokümanların standart biçimde hazırlanmasını sağlamak", "Zorunlu", "İlgili doküman türü için geçerli aktif şablon kullanılmalıdır."],
-        ["Doküman yazım ve tasarım kuralları", "İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı; İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu", "Dokümanların biçim, içerik ve kalite beklentilerine uygun hazırlanmasını sağlamak", "Zorunlu", "Kılavuzlar aktif ve erişilebilir olmalıdır."],
-        ["Repository ve yayın yapısı", "İÜC.BİDB.LST.011 - Repository Yapısı", "Dokümanın yayımlanacağı, erişileceği ve saklanacağı alanı belirlemek", "Zorunlu", "Repository konumu ve erişim yaklaşımı tanımlı olmalıdır."],
-        ["Gözden geçirme geri bildirimleri", "İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "Dokümanın uygunluğunu değerlendirmek ve düzeltmeleri izlemek", "Koşullu", "Gözden geçirme gereken dokümanlarda kayıt oluşturulmalıdır."],
+        ["Doküman yazım ve tasarım kuralları", "KLV.001 - Doküman Yazım Kuralları Talimatı; KLV.003 - Süreç Tasarımı Kontrol Kılavuzu", "Dokümanların biçim, içerik ve kalite beklentilerine uygun hazırlanmasını sağlamak", "Zorunlu", "Kılavuzlar aktif ve erişilebilir olmalıdır."],
+        ["Repository ve yayın yapısı", "LST.011 - Repository Yapısı", "Dokümanın yayımlanacağı, erişileceği ve saklanacağı alanı belirlemek", "Zorunlu", "Repository konumu ve erişim yaklaşımı tanımlı olmalıdır."],
+        ["Gözden geçirme geri bildirimleri", "LST.003 - Doküman Gözden Geçirme Kaydı", "Dokümanın uygunluğunu değerlendirmek ve düzeltmeleri izlemek", "Koşullu", "Gözden geçirme gereken dokümanlarda kayıt oluşturulmalıdır."],
         ["Onay kararı", "Süreç sahibi / yetkili onaylayan", "Dokümanın yürürlüğe alınmasını sağlamak", "Zorunlu", "Onay bilgisi doküman veya ilgili kayıt üzerinden izlenebilir olmalıdır."],
     ]))
     parts.append("<h2>4. Çıktı İş Ürünleri Matrisi</h2>")
     parts.append(table(["Çıktı İş Ürünü", "Üreten Faaliyet", "Kullanım Amacı", "Zorunluluk", "Saklama Yeri / Kayıt", "Durum / Not"], [
-        ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "F1", "Dokümantasyon yönetim stratejisi ve yazılım projeleri için doküman yönetim kurallarını tanımlamak", "Zorunlu", "07 - Prosedürler", "Aktif ve onaylı prosedür olarak yönetilir."],
+        ["PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "F1", "Dokümantasyon yönetim stratejisi ve yazılım projeleri için doküman yönetim kurallarını tanımlamak", "Zorunlu", "07 - Prosedürler", "Aktif ve onaylı prosedür olarak yönetilir."],
         ["Doküman şablonları", "F2", "Doküman türlerine göre standart yapı ve kullanım kurallarını sağlamak", "Zorunlu", "02 - Şablonlar", "Aktif şablonlar kullanılmalı, kaldırılan şablonlar arşiv altında tutulmalıdır."],
-        ["İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "F2", "Doküman yazım biçimi, zorunlu alanlar, kodlama ve içerik düzeni için kuralları tanımlamak", "Zorunlu", "05 - Kılavuzlar", "Doküman hazırlama ve gözden geçirme sırasında temel kontrol kaynağıdır."],
-        ["İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001)", "F3", "SRÇ.001 iş ürünlerini ve kalite kriterlerini tanımlamak", "Zorunlu", "SRÇ.001 alt sayfası", "Bu doküman SRÇ.001 iş ürünü kontrolünün ana kaydıdır."],
-        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "F4", "Yaşam döngüsü aşamalarına göre üretilecek dokümanları belirlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Doküman ihtiyacının yaşam döngüsü izlenebilirliğini destekler."],
+        ["KLV.001 - Doküman Yazım Kuralları Talimatı", "F2", "Doküman yazım biçimi, zorunlu alanlar, kodlama ve içerik düzeni için kuralları tanımlamak", "Zorunlu", "05 - Kılavuzlar", "Doküman hazırlama ve gözden geçirme sırasında temel kontrol kaynağıdır."],
+        ["LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.001)", "F3", "SRÇ.001 iş ürünlerini ve kalite kriterlerini tanımlamak", "Zorunlu", "SRÇ.001 alt sayfası", "Bu doküman SRÇ.001 iş ürünü kontrolünün ana kaydıdır."],
+        ["LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "F4", "Yaşam döngüsü aşamalarına göre üretilecek dokümanları belirlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Doküman ihtiyacının yaşam döngüsü izlenebilirliğini destekler."],
         ["Hazırlanmış veya güncellenmiş doküman", "F5", "Süreç, proje veya destek faaliyeti kapsamında kullanılacak kontrollü dokümanı oluşturmak", "Zorunlu", "İlgili süreç/proje doküman alanı", "İlgili şablon ve yazım kurallarına uygun hazırlanmalıdır."],
-        ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "F6", "Doküman gözden geçirme, uygunluk ve düzeltme kayıtlarını izlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Gözden geçirme sonucu, tarih ve sorumlu bilgisi içermelidir."],
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "F7", "Onaylı ve aktif doküman envanterini yönetmek", "Zorunlu", "SRÇ.001 alt sayfası", "Aktif dokümanların kod, ad, sürüm, durum ve erişim bilgilerini içermelidir."],
-        ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", "F8", "Doküman değişikliklerini, bakım kayıtlarını ve pasife alma/arşivleme kararlarını izlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Değişiklik gerekçesi, tarih, sorumlu ve etkilenen doküman bilgisi içermelidir."],
-        ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "F7", "Yayımlanan veya güncellenen dokümanlar hakkında ilgili tarafların bilgilendirildiğini izlemek", "Koşullu", "03 - Kayıtlar ve Listeler", "Yaygınlaştırma gereken dokümanlar için hedef kitle ve bilgilendirme tarihi izlenir."],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", "F6", "SRÇ.001 BP/GP uygunluk durumunu ve tamamlayıcı aksiyonları izlemek", "Zorunlu", "SRÇ.001 alt sayfası", "BP/GP durumları ve aksiyon kayıtları güncel tutulmalıdır."],
+        ["LST.003 - Doküman Gözden Geçirme Kaydı", "F6", "Doküman gözden geçirme, uygunluk ve düzeltme kayıtlarını izlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Gözden geçirme sonucu, tarih ve sorumlu bilgisi içermelidir."],
+        ["LST.001 - Aktif Dokümanlar Listesi", "F7", "Onaylı ve aktif doküman envanterini yönetmek", "Zorunlu", "SRÇ.001 alt sayfası", "Aktif dokümanların kod, ad, sürüm, durum ve erişim bilgilerini içermelidir."],
+        ["LST.002 - Doküman Değişiklik Kaydı", "F8", "Doküman değişikliklerini, bakım kayıtlarını ve pasife alma/arşivleme kararlarını izlemek", "Zorunlu", "03 - Kayıtlar ve Listeler", "Değişiklik gerekçesi, tarih, sorumlu ve etkilenen doküman bilgisi içermelidir."],
+        ["LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "F7", "Yayımlanan veya güncellenen dokümanlar hakkında ilgili tarafların bilgilendirildiğini izlemek", "Koşullu", "03 - Kayıtlar ve Listeler", "Yaygınlaştırma gereken dokümanlar için hedef kitle ve bilgilendirme tarihi izlenir."],
+        ["FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.001)", "F6", "SRÇ.001 BP/GP uygunluk durumunu ve tamamlayıcı aksiyonları izlemek", "Zorunlu", "SRÇ.001 alt sayfası", "BP/GP durumları ve aksiyon kayıtları güncel tutulmalıdır."],
     ]))
     parts.append("<h2>5. Kalite Kriterleri Kontrol Matrisi</h2>")
     parts.append(table(["İş Ürünü", "Kalite Kriteri", "Kontrol Sorusu", "Kontrol Yöntemi", "Kontrol Sorumlusu", "Kabul Ölçütü", "Uygunsuzluk / Tamamlayıcı Aksiyon"], [
-        ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "Dokümantasyon stratejisi tanımlı olmalı", "Dokümantasyon yönetim yaklaşımı, kapsamı ve sorumlulukları tanımlı mı?", "Doküman gözden geçirme", "Süreç Sahibi / Kalite Danışmanı", "Strateji ve uygulama kuralları açık, onaylı ve erişilebilir olmalıdır.", "Eksikse prosedür revize edilir ve onaya sunulur."],
+        ["PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "Dokümantasyon stratejisi tanımlı olmalı", "Dokümantasyon yönetim yaklaşımı, kapsamı ve sorumlulukları tanımlı mı?", "Doküman gözden geçirme", "Süreç Sahibi / Kalite Danışmanı", "Strateji ve uygulama kuralları açık, onaylı ve erişilebilir olmalıdır.", "Eksikse prosedür revize edilir ve onaya sunulur."],
         ["Doküman şablonları", "Geçerli şablon kullanılmalı", "Doküman türü için aktif şablon kullanılmış mı?", "Şablon kontrolü", "Doküman Hazırlayan / Gözden Geçiren", "Doküman aktif şablon yapısına uygun olmalıdır.", "Yanlış şablon kullanılmışsa doküman güncel şablona göre düzeltilir."],
-        ["İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "Yazım ve biçim kuralları tanımlı olmalı", "Doküman yazım, kodlama, başlık, tarih, sürüm ve zorunlu alan kuralları açık mı?", "Kılavuz kontrolü", "Süreç Sahibi / Kalite Danışmanı", "Kılavuz aktif, erişilebilir ve şablonlarla uyumlu olmalıdır.", "Eksik veya uyumsuz kural varsa kılavuz güncellenir."],
-        ["İÜC.BİDB.LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "Yaşam döngüsü doküman ihtiyacı izlenebilir olmalı", "Doküman ihtiyacı yaşam döngüsü aşaması ile ilişkilendirilmiş mi?", "Liste kontrolü", "Süreç Sahibi", "Aşama, doküman türü ve sorumluluk bilgisi tanımlı olmalıdır.", "Eksik ilişki varsa matris güncellenir."],
+        ["KLV.001 - Doküman Yazım Kuralları Talimatı", "Yazım ve biçim kuralları tanımlı olmalı", "Doküman yazım, kodlama, başlık, tarih, sürüm ve zorunlu alan kuralları açık mı?", "Kılavuz kontrolü", "Süreç Sahibi / Kalite Danışmanı", "Kılavuz aktif, erişilebilir ve şablonlarla uyumlu olmalıdır.", "Eksik veya uyumsuz kural varsa kılavuz güncellenir."],
+        ["LST.005 - Yaşam Döngüsü Doküman İhtiyaç Matrisi", "Yaşam döngüsü doküman ihtiyacı izlenebilir olmalı", "Doküman ihtiyacı yaşam döngüsü aşaması ile ilişkilendirilmiş mi?", "Liste kontrolü", "Süreç Sahibi", "Aşama, doküman türü ve sorumluluk bilgisi tanımlı olmalıdır.", "Eksik ilişki varsa matris güncellenir."],
         ["Hazırlanmış veya güncellenmiş doküman", "Zorunlu alanlar ve içerik tamamlanmış olmalı", "Doküman kodu, adı, durum, sürüm, tarih, sahiplik ve içerik alanları dolu mu?", "Doküman kalite kontrolü", "Gözden Geçiren", "Zorunlu alanlar dolu ve içerik kullanılabilir olmalıdır.", "Eksik alanlar tamamlanır."],
-        ["İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı", "Gözden geçirme kaydı izlenebilir olmalı", "Gözden geçirme sonucu, tarih, sorumlu ve karar bilgisi var mı?", "Kayıt kontrolü", "Kalite Güvence / Süreç Sahibi", "Gözden geçirme kararı ve varsa aksiyonlar kayıt altına alınmış olmalıdır.", "Kayıt eksikse tamamlanır."],
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "Aktif doküman envanteri güncel olmalı", "Aktif dokümanın kodu, adı, sürümü, durumu ve erişim bilgisi listede var mı?", "Liste kontrolü", "Doküman Sorumlusu", "Aktif dokümanlar tekil ve güncel listelenmelidir.", "Eksik kayıt eklenir veya güncellenir."],
-        ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", "Değişiklik kayıtları izlenebilir olmalı", "Değişikliğin gerekçesi, tarihi, sorumlusu ve etkilenen doküman bilgisi var mı?", "Kayıt kontrolü", "Doküman Sorumlusu", "Değişiklik kayıtları doküman geçmişiyle tutarlı olmalıdır.", "Eksik değişiklik kaydı tamamlanır."],
-        ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Yaygınlaştırma kayıtları gerektiğinde tutulmalı", "Yayımlanan/güncellenen doküman için hedef kitle bilgilendirilmiş mi?", "Kayıt kontrolü", "Süreç Sahibi", "Bilgilendirme gereken durumlarda hedef kitle ve tarih kaydı bulunmalıdır.", "Eksikse bilgilendirme ve kayıt tamamlanır."],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)", "BP/GP uygunluk izlenebilirliği sağlanmalı", "SRÇ.001 BP/GP durumu, kanıt ve aksiyon bilgileri formda izleniyor mu?", "Form kontrolü", "Kalite Danışmanı", "BP/GP satırları güncel kanıt ve durum bilgisi içermelidir.", "Eksikse form güncellenir ve aksiyon kapatma takibi yapılır."],
+        ["LST.003 - Doküman Gözden Geçirme Kaydı", "Gözden geçirme kaydı izlenebilir olmalı", "Gözden geçirme sonucu, tarih, sorumlu ve karar bilgisi var mı?", "Kayıt kontrolü", "Kalite Güvence / Süreç Sahibi", "Gözden geçirme kararı ve varsa aksiyonlar kayıt altına alınmış olmalıdır.", "Kayıt eksikse tamamlanır."],
+        ["LST.001 - Aktif Dokümanlar Listesi", "Aktif doküman envanteri güncel olmalı", "Aktif dokümanın kodu, adı, sürümü, durumu ve erişim bilgisi listede var mı?", "Liste kontrolü", "Doküman Sorumlusu", "Aktif dokümanlar tekil ve güncel listelenmelidir.", "Eksik kayıt eklenir veya güncellenir."],
+        ["LST.002 - Doküman Değişiklik Kaydı", "Değişiklik kayıtları izlenebilir olmalı", "Değişikliğin gerekçesi, tarihi, sorumlusu ve etkilenen doküman bilgisi var mı?", "Kayıt kontrolü", "Doküman Sorumlusu", "Değişiklik kayıtları doküman geçmişiyle tutarlı olmalıdır.", "Eksik değişiklik kaydı tamamlanır."],
+        ["LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Yaygınlaştırma kayıtları gerektiğinde tutulmalı", "Yayımlanan/güncellenen doküman için hedef kitle bilgilendirilmiş mi?", "Kayıt kontrolü", "Süreç Sahibi", "Bilgilendirme gereken durumlarda hedef kitle ve tarih kaydı bulunmalıdır.", "Eksikse bilgilendirme ve kayıt tamamlanır."],
+        ["FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.001)", "BP/GP uygunluk izlenebilirliği sağlanmalı", "SRÇ.001 BP/GP durumu, kanıt ve aksiyon bilgileri formda izleniyor mu?", "Form kontrolü", "Kalite Danışmanı", "BP/GP satırları güncel kanıt ve durum bilgisi içermelidir.", "Eksikse form güncellenir ve aksiyon kapatma takibi yapılır."],
     ]))
     parts.append("<h2>6. Sürüm Geçmişi</h2>")
     parts.append(table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan/Güncelleyen", "Gözden Geçiren", "Onay"], [
@@ -247,7 +247,7 @@ def update_page_yaml() -> None:
         "status": "active",
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "template": TEMPLATE_NAME,
-        "document_code": "İÜC.BİDB.LST.008",
+        "document_code": "LST.008",
         "document_type": "Liste",
         "related_process": PROCESS_CODE,
         "storage_file": "body.storage.xhtml",

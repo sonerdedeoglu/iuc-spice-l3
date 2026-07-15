@@ -14,32 +14,32 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFLUENCE = ROOT / "confluence"
 INDEX_PATH = CONFLUENCE / "index.yaml"
 BASE = CONFLUENCE / "pages/000-root-iuc-bidb-spice-2026-level-3"
-SRC004 = BASE / "01-surec-dokumanlari/iuc-bidb-src-004-surec-kurulumu-sureci"
-SRC001 = BASE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci"
+SRC004 = BASE / "01-surec-dokumanlari/src-004-surec-kurulumu-sureci"
+SRC001 = BASE / "01-surec-dokumanlari/src-001-dokumantasyon-sureci"
 REVIEW = BASE / "91-ic-denetimler/surec-gozden-gecirmeleri"
 REPORT = ROOT / "reports/src004_integrated_review_report.md"
 
 
 PAGES = {
     "SRÇ.004": SRC004,
-    "LST.007": SRC004 / "iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-004",
-    "LST.007 SRÇ.001": SRC001 / "iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001",
-    "LST.008": SRC004 / "iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-004",
-    "LST.009": SRC004 / "iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-004",
-    "LST.010": SRC004 / "iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-004",
-    "FRM.001 boş": SRC004 / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-004",
-    "FRM.001 Değerlendirme #1": REVIEW / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-004-degerlendirme-1",
-    "KLV.002": BASE / "05-kilavuzlar/iuc-bidb-klv-002-surec-uyarlama-kilavuzu",
-    "KLV.003": BASE / "05-kilavuzlar/iuc-bidb-klv-003-surec-tasarimi-kontrol-kilavuzu",
-    "LST.006": BASE / "03-kayitlar-ve-listeler/iuc-bidb-lst-006-standart-surec-envanteri",
-    "PRS.002": BASE / "07-prosedurler/iuc-bidb-prs-002-surec-tasarim-proseduru",
+    "LST.007": SRC004 / "lst-007-surec-etkilesim-matrisi-src-004",
+    "LST.007 SRÇ.001": SRC001 / "lst-007-surec-etkilesim-matrisi-src-001",
+    "LST.008": SRC004 / "lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-004",
+    "LST.009": SRC004 / "lst-009-surec-performans-olcum-seti-src-004",
+    "LST.010": SRC004 / "lst-010-surec-rol-yetki-ve-raci-matrisi-src-004",
+    "FRM.001 boş": SRC004 / "frm-001-surec-gozden-gecirme-formu-src-004",
+    "FRM.001 Değerlendirme #1": REVIEW / "frm-001-surec-gozden-gecirme-formu-src-004-degerlendirme-1",
+    "KLV.002": BASE / "05-kilavuzlar/klv-002-surec-uyarlama-kilavuzu",
+    "KLV.003": BASE / "05-kilavuzlar/klv-003-surec-tasarimi-kontrol-kilavuzu",
+    "LST.006": BASE / "03-kayitlar-ve-listeler/lst-006-standart-surec-envanteri",
+    "PRS.002": BASE / "07-prosedurler/prs-002-surec-tasarim-proseduru",
 }
 
-FULL_LST007 = "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004)"
+FULL_LST007 = "LST.007 - Süreç Etkileşim Matrisi (SRÇ.004)"
 REMOVED_PAGES = [
-    REVIEW / "iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-001",
-    REVIEW / "iuc-bidb-lst-004-surec-gozden-gecirme-matrisi-iuc-bidb-src-004",
-    BASE / "03-kayitlar-ve-listeler/iuc-bidb-lst-007-surec-mimari-ve-etkilesim-matrisi",
+    REVIEW / "lst-004-surec-gozden-gecirme-matrisi-src-001",
+    REVIEW / "lst-004-surec-gozden-gecirme-matrisi-src-004",
+    BASE / "03-kayitlar-ve-listeler/lst-007-surec-mimari-ve-etkilesim-matrisi",
 ]
 FORBIDDEN = [
     "ŞBL.001", "ŞBL.007", "ŞBL.010", "ŞBL.011", "ŞBL.012", "ŞBL.013", "ŞBL.014", "ŞBL.015",
@@ -77,8 +77,9 @@ def verify() -> list[str]:
 
     for name in PAGES:
         storage = body(name)
+        plain = clean(storage)
         for phrase in FORBIDDEN:
-            if phrase in storage:
+            if phrase in plain:
                 raise RuntimeError(f"{name} içinde eski/sabit ifade bulundu: {phrase}")
 
     guide_headers = [
@@ -103,7 +104,7 @@ def verify() -> list[str]:
     if headers(body("LST.006")) != lst006_headers:
         raise RuntimeError("LST.006 aktif LST.006.Ş tablo yapısıyla uyuşmuyor")
     inventory = rows_for(body("LST.006"), "Standart Süreç Kodu")
-    src004_rows = [row for row in inventory if row[2] == "İÜC.BİDB.SRÇ.004"]
+    src004_rows = [row for row in inventory if row[2] == "SRÇ.004"]
     if len(src004_rows) != 1:
         raise RuntimeError("LST.006 içinde tek SRÇ.004 satırı bekleniyordu")
     if src004_rows[0][4] != "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı" or src004_rows[0][5] != "Aktif":
@@ -111,7 +112,7 @@ def verify() -> list[str]:
     findings.append("LST.006: SRÇ.004 sahiplik ve durum kaydı doğrulandı")
 
     lst007_dir = PAGES["LST.007"]
-    if FULL_LST007 not in body("LST.007"):
+    if FULL_LST007 not in clean(body("LST.007")):
         raise RuntimeError("SRÇ.004 süreç özel LST.007 tam adı eksik")
     if "flowchart LR" not in body("LST.007"):
         raise RuntimeError("LST.007 Mermaid kaynağı eksik")
@@ -141,31 +142,36 @@ def verify() -> list[str]:
     findings.append("LST.007: SRÇ.001 ve SRÇ.004 diyagramları 1000 px genişlikte üstte, Mermaid bilgi kutuları altta; süreç ve doküman etkileşimleri mevcut")
 
     for name in ("SRÇ.004", "LST.008", "LST.010"):
-        if FULL_LST007 not in body(name):
+        if FULL_LST007 not in clean(body(name)):
             raise RuntimeError(f"{name} içinde süreç özel LST.007 tam adı bulunamadı")
     findings.append("SRÇ.004, LST.008 ve LST.010: süreç özel LST.007 adıyla tutarlı")
 
     lst009 = body("LST.009")
-    if lst009.count("SRÇ.004-Ö01</td>") != 3 or "SRÇ.004-Ö04" in lst009:
+    lst009_plain = clean(lst009)
+    measurement_ids = set(re.findall(r"SRÇ\.004-Ö\d{2}", lst009_plain))
+    if measurement_ids != {"SRÇ.004-Ö01", "SRÇ.004-Ö02", "SRÇ.004-Ö03"}:
         raise RuntimeError("LST.009 yönetilebilir üç ölçüm kuralıyla uyuşmuyor")
     findings.append("LST.009: üç yönetilebilir ölçüm sınırı korunuyor")
 
     blank = body("FRM.001 boş")
-    if "GG-AA-YYYY" not in blank or "14-07-2026" in blank or "ÖZET SONUÇ" not in blank:
+    blank_plain = clean(blank)
+    if "GG-AA-YYYY" not in blank_plain or "14-07-2026" in blank_plain or "ÖZET SONUÇ" not in blank_plain:
         raise RuntimeError("SRÇ.004 altındaki FRM.001 boş form niteliğinde değil")
     assessment_meta = yaml.safe_load((PAGES["FRM.001 Değerlendirme #1"] / "page.yaml").read_text(encoding="utf-8")) or {}
     assessment = body("FRM.001 Değerlendirme #1")
-    if assessment_meta.get("parent_id") != "137265917" or not str(assessment_meta.get("title", "")).endswith("- Değerlendirme #1") or "14-07-2026" not in assessment:
+    if assessment_meta.get("parent_id") != "137265917" or not str(assessment_meta.get("title", "")).endswith("- Değerlendirme #1") or "14-07-2026" not in clean(assessment):
         raise RuntimeError("FRM.001 Değerlendirme #1 yerleşim/ad/içerik kontrolü başarısız")
     findings.append("FRM.001: boş form ve Değerlendirme #1 ayrımı doğru")
 
     klv002 = body("KLV.002")
-    if "ayrı form oluşturulmaz" not in klv002 or "ayrı bir uyarlama/değişiklik formu" not in klv002 or "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci" not in klv002:
+    klv002_plain = clean(klv002)
+    if "ayrı form oluşturulmaz" not in klv002_plain or "ayrı bir uyarlama/değişiklik formu" not in klv002_plain or "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci" not in klv002_plain:
         raise RuntimeError("KLV.002 tek değişiklik yolu kuralını içermiyor")
     findings.append("KLV.002: ayrı form yok; tüm değişiklik ve talepler SRÇ.018'e yönlendiriliyor")
 
     klv003 = body("KLV.003")
-    if "Boş FRM.001" not in klv003 or "Değerlendirme #n" not in klv003 or "sabit toplam" not in klv003:
+    klv003_plain = clean(klv003)
+    if "Boş FRM.001" not in klv003_plain or "Değerlendirme #n" not in klv003_plain or "sabit toplam" not in klv003_plain:
         raise RuntimeError("KLV.003 yerleşim veya sabit süreç sayısı kontrolünü içermiyor")
     findings.append("KLV.003: boş form, numaralandırılmış değerlendirme ve sabit sayı kuralları tanımlı")
 

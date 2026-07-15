@@ -37,11 +37,11 @@ blockquote{margin:16px 0;padding:8px 16px;border-left:4px solid #c9d1d9;color:#5
 TEMPLATES = [
     {
         "kind": "PRS",
-        "title": "TASLAK - İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
-        "slug": "taslak-iuc-bidb-prs-xxx-s-prosedur-tanimi-sablonu",
-        "document_code": "İÜC.BİDB.PRS.XXX.Ş",
+        "title": "TASLAK - PRS.XXX.Ş - Prosedür Tanımı Şablonu",
+        "slug": "taslak-prs-xxx-s-prosedur-tanimi-sablonu",
+        "document_code": "PRS.XXX.Ş",
         "usage": "Prosedür Tanımı",
-        "name_example": "İÜC.BİDB.PRS.XXX - Prosedür Adı",
+        "name_example": "PRS.XXX - Prosedür Adı",
         "purpose": "Bu şablon, kurum genelinde uygulanacak prosedürlerin amaç, kapsam, kapsam dışı durumlar, referanslar, roller, ilkeler, uygulama esasları, yayın/erişim/bakım kuralları ve sürüm geçmişi bilgilerinin standart yapıda tanımlanması için kullanılır.",
         "note": "Prosedür dokümanları süreç şablonu gibi süreç akışı veya uyarlama matrisi içermek zorunda değildir; prosedürün gerçek uygulama içeriğini taşıyacak sade ve normatif yapı kullanılır.",
         "sections": [
@@ -62,11 +62,11 @@ TEMPLATES = [
     },
     {
         "kind": "KLV",
-        "title": "TASLAK - İÜC.BİDB.KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
-        "slug": "taslak-iuc-bidb-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
-        "document_code": "İÜC.BİDB.KLV.XXX.Ş",
+        "title": "TASLAK - KLV.XXX.Ş - Kılavuz ve Talimat Tanımı Şablonu",
+        "slug": "taslak-klv-xxx-s-kilavuz-ve-talimat-tanimi-sablonu",
+        "document_code": "KLV.XXX.Ş",
         "usage": "Kılavuz ve Talimat Tanımı",
-        "name_example": "İÜC.BİDB.KLV.XXX - Kılavuz / Talimat Adı",
+        "name_example": "KLV.XXX - Kılavuz / Talimat Adı",
         "purpose": "Bu şablon, kurum genelinde kullanılacak kılavuz ve talimatların amaç, kapsam, kapsam dışı durumlar, referanslar, terimler, genel ilkeler, kural/adım tabloları, örnekler, kayıtlar ve sürüm geçmişi bilgilerinin standart yapıda tanımlanması için kullanılır.",
         "note": "Kılavuz ve talimat dokümanları süreç akışı veya RACI gibi süreç dokümanı bölümleri içermek zorunda değildir; kullanıcıyı yönlendiren kural, örnek ve uygulama açıklamalarını taşıyacak esnek yapı kullanılır.",
         "sections": [
@@ -131,7 +131,7 @@ def render_section(section: dict[str, Any], cfg: dict[str, Any]) -> str:
 
     if kind == "info":
         parts.append(table(["Alan", "Değer"], [
-            ["Doküman Kodu", placeholder("İÜC.BİDB." + cfg["kind"] + ".XXX")],
+            ["Doküman Kodu", placeholder("" + cfg["kind"] + ".XXX")],
             ["Doküman Adı", placeholder("Doküman adı")],
             ["Doküman Türü", cfg["usage"].replace(" Tanımı", "")],
             ["İlişkili Süreç / Kapsam", placeholder("İlgili süreç, yönetim alanı veya kullanım kapsamı")],

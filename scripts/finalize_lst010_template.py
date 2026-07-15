@@ -24,16 +24,16 @@ ROOT_PAGE = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
 TEMPLATES_DIR = ROOT_PAGE / "02-sablonlar"
 ARCHIVE_DIR = TEMPLATES_DIR / "arsiv-kaldirilan-sablonlar"
 
-OLD_SLUG = "iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu"
-DRAFT_SLUG = "taslak-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu"
-ARCHIVED_SLUG = "kaldirildi-iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu"
+OLD_SLUG = "lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu"
+DRAFT_SLUG = "taslak-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu"
+ARCHIVED_SLUG = "kaldirildi-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu"
 
 OLD_DIR = TEMPLATES_DIR / OLD_SLUG
 DRAFT_DIR = TEMPLATES_DIR / DRAFT_SLUG
 ARCHIVED_DIR = ARCHIVE_DIR / ARCHIVED_SLUG
 
-ACTIVE_TITLE = "İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu"
-ARCHIVED_TITLE = "KALDIRILDI - İÜC.BİDB.LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu"
+ACTIVE_TITLE = "LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu"
+ARCHIVED_TITLE = "KALDIRILDI - LST.010.Ş - Süreç Rol Yetki ve RACI Matrisi Şablonu"
 TEMPLATES_PARENT_ID = "137265785"
 TEMPLATES_PARENT_TITLE = "02 - Şablonlar"
 ARCHIVE_PARENT_TITLE = "Arşiv - Kaldırılan Şablonlar"

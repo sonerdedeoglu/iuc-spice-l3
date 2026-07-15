@@ -16,7 +16,7 @@ REPORT_PATH = REPORT_DIR / "templates_normalization_report.md"
 PREVIEW_INDEX_PATH = REPORT_DIR / "templates_normalization_preview_index.md"
 
 ROOT_02_CODE = "ROOT-02"
-TEMPLATE_TITLE_PREFIX = "İÜC.BİDB.ŞBL."
+TEMPLATE_TITLE_PREFIX = "ŞBL."
 
 TEMPLATE_SECTION_HINTS = [
     "Doküman Bilgileri",

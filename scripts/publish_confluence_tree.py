@@ -193,17 +193,20 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
         page_id = ""
         version_number = None
         body_changed = True
+        title_changed = True
         parent_changed = False
     else:
         page_id = str(existing["id"])
         version_number = int(existing["version"]["number"])
+        existing_title = str(existing.get("title") or "")
         existing_body = existing.get("body", {}).get("storage", {}).get("value", "")
+        title_changed = existing_title != title
         body_changed = hash_body(existing_body) != hash_body(body)
         current_parent_id = existing_parent_id(existing)
         parent_changed = bool(parent_id) and current_parent_id != str(parent_id)
-        if body_changed and parent_changed:
+        if (body_changed or title_changed) and parent_changed:
             action = "UPDATE+MOVE"
-        elif body_changed:
+        elif body_changed or title_changed:
             action = "UPDATE"
         elif parent_changed:
             action = "MOVE"
@@ -216,8 +219,9 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
             "title": title,
             "action": action,
             "page_id": page_id,
-            "changed": body_changed or parent_changed,
+            "changed": body_changed or title_changed or parent_changed,
             "body_changed": body_changed,
+            "title_changed": title_changed,
             "parent_changed": parent_changed,
             "relative_path": record["relative_path"],
         }
@@ -239,13 +243,15 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
 
             latest = client.get_page(page_id)
             latest_version = int(latest.get("version", {}).get("number") or version_number)
+            latest_title = str(latest.get("title") or "")
             latest_body = latest.get("body", {}).get("storage", {}).get("value", "")
             latest_parent_id = existing_parent_id(latest)
 
+            title_already_applied = latest_title == title
             body_already_applied = hash_body(latest_body) == hash_body(body)
             parent_already_applied = (not parent_id) or latest_parent_id == str(parent_id)
 
-            if body_already_applied and parent_already_applied:
+            if title_already_applied and body_already_applied and parent_already_applied:
                 updated = latest
                 print(f"[{action}] {title} (already applied after retry/version conflict)")
             else:
@@ -261,8 +267,9 @@ def publish_record(client: ConfluenceClient, record: dict[str, Any], path_to_id:
         "title": title,
         "action": action,
         "page_id": page_id,
-        "changed": body_changed or parent_changed,
+        "changed": body_changed or title_changed or parent_changed,
         "body_changed": body_changed,
+        "title_changed": title_changed,
         "parent_changed": parent_changed,
         "relative_path": record["relative_path"],
     }

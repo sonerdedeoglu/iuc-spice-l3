@@ -13,12 +13,12 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CONFLUENCE = ROOT / "confluence"
 INDEX_PATH = CONFLUENCE / "index.yaml"
-SLUG = "iuc-bidb-prs-002-surec-tasarim-proseduru"
+SLUG = "prs-002-surec-tasarim-proseduru"
 RELATIVE_PATH = f"pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/{SLUG}"
 PAGE_DIR = CONFLUENCE / RELATIVE_PATH
 REPORT = ROOT / "reports/prs002_process_design_local_draft.md"
 
-TITLE = "İÜC.BİDB.PRS.002 - Süreç Tasarım Prosedürü"
+TITLE = "PRS.002 - Süreç Tasarım Prosedürü"
 PARENT_ID = "137265790"
 PARENT_TITLE = "07 - Prosedürler"
 PREPARED_BY = "Soner DEDEOĞLU - Kalite Danışmanı"
@@ -78,7 +78,7 @@ def build_storage() -> str:
     sections.append(table(["Alan", "Değer"], [
         [text("Kurum"), text("İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı")],
         [text("Prosedür Kodu ve Adı"), text(TITLE)],
-        [text("Prosedür Referansı"), text("İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci")],
+        [text("Prosedür Referansı"), text("SRÇ.004 - Süreç Kurulumu Süreci")],
         [text("Prosedür Sahibi"), text(OWNER)],
         [text("Durum"), '<span class="draft">Taslak</span>'],
         [text("Sürüm"), text("v0.1")],
@@ -90,7 +90,7 @@ def build_storage() -> str:
     sections.append(
         "<p>Bu prosedürün amacı, İÜC BİDB standart süreç setinde yer alan bir sürecin yeni oluşturulması veya "
         "onaylanmış bir değişiklik kapsamında yeniden tasarlanması sırasında izlenecek kurumsal yöntemi tanımlamaktır.</p>"
-        "<p>Prosedür; süreç ihtiyacının İÜC.BİDB.SRÇ.018 kapsamında alınmasından başlayarak süreç mimarisinin, amaç ve "
+        "<p>Prosedür; süreç ihtiyacının SRÇ.018 kapsamında alınmasından başlayarak süreç mimarisinin, amaç ve "
         "sonuçların, faaliyetlerin, iş ürünlerinin, rollerin, ölçümlerin, uyarlama kurallarının ve etkileşimlerin "
         "tanımlanmasını; tasarımın kontrol edilmesini, onaylanmasını, yayımlanmasını ve hedef kitleye duyurulmasını kapsar.</p>"
     )
@@ -120,17 +120,17 @@ def build_storage() -> str:
     sections.append("<h2>5. Referanslar</h2>")
     references = [
         ("ISO/IEC 15504-5:2006 PIM.1 - Process establishment", "Süreç mimarisinin, standart süreçlerin, performans beklentilerinin, uyarlama yaklaşımının ve kullanım verisinin kurulmasına ilişkin süreç referansı"),
-        ("İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Bu prosedürün hazırlanmasında kullanılan zorunlu prosedür yapısı"),
-        ("İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci", "Süreç tasarımının amaç, sonuç ve temel faaliyetlerini tanımlayan ana süreç"),
-        ("İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci", "Yeni süreç ve süreç değişikliği taleplerinin alınması ve kararının yönetilmesi"),
-        ("İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu", "Her süreç dokümanının hazırlanmasında kullanılacak zorunlu süreç şablonu"),
-        ("İÜC.BİDB.KLV.002 - Süreç Uyarlama Kılavuzu", "Kontrollü süreç uyarlama kuralları"),
-        ("İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu", "Süreç tasarım kontrol kapıları ve kontrol listesi"),
-        ("İÜC.BİDB.LST.006 - Standart Süreç Envanteri", "Standart ve kurumsal süreç kodları ile güncel standart süreç seti kapsamı"),
-        ("İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İlgili Süreç)", "Sürece özel girdi, çıktı ve etkileşimlerin yönetimi"),
-        ("İÜC.BİDB.LST.008 / LST.009 / LST.010", "Süreç iş ürünleri ve kalite kriterleri, az sayıda yönetilebilir performans ölçümü ve RACI kayıtları"),
-        ("İÜC.BİDB.LST.011 - Repository Yapısı", "Süreç doküman ve kanıtlarının saklama yapısı"),
-        ("İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Yeni veya güncellenen süreçlerin hedef kitleye duyurulma kaydı"),
+        ("PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Bu prosedürün hazırlanmasında kullanılan zorunlu prosedür yapısı"),
+        ("SRÇ.004 - Süreç Kurulumu Süreci", "Süreç tasarımının amaç, sonuç ve temel faaliyetlerini tanımlayan ana süreç"),
+        ("SRÇ.018 - Değişiklik Talebi Yönetimi Süreci", "Yeni süreç ve süreç değişikliği taleplerinin alınması ve kararının yönetilmesi"),
+        ("SRÇ.XXX.Ş - Süreç Tanımı Şablonu", "Her süreç dokümanının hazırlanmasında kullanılacak zorunlu süreç şablonu"),
+        ("KLV.002 - Süreç Uyarlama Kılavuzu", "Kontrollü süreç uyarlama kuralları"),
+        ("KLV.003 - Süreç Tasarımı Kontrol Kılavuzu", "Süreç tasarım kontrol kapıları ve kontrol listesi"),
+        ("LST.006 - Standart Süreç Envanteri", "Standart ve kurumsal süreç kodları ile güncel standart süreç seti kapsamı"),
+        ("LST.007 - Süreç Etkileşim Matrisi (İlgili Süreç)", "Sürece özel girdi, çıktı ve etkileşimlerin yönetimi"),
+        ("LST.008 / LST.009 / LST.010", "Süreç iş ürünleri ve kalite kriterleri, az sayıda yönetilebilir performans ölçümü ve RACI kayıtları"),
+        ("LST.011 - Repository Yapısı", "Süreç doküman ve kanıtlarının saklama yapısı"),
+        ("LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Yeni veya güncellenen süreçlerin hedef kitleye duyurulma kaydı"),
     ]
     sections.append(table(["Referans", "Açıklama"], [[text(a), text(b)] for a, b in references]))
 
@@ -161,7 +161,7 @@ def build_storage() -> str:
     sections.append("<h2>8. Genel İlkeler</h2>")
     principles = [
         ("Tek talep kanalı", "Yeni süreç ve süreç değişikliği ihtiyaçları SRÇ.018 kapsamında alınır ve karara bağlanır; bu prosedür kapsamında ayrı talep formu oluşturulmaz."),
-        ("Şablon zorunluluğu", "Süreç dokümanı İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu kullanılarak hazırlanır; şablonun zorunlu bölümleri gerekçesiz kaldırılmaz."),
+        ("Şablon zorunluluğu", "Süreç dokümanı SRÇ.XXX.Ş - Süreç Tanımı Şablonu kullanılarak hazırlanır; şablonun zorunlu bölümleri gerekçesiz kaldırılmaz."),
         ("Standart izlenebilirliği", "Süreç amacı, sonuçları ve temel uygulamalar ilgili ISO/IEC 15504-5 süreç bölümü ile izlenebilir olmalıdır."),
         ("Tam süreç kapsamı", "LST.006 içinde yer alan süreçlerin tamamı standart süreç setinin parçasıdır; çekirdek/koşullu süreç ayrımı yapılmaz."),
         ("Kontrollü uyarlama", "Uyarlama, süreç amacı ve zorunlu sonuçları ortadan kaldıramaz; gerekçe, etki ve gerekli onay KLV.002 kurallarına göre izlenir."),
@@ -188,7 +188,7 @@ def build_storage() -> str:
     steps = [
         ("1. Tasarım girdisini al", "SRÇ.018 kapsamında kabul edilen ihtiyaç, kapsam ve öncelik bilgisi alınır.", "Süreç Sahibi / Süreç Mimarı", "SRÇ.018 talep ve karar kaydı", "PIM.1 başlangıç girdisi"),
         ("2. Süreç kimliğini ve kapsamını doğrula", "Standart süreç kodu, kurumsal kod, Türkçe ad, kapsam ve süreç sahibi LST.006 üzerinden doğrulanır.", "Süreç Mimarı", "LST.006", "PIM.1.BP1"),
-        ("3. Mimari etkiyi belirle", "Sürecin besleyen/beslenen süreçleri, temel girdileri, çıktıları ve arayüzleri belirlenir.", "Süreç Mimarı / İlgili Paydaşlar", "İlgili sürece ait İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi", "PIM.1.BP1"),
+        ("3. Mimari etkiyi belirle", "Sürecin besleyen/beslenen süreçleri, temel girdileri, çıktıları ve arayüzleri belirlenir.", "Süreç Mimarı / İlgili Paydaşlar", "İlgili sürece ait LST.007 - Süreç Etkileşim Matrisi", "PIM.1.BP1"),
         ("4. Standart beklentilerini çözümle", "Süreç amacı, sonuçları, BP'ler ve ilgili PA/GP beklentileri analiz edilerek kurumsal tasarım kapsamı oluşturulur.", "Kalite Danışmanı / Süreç Mimarı", "Standart izlenebilirlik notları", "PIM.1.BP3"),
         ("5. Süreç dokümanını hazırla", "SRÇ.XXX.Ş şablonu kullanılarak amaç, sonuçlar, kapsam, faaliyetler, araçlar, altyapı, uyarlama ve etkileşimler yazılır.", "Kalite Danışmanı / Süreç Mimarı", "İlgili SRÇ dokümanı", "PIM.1.BP3"),
         ("6. İş ürünlerini tanımla", "Sürecin girdi ve çıktı iş ürünleri ile uygulanabilir kalite kriterleri belirlenir.", "Süreç Mimarı / Süreç Sahibi", "LST.008", "PA 2.2 ve PIM.1.BP3"),
@@ -219,14 +219,14 @@ def build_storage() -> str:
     records = [
         ("SRÇ.018 kapsamındaki talep ve karar kayıtları", "Yeni süreç veya değişiklik ihtiyacının kaynağını ve kararını izlemek", "SRÇ.018 için tanımlanan kaynak sistem", "Değişiklik Talebi Sorumlusu", "Ayrı süreç tasarım talep formu oluşturulmaz."),
         ("İlgili SRÇ dokümanı", "Sürecin amaç, sonuç, faaliyet, araç, uyarlama ve etkileşimlerini tanımlamak", "01 - Süreç Dokümanları / Confluence", "Süreç Sahibi", "SRÇ.XXX.Ş şablonuyla hazırlanır."),
-        ("İÜC.BİDB.LST.006", "Süreç kimliği ve standart süreç setini izlemek", "03 - Kayıtlar ve Listeler / Confluence", "Süreç Mimarı", "Ortak kayıt"),
-        ("İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi", "Sürece özel mimari ve etkileşimleri izlemek", "İlgili süreç alt sayfası / Confluence", "Süreç Mimarı", "Süreç özel kayıt"),
-        ("İÜC.BİDB.LST.008", "Süreç iş ürünleri ve kalite kriterlerini yönetmek", "İlgili süreç kayıt alanı / Confluence", "Süreç Sahibi", "Süreç özel kayıt"),
-        ("İÜC.BİDB.LST.009", "Az sayıda yönetilebilir süreç ölçümünü izlemek", "İlgili süreç kayıt alanı / Confluence", "Ölçüm Sorumlusu", "Süreç özel kayıt"),
-        ("İÜC.BİDB.LST.010", "Rol, yetki, RACI ve yetkinlikleri yönetmek", "İlgili süreç kayıt alanı / Confluence", "Süreç Sahibi", "Süreç özel kayıt"),
-        ("İÜC.BİDB.KLV.003", "Tasarım kontrol noktalarının uygulandığını göstermek", "05 - Kılavuzlar / Confluence", "Kalite Danışmanı", "Kontrol kaynağı"),
-        ("İÜC.BİDB.FRM.001", "Boş formu süreç altında tutmak; doldurulmuş değerlendirmede BP ve PA/GP kanıt durumunu izlemek", "Boş form: ilgili süreç altı; değerlendirme: 91 - İç Denetimler / Süreç Gözden Geçirmeleri", "Kalite Danışmanı", "Doldurulmuş kayıt Değerlendirme #n adıyla saklanır"),
-        ("İÜC.BİDB.LST.012", "Yayın ve hedef kitle bilgilendirmesini izlemek", "03 - Kayıtlar ve Listeler / Confluence", "Proje Yöneticisi", "Ortak kayıt"),
+        ("LST.006", "Süreç kimliği ve standart süreç setini izlemek", "03 - Kayıtlar ve Listeler / Confluence", "Süreç Mimarı", "Ortak kayıt"),
+        ("LST.007 - Süreç Etkileşim Matrisi", "Sürece özel mimari ve etkileşimleri izlemek", "İlgili süreç alt sayfası / Confluence", "Süreç Mimarı", "Süreç özel kayıt"),
+        ("LST.008", "Süreç iş ürünleri ve kalite kriterlerini yönetmek", "İlgili süreç kayıt alanı / Confluence", "Süreç Sahibi", "Süreç özel kayıt"),
+        ("LST.009", "Az sayıda yönetilebilir süreç ölçümünü izlemek", "İlgili süreç kayıt alanı / Confluence", "Ölçüm Sorumlusu", "Süreç özel kayıt"),
+        ("LST.010", "Rol, yetki, RACI ve yetkinlikleri yönetmek", "İlgili süreç kayıt alanı / Confluence", "Süreç Sahibi", "Süreç özel kayıt"),
+        ("KLV.003", "Tasarım kontrol noktalarının uygulandığını göstermek", "05 - Kılavuzlar / Confluence", "Kalite Danışmanı", "Kontrol kaynağı"),
+        ("FRM.001", "Boş formu süreç altında tutmak; doldurulmuş değerlendirmede BP ve PA/GP kanıt durumunu izlemek", "Boş form: ilgili süreç altı; değerlendirme: 91 - İç Denetimler / Süreç Gözden Geçirmeleri", "Kalite Danışmanı", "Doldurulmuş kayıt Değerlendirme #n adıyla saklanır"),
+        ("LST.012", "Yayın ve hedef kitle bilgilendirmesini izlemek", "03 - Kayıtlar ve Listeler / Confluence", "Proje Yöneticisi", "Ortak kayıt"),
         ("Eğitim kayıtları", "Gerekli yetkinlik geliştirme ve katılım kanıtını izlemek", "SRÇ.020 kapsamında belirlenen ortam", "Eğitim Sorumlusu", "Gerektiğinde"),
     ]
     sections.append(table(["Kayıt / Kanıt", "Kullanım Amacı", "Saklama Yeri", "Sorumlu", "Not"], [[text(a), text(b), text(c), text(d), text(f)] for a, b, c, d, f in records]))
@@ -299,7 +299,7 @@ def update_index() -> None:
         for position, page in enumerate(pages):
             if page.get("relative_path") == (
                 "pages/000-root-iuc-bidb-spice-2026-level-3/07-prosedurler/"
-                "iuc-bidb-prs-001-yazilim-projeleri-dokumantasyon-proseduru"
+                "prs-001-yazilim-projeleri-dokumantasyon-proseduru"
             ):
                 insert_at = position + 1
                 break
@@ -320,9 +320,9 @@ def validate(storage: str) -> None:
         if f"<h2>{heading}</h2>" not in storage:
             raise RuntimeError(f"Eksik şablon başlığı: {heading}")
     required = [
-        "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
-        "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
-        "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci",
+        "PRS.XXX.Ş - Prosedür Tanımı Şablonu",
+        "SRÇ.XXX.Ş - Süreç Tanımı Şablonu",
+        "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci",
         "yalnızca düzenli veri üretilebilen, karar almaya yarayan az sayıda ölçüm",
         "Ayrı süreç tasarım talep formu oluşturulmaz.",
     ]

@@ -13,40 +13,40 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX_PATH = ROOT / "confluence/index.yaml"
 OLD_PAGE_DIR = ROOT / (
     "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/03-kayitlar-ve-listeler/"
-    "iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-004"
+    "lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-004"
 )
 RELATIVE_PATH = (
     "pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/"
-    "iuc-bidb-src-004-surec-kurulumu-sureci/"
-    "iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-004"
+    "src-004-surec-kurulumu-sureci/"
+    "lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-004"
 )
 PAGE_DIR = ROOT / "confluence" / RELATIVE_PATH
 STORAGE = PAGE_DIR / "body.storage.xhtml"
 VIEW = PAGE_DIR / "body.view.html"
 REPORT = ROOT / "reports/src004_lst008_rework_report.md"
 
-TITLE = "İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.004)"
+TITLE = "LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.004)"
 PARENT_ID = "137265862"
-PARENT_TITLE = "İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci"
+PARENT_TITLE = "SRÇ.004 - Süreç Kurulumu Süreci"
 PREPARED_BY = "Soner DEDEOĞLU - Kalite Danışmanı"
 REVIEWED_BY = "Levent Bayezit - Proje Yöneticisi"
 APPROVED_BY = "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı"
 
 # Aktif "02 - Şablonlar" sayfalarındaki güncel doküman adları.
-LST001 = "İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"
-LST006 = "İÜC.BİDB.LST.006 - Standart Süreç Envanteri"
-LST007 = "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004)"
+LST001 = "LST.001 - Aktif Dokümanlar Listesi"
+LST006 = "LST.006 - Standart Süreç Envanteri"
+LST007 = "LST.007 - Süreç Etkileşim Matrisi (SRÇ.004)"
 LST008 = TITLE
-LST009 = "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.004)"
-LST010 = "İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.004)"
-LST011 = "İÜC.BİDB.LST.011 - Repository Yapısı"
-LST012 = "İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"
-FRM001 = "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.004)"
-SRC_TEMPLATE = "İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu"
-SRC018 = "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"
-SRC020 = "İÜC.BİDB.SRÇ.020 - Eğitim Süreci"
-KLV002 = "İÜC.BİDB.KLV.002 - Süreç Uyarlama Kılavuzu"
-KLV003 = "İÜC.BİDB.KLV.003 - Süreç Tasarımı Kontrol Kılavuzu"
+LST009 = "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.004)"
+LST010 = "LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.004)"
+LST011 = "LST.011 - Repository Yapısı"
+LST012 = "LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"
+FRM001 = "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.004)"
+SRC_TEMPLATE = "SRÇ.XXX.Ş - Süreç Tanımı Şablonu"
+SRC018 = "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"
+SRC020 = "SRÇ.020 - Eğitim Süreci"
+KLV002 = "KLV.002 - Süreç Uyarlama Kılavuzu"
+KLV003 = "KLV.003 - Süreç Tasarımı Kontrol Kılavuzu"
 
 
 CSS = """
@@ -86,7 +86,7 @@ def data(view: bool) -> str:
 
     parts.append("<h2>1. Liste Özeti</h2>")
     parts.append(table(["Alan", "Değer"], [
-        [t("İlgili Süreç"), t("İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci")],
+        [t("İlgili Süreç"), t("SRÇ.004 - Süreç Kurulumu Süreci")],
         [t("Liste Kapsamı"), t("SRÇ.004 kapsamında kullanılan girdi iş ürünleri, üretilen çıktı iş ürünleri ve bu iş ürünlerine uygulanacak kalite kriterleri")],
         [t("Liste Tarihi"), t("15-02-2025")],
         [t("Listeyi Hazırlayan"), t(PREPARED_BY)],
@@ -116,11 +116,11 @@ def data(view: bool) -> str:
         ("Standart süreç kimliği ve kapsamı", LST006, "Standart kod, kurumsal kod, Türkçe ad ve süreç seti kapsamını doğrulamak", "Zorunlu", f"Resmî dokümanda sabit süreç sayısı kullanılmaz; güncel kapsam {LST006} üzerinden belirlenir."),
         ("Süreç mimarisi ve etkileşim bilgileri", LST007, "Besleyen/beslenen süreçleri, girdileri, çıktıları ve arayüzleri belirlemek", "Zorunlu", "İlgili süreç satırı güncel olmalıdır."),
         ("Süreç tanımı şablonu", SRC_TEMPLATE, "Süreç dokümanını ortak yapıda hazırlamak", "Zorunlu", "Gerçek süreç dokümanı 1. Süreç Bilgileri bölümüyle başlar; şablonun 0. bölümü taşınmaz."),
-        ("Süreç tasarım uygulama yöntemi", "İÜC.BİDB.PRS.002 - Süreç Tasarım Prosedürü", "Tasarım adımlarını, kontrol kapılarını ve kayıt ilişkilerini uygulamak", "Zorunlu", "Güncel ve onaylı prosedür esas alınmalıdır."),
+        ("Süreç tasarım uygulama yöntemi", "PRS.002 - Süreç Tasarım Prosedürü", "Tasarım adımlarını, kontrol kapılarını ve kayıt ilişkilerini uygulamak", "Zorunlu", "Güncel ve onaylı prosedür esas alınmalıdır."),
         ("Süreç uyarlama kuralları", KLV002, "Uyarlanabilir alanları, sınırları ve onay koşullarını belirlemek", "Zorunlu", "Süreç amacı ve zorunlu sonuçlar korunmalıdır."),
         ("Süreç tasarım kontrol noktaları", KLV003, "Tasarım paketinin eksiksizliğini ve yayıma hazırlığını kontrol etmek", "Zorunlu", f"Kontrol sonuçları {FRM001} kanıtlarıyla uyumlu olmalıdır."),
         ("Mevcut süreç tanımı ve kullanım verileri", f"İlgili SRÇ dokümanı, {LST009} ve doğal kaynak sistem kayıtları", "Revizyon halinde mevcut durum, performans ve kullanım bilgisini değerlendirmek", "Koşullu", "Yalnızca mevcut süreç güncelleniyorsa kullanılır; ayrı merkezi kullanım registerı oluşturulmaz."),
-        ("Değerlendirme ve iyileştirme bulguları", "İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci ve İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci kapsamındaki kayıtlar", "Tasarım veya revizyon gerektiren GAP ve iyileştirme ihtiyaçlarını değerlendirmek", "Koşullu", "Güncel ve gerçek kanıta dayalı bulgular kullanılmalıdır."),
+        ("Değerlendirme ve iyileştirme bulguları", "SRÇ.005 - Süreç Değerlendirme Süreci ve SRÇ.006 - Süreç İyileştirme Süreci kapsamındaki kayıtlar", "Tasarım veya revizyon gerektiren GAP ve iyileştirme ihtiyaçlarını değerlendirmek", "Koşullu", "Güncel ve gerçek kanıta dayalı bulgular kullanılmalıdır."),
     ]
     parts.append(table(
         ["Girdi İş Ürünü", "Kaynak Süreç / Kaynak Doküman", "Kullanım Amacı", "Zorunluluk", "Durum / Not"],
@@ -245,7 +245,7 @@ def validate(storage: str) -> None:
             raise RuntimeError(f"Eksik LST.008.Ş başlığı: {heading}")
     required = [
         SRC018,
-        "İÜC.BİDB.PRS.002 - Süreç Tasarım Prosedürü",
+        "PRS.002 - Süreç Tasarım Prosedürü",
         SRC_TEMPLATE,
         LST006,
         LST007,

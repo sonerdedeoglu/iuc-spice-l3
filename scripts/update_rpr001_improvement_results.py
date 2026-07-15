@@ -56,7 +56,7 @@ def main() -> None:
     verify(report_storage, template=False)
 
     template_folder = CONFLUENCE / TEMPLATES_REL / RPR001_TEMPLATE_SLUG
-    report_folder = CONFLUENCE / REPORTS_REL / "iuc-bidb-rpr-001-surec-performanslari-raporu"
+    report_folder = CONFLUENCE / REPORTS_REL / "rpr-001-surec-performanslari-raporu"
     if not args.report_only:
         write(template_folder, RPR001_TEMPLATE_TITLE, template_storage)
     if not args.template_only:

@@ -23,79 +23,79 @@ def nfc(value: str) -> str:
 
 SPECS = [
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-023-organizasyonel-yonetim-sureci",
-        "required": ["MAN.2.BP1", "MAN.2.BP6", "10. Süreç Akışı", "Mermaid Kodu", "İÜC.BİDB.LST.013"],
-        "attachment": "İÜC.BİDB.SRÇ.023 - Flowchart.png",
+        "path": "01-surec-dokumanlari/src-023-organizasyonel-yonetim-sureci",
+        "required": ["MAN.2.BP1", "MAN.2.BP6", "10. Süreç Akışı", "Mermaid Kodu", "LST.013"],
+        "attachment": "SRÇ.023 - Flowchart.png",
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-023-organizasyonel-yonetim-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-023",
-        "required": ["Mermaid Kodu", "İÜC.BİDB.LST.013", "İÜC.BİDB.PRS.006"],
+        "path": "01-surec-dokumanlari/src-023-organizasyonel-yonetim-sureci/lst-007-surec-etkilesim-matrisi-src-023",
+        "required": ["Mermaid Kodu", "LST.013", "PRS.006"],
         "attachment": "src023-surec-etkilesim.png",
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-023-organizasyonel-yonetim-sureci/iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-023",
-        "required": ["İÜC.BİDB.LST.013 - Görev Tanımları ve Görevli Personel Listesi", "İÜC.BİDB.PRS.006 - Organizasyonel Yönetim Prosedürü"],
+        "path": "01-surec-dokumanlari/src-023-organizasyonel-yonetim-sureci/lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-023",
+        "required": ["LST.013 - Görev Tanımları ve Görevli Personel Listesi", "PRS.006 - Organizasyonel Yönetim Prosedürü"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-023-organizasyonel-yonetim-sureci/iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-023",
+        "path": "01-surec-dokumanlari/src-023-organizasyonel-yonetim-sureci/lst-009-surec-performans-olcum-seti-src-023",
         "required": ["Planlanan YGG'nin döneminde gerçekleştirilme durumu", "YGG aksiyonlarının hedef tarihte tamamlanma oranı"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-023-organizasyonel-yonetim-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-023",
-        "required": ["Rol ve Yetkinlik Matrisi", "Süreç Faaliyetleri RACI Matrisi", "İş Ürünleri RACI Matrisi", "Yetki ve Onay Matrisi", "İÜC.BİDB.LST.013"],
+        "path": "01-surec-dokumanlari/src-023-organizasyonel-yonetim-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-023",
+        "required": ["Rol ve Yetkinlik Matrisi", "Süreç Faaliyetleri RACI Matrisi", "İş Ürünleri RACI Matrisi", "Yetki ve Onay Matrisi", "LST.013"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-023-organizasyonel-yonetim-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-023",
+        "path": "01-surec-dokumanlari/src-023-organizasyonel-yonetim-sureci/frm-001-surec-gozden-gecirme-formu-src-023",
         "required": ["MAN.2.BP1", "MAN.2.BP6", "Öncelikli Tamamlama Listesi", "GG-AA-YYYY"],
     },
     {
-        "path": "91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-023-degerlendirme-1",
+        "path": "91-ic-denetimler/surec-gozden-gecirmeleri/frm-001-surec-gozden-gecirme-formu-src-023-degerlendirme-1",
         "required": ["MAN.2.BP1", "MAN.2.BP6", "2 VAR, 2 DAĞINIK ve 2 ZAYIF", "LST.013'teki kurumsal organizasyon/görev kaynakları"],
     },
     {
-        "path": "07-prosedurler/iuc-bidb-prs-006-organizasyonel-yonetim-proseduru",
-        "required": ["341.1PR", "İÜC.BİDB.LST.013", "Personel görünümünün niteliği", "Yönetim Gözden Geçirme"],
+        "path": "07-prosedurler/prs-006-organizasyonel-yonetim-proseduru",
+        "required": ["341.1PR", "LST.013", "Personel görünümünün niteliği", "Yönetim Gözden Geçirme"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-frm-002-s-toplanti-tutanagi-sablonu",
-        "required": ["İÜC.BİDB.FRM.002.Ş", "Kararlar ve Aksiyonlar", "Takip Koordinatörü"],
+        "path": "02-sablonlar/frm-002-s-toplanti-tutanagi-sablonu",
+        "required": ["FRM.002.Ş", "Kararlar ve Aksiyonlar", "Takip Koordinatörü"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-lst-013-s-gorev-tanimlari-ve-gorevli-personel-listesi-sablonu",
-        "required": ["İÜC.BİDB.LST.013.Ş", "Görev Tanımları ve Görevli Personel Eşleştirmesi", "Görevlendirme kanıtı"],
+        "path": "02-sablonlar/lst-013-s-gorev-tanimlari-ve-gorevli-personel-listesi-sablonu",
+        "required": ["LST.013.Ş", "Görev Tanımları ve Görevli Personel Eşleştirmesi", "Görevlendirme kanıtı"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-013-gorev-tanimlari-ve-gorevli-personel-listesi",
+        "path": "03-kayitlar-ve-listeler/lst-013-gorev-tanimlari-ve-gorevli-personel-listesi",
         "required": ["32 görev tanımı", "Yönetici Sekreteri", "Maaş İşleri Personeli", "personel eşleştirmesi yayımlanmamış", "profil.iuc.edu.tr"],
         "forbidden": ["@iuc.edu.tr", "Dahili"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi",
-        "required": ["İÜC.BİDB.PRS.006", "İÜC.BİDB.FRM.002.Ş", "İÜC.BİDB.LST.013.Ş", "İÜC.BİDB.LST.013"],
+        "path": "03-kayitlar-ve-listeler/lst-001-aktif-dokumanlar-listesi",
+        "required": ["PRS.006", "FRM.002.Ş", "LST.013.Ş", "LST.013"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-006-standart-surec-envanteri",
-        "required": ["MAN.2", "İÜC.BİDB.SRÇ.023", "Aktif", "Confluence'ta yayımlanmış"],
+        "path": "03-kayitlar-ve-listeler/lst-006-standart-surec-envanteri",
+        "required": ["MAN.2", "SRÇ.023", "Aktif", "Confluence'ta yayımlanmış"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi",
-        "required": ["İÜC.BİDB.SRÇ.023", "PRS.006", "FRM.002.Ş", "LST.013.Ş", "RPR.001 güncellemesi", "Yayın ve iki PNG eki doğrulandı"],
+        "path": "03-kayitlar-ve-listeler/lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi",
+        "required": ["SRÇ.023", "PRS.006", "FRM.002.Ş", "LST.013.Ş", "RPR.001 güncellemesi", "Yayın ve iki PNG eki doğrulandı"],
     },
     {
-        "path": "09-raporlar/iuc-bidb-rpr-001-surec-performanslari-raporu",
-        "required": ["İÜC.BİDB.SRÇ.023", "12 VAR; 6 DAĞINIK; 2 ZAYIF; 1 YOK", "SPICE Olgunluk Seviyesi"],
+        "path": "09-raporlar/rpr-001-surec-performanslari-raporu",
+        "required": ["SRÇ.023", "12 VAR; 6 DAĞINIK; 2 ZAYIF; 1 YOK", "SPICE Olgunluk Seviyesi"],
     },
     {
         "path": "02-sablonlar",
-        "required": ["İÜC.BİDB.FRM.002.Ş", "İÜC.BİDB.LST.013.Ş"],
+        "required": ["FRM.002.Ş", "LST.013.Ş"],
     },
     {
         "path": "03-kayitlar-ve-listeler",
-        "required": ["İÜC.BİDB.LST.013", "Görev Tanımları ve Görevli Personel Listesi"],
+        "required": ["LST.013", "Görev Tanımları ve Görevli Personel Listesi"],
     },
     {
         "path": "07-prosedurler",
-        "required": ["İÜC.BİDB.PRS.006", "Organizasyonel Yönetim Prosedürü"],
+        "required": ["PRS.006", "Organizasyonel Yönetim Prosedürü"],
     },
 ]
 

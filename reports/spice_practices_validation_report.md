@@ -17,32 +17,32 @@
 
 ## Process BP Counts
 
-- İÜC.BİDB.SRÇ.001 | SUP.7 | Documentation | BP count: 8
-- İÜC.BİDB.SRÇ.002 | SUP.1 | Quality assurance | BP count: 5
-- İÜC.BİDB.SRÇ.003 | SUP.2 | Verification | BP count: 5
-- İÜC.BİDB.SRÇ.004 | PIM.1 | Process establishment | BP count: 6
-- İÜC.BİDB.SRÇ.005 | PIM.2 | Process assessment | BP count: 8
-- İÜC.BİDB.SRÇ.006 | PIM.3 | Process Improvement | BP count: 9
-- İÜC.BİDB.SRÇ.007 | MAN.3 | Project management | BP count: 14
-- İÜC.BİDB.SRÇ.008 | MAN.5 | Risk management | BP count: 7
-- İÜC.BİDB.SRÇ.009 | ENG.1 | Requirements elicitation | BP count: 6
-- İÜC.BİDB.SRÇ.010 | ENG.4 | Software requirements analysis | BP count: 6
-- İÜC.BİDB.SRÇ.011 | ENG.5 | Software design | BP count: 5
-- İÜC.BİDB.SRÇ.012 | ENG.6 | Software construction | BP count: 4
-- İÜC.BİDB.SRÇ.013 | ENG.7 | Software integration | BP count: 6
-- İÜC.BİDB.SRÇ.014 | ENG.8 | Software testing | BP count: 3
-- İÜC.BİDB.SRÇ.015 | SPL.2 | Product release | BP count: 11
-- İÜC.BİDB.SRÇ.016 | SUP.8 | Configuration management | BP count: 10
-- İÜC.BİDB.SRÇ.017 | SUP.9 | Problem resolution management | BP count: 10
-- İÜC.BİDB.SRÇ.018 | SUP.10 | Change request management | BP count: 9
-- İÜC.BİDB.SRÇ.019 | RIN.1 | Human resource management | BP count: 10
-- İÜC.BİDB.SRÇ.020 | RIN.2 | Training | BP count: 7
-- İÜC.BİDB.SRÇ.021 | RIN.3 | Knowledge management | BP count: 6
-- İÜC.BİDB.SRÇ.022 | RIN.4 | Infrastructure | BP count: 6
-- İÜC.BİDB.SRÇ.023 | MAN.2 | Organization management | BP count: 6
-- İÜC.BİDB.SRÇ.024 | MAN.4 | Quality management | BP count: 8
-- İÜC.BİDB.SRÇ.025 | MAN.6 | Measurement | BP count: 9
-- İÜC.BİDB.SRÇ.026 | SUP.5 | Audit | BP count: 6
+- SRÇ.001 | SUP.7 | Documentation | BP count: 8
+- SRÇ.002 | SUP.1 | Quality assurance | BP count: 5
+- SRÇ.003 | SUP.2 | Verification | BP count: 5
+- SRÇ.004 | PIM.1 | Process establishment | BP count: 6
+- SRÇ.005 | PIM.2 | Process assessment | BP count: 8
+- SRÇ.006 | PIM.3 | Process Improvement | BP count: 9
+- SRÇ.007 | MAN.3 | Project management | BP count: 14
+- SRÇ.008 | MAN.5 | Risk management | BP count: 7
+- SRÇ.009 | ENG.1 | Requirements elicitation | BP count: 6
+- SRÇ.010 | ENG.4 | Software requirements analysis | BP count: 6
+- SRÇ.011 | ENG.5 | Software design | BP count: 5
+- SRÇ.012 | ENG.6 | Software construction | BP count: 4
+- SRÇ.013 | ENG.7 | Software integration | BP count: 6
+- SRÇ.014 | ENG.8 | Software testing | BP count: 3
+- SRÇ.015 | SPL.2 | Product release | BP count: 11
+- SRÇ.016 | SUP.8 | Configuration management | BP count: 10
+- SRÇ.017 | SUP.9 | Problem resolution management | BP count: 10
+- SRÇ.018 | SUP.10 | Change request management | BP count: 9
+- SRÇ.019 | RIN.1 | Human resource management | BP count: 10
+- SRÇ.020 | RIN.2 | Training | BP count: 7
+- SRÇ.021 | RIN.3 | Knowledge management | BP count: 6
+- SRÇ.022 | RIN.4 | Infrastructure | BP count: 6
+- SRÇ.023 | MAN.2 | Organization management | BP count: 6
+- SRÇ.024 | MAN.4 | Quality management | BP count: 8
+- SRÇ.025 | MAN.6 | Measurement | BP count: 9
+- SRÇ.026 | SUP.5 | Audit | BP count: 6
 
 ## Result
 

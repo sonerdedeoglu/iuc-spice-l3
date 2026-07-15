@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a local draft candidate for İÜC.BİDB.LST.009.Ş template.
+"""Create a local draft candidate for LST.009.Ş template.
 
 The candidate is created as a new local Confluence page under `02 - Şablonlar`.
 It does not replace the current published LST.009 template. If approved, the
@@ -22,8 +22,8 @@ PARENT_DIR = ROOT_PAGE / "02-sablonlar"
 PARENT_ID = "137265785"
 PARENT_TITLE = "02 - Şablonlar"
 
-TITLE = "TASLAK - İÜC.BİDB.LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu"
-SLUG = "taslak-iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu"
+TITLE = "TASLAK - LST.009.Ş - Süreç Performans Ölçüm Seti Şablonu"
+SLUG = "taslak-lst-009-s-surec-performans-olcum-seti-sablonu"
 PAGE_DIR = PARENT_DIR / SLUG
 RELATIVE_PATH = f"pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/{SLUG}"
 
@@ -79,7 +79,7 @@ def build_storage() -> str:
     parts.append("<h3>0.1. Liste Üst Bilgisi</h3>")
     parts.append(table(["Alan", "Değer"], [
         ["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"],
-        ["Doküman Kodu", "İÜC.BİDB.LST.009.Ş"],
+        ["Doküman Kodu", "LST.009.Ş"],
         ["Doküman Türü", "Liste Şablonu"],
         ["Kullanım Alanı", "Süreç Performans Ölçüm Seti"],
         ["Durum", "Aktif"],
@@ -95,7 +95,7 @@ def build_storage() -> str:
 
     parts.append("<h3>0.3. Doküman Adlandırma Kuralı</h3>")
     parts.append(p("Bu şablon kullanılarak oluşturulan dosyalar aşağıdaki formatta adlandırılır:"))
-    parts.append("<blockquote>İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.XXX)</blockquote>")
+    parts.append("<blockquote>LST.009 - Süreç Performans Ölçüm Seti (SRÇ.XXX)</blockquote>")
     parts.append(p("Parantez içindeki kod, SPICE süreç kodu değil, kurum içinde kullanılan standart süreç kodudur."))
 
     parts.append("<h3>0.4. Sürüm Geçmişi</h3>")
@@ -103,7 +103,7 @@ def build_storage() -> str:
 
     parts.append("<h2>1. Liste Özeti</h2>")
     parts.append(table(["Alan", "Değer"], [
-        ["İlgili Süreç", placeholder("İÜC.BİDB.SRÇ.XXX - Süreç Adı")],
+        ["İlgili Süreç", placeholder("SRÇ.XXX - Süreç Adı")],
         ["Liste Kapsamı", placeholder("Performans ölçümleri, hedef/eşikler, veri kaynakları ve izleme sorumlulukları")],
         ["Liste Tarihi", placeholder("GG-AA-YYYY")],
         ["Listeyi Hazırlayan", placeholder("Rol / kişi")],
@@ -212,7 +212,7 @@ def update_index() -> None:
     else:
         insert_at = len(pages)
         for i, page in enumerate(pages):
-            if page.get("relative_path") == "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/iuc-bidb-lst-009-s-surec-performans-olcum-seti-sablonu":
+            if page.get("relative_path") == "pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar/lst-009-s-surec-performans-olcum-seti-sablonu":
                 insert_at = i + 1
                 break
         pages.insert(insert_at, entry)

@@ -23,56 +23,56 @@ def nfc(value: str) -> str:
 
 SPECS = [
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-005-surec-degerlendirme-sureci",
-        "required": ["PIM.2.BP8", "10. Süreç Akışı", "Mermaid Kodu", "İÜC.BİDB.PLN.001", "İÜC.BİDB.RPR.001"],
-        "attachment": "İÜC.BİDB.SRÇ.005 - Flowchart.png",
+        "path": "01-surec-dokumanlari/src-005-surec-degerlendirme-sureci",
+        "required": ["PIM.2.BP8", "10. Süreç Akışı", "Mermaid Kodu", "PLN.001", "RPR.001"],
+        "attachment": "SRÇ.005 - Flowchart.png",
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-005-surec-degerlendirme-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-005",
-        "required": ["flowchart LR", "Mermaid Kodu", "İÜC.BİDB.SRÇ.005", "İÜC.BİDB.PLN.001", "İÜC.BİDB.RPR.001", "İÜC.BİDB.FRM.001"],
+        "path": "01-surec-dokumanlari/src-005-surec-degerlendirme-sureci/lst-007-surec-etkilesim-matrisi-src-005",
+        "required": ["flowchart LR", "Mermaid Kodu", "SRÇ.005", "PLN.001", "RPR.001", "FRM.001"],
         "attachment": "src005-surec-etkilesim.png",
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-005-surec-degerlendirme-sureci/iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-005",
-        "required": ["İÜC.BİDB.PLN.001", "İÜC.BİDB.RPR.001", "İÜC.BİDB.FRM.001", "İÜC.BİDB.LST.006"],
+        "path": "01-surec-dokumanlari/src-005-surec-degerlendirme-sureci/lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-005",
+        "required": ["PLN.001", "RPR.001", "FRM.001", "LST.006"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-005-surec-degerlendirme-sureci/iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-005",
+        "path": "01-surec-dokumanlari/src-005-surec-degerlendirme-sureci/lst-009-surec-performans-olcum-seti-src-005",
         "required": ["SRÇ.005-Ö01", "SRÇ.005-Ö02", "SRÇ.005-Ö03"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-005-surec-degerlendirme-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-005",
+        "path": "01-surec-dokumanlari/src-005-surec-degerlendirme-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-005",
         "required": ["Kalite Danışmanı", "Süreç Sahibi", "Gözden Geçiren", "Onaylayan"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-005-surec-degerlendirme-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-005",
+        "path": "01-surec-dokumanlari/src-005-surec-degerlendirme-sureci/frm-001-surec-gozden-gecirme-formu-src-005",
         "required": ["GG-AA-YYYY", "Öncelikli Tamamlama Listesi"],
     },
     {
-        "path": "91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-005-degerlendirme-1",
+        "path": "91-ic-denetimler/surec-gozden-gecirmeleri/frm-001-surec-gozden-gecirme-formu-src-005-degerlendirme-1",
         "required": ["Değerlendirme #1", "PIM.2.BP1", "PA 3.2", "Öncelikli Tamamlama Listesi"],
     },
     {
-        "path": "07-prosedurler/iuc-bidb-prs-003-surec-degerlendirme-proseduru",
-        "required": ["PIM.2.BP1", "İÜC.BİDB.SRÇ.017", "İÜC.BİDB.SRÇ.018", "İÜC.BİDB.PLN.001", "İÜC.BİDB.RPR.001"],
+        "path": "07-prosedurler/prs-003-surec-degerlendirme-proseduru",
+        "required": ["PIM.2.BP1", "SRÇ.017", "SRÇ.018", "PLN.001", "RPR.001"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-pln-001-s-surec-kalite-plani-sablonu",
-        "required": ["İÜC.BİDB.PLN.001.Ş", "Süreç Kalite Planı Şablonu", "Yıllık Değerlendirme Takvimi", "Bulguların Yönetimi"],
-        "forbidden": ["İÜC.BİDB.PLN.XXX.Ş"],
+        "path": "02-sablonlar/pln-001-s-surec-kalite-plani-sablonu",
+        "required": ["PLN.001.Ş", "Süreç Kalite Planı Şablonu", "Yıllık Değerlendirme Takvimi", "Bulguların Yönetimi"],
+        "forbidden": ["PLN.XXX.Ş"],
     },
     {
-        "path": "08-planlar/iuc-bidb-pln-001-surec-kalite-plani",
-        "required": ["İÜC.BİDB.PLN.001", "Ocak", "Şubat", "Mart", "İÜC.BİDB.RPR.001"],
+        "path": "08-planlar/pln-001-surec-kalite-plani",
+        "required": ["PLN.001", "Ocak", "Şubat", "Mart", "RPR.001"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-rpr-001-s-surec-performanslari-raporu-sablonu",
-        "required": ["İÜC.BİDB.RPR.001.Ş", "Süreç Sonuç Özeti", "Etiket Dağılımları ve Eğilimler"],
-        "forbidden": ["İÜC.BİDB.RPR.XXX.Ş"],
+        "path": "02-sablonlar/rpr-001-s-surec-performanslari-raporu-sablonu",
+        "required": ["RPR.001.Ş", "Süreç Sonuç Özeti", "Etiket Dağılımları ve Eğilimler"],
+        "forbidden": ["RPR.XXX.Ş"],
     },
     {
-        "path": "09-raporlar/iuc-bidb-rpr-001-surec-performanslari-raporu",
-        "required": ["İÜC.BİDB.RPR.001", "İÜC.BİDB.SRÇ.001", "İÜC.BİDB.SRÇ.004", "İÜC.BİDB.SRÇ.005", "Değerlendirme Bağlantısı"],
+        "path": "09-raporlar/rpr-001-surec-performanslari-raporu",
+        "required": ["RPR.001", "SRÇ.001", "SRÇ.004", "SRÇ.005", "Değerlendirme Bağlantısı"],
     },
 ]
 

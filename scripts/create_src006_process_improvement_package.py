@@ -47,19 +47,19 @@ from create_src005_process_assessment_package import (
 
 
 SRC006_ID = "137265864"
-SRC006 = "İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci"
-SRC018 = "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"
-PRS004 = "İÜC.BİDB.PRS.004 - Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü"
-PLN002 = "İÜC.BİDB.PLN.002 - Süreç İyileştirme Planı"
-LST012 = "İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"
-SRC006_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/iuc-bidb-src-006-surec-iyilestirme-sureci"
-LST006_REL = f"{PAGE_ROOT_REL}/03-kayitlar-ve-listeler/iuc-bidb-lst-006-standart-surec-envanteri"
+SRC006 = "SRÇ.006 - Süreç İyileştirme Süreci"
+SRC018 = "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"
+PRS004 = "PRS.004 - Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü"
+PLN002 = "PLN.002 - Süreç İyileştirme Planı"
+LST012 = "LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"
+SRC006_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/src-006-surec-iyilestirme-sureci"
+LST006_REL = f"{PAGE_ROOT_REL}/03-kayitlar-ve-listeler/lst-006-standart-surec-envanteri"
 
-FLOW_PNG = "İÜC.BİDB.SRÇ.006 - Flowchart.png"
+FLOW_PNG = "SRÇ.006 - Flowchart.png"
 FLOW_MMD = "src006-surec-akisi.mmd"
 INTERACTION_PNG = "src006-surec-etkilesim.png"
 INTERACTION_MMD = "src006-surec-etkilesim.mmd"
-PLN002_TEMPLATE_SLUG = "iuc-bidb-pln-002-s-surec-iyilestirme-plani-sablonu"
+PLN002_TEMPLATE_SLUG = "pln-002-s-surec-iyilestirme-plani-sablonu"
 
 PIM3_BPS = [
     ("PIM.3.BP1", "Kaynak taahhüdünü oluştur", "İyileştirme faaliyetlerini sürdürecek yönetim, kaynak ve onay taahhüdünü sağlamak."),
@@ -125,14 +125,14 @@ def _image(storage: bool, filename: str, alt: str, width: int = 1000) -> str:
 
 def process_body(storage: bool = True) -> str:
     related = "<br />".join([
-        "İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci",
-        "İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci",
-        "İÜC.BİDB.SRÇ.007 - Proje Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.008 - Risk Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.017 - Problem Çözüm Yönetimi Süreci",
+        "SRÇ.002 - Kalite Güvencesi Süreci",
+        "SRÇ.005 - Süreç Değerlendirme Süreci",
+        "SRÇ.007 - Proje Yönetimi Süreci",
+        "SRÇ.008 - Risk Yönetimi Süreci",
+        "SRÇ.017 - Problem Çözüm Yönetimi Süreci",
         SRC018,
-        "İÜC.BİDB.SRÇ.025 - Ölçüm Süreci",
-        "İÜC.BİDB.SRÇ.026 - Denetim Süreci",
+        "SRÇ.025 - Ölçüm Süreci",
+        "SRÇ.026 - Denetim Süreci",
     ])
     mermaid = info_macro("Mermaid Kodu", FLOW_LINES) if storage else info_view("Mermaid Kodu", FLOW_LINES)
     activities = [
@@ -200,7 +200,7 @@ def process_body(storage: bool = True) -> str:
             ["Ana Faaliyetler", "Fırsat belirleme; mevcut durum analizi ve hedef oluşturma; kaynak taahhüdü; önceliklendirme; planlama; değişikliği uygulama; sonucu doğrulama; duyuru/raporlama; yeniden kullanım değerlendirmesi"],
             ["İlgili Süreçler", related],
         ]),
-        "<h2>7. Roller ve Sorumluluklar</h2>", p("Bu süreç kapsamındaki rol, sorumluluk, yetki, yetkinlik ve RACI bilgileri İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.006) dokümanında yönetilir."),
+        "<h2>7. Roller ve Sorumluluklar</h2>", p("Bu süreç kapsamındaki rol, sorumluluk, yetki, yetkinlik ve RACI bilgileri LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.006) dokümanında yönetilir."),
         "<h2>8. Araçlar ve Altyapı</h2>",
         table(["Tür", "Araç / Altyapı Bileşeni", "Kullanım Amacı", "Erişim ve Kullanım Koşulu", "Sorumlu Rol / Birim"], [
             ["Araç", "Confluence", "Süreç, prosedür, plan, rapor ve ilgili iyileştirme dokümanlarının yayımlanması", "Kurumsal hesap ve atanmış okuma/yazma yetkisi; uzaktan erişimde VPN", "Proje Geliştirme Yönetimi / Confluence Yöneticisi"],
@@ -210,17 +210,17 @@ def process_body(storage: bool = True) -> str:
             ["İletişim", "Kurumsal e-posta", "Onay, kaynak taahhüdü, gözden geçirme ve sonuç bilgilendirmeleri", "Kurumsal hesap ve ilgili dağıtım listeleri", "Süreç Sahibi / Proje Yöneticisi / Kalite Danışmanı"],
             ["Altyapı", "İÜC VPN ve kurumsal kimlik altyapısı", "Kurum dışından kayıt ve kanıt sistemlerine güvenli erişim", "Geçerli hesap, VPN yetkisi ve bilgi güvenliği kuralları", "İÜC BİDB Altyapı ve Erişim Yönetimi"],
         ], fixed=True),
-        "<h2>9. Süreç İş Ürünleri</h2>", p("Sürecin girdi ve çıktı iş ürünleri ile kalite kriterleri İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.006) dokümanında yönetilir."),
+        "<h2>9. Süreç İş Ürünleri</h2>", p("Sürecin girdi ve çıktı iş ürünleri ile kalite kriterleri LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.006) dokümanında yönetilir."),
         "<h2>10. Süreç Akışı</h2>", _image(storage, FLOW_PNG, "SRÇ.006 süreç akışı") + mermaid,
         "<h2>11. Süreç Faaliyetleri</h2>", table(["Faaliyet ID", "Faaliyet", "Açıklama", "Elde Edilen / Güncellenen İş Ürünü"], activities),
-        "<h2>12. Ölçüm ve İzleme</h2>", p("Az sayıda yönetilebilir performans ölçümü İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.006) dokümanında tanımlanır. Sonuçlar doğal SRÇ.018 kayıtlarından ve RPR.001'den üretilir; ayrı iyileştirme registerı oluşturulmaz."),
+        "<h2>12. Ölçüm ve İzleme</h2>", p("Az sayıda yönetilebilir performans ölçümü LST.009 - Süreç Performans Ölçüm Seti (SRÇ.006) dokümanında tanımlanır. Sonuçlar doğal SRÇ.018 kayıtlarından ve RPR.001'den üretilir; ayrı iyileştirme registerı oluşturulmaz."),
         "<h2>13. Uygulama ve Uyarlama Kuralları</h2>",
         "<h3>13.1. Tek Giriş ve Sınıflandırma</h3>" + p("Her değişiklik veya iyileştirme adayı önce SRÇ.018 değişiklik kaydı olarak açılır. Ön değerlendirme ve etki analizi SRÇ.018 kaydında yürütülür; normal değişiklikler SRÇ.018 akışında kalır, iyileştirme fırsatları SRÇ.006 yönetişiminde devam eder."),
         "<h3>13.2. Etki, Öncelik ve Yetki</h3>" + p("Etki ve uygulama önceliği ayrı alanlardır ve sayısal puan kullanılmadan Yüksek, Orta veya Düşük etiketiyle gösterilir. Proje Geliştirme Yönetimi kapsamındaki, ilave bütçe gerektirmeyen, organizasyon yapısını değiştirmeyen ve kurum genelinde önemli etki oluşturmayan iyileştirmeler Proje Yöneticisinin devredilmiş yetkisinde onaylanabilir; diğerleri Bilgi İşlem Daire Başkanı onayına sunulur."),
         "<h3>13.3. Planlama Uyarlaması</h3>" + table(["Koşul", "Planlama Yöntemi"], [["Tek süreçle sınırlı ve önemli kaynak gerektirmeyen iyileştirme", "Faaliyetler SRÇ.018 değişiklik kaydı içinde planlanır."], ["Yüksek etkili, birden fazla süreci etkileyen veya önemli kaynak gerektiren iyileştirme", f"{PLN002} hazırlanır ve kaynak SRÇ.018 kaydıyla ilişkilendirilir."]]),
         "<h3>13.4. Uygulama ve Doğrulama</h3>" + p("Süreç, doküman, araç veya uygulama üzerindeki gerçek değişiklik SRÇ.018 kapsamında kontrollü olarak uygulanır. İyileştirme başarısı SRÇ.018 değişiklik gözden geçirmesinde, önceden belirlenmiş hedef ve kanıtlarla değerlendirilir. Olumlu sonuç olmadan iyileştirme tamamlanmış sayılmaz."),
         "<h3>13.5. Raporlama, Duyuru ve Yeniden Kullanım</h3>" + p("Doğrulanmış önemli kazanımlar RPR.001 içinde özetlenir. Süreç kullanıcılarını etkileyen sonuçlar LST.012 ile duyurulur; sınırlı teknik değişikliklerde doğal ekip iletişim kaydı kanıt olabilir. Başarılı çözümün başka süreçlerde uygulanabilirliği değerlendirilir ve her yeni uygulama alanı için ayrı SRÇ.018 kaydı açılır."),
-        "<h2>14. Süreç Etkileşimleri</h2>", p("Sürecin diğer süreç ve dokümanlarla girdi/çıktı etkileşimleri İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.006) dokümanında yönetilir."),
+        "<h2>14. Süreç Etkileşimleri</h2>", p("Sürecin diğer süreç ve dokümanlarla girdi/çıktı etkileşimleri LST.007 - Süreç Etkileşim Matrisi (SRÇ.006) dokümanında yönetilir."),
         "<h2>15. Sürüm Geçmişi</h2>", history("Süreç İyileştirme Süreci", REVIEWED_BY, APPROVED_BY),
     ])
 
@@ -232,12 +232,12 @@ def lst007_body(storage: bool = True) -> str:
         "<h2>2. Kullanım Değerleri</h2>", table(["Değer", "Anlamı"], [["Girdi", "İyileştirme fırsatının belirlenmesi, gerekçelendirilmesi veya önceliklendirilmesi için kullanılan süreç, kayıt, veri veya geri bildirim"], ["Çıktı", "İyileştirme yönetimi sonucunda oluşan hedef, plan, doğrulama, raporlama, duyuru veya yeniden kullanım kararı"], ["Çift yönlü", "SRÇ.006 yönetişimi ile SRÇ.018 değişiklik uygulaması arasındaki karşılıklı bilgi ve karar akışı"]]),
         "<h2>3. Süreç Etkileşim Diyagramı</h2>", _image(storage, INTERACTION_PNG, "SRÇ.006 süreç etkileşim diyagramı", 900) + mermaid,
         "<h2>4. Girdi Etkileşimleri Matrisi</h2>", table(["Kaynak Süreç / Doküman", "Etkileşim Türü", "Girdi / Bilgi", "Kayıt / Kanıt", "Açıklama"], [
-            ["İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci", "İyileştirme girdisi", "Güçlü/zayıf yönler ve iyileştirme fırsatları", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İlgili Süreç); İÜC.BİDB.RPR.001 - Süreç Performansları Raporu", "Değerlendirme bulgularının iyileştirme hedeflerine dönüşmesini destekler."],
-            ["İÜC.BİDB.SRÇ.026 - Denetim Süreci", "Denetim girdisi", "Denetim bulguları ve öneriler", "Denetim raporu / bulgu kaydı", "Kurumsal veya dış çevre kaynaklı iyileştirme uyarısı sağlar."],
-            ["İÜC.BİDB.SRÇ.017 - Problem Çözüm Yönetimi Süreci", "Düzeltici iyileştirme girdisi", "Problem çözüm ve düzeltici faaliyet sonuçları", "Problem ve faaliyet kaydı", "Çözümden doğan süreç değişikliği veya iyileştirme fırsatını sağlar."],
+            ["SRÇ.005 - Süreç Değerlendirme Süreci", "İyileştirme girdisi", "Güçlü/zayıf yönler ve iyileştirme fırsatları", "FRM.001 - Süreç Gözden Geçirme Formu (İlgili Süreç); RPR.001 - Süreç Performansları Raporu", "Değerlendirme bulgularının iyileştirme hedeflerine dönüşmesini destekler."],
+            ["SRÇ.026 - Denetim Süreci", "Denetim girdisi", "Denetim bulguları ve öneriler", "Denetim raporu / bulgu kaydı", "Kurumsal veya dış çevre kaynaklı iyileştirme uyarısı sağlar."],
+            ["SRÇ.017 - Problem Çözüm Yönetimi Süreci", "Düzeltici iyileştirme girdisi", "Problem çözüm ve düzeltici faaliyet sonuçları", "Problem ve faaliyet kaydı", "Çözümden doğan süreç değişikliği veya iyileştirme fırsatını sağlar."],
             [SRC018, "Değişiklik girdisi", "Ön değerlendirilmiş ve iyileştirme fırsatı olarak sınıflandırılmış değişiklik kaydı", "SRÇ.018 değişiklik kaydı ve etki analizi", "SRÇ.006 için tek kayıt girişini ve tekrarsız analizi sağlar."],
-            ["İÜC.BİDB.LST.009 süreç özel ölçüm setleri ve RPR.001", "Performans girdisi", "Hedef, sapma, eğilim ve süreç performans sonuçları", "LST.009 doğal veri kaynakları; RPR.001", "Ölçülebilir iyileştirme ihtiyacını ve hedefini destekler."],
-            ["İÜC.BİDB.SRÇ.008 - Risk Yönetimi Süreci", "Risk girdisi", "Süreç kaynaklı risk ve fırsatlar", "Risk kaydı ve değerlendirmesi", "Risk azaltma veya fırsat gerçekleştirme hedefi sağlar."],
+            ["LST.009 süreç özel ölçüm setleri ve RPR.001", "Performans girdisi", "Hedef, sapma, eğilim ve süreç performans sonuçları", "LST.009 doğal veri kaynakları; RPR.001", "Ölçülebilir iyileştirme ihtiyacını ve hedefini destekler."],
+            ["SRÇ.008 - Risk Yönetimi Süreci", "Risk girdisi", "Süreç kaynaklı risk ve fırsatlar", "Risk kaydı ve değerlendirmesi", "Risk azaltma veya fırsat gerçekleştirme hedefi sağlar."],
             ["SRÇ.007 öğrenilmiş dersler; SRÇ.002 müşteri memnuniyeti; Yönetim Gözden Geçirme; kullanıcı/paydaş geri bildirimleri", "Kurumsal geri bildirim girdisi", "Dersler, memnuniyet sonuçları, yönetim kararları ve geri bildirimler", "Kaynak toplantı, anket, rapor veya iletişim kaydı", "İç ve dış çevreden iyileştirme fırsatı sağlar."],
             [PRS004, "Yöntem girdisi", "Sınıflandırma, etki/öncelik, planlama uyarlaması, onay, doğrulama ve yeniden kullanım kuralları", PRS004, "SRÇ.006 ve SRÇ.018 arasındaki ortak çalışma yöntemini belirler."],
         ]),
@@ -257,14 +257,14 @@ def lst007_body(storage: bool = True) -> str:
 def lst008_body() -> str:
     inputs = [
         [PRS004, "Girdi", "İyileştirme ve değişiklik yaşam döngüsü kuralları", "Aktif sürüm; SRÇ.006/SRÇ.018 geçişi, etki, öncelik, onay ve doğrulama kuralları tanımlı", "Zorunlu", "PIM.3.BP1-BP9"],
-        ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İlgili Süreç) ve İÜC.BİDB.RPR.001 - Süreç Performansları Raporu", "Girdi", "Süreç değerlendirme bulguları, güçlü/zayıf yönler ve performans eğilimleri", "Kaynak süreç, BP/GP, bulgu türü ve değerlendirme bağlantısı izlenebilir", "Koşullu", "PIM.3.BP2-BP4"],
-        ["İÜC.BİDB.SRÇ.026 - Denetim Süreci bulgu/rapor kayıtları", "Girdi", "Denetim bulguları ve iyileştirme önerileri", "Kaynak denetim, bulgu, tarih ve sorumluluk izlenebilir", "Koşullu", "PIM.3.BP2-BP3"],
-        ["İÜC.BİDB.SRÇ.017 - Problem Çözüm Yönetimi Süreci sonuç kayıtları", "Girdi", "Problem çözüm ve düzeltici faaliyet sonucundan doğan iyileştirme ihtiyacı", "Kaynak problem ve çözüm kararı bağlantısı mevcut", "Koşullu", "PIM.3.BP2-BP3"],
-        ["İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci değişiklik kaydı ve etki analizi", "Girdi", "İyileştirme fırsatı sınıflandırması, mevcut durum, etki, risk, beklenen fayda ve etkilenen varlıklar", "Alanlar tamamlanmış, kaynak bağlantıları ve sınıflandırma kararı izlenebilir", "Zorunlu", "PIM.3.BP2-BP5"],
-        ["İÜC.BİDB.LST.009 süreç özel ölçüm sonuçları; İÜC.BİDB.SRÇ.008 risk kayıtları; kullanıcı/paydaş geri bildirimleri; SRÇ.007 öğrenilmiş dersleri; SRÇ.002 müşteri memnuniyeti ve Yönetim Gözden Geçirme çıktıları", "Girdi", "Performans, risk, deneyim, memnuniyet ve yönetim kararlarından doğan iyileştirme uyarıları", "Kaynak, dönem, bağlam ve ilgili süreç açıklanabilir", "Koşullu", "PIM.3.BP2-BP4"],
+        ["FRM.001 - Süreç Gözden Geçirme Formu (İlgili Süreç) ve RPR.001 - Süreç Performansları Raporu", "Girdi", "Süreç değerlendirme bulguları, güçlü/zayıf yönler ve performans eğilimleri", "Kaynak süreç, BP/GP, bulgu türü ve değerlendirme bağlantısı izlenebilir", "Koşullu", "PIM.3.BP2-BP4"],
+        ["SRÇ.026 - Denetim Süreci bulgu/rapor kayıtları", "Girdi", "Denetim bulguları ve iyileştirme önerileri", "Kaynak denetim, bulgu, tarih ve sorumluluk izlenebilir", "Koşullu", "PIM.3.BP2-BP3"],
+        ["SRÇ.017 - Problem Çözüm Yönetimi Süreci sonuç kayıtları", "Girdi", "Problem çözüm ve düzeltici faaliyet sonucundan doğan iyileştirme ihtiyacı", "Kaynak problem ve çözüm kararı bağlantısı mevcut", "Koşullu", "PIM.3.BP2-BP3"],
+        ["SRÇ.018 - Değişiklik Talebi Yönetimi Süreci değişiklik kaydı ve etki analizi", "Girdi", "İyileştirme fırsatı sınıflandırması, mevcut durum, etki, risk, beklenen fayda ve etkilenen varlıklar", "Alanlar tamamlanmış, kaynak bağlantıları ve sınıflandırma kararı izlenebilir", "Zorunlu", "PIM.3.BP2-BP5"],
+        ["LST.009 süreç özel ölçüm sonuçları; SRÇ.008 risk kayıtları; kullanıcı/paydaş geri bildirimleri; SRÇ.007 öğrenilmiş dersleri; SRÇ.002 müşteri memnuniyeti ve Yönetim Gözden Geçirme çıktıları", "Girdi", "Performans, risk, deneyim, memnuniyet ve yönetim kararlarından doğan iyileştirme uyarıları", "Kaynak, dönem, bağlam ve ilgili süreç açıklanabilir", "Koşullu", "PIM.3.BP2-BP4"],
     ]
     outputs = [
-        ["İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci iyileştirme/değişiklik kaydı", "Çıktı", "Hedef, etki, uygulama önceliği, onay, kaynak taahhüdü, plan ve uygulama bağlantıları", "Kaynak fırsat, etkilenen süreç/doküman, beklenen fayda, risk, sorumlu ve doğrulama ölçütü tamamlanmış", "Zorunlu", "PIM.3.BP1-BP6"],
+        ["SRÇ.018 - Değişiklik Talebi Yönetimi Süreci iyileştirme/değişiklik kaydı", "Çıktı", "Hedef, etki, uygulama önceliği, onay, kaynak taahhüdü, plan ve uygulama bağlantıları", "Kaynak fırsat, etkilenen süreç/doküman, beklenen fayda, risk, sorumlu ve doğrulama ölçütü tamamlanmış", "Zorunlu", "PIM.3.BP1-BP6"],
         [PLN002, "Çıktı", "Kapsamlı iyileştirmenin faaliyet, kaynak, takvim, risk, bağımlılık ve başarı ölçütü planı", "Yüksek etkili, çok süreçli veya önemli kaynak gerektiren çalışmalar için onaylı ve kaynak SRÇ.018 kaydıyla bağlı", "Koşullu", "PIM.3.BP1, BP4-BP5"],
         ["SRÇ.018 değişiklik gözden geçirme sonucu", "Çıktı", "Hedef ve gerçekleşen sonucun kanıta dayalı karşılaştırması", "Hedef, başarı ölçütü, başlangıç/sonuç verisi, sapma, karar ve gözden geçiren bilgisi mevcut", "Zorunlu", "PIM.3.BP7"],
         [RPR001, "Çıktı", "Doğrulanmış önemli iyileştirme kazanımlarının kümülatif yönetim özeti", "Kaynak SRÇ.018 sonucu ve ilgili süreç bağlantısı mevcut; başarı yeniden değerlendirilmemiş", "Koşullu", "PIM.3.BP7-BP8"],
@@ -367,15 +367,15 @@ def blank_review_body() -> str:
 
 def assessment_body() -> str:
     bp_status = {
-        "PIM.3.BP1": ("DAĞINIK", "Rol bazlı onay sınırı, kaynak türleri ve taahhüt adımı tanımlıdır; gerçek bir iyileştirme için alınmış kaynak taahhüdü henüz yoktur.", f"{SRC006}; {PRS004}; İÜC.BİDB.LST.010 (SRÇ.006)", "İlk gerçek iyileştirmede onay ve kaynak taahhüdü doğal kayıtlarla doğrulanmalıdır."),
-        "PIM.3.BP2": ("VAR", "Değerlendirme, denetim, problem, değişiklik, performans, risk, geri bildirim, öğrenilmiş ders, müşteri memnuniyeti ve yönetim çıktıları kaynak olarak tanımlanmış; tek giriş noktası SRÇ.018 olarak belirlenmiştir.", f"{SRC006}; {PRS004}; İÜC.BİDB.LST.007-LST.008 (SRÇ.006)", "-"),
+        "PIM.3.BP1": ("DAĞINIK", "Rol bazlı onay sınırı, kaynak türleri ve taahhüt adımı tanımlıdır; gerçek bir iyileştirme için alınmış kaynak taahhüdü henüz yoktur.", f"{SRC006}; {PRS004}; LST.010 (SRÇ.006)", "İlk gerçek iyileştirmede onay ve kaynak taahhüdü doğal kayıtlarla doğrulanmalıdır."),
+        "PIM.3.BP2": ("VAR", "Değerlendirme, denetim, problem, değişiklik, performans, risk, geri bildirim, öğrenilmiş ders, müşteri memnuniyeti ve yönetim çıktıları kaynak olarak tanımlanmış; tek giriş noktası SRÇ.018 olarak belirlenmiştir.", f"{SRC006}; {PRS004}; LST.007-LST.008 (SRÇ.006)", "-"),
         "PIM.3.BP3": ("VAR", "Mevcut durum, kaynak kanıt, etkilenen süreç, beklenen fayda, risk, hedef ve başarı ölçütü için analiz yaklaşımı tanımlanmıştır.", f"{SRC006}; {PRS004}; SRÇ.018 etki analizi yaklaşımı", "-"),
-        "PIM.3.BP4": ("VAR", "Etki ve uygulama önceliği ayrıştırılmış, her ikisi için Yüksek/Orta/Düşük etiketleri ve karar ölçütleri tanımlanmıştır.", f"{SRC006}; {PRS004}; İÜC.BİDB.LST.010 (SRÇ.006)", "-"),
+        "PIM.3.BP4": ("VAR", "Etki ve uygulama önceliği ayrıştırılmış, her ikisi için Yüksek/Orta/Düşük etiketleri ve karar ölçütleri tanımlanmıştır.", f"{SRC006}; {PRS004}; LST.010 (SRÇ.006)", "-"),
         "PIM.3.BP5": ("VAR", "Sınırlı iyileştirmelerin SRÇ.018 kaydında; yüksek etkili, çok süreçli veya önemli kaynak gerektiren çalışmaların PLN.002 ile planlanması tanımlanmıştır.", f"{SRC006}; {PRS004}; {PLN002_TEMPLATE_TITLE}", "-"),
         "PIM.3.BP6": ("DAĞINIK", "Gerçek değişikliklerin SRÇ.018 kapsamında kontrollü uygulanacağı ve kanıtlanacağı tanımlıdır; uygulanmış bir iyileştirme örneği henüz bulunmamaktadır.", f"{SRC006}; {PRS004}; {SRC018}", "İlk gerçek iyileştirmede uygulama, sürüm ve kanıt bağlantıları SRÇ.018 kaydında tamamlanmalıdır."),
-        "PIM.3.BP7": ("ZAYIF", "SRÇ.018 değişiklik gözden geçirmesiyle hedef, ölçüt ve gerçekleşen sonuç karşılaştırması tanımlıdır; doğrulanmış sonuç verisi henüz yoktur.", f"{SRC006}; {PRS004}; İÜC.BİDB.LST.009 (SRÇ.006)", "İlk uygulanan iyileştirmenin hedef ve sonuç verileriyle değişiklik gözden geçirmesi tamamlanmalıdır."),
+        "PIM.3.BP7": ("ZAYIF", "SRÇ.018 değişiklik gözden geçirmesiyle hedef, ölçüt ve gerçekleşen sonuç karşılaştırması tanımlıdır; doğrulanmış sonuç verisi henüz yoktur.", f"{SRC006}; {PRS004}; LST.009 (SRÇ.006)", "İlk uygulanan iyileştirmenin hedef ve sonuç verileriyle değişiklik gözden geçirmesi tamamlanmalıdır."),
         "PIM.3.BP8": ("ZAYIF", "RPR.001, LST.012 ve doğal iletişim kanıtı üzerinden duyuru kuralları tanımlıdır; gerçekleşmiş iyileştirme sonucu iletişimi henüz yoktur.", f"{SRC006}; {PRS004}; {RPR001}; {LST012}", "İlk doğrulanmış sonuçta hedef kitleye uygun iletişim kanıtı oluşturulmalıdır."),
-        "PIM.3.BP9": ("ZAYIF", "Başarılı çözümün başka süreçlerde değerlendirilmesi ve her yeni kapsam için ayrı SRÇ.018 kaydı açılması tanımlıdır; gerçek yeniden kullanım kararı henüz yoktur.", f"{SRC006}; {PRS004}; İÜC.BİDB.LST.007-LST.008 (SRÇ.006)", "İlk doğrulanmış iyileştirmede yeniden kullanım kararı ve gerekçesi kaydedilmelidir."),
+        "PIM.3.BP9": ("ZAYIF", "Başarılı çözümün başka süreçlerde değerlendirilmesi ve her yeni kapsam için ayrı SRÇ.018 kaydı açılması tanımlıdır; gerçek yeniden kullanım kararı henüz yoktur.", f"{SRC006}; {PRS004}; LST.007-LST.008 (SRÇ.006)", "İlk doğrulanmış iyileştirmede yeniden kullanım kararı ve gerekçesi kaydedilmelidir."),
     }
     bp_rows = [[bp, title, bp_status[bp][1], bp_status[bp][2], bp_status[bp][0], bp_status[bp][3]] for bp, title, _ in PIM3_BPS]
     gp_labels = {
@@ -387,8 +387,8 @@ def assessment_body() -> str:
     gp_text = {
         "VAR": ("Standart süreç paketi içinde ilgili hedef, yöntem, rol, iş ürünü, etkileşim veya altyapı tanımı yeterli ve izlenebilir biçimde oluşturulmuştur.", f"{SRC006}; {PRS004}; süreç özel LST.007-LST.010; {PLN002_TEMPLATE_TITLE}", "-"),
         "DAĞINIK": ("Gerekli tanım veya altyapı vardır; ancak gerçek kaynak tahsisi, uygulama, iletişim, gözden geçirme/onay veya kullanım kanıtı henüz sistematik olarak oluşmamıştır.", "SRÇ.006 süreç paketi; mevcut yerel ve Confluence kayıtları", "İlk gerçek iyileştirmede doğal kaynak kanıtları tamamlanmalı ve SRÇ.018 kaydına bağlanmalıdır."),
-        "ZAYIF": ("Yaklaşım ve ölçüm tanımlıdır; ancak gerçek sapma/ayarlama veya doğrulanmış iyileştirme performans verisi henüz oluşmamıştır.", "İÜC.BİDB.LST.009 (SRÇ.006); SRÇ.018 değişiklik gözden geçirme yaklaşımı", "İlk gerçek iyileştirmede sonuç, sapma ve karar kayıtları oluşturulmalıdır."),
-        "YOK": ("Rol yetkinlikleri tanımlanmış olsa da süreç iyileştirmeye özgü yetkinlik doğrulaması ve eğitim/katılım kaydı bulunmamaktadır.", "İÜC.BİDB.LST.010 (SRÇ.006); SRÇ.020", "Yetkinlik ihtiyacı doğrulanmalı; gerekiyorsa SRÇ.020 kapsamında eğitim ve katılım kaydı oluşturulmalıdır."),
+        "ZAYIF": ("Yaklaşım ve ölçüm tanımlıdır; ancak gerçek sapma/ayarlama veya doğrulanmış iyileştirme performans verisi henüz oluşmamıştır.", "LST.009 (SRÇ.006); SRÇ.018 değişiklik gözden geçirme yaklaşımı", "İlk gerçek iyileştirmede sonuç, sapma ve karar kayıtları oluşturulmalıdır."),
+        "YOK": ("Rol yetkinlikleri tanımlanmış olsa da süreç iyileştirmeye özgü yetkinlik doğrulaması ve eğitim/katılım kaydı bulunmamaktadır.", "LST.010 (SRÇ.006); SRÇ.020", "Yetkinlik ihtiyacı doğrulanmalı; gerekiyorsa SRÇ.020 kapsamında eğitim ve katılım kaydı oluşturulmalıdır."),
     }
     gp_rows = []
     for pa, gp, title in GPS:
@@ -416,10 +416,10 @@ def pln002_template_body() -> str:
     return "".join([
         "<h2>0. Şablon Hakkında</h2>",
         "<h3>0.1. Şablon Üst Bilgisi</h3>", table(["Alan", "Değer"], [["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"], ["Doküman Kodu", PLN002_TEMPLATE_CODE], ["Doküman Türü", "Doküman Şablonu"], ["Kullanım Alanı", PLN002], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Yürürlük Tarihi", "15-02-2025"], ["Güncelleme Sıklığı", "SRÇ.006 veya SRÇ.018 planlama yaklaşımı değiştiğinde"]]),
-        "<h3>0.2. Şablonun Kullanım Amacı</h3>", p("Bu şablon yalnızca yüksek etkili, birden fazla süreci etkileyen veya önemli kaynak gerektiren iyileştirmeler için İÜC.BİDB.PLN.002 - Süreç İyileştirme Planı hazırlanmasında kullanılır. Tek süreçle sınırlı ve önemli kaynak gerektirmeyen iyileştirmeler SRÇ.018 değişiklik kaydı içinde planlanır."),
-        "<h3>0.3. Doküman Adlandırma Kuralı</h3>", p("İÜC.BİDB.PLN.002 - Süreç İyileştirme Planı - [İyileştirme Adı]"),
+        "<h3>0.2. Şablonun Kullanım Amacı</h3>", p("Bu şablon yalnızca yüksek etkili, birden fazla süreci etkileyen veya önemli kaynak gerektiren iyileştirmeler için PLN.002 - Süreç İyileştirme Planı hazırlanmasında kullanılır. Tek süreçle sınırlı ve önemli kaynak gerektirmeyen iyileştirmeler SRÇ.018 değişiklik kaydı içinde planlanır."),
+        "<h3>0.3. Doküman Adlandırma Kuralı</h3>", p("PLN.002 - Süreç İyileştirme Planı - [İyileştirme Adı]"),
         "<h3>0.4. Sürüm Geçmişi</h3>", history("Süreç İyileştirme Planı Şablonu", REVIEWED_BY, APPROVED_BY),
-        "<h2>1. Plan Bilgileri</h2>", table(["Alan", "Değer"], [["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"], ["Plan Kodu ve Adı", "<em>İÜC.BİDB.PLN.002 - Süreç İyileştirme Planı - [İyileştirme Adı]</em>"], ["Plan Referansı", f"{SRC006}; {SRC018}; {PRS004}"], ["Kaynak SRÇ.018 Değişiklik Kaydı", "<em>Bağlantı / kayıt no</em>"], ["İlgili Süreçler", "<em>Tam süreç kodu ve adı</em>"], ["İyileştirme Sahibi", "<em>İlgili Süreç Sahibi</em>"], ["Plan Sahibi", PREPARED_BY], ["Gözden Geçiren", "<em>Proje Yöneticisi</em>"], ["Onaylayan", "<em>Yetki sınırına göre Proje Yöneticisi veya Bilgi İşlem Daire Başkanı</em>"], ["Dönem", "<em>Başlangıç - bitiş</em>"], ["Durum", "<em>Taslak / Onaylı / Uygulamada / Tamamlandı</em>"], ["Sürüm", "<em>v0.1 / v1.0</em>"]]),
+        "<h2>1. Plan Bilgileri</h2>", table(["Alan", "Değer"], [["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"], ["Plan Kodu ve Adı", "<em>PLN.002 - Süreç İyileştirme Planı - [İyileştirme Adı]</em>"], ["Plan Referansı", f"{SRC006}; {SRC018}; {PRS004}"], ["Kaynak SRÇ.018 Değişiklik Kaydı", "<em>Bağlantı / kayıt no</em>"], ["İlgili Süreçler", "<em>Tam süreç kodu ve adı</em>"], ["İyileştirme Sahibi", "<em>İlgili Süreç Sahibi</em>"], ["Plan Sahibi", PREPARED_BY], ["Gözden Geçiren", "<em>Proje Yöneticisi</em>"], ["Onaylayan", "<em>Yetki sınırına göre Proje Yöneticisi veya Bilgi İşlem Daire Başkanı</em>"], ["Dönem", "<em>Başlangıç - bitiş</em>"], ["Durum", "<em>Taslak / Onaylı / Uygulamada / Tamamlandı</em>"], ["Sürüm", "<em>v0.1 / v1.0</em>"]]),
         "<h2>2. Mevcut Durum ve İyileştirme Gerekçesi</h2>", table(["Alan", "Açıklama / Kanıt"], [["Kaynak İyileştirme Fırsatı", "<em>Değerlendirme, denetim, performans, risk, geri bildirim veya diğer kaynak</em>"], ["Mevcut Durum", "<em>Başlangıç durumu ve veri/kanıt</em>"], ["Değişiklik Gerekçesi", "<em>Beklenen fayda ve değişiklik nedeni</em>"], ["Etkilenen Süreç / Doküman / Araç / Rol", "<em>Tam kod/ad ve bağlantılar</em>"]]),
         "<h2>3. İyileştirme Hedefi ve Başarı Ölçütleri</h2>", table(["Hedef", "Başlangıç Değeri / Durumu", "Başarı Ölçütü", "Doğrulama Yöntemi", "Veri / Kanıt Kaynağı"], [["<em>İyileştirme hedefi</em>", "<em>Mevcut değer/durum</em>", "<em>Beklenen sonuç</em>", "<em>SRÇ.018 değişiklik gözden geçirmesinde uygulanacak yöntem</em>", "<em>Kaynak</em>"]]),
         "<h2>4. Etki ve Uygulama Önceliği</h2>", table(["Alan", "Değer", "Gerekçe"], [["Etki", "<em>Yüksek / Orta / Düşük</em>", "<em>Fayda, kapsam, risk veya kurumsal sonuç büyüklüğü</em>"], ["Uygulama Önceliği", "<em>Yüksek / Orta / Düşük</em>", "<em>Yasal/denetim tarihi, risk aciliyeti, bağımlılık, gecikme sonucu ve kaynak uygunluğu</em>"]]),
@@ -451,10 +451,10 @@ def updated_report_body() -> str:
     doc = doc.replace("SUP.10.BP9 gözden geçirmesi", "SRÇ.018 değişiklik gözden geçirmesi")
     doc = doc.replace("SUP.10.BP9 sonucu", "SRÇ.018 değişiklik gözden geçirme sonucu")
     doc = _replace_section(doc, "4. Süreç Sonuç Özeti", table(["Süreç", "Değerlendirme Kapsamı", "BP Dağılımı", "PA / GP Dağılımı", "Değerlendirme Bağlantısı", "Özet"], [
-        ["İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "SUP.7 BP1-BP8; PA 2.1-PA 3.2", "5 VAR; 3 DAĞINIK", "9 VAR; 9 DAĞINIK; 3 ZAYIF", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001) - Değerlendirme #1", "Doküman standartları, şablonlar ve teknik yayın/bakım yapısı güçlü; formal gözden geçirme, gerçek ölçüm, yetkinlik ve bilgilendirme kanıtları geliştirilmelidir."],
-        ["İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci", "PIM.1 BP1-BP6; PA 2.1-PA 3.2", "4 VAR; 1 DAĞINIK; 1 YOK", "10 VAR; 7 DAĞINIK; 1 ZAYIF; 3 YOK", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.004) - Değerlendirme #1", "Süreç mimarisi, süreç paketleri, uyarlama, rol ve ölçüm tanımları güçlü; gerçek kullanım/performans, bilgilendirme ve yetkinlik kanıtları eksiktir."],
-        ["İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci", "PIM.2 BP1-BP8; PA 2.1-PA 3.2", "6 VAR; 2 DAĞINIK", "11 VAR; 7 DAĞINIK; 2 ZAYIF; 1 YOK", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.005) - Değerlendirme #1", "Değerlendirme yöntemi, plan, etiketler, iş ürünleri ve kümülatif raporlama tanımlı; gerçek dönem taahhütleri, doğrulama, eğitim ve ilk performans sonuçları tamamlanmalıdır."],
-        [SRC006, "PIM.3 BP1-BP9; PA 2.1-PA 3.2", "4 VAR; 2 DAĞINIK; 3 ZAYIF", "11 VAR; 7 DAĞINIK; 2 ZAYIF; 1 YOK", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.006) - Değerlendirme #1", "Tek SRÇ.018 giriş noktası, hedef/öncelik, planlama uyarlaması, yetki, doğrulama, raporlama ve yeniden kullanım tanımlı; gerçek kaynak, uygulama, doğrulanmış sonuç, iletişim ve yeniden kullanım kanıtları beklenmektedir."],
+        ["SRÇ.001 - Dokümantasyon Süreci", "SUP.7 BP1-BP8; PA 2.1-PA 3.2", "5 VAR; 3 DAĞINIK", "9 VAR; 9 DAĞINIK; 3 ZAYIF", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.001) - Değerlendirme #1", "Doküman standartları, şablonlar ve teknik yayın/bakım yapısı güçlü; formal gözden geçirme, gerçek ölçüm, yetkinlik ve bilgilendirme kanıtları geliştirilmelidir."],
+        ["SRÇ.004 - Süreç Kurulumu Süreci", "PIM.1 BP1-BP6; PA 2.1-PA 3.2", "4 VAR; 1 DAĞINIK; 1 YOK", "10 VAR; 7 DAĞINIK; 1 ZAYIF; 3 YOK", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.004) - Değerlendirme #1", "Süreç mimarisi, süreç paketleri, uyarlama, rol ve ölçüm tanımları güçlü; gerçek kullanım/performans, bilgilendirme ve yetkinlik kanıtları eksiktir."],
+        ["SRÇ.005 - Süreç Değerlendirme Süreci", "PIM.2 BP1-BP8; PA 2.1-PA 3.2", "6 VAR; 2 DAĞINIK", "11 VAR; 7 DAĞINIK; 2 ZAYIF; 1 YOK", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.005) - Değerlendirme #1", "Değerlendirme yöntemi, plan, etiketler, iş ürünleri ve kümülatif raporlama tanımlı; gerçek dönem taahhütleri, doğrulama, eğitim ve ilk performans sonuçları tamamlanmalıdır."],
+        [SRC006, "PIM.3 BP1-BP9; PA 2.1-PA 3.2", "4 VAR; 2 DAĞINIK; 3 ZAYIF", "11 VAR; 7 DAĞINIK; 2 ZAYIF; 1 YOK", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.006) - Değerlendirme #1", "Tek SRÇ.018 giriş noktası, hedef/öncelik, planlama uyarlaması, yetki, doğrulama, raporlama ve yeniden kullanım tanımlı; gerçek kaynak, uygulama, doğrulanmış sonuç, iletişim ve yeniden kullanım kanıtları beklenmektedir."],
     ]))
     doc = _replace_section(doc, "5. Etiket Dağılımları ve Eğilimler", table(["Gösterge", "SRÇ.001", "SRÇ.004", "SRÇ.005", "SRÇ.006", "Yorum"], [
         ["BP - VAR", "5", "4", "6", "4", "Tanım, yöntem ve yönetişim bileşenleri oluşturulan alanlarda güçlü karşılama vardır."],
@@ -483,12 +483,12 @@ def _update_parent_children_count(parent: Path) -> None:
 def update_lst006_statuses() -> None:
     """Mark the locally completed PIM.2/PIM.3 process packages active."""
     updates = {
-        "İÜC.BİDB.SRÇ.005": (
+        "SRÇ.005": (
             PROCESS_OWNER,
             "Aktif",
             "Süreç paketi oluşturulmuş, Confluence'ta yayımlanmış ve süreç özel kayıtlarıyla yönetilmektedir.",
         ),
-        "İÜC.BİDB.SRÇ.006": (
+        "SRÇ.006": (
             PROCESS_OWNER,
             "Aktif",
             "Süreç paketi oluşturulmuş, Confluence'ta yayımlanmış ve süreç özel kayıtlarıyla yönetilmektedir.",
@@ -546,10 +546,10 @@ def validate(page_dirs: list[Path]) -> None:
         for filename in ["page.yaml", "body.storage.xhtml", "body.view.html"]:
             if not (page_dir / filename).exists():
                 raise RuntimeError(f"Missing page artifact: {page_dir / filename}")
-    assessment = (CONFLUENCE / REVIEWS_REL / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-006-degerlendirme-1/body.storage.xhtml").read_text(encoding="utf-8")
+    assessment = (CONFLUENCE / REVIEWS_REL / "frm-001-surec-gozden-gecirme-formu-src-006-degerlendirme-1/body.storage.xhtml").read_text(encoding="utf-8")
     if "4 VAR, 2 DAĞINIK ve 3 ZAYIF" not in assessment or "Toplam puan" not in assessment:
         raise RuntimeError("SRÇ.006 assessment summary is inconsistent")
-    report = (CONFLUENCE / REPORTS_REL / "iuc-bidb-rpr-001-surec-performanslari-raporu/body.storage.xhtml").read_text(encoding="utf-8")
+    report = (CONFLUENCE / REPORTS_REL / "rpr-001-surec-performanslari-raporu/body.storage.xhtml").read_text(encoding="utf-8")
     if SRC006 not in report or "SRÇ.018 değişiklik gözden geçirmesiyle" not in report:
         raise RuntimeError("RPR.001 was not updated for SRÇ.006/corporate review wording")
 
@@ -592,10 +592,10 @@ def main() -> None:
 
     pages: list[Path] = [src_dir]
     children = [
-        ("iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-006", "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.006)", lst007_body(True), lst007_body(False)),
-        ("iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-006", "İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.006)", lst008_body(), None),
-        ("iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-006", "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.006)", lst009_body(), None),
-        ("iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-006", "İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.006)", lst010_body(), None),
+        ("lst-007-surec-etkilesim-matrisi-src-006", "LST.007 - Süreç Etkileşim Matrisi (SRÇ.006)", lst007_body(True), lst007_body(False)),
+        ("lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-006", "LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.006)", lst008_body(), None),
+        ("lst-009-surec-performans-olcum-seti-src-006", "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.006)", lst009_body(), None),
+        ("lst-010-surec-rol-yetki-ve-raci-matrisi-src-006", "LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.006)", lst010_body(), None),
     ]
     for slug, title, storage, view in children:
         page_dir = src_dir / slug
@@ -606,12 +606,12 @@ def main() -> None:
             child_attachments.mkdir(exist_ok=True)
             (child_attachments / INTERACTION_MMD).write_text("\n".join(INTERACTION_LINES) + "\n", encoding="utf-8")
 
-    blank_dir = src_dir / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-006"
-    write_page(blank_dir, "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.006)", SRC006_ID, SRC006, 3, blank_review_body())
+    blank_dir = src_dir / "frm-001-surec-gozden-gecirme-formu-src-006"
+    write_page(blank_dir, "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.006)", SRC006_ID, SRC006, 3, blank_review_body())
     pages.append(blank_dir)
 
-    assessment_dir = CONFLUENCE / REVIEWS_REL / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-006-degerlendirme-1"
-    write_page(assessment_dir, "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.006) - Değerlendirme #1", REVIEWS_ID, "Süreç Gözden Geçirmeleri", 3, assessment_body())
+    assessment_dir = CONFLUENCE / REVIEWS_REL / "frm-001-surec-gozden-gecirme-formu-src-006-degerlendirme-1"
+    write_page(assessment_dir, "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.006) - Değerlendirme #1", REVIEWS_ID, "Süreç Gözden Geçirmeleri", 3, assessment_body())
     pages.append(assessment_dir)
 
     template_dir = CONFLUENCE / TEMPLATES_REL / PLN002_TEMPLATE_SLUG
@@ -624,13 +624,13 @@ def main() -> None:
     (templates_dir / "body.view.html").write_text(build_view("02 - Şablonlar", template_register), encoding="utf-8")
     pages.append(templates_dir)
 
-    lst001_dir = PAGE_ROOT / "03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi"
+    lst001_dir = PAGE_ROOT / "03-kayitlar-ve-listeler/lst-001-aktif-dokumanlar-listesi"
     lst001_storage = update_lst001((lst001_dir / "body.storage.xhtml").read_text(encoding="utf-8"))
     (lst001_dir / "body.storage.xhtml").write_text(lst001_storage, encoding="utf-8")
-    (lst001_dir / "body.view.html").write_text(build_view("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", lst001_storage), encoding="utf-8")
+    (lst001_dir / "body.view.html").write_text(build_view("LST.001 - Aktif Dokümanlar Listesi", lst001_storage), encoding="utf-8")
     pages.append(lst001_dir)
 
-    rpr_dir = CONFLUENCE / REPORTS_REL / "iuc-bidb-rpr-001-surec-performanslari-raporu"
+    rpr_dir = CONFLUENCE / REPORTS_REL / "rpr-001-surec-performanslari-raporu"
     write_page(rpr_dir, RPR001, str((yaml.safe_load((rpr_dir / "page.yaml").read_text(encoding="utf-8")) or {}).get("parent_id") or ""), "09 - Raporlar", 2, updated_report_body())
     pages.append(rpr_dir)
 

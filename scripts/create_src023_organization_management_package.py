@@ -43,11 +43,11 @@ from align_lst010_to_src006_structure import process_body as raci_body
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC023_ID = "137265881"
-SRC023 = "İÜC.BİDB.SRÇ.023 - Organizasyonel Yönetim Süreci"
-PRS006 = "İÜC.BİDB.PRS.006 - Organizasyonel Yönetim Prosedürü"
-FRM002_TEMPLATE = "İÜC.BİDB.FRM.002.Ş - Toplantı Tutanağı Şablonu"
-LST013 = "İÜC.BİDB.LST.013 - Görev Tanımları ve Görevli Personel Listesi"
-LST013_TEMPLATE = "İÜC.BİDB.LST.013.Ş - Görev Tanımları ve Görevli Personel Listesi Şablonu"
+SRC023 = "SRÇ.023 - Organizasyonel Yönetim Süreci"
+PRS006 = "PRS.006 - Organizasyonel Yönetim Prosedürü"
+FRM002_TEMPLATE = "FRM.002.Ş - Toplantı Tutanağı Şablonu"
+LST013 = "LST.013 - Görev Tanımları ve Görevli Personel Listesi"
+LST013_TEMPLATE = "LST.013.Ş - Görev Tanımları ve Görevli Personel Listesi Şablonu"
 OWNER = "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı"
 REVIEWER = "Seçil NEBİLER - İdari İşler Şube Müdürü"
 APPROVER = "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı"
@@ -56,12 +56,12 @@ OFFICIAL_ROLE_PAGE_URL = "https://bilgiislem.iuc.edu.tr/tr/content/gorev-tanimla
 OFFICIAL_PERSONNEL_BASE_URL = "https://bilgiislem.iuc.edu.tr/tr/content/personelimiz"
 OFFICIAL_MANAGEMENT_PAGE_URL = "https://bilgiislem.iuc.edu.tr/tr/content/yonetim/yonetim"
 
-SRC023_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/iuc-bidb-src-023-organizasyonel-yonetim-sureci"
+SRC023_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/src-023-organizasyonel-yonetim-sureci"
 RECORDS_REL = f"{PAGE_ROOT_REL}/03-kayitlar-ve-listeler"
-LST001_REL = f"{RECORDS_REL}/iuc-bidb-lst-001-aktif-dokumanlar-listesi"
-LST006_REL = f"{RECORDS_REL}/iuc-bidb-lst-006-standart-surec-envanteri"
-LST013_REL = f"{RECORDS_REL}/iuc-bidb-lst-013-gorev-tanimlari-ve-gorevli-personel-listesi"
-RPR001_REL = f"{REPORTS_REL}/iuc-bidb-rpr-001-surec-performanslari-raporu"
+LST001_REL = f"{RECORDS_REL}/lst-001-aktif-dokumanlar-listesi"
+LST006_REL = f"{RECORDS_REL}/lst-006-standart-surec-envanteri"
+LST013_REL = f"{RECORDS_REL}/lst-013-gorev-tanimlari-ve-gorevli-personel-listesi"
+RPR001_REL = f"{REPORTS_REL}/rpr-001-surec-performanslari-raporu"
 
 ROLE_DEFINITIONS = [
     ("311.6-341.1GT / Rev.02", "Bilgi İşlem Daire Başkanı", "Başkanlık", "https://cdn.iuc.edu.tr/FileHandler2.ashx?f=311.6-341.1gt_bidb-daire-baskani-gt-rev.02_40581397.pdf"),
@@ -209,7 +209,7 @@ PERSONNEL_SECTION_SLUGS = {
     "Teknik Hizmetler Yönetimi": "teknik-hizmetler-yonetimi",
 }
 
-FLOW_PNG = "İÜC.BİDB.SRÇ.023 - Flowchart.png"
+FLOW_PNG = "SRÇ.023 - Flowchart.png"
 FLOW_MMD = "src023-surec-akisi.mmd"
 INTERACTION_PNG = "src023-surec-etkilesim.png"
 INTERACTION_MMD = "src023-surec-etkilesim.mmd"
@@ -297,7 +297,7 @@ def lst013_template_body() -> str:
         "<h2>0. Liste Hakkında</h2>",
         "<h3>0.1. Liste Üst Bilgisi</h3>", table(["Alan", "Değer"], [
             ["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"],
-            ["Doküman Kodu", "İÜC.BİDB.LST.013.Ş"],
+            ["Doküman Kodu", "LST.013.Ş"],
             ["Doküman Türü", "Liste / Kayıt Şablonu"],
             ["Kullanım Alanı", LST013], ["Durum", "Aktif"], ["Sürüm", "v1.0"],
             ["Yürürlük Tarihi", "15-02-2025"], ["Güncelleme Sıklığı", "Görev tanımı, organizasyon veya yayımlanan personel bilgisi değiştiğinde"],
@@ -307,7 +307,7 @@ def lst013_template_body() -> str:
         "<h3>0.4. Şablon Sürüm Geçmişi</h3>", history("Görev Tanımları ve Görevli Personel Listesi Şablonu", REVIEWER, APPROVER),
         "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [
             ["Liste Kodu ve Adı", LST013], ["Birincil Süreç", SRC023],
-            ["Destekleyen Süreç", "İÜC.BİDB.SRÇ.019 - İnsan Kaynakları Yönetimi Süreci"],
+            ["Destekleyen Süreç", "SRÇ.019 - İnsan Kaynakları Yönetimi Süreci"],
             ["Sorumlu", "İdari İşler Şube Müdürü"], ["Durum", "<em>Aktif</em>"], ["Sürüm", "<em>v1.0</em>"],
             ["Son Kaynak Kontrol Tarihi", "<em>GG-AA-YYYY</em>"],
         ]),
@@ -342,7 +342,7 @@ def lst013_body() -> str:
     return "".join([
         "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [
             ["Liste Kodu ve Adı", LST013], ["Kullanım Amacı", "BİDB görev tanımlarını ve resmî web sayfasında yayımlanan görevli personeli yetkili kaynak bağlantılarıyla ilişkilendirmek"],
-            ["Birincil Süreç", SRC023], ["Destekleyen Süreç", "İÜC.BİDB.SRÇ.019 - İnsan Kaynakları Yönetimi Süreci"],
+            ["Birincil Süreç", SRC023], ["Destekleyen Süreç", "SRÇ.019 - İnsan Kaynakları Yönetimi Süreci"],
             ["Sorumlu", "İdari İşler Şube Müdürü"], ["Durum", "Aktif"], ["Sürüm", "v1.0"],
             ["Son Kaynak Kontrol Tarihi", "15-07-2026"],
         ]),
@@ -368,17 +368,17 @@ def lst013_body() -> str:
 
 def process_body(storage: bool) -> str:
     related = "<br />".join([
-        "İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci",
-        "İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci",
-        "İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci",
-        "İÜC.BİDB.SRÇ.007 - Proje Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.008 - Risk Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.017 - Problem Çözüm Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.020 - Eğitim Süreci",
-        "İÜC.BİDB.SRÇ.021 - Bilgi Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.022 - Altyapı Süreci",
-        "İÜC.BİDB.SRÇ.026 - Denetim Süreci",
+        "SRÇ.002 - Kalite Güvencesi Süreci",
+        "SRÇ.005 - Süreç Değerlendirme Süreci",
+        "SRÇ.006 - Süreç İyileştirme Süreci",
+        "SRÇ.007 - Proje Yönetimi Süreci",
+        "SRÇ.008 - Risk Yönetimi Süreci",
+        "SRÇ.017 - Problem Çözüm Yönetimi Süreci",
+        "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci",
+        "SRÇ.020 - Eğitim Süreci",
+        "SRÇ.021 - Bilgi Yönetimi Süreci",
+        "SRÇ.022 - Altyapı Süreci",
+        "SRÇ.026 - Denetim Süreci",
     ])
     mermaid = info_macro("Mermaid Kodu", FLOW_LINES) if storage else info_view("Mermaid Kodu", FLOW_LINES)
     activities = [
@@ -431,7 +431,7 @@ def process_body(storage: bool) -> str:
             ["Ana Faaliyetler", "Yönetim altyapısını belirleme ve sağlama; yönetim uygulamalarını tanımlama ve yürütme; etkinliği değerlendirme; kararları yönlendirme; iyi uygulamaların benimsenmesini destekleme"],
             ["İlgili Süreçler", related],
         ]),
-        "<h2>7. Roller ve Sorumluluklar</h2>", p(f"Kurumsal görev tanımları ve resmî web sayfasında yayımlanan görevli personel bağlantıları {LST013} içinde; süreçlere özgü rol, sorumluluk, yetki, yetkinlik ve RACI bilgileri İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.023) içinde yönetilir."),
+        "<h2>7. Roller ve Sorumluluklar</h2>", p(f"Kurumsal görev tanımları ve resmî web sayfasında yayımlanan görevli personel bağlantıları {LST013} içinde; süreçlere özgü rol, sorumluluk, yetki, yetkinlik ve RACI bilgileri LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.023) içinde yönetilir."),
         "<h2>8. Araçlar ve Altyapı</h2>", table(["Tür", "Araç / Altyapı Bileşeni", "Kullanım Amacı", "Erişim ve Kullanım Koşulu", "Sorumlu Rol / Birim"], [
             ["Araç", "Confluence", "Süreç paketi, RPR.001, YGG gündem/tutanak ve karar bağlantılarının yayımlanması", "Kurumsal hesap ve sayfa yetkisi; uzaktan erişimde gerekli kurumsal erişim koşulları", "Proje Yöneticisi / Confluence Yöneticisi"],
             ["Araç", "Jira", "Teknik, proje ve süreç odaklı YGG aksiyonlarının doğal iş kayıtlarıyla izlenmesi", "Proje veya ekip bazlı yetkilendirme", "Proje Yöneticisi / Jira Yöneticisi"],
@@ -439,7 +439,7 @@ def process_body(storage: bool) -> str:
             ["İletişim", "Kurumsal e-posta ve toplantı altyapısı", "Toplantı çağrısı, hedefli karar ve iyi uygulama bilgilendirmesi", "Kurumsal hesap ve ilgili dağıtım kapsamı", "İdari İşler Şube Müdürü / Proje Yöneticisi"],
             ["Altyapı", f"Kurumsal organizasyon, görev tanımı ve yetkilendirme kaynakları; {LST013}", "Kurumsal hiyerarşi, görev/yetki dayanağı ve resmî kaynaklara yönlendirme", "Yürürlükteki resmî kaynak bağlantıları; personel eşleştirmesi resmî atama kaydının yerine geçmez", "Bilgi İşlem Daire Başkanı / İdari İşler Şube Müdürlüğü"],
         ], fixed=True),
-        "<h2>9. Süreç İş Ürünleri</h2>", p("Girdi ve çıktı iş ürünleri ile kalite kriterleri İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.023) dokümanında yönetilir."),
+        "<h2>9. Süreç İş Ürünleri</h2>", p("Girdi ve çıktı iş ürünleri ile kalite kriterleri LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.023) dokümanında yönetilir."),
         "<h2>10. Süreç Akışı</h2>", image(storage, FLOW_PNG, "SRÇ.023 organizasyonel yönetim süreç akışı") + mermaid,
         "<h2>11. Süreç Faaliyetleri</h2>", table(["Faaliyet ID", "Faaliyet", "Açıklama", "Elde Edilen / Güncellenen İş Ürünü"], activities),
         "<h2>12. Ölçüm ve İzleme</h2>", p("Süreçte yalnızca planlanan YGG'nin Haziran-Temmuz döneminde gerçekleştirilme durumu ile YGG aksiyonlarının hedef tarihte tamamlanma oranı izlenir. Genel yönetim etkinliği RPR.001, FRM.001 ve YGG kararları üzerinden nitel olarak değerlendirilir."),
@@ -449,7 +449,7 @@ def process_body(storage: bool) -> str:
         "<h3>13.3. Aksiyon Takibi ve Kapanış</h3>" + p("Teknik, proje ve süreç odaklı aksiyonların takip koordinatörü Proje Yöneticisi; üst yönetimle ilişkili kurumsal ve idari aksiyonların takip koordinatörü İdari İşler Şube Müdürüdür. Karma aksiyonlarda koordinatörü Bilgi İşlem Daire Başkanı belirler. Uygulama sorumlusu sonucu ve bağlantıyı günceller; takip koordinatörü doğrulayarak kapatır."),
         "<h3>13.4. Karar Yönlendirme</h3>" + p("Problem ve uygunsuzluklar SRÇ.017'ye; değişiklik ve iyileştirme fırsatları SRÇ.018'e ve gerektiğinde SRÇ.006'ya; eğitim ihtiyaçları SRÇ.020'ye; altyapı ihtiyaçları SRÇ.022'ye; değerlendirme ihtiyaçları SRÇ.005'e; bilgi ve iyi uygulamalar SRÇ.021'e yönlendirilir."),
         "<h3>13.5. İyi Uygulama Yetkisi ve Yaygınlaştırma</h3>" + p("Mevcut yetki, kaynak ve süreç sınırları içindeki teknik veya operasyonel iyi uygulamaları Proje Yöneticisi; birden fazla birim, kurumsal rol/yetki, ek kaynak veya üst yönetim kararı gerektiren uygulamaları Bilgi İşlem Daire Başkanı onaylar. Hedefli bilgilendirme yapılır; kontrollü doküman değişikliği SRÇ.018 üzerinden yürütülür ve yayımlandığında LST.012'ye kaydedilir."),
-        "<h2>14. Süreç Etkileşimleri</h2>", p("Sürecin kurumsal kaynaklar, diğer süreçler ve yönetim kayıtlarıyla etkileşimi İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.023) dokümanında yönetilir."),
+        "<h2>14. Süreç Etkileşimleri</h2>", p("Sürecin kurumsal kaynaklar, diğer süreçler ve yönetim kayıtlarıyla etkileşimi LST.007 - Süreç Etkileşim Matrisi (SRÇ.023) dokümanında yönetilir."),
         "<h2>15. Sürüm Geçmişi</h2>", history("Organizasyonel Yönetim Süreci", REVIEWER, APPROVER),
     ])
 
@@ -458,18 +458,18 @@ def lst007_body(storage: bool) -> str:
     mermaid = info_macro("Mermaid Kodu", INTERACTION_LINES) if storage else info_view("Mermaid Kodu", INTERACTION_LINES)
     rows = [
         [f"341.1PR, organizasyon şeması, resmî görev/personel sayfaları ve {LST013}", "Kurumsal yapı, görev, yetki, yayımlanan görevli personel ve iş yönlendirme dayanağı", SRC023, "Girdi", "Bilgi İşlem Daire Başkanı / İdari İşler Şube Müdürü"],
-        ["İÜC.BİDB.LST.006 - Standart Süreç Envanteri", "Yönetilecek standart süreç kapsamı", SRC023, "Girdi", "Kalite Danışmanı / Proje Yöneticisi"],
-        ["İÜC.BİDB.RPR.001 - Süreç Performansları Raporu ve süreç özel FRM.001 kayıtları", "Süreç performansı ve değerlendirme sonuçları", SRC023, "Girdi", "Kalite Danışmanı"],
+        ["LST.006 - Standart Süreç Envanteri", "Yönetilecek standart süreç kapsamı", SRC023, "Girdi", "Kalite Danışmanı / Proje Yöneticisi"],
+        ["RPR.001 - Süreç Performansları Raporu ve süreç özel FRM.001 kayıtları", "Süreç performansı ve değerlendirme sonuçları", SRC023, "Girdi", "Kalite Danışmanı"],
         ["SRÇ.002 / SRÇ.007 / SRÇ.008 / SRÇ.026 ve paydaş geri bildirimleri", "Kalite, müşteri, proje, risk, denetim ve öğrenilmiş ders girdileri", SRC023, "Girdi", "İlgili Süreç Sahipleri"],
         [SRC023, "Yönetim uygulama ve YGG kuralları", PRS006, "Çıktı", OWNER],
         [SRC023, "Resmî görev tanımı ve yayımlanan görevli personel bağlantılarının ortak görünümü", LST013, "Çıktı", "İdari İşler Şube Müdürü"],
-        [SRC023, "YGG görüşmeleri, kararları, sorumlu ve takip bilgileri", "İÜC.BİDB.FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "Çıktı", "İdari İşler Şube Müdürü / Proje Yöneticisi"],
-        [SRC023, "Problem veya uygunsuzluk kararı", "İÜC.BİDB.SRÇ.017 - Problem Çözüm Yönetimi Süreci", "Çıktı", "Atanmış Sorumlu"],
-        [SRC023, "Değişiklik veya iyileştirme kararı", "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci / İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci", "Çıktı", "Atanmış Sorumlu"],
-        [SRC023, "Eğitim, altyapı, değerlendirme veya bilgi ihtiyacı", "İÜC.BİDB.SRÇ.020 / SRÇ.022 / SRÇ.005 / SRÇ.021", "Çıktı", "Atanmış Sorumlu"],
+        [SRC023, "YGG görüşmeleri, kararları, sorumlu ve takip bilgileri", "FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "Çıktı", "İdari İşler Şube Müdürü / Proje Yöneticisi"],
+        [SRC023, "Problem veya uygunsuzluk kararı", "SRÇ.017 - Problem Çözüm Yönetimi Süreci", "Çıktı", "Atanmış Sorumlu"],
+        [SRC023, "Değişiklik veya iyileştirme kararı", "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci / SRÇ.006 - Süreç İyileştirme Süreci", "Çıktı", "Atanmış Sorumlu"],
+        [SRC023, "Eğitim, altyapı, değerlendirme veya bilgi ihtiyacı", "SRÇ.020 / SRÇ.022 / SRÇ.005 / SRÇ.021", "Çıktı", "Atanmış Sorumlu"],
     ]
     return "".join([
-        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.023)"], ["Kullanım Amacı", "Organizasyonel Yönetim Sürecinin kurumsal kaynaklar, süreçler ve yönetim kayıtlarıyla etkileşimini göstermek"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
+        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "LST.007 - Süreç Etkileşim Matrisi (SRÇ.023)"], ["Kullanım Amacı", "Organizasyonel Yönetim Sürecinin kurumsal kaynaklar, süreçler ve yönetim kayıtlarıyla etkileşimini göstermek"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
         "<h2>2. Etkileşim Matrisi</h2>", table(["Kaynak Süreç / Sistem / Doküman", "Etkileşim", "Hedef Süreç / Sistem / Doküman", "Yön", "Sorumlu"], rows),
         "<h2>3. Süreç Etkileşim Diyagramı</h2>", image(storage, INTERACTION_PNG, "SRÇ.023 süreç etkileşim diyagramı", 850) + mermaid,
         "<h2>4. Sürüm Geçmişi</h2>", history("Süreç Etkileşim Matrisi (SRÇ.023)", REVIEWER, APPROVER),
@@ -478,20 +478,20 @@ def lst007_body(storage: bool) -> str:
 
 def lst008_body() -> str:
     return "".join([
-        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.023)"], ["Kullanım Amacı", "Organizasyonel Yönetim Sürecinin girdi ve çıktı iş ürünleri ile kabul kriterlerini tanımlamak"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
+        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.023)"], ["Kullanım Amacı", "Organizasyonel Yönetim Sürecinin girdi ve çıktı iş ürünleri ile kabul kriterlerini tanımlamak"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
         "<h2>2. Girdi İş Ürünleri</h2>", table(["İş Ürünü", "Kaynak", "Kalite Kriteri", "İlgili BP"], [
             ["341.1PR - Bilgi İşlem Daire Başkanlığı Genel İşleyiş Prosedürü, yürürlükteki organizasyon şeması ve görev tanımları", "İÜC resmî kurumsal kaynakları", "Güncel sürüm/yayın bilgisi ve yetkili kaynak bağlantısı doğrulanmıştır.", "MAN.2.BP1-BP2"],
-            ["İÜC.BİDB.LST.006 - Standart Süreç Envanteri ve süreç özel LST.010 kayıtları", "İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci", "Aktif süreç kapsamı, sahiplik ve RACI ilişkileri günceldir.", "MAN.2.BP1-BP3"],
-            ["İÜC.BİDB.RPR.001 - Süreç Performansları Raporu ve süreç özel İÜC.BİDB.FRM.001 değerlendirme kayıtları", "İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci", "Değerlendirme bağlantıları, etiket gerekçeleri ve güncel süreç sonuçları izlenebilirdir.", "MAN.2.BP4-BP5"],
+            ["LST.006 - Standart Süreç Envanteri ve süreç özel LST.010 kayıtları", "SRÇ.004 - Süreç Kurulumu Süreci", "Aktif süreç kapsamı, sahiplik ve RACI ilişkileri günceldir.", "MAN.2.BP1-BP3"],
+            ["RPR.001 - Süreç Performansları Raporu ve süreç özel FRM.001 değerlendirme kayıtları", "SRÇ.005 - Süreç Değerlendirme Süreci", "Değerlendirme bağlantıları, etiket gerekçeleri ve güncel süreç sonuçları izlenebilirdir.", "MAN.2.BP4-BP5"],
             ["Kalite, müşteri, denetim, risk, proje, öğrenilmiş ders ve paydaş geri bildirim kayıtları", "İlgili süreçler ve doğal kaynak sistemler", "İlgili dönem, kaynak, sahip ve bağlantı bilgileri doğrulanabilir durumdadır.", "MAN.2.BP4-BP5"],
         ]),
         "<h2>3. Çıktı İş Ürünleri</h2>", table(["İş Ürünü", "Kullanım Amacı", "Kalite Kriteri", "İlgili BP"], [
             [PRS006, "Yönetim altyapısı, uygulamaları, YGG ve aksiyon kurallarını tanımlamak", "341.1PR'yi tekrar etmez; yönetim altyapısı, YGG, yetki, yönlendirme ve takip kurallarını kapsar.", "MAN.2.BP1-BP6"],
             [LST013, "Resmî görev tanımlarını ve web sitesinde yayımlanan görevli personeli yetkili kaynak bağlantılarıyla ilişkilendirmek", "Görev tanımı içeriğini çoğaltmaz; yürürlükteki PDF, yönetim/personel sayfası ve profil bağlantılarını gösterir; personel görünümünü resmî atama kanıtı olarak sunmaz.", "MAN.2.BP1-BP2"],
-            ["İÜC.BİDB.FRM.002.Ş - Toplantı Tutanağı Şablonu", "YGG dahil yapılandırılmış toplantı kayıtlarına ortak format sağlamak", "Katılımcı, gündem, girdi, görüşme, karar/aksiyon, bağlantı ve takip alanlarını içerir.", "MAN.2.BP4-BP6"],
-            ["İÜC.BİDB.FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "Gerçek YGG görüşme, karar ve aksiyonlarını kaydetmek", "Her aksiyonda sorumlu rol, hedef tarih, ilgili süreç/kayıt, takip koordinatörü, durum ve kanıt bağlantısı bulunur.", "MAN.2.BP4-BP6"],
+            ["FRM.002.Ş - Toplantı Tutanağı Şablonu", "YGG dahil yapılandırılmış toplantı kayıtlarına ortak format sağlamak", "Katılımcı, gündem, girdi, görüşme, karar/aksiyon, bağlantı ve takip alanlarını içerir.", "MAN.2.BP4-BP6"],
+            ["FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "Gerçek YGG görüşme, karar ve aksiyonlarını kaydetmek", "Her aksiyonda sorumlu rol, hedef tarih, ilgili süreç/kayıt, takip koordinatörü, durum ve kanıt bağlantısı bulunur.", "MAN.2.BP4-BP6"],
             ["Yönlendirilmiş yönetim kararı / aksiyon kaydı", "Kararı ilgili problem, değişiklik, iyileştirme, eğitim, altyapı, değerlendirme veya bilgi sürecinde yürütmek", "Kaynak YGG kararı, sorumlu, hedef tarih, hedef süreç ve sonuç bağlantısı izlenebilirdir.", "MAN.2.BP5-BP6"],
-            ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.023)", "BP ve PA/GP karşılama durumunu kanıtla izlemek", "Etiketler gerekçeli, kanıtlar erişilebilir ve aksiyon yönlendirmeleri açıktır.", "PA 2.1-PA 3.2"],
+            ["FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.023)", "BP ve PA/GP karşılama durumunu kanıtla izlemek", "Etiketler gerekçeli, kanıtlar erişilebilir ve aksiyon yönlendirmeleri açıktır.", "PA 2.1-PA 3.2"],
         ]),
         "<h2>4. Sürüm Geçmişi</h2>", history("İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.023)", REVIEWER, APPROVER),
     ])
@@ -499,9 +499,9 @@ def lst008_body() -> str:
 
 def lst009_body() -> str:
     return "".join([
-        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.023)"], ["Kullanım Amacı", "Organizasyonel Yönetim Sürecinin YGG zamanlaması ve aksiyon tamamlama durumunu az sayıda uygulanabilir ölçümle izlemek"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
+        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.023)"], ["Kullanım Amacı", "Organizasyonel Yönetim Sürecinin YGG zamanlaması ve aksiyon tamamlama durumunu az sayıda uygulanabilir ölçümle izlemek"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
         "<h2>2. Hedef ve İzleme Matrisi</h2>", table(["Ölçüm", "Tanım / Hesaplama", "Hedef", "Sıklık", "Veri Kaynağı", "Sorumlu", "Sonuç Kullanımı"], [
-            ["Planlanan YGG'nin döneminde gerçekleştirilme durumu", "YGG'nin Haziran-Temmuz döneminde gerçekleştirilmesi: Gerçekleşti / Gerçekleşmedi", "Gerçekleşti", "Yıllık", "İÜC.BİDB.FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "İdari İşler Şube Müdürü", "Gecikme nedenini ve olağanüstü planlama ihtiyacını değerlendirmek"],
+            ["Planlanan YGG'nin döneminde gerçekleştirilme durumu", "YGG'nin Haziran-Temmuz döneminde gerçekleştirilmesi: Gerçekleşti / Gerçekleşmedi", "Gerçekleşti", "Yıllık", "FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "İdari İşler Şube Müdürü", "Gecikme nedenini ve olağanüstü planlama ihtiyacını değerlendirmek"],
             ["YGG aksiyonlarının hedef tarihte tamamlanma oranı", "Hedef tarihinde kapatılan YGG aksiyonu / hedef tarihi dolan YGG aksiyonu x 100", "En az %90", "Üç aylık ve YGG öncesi", "FRM.002 Kararlar ve Aksiyonlar tablosu", "Proje Yöneticisi / İdari İşler Şube Müdürü", "Geciken aksiyonları sorumluya ve sonraki YGG gündemine taşımak"],
         ]),
         "<h2>3. Ölçüm Uygulama Kuralları</h2>", table(["Kural", "Açıklama"], [["Nitel etkinlik", "Yönetim uygulamalarının genel etkinliği ayrıca puanlanmaz; RPR.001, FRM.001 ve YGG kararlarıyla nitel değerlendirilir."], ["Doğal veri", "Ayrı ölçüm registerı oluşturulmaz; sonuç FRM.002 aksiyon kayıtlarından üretilir."], ["Kapsam", "Henüz hedef tarihi gelmemiş veya iptal gerekçesi yönetimce kabul edilmiş aksiyonlar paydada gösterilir ancak gecikmiş sayılmaz."]]),
@@ -535,10 +535,10 @@ def lst010_body() -> str:
             [PRS006, "A", "C", "R", "R", "C", "I"],
             [LST013, "A", "R", "C", "C", "I", "I"],
             [FRM002_TEMPLATE, "A", "R", "C", "R", "C", "I"],
-            ["İÜC.BİDB.FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "A", "R", "R", "C", "C", "I"],
+            ["FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "A", "R", "R", "C", "C", "I"],
             ["Yönlendirilmiş yönetim kararı ve aksiyon kaydı", "A", "R/C", "R/C", "C", "C", "R"],
-            ["İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.023)", "A", "R/C", "R/C", "R", "I", "I"],
-            ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.023)", "A", "C", "C", "R", "C", "I"],
+            ["LST.009 - Süreç Performans Ölçüm Seti (SRÇ.023)", "A", "R/C", "R/C", "R", "I", "I"],
+            ["FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.023)", "A", "C", "C", "R", "C", "I"],
         ],
         "authority": [
             ["SRÇ.023 ve PRS.006 yürürlük/onay kararı", "Kalite Danışmanı", "İdari İşler Şube Müdürü", "Bilgi İşlem Daire Başkanı", "Kontrollü doküman değişikliği SRÇ.018 üzerinden yürütülür."],
@@ -553,7 +553,7 @@ def lst010_body() -> str:
 
 def blank_review_body() -> str:
     return "".join([
-        "<h2>1. Form Bilgileri</h2>", table(["Alan", "Değer"], [["Form Kodu ve Adı", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.023)"], ["Süreç", SRC023], ["Değerlendirme Tarihi", "<em>GG-AA-YYYY</em>"], ["Değerlendiren", "<em>Rol / kişi</em>"], ["Durum", "Boş Form"], ["Sürüm", "v1.0"]]),
+        "<h2>1. Form Bilgileri</h2>", table(["Alan", "Değer"], [["Form Kodu ve Adı", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.023)"], ["Süreç", SRC023], ["Değerlendirme Tarihi", "<em>GG-AA-YYYY</em>"], ["Değerlendiren", "<em>Rol / kişi</em>"], ["Durum", "Boş Form"], ["Sürüm", "v1.0"]]),
         "<h2>2. Durum Değerleri</h2>", table(["Durum", "Anlamı"], LABELS),
         "<h2>3. BP Takip Matrisi</h2>", table(["BP", "Standart Beklentisi", "Mevcut Karşılama", "Karşılayan Doküman / Kayıt", "Durum", "Eksik / Tamamlayıcı Aksiyon"], [[bp, expectation, "<em>Değerlendirme açıklaması</em>", "<em>Kanıt bağlantısı</em>", "<em>YOK / ZAYIF / DAĞINIK / VAR / KAPSAM DIŞI</em>", "<em>Aksiyon / gerekçe</em>"] for bp, _, expectation in MAN2_BPS]),
         "<h2>4. PA / GP Takip Matrisi</h2>", table(["PA", "GP", "Standart Beklentisi", "Mevcut Karşılama", "Karşılayan Doküman / Kayıt", "Durum", "Eksik / Tamamlayıcı Aksiyon"], [[pa, gp, expectation, "<em>Değerlendirme açıklaması</em>", "<em>Kanıt bağlantısı</em>", "<em>Etiket</em>", "<em>Aksiyon / gerekçe</em>"] for pa, gp, expectation in GPS]),
@@ -617,14 +617,14 @@ def procedure_body() -> str:
         "<h2>2. Amaç</h2>", p("Bu prosedürün amacı; LST.006 kapsamındaki standart süreçler için yönetim altyapısının, yönetim uygulamalarının, Yönetim Gözden Geçirme toplantısının, karar/aksiyon takibinin, etkinlik değerlendirmesinin ve iyi uygulama benimseme kurallarının uygulanışını tanımlamaktır."),
         "<h2>3. Kapsam</h2>", p("Bu prosedür; BİDB standart süreçlerinin sahiplik, karar, iletişim, planlama, izleme, performans ve YGG uygulamalarına; YGG girdilerinin hazırlanmasına; kararların ilgili süreçlere yönlendirilmesine; aksiyonların takip ve kapanışına uygulanır."),
         "<h2>4. Kapsam Dışı</h2>", p("341.1PR ve ilgili resmî kurumsal prosedürlerde tanımlanan birim yapısı, genel idari ve mali sorumluluklar ile iş yönlendirme faaliyetleri bu prosedürde yeniden tanımlanmaz veya değiştirilmez."),
-        "<h2>5. Referanslar</h2>", table(["Referans", "Açıklama"], [[SRC023, "MAN.2 kapsamı ve süreç faaliyetleri"], [OFFICIAL_3411, "BİDB birim yapısı, genel sorumluluklar ve iş yönlendirme dayanağı"], [LST013, "Resmî görev tanımı ve yayımlanan görevli personel bağlantılarının ortak görünümü"], ["İÜC.BİDB.LST.006 - Standart Süreç Envanteri", "Prosedürün uygulandığı güncel standart süreç kapsamı"], ["İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisleri", "Süreçlere özgü rol, karar ve sorumluluk ilişkileri"], [FRM002_TEMPLATE, "YGG dahil yapılandırılmış toplantı kayıt formatı"], ["İÜC.BİDB.RPR.001 - Süreç Performansları Raporu", "YGG için kümülatif süreç performans girdisi"], ["İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Bu prosedürün doküman yapısı"]]),
+        "<h2>5. Referanslar</h2>", table(["Referans", "Açıklama"], [[SRC023, "MAN.2 kapsamı ve süreç faaliyetleri"], [OFFICIAL_3411, "BİDB birim yapısı, genel sorumluluklar ve iş yönlendirme dayanağı"], [LST013, "Resmî görev tanımı ve yayımlanan görevli personel bağlantılarının ortak görünümü"], ["LST.006 - Standart Süreç Envanteri", "Prosedürün uygulandığı güncel standart süreç kapsamı"], ["LST.010 - Süreç Rol Yetki ve RACI Matrisleri", "Süreçlere özgü rol, karar ve sorumluluk ilişkileri"], [FRM002_TEMPLATE, "YGG dahil yapılandırılmış toplantı kayıt formatı"], ["RPR.001 - Süreç Performansları Raporu", "YGG için kümülatif süreç performans girdisi"], ["PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Bu prosedürün doküman yapısı"]]),
         "<h2>6. Terimler ve Kısaltmalar</h2>", table(["Terim / Kısaltma", "Açıklama"], [["YGG", "Yönetim Gözden Geçirme"], ["Olağanüstü YGG", "Önemli yönetim, mevzuat, performans, risk veya hizmet değişikliği nedeniyle yıllık dönem dışında yapılan YGG"], ["Takip Koordinatörü", "Aksiyon ilerlemesini izleyen ve sonucu doğrulayarak kapatan rol"], ["Doğal Kayıt", "İlgili süreç veya kaynak sistemde işin yürütülmesi sırasında oluşan gerçek kayıt"]]),
         "<h2>7. Roller ve Sorumluluklar</h2>", table(["Rol", "Sorumluluk", "Yetki"], [["Bilgi İşlem Daire Başkanı", "YGG'ye başkanlık etmek; yönetim ve kaynak kararlarını vermek", "Kurumsal ve çok birimli kararları onaylamak"], ["İdari İşler Şube Müdürü", "Toplantı hazırlığına ve kurumsal-idari aksiyon takibine katkı vermek", "Atanmış idari aksiyonların kapanışını doğrulamak"], ["Proje Yöneticisi", "Teknik/proje/süreç girdilerini ve aksiyonlarını koordine etmek", "Yetki sınırındaki teknik/operasyonel iyi uygulamaları onaylamak; atanmış aksiyonu kapatmak"], ["Kalite Danışmanı", "RPR.001, FRM.001, standart ve kalite girdilerini hazırlamak", "Kalite/süreç uygunluk görüşü vermek"], ["İlgili Süreç Sahibi / Uzman", "Gündem girdisi, uygulanabilirlik ve kaynak görüşü sağlamak", "Kendi görev alanında görüş ve uygulama kararı önermek"], ["Aksiyon Sorumlusu", "Kararı uygulamak, sonucu ve kanıt bağlantısını güncellemek", "Onaylı aksiyon kapsamındaki uygulamayı yürütmek"]]),
         "<h2>8. Genel İlkeler</h2>", table(["İlke", "Açıklama"], [["Tamamlayıcılık", "Bu prosedür 341.1PR'yi tekrar etmez veya değiştirmez; MAN.2 boşluklarını tamamlar."], ["Yetkili kaynağa bağlantı", "Görev tanımlarının içeriği LST.013'e kopyalanmaz; resmî PDF ve web sayfasına bağlantı verilir."], ["Personel görünümünün niteliği", "Resmî web sitesinde yayımlanan görevli personel bilgisi yönlendirici görünüm sağlar; EBYS/KALSİS atama veya görevlendirme kaydının yerine geçmez."], ["Gündemle ilgili katılım", "Tüm süreç sahipleri zorunlu katılımcı değildir; yalnız gündemle ilişkili roller toplantıya dahil edilir."], ["Doğal kanıt", "Mevcut ve erişilebilir kayıtlar kullanılır; eksik başlıklar için yapay kayıt üretilmez."], ["Tekrarsız kayıt", "Aksiyon ilgili hedef süreçte yürütülür; FRM.002 kaynak karar ve takip bağlantısını korur."], ["Asgari bürokrasi", "Takip koordinatörü rutin aksiyonu doğrulayarak kapatır; her kapanış için ayrıca başkan onayı aranmaz."], ["İzlenebilir değişiklik", "Kontrollü süreç veya doküman değişikliği SRÇ.018 üzerinden yürütülür."]]),
         "<h2>9. Prosedür Esasları</h2>", table(["Esas / Kural", "Açıklama", "Zorunluluk", "Not"], [["Yıllık dönem", "YGG Haziran-Temmuz döneminde, ilk çeyrek değerlendirmeleri ve güncel RPR.001 sonrasında yapılır.", "Zorunlu", "Yılda bir"], ["Olağanüstü toplantı", "Önemli yönetim, mevzuat, performans, risk veya hizmet değişikliğinde yapılabilir.", "Koşullu", "Bilgi İşlem Daire Başkanı kararı"], ["Toplantı kaydı", "YGG, FRM.002 kullanılarak kaydedilir.", "Zorunlu", "Gerçek toplantı olduğunda"], ["Aksiyon alanları", "Sorumlu rol, hedef tarih, ilgili süreç/kayıt, takip koordinatörü, durum ve kanıt/sonuç bağlantısı tutulur.", "Zorunlu", "Her karar aksiyon doğurmayabilir"], ["Açık aksiyon", "Tamamlanmayan aksiyon sonraki YGG girdisi olur.", "Zorunlu", "Hedef süreç kaydıyla ilişkilendirilir"], ["İyi uygulama", "Yetki sınırına göre Proje Yöneticisi veya Bilgi İşlem Daire Başkanı onaylar.", "Koşullu", "Değişiklik gerekiyorsa SRÇ.018"]]),
         "<h2>10. Uygulama / Strateji Matrisi</h2>", table(["Alan / Aşama", "Uygulama Kuralı", "Sorumlu", "Kayıt / Kanıt", "Not"], [["1. Girdileri hazırla", "Önceki kararlar; RPR.001/FRM.001; kalite/müşteri; denetim/risk/problem/değişiklik; proje/hizmet; kaynak/yetkinlik/altyapı; standart/mevzuat/organizasyon girdilerini derle. Görev ve yayımlanan personel bağlantıları için LST.013'ü kullan.", "İdari İşler Şube Müdürü / Proje Yöneticisi / Kalite Danışmanı", f"{LST013}; doğal kaynak bağlantıları", "Yalnız erişilebilir ve ilgili kayıtlar"], ["2. Gündem ve katılımı belirle", "Gündeme göre süreç sahibi, şube müdürü, uzman veya çalışan katılımını belirle.", "Bilgi İşlem Daire Başkanı / İdari İşler Şube Müdürü", "Toplantı çağrısı / FRM.002", "Tüm süreç sahipleri zorunlu değildir"], ["3. YGG'yi gerçekleştir", "Girdileri değerlendir, yönetim kararlarını ve öncelikleri belirle.", "Bilgi İşlem Daire Başkanı", "FRM.002", "Karar mercii YGG başkanıdır"], ["4. Aksiyonu tanımla", "Sorumlu, hedef tarih, hedef süreç/kayıt, takip koordinatörü ve beklenen sonucu ata.", "YGG Başkanı", "FRM.002 Kararlar ve Aksiyonlar", "Karma konuda koordinatörü başkan belirler"], ["5. İlgili sürece yönlendir", "Kararı problem, değişiklik/iyileştirme, eğitim, altyapı, değerlendirme veya bilgi sürecine aktar.", "Atanmış Sorumlu", "Hedef süreç kaydı", "Kaynak YGG kararı bağlanır"], ["6. Takip et", "Teknik işleri Proje Yöneticisi; kurumsal-idari işleri İdari İşler Şube Müdürü izler.", "Takip Koordinatörü", "FRM.002 durum alanı / hedef kayıt", "Karma konu başkan kararı"], ["7. Doğrula ve kapat", "Sorumlunun sonuç ve bağlantısını doğrula; uygun ise aksiyonu kapat.", "Takip Koordinatörü", "FRM.002 sonuç ve durum", "Rutin başkan kapanış onayı yok"], ["8. Sonraki döneme aktar", "Açık aksiyonları ve etkinlik sonuçlarını sonraki YGG girdisine al.", "İdari İşler Şube Müdürü / Proje Yöneticisi", "Sonraki YGG gündemi", "Süreklilik"]]),
         "<h2>11. Yayın, Erişim ve Bakım Kuralları</h2>", table(["Kural Alanı", "Kural", "Sorumlu", "Kayıt / Kanıt"], [["Yayın", "Onaylı süreç ve prosedür Confluence'ta yayımlanır; gerçek YGG tutanağı erişim sınıfına uygun alanda tutulur.", "Proje Yöneticisi", "Confluence sürümü"], ["Erişim", "YGG tutanağı ve eklerine yalnız görev ve gündem gereği erişim verilir.", "Belge Sahibi / Sistem Yöneticisi", "Kaynak sistem yetkileri"], ["Duyuru", "Karar ve iyi uygulamalar yalnız ilgili rol/personel ile hedefli paylaşılır.", "Takip Koordinatörü / Karar Sahibi", "Kurumsal e-posta veya doğal iletişim kaydı"], ["Doküman değişikliği", "Kontrollü değişiklik SRÇ.018 üzerinden uygulanır; yayımlandığında LST.012 kaydı oluşturulur.", "Proje Yöneticisi / Kalite Danışmanı", "SRÇ.018 / LST.012"], ["Bakım", "Prosedür yılda bir kez veya yönetim yaklaşımı değiştiğinde gözden geçirilir.", "Süreç Sahibi / Kalite Danışmanı", "FRM.001 / doküman sürümü"]]),
-        "<h2>12. Kayıtlar ve Kanıtlar</h2>", table(["Kayıt / Kanıt", "Kullanım Amacı", "Saklama Yeri", "Sorumlu", "Not"], [[LST013, "Resmî görev tanımı ve yayımlanan görevli personel bağlantılarını ortak görünümde tutmak", "03 - Kayıtlar ve Listeler", "İdari İşler Şube Müdürü", "Personel görünümü resmî atama kanıtı değildir"], ["İÜC.BİDB.FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "YGG girdileri, görüşmeleri, kararları ve aksiyonlarını kaydetmek", "Confluence / yetkili toplantı alanı", "İdari İşler Şube Müdürü / Proje Yöneticisi", "Gerçek toplantı olduğunda oluşturulur"], ["İÜC.BİDB.RPR.001 - Süreç Performansları Raporu", "Süreç sonuçlarını YGG'ye sunmak", "09 - Raporlar", "Kalite Danışmanı", "Kümülatif taslak"], ["Süreç özel İÜC.BİDB.FRM.001 kayıtları", "BP ve PA/GP değerlendirme sonuçlarını sağlamak", "91 - İç Denetimler / Süreç Gözden Geçirmeleri", "Kalite Danışmanı", "Değerlendirme #1 güncellenir"], ["Hedef süreç aksiyon kaydı", "YGG kararını uygulamak ve sonucu izlemek", "İlgili süreç / Jira / Confluence / doğal sistem", "Aksiyon Sorumlusu", "FRM.002'ye bağlantı verilir"], ["Hedefli bilgilendirme kaydı", "Karar veya iyi uygulamanın ilgili hedef kitleye iletildiğini göstermek", "Kurumsal e-posta / doğal iletişim kanalı", "Takip Koordinatörü", "Her YGG kararı için LST.012 kullanılmaz"]]),
+        "<h2>12. Kayıtlar ve Kanıtlar</h2>", table(["Kayıt / Kanıt", "Kullanım Amacı", "Saklama Yeri", "Sorumlu", "Not"], [[LST013, "Resmî görev tanımı ve yayımlanan görevli personel bağlantılarını ortak görünümde tutmak", "03 - Kayıtlar ve Listeler", "İdari İşler Şube Müdürü", "Personel görünümü resmî atama kanıtı değildir"], ["FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])", "YGG girdileri, görüşmeleri, kararları ve aksiyonlarını kaydetmek", "Confluence / yetkili toplantı alanı", "İdari İşler Şube Müdürü / Proje Yöneticisi", "Gerçek toplantı olduğunda oluşturulur"], ["RPR.001 - Süreç Performansları Raporu", "Süreç sonuçlarını YGG'ye sunmak", "09 - Raporlar", "Kalite Danışmanı", "Kümülatif taslak"], ["Süreç özel FRM.001 kayıtları", "BP ve PA/GP değerlendirme sonuçlarını sağlamak", "91 - İç Denetimler / Süreç Gözden Geçirmeleri", "Kalite Danışmanı", "Değerlendirme #1 güncellenir"], ["Hedef süreç aksiyon kaydı", "YGG kararını uygulamak ve sonucu izlemek", "İlgili süreç / Jira / Confluence / doğal sistem", "Aksiyon Sorumlusu", "FRM.002'ye bağlantı verilir"], ["Hedefli bilgilendirme kaydı", "Karar veya iyi uygulamanın ilgili hedef kitleye iletildiğini göstermek", "Kurumsal e-posta / doğal iletişim kanalı", "Takip Koordinatörü", "Her YGG kararı için LST.012 kullanılmaz"]]),
         "<h2>13. Sürüm Geçmişi</h2>", history("Organizasyonel Yönetim Prosedürü", REVIEWER, APPROVER),
     ])
 
@@ -632,9 +632,9 @@ def procedure_body() -> str:
 def frm002_template_body() -> str:
     return "".join([
         "<h2>0. Şablon Hakkında</h2>",
-        "<h3>0.1. Şablon Üst Bilgisi</h3>", table(["Alan", "Değer"], [["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"], ["Doküman Kodu", "İÜC.BİDB.FRM.002.Ş"], ["Doküman Türü", "Form Şablonu"], ["Kullanım Alanı", "Yapılandırılmış toplantı tutanağı"], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Yürürlük Tarihi", "15-02-2025"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
+        "<h3>0.1. Şablon Üst Bilgisi</h3>", table(["Alan", "Değer"], [["Kurum", "İstanbul Üniversitesi - Cerrahpaşa Bilgi İşlem Daire Başkanlığı"], ["Doküman Kodu", "FRM.002.Ş"], ["Doküman Türü", "Form Şablonu"], ["Kullanım Alanı", "Yapılandırılmış toplantı tutanağı"], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Yürürlük Tarihi", "15-02-2025"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
         "<h3>0.2. Kullanım Amacı</h3>", p("Bu şablon, Yönetim Gözden Geçirme toplantıları başta olmak üzere yapılandırılmış toplantıların bilgi, katılım, gündem, girdi, görüşme, karar, aksiyon ve bağlantılarını ortak formatta kaydetmek için kullanılır. Günlük veya operasyonel toplantılarda kullanılması zorunlu değildir."),
-        "<h3>0.3. Adlandırma Kuralı</h3>", p("İÜC.BİDB.FRM.002 - Toplantı Tutanağı ([Toplantı Adı] - [Tarih veya Sıra]); YGG için İÜC.BİDB.FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])"),
+        "<h3>0.3. Adlandırma Kuralı</h3>", p("FRM.002 - Toplantı Tutanağı ([Toplantı Adı] - [Tarih veya Sıra]); YGG için FRM.002 - Toplantı Tutanağı (Yönetim Gözden Geçirme - [Yıl])"),
         "<h3>0.4. Şablon Sürüm Geçmişi</h3>", history("Toplantı Tutanağı Şablonu", REVIEWER, APPROVER),
         "<h2>1. Toplantı Bilgileri</h2>", table(["Alan", "Değer"], [["Toplantı Adı", "<em>Toplantı adı</em>"], ["Toplantı Türü", "<em>YGG / Proje / Süreç / Teknik / İdari / Diğer</em>"], ["Tarih ve Saat", "<em>GG-AA-YYYY / SS:DD</em>"], ["Yer / Bağlantı", "<em>Fiziksel yer veya çevrim içi bağlantı</em>"], ["Toplantı Başkanı", "<em>Rol / kişi</em>"], ["Tutanağı Hazırlayan", "<em>Rol / kişi</em>"], ["İlgili Süreç / Proje", "<em>Kod ve ad / bağlantı</em>"], ["Gizlilik / Erişim", "<em>Erişim sınıfı</em>"]]),
         "<h2>2. Katılımcılar</h2>", table(["Ad Soyad", "Rol / Birim", "Katılım Durumu", "Not"], [["<em>Katılımcı</em>", "<em>Rol / birim</em>", "<em>Katıldı / Katılmadı / Kısmi</em>", "<em>Not</em>"]]),
@@ -669,13 +669,13 @@ def section_upsert(doc: str, heading_fragment: str, code: str, cells: list[str])
 def update_lst001() -> Path:
     page = CONFLUENCE / LST001_REL
     storage = (page / "body.storage.xhtml").read_text(encoding="utf-8")
-    storage = section_upsert(storage, "3. Süreç Dokümanları", "İÜC.BİDB.SRÇ.023", ["İÜC.BİDB.SRÇ.023", "Organizasyonel Yönetim Süreci", "MAN.2", OWNER, "Aktif", "v1.0", "15-02-2025", "01 - Süreç Dokümanları"])
-    storage = section_upsert(storage, "4. Prosedürler", "İÜC.BİDB.PRS.006", ["İÜC.BİDB.PRS.006", "Organizasyonel Yönetim Prosedürü", "SRÇ.023", OWNER, "Aktif", "v1.0", "15-02-2025", "07 - Prosedürler"])
-    storage = section_upsert(storage, "6. Şablonlar", "İÜC.BİDB.FRM.002.Ş", ["İÜC.BİDB.FRM.002.Ş", "Toplantı Tutanağı Şablonu", "FRM.002 toplantı tutanakları", "Aktif", "v1.0", "15-02-2025", "02 - Şablonlar"])
-    storage = section_upsert(storage, "6. Şablonlar", "İÜC.BİDB.LST.013.Ş", ["İÜC.BİDB.LST.013.Ş", "Görev Tanımları ve Görevli Personel Listesi Şablonu", "LST.013 üretimi", "Aktif", "v1.0", "15-02-2025", "02 - Şablonlar"])
-    storage = section_upsert(storage, "7. Genel Kayıt ve Listeler", "İÜC.BİDB.LST.013", ["İÜC.BİDB.LST.013", "Görev Tanımları ve Görevli Personel Listesi", "SRÇ.023 yönetim altyapısı / SRÇ.019 insan kaynakları desteği", "İdari İşler Şube Müdürü", "Aktif", "v1.0", "03 - Kayıtlar ve Listeler"])
+    storage = section_upsert(storage, "3. Süreç Dokümanları", "SRÇ.023", ["SRÇ.023", "Organizasyonel Yönetim Süreci", "MAN.2", OWNER, "Aktif", "v1.0", "15-02-2025", "01 - Süreç Dokümanları"])
+    storage = section_upsert(storage, "4. Prosedürler", "PRS.006", ["PRS.006", "Organizasyonel Yönetim Prosedürü", "SRÇ.023", OWNER, "Aktif", "v1.0", "15-02-2025", "07 - Prosedürler"])
+    storage = section_upsert(storage, "6. Şablonlar", "FRM.002.Ş", ["FRM.002.Ş", "Toplantı Tutanağı Şablonu", "FRM.002 toplantı tutanakları", "Aktif", "v1.0", "15-02-2025", "02 - Şablonlar"])
+    storage = section_upsert(storage, "6. Şablonlar", "LST.013.Ş", ["LST.013.Ş", "Görev Tanımları ve Görevli Personel Listesi Şablonu", "LST.013 üretimi", "Aktif", "v1.0", "15-02-2025", "02 - Şablonlar"])
+    storage = section_upsert(storage, "7. Genel Kayıt ve Listeler", "LST.013", ["LST.013", "Görev Tanımları ve Görevli Personel Listesi", "SRÇ.023 yönetim altyapısı / SRÇ.019 insan kaynakları desteği", "İdari İşler Şube Müdürü", "Aktif", "v1.0", "03 - Kayıtlar ve Listeler"])
     (page / "body.storage.xhtml").write_text(storage, encoding="utf-8")
-    (page / "body.view.html").write_text(build_view("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", storage), encoding="utf-8")
+    (page / "body.view.html").write_text(build_view("LST.001 - Aktif Dokümanlar Listesi", storage), encoding="utf-8")
     return page
 
 
@@ -685,14 +685,14 @@ def update_lst006() -> Path:
     def replace_row(match: re.Match[str]) -> str:
         row = match.group(0)
         plain = html.unescape(re.sub(r"<[^>]+>", "", row))
-        if "İÜC.BİDB.SRÇ.023" not in plain:
+        if "SRÇ.023" not in plain:
             return row
         cells = re.findall(r"(<td[^>]*>)(.*?)(</td>)", row, flags=re.I | re.S)
-        values = ["MAN.2", "Organization management", "İÜC.BİDB.SRÇ.023", "Organizasyonel Yönetim Süreci", OWNER, "Aktif", "Süreç paketi yerelde oluşturulmuş; kullanıcı incelemesi ve kontrollü Confluence yayını beklenmektedir."]
+        values = ["MAN.2", "Organization management", "SRÇ.023", "Organizasyonel Yönetim Süreci", OWNER, "Aktif", "Süreç paketi yerelde oluşturulmuş; kullanıcı incelemesi ve kontrollü Confluence yayını beklenmektedir."]
         return "<tr>" + "".join(f"{a}{html.escape(v)}{c}" for (a, _, c), v in zip(cells, values)) + "</tr>"
     storage = re.sub(r"<tr[^>]*>.*?</tr>", replace_row, storage, flags=re.I | re.S)
     (page / "body.storage.xhtml").write_text(storage, encoding="utf-8")
-    (page / "body.view.html").write_text(build_view("İÜC.BİDB.LST.006 - Standart Süreç Envanteri", storage), encoding="utf-8")
+    (page / "body.view.html").write_text(build_view("LST.006 - Standart Süreç Envanteri", storage), encoding="utf-8")
     return page
 
 
@@ -717,11 +717,11 @@ def update_parent_registers() -> list[Path]:
     if not tbody:
         raise RuntimeError("Template register table missing")
     rows = re.findall(r"<tr[^>]*>.*?</tr>", tbody.group(2), flags=re.I | re.S)
-    rows = [r for r in rows if not any(code in html.unescape(re.sub(r"<[^>]+>", "", r)) for code in ["İÜC.BİDB.FRM.002.Ş", "İÜC.BİDB.LST.013.Ş"])]
+    rows = [r for r in rows if not any(code in html.unescape(re.sub(r"<[^>]+>", "", r)) for code in ["FRM.002.Ş", "LST.013.Ş"])]
     additions = []
     for code, name, title in [
-        ("İÜC.BİDB.FRM.002.Ş", "Toplantı Tutanağı Şablonu", FRM002_TEMPLATE),
-        ("İÜC.BİDB.LST.013.Ş", "Görev Tanımları ve Görevli Personel Listesi Şablonu", LST013_TEMPLATE),
+        ("FRM.002.Ş", "Toplantı Tutanağı Şablonu", FRM002_TEMPLATE),
+        ("LST.013.Ş", "Görev Tanımları ve Görevli Personel Listesi Şablonu", LST013_TEMPLATE),
     ]:
         link = f'<ac:link><ri:page ri:content-title="{title}" /><ac:plain-text-link-body><![CDATA[İncele]]></ac:plain-text-link-body></ac:link>'
         additions.append("<tr>" + "".join(f'<td class="confluenceTd">{x}</td>' for x in [str(len(rows) + len(additions) + 1), code, name, "Aktif", link]) + "</tr>")
@@ -734,9 +734,9 @@ def update_parent_registers() -> list[Path]:
     if not tbody:
         raise RuntimeError("Records register table missing")
     rows = re.findall(r"<tr[^>]*>.*?</tr>", tbody.group(2), flags=re.I | re.S)
-    rows = [r for r in rows if "İÜC.BİDB.LST.013" not in html.unescape(re.sub(r"<[^>]+>", "", r))]
+    rows = [r for r in rows if "LST.013" not in html.unescape(re.sub(r"<[^>]+>", "", r))]
     link = f'<ac:link><ri:page ri:space-key="SSSS" ri:content-title="{LST013}" /><ac:plain-text-link-body><![CDATA[İncele]]></ac:plain-text-link-body></ac:link>'
-    row = "<tr>" + "".join(f'<td class="confluenceTd">{x}</td>' for x in [str(len(rows) + 1), "İÜC.BİDB.LST.013", "Görev Tanımları ve Görevli Personel Listesi", "Aktif", link]) + "</tr>"
+    row = "<tr>" + "".join(f'<td class="confluenceTd">{x}</td>' for x in [str(len(rows) + 1), "LST.013", "Görev Tanımları ve Görevli Personel Listesi", "Aktif", link]) + "</tr>"
     body = body[:tbody.start(2)] + "".join(rows) + row + body[tbody.end(2):]
     (records / "body.storage.xhtml").write_text(body.rstrip() + "\n", encoding="utf-8")
     (records / "body.view.html").write_text(build_view("03 - Kayıtlar ve Listeler", body), encoding="utf-8")
@@ -777,10 +777,10 @@ def update_rpr001() -> Path:
         "SRÇ.021 katalog gözden geçirme ve iyileştirme kanıtı henüz oluşmamıştır.",
         "SRÇ.021 katalog gözden geçirme ile SRÇ.023 YGG ve yönetim etkinliği kanıtları henüz oluşmamıştır.",
     )
-    storage = append_section_row(storage, "4. Süreç Sonuç Özeti", "İÜC.BİDB.SRÇ.023", [SRC023, "MAN.2 BP1-BP6; PA 2.1-PA 3.2", "2 VAR; 2 DAĞINIK; 2 ZAYIF", "12 VAR; 6 DAĞINIK; 2 ZAYIF; 1 YOK", "", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.023) - Değerlendirme #1", "Yönetim altyapısı, YGG yöntemi, karar yönlendirme ve takip kuralları tanımlı; gerçek YGG, aksiyon kapanışı ve performans kanıtları henüz oluşmamıştır."])
+    storage = append_section_row(storage, "4. Süreç Sonuç Özeti", "SRÇ.023", [SRC023, "MAN.2 BP1-BP6; PA 2.1-PA 3.2", "2 VAR; 2 DAĞINIK; 2 ZAYIF", "12 VAR; 6 DAĞINIK; 2 ZAYIF; 1 YOK", "", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.023) - Değerlendirme #1", "Yönetim altyapısı, YGG yöntemi, karar yönlendirme ve takip kuralları tanımlı; gerçek YGG, aksiyon kapanışı ve performans kanıtları henüz oluşmamıştır."])
     storage = append_section_row(storage, "5. Etiket Dağılımları ve Eğilimler", "SRÇ.023", ["SRÇ.023", "2", "2", "2", "0", "12", "6", "2", "1"], before_key="Eğilim Yorumu")
     (page / "body.storage.xhtml").write_text(storage, encoding="utf-8")
-    (page / "body.view.html").write_text(build_view("İÜC.BİDB.RPR.001 - Süreç Performansları Raporu", storage), encoding="utf-8")
+    (page / "body.view.html").write_text(build_view("RPR.001 - Süreç Performansları Raporu", storage), encoding="utf-8")
     return page
 
 
@@ -863,11 +863,11 @@ def validate(page_dirs: list[Path]) -> None:
         for name in ["page.yaml", "body.storage.xhtml", "body.view.html"]:
             if not (d / name).exists():
                 raise RuntimeError(f"Missing artifact: {d / name}")
-    assessment = (CONFLUENCE / REVIEWS_REL / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-023-degerlendirme-1/body.storage.xhtml").read_text(encoding="utf-8")
+    assessment = (CONFLUENCE / REVIEWS_REL / "frm-001-surec-gozden-gecirme-formu-src-023-degerlendirme-1/body.storage.xhtml").read_text(encoding="utf-8")
     if "2 VAR, 2 DAĞINIK ve 2 ZAYIF" not in assessment or "12 VAR, 6 DAĞINIK, 2 ZAYIF ve 1 YOK" not in assessment:
         raise RuntimeError("Assessment distribution mismatch")
     lst013 = (CONFLUENCE / LST013_REL / "body.storage.xhtml").read_text(encoding="utf-8")
-    template = (CONFLUENCE / TEMPLATES_REL / "iuc-bidb-lst-013-s-gorev-tanimlari-ve-gorevli-personel-listesi-sablonu/body.storage.xhtml").read_text(encoding="utf-8")
+    template = (CONFLUENCE / TEMPLATES_REL / "lst-013-s-gorev-tanimlari-ve-gorevli-personel-listesi-sablonu/body.storage.xhtml").read_text(encoding="utf-8")
     if len(re.findall(r"cdn\.iuc\.edu\.tr/.+?\.pdf", lst013)) != len(ROLE_DEFINITIONS):
         raise RuntimeError("LST.013 role definition link count mismatch")
     if any(token in lst013 for token in ["@iuc.edu.tr", "Dahili"]):
@@ -886,10 +886,10 @@ def main() -> None:
     write_page(src, SRC023, "137265784", "01 - Süreç Dokümanları", 2, process_body(True), process_body(False))
     pages: list[Path] = [src]
     children = [
-        ("iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-023", "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.023)", lst007_body(True), lst007_body(False)),
-        ("iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-023", "İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.023)", lst008_body(), None),
-        ("iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-023", "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.023)", lst009_body(), None),
-        ("iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-023", "İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.023)", lst010_body(), None),
+        ("lst-007-surec-etkilesim-matrisi-src-023", "LST.007 - Süreç Etkileşim Matrisi (SRÇ.023)", lst007_body(True), lst007_body(False)),
+        ("lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-023", "LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.023)", lst008_body(), None),
+        ("lst-009-surec-performans-olcum-seti-src-023", "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.023)", lst009_body(), None),
+        ("lst-010-surec-rol-yetki-ve-raci-matrisi-src-023", "LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.023)", lst010_body(), None),
     ]
     for slug, title, storage, view in children:
         d = src / slug
@@ -899,19 +899,19 @@ def main() -> None:
             a = d / "attachments"
             a.mkdir(exist_ok=True)
             (a / INTERACTION_MMD).write_text("\n".join(INTERACTION_LINES) + "\n", encoding="utf-8")
-    blank = src / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-023"
-    write_page(blank, "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.023)", SRC023_ID, SRC023, 3, blank_review_body())
+    blank = src / "frm-001-surec-gozden-gecirme-formu-src-023"
+    write_page(blank, "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.023)", SRC023_ID, SRC023, 3, blank_review_body())
     pages.append(blank)
-    assessment = CONFLUENCE / REVIEWS_REL / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-023-degerlendirme-1"
-    write_page(assessment, "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.023) - Değerlendirme #1", REVIEWS_ID, "Süreç Gözden Geçirmeleri", 3, assessment_body())
+    assessment = CONFLUENCE / REVIEWS_REL / "frm-001-surec-gozden-gecirme-formu-src-023-degerlendirme-1"
+    write_page(assessment, "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.023) - Değerlendirme #1", REVIEWS_ID, "Süreç Gözden Geçirmeleri", 3, assessment_body())
     pages.append(assessment)
-    prs = CONFLUENCE / PROCEDURES_REL / "iuc-bidb-prs-006-organizasyonel-yonetim-proseduru"
+    prs = CONFLUENCE / PROCEDURES_REL / "prs-006-organizasyonel-yonetim-proseduru"
     write_page(prs, PRS006, PROCEDURES_ID, "07 - Prosedürler", 2, procedure_body())
     pages.append(prs)
-    frm_t = CONFLUENCE / TEMPLATES_REL / "iuc-bidb-frm-002-s-toplanti-tutanagi-sablonu"
+    frm_t = CONFLUENCE / TEMPLATES_REL / "frm-002-s-toplanti-tutanagi-sablonu"
     write_page(frm_t, FRM002_TEMPLATE, TEMPLATES_ID, "02 - Şablonlar", 2, frm002_template_body())
     pages.append(frm_t)
-    lst013_t = CONFLUENCE / TEMPLATES_REL / "iuc-bidb-lst-013-s-gorev-tanimlari-ve-gorevli-personel-listesi-sablonu"
+    lst013_t = CONFLUENCE / TEMPLATES_REL / "lst-013-s-gorev-tanimlari-ve-gorevli-personel-listesi-sablonu"
     write_page(lst013_t, LST013_TEMPLATE, TEMPLATES_ID, "02 - Şablonlar", 2, lst013_template_body())
     pages.append(lst013_t)
     lst013 = CONFLUENCE / LST013_REL

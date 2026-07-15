@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate İÜC.BİDB.FRM.001 process review form files for all SPICE processes.
+"""Generate FRM.001 process review form files for all SPICE processes.
 
 This script materializes review forms into the exported Confluence tree under:
 confluence/pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/surec-gozden-gecirmeleri/
@@ -25,7 +25,7 @@ DRAFTS = ROOT / "drafts/process-review-forms"
 REPORT = ROOT / "reports/process_review_forms_materialization_report.md"
 
 PROCESS_OWNER = {
-    "İÜC.BİDB.SRÇ.001": "Levent BAYEZİT - Proje Yöneticisi",
+    "SRÇ.001": "Levent BAYEZİT - Proje Yöneticisi",
 }
 
 BP_TITLE_TR = {
@@ -279,7 +279,7 @@ def load_yaml() -> dict:
 
 
 def process_status(code: str) -> str:
-    return "Aktif" if code in {"İÜC.BİDB.SRÇ.001", "İÜC.BİDB.SRÇ.004"} else "Dokümantasyon Hazırlanıyor"
+    return "Aktif" if code in {"SRÇ.001", "SRÇ.004"} else "Dokümantasyon Hazırlanıyor"
 
 
 def owner(code: str) -> str:
@@ -289,26 +289,26 @@ def owner(code: str) -> str:
 def assessment_summary(proc: dict) -> str:
     code = proc["corporate_code"]
     name = proc["corporate_name"]
-    if code == "İÜC.BİDB.SRÇ.001":
+    if code == "SRÇ.001":
         return ("Dokümantasyon Süreci için mevcut süreç tanımı ve ilişkili alt dokümanlar üzerinden ön değerlendirme yapılmıştır. "
                 "Süreç sayfası, aktif doküman listesi, iş ürünleri ve kalite kriterleri listesi, performans ölçüm seti ve RACI matrisi kanıt adayı olarak belirlenmiştir. "
                 "Bu form, nihai uygunluk kararı vermek yerine BP ve PA/GP bazlı kanıt doğrulamasına temel oluşturmak amacıyla hazırlanmıştır.")
-    if code == "İÜC.BİDB.SRÇ.004":
+    if code == "SRÇ.004":
         return ("Süreç Kurulumu Süreci için mevcut süreç tanımı ve ilişkili süreç mimarisi/kayıt listeleri üzerinden ön değerlendirme yapılmıştır. "
                 "Kanıt setleri aday düzeyde ele alınmış; süreç mimarisi, süreç kurulum yaklaşımı, iş ürünleri, ölçüm seti ve RACI kayıtlarının ayrıntılı doğrulanması sonraki gözden geçirmede sürdürülecektir.")
     return (f"{name} için süreç gözden geçirme kaydı hazırlık düzeyinde açılmıştır. Süreç dokümantasyonu ve ilişkili kanıt setleri tamamlandıkça BP ve PA/GP bazlı değerlendirme güncellenecektir.")
 
 
 def evidence_for(code: str) -> str:
-    if code == "İÜC.BİDB.SRÇ.001":
-        return "Kanıt Adayı: İÜC.BİDB.SRÇ.001; İÜC.BİDB.LST.001; İÜC.BİDB.LST.008; İÜC.BİDB.LST.009; İÜC.BİDB.LST.010; İÜC.BİDB.PRS.001"
-    if code == "İÜC.BİDB.SRÇ.004":
-        return "Kanıt Adayı: İÜC.BİDB.SRÇ.004; İÜC.BİDB.LST.007; İÜC.BİDB.LST.008; İÜC.BİDB.LST.009; İÜC.BİDB.LST.010"
+    if code == "SRÇ.001":
+        return "Kanıt Adayı: SRÇ.001; LST.001; LST.008; LST.009; LST.010; PRS.001"
+    if code == "SRÇ.004":
+        return "Kanıt Adayı: SRÇ.004; LST.007; LST.008; LST.009; LST.010"
     return "Değerlendirilecek"
 
 
 def current_coverage(code: str, kind: str) -> str:
-    if code in {"İÜC.BİDB.SRÇ.001", "İÜC.BİDB.SRÇ.004"}:
+    if code in {"SRÇ.001", "SRÇ.004"}:
         return "Mevcut dokümantasyon ve ilişkili alt dokümanlar aday kanıt olarak belirlenmiştir."
     if kind == "BP":
         return "Süreç dokümantasyonu tamamlandığında değerlendirilecektir."
@@ -316,11 +316,11 @@ def current_coverage(code: str, kind: str) -> str:
 
 
 def status_for(code: str) -> str:
-    return "ZAYIF" if code in {"İÜC.BİDB.SRÇ.001", "İÜC.BİDB.SRÇ.004"} else "YOK"
+    return "ZAYIF" if code in {"SRÇ.001", "SRÇ.004"} else "YOK"
 
 
 def action_for(code: str, ref: str) -> str:
-    if code in {"İÜC.BİDB.SRÇ.001", "İÜC.BİDB.SRÇ.004"}:
+    if code in {"SRÇ.001", "SRÇ.004"}:
         return f"{ref} için kanıt adayları ayrıntılı doğrulanmalı ve eksik kayıtlar tamamlanmalı."
     return f"{ref} için süreç dokümanı, iş ürünleri ve uygulama kanıtları oluşturulmalı."
 
@@ -350,7 +350,7 @@ def completion_rows(proc: dict) -> str:
     code = proc["corporate_code"]
     process_name = proc["corporate_name"]
     bp_first = proc["base_practices"][0]["id"]
-    if code in {"İÜC.BİDB.SRÇ.001", "İÜC.BİDB.SRÇ.004"}:
+    if code in {"SRÇ.001", "SRÇ.004"}:
         items = [
             (1, f"{process_name} için kanıt adaylarının BP ve PA/GP bazında doğrulanması", f"{bp_first}, GP.2.2.4", "30.09.2025"),
             (2, f"{process_name} kapsamındaki eksik gözden geçirme/onay kayıtlarının tamamlanması", "GP.2.2.3, GP.3.2.6", "15.10.2025"),
@@ -368,7 +368,7 @@ def completion_rows(proc: dict) -> str:
 
 def body_inner(proc: dict, eval_date: date, gps: dict) -> str:
     code = proc["corporate_code"]
-    title = f"İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Matrisi ({code})"
+    title = f"FRM.001 - Süreç Gözden Geçirme Matrisi ({code})"
     bp_count = len(proc["base_practices"])
     return f"""<h1>{e(title)}</h1>
 <h2>1. Değerlendirme Özeti</h2>
@@ -443,7 +443,7 @@ def view_html(title: str, inner: str) -> str:
 
 def write_page(proc: dict, eval_date: date, gps: dict) -> dict:
     code = proc["corporate_code"]
-    title = f"İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Matrisi ({code})"
+    title = f"FRM.001 - Süreç Gözden Geçirme Matrisi ({code})"
     slug = slugify(title)
     folder = TARGET_PARENT / slug
     folder.mkdir(parents=True, exist_ok=True)
@@ -466,7 +466,7 @@ def write_page(proc: dict, eval_date: date, gps: dict) -> dict:
         "slug": slug,
         "storage_file": "body.storage.xhtml",
         "view_file": "body.view.html",
-        "document_code": "İÜC.BİDB.FRM.001",
+        "document_code": "FRM.001",
         "related_process_code": code,
         "related_process_name": proc["corporate_name"],
         "spice_reference": f"{proc['spice_code']} - {proc['spice_name']}",

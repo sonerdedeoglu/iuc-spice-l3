@@ -44,20 +44,20 @@ from create_src005_process_assessment_package import (
 
 SRC021_ID = "137265879"
 RECORDS_ID = "137265786"
-SRC021 = "İÜC.BİDB.SRÇ.021 - Bilgi Yönetimi Süreci"
-PRS005 = "İÜC.BİDB.PRS.005 - Bilgi Yönetimi Prosedürü"
-LST002 = "İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı"
-LST004 = "İÜC.BİDB.LST.004 - Bilgi Kataloğu"
+SRC021 = "SRÇ.021 - Bilgi Yönetimi Süreci"
+PRS005 = "PRS.005 - Bilgi Yönetimi Prosedürü"
+LST002 = "LST.002 - Doküman Değişiklik Kaydı"
+LST004 = "LST.004 - Bilgi Kataloğu"
 OWNER = "Levent BAYEZİT - Proje Yöneticisi"
 REVIEWER = "Levent BAYEZİT - Süreç Sahibi"
 APPROVER = "Mustafa Nusret SARISAKAL - Bilgi İşlem Daire Başkanı"
 
-SRC021_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/iuc-bidb-src-021-bilgi-yonetimi-sureci"
+SRC021_REL = f"{PAGE_ROOT_REL}/01-surec-dokumanlari/src-021-bilgi-yonetimi-sureci"
 RECORDS_REL = f"{PAGE_ROOT_REL}/03-kayitlar-ve-listeler"
-LST006_REL = f"{RECORDS_REL}/iuc-bidb-lst-006-standart-surec-envanteri"
-RPR001_REL = f"{REPORTS_REL}/iuc-bidb-rpr-001-surec-performanslari-raporu"
+LST006_REL = f"{RECORDS_REL}/lst-006-standart-surec-envanteri"
+RPR001_REL = f"{REPORTS_REL}/rpr-001-surec-performanslari-raporu"
 
-FLOW_PNG = "İÜC.BİDB.SRÇ.021 - Flowchart.png"
+FLOW_PNG = "SRÇ.021 - Flowchart.png"
 FLOW_MMD = "src021-surec-akisi.mmd"
 INTERACTION_PNG = "src021-surec-etkilesim.png"
 INTERACTION_MMD = "src021-surec-etkilesim.mmd"
@@ -125,12 +125,12 @@ def image(storage: bool, filename: str, alt: str, width: int = 900) -> str:
 
 def process_body(storage: bool) -> str:
     related = "<br />".join([
-        "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci",
-        "İÜC.BİDB.SRÇ.007 - Proje Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.017 - Problem Çözüm Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci",
-        "İÜC.BİDB.SRÇ.020 - Eğitim Süreci",
-        "İÜC.BİDB.SRÇ.023 - Organizasyonel Yönetim Süreci",
+        "SRÇ.001 - Dokümantasyon Süreci",
+        "SRÇ.007 - Proje Yönetimi Süreci",
+        "SRÇ.017 - Problem Çözüm Yönetimi Süreci",
+        "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci",
+        "SRÇ.020 - Eğitim Süreci",
+        "SRÇ.023 - Organizasyonel Yönetim Süreci",
     ])
     mermaid = info_macro("Mermaid Kodu", FLOW_LINES) if storage else info_view("Mermaid Kodu", FLOW_LINES)
     activities = [
@@ -160,7 +160,7 @@ def process_body(storage: bool) -> str:
         "<h2>4. Referanslar</h2>", table(["Referans", "Açıklama"], [["ISO/IEC 15504-5:2006 RIN.3 - Knowledge management", "Süreç amacı, sonuçları ve BP1-BP6 temel uygulamaları"], ["ISO/IEC 15504-5:2006 - Process Assessment Model", "Süreç boyutu ve değerlendirme göstergeleri"], ["ISO/IEC 15504-5:2006 - Process Attributes", "PA 2.1, PA 2.2, PA 3.1 ve PA 3.2 süreç öznitelikleri ile genel uygulamalar"]]),
         "<h2>5. Terimler ve Kısaltmalar</h2>", table(["Terim / Kısaltma", "Açıklama"], [["Bilgi Varlığı", "Kurumsal karar, uygulama veya yeniden kullanım için değer taşıyan bilgi, belge, kayıt, kod, video, kılavuz, standart veya bağlantı"], ["Bilgi Kataloğu", "Bilgi varlıklarının kaynak sistemini, erişim bağlantısını, sınıfını ve durumunu gösteren LST.004"], ["Kaynak Sistem", "Bilginin asıl ve yetkili kopyasının tutulduğu Confluence, Jira, Bitbucket, Google Drive veya diğer kurumsal ortam"], ["Erişim Sınıfı", "BİDB Geneli, İlgili Proje/Ekip, Yönetimle Sınırlı veya Müşteri Birimiyle Paylaşımlı etiketi"]]),
         "<h2>6. Süreç Aktivitesi</h2>", table(["Alan", "Açıklama"], [["Süreç Başlatıcısı", "Yeni veya güncellenen süreç/doküman; kalıcı analiz, tasarım veya mimari karar; yeniden kullanılabilir teknik çözüm; problem/deneyim/öğrenilmiş ders; müşteri kararı; eğitim/kılavuz/toplantı kaydı; kod deposu/teknik referans; standart veya mevzuat değişikliği"], ["Süreç Başlangıcı", "Bilgi adayının ve yetkili kaynak sisteminin belirlenmesi"], ["Süreç Bitişi", "Bilginin kaynak sisteminde korunarak doğrulanmış bağlantıyla LST.004'te erişilebilir olması; gerekli bilgilendirmenin yapılması ve gözden geçirme durumunun sürdürülmesi"], ["Ana Faaliyetler", "Altyapıyı sürdürme; uzman ve katkı rollerini görünür kılma; stratejiyi uygulama; bilgiyi yakalama ve sınıflandırma; yaygınlaştırma; gözden geçirme ve iyileştirme"], ["İlgili Süreçler", related]]),
-        "<h2>7. Roller ve Sorumluluklar</h2>", p("Rol, sorumluluk, yetki, yetkinlik ve RACI bilgileri İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.021) dokümanında yönetilir."),
+        "<h2>7. Roller ve Sorumluluklar</h2>", p("Rol, sorumluluk, yetki, yetkinlik ve RACI bilgileri LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.021) dokümanında yönetilir."),
         "<h2>8. Araçlar ve Altyapı</h2>", table(["Tür", "Araç / Altyapı Bileşeni", "Kullanım Amacı", "Erişim ve Kullanım Koşulu", "Sorumlu Rol / Birim"], [
             ["Araç", "Confluence", "Bilgi ağının başlangıç noktası; süreç, proje ve teknik bilgi sayfaları ile kaynak bağlantıları", "Kurumsal hesap ve sayfa yetkisi; uzaktan erişimde gerekli kurumsal erişim koşulları", "Proje Yöneticisi / Confluence Yöneticisi"],
             ["Araç", "Jira", "Gereksinim, analiz, karar, faaliyet ve proje iş kayıtları", "Proje bazlı yetkilendirme", "Proje Yöneticisi / Jira Yöneticisi"],
@@ -168,10 +168,10 @@ def process_body(storage: bool) -> str:
             ["Altyapı", "Google Drive", "Müşteri birimleriyle paylaşılan dokümanlar ve çevrim içi toplantı video kayıtları", "Kurumsal hesap ve dosya/klasör yetkisi", "Proje Yöneticisi / Dosya Sahibi"],
             ["Altyapı", "Kurumsal kimlik, erişim ve yedekleme altyapısı", "Kaynak sistemlerdeki bilgiye güvenli ve sürdürülebilir erişim", "Kaynak sistemin bilgi güvenliği ve yetkilendirme kuralları", "İlgili Sistem Sahibi / BİDB"],
         ], fixed=True),
-        "<h2>9. Süreç İş Ürünleri</h2>", p("Girdi ve çıktı iş ürünleri ile kalite kriterleri İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.021) dokümanında yönetilir."),
+        "<h2>9. Süreç İş Ürünleri</h2>", p("Girdi ve çıktı iş ürünleri ile kalite kriterleri LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.021) dokümanında yönetilir."),
         "<h2>10. Süreç Akışı</h2>", image(storage, FLOW_PNG, "SRÇ.021 bilgi yönetimi süreç akışı") + mermaid,
         "<h2>11. Süreç Faaliyetleri</h2>", table(["Faaliyet ID", "Faaliyet", "Açıklama", "Elde Edilen / Güncellenen İş Ürünü"], activities),
-        "<h2>12. Ölçüm ve İzleme</h2>", p("Yönetilebilir iki ölçüm İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.021) dokümanında tanımlanır: geçerli bağlantı oranı ve yıllık gözden geçirme tamamlama oranı. Kayıt sayısı performans göstergesi değildir."),
+        "<h2>12. Ölçüm ve İzleme</h2>", p("Yönetilebilir iki ölçüm LST.009 - Süreç Performans Ölçüm Seti (SRÇ.021) dokümanında tanımlanır: geçerli bağlantı oranı ve yıllık gözden geçirme tamamlama oranı. Kayıt sayısı performans göstergesi değildir."),
         "<h2>13. Uygulama ve Uyarlama Kuralları</h2>",
         "<h3>13.1. Kaynak Sistem ve Bağlantı İlkesi</h3>" + p("Bilgi kendi yetkili kaynak sisteminde tutulur; ortamlar arasında gereksiz kopyalanmaz. Confluence ve LST.004, ayrıntıya ulaşmak için doğrulanmış erişim bağlantısı sağlar. Erişim yetkisi kaynak sistem tarafından uygulanır."),
         "<h3>13.2. Katalog Sahipliği ve Doğrulama</h3>" + p("LST.004 kayıtlarını Proje Yöneticisi oluşturur ve sürdürür. Teknik içerik gerektiğinde ilgili uzman veya birimce; uluslararası standart ve kalite bilgisi Kalite Danışmanınca doğrulanır. Her satır için ayrı resmî onay aranmaz."),
@@ -179,7 +179,7 @@ def process_body(storage: bool) -> str:
         "<h3>13.4. Standart ve Mevzuat Değişikliği</h3>" + p("Uluslararası standartlardaki değişiklikleri Kalite Danışmanı; BİDB teknik ve kurumsal gerekliliklerini Proje Yöneticisi izler. Değişikliğin bir süreci etkileme ihtimali varsa LST.004 güncellenir ve konu SRÇ.018 etki/değişiklik değerlendirmesine aktarılır."),
         "<h3>13.5. Gözden Geçirme ve Arşiv</h3>" + p("Toplu katalog gözden geçirmesi yılda bir kez yapılır. Bozuk bağlantı, kaynak taşınması, süreç/proje/sistem değişikliği, standart/mevzuat değişikliği veya hata bildirimi olay bazlı gözden geçirmeyi tetikler. Geçersiz kayıt Arşivlenmiş yapılır ve ardıl bilgi bağlanır; yalnızca hatalı veya mükerrer kayıt silinir."),
         "<h3>13.6. Yaygınlaştırma</h3>" + p("Rutin katalog ekleri için ayrı duyuru yapılmaz. Önemli teknik veya operasyonel bilgi mevcut kurumsal kanaldan paylaşılır. Süreç dokümanı, standart/mevzuat etkisi veya süreç değişikliği hedef kitleyi etkiliyorsa bilgilendirme yapılır; süreç dokümanlarına ilişkin yaygınlaştırma LST.012'de kaydedilir."),
-        "<h2>14. Süreç Etkileşimleri</h2>", p("Sürecin diğer süreçler, kaynak sistemler ve iş ürünleriyle etkileşimi İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.021) dokümanında yönetilir."),
+        "<h2>14. Süreç Etkileşimleri</h2>", p("Sürecin diğer süreçler, kaynak sistemler ve iş ürünleriyle etkileşimi LST.007 - Süreç Etkileşim Matrisi (SRÇ.021) dokümanında yönetilir."),
         "<h2>15. Sürüm Geçmişi</h2>", history("Bilgi Yönetimi Süreci", REVIEWER, APPROVER),
     ])
 
@@ -187,18 +187,18 @@ def process_body(storage: bool) -> str:
 def lst007_body(storage: bool) -> str:
     mermaid = info_macro("Mermaid Kodu", INTERACTION_LINES) if storage else info_view("Mermaid Kodu", INTERACTION_LINES)
     return "".join([
-        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.021)"], ["Kullanım Amacı", "Bilgi Yönetimi Sürecinin süreçler, kaynak sistemler ve iş ürünleriyle etkileşimini göstermek"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
+        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "LST.007 - Süreç Etkileşim Matrisi (SRÇ.021)"], ["Kullanım Amacı", "Bilgi Yönetimi Sürecinin süreçler, kaynak sistemler ve iş ürünleriyle etkileşimini göstermek"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
         "<h2>2. Etkileşim Matrisi</h2>", table(["Kaynak Süreç / Sistem / Doküman", "Etkileşim", "Hedef Süreç / Sistem / Doküman", "Yön", "Sorumlu"], [
-            ["İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "Onaylı doküman, şablon ve değişiklik bilgisi", SRC021, "Girdi", "Proje Yöneticisi / Kalite Danışmanı"],
+            ["SRÇ.001 - Dokümantasyon Süreci", "Onaylı doküman, şablon ve değişiklik bilgisi", SRC021, "Girdi", "Proje Yöneticisi / Kalite Danışmanı"],
             ["Jira / Confluence / Bitbucket / Google Drive", "Analiz, tasarım, karar, kod, paylaşımlı doküman ve toplantı kayıtları", SRC021, "Girdi", "Proje Yöneticisi / İlgili Uzman"],
-            ["İÜC.BİDB.SRÇ.007 - Proje Yönetimi Süreci", "Proje kapanışı ve öğrenilmiş dersler", SRC021, "Girdi", "Proje Yöneticisi"],
-            ["İÜC.BİDB.SRÇ.017 - Problem Çözüm Yönetimi Süreci", "Yeniden kullanılabilir çözüm ve deneyim bilgisi", SRC021, "Girdi", "İlgili Uzman / Proje Yöneticisi"],
-            ["İÜC.BİDB.SRÇ.020 - Eğitim Süreci", "Eğitim, kılavuz ve görsel kayıtlar", SRC021, "Girdi", "Eğitim Sorumlusu / Proje Yöneticisi"],
+            ["SRÇ.007 - Proje Yönetimi Süreci", "Proje kapanışı ve öğrenilmiş dersler", SRC021, "Girdi", "Proje Yöneticisi"],
+            ["SRÇ.017 - Problem Çözüm Yönetimi Süreci", "Yeniden kullanılabilir çözüm ve deneyim bilgisi", SRC021, "Girdi", "İlgili Uzman / Proje Yöneticisi"],
+            ["SRÇ.020 - Eğitim Süreci", "Eğitim, kılavuz ve görsel kayıtlar", SRC021, "Girdi", "Eğitim Sorumlusu / Proje Yöneticisi"],
             ["Uluslararası standartlar ve mevzuat", "Uygulanabilir gereklilik ve değişiklik bilgisi", SRC021, "Girdi", "Kalite Danışmanı / Proje Yöneticisi"],
             [SRC021, "Doğrulanmış bilgi erişim kaydı", LST004, "Çıktı", "Proje Yöneticisi"],
             [SRC021, "Bilgi yönetimi uygulama kuralları", PRS005, "Çıktı", "Proje Yöneticisi / Kalite Danışmanı"],
-            [SRC021, "Etki ihtimali bulunan standart, mevzuat veya bilgi değişikliği", "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci", "Çıktı", "Proje Yöneticisi / Kalite Danışmanı"],
-            [SRC021, "Hedef kitleyi etkileyen süreç bilgi duyurusu", "İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Koşullu Çıktı", "Proje Yöneticisi"],
+            [SRC021, "Etki ihtimali bulunan standart, mevzuat veya bilgi değişikliği", "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci", "Çıktı", "Proje Yöneticisi / Kalite Danışmanı"],
+            [SRC021, "Hedef kitleyi etkileyen süreç bilgi duyurusu", "LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Koşullu Çıktı", "Proje Yöneticisi"],
         ]),
         "<h2>3. Süreç Etkileşim Diyagramı</h2>", image(storage, INTERACTION_PNG, "SRÇ.021 süreç etkileşim diyagramı", 850) + mermaid,
         "<h2>4. Sürüm Geçmişi</h2>", history("Süreç Etkileşim Matrisi (SRÇ.021)", REVIEWER, APPROVER),
@@ -207,21 +207,21 @@ def lst007_body(storage: bool) -> str:
 
 def lst008_body() -> str:
     return "".join([
-        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.021)"], ["Kullanım Amacı", "Bilgi Yönetimi Sürecinin girdi ve çıktı iş ürünleri ile kabul kriterlerini tanımlamak"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
+        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.021)"], ["Kullanım Amacı", "Bilgi Yönetimi Sürecinin girdi ve çıktı iş ürünleri ile kabul kriterlerini tanımlamak"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
         "<h2>2. Girdi İş Ürünleri</h2>", table(["İş Ürünü", "Kaynak", "Kalite Kriteri", "İlgili BP"], [
-            ["Onaylı süreç, prosedür, şablon, liste ve diğer kurumsal dokümanlar", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci / Confluence", "Güncel başlık, sürüm ve yetkili erişim bağlantısı bulunur.", "RIN.3.BP1, BP4"],
+            ["Onaylı süreç, prosedür, şablon, liste ve diğer kurumsal dokümanlar", "SRÇ.001 - Dokümantasyon Süreci / Confluence", "Güncel başlık, sürüm ve yetkili erişim bağlantısı bulunur.", "RIN.3.BP1, BP4"],
             ["Proje analiz, tasarım, mimari ve karar kayıtları", "Jira / Confluence", "Kalıcı kurumsal değer veya yeniden kullanım ihtiyacı açıktır.", "RIN.3.BP3, BP4"],
             ["Kaynak kod ve repository teknik bilgisi", "Bitbucket", "Repository ve erişim bağlantısı doğrulanmıştır.", "RIN.3.BP1, BP4"],
             ["Müşteri paylaşımlı dokümanlar ve toplantı video kayıtları", "Google Drive", "Paylaşım kapsamı ve erişim sınıfı bellidir.", "RIN.3.BP4, BP5"],
-            ["Öğrenilmiş ders, çözüm ve eğitim kayıtları", "İÜC.BİDB.SRÇ.007 / SRÇ.017 / SRÇ.020", "Bilgi tekrar kullanılabilir ve kaynağı izlenebilirdir.", "RIN.3.BP2, BP4"],
+            ["Öğrenilmiş ders, çözüm ve eğitim kayıtları", "SRÇ.007 / SRÇ.017 / SRÇ.020", "Bilgi tekrar kullanılabilir ve kaynağı izlenebilirdir.", "RIN.3.BP2, BP4"],
             ["Uygulanabilir uluslararası standart ve mevzuat", "Yetkili standart/mevzuat kaynağı", "Kaynak, kapsam, son kontrol ve ilgili süreç bağlantısı doğrulanmıştır.", "RIN.3.BP3, BP4, BP6"],
         ]),
         "<h2>3. Çıktı İş Ürünleri</h2>", table(["İş Ürünü", "Kullanım Amacı", "Kalite Kriteri", "İlgili BP"], [
             [LST004, "Bilgi varlıklarının nerede ve nasıl erişilebilir olduğunu göstermek", "Zorunlu alanlar doludur; bağlantı ve erişim sınıfı doğrulanmıştır; durum ve son kontrol tarihi günceldir.", "RIN.3.BP1-BP6"],
             [PRS005, "Bilgi seçimi, sınıflandırma, paylaşma ve gözden geçirme kurallarını tanımlamak", "Kaynak sistem, sahiplik, erişim, doğrulama, yaygınlaştırma ve arşiv kurallarını kapsar.", "RIN.3.BP1-BP6"],
-            ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Hedef kitleyi etkileyen süreç dokümanı bilgilendirmesini kaydetmek", "Süreç, hedef kitle, kanal, tarih ve kanıt bağlantısı bulunur; rutin katalog güncellemeleri için kullanılmaz.", "RIN.3.BP5"],
-            ["İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci etki/değişiklik kaydı", "Standart, mevzuat veya bilgi değişikliğinin süreç etkisini değerlendirmek", "Etkilenen süreç ve kaynak bilgi bağlantısı izlenebilirdir.", "RIN.3.BP6"],
-            ["İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.021)", "BP ve PA/GP karşılama durumunu kanıtla izlemek", "Etiketler gerekçeli, kanıtlar erişilebilir ve aksiyon yönlendirmeleri açıktır.", "PA 2.1-PA 3.2"],
+            ["LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Hedef kitleyi etkileyen süreç dokümanı bilgilendirmesini kaydetmek", "Süreç, hedef kitle, kanal, tarih ve kanıt bağlantısı bulunur; rutin katalog güncellemeleri için kullanılmaz.", "RIN.3.BP5"],
+            ["SRÇ.018 - Değişiklik Talebi Yönetimi Süreci etki/değişiklik kaydı", "Standart, mevzuat veya bilgi değişikliğinin süreç etkisini değerlendirmek", "Etkilenen süreç ve kaynak bilgi bağlantısı izlenebilirdir.", "RIN.3.BP6"],
+            ["FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.021)", "BP ve PA/GP karşılama durumunu kanıtla izlemek", "Etiketler gerekçeli, kanıtlar erişilebilir ve aksiyon yönlendirmeleri açıktır.", "PA 2.1-PA 3.2"],
         ]),
         "<h2>4. Sürüm Geçmişi</h2>", history("İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.021)", REVIEWER, APPROVER),
     ])
@@ -229,7 +229,7 @@ def lst008_body() -> str:
 
 def lst009_body() -> str:
     return "".join([
-        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.021)"], ["Kullanım Amacı", "Bilgi kataloğunun erişilebilirliğini ve bakım düzenini az sayıda uygulanabilir ölçümle izlemek"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
+        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.021)"], ["Kullanım Amacı", "Bilgi kataloğunun erişilebilirliğini ve bakım düzenini az sayıda uygulanabilir ölçümle izlemek"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
         "<h2>2. Hedef ve İzleme Matrisi</h2>", table(["Ölçüm", "Tanım / Hesaplama", "Hedef", "Sıklık", "Veri Kaynağı", "Sorumlu", "Sonuç Kullanımı"], [
             ["Geçerli bağlantı oranı", "Erişilebilir ve doğru hedefe açılan Aktif katalog bağlantısı / kontrol edilen Aktif katalog bağlantısı x 100", "En az %95", "Yıllık ve olay bazlı", LST004, "Proje Yöneticisi", "Bozuk veya taşınmış bağlantıları Gözden Geçirilecek durumuna almak"],
             ["Yıllık gözden geçirme tamamlama oranı", "Yıllık kontrolden geçirilen katalog kaydı / yıllık kontrol kapsamındaki katalog kaydı x 100", "%100", "Yıllık", "LST.004 Son Kontrol Tarihi ve Durum alanları", "Proje Yöneticisi / Kalite Danışmanı", "Eksik kontrolleri tamamlamak ve arşiv/güncelleme ihtiyacını belirlemek"],
@@ -256,7 +256,7 @@ def lst010_body() -> str:
         ["Süreç etkisi için SRÇ.018'e aktar", "R", "R/C", "C", "C", "A/I"],
     ]
     return "".join([
-        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.021)"], ["Kullanım Amacı", "Bilgi Yönetimi Sürecindeki rol, sorumluluk, yetki ve RACI atamalarını tanımlamak"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
+        "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", "LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.021)"], ["Kullanım Amacı", "Bilgi Yönetimi Sürecindeki rol, sorumluluk, yetki ve RACI atamalarını tanımlamak"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
         "<h2>2. Roller, Sorumluluklar ve Yetkiler</h2>", table(["Rol", "Sorumluluk", "Yetki"], roles),
         "<h2>3. RACI Matrisi</h2>", table(["Faaliyet", "Proje Yöneticisi", "Kalite Danışmanı", "İlgili Uzman / Birim", "Süreç / Proje / Sistem Sahibi", "Bilgi İşlem Daire Başkanı"], raci, fixed=True),
         "<h2>4. RACI Gösterimi</h2>", table(["Kod", "Anlamı"], [["R", "Faaliyeti gerçekleştirir."], ["A", "Nihai sorumluluğu taşır / karar verir."], ["C", "Görüşü alınır."], ["I", "Bilgilendirilir."]]),
@@ -266,7 +266,7 @@ def lst010_body() -> str:
 
 def blank_review_body() -> str:
     return "".join([
-        "<h2>1. Form Bilgileri</h2>", table(["Alan", "Değer"], [["Form Kodu ve Adı", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.021)"], ["Süreç", SRC021], ["Değerlendirme Tarihi", "<em>GG-AA-YYYY</em>"], ["Değerlendiren", "<em>Rol / kişi</em>"], ["Durum", "Boş Form"], ["Sürüm", "v1.0"]]),
+        "<h2>1. Form Bilgileri</h2>", table(["Alan", "Değer"], [["Form Kodu ve Adı", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.021)"], ["Süreç", SRC021], ["Değerlendirme Tarihi", "<em>GG-AA-YYYY</em>"], ["Değerlendiren", "<em>Rol / kişi</em>"], ["Durum", "Boş Form"], ["Sürüm", "v1.0"]]),
         "<h2>2. Durum Değerleri</h2>", table(["Durum", "Anlamı"], LABELS),
         "<h2>3. BP Takip Matrisi</h2>", table(["BP", "Standart Beklentisi", "Mevcut Karşılama", "Karşılayan Doküman / Kayıt", "Durum", "Eksik / Tamamlayıcı Aksiyon"], [[bp, expectation, "<em>Değerlendirme açıklaması</em>", "<em>Kanıt bağlantısı</em>", "<em>YOK / ZAYIF / DAĞINIK / VAR / KAPSAM DIŞI</em>", "<em>Aksiyon / gerekçe</em>"] for bp, _, expectation in RIN3_BPS]),
         "<h2>4. PA / GP Takip Matrisi</h2>", table(["PA", "GP", "Standart Beklentisi", "Mevcut Karşılama", "Karşılayan Doküman / Kayıt", "Durum", "Eksik / Tamamlayıcı Aksiyon"], [[pa, gp, expectation, "<em>Değerlendirme açıklaması</em>", "<em>Kanıt bağlantısı</em>", "<em>Etiket</em>", "<em>Aksiyon / gerekçe</em>"] for pa, gp, expectation in GPS]),
@@ -326,14 +326,14 @@ def procedure_body() -> str:
         "<h2>3. Kapsam</h2>", p("Bu prosedür; BİDB süreç, proje, yazılım, altyapı, destek, müşteri, eğitim, standart ve mevzuat bilgisinin Confluence, Jira, Bitbucket, Google Drive ve ilgili kaynak sistemlerde yönetilmesine uygulanır."),
         "<ul><li>bilgi adayının ve yetkili kaynağın belirlenmesi,</li><li>kategori ve erişim sınıfının belirlenmesi,</li><li>LST.004 kaydının oluşturulması ve sürdürülmesi,</li><li>teknik veya standart/mevzuat doğrulaması,</li><li>yaygınlaştırma, gözden geçirme ve arşivleme.</li></ul>",
         "<h2>4. Kapsam Dışı</h2>", "<ul><li>Kaynak sistemler arasında dosya kopyalayarak yeni bir merkezi bilgi deposu oluşturmak,</li><li>kaynak sistem erişim yetkilerini LST.004 üzerinden vermek veya değiştirmek,</li><li>her rutin katalog satırı için ayrı resmî onay almak,</li><li>proje iş takibini veya kaynak kod sürüm yönetimini LST.004 üzerinden yürütmek.</li></ul>",
-        "<h2>5. Referanslar</h2>", table(["Referans", "Açıklama"], [[SRC021, "Bilgi yönetimi süreç kapsamı ve RIN.3 uygulamaları"], [LST004, "Bilgi varlığı erişim, sınıflandırma ve durum kaydı"], ["İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Bu prosedürün doküman yapısı"], ["İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "Onaylı doküman ve değişiklik kontrolü"], ["İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci", "Süreç etkisi doğurabilecek bilgi, standart veya mevzuat değişikliğinin değerlendirilmesi"]]),
+        "<h2>5. Referanslar</h2>", table(["Referans", "Açıklama"], [[SRC021, "Bilgi yönetimi süreç kapsamı ve RIN.3 uygulamaları"], [LST004, "Bilgi varlığı erişim, sınıflandırma ve durum kaydı"], ["PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Bu prosedürün doküman yapısı"], ["SRÇ.001 - Dokümantasyon Süreci", "Onaylı doküman ve değişiklik kontrolü"], ["SRÇ.018 - Değişiklik Talebi Yönetimi Süreci", "Süreç etkisi doğurabilecek bilgi, standart veya mevzuat değişikliğinin değerlendirilmesi"]]),
         "<h2>6. Terimler ve Kısaltmalar</h2>", table(["Terim / Kısaltma", "Açıklama"], [["Bilgi Varlığı", "Kurumsal karar veya yeniden kullanım için değer taşıyan bilgi ya da bilgiye erişim bağlantısı"], ["Yetkili Kaynak", "Bilginin güncel ve asıl kopyasının tutulduğu sistem"], ["Bilgi Kataloğu", "Bilgi varlıklarının asgari metadata ve erişim bağlantılarını tutan LST.004"], ["Olay Bazlı Gözden Geçirme", "Bozuk bağlantı, kaynak taşınması, süreç/proje/sistem veya standart/mevzuat değişikliği gibi bir tetikleyiciyle yapılan kontrol"]]),
         "<h2>7. Roller ve Sorumluluklar</h2>", table(["Rol", "Sorumluluk", "Yetki"], [["Proje Yöneticisi", "Bilgi yönetimi stratejisini, katalog yapısını ve kayıtları sürdürmek", "Rutin kayıt oluşturma, güncelleme ve arşivleme"], ["Kalite Danışmanı", "Uluslararası standart, kalite ve süreç bilgisini izlemek ve doğrulamak", "Standart/kalite bilgisi ve süreç etkisi önerisi"], ["İlgili Uzman / Birim", "Gerektiğinde teknik veya alan bilgisini doğrulamak", "Uzmanlık alanında uygunluk görüşü"], ["Süreç / Proje / Sistem Sahibi", "Yetkili kaynağı sürdürmek ve değişikliği bildirmek", "Kendi kaynağında içerik ve erişim kararı"], ["Bilgi Kullanıcısı", "Bilgiyi kullanmak ve hata/güncellik sorunu bildirmek", "Geri bildirim ve düzeltme talebi"]]),
         "<h2>8. Genel İlkeler</h2>", table(["İlke", "Açıklama"], [["Kaynakta koruma", "Dosya ve kayıt yetkili kaynak sisteminde tutulur; katalog erişim bağlantısı sağlar."], ["Asgari bürokrasi", "Rutin katalog ekleri ayrı onay veya duyuru gerektirmez; bakım sorumluluğu Proje Yöneticisindedir."], ["Doğrulanmış bağlantı", "Kaynak ve erişim hedefi doğrulanmadan katalog satırı eklenmez."], ["Rol bazlı erişim", "Erişim sınıfı bilgilendiricidir; gerçek yetki kaynak sistem tarafından uygulanır."], ["Yaşayan katalog", "Katalog diğer süreçler ve projeler olgunlaştıkça güncellenir."], ["İzlenebilir değişiklik", "Süreç etkisi doğurabilecek standart, mevzuat veya bilgi değişikliği SRÇ.018'e aktarılır."]]),
         "<h2>9. Prosedür Esasları</h2>", table(["Esas / Kural", "Açıklama", "Zorunluluk", "Not"], [["Katalog alanları", "Bilgi başlığı, kısa açıklama, kategori, kaynak sistem, erişim bağlantısı, ilgili süreç/proje/sistem, ilgili uzman/birim, erişim sınıfı, son kontrol tarihi ve durum tutulur.", "Zorunlu", "LST.004"], ["Bilgi kategorileri", categories, "Zorunlu", "Gerektiğinde mevcut kategori içinde alt açıklama kullanılır."], ["Erişim sınıfları", "BİDB Geneli; İlgili Proje/Ekip; Yönetimle Sınırlı; Müşteri Birimiyle Paylaşımlı", "Zorunlu", "Kaynak sistem yetkisinin yerine geçmez."], ["Durumlar", "Aktif; Gözden Geçirilecek; Arşivlenmiş", "Zorunlu", "Hatalı/mükerrer kayıt dışında silme yapılmaz."], ["Doğrulama", "Teknik içerik gerektiğinde uzman/birim; standart ve kalite bilgisi Kalite Danışmanı tarafından doğrulanır.", "Koşullu", "Rutin katalog satırı resmî onay gerektirmez."], ["Yaygınlaştırma", "Rutin ek için duyuru yoktur; hedef kitleyi etkileyen önemli bilgi uygun kurumsal kanaldan paylaşılır.", "Koşullu", "Süreç dokümanı duyurusu LST.012'de izlenir."]]),
         "<h2>10. Uygulama / Strateji Matrisi</h2>", table(["Alan / Aşama", "Uygulama Kuralı", "Sorumlu", "Kayıt / Kanıt", "Not"], [["1. Bilgi adayını belirle", "Tanımlı tetikleyicilerden doğan, kalıcı değer veya yeniden kullanım potansiyeli bulunan bilgiyi seç.", "Proje Yöneticisi / Kalite Danışmanı / İlgili Sahip", "Kaynak sistem kaydı", "Her geçici iş kaydı kataloğa alınmaz."], ["2. Yetkili kaynağı doğrula", "Bilginin asıl sistemini, bağlantısını ve erişim koşulunu kontrol et.", "Proje Yöneticisi", "Doğrulanmış bağlantı", "Tahmini veya genel bağlantı kullanılmaz."], ["3. Sınıflandır", "Kategori, ilgili süreç/proje/sistem, uzman/birim ve erişim sınıfını belirle.", "Proje Yöneticisi", LST004, "Asgari metadata"], ["4. Doğrula", "Gerekiyorsa teknik içeriği ilgili uzman/birime; standart/kalite bilgisini Kalite Danışmanına doğrulat.", "İlgili Uzman / Kalite Danışmanı", "Kaynak ve katalog kaydı", "Koşullu"], ["5. Katalogla", "Yeni satır oluştur veya mevcut satırı güncelle.", "Proje Yöneticisi", LST004, "Durum Aktif veya Gözden Geçirilecek"], ["6. Paylaş", "Rutin bilgiyi katalogda erişilebilir kıl; önemli bilgiyi hedef kitleye mevcut kurumsal kanaldan duyur.", "Proje Yöneticisi / İlgili Sahip", "Confluence / doğal iletişim kaydı / koşullu LST.012", "Gereksiz duyuru üretilmez."], ["7. Gözden geçir", "Yıllık veya olay bazlı olarak bağlantı, kaynak, erişim ve güncelliği kontrol et.", "Proje Yöneticisi / Kalite Danışmanı", "Son Kontrol Tarihi / Durum", "Standart/mevzuat alanında Kalite Danışmanı katkısı"], ["8. Güncelle veya arşivle", "Geçerli bilgiyi Aktif tut; düzeltilecek bilgiyi Gözden Geçirilecek yap; geçersiz bilgiyi Arşivlenmiş yap ve ardıl bağlantıyı koru.", "Proje Yöneticisi", LST004, "Hatalı/mükerrer kayıt silinebilir."], ["9. Süreç etkisini yönlendir", "Standart, mevzuat veya bilgi değişikliği süreci etkileyebilecekse SRÇ.018'e aktar.", "Proje Yöneticisi / Kalite Danışmanı", "SRÇ.018 kaydı", "Etki analizi SRÇ.018 kapsamındadır."]]),
         "<h2>11. Yayın, Erişim ve Bakım Kuralları</h2>", table(["Kural Alanı", "Kural", "Sorumlu", "Kayıt / Kanıt"], [["Yayın", "Onaylı süreç ve prosedür Confluence'ta; bilgi varlığı kendi yetkili kaynak sisteminde tutulur.", "Proje Yöneticisi / Yayımlayan", "Confluence ve kaynak sistem geçmişi"], ["Erişim", "Katalog, erişim sınıfını gösterir; kaynağa erişim kaynak sistem kurallarına tabidir.", "Kaynak Sistem Sahibi", "Sistem yetkileri"], ["Bakım", "Katalog yılda bir kez ve olay bazlı tetikleyicilerde gözden geçirilir.", "Proje Yöneticisi / Kalite Danışmanı", "LST.004 Son Kontrol Tarihi ve Durum"], ["Duyuru", "Rutin ek duyurulmaz; önemli değişiklik hedef kitleye uygun kanaldan iletilir.", "Proje Yöneticisi / İlgili Sahip", "Doğal iletişim kaydı / koşullu LST.012"], ["Arşiv", "Geçersiz bilgi Arşivlenmiş yapılır ve varsa ardıl bağlantı korunur.", "Proje Yöneticisi", LST004]]),
-        "<h2>12. Kayıtlar ve Kanıtlar</h2>", table(["Kayıt / Kanıt", "Kullanım Amacı", "Saklama Yeri", "Sorumlu", "Not"], [[LST004, "Bilgi varlıklarını ve doğrulanmış erişim bağlantılarını izlemek", "03 - Kayıtlar ve Listeler", "Proje Yöneticisi", "Yaşayan merkezi katalog"], ["Kaynak sistem kaydı", "Bilginin asıl ve güncel kopyasını korumak", "Confluence / Jira / Bitbucket / Google Drive / ilgili sistem", "Kaynak Sistem Sahibi", "Katalog içeriğin yerine geçmez."], ["İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Süreç dokümanının hedef kitle bilgilendirmesini izlemek", "03 - Kayıtlar ve Listeler", "Proje Yöneticisi", "Rutin katalog satırı için kullanılmaz."], ["SRÇ.018 etki/değişiklik kaydı", "Süreç etkisi doğurabilecek değişikliği değerlendirmek", "SRÇ.018 kapsamında tanımlı ortam", "Proje Yöneticisi / Kalite Danışmanı", "Koşullu"]]),
+        "<h2>12. Kayıtlar ve Kanıtlar</h2>", table(["Kayıt / Kanıt", "Kullanım Amacı", "Saklama Yeri", "Sorumlu", "Not"], [[LST004, "Bilgi varlıklarını ve doğrulanmış erişim bağlantılarını izlemek", "03 - Kayıtlar ve Listeler", "Proje Yöneticisi", "Yaşayan merkezi katalog"], ["Kaynak sistem kaydı", "Bilginin asıl ve güncel kopyasını korumak", "Confluence / Jira / Bitbucket / Google Drive / ilgili sistem", "Kaynak Sistem Sahibi", "Katalog içeriğin yerine geçmez."], ["LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı", "Süreç dokümanının hedef kitle bilgilendirmesini izlemek", "03 - Kayıtlar ve Listeler", "Proje Yöneticisi", "Rutin katalog satırı için kullanılmaz."], ["SRÇ.018 etki/değişiklik kaydı", "Süreç etkisi doğurabilecek değişikliği değerlendirmek", "SRÇ.018 kapsamında tanımlı ortam", "Proje Yöneticisi / Kalite Danışmanı", "Koşullu"]]),
         "<h2>13. Sürüm Geçmişi</h2>", history("Bilgi Yönetimi Prosedürü", REVIEWER, APPROVER),
     ])
 
@@ -343,20 +343,20 @@ def template_header(code: str, title: str, usage: str) -> str:
 
 
 def lst002_template_body() -> str:
-    return template_header("İÜC.BİDB.LST.002.Ş", "Doküman değişikliklerinin SRÇ.001'de tanımlı mevcut kayıt yapısıyla izlenmesi için kullanılır; yeni bir onay veya talep iş akışı oluşturmaz.", LST002) + "".join([
+    return template_header("LST.002.Ş", "Doküman değişikliklerinin SRÇ.001'de tanımlı mevcut kayıt yapısıyla izlenmesi için kullanılır; yeni bir onay veya talep iş akışı oluşturmaz.", LST002) + "".join([
         "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", LST002], ["Kullanım Amacı", "Doküman değişikliklerini tarih, neden, etkilenen doküman, sorumlu ve durum bilgisiyle izlemek"], ["Sorumlu", "Doküman Sorumlusu / Proje Yöneticisi"], ["Durum", "<em>Aktif</em>"], ["Sürüm", "<em>v1.0</em>"], ["Son Gözden Geçirme Tarihi", "<em>GG-AA-YYYY</em>"]]),
         "<h2>2. Kullanım Değerleri</h2>", table(["Alan", "Kullanım Kuralı"], [["Kapsam", "Yeni veya güncellenen kontrollü dokümanın değişiklik kaydı."], ["Zorunlu Bilgi", "Değişiklik nedeni/özeti, tarih, etkilenen doküman, uygulayan ve durum."], ["Sürüm", "Dokümanın değişiklik öncesi ve sonrası sürümü yazılır; yeni dokümanda önceki sürüm '-' kullanılır."], ["Durum", "Kayıt, gerçek doküman değişikliğinin mevcut durumunu gösterir."]]),
-        "<h2>3. Doküman Değişiklik Kayıtları</h2>", table(["Kayıt No", "Tarih", "Doküman Kodu", "Doküman Adı", "Önceki Sürüm", "Yeni Sürüm", "Değişiklik Özeti", "Talep Eden", "Uygulayan", "Durum"], [["<em>DK-YYYY-NNN</em>", "<em>GG-AA-YYYY</em>", "<em>İÜC.BİDB.[TÜR].[NO]</em>", "<em>Doküman Adı</em>", "<em>Sürüm / -</em>", "<em>Sürüm</em>", "<em>Değişiklik nedeni ve özeti</em>", "<em>Rol / kişi</em>", "<em>Rol / kişi</em>", "<em>Durum</em>"]]),
+        "<h2>3. Doküman Değişiklik Kayıtları</h2>", table(["Kayıt No", "Tarih", "Doküman Kodu", "Doküman Adı", "Önceki Sürüm", "Yeni Sürüm", "Değişiklik Özeti", "Talep Eden", "Uygulayan", "Durum"], [["<em>DK-YYYY-NNN</em>", "<em>GG-AA-YYYY</em>", "<em>[TÜR].[NO]</em>", "<em>Doküman Adı</em>", "<em>Sürüm / -</em>", "<em>Sürüm</em>", "<em>Değişiklik nedeni ve özeti</em>", "<em>Rol / kişi</em>", "<em>Rol / kişi</em>", "<em>Durum</em>"]]),
         "<h2>4. Sürüm Geçmişi</h2>", table(["Sürüm", "Tarih", "Açıklama", "Hazırlayan / Güncelleyen", "Gözden Geçiren", "Onay"], [["<em>v0.1</em>", "<em>GG-AA-YYYY</em>", "<em>İlk taslak</em>", PREPARED_BY, "<em>Rol / kişi</em>", "<em>Rol / kişi</em>"]]),
     ])
 
 
 def lst002_body() -> str:
     rows = [
-        ["DK-2026-001", "15-07-2026", "İÜC.BİDB.LST.002", "Doküman Değişiklik Kaydı", "Eski kayıt yapısı", "v1.0", "Eski ve kullanılmayan içerik kaldırıldı; SRÇ.001'de tanımlı değişiklik kaydı alanlarıyla yeniden oluşturuldu.", "Kalite Danışmanı", PREPARED_BY, "Tamamlandı"],
-        ["DK-2026-002", "15-07-2026", "İÜC.BİDB.SRÇ.021", "Bilgi Yönetimi Süreci", "-", "v1.0", "RIN.3 BP1-BP6 izlenebilir süreç tanımı ve destek paketi oluşturuldu.", "Süreç Sahibi", PREPARED_BY, "Confluence'ta yayımlandı"],
-        ["DK-2026-003", "15-07-2026", "İÜC.BİDB.PRS.005", "Bilgi Yönetimi Prosedürü", "-", "v1.0", "Bilgi seçimi, kaynakta tutma, kataloglama, erişim, yaygınlaştırma ve gözden geçirme kuralları oluşturuldu.", "Süreç Sahibi", PREPARED_BY, "Confluence'ta yayımlandı"],
-        ["DK-2026-004", "15-07-2026", "İÜC.BİDB.LST.004", "Bilgi Kataloğu", "-", "v1.0", "Boş kod, eski gözden geçirme matrisi anlamından ayrı olarak Bilgi Kataloğu için tanımlandı; ilk doğrulanmış kayıtlar eklendi.", "Süreç Sahibi", PREPARED_BY, "Confluence'ta yayımlandı"],
+        ["DK-2026-001", "15-07-2026", "LST.002", "Doküman Değişiklik Kaydı", "Eski kayıt yapısı", "v1.0", "Eski ve kullanılmayan içerik kaldırıldı; SRÇ.001'de tanımlı değişiklik kaydı alanlarıyla yeniden oluşturuldu.", "Kalite Danışmanı", PREPARED_BY, "Tamamlandı"],
+        ["DK-2026-002", "15-07-2026", "SRÇ.021", "Bilgi Yönetimi Süreci", "-", "v1.0", "RIN.3 BP1-BP6 izlenebilir süreç tanımı ve destek paketi oluşturuldu.", "Süreç Sahibi", PREPARED_BY, "Confluence'ta yayımlandı"],
+        ["DK-2026-003", "15-07-2026", "PRS.005", "Bilgi Yönetimi Prosedürü", "-", "v1.0", "Bilgi seçimi, kaynakta tutma, kataloglama, erişim, yaygınlaştırma ve gözden geçirme kuralları oluşturuldu.", "Süreç Sahibi", PREPARED_BY, "Confluence'ta yayımlandı"],
+        ["DK-2026-004", "15-07-2026", "LST.004", "Bilgi Kataloğu", "-", "v1.0", "Boş kod, eski gözden geçirme matrisi anlamından ayrı olarak Bilgi Kataloğu için tanımlandı; ilk doğrulanmış kayıtlar eklendi.", "Süreç Sahibi", PREPARED_BY, "Confluence'ta yayımlandı"],
     ]
     return "".join([
         "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", LST002], ["Kullanım Amacı", "Doküman değişikliklerini SRÇ.001'de tanımlı mevcut işleyişle izlemek"], ["Sorumlu", "Doküman Sorumlusu / Proje Yöneticisi"], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
@@ -367,7 +367,7 @@ def lst002_body() -> str:
 
 
 def lst004_template_body() -> str:
-    return template_header("İÜC.BİDB.LST.004.Ş", "Bilgi varlıklarının yetkili kaynaklarını, doğrulanmış erişim bağlantılarını, sınıflarını ve gözden geçirme durumlarını yönetmek için kullanılır.", LST004) + "".join([
+    return template_header("LST.004.Ş", "Bilgi varlıklarının yetkili kaynaklarını, doğrulanmış erişim bağlantılarını, sınıflarını ve gözden geçirme durumlarını yönetmek için kullanılır.", LST004) + "".join([
         "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", LST004], ["Kullanım Amacı", "Bilgi varlıklarına doğrulanmış ve sınıflandırılmış erişim sağlamak"], ["Sorumlu", "Proje Yöneticisi"], ["Durum", "<em>Aktif</em>"], ["Sürüm", "<em>v1.0</em>"], ["Son Gözden Geçirme Tarihi", "<em>GG-AA-YYYY</em>"]]),
         "<h2>2. Kullanım Değerleri</h2>", table(["Alan", "Kullanım Kuralı"], [["Kategori", "Süreç ve kalite; Proje/analiz/tasarım/mimari; Yazılım/kaynak kod; Altyapı/sistem/işletim; Destek/çözüm/öğrenilmiş ders; Müşteri/toplantı/karar; Eğitim/kılavuz/görsel kayıt; Uygulanabilir Standartlar ve Mevzuat"], ["Erişim Sınıfı", "BİDB Geneli; İlgili Proje/Ekip; Yönetimle Sınırlı; Müşteri Birimiyle Paylaşımlı"], ["Durum", "Aktif; Gözden Geçirilecek; Arşivlenmiş"], ["Bağlantı", "Yalnızca doğrulanmış yetkili kaynak bağlantısı kullanılır."]]),
         "<h2>3. Bilgi Kataloğu</h2>", table(["Bilgi Başlığı", "Kısa Açıklama", "Bilgi Kategorisi", "Kaynak Sistem", "Erişim Bağlantısı", "İlgili Süreç / Proje / Sistem", "İlgili Uzman / Birim", "Erişim Sınıfı", "Son Kontrol Tarihi", "Durum"], [["<em>Bilgi başlığı</em>", "<em>Kısa açıklama</em>", "<em>Kategori</em>", "<em>Kaynak sistem</em>", "<em>Doğrulanmış bağlantı</em>", "<em>Süreç / proje / sistem</em>", "<em>Uzman / birim</em>", "<em>Erişim sınıfı</em>", "<em>GG-AA-YYYY</em>", "<em>Aktif / Gözden Geçirilecek / Arşivlenmiş</em>"]]),
@@ -383,10 +383,10 @@ def lst004_body(storage: bool = True) -> str:
     entries = [
         [SRC021, "BİDB bilgi varlıklarının belirlenmesi, paylaşılması ve iyileştirilmesi için süreç tanımı", "Süreç ve kalite", "Confluence", page_link(SRC021) if storage else SRC021, SRC021, "Proje Yöneticisi / Kalite Danışmanı", "BİDB Geneli", "15-07-2026", "Aktif"],
         [PRS005, "Bilgi seçimi, kaynakta tutma, kataloglama, yaygınlaştırma ve gözden geçirme kuralları", "Süreç ve kalite", "Confluence", page_link(PRS005) if storage else PRS005, SRC021, "Proje Yöneticisi / Kalite Danışmanı", "BİDB Geneli", "15-07-2026", "Aktif"],
-        ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "Aktif kurumsal dokümanların kod, ad, sahiplik, sürüm ve konum bilgileri", "Süreç ve kalite", "Confluence", page_link("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi") if storage else "İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "Proje Yöneticisi / Kalite Danışmanı", "BİDB Geneli", "15-07-2026", "Aktif"],
-        ["İÜC.BİDB.LST.006 - Standart Süreç Envanteri", "Güncel standart süreç seti, kurumsal eşleştirme, sahiplik ve durum bilgileri", "Süreç ve kalite", "Confluence", page_link("İÜC.BİDB.LST.006 - Standart Süreç Envanteri") if storage else "İÜC.BİDB.LST.006 - Standart Süreç Envanteri", "İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci", "Kalite Danışmanı / Süreç Sahipleri", "BİDB Geneli", "15-07-2026", "Aktif"],
-        ["İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "Doküman üretim, kodlama, yayın ve sürdürme kuralları", "Süreç ve kalite", "Confluence", page_link("İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü") if storage else "İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "Proje Yöneticisi / Kalite Danışmanı", "BİDB Geneli", "15-07-2026", "Aktif"],
-        ["İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "Kurumsal doküman adlandırma, yapı ve yazım kuralları", "Süreç ve kalite", "Confluence", page_link("İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı") if storage else "İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "Kalite Danışmanı", "BİDB Geneli", "15-07-2026", "Aktif"],
+        ["LST.001 - Aktif Dokümanlar Listesi", "Aktif kurumsal dokümanların kod, ad, sahiplik, sürüm ve konum bilgileri", "Süreç ve kalite", "Confluence", page_link("LST.001 - Aktif Dokümanlar Listesi") if storage else "LST.001 - Aktif Dokümanlar Listesi", "SRÇ.001 - Dokümantasyon Süreci", "Proje Yöneticisi / Kalite Danışmanı", "BİDB Geneli", "15-07-2026", "Aktif"],
+        ["LST.006 - Standart Süreç Envanteri", "Güncel standart süreç seti, kurumsal eşleştirme, sahiplik ve durum bilgileri", "Süreç ve kalite", "Confluence", page_link("LST.006 - Standart Süreç Envanteri") if storage else "LST.006 - Standart Süreç Envanteri", "SRÇ.004 - Süreç Kurulumu Süreci", "Kalite Danışmanı / Süreç Sahipleri", "BİDB Geneli", "15-07-2026", "Aktif"],
+        ["PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "Doküman üretim, kodlama, yayın ve sürdürme kuralları", "Süreç ve kalite", "Confluence", page_link("PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü") if storage else "PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "SRÇ.001 - Dokümantasyon Süreci", "Proje Yöneticisi / Kalite Danışmanı", "BİDB Geneli", "15-07-2026", "Aktif"],
+        ["KLV.001 - Doküman Yazım Kuralları Talimatı", "Kurumsal doküman adlandırma, yapı ve yazım kuralları", "Süreç ve kalite", "Confluence", page_link("KLV.001 - Doküman Yazım Kuralları Talimatı") if storage else "KLV.001 - Doküman Yazım Kuralları Talimatı", "SRÇ.001 - Dokümantasyon Süreci", "Kalite Danışmanı", "BİDB Geneli", "15-07-2026", "Aktif"],
     ]
     return "".join([
         "<h2>1. Liste Özeti</h2>", table(["Alan", "Değer"], [["Liste Kodu ve Adı", LST004], ["Kullanım Amacı", "Bilgi varlıklarının yetkili kaynağına doğrulanmış ve sınıflandırılmış erişim sağlamak"], ["Sorumlu", OWNER], ["Durum", "Aktif"], ["Sürüm", "v1.0"], ["Son Gözden Geçirme Tarihi", "15-07-2026"]]),
@@ -404,10 +404,10 @@ def update_lst006() -> None:
         def repl(match: re.Match[str]) -> str:
             row = match.group(0)
             plain = html.unescape(re.sub(r"<[^>]+>", "", row))
-            if "İÜC.BİDB.SRÇ.021" not in plain:
+            if "SRÇ.021" not in plain:
                 return row
             cells = re.findall(r"(<td[^>]*>)(.*?)(</td>)", row, flags=re.I | re.S)
-            values = ["RIN.3", "Knowledge management", "İÜC.BİDB.SRÇ.021", "Bilgi Yönetimi Süreci", OWNER, "Aktif", "Süreç paketi oluşturulmuş, Confluence'ta yayımlanmış ve süreç özel kayıtlarıyla yönetilmektedir."]
+            values = ["RIN.3", "Knowledge management", "SRÇ.021", "Bilgi Yönetimi Süreci", OWNER, "Aktif", "Süreç paketi oluşturulmuş, Confluence'ta yayımlanmış ve süreç özel kayıtlarıyla yönetilmektedir."]
             return "<tr>" + "".join(f"{a}{html.escape(v)}{c}" for (a, _, c), v in zip(cells, values)) + "</tr>"
         updated = re.sub(r"<tr[^>]*>.*?</tr>", repl, doc, flags=re.I | re.S)
         path.write_text(updated, encoding="utf-8")
@@ -434,22 +434,22 @@ def section_upsert(doc: str, heading_fragment: str, code: str, cells: list[str])
 
 
 def update_lst001() -> None:
-    page = PAGE_ROOT / "03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi"
+    page = PAGE_ROOT / "03-kayitlar-ve-listeler/lst-001-aktif-dokumanlar-listesi"
     storage = (page / "body.storage.xhtml").read_text(encoding="utf-8")
-    storage = section_upsert(storage, "3. Süreç Dokümanları", "İÜC.BİDB.SRÇ.021", ["İÜC.BİDB.SRÇ.021", "Bilgi Yönetimi Süreci", "RIN.3", OWNER, "Aktif", "v1.0", "15-02-2025", "01 - Süreç Dokümanları"])
+    storage = section_upsert(storage, "3. Süreç Dokümanları", "SRÇ.021", ["SRÇ.021", "Bilgi Yönetimi Süreci", "RIN.3", OWNER, "Aktif", "v1.0", "15-02-2025", "01 - Süreç Dokümanları"])
     for code, name, scope in [
-        ("İÜC.BİDB.LST.002", "Doküman Değişiklik Kaydı", "SRÇ.001 kontrollü doküman değişiklik kaydı"),
-        ("İÜC.BİDB.LST.004", "Bilgi Kataloğu", "SRÇ.021 bilgi varlığı erişim ve durum kataloğu"),
+        ("LST.002", "Doküman Değişiklik Kaydı", "SRÇ.001 kontrollü doküman değişiklik kaydı"),
+        ("LST.004", "Bilgi Kataloğu", "SRÇ.021 bilgi varlığı erişim ve durum kataloğu"),
     ]:
         storage = section_upsert(storage, "7. Genel Kayıt ve Listeler", code, [code, name, scope, OWNER if code.endswith("004") else "Doküman Sorumlusu / Proje Yöneticisi", "Aktif", "v1.0", "03 - Kayıtlar ve Listeler"])
     for code, name, usage in [
-        ("İÜC.BİDB.LST.002.Ş", "Doküman Değişiklik Kaydı Şablonu", "LST.002 üretimi"),
-        ("İÜC.BİDB.LST.004.Ş", "Bilgi Kataloğu Şablonu", "LST.004 üretimi"),
+        ("LST.002.Ş", "Doküman Değişiklik Kaydı Şablonu", "LST.002 üretimi"),
+        ("LST.004.Ş", "Bilgi Kataloğu Şablonu", "LST.004 üretimi"),
     ]:
         storage = section_upsert(storage, "6. Şablonlar", code, [code, name, usage, "Aktif", "v1.0", "15-02-2025", "02 - Şablonlar"])
-    storage = section_upsert(storage, "4. Prosedürler", "İÜC.BİDB.PRS.005", ["İÜC.BİDB.PRS.005", "Bilgi Yönetimi Prosedürü", "SRÇ.021", OWNER, "Aktif", "v1.0", "15-02-2025", "07 - Prosedürler"])
+    storage = section_upsert(storage, "4. Prosedürler", "PRS.005", ["PRS.005", "Bilgi Yönetimi Prosedürü", "SRÇ.021", OWNER, "Aktif", "v1.0", "15-02-2025", "07 - Prosedürler"])
     (page / "body.storage.xhtml").write_text(storage, encoding="utf-8")
-    (page / "body.view.html").write_text(build_view("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", storage), encoding="utf-8")
+    (page / "body.view.html").write_text(build_view("LST.001 - Aktif Dokümanlar Listesi", storage), encoding="utf-8")
 
 
 def update_parent_registers(pages: list[Path]) -> None:
@@ -458,11 +458,11 @@ def update_parent_registers(pages: list[Path]) -> None:
     if not tbody:
         raise RuntimeError("Template register table body not found")
     rows = re.findall(r"<tr[^>]*>.*?</tr>", tbody.group(2), flags=re.I | re.S)
-    rows = [r for r in rows if not any(code in html.unescape(re.sub(r"<[^>]+>", "", r)) for code in ("İÜC.BİDB.LST.002.Ş", "İÜC.BİDB.LST.004.Ş"))]
+    rows = [r for r in rows if not any(code in html.unescape(re.sub(r"<[^>]+>", "", r)) for code in ("LST.002.Ş", "LST.004.Ş"))]
     additions = []
     for code, name, title in [
-        ("İÜC.BİDB.LST.002.Ş", "Doküman Değişiklik Kaydı Şablonu", "İÜC.BİDB.LST.002.Ş - Doküman Değişiklik Kaydı Şablonu"),
-        ("İÜC.BİDB.LST.004.Ş", "Bilgi Kataloğu Şablonu", "İÜC.BİDB.LST.004.Ş - Bilgi Kataloğu Şablonu"),
+        ("LST.002.Ş", "Doküman Değişiklik Kaydı Şablonu", "LST.002.Ş - Doküman Değişiklik Kaydı Şablonu"),
+        ("LST.004.Ş", "Bilgi Kataloğu Şablonu", "LST.004.Ş - Bilgi Kataloğu Şablonu"),
     ]:
         number = str(len(rows) + len(additions) + 1)
         additions.append("<tr>" + "".join(f'<td class="confluenceTd">{cell}</td>' for cell in [number, html.escape(code), html.escape(name), "Aktif", page_link(title)]) + "</tr>")
@@ -470,7 +470,7 @@ def update_parent_registers(pages: list[Path]) -> None:
     template_dir = PAGE_ROOT / "02-sablonlar"
     (template_dir / "body.storage.xhtml").write_text(template_doc + "\n", encoding="utf-8")
     (template_dir / "body.view.html").write_text(build_view("02 - Şablonlar", template_doc), encoding="utf-8")
-    procedures = parent_register_body("Prosedür", [("İÜC.BİDB.PRS.001", "Yazılım Projeleri Dokümantasyon Prosedürü", "İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"), ("İÜC.BİDB.PRS.002", "Süreç Tasarım Prosedürü", "İÜC.BİDB.PRS.002 - Süreç Tasarım Prosedürü"), ("İÜC.BİDB.PRS.003", "Süreç Değerlendirme Prosedürü", "İÜC.BİDB.PRS.003 - Süreç Değerlendirme Prosedürü"), ("İÜC.BİDB.PRS.004", "Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü", "İÜC.BİDB.PRS.004 - Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü"), ("İÜC.BİDB.PRS.005", "Bilgi Yönetimi Prosedürü", PRS005)])
+    procedures = parent_register_body("Prosedür", [("PRS.001", "Yazılım Projeleri Dokümantasyon Prosedürü", "PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"), ("PRS.002", "Süreç Tasarım Prosedürü", "PRS.002 - Süreç Tasarım Prosedürü"), ("PRS.003", "Süreç Değerlendirme Prosedürü", "PRS.003 - Süreç Değerlendirme Prosedürü"), ("PRS.004", "Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü", "PRS.004 - Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü"), ("PRS.005", "Bilgi Yönetimi Prosedürü", PRS005)])
     proc_dir = PAGE_ROOT / "07-prosedurler"
     (proc_dir / "body.storage.xhtml").write_text(procedures + "\n", encoding="utf-8")
     (proc_dir / "body.view.html").write_text(build_view("07 - Prosedürler", procedures), encoding="utf-8")
@@ -506,11 +506,11 @@ def update_rpr001() -> None:
     storage = storage.replace("SRÇ.001, SRÇ.004, SRÇ.005 ve SRÇ.006 değerlendirmeleri", "SRÇ.001, SRÇ.004, SRÇ.005, SRÇ.006 ve SRÇ.021 değerlendirmeleri")
     storage = storage.replace("<td class=\"confluenceTd\">14-07-2026</td>", "<td class=\"confluenceTd\">15-07-2026</td>", 1)
     summary_rows = [
-        ["İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "SUP.7 BP1-BP8; PA 2.1-PA 3.2", "5 VAR; 3 DAĞINIK", "9 VAR; 9 DAĞINIK; 3 ZAYIF", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001) - Değerlendirme #1", "Doküman standartları, şablonlar ve teknik yayın/bakım yapısı güçlü; formal gözden geçirme, gerçek ölçüm, yetkinlik ve bilgilendirme kanıtları geliştirilmelidir."],
-        ["İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci", "PIM.1 BP1-BP6; PA 2.1-PA 3.2", "4 VAR; 1 DAĞINIK; 1 YOK", "10 VAR; 7 DAĞINIK; 1 ZAYIF; 3 YOK", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.004) - Değerlendirme #1", "Süreç mimarisi, paketler, uyarlama, rol ve ölçüm tanımları güçlü; gerçek kullanım, bilgilendirme ve yetkinlik kanıtları eksiktir."],
-        ["İÜC.BİDB.SRÇ.005 - Süreç Değerlendirme Süreci", "PIM.2 BP1-BP8; PA 2.1-PA 3.2", "6 VAR; 2 DAĞINIK", "11 VAR; 7 DAĞINIK; 2 ZAYIF; 1 YOK", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.005) - Değerlendirme #1", "Değerlendirme yöntemi, plan, etiketler, iş ürünleri ve raporlama tanımlı; gerçek dönem taahhütleri, doğrulama, eğitim ve performans sonuçları tamamlanmalıdır."],
-        ["İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci", "PIM.3 BP1-BP9; PA 2.1-PA 3.2", "4 VAR; 2 DAĞINIK; 3 ZAYIF", "11 VAR; 7 DAĞINIK; 2 ZAYIF; 1 YOK", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.006) - Değerlendirme #1", "Tek SRÇ.018 girişi, hedef/öncelik, planlama, yetki, doğrulama ve yeniden kullanım tanımlı; gerçek uygulama ve sonuç kanıtları beklenmektedir."],
-        [SRC021, "RIN.3 BP1-BP6; PA 2.1-PA 3.2", "2 VAR; 3 DAĞINIK; 1 ZAYIF", "12 VAR; 6 DAĞINIK; 2 ZAYIF; 1 YOK", "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.021) - Değerlendirme #1", "Kaynak sistem, bağlantı ağı, sahiplik, katalog şeması ve bakım kuralları tanımlı; gerçek katalog kapsamı, uzman ağı, yaygınlaştırma ve performans kanıtları olgunlaştırılmalıdır."],
+        ["SRÇ.001 - Dokümantasyon Süreci", "SUP.7 BP1-BP8; PA 2.1-PA 3.2", "5 VAR; 3 DAĞINIK", "9 VAR; 9 DAĞINIK; 3 ZAYIF", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.001) - Değerlendirme #1", "Doküman standartları, şablonlar ve teknik yayın/bakım yapısı güçlü; formal gözden geçirme, gerçek ölçüm, yetkinlik ve bilgilendirme kanıtları geliştirilmelidir."],
+        ["SRÇ.004 - Süreç Kurulumu Süreci", "PIM.1 BP1-BP6; PA 2.1-PA 3.2", "4 VAR; 1 DAĞINIK; 1 YOK", "10 VAR; 7 DAĞINIK; 1 ZAYIF; 3 YOK", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.004) - Değerlendirme #1", "Süreç mimarisi, paketler, uyarlama, rol ve ölçüm tanımları güçlü; gerçek kullanım, bilgilendirme ve yetkinlik kanıtları eksiktir."],
+        ["SRÇ.005 - Süreç Değerlendirme Süreci", "PIM.2 BP1-BP8; PA 2.1-PA 3.2", "6 VAR; 2 DAĞINIK", "11 VAR; 7 DAĞINIK; 2 ZAYIF; 1 YOK", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.005) - Değerlendirme #1", "Değerlendirme yöntemi, plan, etiketler, iş ürünleri ve raporlama tanımlı; gerçek dönem taahhütleri, doğrulama, eğitim ve performans sonuçları tamamlanmalıdır."],
+        ["SRÇ.006 - Süreç İyileştirme Süreci", "PIM.3 BP1-BP9; PA 2.1-PA 3.2", "4 VAR; 2 DAĞINIK; 3 ZAYIF", "11 VAR; 7 DAĞINIK; 2 ZAYIF; 1 YOK", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.006) - Değerlendirme #1", "Tek SRÇ.018 girişi, hedef/öncelik, planlama, yetki, doğrulama ve yeniden kullanım tanımlı; gerçek uygulama ve sonuç kanıtları beklenmektedir."],
+        [SRC021, "RIN.3 BP1-BP6; PA 2.1-PA 3.2", "2 VAR; 3 DAĞINIK; 1 ZAYIF", "12 VAR; 6 DAĞINIK; 2 ZAYIF; 1 YOK", "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.021) - Değerlendirme #1", "Kaynak sistem, bağlantı ağı, sahiplik, katalog şeması ve bakım kuralları tanımlı; gerçek katalog kapsamı, uzman ağı, yaygınlaştırma ve performans kanıtları olgunlaştırılmalıdır."],
     ]
     storage = replace_section(storage, "4. Süreç Sonuç Özeti", table(["Süreç", "Değerlendirme Kapsamı", "BP Dağılımı", "PA / GP Dağılımı", "Değerlendirme Bağlantısı", "Özet"], summary_rows))
     trends = [["BP - VAR", "5", "4", "6", "4", "2", "Tanım, yöntem ve yönetişim bileşenleri oluşturulan alanlarda güçlü karşılama vardır."], ["BP - DAĞINIK", "3", "1", "2", "2", "3", "Gerçek uygulama, uzman ağı ve yaygınlaştırma kanıtları henüz sistematik değildir."], ["BP - ZAYIF", "0", "0", "0", "3", "1", "SRÇ.021 katalog gözden geçirme ve iyileştirme kanıtı henüz oluşmamıştır."], ["BP - YOK", "0", "1", "0", "0", "0", "SRÇ.004 kullanım verisi henüz oluşmamıştır."], ["PA/GP - VAR", "9", "10", "11", "11", "12", "Tanım, rol, iş ürünü, etkileşim ve altyapı bileşenleri güçlenmektedir."], ["PA/GP - DAĞINIK", "9", "7", "7", "7", "6", "Gerçek uygulama ve formal kayıt bütünlüğü ortak gelişim alanıdır."], ["PA/GP - ZAYIF", "3", "1", "2", "2", "2", "Performans ayarlama ve gerçek veri analizi başlangıç düzeyindedir."], ["PA/GP - YOK", "0", "3", "1", "1", "1", "Yetkinlik/eğitim ve bazı gerçek kullanım kanıtları eksiktir."]]
@@ -518,7 +518,7 @@ def update_rpr001() -> None:
     from update_rpr001_layout_and_maturity_placeholder import align_rpr001_layout
     storage = align_rpr001_layout(storage)
     (page / "body.storage.xhtml").write_text(storage, encoding="utf-8")
-    (page / "body.view.html").write_text(build_view("İÜC.BİDB.RPR.001 - Süreç Performansları Raporu", storage), encoding="utf-8")
+    (page / "body.view.html").write_text(build_view("RPR.001 - Süreç Performansları Raporu", storage), encoding="utf-8")
 
 
 def refresh_parent_counts() -> None:
@@ -543,7 +543,7 @@ def update_context_docs() -> None:
     decisions = PAGE_ROOT.parents[2] / "docs/DECISIONS.md"
     text = decisions.read_text(encoding="utf-8")
     old = "- `LST.004` yeni yaklaşımda kullanılmaz. Repository'deki mevcut `LST.004` sayfaları legacy kayıttır; açık onay olmadan silinmez veya taşınmaz."
-    new = "- Eski `LST.004 - Süreç Gözden Geçirme Matrisi` yaklaşımı kullanılmaz. Boşa çıkan `LST.004` kodu kullanıcı onayıyla SRÇ.021 kapsamında `İÜC.BİDB.LST.004 - Bilgi Kataloğu` olarak yeniden tanımlanmıştır; eski legacy anlamına dönülmez."
+    new = "- Eski `LST.004 - Süreç Gözden Geçirme Matrisi` yaklaşımı kullanılmaz. Boşa çıkan `LST.004` kodu kullanıcı onayıyla SRÇ.021 kapsamında `LST.004 - Bilgi Kataloğu` olarak yeniden tanımlanmıştır; eski legacy anlamına dönülmez."
     text = text.replace(old, new)
     heading = "\n## SRÇ.021 bilgi yönetimi yaklaşımı\n"
     if heading not in text:
@@ -569,10 +569,10 @@ def validate(page_dirs: list[Path]) -> None:
         for name in ("page.yaml", "body.storage.xhtml", "body.view.html"):
             if not (page / name).exists():
                 raise RuntimeError(f"Missing page artifact: {page / name}")
-    assessment = (CONFLUENCE / REVIEWS_REL / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-021-degerlendirme-1/body.storage.xhtml").read_text(encoding="utf-8")
+    assessment = (CONFLUENCE / REVIEWS_REL / "frm-001-surec-gozden-gecirme-formu-src-021-degerlendirme-1/body.storage.xhtml").read_text(encoding="utf-8")
     if "2 VAR, 3 DAĞINIK ve 1 ZAYIF" not in assessment or "12 VAR, 6 DAĞINIK, 2 ZAYIF ve 1 YOK" not in assessment:
         raise RuntimeError("Assessment distribution mismatch")
-    lst004 = (CONFLUENCE / RECORDS_REL / "iuc-bidb-lst-004-bilgi-katalogu/body.storage.xhtml").read_text(encoding="utf-8")
+    lst004 = (CONFLUENCE / RECORDS_REL / "lst-004-bilgi-katalogu/body.storage.xhtml").read_text(encoding="utf-8")
     if "Jira, Bitbucket ve Google Drive satırları" not in lst004 or "Bilgi Başlığı" not in lst004:
         raise RuntimeError("LST.004 verified-link rule/schema missing")
 
@@ -613,10 +613,10 @@ def main() -> None:
     write_page(src, SRC021, "137265784", "01 - Süreç Dokümanları", 2, process_body(True), process_body(False))
     pages: list[Path] = [src]
     children = [
-        ("iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-021", "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.021)", lst007_body(True), lst007_body(False)),
-        ("iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-021", "İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.021)", lst008_body(), None),
-        ("iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-021", "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.021)", lst009_body(), None),
-        ("iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-021", "İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.021)", lst010_body(), None),
+        ("lst-007-surec-etkilesim-matrisi-src-021", "LST.007 - Süreç Etkileşim Matrisi (SRÇ.021)", lst007_body(True), lst007_body(False)),
+        ("lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-021", "LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.021)", lst008_body(), None),
+        ("lst-009-surec-performans-olcum-seti-src-021", "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.021)", lst009_body(), None),
+        ("lst-010-surec-rol-yetki-ve-raci-matrisi-src-021", "LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.021)", lst010_body(), None),
     ]
     for slug, title, storage, view in children:
         page = src / slug
@@ -626,31 +626,31 @@ def main() -> None:
             assets = page / "attachments"
             assets.mkdir(exist_ok=True)
             (assets / INTERACTION_MMD).write_text("\n".join(INTERACTION_LINES) + "\n", encoding="utf-8")
-    blank = src / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-021"
-    write_page(blank, "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.021)", SRC021_ID, SRC021, 3, blank_review_body())
+    blank = src / "frm-001-surec-gozden-gecirme-formu-src-021"
+    write_page(blank, "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.021)", SRC021_ID, SRC021, 3, blank_review_body())
     pages.append(blank)
-    assessment = CONFLUENCE / REVIEWS_REL / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-021-degerlendirme-1"
-    write_page(assessment, "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.021) - Değerlendirme #1", REVIEWS_ID, "Süreç Gözden Geçirmeleri", 3, assessment_body())
+    assessment = CONFLUENCE / REVIEWS_REL / "frm-001-surec-gozden-gecirme-formu-src-021-degerlendirme-1"
+    write_page(assessment, "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.021) - Değerlendirme #1", REVIEWS_ID, "Süreç Gözden Geçirmeleri", 3, assessment_body())
     pages.append(assessment)
-    prs = CONFLUENCE / PROCEDURES_REL / "iuc-bidb-prs-005-bilgi-yonetimi-proseduru"
+    prs = CONFLUENCE / PROCEDURES_REL / "prs-005-bilgi-yonetimi-proseduru"
     write_page(prs, PRS005, PROCEDURES_ID, "07 - Prosedürler", 2, procedure_body())
     pages.append(prs)
-    lst002_t = CONFLUENCE / TEMPLATES_REL / "iuc-bidb-lst-002-s-dokuman-degisiklik-kaydi-sablonu"
-    write_page(lst002_t, "İÜC.BİDB.LST.002.Ş - Doküman Değişiklik Kaydı Şablonu", TEMPLATES_ID, "02 - Şablonlar", 2, lst002_template_body())
+    lst002_t = CONFLUENCE / TEMPLATES_REL / "lst-002-s-dokuman-degisiklik-kaydi-sablonu"
+    write_page(lst002_t, "LST.002.Ş - Doküman Değişiklik Kaydı Şablonu", TEMPLATES_ID, "02 - Şablonlar", 2, lst002_template_body())
     pages.append(lst002_t)
-    lst004_t = CONFLUENCE / TEMPLATES_REL / "iuc-bidb-lst-004-s-bilgi-katalogu-sablonu"
-    write_page(lst004_t, "İÜC.BİDB.LST.004.Ş - Bilgi Kataloğu Şablonu", TEMPLATES_ID, "02 - Şablonlar", 2, lst004_template_body())
+    lst004_t = CONFLUENCE / TEMPLATES_REL / "lst-004-s-bilgi-katalogu-sablonu"
+    write_page(lst004_t, "LST.004.Ş - Bilgi Kataloğu Şablonu", TEMPLATES_ID, "02 - Şablonlar", 2, lst004_template_body())
     pages.append(lst004_t)
-    lst002 = CONFLUENCE / RECORDS_REL / "iuc-bidb-lst-002-dokuman-degisiklik-kaydi"
+    lst002 = CONFLUENCE / RECORDS_REL / "lst-002-dokuman-degisiklik-kaydi"
     write_page(lst002, LST002, RECORDS_ID, "03 - Kayıtlar ve Listeler", 2, lst002_body())
     pages.append(lst002)
-    lst004 = CONFLUENCE / RECORDS_REL / "iuc-bidb-lst-004-bilgi-katalogu"
+    lst004 = CONFLUENCE / RECORDS_REL / "lst-004-bilgi-katalogu"
     write_page(lst004, LST004, RECORDS_ID, "03 - Kayıtlar ve Listeler", 2, lst004_body(True), lst004_body(False))
     pages.append(lst004)
     update_lst006()
     update_lst001()
     update_rpr001()
-    pages.extend([CONFLUENCE / LST006_REL, PAGE_ROOT / "03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi", CONFLUENCE / RPR001_REL])
+    pages.extend([CONFLUENCE / LST006_REL, PAGE_ROOT / "03-kayitlar-ve-listeler/lst-001-aktif-dokumanlar-listesi", CONFLUENCE / RPR001_REL])
     update_parent_registers(pages)
     update_context_docs()
     unique = list(dict.fromkeys(pages))

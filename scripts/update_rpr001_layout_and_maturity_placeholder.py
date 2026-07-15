@@ -14,11 +14,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGE_ROOT = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
-REPORT_DIR = PAGE_ROOT / "09-raporlar/iuc-bidb-rpr-001-surec-performanslari-raporu"
-TEMPLATE_DIR = PAGE_ROOT / "02-sablonlar/iuc-bidb-rpr-001-s-surec-performanslari-raporu-sablonu"
+REPORT_DIR = PAGE_ROOT / "09-raporlar/rpr-001-surec-performanslari-raporu"
+TEMPLATE_DIR = PAGE_ROOT / "02-sablonlar/rpr-001-s-surec-performanslari-raporu-sablonu"
 
-REPORT_TITLE = "İÜC.BİDB.RPR.001 - Süreç Performansları Raporu"
-TEMPLATE_TITLE = "İÜC.BİDB.RPR.001.Ş - Süreç Performansları Raporu Şablonu"
+REPORT_TITLE = "RPR.001 - Süreç Performansları Raporu"
+TEMPLATE_TITLE = "RPR.001.Ş - Süreç Performansları Raporu Şablonu"
 MATURITY_HEADER = "SPICE Olgunluk Seviyesi"
 TREND_FIRST_HEADER = "Süreç / Gösterge"
 TREND_INDICATORS = [
@@ -110,7 +110,7 @@ def transpose_trends(doc: str, *, template: bool) -> str:
     if template:
         new_headers = [TREND_FIRST_HEADER, *TREND_INDICATORS]
         new_rows = [
-            ["<em>İÜC.BİDB.SRÇ.XXX</em>", "", "", "", "", "", "", "", ""],
+            ["<em>SRÇ.XXX</em>", "", "", "", "", "", "", "", ""],
             ["Eğilim Yorumu", "<em>Gösterge yorumu</em>", "<em>Gösterge yorumu</em>", "<em>Gösterge yorumu</em>", "<em>Gösterge yorumu</em>", "<em>Gösterge yorumu</em>", "<em>Gösterge yorumu</em>", "<em>Gösterge yorumu</em>", "<em>Gösterge yorumu</em>"],
         ]
         return replace_section_body(doc, heading, table(new_headers, new_rows))

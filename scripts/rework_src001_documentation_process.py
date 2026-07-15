@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Rebuild only İÜC.BİDB.SRÇ.001 from scratch using the current process template.
+"""Rebuild only SRÇ.001 from scratch using the current process template.
 
 Rules:
 - Updates only SRÇ.001 storage/view artifacts and a local report.
 - Does not change page metadata, publish to Confluence, or alter related records.
-- Reads İÜC.BİDB.SRÇ.XXX.Ş h2 headings and preserves that order.
+- Reads SRÇ.XXX.Ş h2 headings and preserves that order.
 - Excludes 0. Şablon Hakkında.
 - Uses process-specific text while preserving template-controlled sections.
 """
@@ -22,17 +22,17 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CONFLUENCE_DIR = ROOT / "confluence"
 ROOT_PAGE = CONFLUENCE_DIR / "pages/000-root-iuc-bidb-spice-2026-level-3"
-SRC001_DIR = ROOT_PAGE / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci"
-TEMPLATE_DIR = ROOT_PAGE / "02-sablonlar/iuc-bidb-src-xxx-s-surec-tanimi-sablonu"
+SRC001_DIR = ROOT_PAGE / "01-surec-dokumanlari/src-001-dokumantasyon-sureci"
+TEMPLATE_DIR = ROOT_PAGE / "02-sablonlar/src-xxx-s-surec-tanimi-sablonu"
 INDEX_PATH = CONFLUENCE_DIR / "index.yaml"
 REPORT_PATH = ROOT / "reports/src001_rework_report.md"
-SRC001_TITLE = "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"
-SRC001_CODE = "İÜC.BİDB.SRÇ.001"
+SRC001_TITLE = "SRÇ.001 - Dokümantasyon Süreci"
+SRC001_CODE = "SRÇ.001"
 PROCESS_OWNER = "Levent BAYEZİT - Proje Yöneticisi"
 REVIEWER = "Levent BAYEZİT - Proje Yöneticisi"
 APPROVER = "Mustafa Nusret SARISAKAL - BİD Başkanı"
 PREPARER = "Soner DEDEOĞLU - Kalite Danışmanı"
-FLOWCHART_FILENAME = unicodedata.normalize("NFD", "İÜC.BİDB.SRÇ.001 - Flowchart.png")
+FLOWCHART_FILENAME = unicodedata.normalize("NFD", "SRÇ.001 - Flowchart.png")
 
 CSS = (
     'body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}'
@@ -193,17 +193,17 @@ def surec_aktivitesi() -> str:
         ["Süreç Bitişi", "Dokümanın onaylanması, yayımlanması, dağıtılması, güncellenmesi, pasife alınması veya arşivlenmesi"],
         ["Ana Faaliyetler", "Dokümantasyon stratejisinin uygulanması; doküman standardı ve şablon seçimi; doküman hazırlama; gözden geçirme; onay; yayın; dağıtım; değişiklik ve bakım takibi"],
         ["İlgili Süreçler", "<br />".join([
-            link("İÜC.BİDB.SRÇ.002 - Kalite Güvencesi Süreci"),
-            link("İÜC.BİDB.SRÇ.003 - Doğrulama Süreci"),
-            link("İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci"),
-            link("İÜC.BİDB.SRÇ.016 - Yapılandırma Yönetimi Süreci"),
-            link("İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"),
+            link("SRÇ.002 - Kalite Güvencesi Süreci"),
+            link("SRÇ.003 - Doğrulama Süreci"),
+            link("SRÇ.004 - Süreç Kurulumu Süreci"),
+            link("SRÇ.016 - Yapılandırma Yönetimi Süreci"),
+            link("SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"),
         ])],
     ])
 
 
 def roller() -> str:
-    return p("Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik tanımları, süreç özel kaydı olan İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.001) dokümanında yönetilir.")
+    return p("Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik tanımları, süreç özel kaydı olan LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.001) dokümanında yönetilir.")
 
 
 def araclar_altyapi() -> str:
@@ -220,7 +220,7 @@ def araclar_altyapi() -> str:
 
 
 def is_urunleri() -> str:
-    return p("Bu süreç kapsamında kullanılan girdi iş ürünleri ve üretilen çıktı iş ürünleri, süreç özel kaydı olan İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.001) dokümanında yönetilir.")
+    return p("Bu süreç kapsamında kullanılan girdi iş ürünleri ve üretilen çıktı iş ürünleri, süreç özel kaydı olan LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.001) dokümanında yönetilir.")
 
 
 def surec_akisi(*, view: bool = False) -> str:
@@ -300,7 +300,7 @@ def surec_faaliyetleri() -> str:
 
 
 def olcum() -> str:
-    return p("Bu süreç kapsamında takip edilecek süreç performansı ölçüm seti, süreç özel kaydı olan İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001) dokümanında yönetilir.")
+    return p("Bu süreç kapsamında takip edilecek süreç performansı ölçüm seti, süreç özel kaydı olan LST.009 - Süreç Performans Ölçüm Seti (SRÇ.001) dokümanında yönetilir.")
 
 
 def uygulama_uyarlama() -> str:
@@ -326,7 +326,7 @@ def uygulama_uyarlama() -> str:
 
 
 def etkilesimler() -> str:
-    return p("Bu süreç kapsamındaki faaliyetlerin farklı süreçler ile olan etkileşimleri, süreç özel kaydı olan İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001) dokümanında yönetilir.")
+    return p("Bu süreç kapsamındaki faaliyetlerin farklı süreçler ile olan etkileşimleri, süreç özel kaydı olan LST.007 - Süreç Etkileşim Matrisi (SRÇ.001) dokümanında yönetilir.")
 
 
 def surum() -> str:
@@ -378,7 +378,7 @@ def write_report(sections: list[str]) -> None:
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     lines = [
         "# SRÇ.001 Süreç Tanımı Yeniden Oluşturma Raporu", "",
-        "Kapsam: Yalnızca `İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci` oluşturuldu.", "",
+        "Kapsam: Yalnızca `SRÇ.001 - Dokümantasyon Süreci` oluşturuldu.", "",
         "## Uygulanan Şablon Bölümleri", *[f"- {s}" for s in sections], "",
         "## Kontroller",
         "- 0 numaralı şablon bölümleri SRÇ.001 içeriğine alınmadı.",

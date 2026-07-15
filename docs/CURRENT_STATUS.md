@@ -53,7 +53,7 @@ Son yerel inceleme: 15 Temmuz 2026.
 - SRÇ.005 Confluence yayınının LST.012 altında kaydedilmesi ve canlı sayfada doğrulanması
 - RPR.001.Ş ve RPR.001'e SRÇ.018 SUP.10.BP9 sonucuna dayalı Doğrulanmış İyileştirme Sonuçları bölümünün eklenmesi
 - SRÇ.006 için yetki devri, girdi, ön analiz, önceliklendirme, uyarlama, değişiklik uygulama, doğrulama ve raporlama kararlarının kesinleştirilmesi
-- İÜC.BİDB.PRS.004 Süreç İyileştirme ve Değişiklik Yönetimi Prosedürünün aktif prosedür şablonuna göre yerelde oluşturulması; LST.001 ve `07 - Prosedürler` kayıtlarının güncellenmesi
+- PRS.004 Süreç İyileştirme ve Değişiklik Yönetimi Prosedürünün aktif prosedür şablonuna göre yerelde oluşturulması; LST.001 ve `07 - Prosedürler` kayıtlarının güncellenmesi
 - SRÇ.006 Süreç İyileştirme paketinin süreç tanımı, LST.007-LST.010, boş FRM.001 ve Değerlendirme #1 ile yerelde oluşturulması
 - PLN.002.Ş Süreç İyileştirme Planı Şablonunun oluşturulması ve RPR.001 kümülatif raporuna SRÇ.006 değerlendirme sonucunun eklenmesi
 - LST.006 üzerinde SRÇ.005 ve SRÇ.006 durumlarının Aktif yapılması; SRÇ.006 yerel viewer incelemesinin LST.012'ye, henüz yapılmamış Confluence yayınıyla karıştırılmadan kaydedilmesi
@@ -65,6 +65,8 @@ Son yerel inceleme: 15 Temmuz 2026.
 - Aktif LST.010 şablonu ile SRÇ.001, SRÇ.004, SRÇ.005 ve SRÇ.021 süreç özel LST.010 kayıtlarının SRÇ.006 referansındaki yedi bölümlü, rol-sütunlu çapraz RACI yapısına hizalanması; SRÇ.006 referans içeriğinin değiştirilmeden korunması.
 - RPR.001 ve RPR.001.Ş üzerinde Etiket Dağılımları ve Eğilimler tablosunun süreçler satırda olacak biçimde çevrilmesi; Süreç Sonuç Özeti tablosuna ileride tanımlanmak üzere boş `SPICE Olgunluk Seviyesi` sütununun eklenmesi.
 - SRÇ.023 Organizasyonel Yönetim paketi; süreç tanımı, LST.007-LST.010, boş FRM.001, Değerlendirme #1, PRS.006, FRM.002.Ş, LST.013.Ş ve LST.013 ile tamamlanmış; süreç akışı ve etkileşim PNG ekleriyle birlikte 15-07-2026 tarihinde Confluence'a yayımlanıp canlı ortamdan doğrulanmıştır. Yayın LST.012'ye, aktif süreç durumu LST.006'ya işlenmiştir.
+
+- SRÇ.001, SRÇ.004, SRÇ.005, SRÇ.006, SRÇ.021, SRÇ.023, SRÇ.024 ve SRÇ.025 Değerlendirme #1 kayıtları 15 Temmuz 2026 tarihinde güncel kanıtlarla yeniden değerlendirilmiş; sonuçlar kümülatif RPR.001 ile hizalanmıştır.
 
 ## Bilinen riskler ve açık noktalar
 
@@ -86,3 +88,5 @@ Son yerel inceleme: 15 Temmuz 2026.
 4. Repository değişikliklerini commit ve push ile uzak depoya senkronize et.
 5. Tüm süreç dokümantasyonu tamamlandığında seçilecek bir veya iki süreçte örnek iyileştirme uygulaması yap; SRÇ.006-SRÇ.018-PRS.004 akışını uçtan uca doğrula ve sonucu RPR.001 ile, gerekiyorsa LST.012 ile ilişkilendir.
 6. Tüm süreç çalışmaları tamamlandığında RPR.001 içindeki `SPICE Olgunluk Seviyesi` sütunu için değerlendirme yöntemi, veri kaynağı, seviye belirleme kuralı ve raporlama gösterimini kullanıcıyla birlikte tanımla; yöntem onaylanmadan boş hücreleri doldurma.
+- SRÇ.024 Kalite Yönetimi paketi; süreç tanımı, PRS.007, PRS.008, FRM.003.Ş, RPR.002.Ş, süreç özel LST.007-LST.010, boş FRM.001 ve Değerlendirme #1 ile yerelde oluşturulmuş; değerlendirme sonuçları RPR.001'e eklenmiştir. Gerçek anket/RPR.002 üretilmemiş ve Confluence yayını kullanıcı incelemesine bırakılmıştır.
+- SRÇ.025 Ölçüm paketi; süreç tanımı, PRS.009, süreç özel LST.007-LST.010, boş FRM.001 ve Değerlendirme #1 ile yerelde oluşturulmuş; değerlendirme sonuçları RPR.001'e eklenmiştir. Gerçek dönem ölçüm sonucu veya sunum kaydı üretilmemiş ve Confluence yayını kullanıcı incelemesine bırakılmıştır.

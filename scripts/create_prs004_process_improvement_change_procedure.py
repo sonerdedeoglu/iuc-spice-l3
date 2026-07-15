@@ -24,13 +24,13 @@ from create_src005_process_assessment_package import (
 )
 
 
-SRC006 = "İÜC.BİDB.SRÇ.006 - Süreç İyileştirme Süreci"
-SRC018 = "İÜC.BİDB.SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"
-PLN002 = "İÜC.BİDB.PLN.002 - Süreç İyileştirme Planı"
-RPR001 = "İÜC.BİDB.RPR.001 - Süreç Performansları Raporu"
-LST012 = "İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"
+SRC006 = "SRÇ.006 - Süreç İyileştirme Süreci"
+SRC018 = "SRÇ.018 - Değişiklik Talebi Yönetimi Süreci"
+PLN002 = "PLN.002 - Süreç İyileştirme Planı"
+RPR001 = "RPR.001 - Süreç Performansları Raporu"
+LST012 = "LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı"
 TITLE = PRS004
-SLUG = "iuc-bidb-prs-004-surec-iyilestirme-ve-degisiklik-yonetimi-proseduru"
+SLUG = "prs-004-surec-iyilestirme-ve-degisiklik-yonetimi-proseduru"
 
 
 def procedure_body() -> str:
@@ -57,7 +57,7 @@ def procedure_body() -> str:
         table(["Referans", "Açıklama"], [
             [SRC006, "İyileştirme hedefi, önceliği, planı, sonuç takibi ve yeniden kullanım değerlendirmesi"],
             [SRC018, "Değişiklik kaydı, etki analizi, onay, kontrollü uygulama ve değişiklik gözden geçirmesi"],
-            ["İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Bu prosedürün zorunlu doküman yapısı"],
+            ["PRS.XXX.Ş - Prosedür Tanımı Şablonu", "Bu prosedürün zorunlu doküman yapısı"],
             [PRS003, "Süreç değerlendirmelerinden doğan iyileştirme fırsatlarının kaynağı"],
             [PLN002, "Yüksek etkili, çoklu süreç kapsamlı veya önemli kaynak gerektiren iyileştirmelerin planı"],
             [RPR001, "Doğrulanmış iyileştirme kazanımlarının kümülatif yönetim özeti"],
@@ -141,7 +141,7 @@ def verify(storage: str) -> None:
     required = [
         SRC006,
         SRC018,
-        "İÜC.BİDB.PRS.XXX.Ş - Prosedür Tanımı Şablonu",
+        "PRS.XXX.Ş - Prosedür Tanımı Şablonu",
         "Etki ve öncelik ayrımı",
         "Planlama uyarlaması",
         PLN002,
@@ -181,19 +181,19 @@ def main() -> None:
 
     procedures_dir = PAGE_ROOT / "07-prosedurler"
     parent_storage = parent_register_body("Prosedür", [
-        ("İÜC.BİDB.PRS.001", "Yazılım Projeleri Dokümantasyon Prosedürü", "İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"),
-        ("İÜC.BİDB.PRS.002", "Süreç Tasarım Prosedürü", "İÜC.BİDB.PRS.002 - Süreç Tasarım Prosedürü"),
-        ("İÜC.BİDB.PRS.003", "Süreç Değerlendirme Prosedürü", PRS003),
-        ("İÜC.BİDB.PRS.004", "Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü", PRS004),
+        ("PRS.001", "Yazılım Projeleri Dokümantasyon Prosedürü", "PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü"),
+        ("PRS.002", "Süreç Tasarım Prosedürü", "PRS.002 - Süreç Tasarım Prosedürü"),
+        ("PRS.003", "Süreç Değerlendirme Prosedürü", PRS003),
+        ("PRS.004", "Süreç İyileştirme ve Değişiklik Yönetimi Prosedürü", PRS004),
     ])
     (procedures_dir / "body.storage.xhtml").write_text(parent_storage + "\n", encoding="utf-8")
     (procedures_dir / "body.view.html").write_text(build_view("07 - Prosedürler", parent_storage), encoding="utf-8")
 
-    lst001_dir = PAGE_ROOT / "03-kayitlar-ve-listeler/iuc-bidb-lst-001-aktif-dokumanlar-listesi"
+    lst001_dir = PAGE_ROOT / "03-kayitlar-ve-listeler/lst-001-aktif-dokumanlar-listesi"
     lst001_storage = update_lst001((lst001_dir / "body.storage.xhtml").read_text(encoding="utf-8"))
     (lst001_dir / "body.storage.xhtml").write_text(lst001_storage, encoding="utf-8")
     (lst001_dir / "body.view.html").write_text(
-        build_view("İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", lst001_storage),
+        build_view("LST.001 - Aktif Dokümanlar Listesi", lst001_storage),
         encoding="utf-8",
     )
 

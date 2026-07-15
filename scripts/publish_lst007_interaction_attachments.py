@@ -19,40 +19,52 @@ REPORT = ROOT / "reports/lst007_interaction_attachment_publish_report.md"
 
 SPECS = [
     {
-        "folder": PAGES / "iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-001",
-        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.001)",
+        "folder": PAGES / "src-001-dokumantasyon-sureci/lst-007-surec-etkilesim-matrisi-src-001",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.001)",
         "filename": "src001-surec-etkilesim.png",
         "process": "SRÇ.001",
     },
     {
-        "folder": PAGES / "iuc-bidb-src-004-surec-kurulumu-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-004",
-        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.004)",
+        "folder": PAGES / "src-004-surec-kurulumu-sureci/lst-007-surec-etkilesim-matrisi-src-004",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.004)",
         "filename": "src004-surec-etkilesim.png",
         "process": "SRÇ.004",
     },
     {
-        "folder": PAGES / "iuc-bidb-src-005-surec-degerlendirme-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-005",
-        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.005)",
+        "folder": PAGES / "src-005-surec-degerlendirme-sureci/lst-007-surec-etkilesim-matrisi-src-005",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.005)",
         "filename": "src005-surec-etkilesim.png",
         "process": "SRÇ.005",
     },
     {
-        "folder": PAGES / "iuc-bidb-src-006-surec-iyilestirme-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-006",
-        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.006)",
+        "folder": PAGES / "src-006-surec-iyilestirme-sureci/lst-007-surec-etkilesim-matrisi-src-006",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.006)",
         "filename": "src006-surec-etkilesim.png",
         "process": "SRÇ.006",
     },
     {
-        "folder": PAGES / "iuc-bidb-src-021-bilgi-yonetimi-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-021",
-        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.021)",
+        "folder": PAGES / "src-021-bilgi-yonetimi-sureci/lst-007-surec-etkilesim-matrisi-src-021",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.021)",
         "filename": "src021-surec-etkilesim.png",
         "process": "SRÇ.021",
     },
     {
-        "folder": PAGES / "iuc-bidb-src-023-organizasyonel-yonetim-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-023",
-        "title": "İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.023)",
+        "folder": PAGES / "src-023-organizasyonel-yonetim-sureci/lst-007-surec-etkilesim-matrisi-src-023",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.023)",
         "filename": "src023-surec-etkilesim.png",
         "process": "SRÇ.023",
+    },
+    {
+        "folder": PAGES / "src-024-kalite-yonetimi-sureci/lst-007-surec-etkilesim-matrisi-src-024",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.024)",
+        "filename": "src024-surec-etkilesim.png",
+        "process": "SRÇ.024",
+    },
+    {
+        "folder": PAGES / "src-025-olcum-sureci/lst-007-surec-etkilesim-matrisi-src-025",
+        "title": "LST.007 - Süreç Etkileşim Matrisi (SRÇ.025)",
+        "filename": "src025-surec-etkilesim.png",
+        "process": "SRÇ.025",
     },
 ]
 

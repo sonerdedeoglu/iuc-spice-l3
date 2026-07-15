@@ -17,7 +17,7 @@ from pathlib import Path
 TARGET_DIR = Path(
     "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/91-ic-denetimler/"
     "surec-gozden-gecirmeleri/"
-    "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001-degerlendirme-1"
+    "frm-001-surec-gozden-gecirme-formu-src-001-degerlendirme-1"
 )
 STORAGE = TARGET_DIR / "body.storage.xhtml"
 VIEW = TARGET_DIR / "body.view.html"

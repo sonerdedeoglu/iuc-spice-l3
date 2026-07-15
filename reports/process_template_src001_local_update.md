@@ -13,7 +13,7 @@ Tarih: 14-07-2026
 ## Confluence Yayını
 
 - Zorunlu dry-run yalnızca iki hedef sayfa için `UPDATE` sonucu verdi; oluşturma veya taşıma saptanmadı.
-- İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci Confluence sürümü 20 olarak yayımlandı.
-- İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu Confluence sürümü 14 olarak yayımlandı.
+- SRÇ.001 - Dokümantasyon Süreci Confluence sürümü 20 olarak yayımlandı.
+- SRÇ.XXX.Ş - Süreç Tanımı Şablonu Confluence sürümü 14 olarak yayımlandı.
 - Yayın sonrası canlı exportta yeni başlıklar, alanlar, süreç sonuçları ve SRÇ.001 Bitbucket kaydı doğrulandı.
 - Confluence exportu ve yerel viewer yeniden üretildi.

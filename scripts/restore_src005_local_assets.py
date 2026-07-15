@@ -16,17 +16,17 @@ ROOT = Path(__file__).resolve().parents[1]
 PROCESS_DIR = (
     ROOT
     / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari"
-    / "iuc-bidb-src-005-surec-degerlendirme-sureci"
+    / "src-005-surec-degerlendirme-sureci"
 )
 INTERACTION_DIR = (
     PROCESS_DIR
-    / "iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-005"
+    / "lst-007-surec-etkilesim-matrisi-src-005"
 )
 
 SPECS = [
     {
         "folder": PROCESS_DIR,
-        "filename": unicodedata.normalize("NFD", "İÜC.BİDB.SRÇ.005 - Flowchart.png"),
+        "filename": unicodedata.normalize("NFD", "SRÇ.005 - Flowchart.png"),
     },
     {
         "folder": INTERACTION_DIR,

@@ -8,8 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
 
-LST002 = BASE / "03-kayitlar-ve-listeler/iuc-bidb-lst-002-dokuman-degisiklik-kaydi"
-LST006 = BASE / "03-kayitlar-ve-listeler/iuc-bidb-lst-006-standart-surec-envanteri"
+LST002 = BASE / "03-kayitlar-ve-listeler/lst-002-dokuman-degisiklik-kaydi"
+LST006 = BASE / "03-kayitlar-ve-listeler/lst-006-standart-surec-envanteri"
 
 
 def replace_in_page(folder: Path, replacements: list[tuple[str, str]]) -> None:

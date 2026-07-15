@@ -15,12 +15,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAGE_ROOT = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3"
 
-TEMPLATE = PAGE_ROOT / "02-sablonlar/iuc-bidb-frm-001-s-surec-gozden-gecirme-formu-sablonu"
-SRC001_BLANK = PAGE_ROOT / "01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001"
-SRC004_BLANK = PAGE_ROOT / "01-surec-dokumanlari/iuc-bidb-src-004-surec-kurulumu-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-004"
+TEMPLATE = PAGE_ROOT / "02-sablonlar/frm-001-s-surec-gozden-gecirme-formu-sablonu"
+SRC001_BLANK = PAGE_ROOT / "01-surec-dokumanlari/src-001-dokumantasyon-sureci/frm-001-surec-gozden-gecirme-formu-src-001"
+SRC004_BLANK = PAGE_ROOT / "01-surec-dokumanlari/src-004-surec-kurulumu-sureci/frm-001-surec-gozden-gecirme-formu-src-004"
 REVIEWS = PAGE_ROOT / "91-ic-denetimler/surec-gozden-gecirmeleri"
-SRC001_REVIEW = REVIEWS / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001-degerlendirme-1"
-SRC004_REVIEW = REVIEWS / "iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-004-degerlendirme-1"
+SRC001_REVIEW = REVIEWS / "frm-001-surec-gozden-gecirme-formu-src-001-degerlendirme-1"
+SRC004_REVIEW = REVIEWS / "frm-001-surec-gozden-gecirme-formu-src-004-degerlendirme-1"
 
 HEADERS = ["Öncelik", "Bulgu / Aksiyon", "Bulgu Türü", "İlgili BP / GP", "Hedef Süreç / İzleme Yeri"]
 PLACEHOLDER = [[
@@ -32,21 +32,21 @@ PLACEHOLDER = [[
 ]]
 
 SRC001_ROWS = [
-    ["1", "SRÇ.001 için rol bazlı yetkinlikler tanımlanmalı; ilgili personele süreç eğitimi/bilgilendirmesi verilmeli ve kayıtları tutulmalıdır.", "Gözlem", "GP 3.2.3", "İÜC.BİDB.SRÇ.020 - Eğitim Süreci / Değerlendirme #1"],
-    ["2", "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001) kapsamında gerçekleşen performans verileri toplanmalı, analiz edilmeli ve iyileştirme kararlarıyla ilişkilendirilmelidir.", "Gözlem", "GP 3.2.6; GP 3.1.5; GP 2.1.2", "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.001) / İÜC.BİDB.RPR.001 - Süreç Performansları Raporu"],
-    ["3", "Performans sapmaları için neden, karar, sorumlu, yeniden planlama ve kapanış bilgilerini içeren sistematik izleme kaydı oluşturulmalıdır.", "Gözlem", "GP 2.1.3", "Değerlendirme #1 / İÜC.BİDB.RPR.001 - Süreç Performansları Raporu"],
-    ["4", "SRÇ.001 ve temel destek dokümanları için gerçek gözden geçirme, bulgu, çözüm, kapanış ve yayın onayı kayıtları İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı üzerinden tamamlanmalıdır.", "Gözlem", "SUP.7.BP6; GP 2.2.4", "İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı / Değerlendirme #1"],
-    ["5", "Confluence yayın kaydını tamamlayacak hedef kitle bilgilendirmesi yapılmalı; duyuru/teslim ve gerektiğinde teyit kanıtı İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı ile ilişkilendirilmelidir.", "Gözlem", "SUP.7.BP7; GP 2.1.6; GP 3.2.2", "İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı / Değerlendirme #1"],
-    ["6", "Son doküman ve şablon revizyonları İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı'na işlenmeli; kontrollü dokümanların değişiklik, sürüm ve baseline ilişkisi SRÇ.016 ile uyumlu hâle getirilmelidir.", "Gözlem", "SUP.7.BP8; GP 2.2.3", "İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı / İÜC.BİDB.SRÇ.016 - Yapılandırma Yönetimi Süreci"],
+    ["1", "SRÇ.001 için rol bazlı yetkinlikler tanımlanmalı; ilgili personele süreç eğitimi/bilgilendirmesi verilmeli ve kayıtları tutulmalıdır.", "Gözlem", "GP 3.2.3", "SRÇ.020 - Eğitim Süreci / Değerlendirme #1"],
+    ["2", "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.001) kapsamında gerçekleşen performans verileri toplanmalı, analiz edilmeli ve iyileştirme kararlarıyla ilişkilendirilmelidir.", "Gözlem", "GP 3.2.6; GP 3.1.5; GP 2.1.2", "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.001) / RPR.001 - Süreç Performansları Raporu"],
+    ["3", "Performans sapmaları için neden, karar, sorumlu, yeniden planlama ve kapanış bilgilerini içeren sistematik izleme kaydı oluşturulmalıdır.", "Gözlem", "GP 2.1.3", "Değerlendirme #1 / RPR.001 - Süreç Performansları Raporu"],
+    ["4", "SRÇ.001 ve temel destek dokümanları için gerçek gözden geçirme, bulgu, çözüm, kapanış ve yayın onayı kayıtları LST.003 - Doküman Gözden Geçirme Kaydı üzerinden tamamlanmalıdır.", "Gözlem", "SUP.7.BP6; GP 2.2.4", "LST.003 - Doküman Gözden Geçirme Kaydı / Değerlendirme #1"],
+    ["5", "Confluence yayın kaydını tamamlayacak hedef kitle bilgilendirmesi yapılmalı; duyuru/teslim ve gerektiğinde teyit kanıtı LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı ile ilişkilendirilmelidir.", "Gözlem", "SUP.7.BP7; GP 2.1.6; GP 3.2.2", "LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı / Değerlendirme #1"],
+    ["6", "Son doküman ve şablon revizyonları LST.002 - Doküman Değişiklik Kaydı'na işlenmeli; kontrollü dokümanların değişiklik, sürüm ve baseline ilişkisi SRÇ.016 ile uyumlu hâle getirilmelidir.", "Gözlem", "SUP.7.BP8; GP 2.2.3", "LST.002 - Doküman Değişiklik Kaydı / SRÇ.016 - Yapılandırma Yönetimi Süreci"],
     ["7", "SRÇ.001'in uygulandığı proje veya kurumsal bağlama özgü uyarlamalar, gerekçeleri ve standart sürece uygunluk kontrolü kayıt altına alınmalıdır.", "Gözlem", "GP 3.2.1", "Değerlendirme #1"],
     ["8", "SRÇ.001 için gerekli insan kaynağı ve zaman tahsisi ile fiilî kaynak kullanımı kayıt altına alınmalıdır.", "Gözlem", "GP 2.1.5; GP 3.2.4", "Değerlendirme #1"],
 ]
 
 SRC004_ROWS = [
-    ["1", "SRÇ.004 ve rol/sorumlulukları hedef kitleye duyurmak; gerçek bilgilendirme ve gerektiğinde katılım/teyit kanıtını İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı ile ilişkilendirmek", "Gözlem", "PIM.1.BP2; GP.2.1.6; GP.3.2.1; GP.3.2.2", "İÜC.BİDB.LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı / Değerlendirme #1"],
-    ["2", "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.004) için ilk gerçek veri toplama dönemini işletmek; sonuçları, sapmaları ve kararları kaydetmek", "Gözlem", "PIM.1.BP6; GP.2.1.2; GP.2.1.3; GP.3.2.6", "İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.004) / İÜC.BİDB.RPR.001 - Süreç Performansları Raporu"],
-    ["3", "Yetkili gözden geçirme, bulgu, düzeltme ve kapanış bilgilerini İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı veya eşdeğer resmî kayıtla tamamlamak", "Gözlem", "GP.2.2.4", "İÜC.BİDB.LST.003 - Doküman Gözden Geçirme Kaydı / Değerlendirme #1"],
-    ["4", "Rol bazlı yetkinlik ihtiyacını doğrulamak; gerekiyorsa İÜC.BİDB.SRÇ.020 - Eğitim Süreci kapsamında eğitim ve katılım kaydı oluşturmak", "Gözlem", "GP.3.2.3", "İÜC.BİDB.SRÇ.020 - Eğitim Süreci / Değerlendirme #1"],
+    ["1", "SRÇ.004 ve rol/sorumlulukları hedef kitleye duyurmak; gerçek bilgilendirme ve gerektiğinde katılım/teyit kanıtını LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı ile ilişkilendirmek", "Gözlem", "PIM.1.BP2; GP.2.1.6; GP.3.2.1; GP.3.2.2", "LST.012 - Süreç Yaygınlaştırma ve Bilgilendirme Kaydı / Değerlendirme #1"],
+    ["2", "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.004) için ilk gerçek veri toplama dönemini işletmek; sonuçları, sapmaları ve kararları kaydetmek", "Gözlem", "PIM.1.BP6; GP.2.1.2; GP.2.1.3; GP.3.2.6", "LST.009 - Süreç Performans Ölçüm Seti (SRÇ.004) / RPR.001 - Süreç Performansları Raporu"],
+    ["3", "Yetkili gözden geçirme, bulgu, düzeltme ve kapanış bilgilerini LST.003 - Doküman Gözden Geçirme Kaydı veya eşdeğer resmî kayıtla tamamlamak", "Gözlem", "GP.2.2.4", "LST.003 - Doküman Gözden Geçirme Kaydı / Değerlendirme #1"],
+    ["4", "Rol bazlı yetkinlik ihtiyacını doğrulamak; gerekiyorsa SRÇ.020 - Eğitim Süreci kapsamında eğitim ve katılım kaydı oluşturmak", "Gözlem", "GP.3.2.3", "SRÇ.020 - Eğitim Süreci / Değerlendirme #1"],
     ["5", "İnsan kaynağı tahsisi ile erişim, yetkilendirme, destek ve sürdürme kanıtlarını doğal kaynak sistemlerde doğrulamak", "Gözlem", "GP.2.1.5; GP.3.2.4; GP.3.2.5", "Değerlendirme #1"],
 ]
 

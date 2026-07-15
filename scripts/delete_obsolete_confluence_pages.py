@@ -13,9 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "reports/obsolete_confluence_pages_delete_report.md"
 
 SPECS = [
-    ("137265918", "İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.001)"),
-    ("137265919", "İÜC.BİDB.LST.004 - Süreç Gözden Geçirme Matrisi (İÜC.BİDB.SRÇ.004)"),
-    ("137265907", "İÜC.BİDB.LST.007 - Süreç Mimari ve Etkileşim Matrisi"),
+    ("137265918", "LST.004 - Süreç Gözden Geçirme Matrisi (SRÇ.001)"),
+    ("137265919", "LST.004 - Süreç Gözden Geçirme Matrisi (SRÇ.004)"),
+    ("137265907", "LST.007 - Süreç Mimari ve Etkileşim Matrisi"),
 ]
 
 

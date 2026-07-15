@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE_DIR = (
     ROOT
     / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/02-sablonlar"
-    / "iuc-bidb-src-xxx-s-surec-tanimi-sablonu"
+    / "src-xxx-s-surec-tanimi-sablonu"
 )
 REPORT = ROOT / "reports/process_template_baseline_rules.md"
 
@@ -135,7 +135,7 @@ def related_processes(body: str) -> str:
         body,
         "6. Süreç Aktivitesi",
         "İlgili Süreçler",
-        "<ul><li><em>İÜC.BİDB.SRÇ.XXX - İlgili Süreç</em></li><li><em>Her süreç ayrı satırda yazılır.</em></li></ul>",
+        "<ul><li><em>SRÇ.XXX - İlgili Süreç</em></li><li><em>Her süreç ayrı satırda yazılır.</em></li></ul>",
     )
 
 

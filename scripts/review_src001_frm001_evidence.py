@@ -5,10 +5,10 @@ import html
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DOC_DIR = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/iuc-bidb-src-001-dokumantasyon-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-001"
+DOC_DIR = ROOT / "confluence/pages/000-root-iuc-bidb-spice-2026-level-3/01-surec-dokumanlari/src-001-dokumantasyon-sureci/frm-001-surec-gozden-gecirme-formu-src-001"
 STORAGE = DOC_DIR / "body.storage.xhtml"
 VIEW = DOC_DIR / "body.view.html"
-TITLE = "İÜC.BİDB.FRM.001 - Süreç Gözden Geçirme Formu (İÜC.BİDB.SRÇ.001)"
+TITLE = "FRM.001 - Süreç Gözden Geçirme Formu (SRÇ.001)"
 
 CSS = """
 body{margin:0;background:#fff;color:#172b4d;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
@@ -53,19 +53,19 @@ def d(pct: int) -> str:
 BP = [
     ["SUP.7.BP1", "Dokümantasyon yönetim stratejisini geliştir", 90,
      "Dokümantasyon stratejisi SRÇ.001 ana süreci ile kurulmuş, yazılım projelerine özel uygulama PRS.001 ile ayrıştırılmıştır.",
-     ["İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci", "İÜC.BİDB.PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "İÜC.BİDB.LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu", "Soru Bankası Projesi / LST.005 (SB) taslak kaydı"],
+     ["SRÇ.001 - Dokümantasyon Süreci", "PRS.001 - Yazılım Projeleri Dokümantasyon Prosedürü", "LST.005.Ş - Yaşam Döngüsü Doküman Üretim Matrisi Şablonu", "Soru Bankası Projesi / LST.005 (SB) taslak kaydı"],
      "-"],
     ["SUP.7.BP2", "Doküman standartlarını oluştur", 95,
      "Yazım, başlık, tablo, sürüm ve şablon kullanımı kuralları tanımlanmış; ana doküman türleri için şablon ailesi güncellenmiştir.",
-     ["İÜC.BİDB.KLV.001 - Doküman Yazım Kuralları Talimatı", "İÜC.BİDB.SRÇ.XXX.Ş", "İÜC.BİDB.PRS.XXX.Ş", "İÜC.BİDB.KLV.XXX.Ş", "LST.001.Ş, LST.003.Ş, LST.005.Ş, LST.007.Ş, LST.008.Ş, LST.009.Ş, LST.010.Ş"],
+     ["KLV.001 - Doküman Yazım Kuralları Talimatı", "SRÇ.XXX.Ş", "PRS.XXX.Ş", "KLV.XXX.Ş", "LST.001.Ş, LST.003.Ş, LST.005.Ş, LST.007.Ş, LST.008.Ş, LST.009.Ş, LST.010.Ş"],
      "-"],
     ["SUP.7.BP3", "Doküman gereksinimlerini belirle", 85,
      "SRÇ.001 için iş ürünleri, kalite kriterleri ve genel/proje özel doküman gereksinimleri ayrı yapılarda tanımlanmıştır.",
-     ["İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.001)", "İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "İÜC.BİDB.PRS.001", "İÜC.BİDB.LST.005.Ş"],
+     ["LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.001)", "LST.001 - Aktif Dokümanlar Listesi", "PRS.001", "LST.005.Ş"],
      "-"],
     ["SUP.7.BP4", "Üretilecek dokümanları tanımla", 90,
      "Genel aktif dokümanlar, süreç özel kayıtlar ve proje özel dokümanlar ayrı yerlerde izlenebilir hale getirilmiştir.",
-     ["İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "SRÇ.001 altındaki LST.007/LST.008/LST.009/LST.010/FRM.001", "Soru Bankası Projesi / LST.005 (SB)"],
+     ["LST.001 - Aktif Dokümanlar Listesi", "SRÇ.001 altındaki LST.007/LST.008/LST.009/LST.010/FRM.001", "Soru Bankası Projesi / LST.005 (SB)"],
      "-"],
     ["SUP.7.BP5", "Dokümanları geliştir", 95,
      "SRÇ.001 kapsamında ana süreç dokümanı, destek prosedürü, yazım talimatı, şablonlar ve süreç kayıtları oluşturulmuştur.",
@@ -73,15 +73,15 @@ BP = [
      "-"],
     ["SUP.7.BP6", "Dokümanları kontrol et", 65,
      "Gözden geçirme pratiği uygulanıyor; ancak LST.003 gerçek kayıtlarının son revizyonları kapsayacak şekilde sistematik doldurulması gerekiyor.",
-     ["Bu FRM.001 gözden geçirme formu", "İÜC.BİDB.LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu", "Doküman sürüm geçmişi alanları", "Confluence düzenleme kayıtları"],
+     ["Bu FRM.001 gözden geçirme formu", "LST.003.Ş - Doküman Gözden Geçirme Kaydı Şablonu", "Doküman sürüm geçmişi alanları", "Confluence düzenleme kayıtları"],
      "SRÇ.001, PRS.001, KLV.001, LST.001 ve LST.007 için LST.003 gerçek gözden geçirme kayıtları oluşturulmalı."],
     ["SUP.7.BP7", "Dokümanları dağıt", 90,
      "Dokümanlar Confluence sayfa ağacında yayımlanmış, LST.001 ile genel doküman konumları görünür hale getirilmiştir.",
-     ["Confluence sayfa ağacı", "İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi", "publish_confluence_tree.py raporları"],
+     ["Confluence sayfa ağacı", "LST.001 - Aktif Dokümanlar Listesi", "publish_confluence_tree.py raporları"],
      "-"],
     ["SUP.7.BP8", "Dokümanları sürdür", 60,
      "Bakım ve arşivleme yaklaşımı kullanılıyor; ancak LST.002 gerçek değişiklik kayıtlarının son revizyonları kapsayacak şekilde tamamlanması gerekiyor.",
-     ["İÜC.BİDB.LST.002 - Doküman Değişiklik Kaydı", "Doküman sürüm geçmişleri", "Arşiv - Kaldırılan Şablonlar", "Git commit geçmişi"],
+     ["LST.002 - Doküman Değişiklik Kaydı", "Doküman sürüm geçmişleri", "Arşiv - Kaldırılan Şablonlar", "Git commit geçmişi"],
      "Son şablon ve doküman revizyonları için LST.002 değişiklik kayıtları tamamlanmalı."],
 ]
 
@@ -121,7 +121,7 @@ def build_storage() -> str:
     parts = []
     parts.append("<h2>1. Değerlendirme Özeti</h2>")
     parts.append(table(["Alan", "Değer"], [
-        ["Değerlendirilen Süreç", "İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci"],
+        ["Değerlendirilen Süreç", "SRÇ.001 - Dokümantasyon Süreci"],
         ["Standart Süreç Referansı", "ISO/IEC 15504-5 SUP.7 - Documentation"],
         ["Değerlendirme Tarihi", "13-07-2026"],
         ["Değerlendiren", "Soner DEDEOĞLU - Kalite Danışmanı"],

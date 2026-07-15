@@ -11,7 +11,7 @@ from confluence_client import ConfluenceClient
 
 ROOT = Path(__file__).resolve().parent.parent
 REPORT_PATH = ROOT / "reports" / "lst001_normalization_report.md"
-TARGET_TITLE = "İÜC.BİDB.LST.001 - Aktif Dokümanlar Listesi"
+TARGET_TITLE = "LST.001 - Aktif Dokümanlar Listesi"
 
 FINAL_COLUMNS = [
     "Doküman Kodu",

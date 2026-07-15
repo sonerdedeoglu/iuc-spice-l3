@@ -9,8 +9,8 @@
 
 | Süreç | Sayfa ID | Parent ID | Confluence Sürümü | Yayın İşlemi | Doğrulama |
 |---|---:|---:|---:|---|---|
-| İÜC.BİDB.SRÇ.001 - Dokümantasyon Süreci | 137266333 | 137265917 | 2 | UPDATE | Başlıklar ve 5 tablo yerel içerikle anlamsal olarak aynı |
-| İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci | 137266357 | 137265917 | 2 | UPDATE | Başlıklar ve 5 tablo yerel içerikle anlamsal olarak aynı |
+| SRÇ.001 - Dokümantasyon Süreci | 137266333 | 137265917 | 2 | UPDATE | Başlıklar ve 5 tablo yerel içerikle anlamsal olarak aynı |
+| SRÇ.004 - Süreç Kurulumu Süreci | 137266357 | 137265917 | 2 | UPDATE | Başlıklar ve 5 tablo yerel içerikle anlamsal olarak aynı |
 
 ## Kimlik ve Yerleşim Kontrolü
 

@@ -1,6 +1,6 @@
 # Süreç Tanımı Şablonu Uygulama Kuralları
 
-Bu kurallar `İÜC.BİDB.SRÇ.XXX.Ş - Süreç Tanımı Şablonu` kullanılarak süreç tanımı dokümanı oluşturulurken uygulanır.
+Bu kurallar `SRÇ.XXX.Ş - Süreç Tanımı Şablonu` kullanılarak süreç tanımı dokümanı oluşturulurken uygulanır.
 
 ## Genel Kurallar
 
@@ -30,7 +30,7 @@ Yalnızca açıklama hücreleri süreç özelinde doldurulur.
 
 Tablo kullanılmaz. Sürece özel metin aşağıdaki yapıda verilir:
 
-> Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik tanımları, süreç özel kaydı olan `İÜC.BİDB.LST.010 - Süreç Rol Yetki ve RACI Matrisi (İÜC.BİDB.SRÇ.XXX)` dokümanında yönetilir.
+> Bu süreç kapsamında rol, sorumluluk, yetki, RACI ve yetkinlik tanımları, süreç özel kaydı olan `LST.010 - Süreç Rol Yetki ve RACI Matrisi (SRÇ.XXX)` dokümanında yönetilir.
 
 ### 8. Araçlar ve Altyapı
 
@@ -46,7 +46,7 @@ Sürecin uygulanması için gerekli araçlar, altyapı bileşenleri ve çalışm
 
 Tablo kullanılmaz. Sürece özel metin aşağıdaki yapıda verilir:
 
-> Bu süreç kapsamında kullanılan girdi iş ürünleri ve üretilen çıktı iş ürünleri, süreç özel kaydı olan `İÜC.BİDB.LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (İÜC.BİDB.SRÇ.XXX)` dokümanında yönetilir.
+> Bu süreç kapsamında kullanılan girdi iş ürünleri ve üretilen çıktı iş ürünleri, süreç özel kaydı olan `LST.008 - İş Ürünleri ve Kalite Kriterleri Listesi (SRÇ.XXX)` dokümanında yönetilir.
 
 ### 10. Süreç Akışı
 
@@ -60,7 +60,7 @@ Bu bölümde süreç akış görseli yer alır. Görsel PNG olarak Confluence ü
 
 Tablo kullanılmaz. Sürece özel metin aşağıdaki yapıda verilir:
 
-> Bu süreç kapsamında takip edilecek süreç performansı ölçüm seti, süreç özel kaydı olan `İÜC.BİDB.LST.009 - Süreç Performans Ölçüm Seti (İÜC.BİDB.SRÇ.XXX)` dokümanında yönetilir.
+> Bu süreç kapsamında takip edilecek süreç performansı ölçüm seti, süreç özel kaydı olan `LST.009 - Süreç Performans Ölçüm Seti (SRÇ.XXX)` dokümanında yönetilir.
 
 ### 13. Uygulama ve Uyarlama Kuralları
 
@@ -76,7 +76,7 @@ Uyarlama Kuralları altında şablondaki tablo yapısı korunur ve şu satırlar
 
 Tablo kullanılmaz. Sürece özel metin aşağıdaki yapıda verilir:
 
-> Bu süreç kapsamındaki faaliyetlerin farklı süreçler ile olan etkileşimleri, süreç özel kaydı olan `İÜC.BİDB.LST.007 - Süreç Etkileşim Matrisi (İÜC.BİDB.SRÇ.XXX)` dokümanında yönetilir.
+> Bu süreç kapsamındaki faaliyetlerin farklı süreçler ile olan etkileşimleri, süreç özel kaydı olan `LST.007 - Süreç Etkileşim Matrisi (SRÇ.XXX)` dokümanında yönetilir.
 
 ### 15. Sürüm Geçmişi
 

@@ -13,7 +13,7 @@ scope:
   - PA 3.1
   - PA 3.2
 processes:
-- corporate_code: İÜC.BİDB.SRÇ.001
+- corporate_code: SRÇ.001
   corporate_name: Dokümantasyon Süreci
   spice_code: SUP.7
   spice_name: Documentation
@@ -95,7 +95,7 @@ processes:
       text: 'If the document is part of a product baseline or if its control and stability are important, it should be modified
         and distributed in accordance with Configuration management process (SUP.8). If the document is part of a product
         baseline under maintenance, its maintenance is covered by Software and system maintenance process (ENG.12).'
-- corporate_code: İÜC.BİDB.SRÇ.002
+- corporate_code: SRÇ.002
   corporate_name: Kalite Güvencesi Süreci
   spice_code: SUP.1
   spice_name: Quality assurance
@@ -153,7 +153,7 @@ processes:
       [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.003
+- corporate_code: SRÇ.003
   corporate_name: Doğrulama Süreci
   spice_code: SUP.2
   spice_name: Verification
@@ -208,7 +208,7 @@ processes:
       parties. [Outcome: 5]'
     outcome_refs:
     - 5
-- corporate_code: İÜC.BİDB.SRÇ.004
+- corporate_code: SRÇ.004
   corporate_name: Süreç Kurulumu Süreci
   spice_code: PIM.1
   spice_name: Process establishment
@@ -267,7 +267,7 @@ processes:
     text: 'Capture and maintain information and data related to the use of standard processes. [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.005
+- corporate_code: SRÇ.005
   corporate_name: Süreç Değerlendirme Süreci
   spice_code: PIM.2
   spice_name: Process assessment
@@ -341,7 +341,7 @@ processes:
     outcome_refs:
     - 1
     - 3
-- corporate_code: İÜC.BİDB.SRÇ.006
+- corporate_code: SRÇ.006
   corporate_name: Süreç İyileştirme Süreci
   spice_code: PIM.3
   spice_name: Process Improvement
@@ -428,7 +428,7 @@ processes:
       [Outcome: 7]'
     outcome_refs:
     - 7
-- corporate_code: İÜC.BİDB.SRÇ.007
+- corporate_code: SRÇ.007
   corporate_name: Proje Yönetimi Süreci
   spice_code: MAN.3
   spice_name: Project management
@@ -567,7 +567,7 @@ processes:
     outcome_refs:
     - 2
     - 3
-- corporate_code: İÜC.BİDB.SRÇ.008
+- corporate_code: SRÇ.008
   corporate_name: Risk Yönetimi Süreci
   spice_code: MAN.5
   spice_name: Risk management
@@ -652,7 +652,7 @@ processes:
     - id: NOTE 3
       text: 'Preventive action may involve developing and implementing new treatment strategies or adjusting the existing
         strategies.'
-- corporate_code: İÜC.BİDB.SRÇ.009
+- corporate_code: SRÇ.009
   corporate_name: Gereksinimlerin Toplanması Süreci
   spice_code: ENG.1
   spice_name: Requirements elicitation
@@ -741,7 +741,7 @@ processes:
     - id: NOTE 5
       text: 'This may include joint meetings with the customer or formal communication to review the status for their requirements
         and requests. Refer to the Joint review process (SUP.4).'
-- corporate_code: İÜC.BİDB.SRÇ.010
+- corporate_code: SRÇ.010
   corporate_name: Yazılım Gereksinim Analizi Süreci
   spice_code: ENG.4
   spice_name: Software requirements analysis
@@ -819,7 +819,7 @@ processes:
       parties who will be using them. [Outcome: 8]'
     outcome_refs:
     - 8
-- corporate_code: İÜC.BİDB.SRÇ.011
+- corporate_code: SRÇ.011
   corporate_name: Yazılım Tasarımı Süreci
   spice_code: ENG.5
   spice_name: Software design
@@ -880,7 +880,7 @@ processes:
       and maintaining traceability between software requirements and the software design when needed. [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.012
+- corporate_code: SRÇ.012
   corporate_name: Yazılım Geliştirme Süreci
   spice_code: ENG.6
   spice_name: Software construction
@@ -930,7 +930,7 @@ processes:
     notes:
     - id: NOTE 2
       text: 'Code can be verified by various techniques such as static code analysis, code review, etc.'
-- corporate_code: İÜC.BİDB.SRÇ.013
+- corporate_code: SRÇ.013
   corporate_name: Yazılım Entegrasyonu Süreci
   spice_code: ENG.7
   spice_name: Software integration
@@ -1002,7 +1002,7 @@ processes:
       software units, designs or requirements, carry out regression testing according to this strategy. [Outcome: 7]'
     outcome_refs:
     - 7
-- corporate_code: İÜC.BİDB.SRÇ.014
+- corporate_code: SRÇ.014
   corporate_name: Yazılım Test Süreci
   spice_code: ENG.8
   spice_name: Software testing
@@ -1046,7 +1046,7 @@ processes:
       to software items, carry out regression testing according to the strategy. [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.015
+- corporate_code: SRÇ.015
   corporate_name: Ürün Yayınlama / Sürüm Süreci
   spice_code: SPL.2
   spice_name: Product release
@@ -1169,7 +1169,7 @@ processes:
       text: These practices are typically supported by the Configuration Management process (SUP.8).
     - id: NOTE 9
       text: 'Refer to ISO/IEC 9127 for guidance on packaging aspects of software product supply.'
-- corporate_code: İÜC.BİDB.SRÇ.016
+- corporate_code: SRÇ.016
   corporate_name: Yapılandırma Yönetimi Süreci
   spice_code: SUP.8
   spice_name: Configuration management
@@ -1286,7 +1286,7 @@ processes:
     notes:
     - id: NOTE 6
       text: 'Backups are maintained under the Infrastructure process (RIN.4).'
-- corporate_code: İÜC.BİDB.SRÇ.017
+- corporate_code: SRÇ.017
   corporate_name: Problem Çözüm Yönetimi Süreci
   spice_code: SUP.9
   spice_name: Problem resolution management
@@ -1379,7 +1379,7 @@ processes:
     outcome_refs:
     - 5
     - 6
-- corporate_code: İÜC.BİDB.SRÇ.018
+- corporate_code: SRÇ.018
   corporate_name: Değişiklik Talebi Yönetimi Süreci
   spice_code: SUP.10
   spice_name: Change request management
@@ -1479,7 +1479,7 @@ processes:
     outcome_refs:
     - 7
     - 8
-- corporate_code: İÜC.BİDB.SRÇ.019
+- corporate_code: SRÇ.019
   corporate_name: İnsan Kaynakları Yönetimi Süreci
   spice_code: RIN.1
   spice_name: Human resource management
@@ -1565,7 +1565,7 @@ processes:
       completed, and performance evaluations. [Outcome: 4]'
     outcome_refs:
     - 4
-- corporate_code: İÜC.BİDB.SRÇ.020
+- corporate_code: SRÇ.020
   corporate_name: Eğitim Süreci
   spice_code: RIN.2
   spice_name: Training
@@ -1626,7 +1626,7 @@ processes:
       [Outcome: 2]'
     outcome_refs:
     - 2
-- corporate_code: İÜC.BİDB.SRÇ.021
+- corporate_code: SRÇ.021
   corporate_name: Bilgi Yönetimi Süreci
   spice_code: RIN.3
   spice_name: Knowledge management
@@ -1684,7 +1684,7 @@ processes:
     outcome_refs:
     - 2
     - 3
-- corporate_code: İÜC.BİDB.SRÇ.022
+- corporate_code: SRÇ.022
   corporate_name: Altyapı Süreci
   spice_code: RIN.4
   spice_name: Infrastructure
@@ -1752,7 +1752,7 @@ processes:
       [Outcome: 5]'
     outcome_refs:
     - 5
-- corporate_code: İÜC.BİDB.SRÇ.023
+- corporate_code: SRÇ.023
   corporate_name: Organizasyonel Yönetim Süreci
   spice_code: MAN.2
   spice_name: Organization management
@@ -1819,7 +1819,7 @@ processes:
     - id: NOTE 2
       text: 'Best practice may be related to the achieved or next capability level. See Knowledge management process (RIN.3)
         to manage and disseminate best practices as part of organizational knowledge assets.'
-- corporate_code: İÜC.BİDB.SRÇ.024
+- corporate_code: SRÇ.024
   corporate_name: Kalite Yönetimi Süreci
   spice_code: MAN.4
   spice_name: Quality management
@@ -1913,7 +1913,7 @@ processes:
     text: 'Measure and monitor actual performance of quality against the quality goals. [Outcome: 5]'
     outcome_refs:
     - 5
-- corporate_code: İÜC.BİDB.SRÇ.025
+- corporate_code: SRÇ.025
   corporate_name: Ölçüm Süreci
   spice_code: MAN.6
   spice_name: Measurement
@@ -1999,7 +1999,7 @@ processes:
       process owners. [Outcome: 7]'
     outcome_refs:
     - 7
-- corporate_code: İÜC.BİDB.SRÇ.026
+- corporate_code: SRÇ.026
   corporate_name: Denetim Süreci
   spice_code: SUP.5
   spice_name: Audit

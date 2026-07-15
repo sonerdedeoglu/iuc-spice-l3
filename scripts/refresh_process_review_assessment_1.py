@@ -20,12 +20,12 @@ REVIEWS = PAGES / "91-ic-denetimler/surec-gozden-gecirmeleri"
 REPORT = ROOT / "reports/process_review_assessment_1_refresh_report.md"
 
 SRC001_DIR = REVIEWS / (
-    "iuc-bidb-frm-001-surec-gozden-gecirme-formu-"
-    "iuc-bidb-src-001-degerlendirme-1"
+    "frm-001-surec-gozden-gecirme-formu-"
+    "src-001-degerlendirme-1"
 )
 SRC004_DIR = REVIEWS / (
-    "iuc-bidb-frm-001-surec-gozden-gecirme-formu-"
-    "iuc-bidb-src-004-degerlendirme-1"
+    "frm-001-surec-gozden-gecirme-formu-"
+    "src-004-degerlendirme-1"
 )
 
 CSS = """
@@ -51,103 +51,103 @@ SRC001_UPDATES: dict[str, RowUpdate] = {
     "SUP.7.BP2": RowUpdate(
         "%95 - VAR",
         "Dokümanların geliştirilmesi, değiştirilmesi ve sürdürülmesi için KLV.001 ile yazım/sürüm kuralları; güncel SRÇ, PRS, KLV ve LST şablonlarıyla ortak yapı ve içerik standartları tanımlanmıştır. Süreç şablonuna hedef kitle, yayın/erişim, süreç sonuçları ve araçlar/altyapı alanları eklenmiştir.",
-        "İÜC.BİDB.KLV.001; İÜC.BİDB.SRÇ.XXX.Ş; İÜC.BİDB.PRS.XXX.Ş; İÜC.BİDB.KLV.XXX.Ş; aktif LST şablon ailesi",
+        "KLV.001; SRÇ.XXX.Ş; PRS.XXX.Ş; KLV.XXX.Ş; aktif LST şablon ailesi",
         "-",
     ),
     "SUP.7.BP3": RowUpdate(
         "%95 - VAR",
         "Format, başlık, tarih, tanımlayıcı, sürüm geçmişi, hazırlayan, gözden geçiren, onaylayan, amaç ve içerik alanlarına ek olarak hedef kitle ile yayın/erişim ortamı artık süreç şablonunda açıkça tanımlıdır. LST.012 gerçek yayın kaydında süreç ve hedef kitle birlikte izlenmektedir.",
-        "İÜC.BİDB.KLV.001; İÜC.BİDB.SRÇ.XXX.Ş; SRÇ/PRS/KLV/LST şablon ailesi; İÜC.BİDB.LST.012",
+        "KLV.001; SRÇ.XXX.Ş; SRÇ/PRS/KLV/LST şablon ailesi; LST.012",
         "-",
     ),
     "SUP.7.BP4": RowUpdate(
         "%85 - VAR",
         "Genel doküman envanteri, süreç özel doküman paketleri ve yaşam döngüsü doküman matrisiyle üretilecek dokümanlar belirlenmektedir. SRÇ.004 paketinin tamamlanması bu yapının ikinci süreçte uygulanabildiğini göstermiştir; proje özel SB matrisi ise hâlâ tamamlanmalıdır.",
-        "İÜC.BİDB.LST.001; İÜC.BİDB.LST.005.Ş; SRÇ.001 ve SRÇ.004 süreç özel doküman paketleri; Soru Bankası Projesi / LST.005 (SB)",
+        "LST.001; LST.005.Ş; SRÇ.001 ve SRÇ.004 süreç özel doküman paketleri; Soru Bankası Projesi / LST.005 (SB)",
         "-",
     ),
     "SUP.7.BP5": RowUpdate(
         "%90 - VAR",
         "SRÇ.001 doküman setine ek olarak SRÇ.004 süreç tanımı, prosedürü, kılavuzları ve süreç özel kayıtları güncel şablonlara göre geliştirilmiş, yerel olarak doğrulanmış ve Confluence'ta yayımlanmıştır.",
-        "İÜC.BİDB.SRÇ.001; İÜC.BİDB.PRS.001; İÜC.BİDB.KLV.001; SRÇ.001 destek paketi; SRÇ.004 süreç tasarım paketi; Confluence ve Git geçmişi",
+        "SRÇ.001; PRS.001; KLV.001; SRÇ.001 destek paketi; SRÇ.004 süreç tasarım paketi; Confluence ve Git geçmişi",
         "-",
     ),
     "SUP.7.BP7": RowUpdate(
         "%65 - DAĞINIK",
         "SRÇ.001 ve ilişkili destek dokümanları Confluence'ta yayımlanmış; yayın tarihi, süreç, hedef kitle, yöntem ve bağlantı LST.012 içinde gerçek kayıt olarak tutulmuştur. Bununla birlikte hedef kitleye ayrı duyuru/teslim ve gerektiğinde alındı teyidi henüz doğrulanmamıştır.",
-        "Confluence sayfa ağacı; İÜC.BİDB.LST.001; İÜC.BİDB.LST.012; Confluence yayın geçmişi",
+        "Confluence sayfa ağacı; LST.001; LST.012; Confluence yayın geçmişi",
         "Hedef kitleye gerçek bilgilendirme yapılmalı; duyuru/teslim ve gerektiğinde alındı teyidi LST.012 veya doğal kaynak kaydıyla ilişkilendirilmelidir.",
     ),
     "SUP.7.BP8": RowUpdate(
         "%65 - DAĞINIK",
         "Sürüm geçmişi, Confluence revizyonları, Git kayıtları, arşivleme ve eski sayfaların kontrollü kaldırılmasıyla bakım uygulaması güçlenmiştir. LST.002 güncelliği ve SRÇ.016 ile formal yapılandırma/baseline bağı tamamlanmamıştır.",
-        "İÜC.BİDB.LST.002; doküman sürüm geçmişleri; Arşiv - Kaldırılan Şablonlar; Confluence revizyon ve sayfa kaldırma raporları; Git geçmişi; İÜC.BİDB.SRÇ.016",
+        "LST.002; doküman sürüm geçmişleri; Arşiv - Kaldırılan Şablonlar; Confluence revizyon ve sayfa kaldırma raporları; Git geçmişi; SRÇ.016",
         "Son doküman ve şablon revizyonları LST.002'ye işlenmeli; kontrollü dokümanların SRÇ.016 kapsamındaki değişiklik/baseline kurallarıyla bağı açıklaştırılmalıdır.",
     ),
     "GP.2.1.5": RowUpdate(
         "%65 - DAĞINIK",
         "Süreç şablonu ve SRÇ.001 içinde araçlar, altyapı, kullanım amaçları, erişim koşulları ve sorumlu roller açıkça tanımlanmıştır. İnsan kaynağı ve zaman tahsisi ile fiili kullanım kayıtları formal değildir.",
-        "İÜC.BİDB.SRÇ.001 Araçlar ve Altyapı bölümü; İÜC.BİDB.SRÇ.XXX.Ş; Confluence/repository altyapısı; İÜC.BİDB.LST.011",
+        "SRÇ.001 Araçlar ve Altyapı bölümü; SRÇ.XXX.Ş; Confluence/repository altyapısı; LST.011",
         "SRÇ.001 için gerekli insan kaynağı ve zaman tahsisi ile kaynakların fiili kullanım durumu kayıt altına alınmalıdır.",
     ),
     "GP.2.1.6": RowUpdate(
         "%65 - DAĞINIK",
         "Süreç ve doküman arayüzleri LST.007'de, sorumluluklar LST.010'da ayrıntılıdır. LST.012'de Confluence yayını kaydedilmiştir; ancak ilgili taraflara ayrı bilgilendirme yapıldığı henüz doğrulanmamıştır.",
-        "İÜC.BİDB.LST.007 (SRÇ.001); İÜC.BİDB.LST.010 (SRÇ.001); İÜC.BİDB.LST.012",
+        "LST.007 (SRÇ.001); LST.010 (SRÇ.001); LST.012",
         "İlgili taraf iletişimleri ve süreç bilgilendirme faaliyeti LST.012 veya eşdeğer doğal kaynak kaydıyla kanıtlanmalıdır.",
     ),
     "GP.2.2.2": RowUpdate(
         "%90 - VAR",
         "Dokümantasyon, dağıtım, tanımlama, bileşen, onay ve erişim gereksinimleri aktif şablonlar ve doküman kontrol kurallarıyla tanımlıdır. Yenilenen LST.007, süreçlerin yanında prosedür, kılavuz, liste, şablon ve form bağımlılıklarını da göstermektedir.",
-        "İÜC.BİDB.KLV.001; İÜC.BİDB.PRS.001; İÜC.BİDB.LST.001; İÜC.BİDB.LST.007 (SRÇ.001); aktif şablon ailesi",
+        "KLV.001; PRS.001; LST.001; LST.007 (SRÇ.001); aktif şablon ailesi",
         "-",
     ),
     "GP.2.2.3": RowUpdate(
         "%65 - DAĞINIK",
         "Kontrollü dokümanlar Confluence sayfa kimliği, sürüm geçmişi ve Git revizyonlarıyla izlenmektedir; eski dokümanlar kontrollü biçimde kaldırılmıştır. LST.002 ile formal değişiklik ve baseline ilişkisi henüz tam değildir.",
-        "İÜC.BİDB.LST.001; doküman sürüm geçmişleri; Confluence sayfa kimlikleri ve revizyon geçmişi; Git geçmişi; eski sayfa kaldırma raporları; İÜC.BİDB.LST.002",
+        "LST.001; doküman sürüm geçmişleri; Confluence sayfa kimlikleri ve revizyon geçmişi; Git geçmişi; eski sayfa kaldırma raporları; LST.002",
         "Kontrollü doküman kapsamı, değişiklik akışı, sürüm/baseline ilişkisi ve güncel revizyon durumu LST.002 ve SRÇ.016 ile tutarlı hale getirilmelidir.",
     ),
     "GP.3.1.1": RowUpdate(
         "%95 - VAR",
         "SRÇ.001 ile ortak dokümantasyon süreci; güncel süreç şablonu, PRS.002, KLV.002 ve KLV.003 ile standart süreçlerin tanımlanması, kontrolü ve uyarlanması için bütünsel yapıyı desteklemektedir.",
-        "İÜC.BİDB.SRÇ.001; İÜC.BİDB.SRÇ.XXX.Ş; İÜC.BİDB.PRS.001; İÜC.BİDB.PRS.002; İÜC.BİDB.KLV.002; İÜC.BİDB.KLV.003",
+        "SRÇ.001; SRÇ.XXX.Ş; PRS.001; PRS.002; KLV.002; KLV.003",
         "-",
     ),
     "GP.3.1.2": RowUpdate(
         "%95 - VAR",
         "SRÇ.001 akışı ve LST.007, süreç sırasını ve diğer süreçlerle birlikte ilgili prosedür, kılavuz, liste, şablon ve form etkileşimlerini tutarlı Mermaid kaynak/görseliyle tanımlamaktadır.",
-        "İÜC.BİDB.SRÇ.001 Süreç Akışı; İÜC.BİDB.LST.007 (SRÇ.001); Mermaid kaynakları ve PNG görselleri",
+        "SRÇ.001 Süreç Akışı; LST.007 (SRÇ.001); Mermaid kaynakları ve PNG görselleri",
         "-",
     ),
     "GP.3.1.4": RowUpdate(
         "%90 - VAR",
         "Süreç şablonu ve SRÇ.001 içinde gerekli araç, altyapı, çalışma ortamı, kullanım amacı, erişim koşulu ve sorumlu rol ayrı bir bölümde tanımlanmıştır.",
-        "İÜC.BİDB.SRÇ.001 Araçlar ve Altyapı bölümü; İÜC.BİDB.SRÇ.XXX.Ş; İÜC.BİDB.KLV.004; İÜC.BİDB.LST.011; Confluence/repository yapısı",
+        "SRÇ.001 Araçlar ve Altyapı bölümü; SRÇ.XXX.Ş; KLV.004; LST.011; Confluence/repository yapısı",
         "-",
     ),
     "GP.3.2.1": RowUpdate(
         "%65 - DAĞINIK",
         "SRÇ.001 ve destek dokümanları güncel yapıyla Confluence'ta yayımlanmış ve LST.012'de kaydedilmiştir. Belirli proje/bağlam için yapılan uyarlamanın ve standart sürece uygunluk doğrulamasının kaydı sınırlıdır.",
-        "İÜC.BİDB.SRÇ.001; İÜC.BİDB.KLV.002; İÜC.BİDB.KLV.003; İÜC.BİDB.LST.012; Soru Bankası Projesi / LST.005 (SB)",
+        "SRÇ.001; KLV.002; KLV.003; LST.012; Soru Bankası Projesi / LST.005 (SB)",
         "Soru Bankası Projesi için kullanılan SRÇ.001 uyarlamaları, gerekçeleri ve standart sürece uygunluk kontrolü kayıt altına alınmalıdır.",
     ),
     "GP.3.2.2": RowUpdate(
         "%65 - DAĞINIK",
         "Roller, sorumluluklar ve yetkiler LST.010 ile atanmış; süreç yayını LST.012'de hedef kitleyle birlikte kaydedilmiştir. Ayrı rol duyurusu ve kabul/teyit kanıtı henüz bulunmamaktadır.",
-        "İÜC.BİDB.LST.010 (SRÇ.001); SRÇ.001 roller bölümü; İÜC.BİDB.LST.012",
+        "LST.010 (SRÇ.001); SRÇ.001 roller bölümü; LST.012",
         "Rol ve sorumluluklar ilgili kişilere duyurulmalı; iletişim ve gerektiğinde kabul/teyit kaydı LST.012 veya doğal kaynakta tutulmalıdır.",
     ),
     "GP.3.2.4": RowUpdate(
         "%65 - DAĞINIK",
         "Gerekli doküman ve bilgi kaynakları Confluence'ta yayımlanmış, araç ve erişim koşulları tanımlanmıştır. İnsan kaynağı tahsisi ve fiili kullanım kayıtları formal değildir.",
-        "Confluence doküman alanı; İÜC.BİDB.SRÇ.001; İÜC.BİDB.PRS.001; İÜC.BİDB.LST.010; İÜC.BİDB.LST.011; İÜC.BİDB.LST.012",
+        "Confluence doküman alanı; SRÇ.001; PRS.001; LST.010; LST.011; LST.012",
         "Süreç için gerekli insan kaynağı ve bilgi kaynaklarının tahsisi ile fiili kullanım durumu kayıt altına alınmalıdır.",
     ),
     "GP.3.2.5": RowUpdate(
         "%80 - VAR",
         "Confluence, Git repository, yerel görüntüleyici ve VPN tabanlı çalışma ortamı fiilen kullanılmış; gerekli altyapı ve erişim koşulları SRÇ.001 içinde açıkça tanımlanmıştır. Altyapı destek/bakım kanıtları doğal kaynak sistemlerde tutulur.",
-        "İÜC.BİDB.SRÇ.001 Araçlar ve Altyapı bölümü; Confluence; Git repository; yerel görüntüleyici; VPN; İÜC.BİDB.LST.011",
+        "SRÇ.001 Araçlar ve Altyapı bölümü; Confluence; Git repository; yerel görüntüleyici; VPN; LST.011",
         "-",
     ),
 }
@@ -157,55 +157,55 @@ SRC004_UPDATES: dict[str, RowUpdate] = {
     "PIM.1.BP1": RowUpdate(
         "VAR",
         "Güncel standart süreç seti, her sürecin amacı/uygulanabilirliği ve SRÇ.004'ün süreç-doküman etkileşimleri tanımlanmış; Mermaid kaynak ve PNG tutarlılığı yerel olarak doğrulanmıştır.",
-        "İÜC.BİDB.SRÇ.004; İÜC.BİDB.LST.006; İÜC.BİDB.LST.007 (SRÇ.004); SRÇ.004 bütünsel yerel gözden geçirme raporu",
+        "SRÇ.004; LST.006; LST.007 (SRÇ.004); SRÇ.004 bütünsel yerel gözden geçirme raporu",
         "-",
     ),
     "PIM.1.BP2": RowUpdate(
         "DAĞINIK",
         "SRÇ.004 ve destek paketi Confluence'ta yayımlanmış; süreç, hedef kitle, yöntem ve bağlantı LST.012'de gerçek yayın kaydı olarak tutulmuştur. Hedef kitleye ayrı duyuru/bilgilendirme henüz doğrulanmamıştır.",
-        "İÜC.BİDB.SRÇ.004; Confluence yayını; İÜC.BİDB.LST.012; İÜC.BİDB.SRÇ.020",
+        "SRÇ.004; Confluence yayını; LST.012; SRÇ.020",
         "Hedef kitleye gerçek bilgilendirme yapılmalı ve duyuru/katılım kaydı LST.012 veya doğal kaynakla ilişkilendirilmelidir.",
     ),
     "PIM.1.BP3": RowUpdate(
         "VAR",
         "SRÇ.004 süreç tanımı, PRS.002, KLV.002, KLV.003, süreç özel LST.007-LST.010 ve boş FRM.001 güncel şablonlarla uyumlu tek bir paket olarak tamamlanmış ve Confluence'ta yayımlanmıştır.",
-        "İÜC.BİDB.SRÇ.004; İÜC.BİDB.PRS.002; İÜC.BİDB.KLV.002; İÜC.BİDB.KLV.003; SRÇ.004 altındaki LST.007-LST.010 ve boş FRM.001; Confluence yayını",
+        "SRÇ.004; PRS.002; KLV.002; KLV.003; SRÇ.004 altındaki LST.007-LST.010 ve boş FRM.001; Confluence yayını",
         "-",
     ),
     "PIM.1.BP4": RowUpdate(
         "VAR",
         "Standart süreçlerin beklenen performansı için yönetilebilir üç ölçüm; veri kaynağı, hesaplama, hedef/eşik, sıklık, sorumlu ve sapma yaklaşımıyla tanımlanmıştır. Gerçek sonuç verisi BP6 ve GP.3.2.6 kapsamında ayrı eksik olarak izlenmektedir.",
-        "İÜC.BİDB.LST.009 (SRÇ.004)",
+        "LST.009 (SRÇ.004)",
         "-",
     ),
     "PIM.1.BP5": RowUpdate(
         "VAR",
         "Süreç amacı ve zorunlu sonuçları koruyan uyarlama kuralları; gerekçe, etki, onay ve SRÇ.018 değişiklik yolu ile tutarlı biçimde tanımlanmış ve yayımlanmıştır.",
-        "İÜC.BİDB.KLV.002; İÜC.BİDB.PRS.002; İÜC.BİDB.SRÇ.004; İÜC.BİDB.SRÇ.018",
+        "KLV.002; PRS.002; SRÇ.004; SRÇ.018",
         "-",
     ),
     "GP.2.1.1": RowUpdate(
         "VAR",
         "Süreç tasarım paketinin tamlığı, zamanında gözden geçirilmesi ve zamanında yayın/bilgilendirme için hedef ve eşikler tanımlıdır.",
-        "İÜC.BİDB.LST.009 (SRÇ.004)",
+        "LST.009 (SRÇ.004)",
         "-",
     ),
     "GP.2.1.5": RowUpdate(
         "DAĞINIK",
         "Gerekli insan rolleri, araçlar, altyapı, erişim koşulları ve bilgi kaynakları tanımlanmış; Confluence ve repository fiilen kullanılmıştır. Kurumsal erişim/yetkilendirme ve kaynak tahsis kayıtları paketle tekil olarak ilişkilendirilmemiştir.",
-        "İÜC.BİDB.SRÇ.004 Araçlar ve Altyapı bölümü; İÜC.BİDB.LST.010 (SRÇ.004); İÜC.BİDB.LST.011; Confluence ve Git geçmişi",
+        "SRÇ.004 Araçlar ve Altyapı bölümü; LST.010 (SRÇ.004); LST.011; Confluence ve Git geçmişi",
         "Gerekli erişim, yetkilendirme ve kaynak tahsisi doğal kaynak sistem kayıtlarıyla doğrulanmalıdır.",
     ),
     "GP.2.1.6": RowUpdate(
         "DAĞINIK",
         "Süreç, doküman ve rol arayüzleri LST.007 ile LST.010'da ayrıntılı ve karşılıklı olarak tanımlanmıştır. Gerçek hedef kitle iletişimi henüz doğrulanmamıştır.",
-        "İÜC.BİDB.LST.007 (SRÇ.004); İÜC.BİDB.LST.010 (SRÇ.004); İÜC.BİDB.LST.012",
+        "LST.007 (SRÇ.004); LST.010 (SRÇ.004); LST.012",
         "Hedef kitle ve ilgili taraf iletişimi LST.012 veya eşdeğer doğal kaynak kaydıyla kanıtlanmalıdır.",
     ),
     "GP.2.2.2": RowUpdate(
         "VAR",
         "Aktif şablonlar, doküman kod/ad kuralları, repository yerleşimi, erişim/yayın yaklaşımı ve iş ürünü kalite kriterleri süreç paketi için tanımlanmıştır.",
-        "İÜC.BİDB.LST.008 (SRÇ.004); aktif şablonlar; İÜC.BİDB.LST.011; İÜC.BİDB.SRÇ.001; İÜC.BİDB.KLV.003",
+        "LST.008 (SRÇ.004); aktif şablonlar; LST.011; SRÇ.001; KLV.003",
         "-",
     ),
     "GP.2.2.3": RowUpdate(
@@ -217,55 +217,55 @@ SRC004_UPDATES: dict[str, RowUpdate] = {
     "GP.2.2.4": RowUpdate(
         "DAĞINIK",
         "Paket aktif şablon, adlandırma, yerleşim, BP/GP izlenebilirliği ve görsel-kaynak tutarlılığı bakımından yerel olarak gözden geçirilmiş; kullanıcı incelemesindeki düzeltmeler uygulanarak yayımlanmıştır. Ayrı formal LST.003 bulgu/kapanış kaydı tamamlanmamıştır.",
-        "İÜC.BİDB.KLV.003; bu FRM.001 Değerlendirme #1; SRÇ.004 bütünsel yerel gözden geçirme raporu; Confluence yayını",
+        "KLV.003; bu FRM.001 Değerlendirme #1; SRÇ.004 bütünsel yerel gözden geçirme raporu; Confluence yayını",
         "Yetkili gözden geçirme, bulgu, düzeltme ve kapanış bilgileri LST.003 veya eşdeğer formal kayıtla tamamlanmalıdır.",
     ),
     "GP.3.1.1": RowUpdate(
         "VAR",
         "SRÇ.004 standart süreci ile PRS.002 uygulama adımları, kontrol kapıları, zorunlu tasarım paketi ve bakım yaklaşımı yayımlanmıştır.",
-        "İÜC.BİDB.SRÇ.004; İÜC.BİDB.PRS.002; İÜC.BİDB.KLV.002; İÜC.BİDB.KLV.003",
+        "SRÇ.004; PRS.002; KLV.002; KLV.003",
         "-",
     ),
     "GP.3.1.2": RowUpdate(
         "VAR",
         "Süreçlerin ve ilgili dokümanların sırası, girdileri, çıktıları ve karşılıklı etkileşimleri LST.007 ile Mermaid diyagramında tutarlı biçimde tanımlanmıştır.",
-        "İÜC.BİDB.LST.007 (SRÇ.004); SRÇ.004 Süreç Akışı; Mermaid kaynakları ve PNG görselleri",
+        "LST.007 (SRÇ.004); SRÇ.004 Süreç Akışı; Mermaid kaynakları ve PNG görselleri",
         "-",
     ),
     "GP.3.1.3": RowUpdate(
         "VAR",
         "Standart süreci gerçekleştirecek roller; sorumluluk, yetki, asgari yetkinlik, vekâlet ve RACI boyutlarıyla tanımlanmıştır.",
-        "İÜC.BİDB.LST.010 (SRÇ.004); İÜC.BİDB.SRÇ.004",
+        "LST.010 (SRÇ.004); SRÇ.004",
         "-",
     ),
     "GP.3.1.5": RowUpdate(
         "VAR",
         "Standart sürecin etkinlik ve uygunluğunu izlemek için üç sınırlı ölçüm, veri kaynakları, hedef/eşikler, sıklık, sorumlular ve sapma yaklaşımı tanımlanmıştır. Gerçek veri toplama GP.3.2.6 kapsamında ayrı izlenir.",
-        "İÜC.BİDB.LST.009 (SRÇ.004); bu FRM.001 Değerlendirme #1",
+        "LST.009 (SRÇ.004); bu FRM.001 Değerlendirme #1",
         "-",
     ),
     "GP.3.2.1": RowUpdate(
         "DAĞINIK",
         "Tanımlı süreç paketi onaylı/aktif doküman yapısıyla Confluence'ta kullanıma sunulmuştur. Hedef kitle bilgilendirmesi ile belirli kurumsal/proje bağlamında kullanım ve uygunluk kanıtı henüz tamamlanmamıştır.",
-        "İÜC.BİDB.SRÇ.004; İÜC.BİDB.PRS.002; Confluence yayını; İÜC.BİDB.LST.012",
+        "SRÇ.004; PRS.002; Confluence yayını; LST.012",
         "Hedef kitle bilgilendirmesi tamamlanmalı ve ilk gerçek kullanım bağlamı/uygunluk kanıtı kaydedilmelidir.",
     ),
     "GP.3.2.2": RowUpdate(
         "DAĞINIK",
         "Süreç sahibi, gözden geçiren, onaylayan ve uygulama rolleri dokümanlarda ve RACI matrisinde atanmıştır. Hedef kitleye resmî rol/sorumluluk duyurusu henüz doğrulanmamıştır.",
-        "İÜC.BİDB.SRÇ.004; İÜC.BİDB.LST.010 (SRÇ.004); İÜC.BİDB.LST.012",
+        "SRÇ.004; LST.010 (SRÇ.004); LST.012",
         "Onaylanan rol, sorumluluk ve yetkiler hedef kitleye duyurulmalı ve iletişim kaydı LST.012 veya doğal kaynakta tutulmalıdır.",
     ),
     "GP.3.2.4": RowUpdate(
         "DAĞINIK",
         "Süreç tanımı, prosedür, kılavuzlar, şablonlar ve süreç özel kayıtlar Confluence'ta yayımlanarak bilgi kaynağı sağlanmıştır. İnsan kaynağı tahsisi ve hedef kitle kullanımı formal kayıtla doğrulanmamıştır.",
-        "SRÇ.004 süreç tasarım paketi; Confluence yayını; İÜC.BİDB.LST.008; İÜC.BİDB.LST.010; İÜC.BİDB.LST.011",
+        "SRÇ.004 süreç tasarım paketi; Confluence yayını; LST.008; LST.010; LST.011",
         "Gerekli insan kaynağı tahsisi ve bilgi kaynaklarının hedef kitlece kullanıma sunulduğu doğrulanmalıdır.",
     ),
     "GP.3.2.5": RowUpdate(
         "DAĞINIK",
         "Confluence, Git repository, yerel görüntüleyici ve VPN tabanlı altyapı tanımlanmış ve paket oluşturma/yayınında fiilen kullanılmıştır. Kurumsal erişim, yetkilendirme, destek ve sürdürme kayıtları paketle ilişkilendirilmemiştir.",
-        "İÜC.BİDB.SRÇ.004 Araçlar ve Altyapı bölümü; İÜC.BİDB.LST.011; Confluence; Git repository; yerel görüntüleyici; VPN",
+        "SRÇ.004 Araçlar ve Altyapı bölümü; LST.011; Confluence; Git repository; yerel görüntüleyici; VPN",
         "Erişim, yetkilendirme, destek ve sürdürme kanıtları doğal kaynak sistemlerde doğrulanmalıdır.",
     ),
 }
@@ -541,7 +541,7 @@ def main() -> None:
         {
             "Süreç Durumu": "Aktif",
             "Değerlendirme Sonucu": (
-                "İÜC.BİDB.SRÇ.004 - Süreç Kurulumu Süreci; süreç mimarisi, standart süreç "
+                "SRÇ.004 - Süreç Kurulumu Süreci; süreç mimarisi, standart süreç "
                 "tanımı, performans beklentileri, uyarlama kuralları, rol/RACI, iş ürünü ve kontrol "
                 "yapıları tamamlanıp Confluence'ta yayımlanmış aktif bir süreç paketidir. PIM.1 BP "
                 "dağılımı 4 VAR, 1 DAĞINIK ve 1 YOK; PA/GP dağılımı 10 VAR, 7 DAĞINIK, 1 "

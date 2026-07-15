@@ -23,70 +23,70 @@ def nfc(value: str) -> str:
 
 SPECS = [
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-021-bilgi-yonetimi-sureci",
-        "required": ["RIN.3.BP1", "RIN.3.BP6", "10. Süreç Akışı", "Mermaid Kodu", "İÜC.BİDB.LST.004"],
-        "attachment": "İÜC.BİDB.SRÇ.021 - Flowchart.png",
+        "path": "01-surec-dokumanlari/src-021-bilgi-yonetimi-sureci",
+        "required": ["RIN.3.BP1", "RIN.3.BP6", "10. Süreç Akışı", "Mermaid Kodu", "LST.004"],
+        "attachment": "SRÇ.021 - Flowchart.png",
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-021-bilgi-yonetimi-sureci/iuc-bidb-lst-007-surec-etkilesim-matrisi-iuc-bidb-src-021",
-        "required": ["flowchart", "Mermaid Kodu", "İÜC.BİDB.LST.004", "İÜC.BİDB.PRS.005"],
+        "path": "01-surec-dokumanlari/src-021-bilgi-yonetimi-sureci/lst-007-surec-etkilesim-matrisi-src-021",
+        "required": ["flowchart", "Mermaid Kodu", "LST.004", "PRS.005"],
         "attachment": "src021-surec-etkilesim.png",
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-021-bilgi-yonetimi-sureci/iuc-bidb-lst-008-is-urunleri-ve-kalite-kriterleri-listesi-iuc-bidb-src-021",
-        "required": ["İÜC.BİDB.LST.004 - Bilgi Kataloğu", "İÜC.BİDB.PRS.005 - Bilgi Yönetimi Prosedürü"],
+        "path": "01-surec-dokumanlari/src-021-bilgi-yonetimi-sureci/lst-008-is-urunleri-ve-kalite-kriterleri-listesi-src-021",
+        "required": ["LST.004 - Bilgi Kataloğu", "PRS.005 - Bilgi Yönetimi Prosedürü"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-021-bilgi-yonetimi-sureci/iuc-bidb-lst-009-surec-performans-olcum-seti-iuc-bidb-src-021",
+        "path": "01-surec-dokumanlari/src-021-bilgi-yonetimi-sureci/lst-009-surec-performans-olcum-seti-src-021",
         "required": ["Geçerli bağlantı oranı", "Yıllık gözden geçirme tamamlama oranı"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-021-bilgi-yonetimi-sureci/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-021",
+        "path": "01-surec-dokumanlari/src-021-bilgi-yonetimi-sureci/lst-010-surec-rol-yetki-ve-raci-matrisi-src-021",
         "required": ["Rol ve Yetkinlik Matrisi", "Süreç Faaliyetleri RACI Matrisi", "İş Ürünleri RACI Matrisi", "Yetki ve Onay Matrisi"],
     },
     {
-        "path": "01-surec-dokumanlari/iuc-bidb-src-021-bilgi-yonetimi-sureci/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-021",
+        "path": "01-surec-dokumanlari/src-021-bilgi-yonetimi-sureci/frm-001-surec-gozden-gecirme-formu-src-021",
         "required": ["RIN.3.BP1", "RIN.3.BP6", "Öncelikli Tamamlama Listesi", "GG-AA-YYYY"],
     },
     {
-        "path": "91-ic-denetimler/surec-gozden-gecirmeleri/iuc-bidb-frm-001-surec-gozden-gecirme-formu-iuc-bidb-src-021-degerlendirme-1",
+        "path": "91-ic-denetimler/surec-gozden-gecirmeleri/frm-001-surec-gozden-gecirme-formu-src-021-degerlendirme-1",
         "required": ["RIN.3.BP1", "RIN.3.BP6", "Öncelikli Tamamlama Listesi", "İlk yıllık Bilgi Kataloğu gözden geçirmesini"],
     },
     {
-        "path": "07-prosedurler/iuc-bidb-prs-005-bilgi-yonetimi-proseduru",
-        "required": ["Kaynakta koruma", "İÜC.BİDB.LST.004", "Uygulanabilir Standartlar ve Mevzuat"],
+        "path": "07-prosedurler/prs-005-bilgi-yonetimi-proseduru",
+        "required": ["Kaynakta koruma", "LST.004", "Uygulanabilir Standartlar ve Mevzuat"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-lst-002-s-dokuman-degisiklik-kaydi-sablonu",
-        "required": ["İÜC.BİDB.LST.002.Ş", "Doküman Değişiklik Kaydı"],
+        "path": "02-sablonlar/lst-002-s-dokuman-degisiklik-kaydi-sablonu",
+        "required": ["LST.002.Ş", "Doküman Değişiklik Kaydı"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-lst-004-s-bilgi-katalogu-sablonu",
+        "path": "02-sablonlar/lst-004-s-bilgi-katalogu-sablonu",
         "required": ["Bilgi Kataloğu", "İlgili Uzman / Birim", "Erişim Sınıfı", "Son Kontrol Tarihi"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-002-dokuman-degisiklik-kaydi",
-        "required": ["DK-2026-002", "İÜC.BİDB.SRÇ.021", "Confluence'ta yayımlandı"],
+        "path": "03-kayitlar-ve-listeler/lst-002-dokuman-degisiklik-kaydi",
+        "required": ["DK-2026-002", "SRÇ.021", "Confluence'ta yayımlandı"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-004-bilgi-katalogu",
-        "required": ["İÜC.BİDB.SRÇ.021", "İlgili Uzman / Birim", "Erişim Sınıfı"],
+        "path": "03-kayitlar-ve-listeler/lst-004-bilgi-katalogu",
+        "required": ["SRÇ.021", "İlgili Uzman / Birim", "Erişim Sınıfı"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-rpr-001-s-surec-performanslari-raporu-sablonu",
-        "required": ["SPICE Olgunluk Seviyesi", "Süreç / Gösterge", "Eğilim Yorumu"],
+        "path": "02-sablonlar/rpr-001-s-surec-performanslari-raporu-sablonu",
+        "required": ["SPICE Olgunluk Seviyesi", "Süreç / Gösterge"],
     },
     {
-        "path": "09-raporlar/iuc-bidb-rpr-001-surec-performanslari-raporu",
-        "required": ["SPICE Olgunluk Seviyesi", "Süreç / Gösterge", "Eğilim Yorumu", "2 VAR; 3 DAĞINIK; 1 ZAYIF"],
+        "path": "09-raporlar/rpr-001-surec-performanslari-raporu",
+        "required": ["SPICE Olgunluk Seviyesi", "Süreç / Gösterge", "2 VAR; 3 DAĞINIK; 1 ZAYIF"],
     },
     {
-        "path": "02-sablonlar/iuc-bidb-lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu",
+        "path": "02-sablonlar/lst-010-s-surec-rol-yetki-ve-raci-matrisi-sablonu",
         "required": ["Rol ve Yetkinlik Matrisi", "Süreç Faaliyetleri RACI Matrisi", "İş Ürünleri RACI Matrisi", "Yetki ve Onay Matrisi"],
     },
     *[
         {
-            "path": f"01-surec-dokumanlari/iuc-bidb-src-{code}-{slug}/iuc-bidb-lst-010-surec-rol-yetki-ve-raci-matrisi-iuc-bidb-src-{code}",
+            "path": f"01-surec-dokumanlari/src-{code}-{slug}/lst-010-surec-rol-yetki-ve-raci-matrisi-src-{code}",
             "required": ["Rol ve Yetkinlik Matrisi", "Süreç Faaliyetleri RACI Matrisi", "İş Ürünleri RACI Matrisi", "Yetki ve Onay Matrisi"],
         }
         for code, slug in [
@@ -97,12 +97,12 @@ SPECS = [
         ]
     ],
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-006-standart-surec-envanteri",
-        "required": ["RIN.3", "İÜC.BİDB.SRÇ.021", "Aktif", "Confluence'ta yayımlanmış"],
+        "path": "03-kayitlar-ve-listeler/lst-006-standart-surec-envanteri",
+        "required": ["RIN.3", "SRÇ.021", "Aktif", "Confluence'ta yayımlanmış"],
     },
     {
-        "path": "03-kayitlar-ve-listeler/iuc-bidb-lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi",
-        "required": ["İÜC.BİDB.SRÇ.021", "PRS.005", "LST.004", "RPR.001 güncellemesi", "Yayın ve iki PNG eki doğrulandı"],
+        "path": "03-kayitlar-ve-listeler/lst-012-surec-yayginlastirma-ve-bilgilendirme-kaydi",
+        "required": ["SRÇ.021", "PRS.005", "LST.004", "RPR.001 güncellemesi", "Yayın ve iki PNG eki doğrulandı"],
     },
 ]
 
